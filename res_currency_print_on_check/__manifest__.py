@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Odoo, Open Source Management Solution
@@ -26,7 +25,7 @@
 
 {
     'name': 'Display name for currencies',
-    'version': '8.0.1.0.0',
+    'version': "12.0.1.0.0",
     'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
     'website': 'http://www.savoirfairelinux.com',
     'category': 'Generic Modules/Accounting',
@@ -53,5 +52,5 @@ Contributors
     ],
     'demo': [],
     'test': [],
-    'installable': False,
+    'installable': True,
 }

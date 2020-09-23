@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
 
         <record id="base.USD" model="res.currency">
             <field name="print_on_check">U.S. dollars</field>
@@ -270,5 +269,4 @@
             <field name="print_on_check">CFP francs</field>
         </record>
         
-    </data>
-</openerp>
+</odoo>
