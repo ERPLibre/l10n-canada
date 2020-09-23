@@ -21,7 +21,7 @@
 {
     'name': 'Canada - Quebec - Payroll',
     'category': 'Localization',
-    'version': '1.0',
+    'version': "12.0.1.0.0",
     'license': 'AGPL-3',
     'category': 'Generic Modules/Human Resources',
     'description': """
@@ -49,5 +49,5 @@ Contributors
     'test': [
         'test/l10n_ca_qc_hr_payroll.yml',
     ],
-    'installable': False,
+    'installable': True,
 }

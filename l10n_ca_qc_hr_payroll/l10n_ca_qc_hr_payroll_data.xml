@@ -556,5 +556,4 @@ result = payslip.sum('QITYTD',date_from,date_to) + QIT
             <field name="parent_id" ref="l10n_ca_hr_payroll.hr_structure_ca_base"/>
         </record>
 
-    </data>
-</openerp>
+</odoo>
