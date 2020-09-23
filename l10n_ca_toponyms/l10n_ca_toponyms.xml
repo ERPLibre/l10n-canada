@@ -78,5 +78,4 @@
 			<field name='code'>NU</field>
 			<field name='country_id' ref="base.ca"/>
 		</record>
-	</data>
-</openerp>
+</odoo>
