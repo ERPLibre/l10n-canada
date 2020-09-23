@@ -288,5 +288,4 @@ result = payslip.sum('VACYTD',date_from,date_to) + VAC
         ])]" name="rule_ids"/>
         </record>
 
-    </data>
-</openerp>
+</odoo>

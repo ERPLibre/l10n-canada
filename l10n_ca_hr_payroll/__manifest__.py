@@ -21,7 +21,7 @@
 {
     'name': 'Canada - Payroll',
     'category': 'Localization',
-    'version': '1.0',
+    'version': "12.0.1.0.0",
     'license': 'AGPL-3',
     'category': 'Generic Modules/Human Resources',
     'description': """
@@ -50,5 +50,5 @@ Contributors
     ],
     'test': [],
     'demo': [],
-    'installable': False,
+    'installable': True,
 }
