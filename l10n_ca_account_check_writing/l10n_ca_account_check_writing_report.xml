@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<openerp>
-    <data>
+<odoo>
     <report id="l10n_ca_account_print_check_top"
             string="Print Check CA (Top)"
             model="account.voucher"
@@ -14,5 +13,4 @@
             name="l10n.ca.account.print.check.middle"
             rml="l10n_ca_account_check_writing/report/l10n_ca_check_print_middle.rml"
             auto="False"/>
-    </data>
-</openerp>
+</odoo>

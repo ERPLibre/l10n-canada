@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Odoo, Open Source Management Solution
@@ -20,7 +19,7 @@
 ##############################################################################
 
 import time
-from openerp.report import report_sxw
+from odoo.report import report_sxw
 
 
 class ReportPrintCheck(report_sxw.rml_parse):

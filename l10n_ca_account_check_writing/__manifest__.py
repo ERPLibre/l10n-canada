@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Odoo, Open Source Management Solution
@@ -20,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Canada - Check Writing',
-    'version': '8.0.1.0.0',
+    'version': "12.0.1.0.0",
     'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
     'website': 'http://www.savoirfairelinux.com',
     'category': 'Generic Modules/Accounting',
@@ -53,7 +52,7 @@ Contributors
 """,
     'depends': [
         'l10n_ca_toponyms',
-        'account_check_writing',
+        'account_check_printing',
         'res_currency_print_on_check',
     ],
     'data': [
@@ -66,5 +65,5 @@ Contributors
     'external_dependencies': {
         'python': ['num2words'],
     },
-    'installable': False,
+    'installable': True,
 }

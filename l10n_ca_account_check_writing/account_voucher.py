@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Odoo, Open Source Management Solution
@@ -20,9 +19,9 @@
 #
 ##############################################################################
 
-from openerp import api, models, _
+from odoo import api, models, _
 
-from openerp.tools import config
+from odoo.tools import config
 # Odoo's built-in routines for converting numbers to words is pretty bad,
 # especially in French This is why we use the library below. You can get it at:
 # https://pypi.python.org/pypi/num2words
@@ -82,7 +81,7 @@ class AccountVoucher(models.Model):
 
         check_layout = self[0].company_id.check_layout
         return {
-            'type': 'ir.actions.report.xml',
+            'type': 'ir.actions.report',
             'report_name': check_layout_report[check_layout],
             'datas': {
                 'model': 'account.voucher',
