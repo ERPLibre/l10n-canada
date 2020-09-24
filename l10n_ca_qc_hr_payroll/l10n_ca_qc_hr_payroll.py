@@ -26,7 +26,7 @@ class hr_employee(orm.Model):
     _name = 'hr.employee'
     _inherit = 'hr.employee'
     _columns = {
-        'tp10153': fields.float(
+        'tp10153': fields.Float(
             'Source Deductions Return (TP-1015.3)',
             digits=(16, 2),
             required=True,

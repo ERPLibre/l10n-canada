@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data noupdate="1">
 
 	<!-- Quebec Parental Insurance Plan -->
@@ -39,5 +39,5 @@
 	    <field name="account_debit" model='account.account' search="[('code','like','51210')]"/>
 	    <field name="account_credit" model='account.account' search="[('code','like','21426')]"/>
 	</record>
-
+		</data>
 </odoo>

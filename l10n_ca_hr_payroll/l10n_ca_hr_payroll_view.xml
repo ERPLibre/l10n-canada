@@ -4,7 +4,6 @@
         <record id="hr_payroll_tax_table_form" model="ir.ui.view">
             <field name="name">hr.payroll.tax.table.form</field>
             <field name="model">hr.payroll.tax.table</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Canadian Tax Table">
                    <field name="name" select="1"/>
@@ -12,10 +11,10 @@
                    <field name="date_from"/>
                    <field name="date_to"/>
                    <field name="jurisdiction"/>
-                   <field name="state_id" 
-                          attrs="{'invisible': [('jurisdiction','!=','provincial')], 'required': [('jurisdiction','=','provincial')]}" 
-                          on_change="onchange_year(year,state_id)" 
-                          domain="[('country_id.code', '=', 'CA')]"/> 
+                   <field name="state_id"
+                          attrs="{'invisible': [('jurisdiction','!=','provincial')], 'required': [('jurisdiction','=','provincial')]}"
+                          on_change="onchange_year(year,state_id)"
+                          domain="[('country_id.code', '=', 'CA')]"/>
                    <field name="type"/>
                    <newline/>
                    <separator colspan="4"/>
@@ -38,7 +37,7 @@
                            <field name="code10"/>
                        </tree>
                    </field>
-                   <field name="line_ei_ids" nolabel="1" colspan="4" widget="one2many_list" 
+                   <field name="line_ei_ids" nolabel="1" colspan="4" widget="one2many_list"
                           attrs="{'invisible': [('type','!=','ei')]}">
                        <tree string="Employment Insurance Lines" editable="top">
                            <field name="inc_from"/>
@@ -47,7 +46,7 @@
                            <field name="max_annual_insurable_earnings"/>
                        </tree>
                    </field>
-                   <field name="line_qc_ids" nolabel="1" colspan="4" widget="one2many_list" 
+                   <field name="line_qc_ids" nolabel="1" colspan="4" widget="one2many_list"
                           attrs="{'invisible': [('type','!=','qc')]}">
                        <tree string="Quebec Lines" editable="top">
                            <field name="inc_from"/>
@@ -71,7 +70,7 @@
                            <field name="codeZ"/>
                        </tree>
                    </field>
-                   <field name="line_rqap_ids" nolabel="1" colspan="4" widget="one2many_list" 
+                   <field name="line_rqap_ids" nolabel="1" colspan="4" widget="one2many_list"
                           attrs="{'invisible': [('type','!=','rqap')]}">
                        <tree string="RQAP / RRQ Lines" editable="top">
                            <field name="inc_from"/>
@@ -81,7 +80,7 @@
                            <field name="max_annual_insurable_earnings"/>
                        </tree>
                    </field>
-                   <field name="line_csst_ids" nolabel="1" colspan="4" widget="one2many_list" 
+                   <field name="line_csst_ids" nolabel="1" colspan="4" widget="one2many_list"
                           attrs="{'invisible': [('type','!=','csst')]}">
                        <tree string="CSST Lines" editable="top">
                            <field name="name"/>
@@ -105,7 +104,7 @@
                 </search>
             </field>
         </record>
-        
+
         <record id="hr_payroll_tax_table_tree" model="ir.ui.view">
           <field name="name">hr.payroll.tax.table.tree</field>
           <field name="model">hr.payroll.tax.table</field>
@@ -120,7 +119,7 @@
                 </tree>
             </field>
         </record>
-                
+
       <record id="action_hr_payroll_tax_table_tree" model="ir.actions.act_window">
           <field name="name">Canadian Tax Table</field>
           <field name="res_model">hr.payroll.tax.table</field>
@@ -129,9 +128,9 @@
           <field name="view_id" ref="hr_payroll_tax_table_tree"/>
           <field name="search_view_id" ref="hr_payroll_tax_table_search"/>
       </record>
-  
+
       <menuitem id="menu_hr_payroll_tax_table_tree" action="action_hr_payroll_tax_table_tree" parent="hr_payroll.payroll_configure"/>
-  
+
       <record id="hr_employee_view_form_inherit" model="ir.ui.view">
           <field name="name">hr.employee.view.form.inherit</field>
           <field name="model">hr.employee</field>
@@ -172,7 +171,7 @@
               </notebook>
           </field>
       </record>
-  
+
 
    <!-- End Contract View-->
    <record id="hr_contract_form_inherit" model="ir.ui.view">
@@ -187,7 +186,7 @@
            </xpath>
        </field>
    </record>
-  
+
       <!-- Salary Rules - unhide the sequence, not sure why it's invisible -->
       <record id="hr_salary_rule_list_inherit" model="ir.ui.view">
           <field name="name">hr.salary.rule.list.inherit</field>

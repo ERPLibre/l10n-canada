@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
 	<data noupdate="1">
 
 		<record model='res.country.state' id='ON'>
@@ -78,4 +78,5 @@
 			<field name='code'>NU</field>
 			<field name='country_id' ref="base.ca"/>
 		</record>
+	</data>
 </odoo>

@@ -42,7 +42,6 @@ Contributors
     'website': 'https://community.odoo.com/project/42',
     'depends': [
         'hr_payroll',
-        'l10n_ca_toponyms',
     ],
     'data': [
         'l10n_ca_hr_payroll_view.xml',

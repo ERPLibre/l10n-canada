@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data noupdate="1">
 
     <!-- Quebec Parental Insurance Plan - 120 -->
@@ -555,5 +555,5 @@ result = payslip.sum('QITYTD',date_from,date_to) + QIT
         ])]"/>
             <field name="parent_id" ref="l10n_ca_hr_payroll.hr_structure_ca_base"/>
         </record>
-
+    </data>
 </odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data noupdate="1">
 
 	<!-- Payroll Journal -->
@@ -25,5 +25,5 @@
             <field name="account_debit" model='account.account' search="[('code','like','51209')]"/>
             <field name="account_credit" model='account.account' search="[('code','like','21412')]"/>
         </record>
-
+    </data>
 </odoo>
