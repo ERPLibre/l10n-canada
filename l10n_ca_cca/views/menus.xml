@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <menuitem
+        id="menu_l10n_ca_cca_schedule"
+        name="CCA Schedules"
+        parent="account_asset_management.menu_finance_assets"
+        action="action_l10n_ca_cca_schedule"
+        sequence="120"
+    />
+    <menuitem
+        id="menu_l10n_ca_cca_class"
+        name="CCA Classes"
+        parent="account_asset_management.menu_finance_config_assets"
+        action="action_l10n_ca_cca_class"
+        sequence="50"
+    />
+</odoo>

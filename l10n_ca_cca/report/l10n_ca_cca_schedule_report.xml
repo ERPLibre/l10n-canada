@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="action_report_cca_schedule" model="ir.actions.report">
+        <field name="name">CCA Schedule</field>
+        <field name="model">l10n.ca.cca.schedule</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">l10n_ca_cca.report_cca_schedule</field>
+        <field name="report_file">l10n_ca_cca.report_cca_schedule</field>
+        <field name="print_report_name">'%s' % object.name</field>
+        <field name="binding_model_id" ref="model_l10n_ca_cca_schedule" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="base.paperformat_us" />
+    </record>
+    <template id="report_cca_schedule_document">
+        <t t-call="web.external_layout">
+            <t t-set="currency" t-value="doc.currency_id" />
+            <div class="page">
+                <h2 t-out="doc.name" />
+                <p>
+                    Taxation year <span t-field="doc.date_from" /> to
+                    <span t-field="doc.date_to" />
+                    <t t-if="doc.state != 'locked'"> (draft)</t>
+                </p>
+                <h4>Capital cost allowance (Schedule 8)</h4>
+                <table class="table table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th class="text-end">Rate</th>
+                            <th class="text-end">Opening UCC</th>
+                            <th class="text-end">Additions</th>
+                            <th class="text-end">Adjustments</th>
+                            <th class="text-end">Dispositions</th>
+                            <th class="text-end">CCA base</th>
+                            <th class="text-end">Maximum CCA</th>
+                            <th class="text-end">CCA claimed</th>
+                            <th class="text-end">Recapture</th>
+                            <th class="text-end">Terminal loss</th>
+                            <th class="text-end">Closing UCC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="doc.line_ids" t-as="line">
+                            <td>
+                                <span t-field="line.class_id" />
+                                <t t-if="line.asset_id">
+                                    <br /><small t-field="line.asset_id" />
+                                </t>
+                            </td>
+                            <td class="text-end">
+                                <span
+                                    t-out="line.rate * 100"
+                                    t-options="{'widget': 'float', 'precision': 2}"
+                                /> %
+                            </td>
+                            <td class="text-end"><span t-field="line.opening_ucc" /></td>
+                            <td class="text-end"><span t-field="line.additions" /></td>
+                            <td class="text-end"><span t-field="line.adjustments" /></td>
+                            <td class="text-end"><span t-field="line.dispositions" /></td>
+                            <td class="text-end">
+                                <span t-field="line.cca_base" />
+                                <!-- The base excludes the expensed additions:
+                                     they are deducted in full, outside the rate. -->
+                                <t t-if="line.additions_expensing">
+                                    <br />
+                                    <small class="o_cca_expensing">
+                                        + expensed: <span
+                                            t-field="line.additions_expensing"
+                                        />
+                                    </small>
+                                </t>
+                            </td>
+                            <td class="text-end"><span t-field="line.max_cca" /></td>
+                            <td class="text-end"><span t-field="line.cca_claimed" /></td>
+                            <td class="text-end"><span t-field="line.recapture" /></td>
+                            <td class="text-end"><span t-field="line.terminal_loss" /></td>
+                            <td class="text-end"><span t-field="line.closing_ucc" /></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="fw-bold">
+                            <td colspan="2">Total</td>
+                            <td class="text-end"><span t-field="doc.total_opening_ucc" /></td>
+                            <td class="text-end"><span t-field="doc.total_additions" /></td>
+                            <td />
+                            <td class="text-end"><span t-field="doc.total_dispositions" /></td>
+                            <td />
+                            <td class="text-end"><span t-field="doc.total_max_cca" /></td>
+                            <td class="text-end"><span t-field="doc.total_cca" /></td>
+                            <td class="text-end"><span t-field="doc.total_recapture" /></td>
+                            <td class="text-end"><span t-field="doc.total_terminal_loss" /></td>
+                            <td class="text-end"><span t-field="doc.total_closing_ucc" /></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p
+                    t-if="any(doc.line_ids.mapped('additions_expensing'))"
+                    class="small"
+                >
+                    Expensed additions are deducted in full, outside the CCA base.
+                </p>
+                <h4>Book depreciation and CCA by class</h4>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th class="text-end">Book depreciation</th>
+                            <th class="text-end">CCA claimed</th>
+                            <th class="text-end">Book - tax</th>
+                            <th class="text-end">Book gain/loss</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="doc.line_ids" t-as="line">
+                            <td><span t-field="line.class_id" /></td>
+                            <td class="text-end"><span t-field="line.book_depreciation" /></td>
+                            <td class="text-end"><span t-field="line.cca_claimed" /></td>
+                            <td class="text-end"><span t-field="line.book_tax_difference" /></td>
+                            <td class="text-end"><span t-field="line.book_gain_loss" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Reconciliation of net income (Schedule 1)</h4>
+                <table class="table table-sm">
+                    <tbody>
+                        <tr>
+                            <td>Add: amortization of tangible assets (line 104)</td>
+                            <td class="text-end"><span t-field="doc.total_book_depreciation" /></td>
+                        </tr>
+                        <tr>
+                            <td>Add: recapture of capital cost allowance (line 107)</td>
+                            <td class="text-end"><span t-field="doc.total_recapture" /></td>
+                        </tr>
+                        <tr>
+                            <td>Add: loss on disposal of assets (line 111)</td>
+                            <td class="text-end"><span t-field="doc.total_book_loss" /></td>
+                        </tr>
+                        <tr>
+                            <td>Deduct: gain on disposal of assets (line 401)</td>
+                            <td class="text-end"><span t-field="doc.total_book_gain" /></td>
+                        </tr>
+                        <tr>
+                            <td>Deduct: capital cost allowance (line 403)</td>
+                            <td class="text-end"><span t-field="doc.total_cca" /></td>
+                        </tr>
+                        <tr>
+                            <td>Deduct: terminal loss (line 404)</td>
+                            <td class="text-end"><span t-field="doc.total_terminal_loss" /></td>
+                        </tr>
+                        <tr class="fw-bold">
+                            <td>Net adjustment to net income</td>
+                            <td class="text-end"><span t-field="doc.schedule1_adjustment" /></td>
+                        </tr>
+                        <tr>
+                            <td>Capital gains on dispositions (Schedule 6)</td>
+                            <td class="text-end"><span t-field="doc.total_capital_gain" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+    <template id="report_cca_schedule">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="l10n_ca_cca.report_cca_schedule_document" />
+            </t>
+        </t>
+    </template>
+</odoo>

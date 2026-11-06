@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_l10n_ca_cca_class_readonly,l10n.ca.cca.class readonly,model_l10n_ca_cca_class,account.group_account_readonly,1,0,0,0
+access_l10n_ca_cca_class_invoice,l10n.ca.cca.class invoice,model_l10n_ca_cca_class,account.group_account_invoice,1,0,0,0
+access_l10n_ca_cca_class_manager,l10n.ca.cca.class manager,model_l10n_ca_cca_class,account.group_account_manager,1,1,1,1
+access_l10n_ca_cca_schedule_readonly,l10n.ca.cca.schedule readonly,model_l10n_ca_cca_schedule,account.group_account_readonly,1,0,0,0
+access_l10n_ca_cca_schedule_user,l10n.ca.cca.schedule user,model_l10n_ca_cca_schedule,account.group_account_user,1,1,1,1
+access_l10n_ca_cca_schedule_manager,l10n.ca.cca.schedule manager,model_l10n_ca_cca_schedule,account.group_account_manager,1,1,1,1
+access_l10n_ca_cca_schedule_line_readonly,l10n.ca.cca.schedule.line readonly,model_l10n_ca_cca_schedule_line,account.group_account_readonly,1,0,0,0
+access_l10n_ca_cca_schedule_line_user,l10n.ca.cca.schedule.line user,model_l10n_ca_cca_schedule_line,account.group_account_user,1,1,1,1
+access_l10n_ca_cca_schedule_line_manager,l10n.ca.cca.schedule.line manager,model_l10n_ca_cca_schedule_line,account.group_account_manager,1,1,1,1

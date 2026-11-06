@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="l10n_ca_cca_schedule_company_rule" model="ir.rule">
+        <field name="name">CCA schedule multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_cca_schedule" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="l10n_ca_cca_schedule_line_company_rule" model="ir.rule">
+        <field name="name">CCA schedule line multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_cca_schedule_line" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

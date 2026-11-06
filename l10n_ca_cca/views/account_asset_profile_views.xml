@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="account_asset_profile_view_form" model="ir.ui.view">
+        <field name="name">account.asset.profile.form.l10n_ca_cca</field>
+        <field name="model">account.asset.profile</field>
+        <field
+            name="inherit_id"
+            ref="account_asset_management.account_asset_profile_view_form"
+        />
+        <field name="arch" type="xml">
+            <field name="open_asset" position="after">
+                <field name="l10n_ca_cca_class_id" />
+            </field>
+        </field>
+    </record>
+</odoo>

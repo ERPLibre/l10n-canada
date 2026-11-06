@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="cca_class_1" model="l10n.ca.cca.class">
+        <field name="number">1</field>
+        <field name="name">Buildings</field>
+        <field name="sequence">10</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="False" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Buildings acquired after 1987. Non-residential buildings elected into a separate class have an additional allowance that is not modelled: use a manual adjustment.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+    <record id="cca_class_8" model="l10n.ca.cca.class">
+        <field name="number">8</field>
+        <field name="name">Furniture, fixtures and other equipment</field>
+        <field name="sequence">20</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Furniture, appliances, tools costing $500 or more, fixtures, machinery, photocopiers, telephones and equipment not included in another class.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+    <record id="cca_class_10" model="l10n.ca.cca.class">
+        <field name="number">10</field>
+        <field name="name">Automotive equipment</field>
+        <field name="sequence">30</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Motor vehicles, vans, trucks and general-purpose electronic data processing equipment acquired before March 23, 2004.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+    <record id="cca_class_10_1" model="l10n.ca.cca.class">
+        <field name="number">10.1</field>
+        <field name="name">Passenger vehicles over the prescribed cost</field>
+        <field name="sequence">40</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="True" />
+        <field name="no_recapture_terminal_loss" eval="True" />
+        <field name="note">Each passenger vehicle whose cost exceeds the prescribed amount is a separate class. The capital cost is limited to the prescribed amount (parameter class_10_1.cost_limit, before sales taxes). No recapture nor terminal loss; half of the allowance in the year of disposition.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+    <record id="cca_class_12" model="l10n.ca.cca.class">
+        <field name="number">12</field>
+        <field name="name">Small tools, software, 100% property</field>
+        <field name="sequence">50</field>
+        <field name="method">full</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Application software, small tools, kitchen utensils, medical or dental instruments. Items under the half-year exemption threshold are fully deductible in the year of acquisition; software is subject to the half-year rule.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+    <record id="cca_class_13" model="l10n.ca.cca.class">
+        <field name="number">13</field>
+        <field name="name">Leasehold improvements</field>
+        <field name="sequence">60</field>
+        <field name="method">straight_line</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Each improvement is written off straight-line over the lease term plus the first renewal period, at least 5 and at most 40 years (parameters class_13.min_years and class_13.max_years). Enter that period in the CCA life of the asset.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+    <record id="cca_class_14" model="l10n.ca.cca.class">
+        <field name="number">14</field>
+        <field name="name">Limited-life intangibles</field>
+        <field name="sequence">70</field>
+        <field name="method">straight_line</field>
+        <field name="half_year_rule" eval="False" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Patents, franchises, concessions or licences for a limited period: the capital cost is spread over the legal life, prorated by days in the first year. Enter the life in the CCA life of the asset.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+    <record id="cca_class_14_1" model="l10n.ca.cca.class">
+        <field name="number">14.1</field>
+        <field name="name">Goodwill and other eligible capital property</field>
+        <field name="sequence">80</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="False" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Goodwill, customer lists, trademarks, unlimited-life licences acquired after 2016.</field>
+        <field name="quebec_note">Qualified intellectual property included in class 14.1 is excluded from the Quebec harmonization with the federal reinstatement and keeps the Quebec accelerated treatment for property available for use before 2026 (Quebec budget, March 2025). That treatment is not shipped as a parameter: add l10n_ca.cca.qc.class_14_1 parameters after checking the Quebec rules if the corporation holds such property.</field>
+    </record>
+    <record id="cca_class_17" model="l10n.ca.cca.class">
+        <field name="number">17</field>
+        <field name="name">Roads, parking lots and other surface constructions</field>
+        <field name="sequence">90</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="False" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Roads, sidewalks, parking areas, storage areas and similar surface constructions.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+    <record id="cca_class_43" model="l10n.ca.cca.class">
+        <field name="number">43</field>
+        <field name="name">Manufacturing and processing machinery</field>
+        <field name="sequence">100</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Machinery and equipment to manufacture or process goods for sale or lease, other than class 53 property. Only property that would have been class 53 property if acquired in 2025 gets the immediate expensing windows.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+    <record id="cca_class_44" model="l10n.ca.cca.class">
+        <field name="number">44</field>
+        <field name="name">Patents</field>
+        <field name="sequence">110</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Patents and rights to use patented information. New additions acquired and available for use after April 15, 2024 and before 2027 are fully expensed. Property acquired after 2024 and available for use from 2027 to 2033 enters the CCA base at its full cost, without the half-year rule (parameter class_&lt;number&gt;.aiip.windows).</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate. Quebec also harmonized with the immediate expensing of classes 44, 46 and 50 acquired and available for use after April 15, 2024 and before 2027 (Information Bulletin 2024-6).</field>
+    </record>
+    <record id="cca_class_46" model="l10n.ca.cca.class">
+        <field name="number">46</field>
+        <field name="name">Data network infrastructure equipment</field>
+        <field name="sequence">120</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Data network infrastructure equipment and its systems software. New additions acquired and available for use after April 15, 2024 and before 2027 are fully expensed. Property acquired after 2024 and available for use from 2027 to 2033 enters the CCA base at its full cost, without the half-year rule (parameter class_&lt;number&gt;.aiip.windows).</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate. Quebec also harmonized with the immediate expensing of classes 44, 46 and 50 acquired and available for use after April 15, 2024 and before 2027 (Information Bulletin 2024-6).</field>
+    </record>
+    <record id="cca_class_50" model="l10n.ca.cca.class">
+        <field name="number">50</field>
+        <field name="name">Computer equipment and systems software</field>
+        <field name="sequence">130</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="True" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">General-purpose electronic data processing equipment and systems software acquired after March 18, 2007. New additions acquired and available for use after April 15, 2024 and before 2027 are fully expensed. Property acquired after 2024 and available for use from 2027 to 2033 enters the CCA base at its full cost, without the half-year rule (parameter class_&lt;number&gt;.aiip.windows).</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate. Quebec also harmonized with the immediate expensing of classes 44, 46 and 50 acquired and available for use after April 15, 2024 and before 2027 (Information Bulletin 2024-6). The Quebec additional 30% capital cost allowance is abolished for property acquired after 2023; property acquired before 2024 keeps it for its remaining period. It is a separate deduction on the CO-17 that is not modelled.</field>
+    </record>
+    <record id="cca_class_53" model="l10n.ca.cca.class">
+        <field name="number">53</field>
+        <field name="name">Manufacturing and processing machinery (2016-2025)</field>
+        <field name="sequence">140</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="False" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Machinery and equipment acquired after 2015 and before 2026 to manufacture or process goods. Immediate expensing by available-for-use date replaces the accelerated investment incentive.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate. The Quebec additional 30% capital cost allowance is abolished for property acquired after 2023; property acquired before 2024 keeps it for its remaining period. It is a separate deduction on the CO-17 that is not modelled.</field>
+    </record>
+    <record id="cca_class_54" model="l10n.ca.cca.class">
+        <field name="number">54</field>
+        <field name="name">Zero-emission passenger vehicles</field>
+        <field name="sequence">150</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="False" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Zero-emission passenger vehicles. The capital cost is limited to the prescribed amount (parameter class_54.cost_limit, before sales taxes). Immediate expensing by available-for-use date.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+    <record id="cca_class_55" model="l10n.ca.cca.class">
+        <field name="number">55</field>
+        <field name="name">Zero-emission vehicles (other)</field>
+        <field name="sequence">160</field>
+        <field name="method">declining</field>
+        <field name="half_year_rule" eval="True" />
+        <field name="aiip_eligible" eval="False" />
+        <field name="immediate_expensing_eligible" eval="True" />
+        <field name="separate_class" eval="False" />
+        <field name="no_recapture_terminal_loss" eval="False" />
+        <field name="note">Zero-emission vehicles that are not passenger vehicles. Immediate expensing by available-for-use date.</field>
+        <field name="quebec_note">Quebec harmonized with the federal extension of the accelerated capital cost allowance (Quebec budget, March 2025): same class and rate.</field>
+    </record>
+</odoo>

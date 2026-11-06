@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="account_asset_view_form" model="ir.ui.view">
+        <field name="name">account.asset.form.l10n_ca_cca</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset_management.account_asset_view_form" />
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Tax Depreciation (CCA)" name="l10n_ca_cca">
+                    <group>
+                        <group>
+                            <field name="l10n_ca_cca_class_id" />
+                            <field
+                                name="l10n_ca_cca_capital_cost"
+                                invisible="not l10n_ca_cca_class_id"
+                            />
+                            <field
+                                name="l10n_ca_cca_acquisition_date"
+                                invisible="not l10n_ca_cca_class_id"
+                            />
+                            <field
+                                name="l10n_ca_cca_available_date"
+                                invisible="not l10n_ca_cca_class_id"
+                            />
+                            <field
+                                name="l10n_ca_cca_life_years"
+                                invisible="not l10n_ca_cca_class_id"
+                            />
+                        </group>
+                        <group invisible="not l10n_ca_cca_class_id">
+                            <field name="l10n_ca_cca_enhancement_excluded" />
+                            <field name="l10n_ca_cca_immediate_expensing" />
+                            <field name="l10n_ca_cca_half_year_exempt" />
+                            <field name="l10n_ca_cca_disposal_date" />
+                            <field name="l10n_ca_cca_proceeds" />
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+    <record id="account_asset_view_search" model="ir.ui.view">
+        <field name="name">account.asset.search.l10n_ca_cca</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset_management.account_asset_view_search" />
+        <field name="arch" type="xml">
+            <search position="inside">
+                <field name="l10n_ca_cca_class_id" />
+                <filter
+                    name="l10n_ca_cca_no_class"
+                    string="Without CCA Class"
+                    domain="[('l10n_ca_cca_class_id', '=', False)]"
+                />
+                <filter
+                    name="l10n_ca_cca_group_class"
+                    string="CCA Class"
+                    context="{'group_by': 'l10n_ca_cca_class_id'}"
+                />
+            </search>
+        </field>
+    </record>
+</odoo>

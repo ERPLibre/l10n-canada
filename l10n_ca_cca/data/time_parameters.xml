@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="param_cca_class_1_rate" model="base.time.parameter">
+        <field name="name">CCA class 1 - rate</field>
+        <field name="code">l10n_ca.cca.class_1.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 1 (buildings acquired after 1987). Income Tax Regulations, Schedule II and section 1100(1)(a). The additional allowance of an eligible non-residential building elected into a separate class (6%, or 2% for other non-residential use) is not included. Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_1_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_1_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.04</field>
+    </record>
+    <record id="param_cca_class_1_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_1_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.04</field>
+    </record>
+    <record id="param_cca_class_1_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_1_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.04</field>
+    </record>
+    <record id="param_cca_class_8_rate" model="base.time.parameter">
+        <field name="name">CCA class 8 - rate</field>
+        <field name="code">l10n_ca.cca.class_8.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 8 (furniture, fixtures, equipment not included in another class). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_8_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_8_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.2</field>
+    </record>
+    <record id="param_cca_class_8_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_8_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.2</field>
+    </record>
+    <record id="param_cca_class_8_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_8_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.2</field>
+    </record>
+    <record id="param_cca_class_10_rate" model="base.time.parameter">
+        <field name="name">CCA class 10 - rate</field>
+        <field name="code">l10n_ca.cca.class_10.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 10 (general-purpose vehicles, automotive equipment). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_10_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_10_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_10_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_10_1_rate" model="base.time.parameter">
+        <field name="name">CCA class 10.1 - rate</field>
+        <field name="code">l10n_ca.cca.class_10_1.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 10.1 (passenger vehicles costing more than the prescribed amount). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_10_1_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_1_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_10_1_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_1_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_10_1_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_1_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_12_rate" model="base.time.parameter">
+        <field name="name">CCA class 12 - rate</field>
+        <field name="code">l10n_ca.cca.class_12.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 12 (small tools, application software, linen, dental instruments). Income Tax Regulations, Schedule II and section 1100(1)(a). Half-year rule applies to application software and to the items listed in Reg. 1100(2)(a); small tools under the threshold are exempt. Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_12_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_12_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">1.0</field>
+    </record>
+    <record id="param_cca_class_12_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_12_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1.0</field>
+    </record>
+    <record id="param_cca_class_12_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_12_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1.0</field>
+    </record>
+    <record id="param_cca_class_14_1_rate" model="base.time.parameter">
+        <field name="name">CCA class 14.1 - rate</field>
+        <field name="code">l10n_ca.cca.class_14_1.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 14.1 (goodwill and other eligible capital property acquired after 2016). Income Tax Regulations, Schedule II and section 1100(1)(a). Property owned before 2017 has 7% for tax years ending before 2027 (Reg. 1100(1)(c.1)), not modelled. Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_14_1_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_14_1_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.05</field>
+    </record>
+    <record id="param_cca_class_14_1_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_14_1_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.05</field>
+    </record>
+    <record id="param_cca_class_14_1_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_14_1_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.05</field>
+    </record>
+    <record id="param_cca_class_17_rate" model="base.time.parameter">
+        <field name="name">CCA class 17 - rate</field>
+        <field name="code">l10n_ca.cca.class_17.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 17 (roads, parking lots, sidewalks, other surface constructions). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_17_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_17_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.08</field>
+    </record>
+    <record id="param_cca_class_17_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_17_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.08</field>
+    </record>
+    <record id="param_cca_class_17_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_17_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.08</field>
+    </record>
+    <record id="param_cca_class_43_rate" model="base.time.parameter">
+        <field name="name">CCA class 43 - rate</field>
+        <field name="code">l10n_ca.cca.class_43.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 43 (manufacturing and processing machinery and equipment). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_43_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_43_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_43_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_43_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_43_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_43_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_44_rate" model="base.time.parameter">
+        <field name="name">CCA class 44 - rate</field>
+        <field name="code">l10n_ca.cca.class_44.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 44 (patents and rights to use patented information). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_44_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_44_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.25</field>
+    </record>
+    <record id="param_cca_class_44_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_44_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.25</field>
+    </record>
+    <record id="param_cca_class_44_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_44_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.25</field>
+    </record>
+    <record id="param_cca_class_46_rate" model="base.time.parameter">
+        <field name="name">CCA class 46 - rate</field>
+        <field name="code">l10n_ca.cca.class_46.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 46 (data network infrastructure equipment and its systems software). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_46_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_46_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_46_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_46_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_46_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_46_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_50_rate" model="base.time.parameter">
+        <field name="name">CCA class 50 - rate</field>
+        <field name="code">l10n_ca.cca.class_50.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 50 (general-purpose electronic data processing equipment and systems software acquired after March 18, 2007). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_50_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_50_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.55</field>
+    </record>
+    <record id="param_cca_class_50_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_50_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.55</field>
+    </record>
+    <record id="param_cca_class_50_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_50_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.55</field>
+    </record>
+    <record id="param_cca_class_53_rate" model="base.time.parameter">
+        <field name="name">CCA class 53 - rate</field>
+        <field name="code">l10n_ca.cca.class_53.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 53 (manufacturing and processing machinery and equipment acquired after 2015 and before 2026). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_53_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_53_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.5</field>
+    </record>
+    <record id="param_cca_class_53_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_53_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.5</field>
+    </record>
+    <record id="param_cca_class_53_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_53_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.5</field>
+    </record>
+    <record id="param_cca_class_54_rate" model="base.time.parameter">
+        <field name="name">CCA class 54 - rate</field>
+        <field name="code">l10n_ca.cca.class_54.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 54 (zero-emission passenger vehicles). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_54_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_54_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_54_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.3</field>
+    </record>
+    <record id="param_cca_class_55_rate" model="base.time.parameter">
+        <field name="name">CCA class 55 - rate</field>
+        <field name="code">l10n_ca.cca.class_55.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Declining-balance capital cost allowance rate of class 55 (zero-emission vehicles not included in class 54). Income Tax Regulations, Schedule II and section 1100(1)(a). Source: CRA, Classes of depreciable property, https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_55_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_55_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.4</field>
+    </record>
+    <record id="param_cca_class_55_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_55_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.4</field>
+    </record>
+    <record id="param_cca_class_55_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_55_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.4</field>
+    </record>
+    <record id="param_cca_class_13_min_years" model="base.time.parameter">
+        <field name="name">CCA class 13 - minimum number of years</field>
+        <field name="code">l10n_ca.cca.class_13.min_years</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Leasehold improvements are written off over the lease term plus the first renewal period, but never faster than over this number of years (the allowance is at most one fifth of the capital cost). Income Tax Regulations, Schedule III. Source: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/</field>
+    </record>
+    <record id="param_cca_class_13_min_years_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_13_min_years" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">5</field>
+    </record>
+    <record id="param_cca_class_13_min_years_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_13_min_years" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">5</field>
+    </record>
+    <record id="param_cca_class_13_min_years_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_13_min_years" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">5</field>
+    </record>
+    <record id="param_cca_class_13_max_years" model="base.time.parameter">
+        <field name="name">CCA class 13 - maximum number of years</field>
+        <field name="code">l10n_ca.cca.class_13.max_years</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">The lease term plus the first renewal period counted for class 13 is capped at this number of years. Income Tax Regulations, Schedule III. Source: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/</field>
+    </record>
+    <record id="param_cca_class_13_max_years_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_13_max_years" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">40</field>
+    </record>
+    <record id="param_cca_class_13_max_years_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_13_max_years" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">40</field>
+    </record>
+    <record id="param_cca_class_13_max_years_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_13_max_years" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">40</field>
+    </record>
+    <record id="param_cca_class_12_half_year_exempt_below" model="base.time.parameter">
+        <field name="name">CCA class 12 - half-year rule exemption threshold</field>
+        <field name="code">l10n_ca.cca.class_12.half_year_exempt_below</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Small tools, kitchen utensils and medical or dental instruments of class 12 costing less than this amount are not subject to the half-year rule and are fully deductible in the year of acquisition. Income Tax Regulations, Schedule II, class 12 paragraphs (b), (c), (e) and (v), and section 1100(2). Source: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/classes-depreciable-property.html</field>
+    </record>
+    <record id="param_cca_class_12_half_year_exempt_below_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_12_half_year_exempt_below" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">500</field>
+    </record>
+    <record id="param_cca_class_12_half_year_exempt_below_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_12_half_year_exempt_below" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">500</field>
+    </record>
+    <record id="param_cca_class_12_half_year_exempt_below_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_12_half_year_exempt_below" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">500</field>
+    </record>
+    <record id="param_cca_class_10_1_cost_limit" model="base.time.parameter">
+        <field name="name">CCA class 10.1 - prescribed cost limit</field>
+        <field name="code">l10n_ca.cca.class_10_1.cost_limit</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Capital cost limit of a passenger vehicle, before GST/HST and PST, by acquisition date; the excess is not depreciable and proceeds of disposition are reduced in the same proportion (ITA 13(7)(g), 13(2)). Income Tax Regulations, section 7307(1). Sources: Department of Finance announcements https://www.canada.ca/en/department-finance/news/2024/12/government-announces-the-2025-automobile-deduction-limits-and-expense-benefit-rates-for-businesses.html and https://www.canada.ca/en/department-finance/news/2026/01/government-announces-the-2026-automobile-deduction-limits-and-expense-benefit-rates-for-businesses.html</field>
+    </record>
+    <record id="param_cca_class_10_1_cost_limit_20010101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_1_cost_limit" />
+        <field name="date_from">2001-01-01</field>
+        <field name="value">30000</field>
+    </record>
+    <record id="param_cca_class_10_1_cost_limit_20220101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_1_cost_limit" />
+        <field name="date_from">2022-01-01</field>
+        <field name="value">34000</field>
+    </record>
+    <record id="param_cca_class_10_1_cost_limit_20230101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_1_cost_limit" />
+        <field name="date_from">2023-01-01</field>
+        <field name="value">36000</field>
+    </record>
+    <record id="param_cca_class_10_1_cost_limit_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_1_cost_limit" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">37000</field>
+    </record>
+    <record id="param_cca_class_10_1_cost_limit_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_1_cost_limit" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">38000</field>
+    </record>
+    <record id="param_cca_class_10_1_cost_limit_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_10_1_cost_limit" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">39000</field>
+    </record>
+    <record id="param_cca_class_54_cost_limit" model="base.time.parameter">
+        <field name="name">CCA class 54 - prescribed cost limit</field>
+        <field name="code">l10n_ca.cca.class_54.cost_limit</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Capital cost limit of a zero-emission passenger vehicle, before GST/HST and PST, by acquisition date (ITA 13(7)(i), Income Tax Regulations section 7307(1)(b)). Sources: Department of Finance announcements https://www.canada.ca/en/department-finance/news/2024/12/government-announces-the-2025-automobile-deduction-limits-and-expense-benefit-rates-for-businesses.html and https://www.canada.ca/en/department-finance/news/2026/01/government-announces-the-2026-automobile-deduction-limits-and-expense-benefit-rates-for-businesses.html</field>
+    </record>
+    <record id="param_cca_class_54_cost_limit_20190319" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_cost_limit" />
+        <field name="date_from">2019-03-19</field>
+        <field name="value">55000</field>
+    </record>
+    <record id="param_cca_class_54_cost_limit_20220101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_cost_limit" />
+        <field name="date_from">2022-01-01</field>
+        <field name="value">59000</field>
+    </record>
+    <record id="param_cca_class_54_cost_limit_20230101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_cost_limit" />
+        <field name="date_from">2023-01-01</field>
+        <field name="value">61000</field>
+    </record>
+    <record id="param_cca_class_54_cost_limit_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_cost_limit" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">61000</field>
+    </record>
+    <record id="param_cca_class_54_cost_limit_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_cost_limit" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">61000</field>
+    </record>
+    <record id="param_cca_half_year_factor" model="base.time.parameter">
+        <field name="name">CCA - half-year rule factor</field>
+        <field name="code">l10n_ca.cca.half_year_factor</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Fraction of the net additions of the year included in the CCA base of a class subject to the half-year rule, and fraction of the allowance of a class 10.1 vehicle in its year of disposition. Income Tax Regulations sections 1100(2) and 1100(2.5). Source: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/</field>
+    </record>
+    <record id="param_cca_half_year_factor_20010101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_half_year_factor" />
+        <field name="date_from">2001-01-01</field>
+        <field name="value">0.5</field>
+    </record>
+    <record id="param_cca_half_year_factor_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_half_year_factor" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.5</field>
+    </record>
+    <record id="param_cca_half_year_factor_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_half_year_factor" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.5</field>
+    </record>
+    <record id="param_cca_aiip_windows" model="base.time.parameter">
+        <field name="name">CCA - accelerated investment incentive windows</field>
+        <field name="code">l10n_ca.cca.aiip.windows</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Enhanced first-year allowance of accelerated (AIIP, acquired after 2018-11-20 and before 2025, available for use before 2028) and reaccelerated (RIIP, acquired after 2024, available for use before 2034) investment incentive property, by acquisition and available-for-use date. A class parameter l10n_ca.cca.class_&lt;number&gt;.aiip.windows replaces these windows for its class (classes 44, 46 and 50). 'hyr' multiplies the normal first-year allowance of a class subject to the half-year rule (3 = 1.5 x rate x cost), 'no_hyr' that of a class that is not. Property that was depreciated before by another person and was previously owned by the taxpayer or a non-arm's length person, or acquired on a rollover, does not qualify. Income Tax Regulations sections 1100(2), 1104(4) and 1104(4.01). The reaccelerated investment incentive (RIIP, property acquired after 2024 and available for use before 2034) and the extended immediate expensing were enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26); the reaccelerated incentive applies to property acquired after 2024. Sources: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/accelerated-investment-incentive.html ; https://www.budget.canada.ca/update-miseajour/2024/report-rapport/tm-mf-en.html ; https://www.parl.ca/documentviewer/en/45-1/bill/C-15/royal-assent</field>
+    </record>
+    <record id="param_cca_aiip_windows_20181121" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_aiip_windows" />
+        <field name="date_from">2018-11-21</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "available_to": "2023-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2018-11-21", "available_from": "2024-01-01", "available_to": "2027-12-31", "hyr": 2.0, "no_hyr": 1.25}]</field>
+    </record>
+    <record id="param_cca_aiip_windows_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_aiip_windows" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2027-12-31", "hyr": 2.0, "no_hyr": 1.25}, {"acquired_from": "2025-01-01", "available_to": "2029-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2025-01-01", "available_from": "2030-01-01", "available_to": "2033-12-31", "hyr": 2.0, "no_hyr": 1.25}]</field>
+    </record>
+    <record id="param_cca_aiip_windows_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_aiip_windows" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2027-12-31", "hyr": 2.0, "no_hyr": 1.25}, {"acquired_from": "2025-01-01", "available_to": "2029-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2025-01-01", "available_from": "2030-01-01", "available_to": "2033-12-31", "hyr": 2.0, "no_hyr": 1.25}]</field>
+    </record>
+    <record id="param_cca_class_44_expensing" model="base.time.parameter">
+        <field name="name">CCA class 44 - immediate expensing windows</field>
+        <field name="code">l10n_ca.cca.class_44.expensing</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">First-year write-off rate of new additions of class 44 (patents) that are AIIP or RIIP acquired and available for use after 2024-04-15 and before 2027 (productivity-enhancing assets, Budget 2024; Quebec harmonized in Information Bulletin 2024-6). Property that becomes available for use after 2026 is not expensed: its first-year allowance comes from the class parameter aiip.windows. Income Tax Regulations section 1100(2), element A paragraphs (c.1) to (c.3) and element A.1 paragraphs (c) to (e): the factor added to 1 and multiplied by the class rate gives 100%. The reaccelerated investment incentive (RIIP, property acquired after 2024 and available for use before 2034) and the extended immediate expensing were enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26); the reaccelerated incentive applies to property acquired after 2024. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4012/t2-corporation-income-tax-guide-chapter-3-page-3-t2-return.html ; https://www.parl.ca/documentviewer/en/45-1/bill/C-15/royal-assent</field>
+    </record>
+    <record id="param_cca_class_44_expensing_20240416" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_44_expensing" />
+        <field name="date_from">2024-04-16</field>
+        <field name="value">[{"acquired_from": "2024-04-16", "available_from": "2024-04-16", "available_to": "2026-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_44_expensing_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_44_expensing" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2024-04-16", "available_from": "2024-04-16", "available_to": "2026-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_44_expensing_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_44_expensing" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2024-04-16", "available_from": "2024-04-16", "available_to": "2026-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_46_expensing" model="base.time.parameter">
+        <field name="name">CCA class 46 - immediate expensing windows</field>
+        <field name="code">l10n_ca.cca.class_46.expensing</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">First-year write-off rate of new additions of class 46 (data network equipment) that are AIIP or RIIP acquired and available for use after 2024-04-15 and before 2027 (productivity-enhancing assets, Budget 2024; Quebec harmonized in Information Bulletin 2024-6). Property that becomes available for use after 2026 is not expensed: its first-year allowance comes from the class parameter aiip.windows. Income Tax Regulations section 1100(2), element A paragraphs (c.1) to (c.3) and element A.1 paragraphs (c) to (e): the factor added to 1 and multiplied by the class rate gives 100%. The reaccelerated investment incentive (RIIP, property acquired after 2024 and available for use before 2034) and the extended immediate expensing were enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26); the reaccelerated incentive applies to property acquired after 2024. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4012/t2-corporation-income-tax-guide-chapter-3-page-3-t2-return.html ; https://www.parl.ca/documentviewer/en/45-1/bill/C-15/royal-assent</field>
+    </record>
+    <record id="param_cca_class_46_expensing_20240416" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_46_expensing" />
+        <field name="date_from">2024-04-16</field>
+        <field name="value">[{"acquired_from": "2024-04-16", "available_from": "2024-04-16", "available_to": "2026-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_46_expensing_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_46_expensing" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2024-04-16", "available_from": "2024-04-16", "available_to": "2026-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_46_expensing_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_46_expensing" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2024-04-16", "available_from": "2024-04-16", "available_to": "2026-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_50_expensing" model="base.time.parameter">
+        <field name="name">CCA class 50 - immediate expensing windows</field>
+        <field name="code">l10n_ca.cca.class_50.expensing</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">First-year write-off rate of new additions of class 50 (computer equipment) that are AIIP or RIIP acquired and available for use after 2024-04-15 and before 2027 (productivity-enhancing assets, Budget 2024; Quebec harmonized in Information Bulletin 2024-6). Property that becomes available for use after 2026 is not expensed: its first-year allowance comes from the class parameter aiip.windows. Income Tax Regulations section 1100(2), element A paragraphs (c.1) to (c.3) and element A.1 paragraphs (c) to (e): the factor added to 1 and multiplied by the class rate gives 100%. The reaccelerated investment incentive (RIIP, property acquired after 2024 and available for use before 2034) and the extended immediate expensing were enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26); the reaccelerated incentive applies to property acquired after 2024. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4012/t2-corporation-income-tax-guide-chapter-3-page-3-t2-return.html ; https://www.parl.ca/documentviewer/en/45-1/bill/C-15/royal-assent</field>
+    </record>
+    <record id="param_cca_class_50_expensing_20240416" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_50_expensing" />
+        <field name="date_from">2024-04-16</field>
+        <field name="value">[{"acquired_from": "2024-04-16", "available_from": "2024-04-16", "available_to": "2026-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_50_expensing_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_50_expensing" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2024-04-16", "available_from": "2024-04-16", "available_to": "2026-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_50_expensing_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_50_expensing" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2024-04-16", "available_from": "2024-04-16", "available_to": "2026-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_44_aiip_windows" model="base.time.parameter">
+        <field name="name">CCA class 44 - investment incentive windows</field>
+        <field name="code">l10n_ca.cca.class_44.aiip.windows</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Enhanced first-year allowance of class 44 (patents) property that is not expensed, replacing l10n_ca.cca.aiip.windows for this class; same keys. Class 44 is excluded from the general factor 1/2 of reaccelerated property: its factor is nil once the immediate expensing window closes, so property acquired after 2024 and available for use in 2027 to 2033 enters the CCA base at its full cost without the half-year rule (2 times the normal first-year allowance), not 1.5 times. Accelerated property acquired before 2025 keeps the general windows. Income Tax Regulations section 1100(2), element A paragraphs (a) and (c.1) to (c.3), element A.1 paragraphs (a) and (c) to (e), and element C (the half-year rule does not apply to accelerated or reaccelerated property); section 1104(4) and (4.01). Enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26). Source: consolidated Income Tax Regulations, https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/FullText.html</field>
+    </record>
+    <record id="param_cca_class_44_aiip_windows_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_44_aiip_windows" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2027-12-31", "hyr": 2.0, "no_hyr": 1.25}, {"acquired_from": "2025-01-01", "available_to": "2033-12-31", "hyr": 2.0, "no_hyr": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_44_aiip_windows_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_44_aiip_windows" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2027-12-31", "hyr": 2.0, "no_hyr": 1.25}, {"acquired_from": "2025-01-01", "available_to": "2033-12-31", "hyr": 2.0, "no_hyr": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_46_aiip_windows" model="base.time.parameter">
+        <field name="name">CCA class 46 - investment incentive windows</field>
+        <field name="code">l10n_ca.cca.class_46.aiip.windows</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Enhanced first-year allowance of class 46 (data network equipment) property that is not expensed, replacing l10n_ca.cca.aiip.windows for this class; same keys. Class 46 is excluded from the general factor 1/2 of reaccelerated property: its factor is nil once the immediate expensing window closes, so property acquired after 2024 and available for use in 2027 to 2033 enters the CCA base at its full cost without the half-year rule (2 times the normal first-year allowance), not 1.5 times. Accelerated property acquired before 2025 keeps the general windows. Income Tax Regulations section 1100(2), element A paragraphs (a) and (c.1) to (c.3), element A.1 paragraphs (a) and (c) to (e), and element C (the half-year rule does not apply to accelerated or reaccelerated property); section 1104(4) and (4.01). Enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26). Source: consolidated Income Tax Regulations, https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/FullText.html</field>
+    </record>
+    <record id="param_cca_class_46_aiip_windows_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_46_aiip_windows" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2027-12-31", "hyr": 2.0, "no_hyr": 1.25}, {"acquired_from": "2025-01-01", "available_to": "2033-12-31", "hyr": 2.0, "no_hyr": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_46_aiip_windows_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_46_aiip_windows" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2027-12-31", "hyr": 2.0, "no_hyr": 1.25}, {"acquired_from": "2025-01-01", "available_to": "2033-12-31", "hyr": 2.0, "no_hyr": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_50_aiip_windows" model="base.time.parameter">
+        <field name="name">CCA class 50 - investment incentive windows</field>
+        <field name="code">l10n_ca.cca.class_50.aiip.windows</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Enhanced first-year allowance of class 50 (computer equipment) property that is not expensed, replacing l10n_ca.cca.aiip.windows for this class; same keys. Class 50 is excluded from the general factor 1/2 of reaccelerated property: its factor is nil once the immediate expensing window closes, so property acquired after 2024 and available for use in 2027 to 2033 enters the CCA base at its full cost without the half-year rule (2 times the normal first-year allowance), not 1.5 times. Accelerated property acquired before 2025 keeps the general windows. Income Tax Regulations section 1100(2), element A paragraphs (a) and (c.1) to (c.3), element A.1 paragraphs (a) and (c) to (e), and element C (the half-year rule does not apply to accelerated or reaccelerated property); section 1104(4) and (4.01). Enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26). Source: consolidated Income Tax Regulations, https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/FullText.html</field>
+    </record>
+    <record id="param_cca_class_50_aiip_windows_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_50_aiip_windows" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2027-12-31", "hyr": 2.0, "no_hyr": 1.25}, {"acquired_from": "2025-01-01", "available_to": "2033-12-31", "hyr": 2.0, "no_hyr": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_50_aiip_windows_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_50_aiip_windows" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "hyr": 3.0, "no_hyr": 1.5}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2027-12-31", "hyr": 2.0, "no_hyr": 1.25}, {"acquired_from": "2025-01-01", "available_to": "2033-12-31", "hyr": 2.0, "no_hyr": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_54_expensing" model="base.time.parameter">
+        <field name="name">CCA class 54 - immediate expensing windows</field>
+        <field name="code">l10n_ca.cca.class_54.expensing</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">First-year write-off rate of zero-emission vehicles of class 54 by acquisition and available-for-use date (100%, then 75% and 55% during the phase-out), applied to the capital cost limited to the prescribed amount. Income Tax Regulations section 1100(2), element A paragraph (e) and element A.1 paragraph (g). The reaccelerated investment incentive (RIIP, property acquired after 2024 and available for use before 2034) and the extended immediate expensing were enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26); the reaccelerated incentive applies to property acquired after 2024. Sources: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/accelerated-investment-incentive.html ; https://www.budget.canada.ca/update-miseajour/2024/report-rapport/tm-mf-en.html ; https://www.parl.ca/documentviewer/en/45-1/bill/C-15/royal-assent</field>
+    </record>
+    <record id="param_cca_class_54_expensing_20190319" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_expensing" />
+        <field name="date_from">2019-03-19</field>
+        <field name="value">[{"acquired_from": "2019-03-19", "available_to": "2023-12-31", "rate": 1.0}, {"acquired_from": "2019-03-19", "available_from": "2024-01-01", "available_to": "2025-12-31", "rate": 0.75}, {"acquired_from": "2019-03-19", "available_from": "2026-01-01", "available_to": "2027-12-31", "rate": 0.55}]</field>
+    </record>
+    <record id="param_cca_class_54_expensing_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_expensing" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "rate": 1.0}, {"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2025-12-31", "rate": 0.75}, {"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_from": "2026-01-01", "available_to": "2027-12-31", "rate": 0.55}, {"acquired_from": "2025-01-01", "available_to": "2029-12-31", "rate": 1.0}, {"acquired_from": "2025-01-01", "available_from": "2030-01-01", "available_to": "2031-12-31", "rate": 0.75}, {"acquired_from": "2025-01-01", "available_from": "2032-01-01", "available_to": "2033-12-31", "rate": 0.55}]</field>
+    </record>
+    <record id="param_cca_class_54_expensing_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_54_expensing" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "rate": 1.0}, {"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2025-12-31", "rate": 0.75}, {"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_from": "2026-01-01", "available_to": "2027-12-31", "rate": 0.55}, {"acquired_from": "2025-01-01", "available_to": "2029-12-31", "rate": 1.0}, {"acquired_from": "2025-01-01", "available_from": "2030-01-01", "available_to": "2031-12-31", "rate": 0.75}, {"acquired_from": "2025-01-01", "available_from": "2032-01-01", "available_to": "2033-12-31", "rate": 0.55}]</field>
+    </record>
+    <record id="param_cca_class_55_expensing" model="base.time.parameter">
+        <field name="name">CCA class 55 - immediate expensing windows</field>
+        <field name="code">l10n_ca.cca.class_55.expensing</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">First-year write-off rate of zero-emission vehicles of class 55 by acquisition and available-for-use date (100%, then 75% and 55% during the phase-out). Income Tax Regulations section 1100(2), element A paragraph (f) and element A.1 paragraph (h). The reaccelerated investment incentive (RIIP, property acquired after 2024 and available for use before 2034) and the extended immediate expensing were enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26); the reaccelerated incentive applies to property acquired after 2024. Sources: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/accelerated-investment-incentive.html ; https://www.budget.canada.ca/update-miseajour/2024/report-rapport/tm-mf-en.html ; https://www.parl.ca/documentviewer/en/45-1/bill/C-15/royal-assent</field>
+    </record>
+    <record id="param_cca_class_55_expensing_20190319" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_55_expensing" />
+        <field name="date_from">2019-03-19</field>
+        <field name="value">[{"acquired_from": "2019-03-19", "available_to": "2023-12-31", "rate": 1.0}, {"acquired_from": "2019-03-19", "available_from": "2024-01-01", "available_to": "2025-12-31", "rate": 0.75}, {"acquired_from": "2019-03-19", "available_from": "2026-01-01", "available_to": "2027-12-31", "rate": 0.55}]</field>
+    </record>
+    <record id="param_cca_class_55_expensing_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_55_expensing" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "rate": 1.0}, {"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2025-12-31", "rate": 0.75}, {"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_from": "2026-01-01", "available_to": "2027-12-31", "rate": 0.55}, {"acquired_from": "2025-01-01", "available_to": "2029-12-31", "rate": 1.0}, {"acquired_from": "2025-01-01", "available_from": "2030-01-01", "available_to": "2031-12-31", "rate": 0.75}, {"acquired_from": "2025-01-01", "available_from": "2032-01-01", "available_to": "2033-12-31", "rate": 0.55}]</field>
+    </record>
+    <record id="param_cca_class_55_expensing_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_55_expensing" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "rate": 1.0}, {"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2025-12-31", "rate": 0.75}, {"acquired_from": "2019-03-19", "acquired_to": "2024-12-31", "available_from": "2026-01-01", "available_to": "2027-12-31", "rate": 0.55}, {"acquired_from": "2025-01-01", "available_to": "2029-12-31", "rate": 1.0}, {"acquired_from": "2025-01-01", "available_from": "2030-01-01", "available_to": "2031-12-31", "rate": 0.75}, {"acquired_from": "2025-01-01", "available_from": "2032-01-01", "available_to": "2033-12-31", "rate": 0.55}]</field>
+    </record>
+    <record id="param_cca_class_53_expensing" model="base.time.parameter">
+        <field name="name">CCA class 53 - immediate expensing windows</field>
+        <field name="code">l10n_ca.cca.class_53.expensing</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">First-year write-off rate of manufacturing and processing machinery of class 53 by acquisition and available-for-use date. Accelerated investment incentive property (acquired before 2025): 100% when available for use before 2024, 75% in 2024-2025, 55% in 2026-2027 (Income Tax Regulations section 1100(2), element A paragraph (d)). Property acquired in 2025, the last year of class 53: 100% when available for use before 2034 (element A.1 paragraph (f)(i), factor 1 on the 50% rate). The reaccelerated investment incentive (RIIP, property acquired after 2024 and available for use before 2034) and the extended immediate expensing were enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26); the reaccelerated incentive applies to property acquired after 2024. Sources: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/accelerated-investment-incentive.html ; https://www.budget.canada.ca/update-miseajour/2024/report-rapport/tm-mf-en.html ; https://www.parl.ca/documentviewer/en/45-1/bill/C-15/royal-assent</field>
+    </record>
+    <record id="param_cca_class_53_expensing_20181121" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_53_expensing" />
+        <field name="date_from">2018-11-21</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "available_to": "2023-12-31", "rate": 1.0}, {"acquired_from": "2018-11-21", "available_from": "2024-01-01", "available_to": "2025-12-31", "rate": 0.75}, {"acquired_from": "2018-11-21", "available_from": "2026-01-01", "available_to": "2027-12-31", "rate": 0.55}]</field>
+    </record>
+    <record id="param_cca_class_53_expensing_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_53_expensing" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "rate": 1.0}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2025-12-31", "rate": 0.75}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2026-01-01", "available_to": "2027-12-31", "rate": 0.55}, {"acquired_from": "2025-01-01", "acquired_to": "2025-12-31", "available_to": "2033-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_53_expensing_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_53_expensing" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_to": "2023-12-31", "rate": 1.0}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2024-01-01", "available_to": "2025-12-31", "rate": 0.75}, {"acquired_from": "2018-11-21", "acquired_to": "2024-12-31", "available_from": "2026-01-01", "available_to": "2027-12-31", "rate": 0.55}, {"acquired_from": "2025-01-01", "acquired_to": "2025-12-31", "available_to": "2033-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_class_43_expensing" model="base.time.parameter">
+        <field name="name">CCA class 43 - immediate expensing windows</field>
+        <field name="code">l10n_ca.cca.class_43.expensing</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">First-year write-off rate of manufacturing and processing machinery acquired after 2025 that would have been included in class 53 if acquired in 2025. Other class 43 property does not qualify: clear the immediate expensing flag of such an asset. Income Tax Regulations section 1100(2), element A.1 paragraph (f): the factors 2 1/3, 1 1/2 and 5/6 on the 30% rate give 100% (available for use before 2030), 75% (2030-2031) and 55% (2032-2033). The reaccelerated investment incentive (RIIP, property acquired after 2024 and available for use before 2034) and the extended immediate expensing were enacted by Bill C-15, Budget 2025 Implementation Act, No. 1 (S.C. 2026, c. 3, Royal Assent 2026-03-26); the reaccelerated incentive applies to property acquired after 2024. Sources: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/claiming-capital-cost-allowance/accelerated-investment-incentive.html ; https://www.budget.canada.ca/update-miseajour/2024/report-rapport/tm-mf-en.html ; https://www.parl.ca/documentviewer/en/45-1/bill/C-15/royal-assent</field>
+    </record>
+    <record id="param_cca_class_43_expensing_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_43_expensing" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2026-01-01", "available_to": "2029-12-31", "rate": 1.0}, {"acquired_from": "2026-01-01", "available_from": "2030-01-01", "available_to": "2031-12-31", "rate": 0.75}, {"acquired_from": "2026-01-01", "available_from": "2032-01-01", "available_to": "2033-12-31", "rate": 0.55}]</field>
+    </record>
+    <record id="param_cca_class_43_expensing_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_class_43_expensing" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2026-01-01", "available_to": "2029-12-31", "rate": 1.0}, {"acquired_from": "2026-01-01", "available_from": "2030-01-01", "available_to": "2031-12-31", "rate": 0.75}, {"acquired_from": "2026-01-01", "available_from": "2032-01-01", "available_to": "2033-12-31", "rate": 0.55}]</field>
+    </record>
+    <record id="param_cca_diep_windows" model="base.time.parameter">
+        <field name="name">CCA - CCPC immediate expensing windows</field>
+        <field name="code">l10n_ca.cca.diep.windows</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Designated immediate expensing property of a Canadian-controlled private corporation: property acquired after 2021-04-18 and available for use before 2024, other than classes 1 to 6, 14.1, 17, 47, 49 and 51. The measure ended for CCPCs on 2023-12-31; the later versions keep the closed window so that 2025 and 2026 compute no designation. Income Tax Regulations sections 1100(0.1) to 1100(0.3) and 1104(3.1). Source: https://www.canada.ca/en/revenue-agency/services/tax/technical-information/income-tax/income-tax-folios-index/series-4-businesses/series-4-businesses-folio-15-manufacturing-research-development/income-tax-folio.html</field>
+    </record>
+    <record id="param_cca_diep_windows_20210419" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_diep_windows" />
+        <field name="date_from">2021-04-19</field>
+        <field name="value">[{"acquired_from": "2021-04-19", "available_to": "2023-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_diep_windows_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_diep_windows" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[{"acquired_from": "2021-04-19", "available_to": "2023-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_diep_windows_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_diep_windows" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[{"acquired_from": "2021-04-19", "available_to": "2023-12-31", "rate": 1.0}]</field>
+    </record>
+    <record id="param_cca_diep_limit" model="base.time.parameter">
+        <field name="name">CCA - CCPC immediate expensing limit</field>
+        <field name="code">l10n_ca.cca.diep.limit</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Annual immediate expensing limit of a CCPC, shared among associated corporations and prorated for a short taxation year. Income Tax Regulations section 1100(0.1). Source: CRA Income Tax Folio S4-F15-C1, https://www.canada.ca/en/revenue-agency/services/tax/technical-information/income-tax/income-tax-folios-index/series-4-businesses/series-4-businesses-folio-15-manufacturing-research-development/income-tax-folio.html</field>
+    </record>
+    <record id="param_cca_diep_limit_20210419" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_diep_limit" />
+        <field name="date_from">2021-04-19</field>
+        <field name="value">1500000</field>
+    </record>
+    <record id="param_cca_diep_limit_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_diep_limit" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1500000</field>
+    </record>
+    <record id="param_cca_diep_limit_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cca_diep_limit" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1500000</field>
+    </record>
+</odoo>

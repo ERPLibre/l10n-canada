@@ -1,0 +1,1272 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_cca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 03:22+0000\n"
+"PO-Revision-Date: 2026-10-27 03:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ca_cca
+#: model:ir.actions.report,print_report_name:l10n_ca_cca.action_report_cca_schedule
+msgid "'%s' % object.name"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "(draft)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.constraint,message:l10n_ca_cca.constraint_l10n_ca_cca_class_number_unique
+msgid "A CCA class number must be unique."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.constraint,message:l10n_ca_cca.constraint_l10n_ca_cca_schedule_year_unique
+msgid "A CCA schedule already exists for this year and jurisdiction."
+msgstr ""
+
+#. module: l10n_ca_cca
+#. odoo-python
+#: code:addons/l10n_ca_cca/models/l10n_ca_cca_schedule.py:0
+msgid "A locked CCA schedule cannot be deleted."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__aiip_eligible
+msgid "Accelerated Investment Incentive"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__active
+msgid "Active"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Add: amortization of tangible assets (line 104)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Add: loss on disposal of assets (line 111)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Add: recapture of capital cost allowance (line 107)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule__total_recapture
+msgid "Added on line 107 of T2 Schedule 1."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Added to Net Income (Schedule 1)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__additions
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Additions"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__additions_enhanced
+msgid "Additions (AIIP/RIIP)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__additions_expensing
+msgid "Additions (Immediate Expensing)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__additions_regular
+msgid "Additions (Regular)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_line_view_form
+msgid "Additions of the Year"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__additions_enhanced
+msgid ""
+"Additions that are accelerated or reaccelerated investment incentive "
+"property."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__additions_regular
+msgid ""
+"Additions without enhancement, subject to the half-year rule when the class "
+"is."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__adjustments
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Adjustments"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_line_view_form
+msgid "Allowance"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Amortization (line 104)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__cca_claimed
+msgid ""
+"Any amount from zero to the maximum. Claiming less keeps the balance for "
+"later years."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_class_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_class_view_search
+msgid "Archived"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model,name:l10n_ca_cca.model_account_asset
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__asset_id
+msgid "Asset"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model,name:l10n_ca_cca.model_account_asset_profile
+msgid "Asset profile"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_10
+msgid "Automotive equipment"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset__l10n_ca_cca_available_date
+msgid "Available-for-Use Date"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__cca_base
+msgid ""
+"Balance the rate applies to, after the half-year rule and the accelerated "
+"investment incentive adjustments."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_line_view_form
+msgid "Book"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__book_tax_difference
+msgid "Book - Tax"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Book - tax"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__book_depreciation
+msgid "Book Depreciation"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_book_gain
+msgid "Book Gain on Disposals"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__book_gain_loss
+msgid "Book Gain/Loss"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_book_loss
+msgid "Book Loss on Disposals"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule__schedule1_adjustment
+msgid ""
+"Book amortization + recapture + book loss - book gain - CCA - terminal loss."
+" Positive: taxable income is higher than book income."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule__total_book_depreciation
+msgid ""
+"Book amortization of the year, added back on line 104 of T2 Schedule 1."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Book depreciation"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Book depreciation and CCA by class"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__book_tax_difference
+msgid "Book depreciation minus CCA claimed."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Book gain/loss"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Book to Tax Reconciliation"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_1
+msgid "Buildings"
+msgstr ""
+
+#. module: l10n_ca_cca
+#. odoo-python
+#: code:addons/l10n_ca_cca/models/l10n_ca_cca_schedule.py:0
+msgid "CCA %(year)s - %(jurisdiction)s"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset__l10n_ca_cca_acquisition_date
+msgid "CCA Acquisition Date"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__cca_base
+msgid "CCA Base"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset__l10n_ca_cca_capital_cost
+msgid "CCA Capital Cost"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__cca_claimed
+msgid "CCA Claimed"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset__l10n_ca_cca_class_id
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset_profile__l10n_ca_cca_class_id
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.account_asset_view_search
+msgid "CCA Class"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.actions.act_window,name:l10n_ca_cca.action_l10n_ca_cca_class
+#: model:ir.ui.menu,name:l10n_ca_cca.menu_l10n_ca_cca_class
+msgid "CCA Classes"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset__l10n_ca_cca_disposal_date
+msgid "CCA Disposition Date"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset__l10n_ca_cca_life_years
+msgid "CCA Life (Years)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.actions.report,name:l10n_ca_cca.action_report_cca_schedule
+msgid "CCA Schedule"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.actions.act_window,name:l10n_ca_cca.action_l10n_ca_cca_schedule
+#: model:ir.ui.menu,name:l10n_ca_cca.menu_l10n_ca_cca_schedule
+msgid "CCA Schedules"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "CCA base"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "CCA claimed"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__immediate_expensing_eligible
+msgid "CCPC Immediate Expensing"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model,name:l10n_ca_cca.model_l10n_ca_cca_class
+msgid "Capital Cost Allowance Class"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model,name:l10n_ca_cca.model_l10n_ca_cca_schedule
+msgid "Capital Cost Allowance Schedule"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model,name:l10n_ca_cca.model_l10n_ca_cca_schedule_line
+msgid "Capital Cost Allowance Schedule Line"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__capital_gain
+msgid "Capital Gain"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Capital cost allowance (Schedule 8)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Capital cost allowance (line 403)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_account_asset__l10n_ca_cca_class_id
+msgid ""
+"Capital cost allowance class. Assets without a class are left out of the CCA"
+" schedules."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Capital gains on dispositions (Schedule 6)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Claim Maximum"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__class_id
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_line_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Class"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__number
+msgid "Class number, e.g. 8 or 10.1."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__line_ids
+msgid "Classes"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.actions.act_window,help:l10n_ca_cca.action_l10n_ca_cca_class
+msgid ""
+"Classes of depreciable property. Their rates, limits and\n"
+"                incentive windows are dated parameters under Accounting\n"
+"                &gt; Configuration &gt; Canadian Time Parameters."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__closing_ucc
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Closing UCC"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__company_id
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__company_id
+msgid "Company"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_50
+msgid "Computer equipment and systems software"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_class_view_form
+msgid "Content"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__note
+msgid "Content of the class and particular rules."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_account_asset__l10n_ca_cca_capital_cost
+msgid ""
+"Cost added to the class: the purchase value, limited to the prescribed "
+"amount of the class (classes 10.1 and 54). Reduce it by government "
+"assistance or investment tax credits received."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.actions.act_window,help:l10n_ca_cca.action_l10n_ca_cca_schedule
+msgid "Create the capital cost allowance schedule of a taxation year."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__create_date
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__create_date
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__current_rate
+msgid "Current Rate"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_46
+msgid "Data network infrastructure equipment"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_account_asset__l10n_ca_cca_acquisition_date
+msgid ""
+"Date the corporation acquired the property. Decides the prescribed cost "
+"limit and the incentive windows."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_account_asset__l10n_ca_cca_available_date
+msgid ""
+"Date the property became available for use (ITA 13(26)-(31)). The capital "
+"cost enters the class in the taxation year that contains this date, at the "
+"latest in the second taxation year after the acquisition."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__proration
+msgid "Days of the taxation year / 365 for a short year (Reg. 1100(3))."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields.selection,name:l10n_ca_cca.selection__l10n_ca_cca_class__method__declining
+msgid "Declining balance"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__method
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__method
+msgid ""
+"Declining balance applies the rate parameter to the undepreciated capital "
+"cost. Straight-line (classes 13 and 14) spreads the capital cost of each "
+"asset over its life. Full write-off is the declining balance at a 100% rate "
+"(class 12)."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Deduct: capital cost allowance (line 403)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Deduct: gain on disposal of assets (line 401)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Deduct: terminal loss (line 404)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Deducted from Net Income (Schedule 1)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule__total_cca
+msgid "Deducted on line 403 of T2 Schedule 1."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule__total_terminal_loss
+msgid "Deducted on line 404 of T2 Schedule 1."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_account_asset_profile__l10n_ca_cca_class_id
+msgid "Default capital cost allowance class of the assets of this profile."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__book_depreciation
+msgid ""
+"Depreciation posted in the books during the year for the assets of the "
+"class."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__display_name
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__display_name
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__dispositions
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Dispositions"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields.selection,name:l10n_ca_cca.selection__l10n_ca_cca_schedule__state__draft
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_search
+msgid "Draft"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__separate_class
+msgid "Each asset is its own class on the schedule (class 10.1)."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset__l10n_ca_cca_immediate_expensing
+msgid "Eligible for Immediate Expensing"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__enhanced_factor
+msgid "Enhanced Factor"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset__l10n_ca_cca_half_year_exempt
+msgid "Exempt from Half-Year Rule"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__expensing_rate
+msgid "Expensing Rate"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_search
+msgid "Federal"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields.selection,name:l10n_ca_cca.selection__l10n_ca_cca_schedule__jurisdiction__federal
+msgid "Federal (T2 Schedule 8)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__enhanced_factor
+msgid ""
+"Fraction of the net enhanced additions included in the CCA base (1.5 during "
+"the full incentive, 1.0 during the phase-out)."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__expensing_rate
+msgid "Fraction of the net expensed additions deducted in the first year."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__regular_factor
+msgid "Fraction of the net regular additions included in the CCA base."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields.selection,name:l10n_ca_cca.selection__l10n_ca_cca_class__method__full
+msgid "Full write-off (100% class)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_8
+msgid "Furniture, fixtures and other equipment"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Gain on disposal of assets (line 401)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule__total_book_gain
+msgid ""
+"Gain on disposal of assets in the financial statements, deducted on line 401"
+" of T2 Schedule 1."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Generate from Assets"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.actions.act_window,help:l10n_ca_cca.action_l10n_ca_cca_schedule
+msgid ""
+"Generate it from the assets, adjust the CCA claimed, then lock\n"
+"                it: the closing balances become the opening balances of the\n"
+"                next year."
+msgstr ""
+
+#. module: l10n_ca_cca
+#. odoo-python
+#: code:addons/l10n_ca_cca/models/l10n_ca_cca_schedule.py:0
+msgid "Generate the schedule before locking it."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_14_1
+msgid "Goodwill and other eligible capital property"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__half_year_factor
+msgid "Half Year Factor"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__half_year_rule
+msgid "Half Year Rule"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__id
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__id
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__jurisdiction
+msgid "Jurisdiction"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__write_date
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__write_date
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_13
+msgid "Leasehold improvements"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__dispositions
+msgid ""
+"Lesser of the proceeds of disposition and the capital cost of the property "
+"disposed of."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_14
+msgid "Limited-life intangibles"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Lock"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields.selection,name:l10n_ca_cca.selection__l10n_ca_cca_schedule__state__locked
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_search
+msgid "Locked"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Loss on disposal of assets (line 111)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule__total_book_loss
+msgid ""
+"Loss on disposal of assets in the financial statements, added on line 111 of"
+" T2 Schedule 1."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__adjustments
+msgid ""
+"Manual change of the undepreciated capital cost: government assistance or "
+"tax credits received (negative), transfers, additional allowances not "
+"modelled."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_43
+msgid "Manufacturing and processing machinery"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_53
+msgid "Manufacturing and processing machinery (2016-2025)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__max_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Maximum CCA"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__method
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__method
+msgid "Method"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__name
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__schedule1_adjustment
+msgid "Net Schedule 1 Adjustment"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Net adjustment to net income"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__aiip_eligible
+msgid ""
+"New additions of this class get the enhanced first-year allowance of the "
+"accelerated or reaccelerated investment incentive when their dates fall in a"
+" window of parameter l10n_ca.cca.class_<number>.aiip.windows, or of "
+"l10n_ca.cca.aiip.windows when the class has none."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.actions.act_window,help:l10n_ca_cca.action_l10n_ca_cca_class
+msgid "No CCA class yet."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__no_recapture_terminal_loss
+msgid "No Recapture or Terminal Loss"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__note
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__note
+msgid "Note"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__number
+msgid "Number"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__no_recapture_terminal_loss
+msgid ""
+"On disposition, the balance is dropped without recapture or terminal loss, "
+"and half of the allowance on the opening balance is allowed in the year of "
+"disposition (class 10.1, ITA 20(16.1), Reg. 1100(2.5))."
+msgstr ""
+
+#. module: l10n_ca_cca
+#. odoo-python
+#: code:addons/l10n_ca_cca/models/l10n_ca_cca_schedule.py:0
+msgid "Only a draft schedule can be generated."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__half_year_rule
+msgid ""
+"Only half of the net additions of the year enter the CCA base (Reg. "
+"1100(2)), unless the property is an accelerated investment incentive "
+"property or is expensed."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__opening_ucc
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Opening UCC"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__param_prefix
+msgid "Param Prefix"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__param_prefix
+msgid "Parameter code prefix of the class, after 'l10n_ca.cca.'."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_10_1
+msgid "Passenger vehicles over the prescribed cost"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_44
+msgid "Patents"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__previous_id
+msgid "Previous Schedule"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset__l10n_ca_cca_enhancement_excluded
+msgid "Previously Owned or Non-Arm's Length"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Print"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__capital_gain
+msgid "Proceeds in excess of the capital cost (T2 Schedule 6)."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule__total_capital_gain
+msgid "Proceeds in excess of the capital cost, to report on T2 Schedule 6."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__book_gain_loss
+msgid "Proceeds minus net book value of the assets removed during the year."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_account_asset__l10n_ca_cca_proceeds
+msgid "Proceeds of Disposition"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_account_asset__l10n_ca_cca_proceeds
+msgid ""
+"Proceeds received on disposition. Filled from the sale value entered in the "
+"asset removal wizard."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__property_remaining
+msgid "Property Remaining"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__proration
+msgid "Proration"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_search
+msgid "Quebec"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields.selection,name:l10n_ca_cca.selection__l10n_ca_cca_schedule__jurisdiction__quebec
+msgid "Quebec (CO-17)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__quebec_note
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_class_view_form
+msgid "Quebec Differences"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__rate
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Rate"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__current_rate
+msgid "Rate in force today, read from the class rate parameter."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__recapture
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Recapture"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Recapture of CCA (line 107)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Reconciliation of net income (Schedule 1)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__regular_factor
+msgid "Regular Factor"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model,name:l10n_ca_cca.model_account_asset_remove
+msgid "Remove Asset"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_17
+msgid "Roads, parking lots and other surface constructions"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__schedule_id
+msgid "Schedule"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Schedule 8"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__separate_class
+msgid "Separate Class per Property"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_class__sequence
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__class_sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: l10n_ca_cca
+#. odoo-python
+#: code:addons/l10n_ca_cca/models/l10n_ca_cca_schedule.py:0
+msgid ""
+"Set the CCA life of asset %(asset)s: class %(cca_class)s is written off "
+"straight-line."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__asset_id
+msgid "Set when the asset is a separate class (class 10.1)."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_account_asset__l10n_ca_cca_immediate_expensing
+msgid ""
+"Set when the class and dates fall in an immediate expensing window, or in "
+"the CCPC designated immediate expensing window. Clear it to leave the asset "
+"under the normal rules."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_account_asset__l10n_ca_cca_half_year_exempt
+msgid ""
+"Set when the cost is under the half-year exemption threshold of the class "
+"(class 12 small tools)."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_12
+msgid "Small tools, software, 100% property"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__property_remaining
+msgid ""
+"Some property of the class is still owned at the end of the year. When "
+"cleared, a positive balance is a terminal loss."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__state
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__state
+msgid "State"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__straight_line_amount
+msgid "Straight Line Amount"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_account_asset__l10n_ca_cca_life_years
+msgid ""
+"Straight-line classes only: lease term plus first renewal (class 13) or "
+"legal life (class 14)."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__straight_line_amount
+msgid ""
+"Straight-line classes: sum of the annual allowance of each asset, the first "
+"year reduced by the half-year rule or by days."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields.selection,name:l10n_ca_cca.selection__l10n_ca_cca_class__method__straight_line
+msgid "Straight-line over the life"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.account_asset_view_form
+msgid "Tax Depreciation (CCA)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__date_to
+msgid "Taxation Year End"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__date_from
+msgid "Taxation Year Start"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Taxation year"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__terminal_loss
+msgid "Terminal Loss"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Terminal loss"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Terminal loss (line 404)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#. odoo-python
+#: code:addons/l10n_ca_cca/models/l10n_ca_cca_schedule.py:0
+msgid "The CCA claimed cannot be negative."
+msgstr ""
+
+#. module: l10n_ca_cca
+#. odoo-python
+#: code:addons/l10n_ca_cca/models/l10n_ca_cca_schedule.py:0
+msgid ""
+"The CCA claimed for class %(cca_class)s (%(claimed)s) exceeds the maximum of"
+" %(maximum)s."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__immediate_expensing_eligible
+msgid ""
+"The class may hold designated immediate expensing property of a CCPC "
+"(parameter l10n_ca.cca.diep.windows). Classes 1 to 6, 14.1, 17, 47, 49 and "
+"51 are excluded by the regulations."
+msgstr ""
+
+#. module: l10n_ca_cca
+#. odoo-python
+#: code:addons/l10n_ca_cca/models/l10n_ca_cca_schedule.py:0
+msgid "The lines of a locked CCA schedule cannot change."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_account_asset__l10n_ca_cca_enhancement_excluded
+msgid ""
+"The property was owned before by the corporation or a person not dealing at "
+"arm's length, or was acquired on a rollover: it gets neither the accelerated"
+" investment incentive nor immediate expensing (Reg. 1104(4))."
+msgstr ""
+
+#. module: l10n_ca_cca
+#. odoo-python
+#: code:addons/l10n_ca_cca/models/l10n_ca_cca_schedule.py:0
+msgid "The schedule %s is locked."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.constraint,message:l10n_ca_cca.constraint_l10n_ca_cca_schedule_dates_order
+msgid "The taxation year must end after it starts."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_line_view_list
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_list
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Total"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_additions
+msgid "Total Additions"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_book_depreciation
+msgid "Total Book Depreciation"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_cca
+msgid "Total CCA Claimed"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_capital_gain
+msgid "Total Capital Gain"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_closing_ucc
+msgid "Total Closing Ucc"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_dispositions
+msgid "Total Dispositions"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_max_cca
+msgid "Total Maximum CCA"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_opening_ucc
+msgid "Total Opening Ucc"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_recapture
+msgid "Total Recapture"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule__total_terminal_loss
+msgid "Total Terminal Loss"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,field_description:l10n_ca_cca.field_l10n_ca_cca_schedule_line__ucc_before_cca
+msgid "UCC before CCA"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_line_view_form
+msgid "Undepreciated Capital Cost"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_schedule_line__opening_ucc
+msgid "Undepreciated capital cost at the start."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.l10n_ca_cca_schedule_view_form
+msgid "Unlock"
+msgstr ""
+
+#. module: l10n_ca_cca
+#. odoo-python
+#: code:addons/l10n_ca_cca/models/l10n_ca_cca_schedule.py:0
+msgid "Unlock %(later)s first: its opening balances come from this schedule."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:ir.model.fields,help:l10n_ca_cca.field_l10n_ca_cca_class__quebec_note
+msgid ""
+"Where the Quebec Taxation Act departs from the federal rules for this class."
+" A Quebec schedule reads a parameter l10n_ca.cca.qc.<key> first, then the "
+"federal one."
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.account_asset_view_search
+msgid "Without CCA Class"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_54
+msgid "Zero-emission passenger vehicles"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model:l10n.ca.cca.class,name:l10n_ca_cca.cca_class_55
+msgid "Zero-emission vehicles (other)"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "to"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "+ expensed:"
+msgstr ""
+
+#. module: l10n_ca_cca
+#: model_terms:ir.ui.view,arch_db:l10n_ca_cca.report_cca_schedule_document
+msgid "Expensed additions are deducted in full, outside the CCA base."
+msgstr ""
