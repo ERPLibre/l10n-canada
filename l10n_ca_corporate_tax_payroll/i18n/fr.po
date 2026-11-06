@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_corporate_tax_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 03:22+0000\n"
+"PO-Revision-Date: 2026-10-27 03:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_corporate_tax_payroll
+#: model:ir.model.fields,help:l10n_ca_corporate_tax_payroll.field_l10n_ca_paid_hours__l10n_ca_payroll_hours
+msgid ""
+"Counted hours of the done payslips of the fiscal year, capped at the weekly "
+"maximum per employee. They are included in the hours of the company: the "
+"manual lines only add the hours not paid through payroll."
+msgstr ""
+"Heures comptées des bulletins de paie terminés de l'exercice, plafonnées au "
+"maximum hebdomadaire par employé. Elles sont incluses dans les heures de la "
+"société : les lignes manuelles n'ajoutent que les heures non payées par la "
+"paie."
+
+#. module: l10n_ca_corporate_tax_payroll
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax_payroll.field_l10n_ca_paid_hours__l10n_ca_payroll_hours
+msgid "Hours from Payroll"
+msgstr "Heures provenant de la paie"
+
+#. module: l10n_ca_corporate_tax_payroll
+#: model:ir.model,name:l10n_ca_corporate_tax_payroll.model_l10n_ca_paid_hours
+msgid "Quebec SBD Remunerated Hours"
+msgstr "Heures rémunérées pour la DPE du Québec"
+
+#. module: l10n_ca_corporate_tax_payroll
+#: model:ir.model,name:l10n_ca_corporate_tax_payroll.model_hr_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: l10n_ca_corporate_tax_payroll
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax_payroll.field_hr_employee__l10n_ca_qc_sbd_majority_shareholder
+msgid "Majority Voting Shareholder"
+msgstr "Actionnaire majoritaire avec droit de vote"
+
+#. module: l10n_ca_corporate_tax_payroll
+#: model:ir.model.fields,help:l10n_ca_corporate_tax_payroll.field_hr_employee__l10n_ca_qc_sbd_majority_shareholder
+msgid ""
+"The employee holds, directly or indirectly, the majority of the voting "
+"shares of the company. The hours of the done payslips count in the Quebec "
+"small business deduction remunerated hours multiplied by the shareholder "
+"hours factor."
+msgstr ""
+"L'employé détient, directement ou indirectement, la majorité des actions "
+"avec droit de vote de la société. Les heures de ses bulletins de paie "
+"terminés comptent dans les heures rémunérées de la déduction pour petite "
+"entreprise du Québec, multipliées par le facteur des heures de "
+"l'actionnaire."
+
+#. module: l10n_ca_corporate_tax_payroll
+#: model:ir.model.fields,help:l10n_ca_corporate_tax_payroll.field_l10n_ca_paid_hours_line__source
+msgid ""
+"A person holding, directly or indirectly, the majority of the voting shares "
+"counts all the hours worked to take an active part in the business, paid or "
+"not, multiplied by the shareholder hours factor. The hours paid through "
+"payroll already count with that factor when the employee is flagged as "
+"majority voting shareholder: a manual line holds only the hours worked "
+"without pay. Other people count only paid hours."
+msgstr ""
+"Une personne détenant, directement ou indirectement, la majorité des actions"
+" avec droit de vote compte toutes les heures travaillées pour prendre une "
+"part active aux activités de la société, payées ou non, multipliées par le "
+"facteur des heures de l'actionnaire. Les heures payées par la paie comptent "
+"déjà avec ce facteur lorsque l'employé est indiqué comme actionnaire "
+"majoritaire avec droit de vote : une ligne manuelle ne contient que les "
+"heures travaillées sans rémunération. Les autres personnes ne comptent que "
+"les heures payées."
+
+#. module: l10n_ca_corporate_tax_payroll
+#: model:ir.model,name:l10n_ca_corporate_tax_payroll.model_l10n_ca_paid_hours_line
+msgid "Quebec SBD Remunerated Hours Line"
+msgstr "Ligne d'heures rémunérées pour la DPE du Québec"

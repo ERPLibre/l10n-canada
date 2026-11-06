@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_l10n_ca_paid_hours_form" model="ir.ui.view">
+        <field name="name">l10n.ca.paid.hours.form.payroll</field>
+        <field name="model">l10n.ca.paid.hours</field>
+        <field name="inherit_id" ref="l10n_ca_corporate_tax.view_l10n_ca_paid_hours_form" />
+        <field name="arch" type="xml">
+            <field name="own_hours" position="before">
+                <field name="l10n_ca_payroll_hours" />
+            </field>
+        </field>
+    </record>
+</odoo>
