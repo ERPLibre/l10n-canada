@@ -12,13 +12,20 @@ is an extension point for a provincial module:
 - ``_l10n_ca_ei_rate(date, province)``: employee EI rate.
 - ``_l10n_ca_compute_other_contributions(vals)``: provincial
   contributions computed before the income tax.
-- ``_l10n_ca_federal_k2_extra(vals, credit_rate)``: additional federal
-  credit for those contributions (K2 of the formulas).
+- ``_l10n_ca_federal_k2_items(vals)``: contributions that give the
+  federal K2 credit; a provincial module adds its own.
 - ``_l10n_ca_federal_abatement(province, date)``: abatement rate applied
   to the basic federal tax.
 - ``_l10n_ca_provincial_tax(vals)``: provincial tax for the period, or
   None when the province has no calculation, which the payslip reports as
   a warning instead of a silent zero.
+
+Bonuses, retroactive pay increases and other non-periodic payments are the
+rules of category ``CA_LUMP`` (B of the formulas), less the deductions of
+category ``CA_LUMP_DED`` withheld from them (F3). They are part of the
+gross: the contributions apply to the whole pay, while the income tax
+annualizes only the regular part I = gross - B and taxes B with the bonus
+formulas.
 """
 
 import math
@@ -35,7 +42,19 @@ from odoo.addons.l10n_ca_time_parameter.tools import bracket_constant, marginal_
 from .hr_contract import SCHEDULE_PAY_PERIODS
 
 # Rule codes whose year-to-date totals depend on the pension plan.
-PENSION_CODES = ("CA_PE", "CA_CPP", "CA_CPP2", "CA_CPP_ER", "CA_CPP2_ER")
+PENSION_CODES = (
+    "CA_PE",
+    "CA_CPP",
+    "CA_CPP2",
+    "CA_CPP_ER",
+    "CA_CPP2_ER",
+    "CA_F5B",
+)
+
+# Salary rule categories of the non-periodic payments (B) and of the
+# deductions withheld from them (F3).
+NONPERIODIC_CATEGORY = "CA_LUMP"
+NONPERIODIC_DEDUCTION_CATEGORY = "CA_LUMP_DED"
 
 
 def _round(amount):
@@ -46,20 +65,33 @@ class L10nCaPayrollRuleHelper:
     """Object exposed as ``l10n_ca`` to the code of the salary rules.
 
     ``get(contract, gross)`` returns the dictionary of
-    ``hr.payslip._l10n_ca_compute`` and computes it once per contract and
-    gross: the statutory rules each read one key without recomputing the
-    year-to-date totals. A helper is built for each payslip computation,
-    so a recomputation never reads the values of the previous one.
+    ``hr.payslip._l10n_ca_compute`` and computes it once per contract,
+    gross and non-periodic payments: the statutory rules each read one key
+    without recomputing the year-to-date totals. ``categories`` is the
+    object of the category totals of the payslip being computed, from
+    which the non-periodic payments and their deductions are read. A
+    helper is built for each payslip computation, so a recomputation never
+    reads the values of the previous one.
     """
 
-    def __init__(self, payslip):
+    def __init__(self, payslip, categories=None):
         self.payslip = payslip
+        self.categories = categories
         self.cache = {}
 
+    def _category_total(self, code):
+        if self.categories is None:
+            return 0.0
+        return self.categories.dict.get(code, 0.0)
+
     def get(self, contract, gross):
-        key = (contract.id, _round(gross))
+        nonperiodic = self._category_total(NONPERIODIC_CATEGORY)
+        deductions = -self._category_total(NONPERIODIC_DEDUCTION_CATEGORY)
+        key = (contract.id, _round(gross), _round(nonperiodic), _round(deductions))
         if key not in self.cache:
-            self.cache[key] = self.payslip._l10n_ca_compute(contract, gross)
+            self.cache[key] = self.payslip._l10n_ca_compute(
+                contract, gross, nonperiodic, deductions
+            )
         return self.cache[key]
 
     def period_wage(self, contract):
@@ -130,7 +162,7 @@ class HrPayslip(models.Model):
 
     def _get_baselocaldict(self, contracts):
         localdict = super()._get_baselocaldict(contracts)
-        localdict["l10n_ca"] = L10nCaPayrollRuleHelper(self)
+        localdict["l10n_ca"] = L10nCaPayrollRuleHelper(self, localdict["categories"])
         return localdict
 
     def localdict_hook(self, localdict):
@@ -177,14 +209,35 @@ class HrPayslip(models.Model):
         """Add provincial contributions to ``vals`` before the income tax."""
         return vals
 
-    def _l10n_ca_federal_k2_extra(self, vals, credit_rate):
-        """Return the federal credit of the contributions added above.
+    def _l10n_ca_federal_k2_items(self, vals):
+        """Return the contributions of the pay that give the K2 credit.
 
-        Same rule as the CPP and EI credits: ``credit_rate`` times the
-        annualized contribution, capped at the annual maximum, and the
-        maximum once it is reached in the year.
+        A dictionary of items {"period": amount of the pay the credit
+        counts, "reached": whether the annual maximum is reached in this
+        pay or a previous one, "maximum": annual maximum of the credited
+        amount}. ``_l10n_ca_federal_k2`` turns them into the credit: the
+        base part of the CPP/QPP contribution and the EI premium here.
         """
-        return 0.0
+        params = vals["pension_params"]
+        months = vals["pension_months"]
+        max_base = _round(
+            (params["ympe"] - params["basic_exemption"]) * params["base_rate"]
+        )
+        max_pension = vals["pension_max"] * months / 12
+        return {
+            "pension": {
+                "period": vals["cpp"] * params["base_rate"] / params["rate"],
+                "reached": bool(max_pension)
+                and vals["cpp"] + vals["ytd"]["cpp"] >= max_pension - 0.005,
+                "maximum": max_base * months / 12,
+            },
+            "ei": {
+                "period": vals["ei"],
+                "reached": bool(vals["ei_max"])
+                and vals["ei"] + vals["ytd"]["ei"] >= vals["ei_max"] - 0.005,
+                "maximum": vals["ei_max"],
+            },
+        }
 
     # ------------------------------------------------------------------
     # Computation
@@ -243,6 +296,8 @@ class HrPayslip(models.Model):
             "cpp": -totals["CA_CPP"],
             "cpp2": -totals["CA_CPP2"],
             "ei": -totals["CA_EI"],
+            "nonperiodic": totals["CA_NPP"],
+            "f5b": totals["CA_F5B"],
         }
 
     def _l10n_ca_line_totals(self, plan=None):
@@ -261,22 +316,46 @@ class HrPayslip(models.Model):
                 totals[line.code] += sign * line.total
         return totals
 
-    def _l10n_ca_compute(self, contract, gross):
+    def _l10n_ca_compute(self, contract, gross, nonperiodic=0.0, deductions=0.0):
         """Return the statutory amounts of ``contract`` for ``gross``.
 
-        Amounts are positive and rounded to the cent; the salary rules
-        give the deductions their negative sign.
+        ``nonperiodic`` is the part of ``gross`` paid as bonuses or other
+        non-periodic payments (B), ``deductions`` the deductions withheld
+        from them (F3). Amounts are positive and rounded to the cent; the
+        salary rules give the deductions their negative sign.
         """
         self.ensure_one()
-        vals = self._l10n_ca_prepare_values(contract, gross)
-        self._l10n_ca_compute_pension(vals)
-        self._l10n_ca_compute_ei(vals)
-        self._l10n_ca_compute_other_contributions(vals)
+        vals = self._l10n_ca_prepare_values(contract, gross, nonperiodic, deductions)
+        self._l10n_ca_compute_contributions(vals)
         self._l10n_ca_compute_federal_tax(vals)
         self._l10n_ca_compute_provincial_tax(vals)
         return vals
 
-    def _l10n_ca_prepare_values(self, contract, gross):
+    def _l10n_ca_compute_contributions(self, vals):
+        self._l10n_ca_compute_pension(vals)
+        self._l10n_ca_compute_ei(vals)
+        self._l10n_ca_compute_other_contributions(vals)
+        self._l10n_ca_compute_nonperiodic_share(vals)
+        return vals
+
+    def _l10n_ca_regular_values(self, vals, gross):
+        """Return the amounts of a pay of ``gross`` without bonus.
+
+        The contributions of that pay are the regular contributions that
+        the bonus formulas annualize in K2; the year-to-date amounts are
+        those of ``vals``.
+        """
+        regular = dict(
+            vals,
+            gross=gross,
+            nonperiodic=0.0,
+            nonperiodic_deductions=0.0,
+            nonperiodic_net=0.0,
+            warnings=[],
+        )
+        return self._l10n_ca_compute_contributions(regular)
+
+    def _l10n_ca_prepare_values(self, contract, gross, nonperiodic=0.0, deductions=0.0):
         province = contract.l10n_ca_province_id
         if not province:
             raise UserError(
@@ -288,6 +367,8 @@ class HrPayslip(models.Model):
             )
         date = self.l10n_ca_pay_date or self.date or self.date_to
         plan = self._l10n_ca_pension_plan(province)
+        nonperiodic = min(max(nonperiodic, 0.0), max(gross, 0.0))
+        deductions = min(max(deductions, 0.0), nonperiodic)
         return {
             "company": self.company_id,
             "contract": contract,
@@ -296,6 +377,9 @@ class HrPayslip(models.Model):
             "periods": contract.l10n_ca_pay_periods
             or SCHEDULE_PAY_PERIODS.get(contract.schedule_pay, 12),
             "gross": gross,
+            "nonperiodic": nonperiodic,
+            "nonperiodic_deductions": deductions,
+            "nonperiodic_net": _round(nonperiodic - deductions),
             "plan": plan,
             "pension_label": plan.upper(),
             "line_names": self._l10n_ca_pension_line_names(plan),
@@ -454,9 +538,7 @@ class HrPayslip(models.Model):
             return transfer
         cpp_params = self._l10n_ca_pension_params(vals["company"], "cpp", vals["date"])
         transfer["cpp"] = _round(other["cpp"] * params["rate"] / cpp_params["rate"])
-        transfer["cpp2"] = _round(
-            other["cpp2"] * params["rate2"] / cpp_params["rate2"]
-        )
+        transfer["cpp2"] = _round(other["cpp2"] * params["rate2"] / cpp_params["rate2"])
         return transfer
 
     def _l10n_ca_compute_ei(self, vals):
@@ -488,28 +570,61 @@ class HrPayslip(models.Model):
         )
         return vals
 
-    def _l10n_ca_compute_federal_tax(self, vals):
-        """Federal tax per period, T4127 option 1 for a regular salary.
+    def _l10n_ca_compute_nonperiodic_share(self, vals):
+        """F5 of the pay and its share F5B on the non-periodic payments.
 
-        A = P * (I - F5A), F5A being the enhanced part of the pension
-        contribution (first additional share of C, plus C2).
+        F5 = C * (rate - base rate) / rate + C2, the first and second
+        additional contributions of the pay; F5B = F5 * B / PI (T4127),
+        which TP-1015.F calls CSB. A pay without pensionable earnings has
+        no F5B.
+        """
+        params = vals["pension_params"]
+        f5 = vals["cpp"] * (params["rate"] - params["base_rate"]) / params["rate"]
+        f5 += vals["cpp2"]
+        pensionable = vals["pensionable"]
+        f5b = 0.0
+        if vals["nonperiodic"] and pensionable > 0:
+            f5b = _round(f5 * min(vals["nonperiodic"], pensionable) / pensionable)
+        vals.update({"f5": f5, "f5b": f5b})
+        return vals
+
+    def _l10n_ca_federal_k2(self, vals, credit_rate, regular=None):
+        """Return K2, the federal credit of the contributions of the pay.
+
+        Each item of ``_l10n_ca_federal_k2_items`` gives min(P * amount,
+        maximum), and the maximum once it is reached. With ``regular``, the
+        values of the same pay without its non-periodic payments, only the
+        regular amount is annualized and the share of the non-periodic
+        payments is added once: min(P * regular + (amount - regular),
+        maximum), as in the bonus example of T4127.
+        """
+        periods = vals["periods"]
+        items = self._l10n_ca_federal_k2_items(vals)
+        regular_items = (
+            items if regular is None else self._l10n_ca_federal_k2_items(regular)
+        )
+        total = 0.0
+        for key, item in items.items():
+            if item["reached"]:
+                total += item["maximum"]
+                continue
+            base = regular_items[key]["period"]
+            total += min(
+                periods * base + max(0.0, item["period"] - base), item["maximum"]
+            )
+        return credit_rate * total
+
+    def _l10n_ca_federal_annual_tax(self, vals, annual, employment_income, k2):
+        """Return (TC, T3, T1) for the annual taxable income ``annual``.
+
         T3 = R * A - K - K1 - K2 - K3 - K4, K being the constant of the
-        bracket rounded to the dollar as in the CRA tables.
-        T1 = T3 - abatement * T3. Tax per period = T1 / P + L.
+        bracket rounded to the dollar as in the CRA tables, K4 the credit
+        of the Canada employment amount on ``employment_income``;
+        T1 = T3 - abatement * T3.
         """
         company = vals["company"]
         contract = vals["contract"]
         date = vals["date"]
-        periods = vals["periods"]
-        gross = vals["gross"]
-        params = vals["pension_params"]
-        additional = contract.l10n_ca_additional_federal_tax
-        enhanced = vals["cpp"] * (params["rate"] - params["base_rate"]) / params["rate"]
-        annual = periods * (gross - enhanced - vals["cpp2"])
-        vals["federal_annual_income"] = annual
-        if annual <= 0:
-            vals["federal_tax"] = _round(additional)
-            return vals
         param = company._l10n_ca_param
         brackets = param("l10n_ca.federal.brackets", date)
         credit_rate = param("l10n_ca.federal.credit_rate", date)
@@ -517,42 +632,113 @@ class HrPayslip(models.Model):
         constant = float_round(bracket_constant(annual, brackets), precision_digits=0)
         claim = contract._l10n_ca_federal_claim(annual, date)
         k1 = credit_rate * claim
-        max_base = _round(
-            (params["ympe"] - params["basic_exemption"]) * params["base_rate"]
-        )
-        # Once the annual maximum is reached, in this pay or a previous
-        # one, the credit uses the maximum for the rest of the year.
-        max_pension = vals["pension_max"] * vals["pension_months"] / 12
-        if vals["cpp"] + vals["ytd"]["cpp"] >= max_pension - 0.005 and max_pension:
-            pension_credit = max_base * vals["pension_months"] / 12
-        else:
-            pension_credit = min(
-                periods * vals["cpp"] * params["base_rate"] / params["rate"],
-                max_base * vals["pension_months"] / 12,
-            )
-        if vals["ei"] + vals["ytd"]["ei"] >= vals["ei_max"] - 0.005 and vals["ei_max"]:
-            ei_credit = vals["ei_max"]
-        else:
-            ei_credit = min(periods * vals["ei"], vals["ei_max"])
-        k2 = (
-            credit_rate * pension_credit
-            + credit_rate * ei_credit
-            + self._l10n_ca_federal_k2_extra(vals, credit_rate)
-        )
         k3 = contract.l10n_ca_federal_other_credits
         k4 = min(
-            credit_rate * periods * gross,
+            credit_rate * employment_income,
             credit_rate * param("l10n_ca.federal.canada_employment_amount", date),
         )
         basic_tax = max(0.0, rate * annual - constant - k1 - k2 - k3 - k4)
         abatement = self._l10n_ca_federal_abatement(vals["province"], date)
-        annual_tax = max(0.0, basic_tax - abatement * basic_tax)
+        return claim, basic_tax, max(0.0, basic_tax - abatement * basic_tax)
+
+    def _l10n_ca_compute_federal_tax(self, vals):
+        """Federal tax per period, T4127 option 1.
+
+        Regular pay: A = P * (I - F5A), I = gross - B, F5A = F5 * (PI - B)
+        / PI; tax per period = T1 / P + L. Non-periodic payments add TB
+        (``_l10n_ca_federal_bonus_tax``).
+        """
+        company = vals["company"]
+        contract = vals["contract"]
+        periods = vals["periods"]
+        nonperiodic = vals["nonperiodic"]
+        regular_gross = vals["gross"] - nonperiodic
+        f5a = vals["f5"]
+        if nonperiodic and vals["pensionable"] > 0:
+            f5a = vals["f5"] * (vals["pensionable"] - nonperiodic) / vals["pensionable"]
+        regular = vals
+        if nonperiodic:
+            regular = self._l10n_ca_regular_values(vals, regular_gross)
+        additional = _round(contract.l10n_ca_additional_federal_tax)
+        annual = periods * (regular_gross - f5a)
         vals.update(
             {
-                "federal_claim": claim,
-                "federal_basic_tax": basic_tax,
-                "federal_annual_tax": annual_tax,
-                "federal_tax": _round(annual_tax / periods) + _round(additional),
+                "federal_annual_income": annual,
+                "federal_regular_tax": 0.0,
+                "federal_bonus_tax": 0.0,
+            }
+        )
+        if annual > 0:
+            credit_rate = company._l10n_ca_param(
+                "l10n_ca.federal.credit_rate", vals["date"]
+            )
+            k2 = self._l10n_ca_federal_k2(regular, credit_rate)
+            claim, basic_tax, annual_tax = self._l10n_ca_federal_annual_tax(
+                vals, annual, periods * regular_gross, k2
+            )
+            vals.update(
+                {
+                    "federal_claim": claim,
+                    "federal_basic_tax": basic_tax,
+                    "federal_annual_tax": annual_tax,
+                    "federal_regular_tax": _round(annual_tax / periods),
+                }
+            )
+        if nonperiodic:
+            self._l10n_ca_federal_bonus_tax(vals, regular, f5a)
+        vals["federal_tax"] = (
+            vals["federal_regular_tax"] + vals["federal_bonus_tax"] + additional
+        )
+        return vals
+
+    def _l10n_ca_federal_bonus_tax(self, vals, regular, f5a):
+        """TB, the federal tax on the non-periodic payments of the pay.
+
+        Regular bonus calculation of T4127: TB = T1 of A with the payment
+        payable now less T1 of A without it, where
+        A = P * (I - F5A) + (B - F3 - F5B) + (B1 - F5BYTD), the last term
+        dropped without the payment. B1 and F5BYTD are the year-to-date
+        totals of rules CA_NPP and CA_F5B. K2 adds the contributions on
+        the payment once (``_l10n_ca_federal_k2``). When A with the
+        payment is at most ``l10n_ca.federal.bonus_flat_threshold``, TB is
+        the flat rate of the payment less F3, a rate of its own in Quebec.
+        """
+        company = vals["company"]
+        date = vals["date"]
+        periods = vals["periods"]
+        param = company._l10n_ca_param
+        regular_gross = regular["gross"]
+        base = max(0.0, periods * (regular_gross - f5a))
+        payment = max(0.0, vals["nonperiodic_net"] - vals["f5b"])
+        previous = max(0.0, vals["ytd"]["nonperiodic"] - vals["ytd"]["f5b"])
+        with_payment = base + payment + previous
+        flat_rate_code = (
+            "l10n_ca.federal.bonus_flat_rate_qc"
+            if vals["province"].code == "QC"
+            else "l10n_ca.federal.bonus_flat_rate"
+        )
+        if with_payment <= param("l10n_ca.federal.bonus_flat_threshold", date):
+            bonus_tax = param(flat_rate_code, date) * vals["nonperiodic_net"]
+        else:
+            credit_rate = param("l10n_ca.federal.credit_rate", date)
+            income = periods * regular_gross + vals["ytd"]["nonperiodic"]
+            tax_with = self._l10n_ca_federal_annual_tax(
+                vals,
+                with_payment,
+                income + vals["nonperiodic_net"],
+                self._l10n_ca_federal_k2(vals, credit_rate, regular),
+            )[2]
+            tax_without = self._l10n_ca_federal_annual_tax(
+                vals,
+                base + previous,
+                income,
+                self._l10n_ca_federal_k2(regular, credit_rate),
+            )[2]
+            bonus_tax = max(0.0, tax_with - tax_without)
+        vals.update(
+            {
+                "federal_bonus_income": with_payment,
+                "federal_bonus_tax": _round(bonus_tax),
             }
         )
         return vals

@@ -28,6 +28,26 @@
         <field name="code">COMP</field>
         <field name="company_id" eval="False" />
     </record>
+    <!-- B of the bonus formulas: the rules of these two categories must
+         run before the statutory rules (sequence below 100), which read
+         the category totals once. -->
+    <record id="categ_lump" model="hr.salary.rule.category">
+        <field name="name">Bonuses and Lump-Sum Payments</field>
+        <field name="code">CA_LUMP</field>
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Non-periodic payments taxed with the bonus formulas (B of T4127, B2 of TP-1015.F): bonus, retroactive pay increase, accumulated overtime or vacation pay not taken. They are part of the gross remuneration. Give the rules a sequence below 100.</field>
+    </record>
+    <record id="categ_lump_ded" model="hr.salary.rule.category">
+        <field name="name">Deduction From a Bonus or Lump-Sum Payment</field>
+        <field name="code">CA_LUMP_DED</field>
+        <field name="parent_id" ref="categ_ded" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >RPP or RRSP contributions withheld from the non-periodic payments of the period (F3 of T4127; the reduction of B2 in TP-1015.F). They lower the payment taxed with the bonus formulas. Give the rules a sequence below 100.</field>
+    </record>
 
     <!-- Payee of the federal source deductions -->
     <record id="partner_receiver_general" model="res.partner">
@@ -57,6 +77,27 @@
             name="note"
         >Monthly wage of the contract converted to the pay period: wage * 12 / pay periods per year.</field>
     </record>
+    <record id="rule_bonus" model="hr.salary.rule">
+        <field name="name">Bonus</field>
+        <field name="code">CA_BONUS</field>
+        <field name="sequence">20</field>
+        <field name="category_id" ref="categ_lump" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = bool(inputs.CA_BONUS and inputs.CA_BONUS.amount)</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = inputs.CA_BONUS.amount</field>
+        <field
+            name="note"
+        >Amount of the Bonus input of the payslip, taxed with the bonus formulas of T4127 and TP-1015.F.</field>
+    </record>
+    <record id="rule_input_bonus" model="hr.rule.input">
+        <field name="name">Bonus</field>
+        <field name="code">CA_BONUS</field>
+        <field name="input_id" ref="rule_bonus" />
+    </record>
     <record id="rule_gross" model="hr.salary.rule">
         <field name="name">Gross</field>
         <field name="code">GROSS</field>
@@ -64,7 +105,9 @@
         <field name="category_id" ref="categ_gross" />
         <field name="company_id" eval="False" />
         <field name="amount_select">code</field>
-        <field name="amount_python_compute">result = categories.BASIC</field>
+        <field
+            name="amount_python_compute"
+        >result = categories.BASIC + categories.CA_LUMP</field>
         <field
             name="note"
         >Taxable, pensionable and insurable remuneration of the period (box 14 of the T4).</field>
@@ -91,6 +134,20 @@
             name="amount_python_compute"
         >result = l10n_ca.get(contract, categories.GROSS)["insurable"]</field>
     </record>
+    <record id="rule_nonperiodic" model="hr.salary.rule">
+        <field name="name">Non-Periodic Payments Less Their Deductions</field>
+        <field name="code">CA_NPP</field>
+        <field name="sequence">113</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["nonperiodic_net"]</field>
+        <field
+            name="note"
+        >B - F3 of T4127, B2 of TP-1015.F: its year-to-date total is B1 of the bonus formulas.</field>
+    </record>
 
     <!-- Employee deductions -->
     <record id="rule_cpp" model="hr.salary.rule">
@@ -116,6 +173,20 @@ result_name = ca["line_names"]["CA_CPP"]</field>
         <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
 result = -ca["cpp2"]
 result_name = ca["line_names"]["CA_CPP2"]</field>
+    </record>
+    <record id="rule_f5b" model="hr.salary.rule">
+        <field name="name">Additional CPP/QPP Contributions on Non-Periodic Payments</field>
+        <field name="code">CA_F5B</field>
+        <field name="sequence">122</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["f5b"]</field>
+        <field
+            name="note"
+        >F5B of T4127, CSB of TP-1015.F: the first and second additional contributions of the period times B / PI. Its year-to-date total is F5BYTD and CSB1.</field>
     </record>
     <record id="rule_ei" model="hr.salary.rule">
         <field name="name">EI Premiums</field>
@@ -215,11 +286,14 @@ result_name = ca["line_names"]["CA_CPP2_ER"]</field>
             name="rule_ids"
             eval="[(6, 0, [
                 ref('rule_basic'),
+                ref('rule_bonus'),
                 ref('rule_gross'),
                 ref('rule_pensionable'),
                 ref('rule_insurable'),
+                ref('rule_nonperiodic'),
                 ref('rule_cpp'),
                 ref('rule_cpp2'),
+                ref('rule_f5b'),
                 ref('rule_ei'),
                 ref('rule_federal_tax'),
                 ref('rule_provincial_tax'),

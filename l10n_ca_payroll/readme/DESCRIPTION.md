@@ -11,6 +11,15 @@ Canadian federal payroll on top of the OCA payroll.
   the maximum insurable earnings, employer EI at 1.4 times the employee
   premium. Year-to-date maximums come from the done payslips of the
   calendar year.
+- Bonuses, retroactive pay increases and other non-periodic payments: the
+  *Bonus* input of the payslip, or any rule of category *Bonuses and
+  Lump-Sum Payments*, is part of the gross and of the CPP and EI
+  earnings, but only the regular pay is annualized. The federal tax on the
+  payment is the regular bonus calculation of T4127 (tax on the annual
+  income with the payment less the tax without it, previous payments of
+  the year included), or a flat rate when that income is at most 5,000.
+  RPP or RRSP contributions withheld from the payment go in category
+  *Deduction From a Bonus or Lump-Sum Payment*.
 - Every rate, ceiling, bracket table, credit amount and due date is a dated
   time parameter (`l10n_ca.federal.*`, `l10n_ca.cpp.*`, `l10n_ca.ei.*`,
   `l10n_ca.pd7a.*`, `l10n_ca.t4.*`) shipped for 2025 and 2026, and 2027
@@ -30,7 +39,7 @@ Canadian federal payroll on top of the OCA payroll.
 
 Extension points for a provincial module, on `hr.payslip`:
 `_l10n_ca_pension_plan`, `_l10n_ca_ei_rate`,
-`_l10n_ca_compute_other_contributions`, `_l10n_ca_federal_k2_extra`,
+`_l10n_ca_compute_other_contributions`, `_l10n_ca_federal_k2_items`,
 `_l10n_ca_federal_abatement`, `_l10n_ca_provincial_tax`,
 `_l10n_ca_t4_values`, `_l10n_ca_remittance_values`. Employees working in
 Quebec contribute to the QPP, whose rates (`l10n_ca.qpp.*`) come with the

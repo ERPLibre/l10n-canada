@@ -156,6 +156,54 @@
         <field name="date_from">2026-01-01</field>
         <field name="value">0.165</field>
     </record>
+    <record id="param_federal_bonus_flat_threshold" model="base.time.parameter">
+        <field name="name">Federal flat tax on a bonus - income threshold</field>
+        <field name="code">l10n_ca.federal.bonus_flat_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">When the annual taxable income A that includes the non-periodic payment payable now is at or below this amount, the federal tax on a bonus, retroactive pay increase or other non-periodic payment is a flat rate of the payment instead of the difference TB (T4127 option 1, tax calculation formulas for bonuses, step 1 note). Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html</field>
+    </record>
+    <record
+        id="param_federal_bonus_flat_threshold_20250101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_federal_bonus_flat_threshold" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">5000</field>
+    </record>
+    <record id="param_federal_bonus_flat_rate" model="base.time.parameter">
+        <field name="name">Federal flat tax on a bonus - rate</field>
+        <field name="code">l10n_ca.federal.bonus_flat_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Rate withheld from a bonus, retroactive pay increase or other non-periodic payment when the annual taxable income including it is at or below l10n_ca.federal.bonus_flat_threshold, outside Quebec (T4127 option 1, tax calculation formulas for bonuses, step 1 note). Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html</field>
+    </record>
+    <record
+        id="param_federal_bonus_flat_rate_20250101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_federal_bonus_flat_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.15</field>
+    </record>
+    <record id="param_federal_bonus_flat_rate_qc" model="base.time.parameter">
+        <field name="name">Federal flat tax on a bonus - rate in Quebec</field>
+        <field name="code">l10n_ca.federal.bonus_flat_rate_qc</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Same as l10n_ca.federal.bonus_flat_rate for an employment in Quebec (T4127 option 1, tax calculation formulas for bonuses, step 1 note: "deduct 15% tax (10% in Quebec)"). Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html</field>
+    </record>
+    <record
+        id="param_federal_bonus_flat_rate_qc_20250101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_federal_bonus_flat_rate_qc" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.10</field>
+    </record>
     <record id="param_cpp_ympe" model="base.time.parameter">
         <field name="name">CPP year's maximum pensionable earnings (YMPE)</field>
         <field name="code">l10n_ca.cpp.ympe</field>

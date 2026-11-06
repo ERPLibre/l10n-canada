@@ -232,7 +232,7 @@
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Basic personal amount, used as E1 for an employee who did not file form TP-1015.3-V (TP-1015.F-V, variable E1). Taxation Act, s. 752.0.0.1. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+        <field name="description">Basic personal amount, used as E1 for an employee who did not file form TP-1015.3-V (TP-1015.F-V, variable E1), and as the annual remuneration at or below which a lump-sum payment bears the flat rate l10n_ca.qc.lump_sum_flat_rate (TP-1015.F-V section 2.1.2, note). Taxation Act, s. 752.0.0.1. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
     </record>
     <record id="param_qc_bpa_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_qc_bpa" />
@@ -276,6 +276,24 @@
         <field name="parameter_id" ref="param_qc_labour_fund_credit_rate" />
         <field name="date_from">2026-01-01</field>
         <field name="value">0.15</field>
+    </record>
+    <record id="param_qc_lump_sum_flat_rate" model="base.time.parameter">
+        <field name="name">Quebec flat tax on a lump-sum payment - rate</field>
+        <field name="code">l10n_ca.qc.lump_sum_flat_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Rate withheld from a bonus, retroactive payment or other similar lump-sum payment when the annual salary and the lump-sum payments of the year total at most the basic personal amount l10n_ca.qc.bpa (TP-1015.F-V section 2.1.2, note: 18,571 in 2025, 18,952 in 2026). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf</field>
+    </record>
+    <record
+        id="param_qc_lump_sum_flat_rate_20250101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_qc_lump_sum_flat_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.07</field>
     </record>
     <record id="param_qc_worker_deduction_rate" model="base.time.parameter">
         <field name="name">Quebec deduction for workers - rate</field>

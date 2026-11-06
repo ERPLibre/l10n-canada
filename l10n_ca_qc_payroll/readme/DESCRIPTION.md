@@ -14,6 +14,11 @@ for employees whose province of employment is Quebec.
   taxable income, deduction for workers, deduction of the additional QPP
   contributions, TP-1015.3 claim (basic personal amount by default),
   deductions and credits authorized on a TP-1016, additional tax per pay.
+  Bonuses, retroactive payments and other similar lump-sum payments follow
+  the second method of section 2.1.2: the rate of the bracket of the
+  annual income that includes them, applied to the payment less its share
+  of the additional QPP contributions, or 7% when the annual salary and
+  the lump sums of the year are at most the basic personal amount.
 - Employer contributions: Health Services Fund (rate from the total payroll
   and the sector), contribution related to labour standards (CNT), CNESST
   premium at the rate of the company, WSDRF when the total payroll exceeds

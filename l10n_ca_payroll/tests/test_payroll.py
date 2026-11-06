@@ -17,6 +17,10 @@ from odoo.exceptions import UserError
 from odoo.tests import tagged
 
 from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.addons.l10n_ca_payroll.models.hr_payslip import HrPayslip
+
+# Federal K2 items without those a provincial module adds.
+FEDERAL_K2_ITEMS = HrPayslip._l10n_ca_federal_k2_items
 
 
 @tagged("post_install", "-at_install")
@@ -70,7 +74,21 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
             }
         )
 
-    def _slip(self, contract, date_from, date_to, done=False):
+    def _slip(self, contract, date_from, date_to, done=False, bonus=0.0):
+        inputs = []
+        if bonus:
+            inputs.append(
+                (
+                    0,
+                    0,
+                    {
+                        "name": "Bonus",
+                        "code": "CA_BONUS",
+                        "amount": bonus,
+                        "contract_id": contract.id,
+                    },
+                )
+            )
         slip = self.env["hr.payslip"].create(
             {
                 "employee_id": contract.employee_id.id,
@@ -79,6 +97,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
                 "company_id": self.company.id,
                 "date_from": date_from,
                 "date_to": date_to,
+                "input_line_ids": inputs,
             }
         )
         slip.compute_sheet()
@@ -383,6 +402,70 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         self.assertAlmostEqual(self._line(april, "CA_CPP"), -280.15)
 
     # ------------------------------------------------------------------
+    # Bonuses and other non-periodic payments
+    # ------------------------------------------------------------------
+
+    def test_bonus_example_t4127(self):
+        """Regular bonus calculation example of T4127: TB = 323.54.
+
+        1,000 a week, a bonus of 1,500 paid earlier in the year (F5BYTD
+        14.60) and a bonus of 2,500 payable now.
+        """
+        # 4,333.33 * 12 / 52 = 1,000.00 a week.
+        contract = self._contract(4333.33, schedule="weekly")
+        earlier = self._slip(
+            contract, "2026-02-02", "2026-02-08", done=True, bonus=1500.0
+        )
+        # C = 0.0595 * (2,500 - 67.30) = 144.75, F5 = 144.75 / 5.95 = 24.33
+        # F5B = 24.33 * 1,500 / 2,500 = 14.60, as in the example.
+        self._assert_lines(
+            earlier, {"GROSS": 2500.0, "CA_NPP": 1500.0, "CA_F5B": 14.60}
+        )
+        slip = self._slip(contract, "2026-07-20", "2026-07-26", bonus=2500.0)
+        # C = 0.0595 * (3,500 - 67.30) = 204.25, F5 = 34.3277,
+        # F5A = 34.3277 * 1,000 / 3,500 = 9.81, F5B = 24.52
+        # EI = 0.0163 * 3,500 = 57.05
+        # Regular pay: A = 52 * (1,000 - 9.8079) = 51,489.99
+        #   K2 = 0.14 * (52 * 55.50 * 4.95 / 5.95) + 0.14 * (52 * 16.30)
+        #      = 454.80
+        #   T3 = 0.14 * 51,489.99 - 2,303.28 - 454.80 - 210.14 = 4,240.38
+        #   -> 81.55
+        # TB: A with = 51,489.99 + (2,500 - 24.52) + (1,500 - 14.60);
+        #   K2 adds 0.14 * (123.75 * 4.95 / 5.95 + 40.75) = 23.03;
+        #   TB = 0.14 * 2,475.48 - 23.03 = 323.54
+        self._assert_lines(
+            slip,
+            {
+                "CA_BONUS": 2500.0,
+                "GROSS": 3500.0,
+                "CA_CPP": -204.25,
+                "CA_EI": -57.05,
+                "CA_NPP": 2500.0,
+                "CA_F5B": 24.52,
+                "CA_FIT": -(81.55 + 323.54),
+            },
+        )
+
+    def test_bonus_flat_rate(self):
+        """A at most 5,000 with the bonus: 15% of the bonus, 10% in Quebec."""
+        contract = self._contract(200.0)
+        slip = self._slip(contract, "2026-03-01", "2026-03-31", bonus=1000.0)
+        # A = 12 * 200 + 1,000 less the additional contributions < 5,000;
+        # the regular pay of 200 bears no federal tax.
+        self._assert_lines(slip, {"GROSS": 1200.0, "CA_FIT": -150.0})
+        self._qpp_parameters()
+        contract = self._contract(200.0, province=self.quebec)
+        slip = self._slip(contract, "2026-03-01", "2026-03-31", bonus=1000.0)
+        self._assert_lines(slip, {"CA_FIT": -100.0})
+
+    def test_bonus_leaves_the_regular_pay_unchanged(self):
+        """Without bonus input, the pay is the regular pay of the contract."""
+        contract = self._contract(5000.0)
+        slip = self._slip(contract, "2026-03-01", "2026-03-31")
+        self.assertFalse(slip.line_ids.filtered(lambda line: line.code == "CA_BONUS"))
+        self._assert_lines(slip, {"GROSS": 5000.0, "CA_NPP": 0.0, "CA_F5B": 0.0})
+
+    # ------------------------------------------------------------------
     # Quebec employee: QPP rates and federal abatement
     # ------------------------------------------------------------------
 
@@ -420,8 +503,8 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         # checked alone, whether or not a Quebec module adds a QPIP credit.
         with patch.object(
             type(self.env["hr.payslip"]),
-            "_l10n_ca_federal_k2_extra",
-            lambda payslip, vals, credit_rate: 0.0,
+            "_l10n_ca_federal_k2_items",
+            FEDERAL_K2_ITEMS,
         ):
             slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # QPP C = 0.063 * (5,000 - 291.66) = 296.63; EI = 0.013 * 5,000 = 65
@@ -449,12 +532,18 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         self._qpp_parameters()
         contract = self._contract(5000.0, province=self.quebec)
 
-        def qpip_credit(payslip, vals, credit_rate):
+        def qpip_items(payslip, vals):
             # QPIP 2026: 0.43% up to a maximum premium of 442.90.
-            return credit_rate * min(vals["periods"] * vals["gross"] * 0.0043, 442.90)
+            items = FEDERAL_K2_ITEMS(payslip, vals)
+            items["qpip"] = {
+                "period": vals["gross"] * 0.0043,
+                "reached": False,
+                "maximum": 442.90,
+            }
+            return items
 
         with patch.object(
-            type(self.env["hr.payslip"]), "_l10n_ca_federal_k2_extra", qpip_credit
+            type(self.env["hr.payslip"]), "_l10n_ca_federal_k2_items", qpip_items
         ):
             slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # K2 += 0.14 * 12 * 21.50 = 36.12 -> T3 = 5,302.20,

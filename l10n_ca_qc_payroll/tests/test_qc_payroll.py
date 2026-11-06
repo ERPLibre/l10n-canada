@@ -75,7 +75,21 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
             }
         )
 
-    def _slip(self, contract, date_from, date_to, done=False):
+    def _slip(self, contract, date_from, date_to, done=False, bonus=0.0):
+        inputs = []
+        if bonus:
+            inputs.append(
+                (
+                    0,
+                    0,
+                    {
+                        "name": "Bonus",
+                        "code": "CA_BONUS",
+                        "amount": bonus,
+                        "contract_id": contract.id,
+                    },
+                )
+            )
         slip = self.env["hr.payslip"].create(
             {
                 "employee_id": contract.employee_id.id,
@@ -84,6 +98,7 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
                 "company_id": self.company.id,
                 "date_from": date_from,
                 "date_to": date_to,
+                "input_line_ids": inputs,
             }
         )
         slip.compute_sheet()
@@ -316,6 +331,99 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
             slip,
             {"BASIC": 4000.0, "TEST_RPP": -200.0, "CA_CPP": -243.52, "CA_PIT": -444.51},
         )
+
+    def test_example_appendix_2(self):
+        """TP-1015.F appendix 2: tax on a retroactive payment, second method.
+
+        1,500 a week with an RPP contribution of 100; a retroactive payment
+        of 4,000 of which 400 go to the RPP.
+        """
+        Rule = self.env["hr.salary.rule"]
+        regular_rpp = Rule.create(
+            {
+                "name": "Registered Pension Plan",
+                "code": "TEST_RPP",
+                "sequence": 50,
+                "category_id": self.env.ref(
+                    "l10n_ca_qc_payroll.categ_qc_tax_deduction"
+                ).id,
+                "condition_select": "none",
+                "amount_select": "fix",
+                "amount_fix": -100.0,
+            }
+        )
+        lump_rpp = Rule.create(
+            {
+                "name": "Registered Pension Plan on the Retroactive Payment",
+                "code": "TEST_RPP_LUMP",
+                "sequence": 51,
+                "category_id": self.env.ref("l10n_ca_payroll.categ_lump_ded").id,
+                "condition_select": "none",
+                "amount_select": "fix",
+                "amount_fix": -400.0,
+            }
+        )
+        self.structure.rule_ids = [(4, regular_rpp.id), (4, lump_rpp.id)]
+        # 6,500 * 12 / 52 = 1,500.00 a week.
+        contract = self._contract(6500.0, schedule="weekly")
+        slip = self._slip(contract, "2026-05-11", "2026-05-17", bonus=4000.0)
+        # C = 0.063 * (5,500 - 67.30) = 342.26, CS = 342.26 / 6.3 = 54.327
+        # CSA = 54.327 * 1,500 / 5,500 = 14.82, CSB = 54.327 * 4,000 /
+        # 5,500 = 39.51; H = min(90, 1,450 / 52) = 27.88
+        # Regular pay: I = 52 * (1,500 - 100 - 27.88 - 14.82) = 70,579.60
+        #   Y = 0.19 * 70,579.60 - 2,717 - 0.14 * 18,952 = 8,039.84
+        #   -> 154.61
+        # Payment: I = 70,579.60 + 3,600 - 39.51 = 74,140.09 -> T = 19%
+        #   A = 0.19 * (3,600 - 39.51) = 676.49, as in the appendix.
+        self._assert_lines(
+            slip,
+            {
+                "GROSS": 5500.0,
+                "TEST_RPP": -100.0,
+                "TEST_RPP_LUMP": -400.0,
+                "CA_CPP": -342.26,
+                "CA_NPP": 3600.0,
+                "CA_F5B": 39.51,
+                "CA_PIT": -(154.61 + 676.49),
+            },
+        )
+
+    def test_lump_sum_flat_rate(self):
+        """Salary and lump sums of at most the basic personal amount: 7%."""
+        contract = self._contract(1000.0)
+        slip = self._slip(contract, "2026-03-01", "2026-03-31", bonus=2000.0)
+        # 12 * 1,000 + 2,000 = 14,000 <= 18,952: 7% of 2,000; the regular
+        # pay of 1,000 bears no Quebec tax.
+        self._assert_lines(slip, {"GROSS": 3000.0, "CA_PIT": -140.0})
+        slip.action_payslip_done()
+        slip = self._slip(contract, "2026-04-01", "2026-04-30", bonus=5000.0)
+        # 12,000 + 2,000 + 5,000 = 19,000 > 18,952: second method.
+        # March: C = 0.063 * (3,000 - 291.66) = 170.63, CS = 27.0841,
+        #   CSB1 = 27.0841 * 2,000 / 3,000 = 18.06
+        # April: C = 0.063 * (6,000 - 291.66) = 359.63, CS = 57.0841,
+        #   CSA = 9.51, CSB = 47.57, H = min(60, 120.83) = 60
+        #   I = 12 * (1,000 - 60 - 9.51) + 2,000 + 5,000 - 18.06 - 47.57
+        #     = 18,100.25 -> T = 14%; A = 0.14 * (5,000 - 47.57) = 693.34
+        self._assert_lines(slip, {"CA_F5B": 47.57, "CA_PIT": -693.34})
+
+    def test_bonus_counts_in_rl1_box_a(self):
+        """A bonus is employment income, pensionable and insurable."""
+        contract = self._contract(5000.0)
+        slip = self._slip(contract, "2026-03-01", "2026-03-31", done=True, bonus=1000.0)
+        # QPP C = 0.063 * (6,000 - 291.66) = 359.63; QPIP 0.0043 * 6,000
+        self._assert_lines(
+            slip,
+            {
+                "GROSS": 6000.0,
+                "CA_CPP": -359.63,
+                "CA_QPIP": -25.80,
+                "CA_QC_SAL": 6000.0,
+            },
+        )
+        values = slip._l10n_ca_qc_rl1_values(2026)
+        self.assertAlmostEqual(values["box_a"], 6000.0, places=2)
+        self.assertAlmostEqual(values["box_g"], 6000.0, places=2)
+        self.assertAlmostEqual(values["box_i"], 6000.0, places=2)
 
     def test_amounts_from_a_later_date(self):
         """J1 and K1 set after the first pay are spread over the pays left."""

@@ -48,6 +48,12 @@ msgid "A company has one year-end summary per year."
 msgstr "Une société a un seul sommaire de fin d'année par année."
 
 #. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_f5b
+msgid "Additional CPP/QPP Contributions on Non-Periodic Payments"
+msgstr ""
+"Cotisations supplémentaires au RPC/RRQ sur les paiements non périodiques"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_additional_federal_tax
 msgid "Additional Federal Tax per Pay"
 msgstr "Impôt fédéral supplémentaire par paie"
@@ -93,6 +99,16 @@ msgstr ""
 "fédéral de l'année, réduit pour les revenus élevés, comme lorsque l'employé "
 "ne remplit pas de TD1. Montant total de la demande : le montant du "
 "formulaire TD1, 0 pour le code de demande 0."
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_bonus
+msgid "Bonus"
+msgstr "Prime"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_lump
+msgid "Bonuses and Lump-Sum Payments"
+msgstr "Primes et paiements forfaitaires"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_14
@@ -377,6 +393,11 @@ msgstr ""
 #: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_ded
 msgid "Deduction"
 msgstr "Retenue"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_lump_ded
+msgid "Deduction From a Bonus or Lump-Sum Payment"
+msgstr "Retenue sur une prime ou un paiement forfaitaire"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_t4_dental_code
@@ -734,6 +755,11 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_remittance
 msgid "No remittance yet."
 msgstr "Aucun versement pour l'instant."
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_nonperiodic
+msgid "Non-Periodic Payments Less Their Deductions"
+msgstr "Paiements non périodiques moins leurs retenues"
 
 #. module: l10n_ca_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_search

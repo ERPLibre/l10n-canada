@@ -1,6 +1,7 @@
 1. Create the payslips of the period with the structure *Canada - Base*
    and compute them. The pay date is the accounting date of the payslip,
-   else its end date; it selects the calendar year of the maximums.
+   else its end date; it selects the calendar year of the maximums. A
+   bonus or retroactive payment goes in the *Bonus* input of the payslip.
 2. Check the warning on top of the payslip: outside the provinces with a
    module installed, the provincial income tax is not computed.
 3. Confirm the payslips: they post the payroll entry and count in the
