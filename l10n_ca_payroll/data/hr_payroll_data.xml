@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Salary rule categories -->
+    <record id="categ_basic" model="hr.salary.rule.category">
+        <field name="name">Basic</field>
+        <field name="code">BASIC</field>
+        <field name="company_id" eval="False" />
+    </record>
+    <record id="categ_gross" model="hr.salary.rule.category">
+        <field name="name">Gross</field>
+        <field name="code">GROSS</field>
+        <field name="company_id" eval="False" />
+    </record>
+    <record id="categ_ded" model="hr.salary.rule.category">
+        <field name="name">Deduction</field>
+        <field name="code">DED</field>
+        <field name="company_id" eval="False" />
+    </record>
+    <record id="categ_net" model="hr.salary.rule.category">
+        <field name="name">Net</field>
+        <field name="code">NET</field>
+        <field name="company_id" eval="False" />
+    </record>
+    <record id="categ_comp" model="hr.salary.rule.category">
+        <field name="name">Employer Contribution</field>
+        <field name="code">COMP</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <!-- Payee of the federal source deductions -->
+    <record id="partner_receiver_general" model="res.partner">
+        <field name="name">Receiver General for Canada</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+    </record>
+    <record id="register_receiver_general" model="hr.contribution.register">
+        <field name="name">Receiver General for Canada</field>
+        <field name="partner_id" ref="partner_receiver_general" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Federal source deductions (CPP, EI, income tax) remitted to the CRA.</field>
+    </record>
+
+    <!-- Earnings -->
+    <record id="rule_basic" model="hr.salary.rule">
+        <field name="name">Basic Salary</field>
+        <field name="code">BASIC</field>
+        <field name="sequence">10</field>
+        <field name="category_id" ref="categ_basic" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = l10n_ca.period_wage(contract)</field>
+        <field
+            name="note"
+        >Monthly wage of the contract converted to the pay period: wage * 12 / pay periods per year.</field>
+    </record>
+    <record id="rule_gross" model="hr.salary.rule">
+        <field name="name">Gross</field>
+        <field name="code">GROSS</field>
+        <field name="sequence">100</field>
+        <field name="category_id" ref="categ_gross" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = categories.BASIC</field>
+        <field
+            name="note"
+        >Taxable, pensionable and insurable remuneration of the period (box 14 of the T4).</field>
+    </record>
+    <record id="rule_pensionable" model="hr.salary.rule">
+        <field name="name">CPP/QPP Pensionable Earnings</field>
+        <field name="code">CA_PE</field>
+        <field name="sequence">110</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["pensionable"]</field>
+    </record>
+    <record id="rule_insurable" model="hr.salary.rule">
+        <field name="name">EI Insurable Earnings</field>
+        <field name="code">CA_IE</field>
+        <field name="sequence">111</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["insurable"]</field>
+    </record>
+
+    <!-- Employee deductions -->
+    <record id="rule_cpp" model="hr.salary.rule">
+        <field name="name">CPP/QPP Contributions</field>
+        <field name="code">CA_CPP</field>
+        <field name="sequence">120</field>
+        <field name="category_id" ref="categ_ded" />
+        <field name="register_id" ref="register_receiver_general" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = -ca["cpp"]
+result_name = ca["line_names"]["CA_CPP"]</field>
+    </record>
+    <record id="rule_cpp2" model="hr.salary.rule">
+        <field name="name">CPP2/QPP2 Contributions</field>
+        <field name="code">CA_CPP2</field>
+        <field name="sequence">121</field>
+        <field name="category_id" ref="categ_ded" />
+        <field name="register_id" ref="register_receiver_general" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = -ca["cpp2"]
+result_name = ca["line_names"]["CA_CPP2"]</field>
+    </record>
+    <record id="rule_ei" model="hr.salary.rule">
+        <field name="name">EI Premiums</field>
+        <field name="code">CA_EI</field>
+        <field name="sequence">130</field>
+        <field name="category_id" ref="categ_ded" />
+        <field name="register_id" ref="register_receiver_general" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = -l10n_ca.get(contract, categories.GROSS)["ei"]</field>
+    </record>
+    <record id="rule_federal_tax" model="hr.salary.rule">
+        <field name="name">Federal Income Tax</field>
+        <field name="code">CA_FIT</field>
+        <field name="sequence">140</field>
+        <field name="category_id" ref="categ_ded" />
+        <field name="register_id" ref="register_receiver_general" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = -l10n_ca.get(contract, categories.GROSS)["federal_tax"]</field>
+    </record>
+    <record id="rule_provincial_tax" model="hr.salary.rule">
+        <field name="name">Provincial Income Tax</field>
+        <field name="code">CA_PIT</field>
+        <field name="sequence">150</field>
+        <field name="category_id" ref="categ_ded" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = -ca["provincial_tax"]
+result_name = ca["provincial_tax_label"]</field>
+        <field
+            name="note"
+        >Computed by the module of the province. Without one, the line shows a warning and a zero amount.</field>
+    </record>
+
+    <!-- Net -->
+    <record id="rule_net" model="hr.salary.rule">
+        <field name="name">Net Salary</field>
+        <field name="code">NET</field>
+        <field name="sequence">200</field>
+        <field name="category_id" ref="categ_net" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = categories.GROSS + categories.DED</field>
+    </record>
+
+    <!-- Employer contributions -->
+    <record id="rule_cpp_employer" model="hr.salary.rule">
+        <field name="name">CPP/QPP Employer Contributions</field>
+        <field name="code">CA_CPP_ER</field>
+        <field name="sequence">300</field>
+        <field name="category_id" ref="categ_comp" />
+        <field name="register_id" ref="register_receiver_general" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["cpp_employer"]
+result_name = ca["line_names"]["CA_CPP_ER"]</field>
+    </record>
+    <record id="rule_cpp2_employer" model="hr.salary.rule">
+        <field name="name">CPP2/QPP2 Employer Contributions</field>
+        <field name="code">CA_CPP2_ER</field>
+        <field name="sequence">301</field>
+        <field name="category_id" ref="categ_comp" />
+        <field name="register_id" ref="register_receiver_general" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["cpp2_employer"]
+result_name = ca["line_names"]["CA_CPP2_ER"]</field>
+    </record>
+    <record id="rule_ei_employer" model="hr.salary.rule">
+        <field name="name">EI Employer Premiums</field>
+        <field name="code">CA_EI_ER</field>
+        <field name="sequence">310</field>
+        <field name="category_id" ref="categ_comp" />
+        <field name="register_id" ref="register_receiver_general" />
+        <field name="company_id" eval="False" />
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["ei_employer"]</field>
+    </record>
+
+    <!-- Structure -->
+    <record id="structure_ca_base" model="hr.payroll.structure">
+        <field name="name">Canada - Base</field>
+        <field name="code">CA_BASE</field>
+        <field name="parent_id" eval="False" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="rule_ids"
+            eval="[(6, 0, [
+                ref('rule_basic'),
+                ref('rule_gross'),
+                ref('rule_pensionable'),
+                ref('rule_insurable'),
+                ref('rule_cpp'),
+                ref('rule_cpp2'),
+                ref('rule_ei'),
+                ref('rule_federal_tax'),
+                ref('rule_provincial_tax'),
+                ref('rule_net'),
+                ref('rule_cpp_employer'),
+                ref('rule_cpp2_employer'),
+                ref('rule_ei_employer'),
+            ])]"
+        />
+        <field
+            name="note"
+        >Canadian federal payroll: CPP/QPP, CPP2/QPP2, EI and federal income tax per the CRA payroll deductions formulas (T4127). Provincial income tax comes from the module of each province.</field>
+    </record>
+</odoo>

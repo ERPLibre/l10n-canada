@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <menuitem
+        id="menu_l10n_ca_payroll_root"
+        name="Canada"
+        parent="payroll.payroll_menu_root"
+        sequence="90"
+        groups="payroll.group_payroll_user"
+    />
+    <menuitem
+        id="menu_l10n_ca_payroll_t4_summary"
+        name="T4 Year-End"
+        parent="menu_l10n_ca_payroll_root"
+        action="action_l10n_ca_payroll_t4_summary"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_l10n_ca_payroll_remittance"
+        name="Remittances (PD7A)"
+        parent="menu_l10n_ca_payroll_root"
+        action="action_l10n_ca_payroll_remittance"
+        sequence="20"
+    />
+    <menuitem
+        id="menu_l10n_ca_payroll_time_parameter"
+        name="Canadian Time Parameters"
+        parent="payroll.payroll_menu_configuration"
+        action="l10n_ca_time_parameter.action_l10n_ca_time_parameter"
+        groups="base_time_parameter.group_time_parameter"
+        sequence="90"
+    />
+</odoo>

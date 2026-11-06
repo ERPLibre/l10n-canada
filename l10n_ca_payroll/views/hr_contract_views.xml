@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="hr_contract_view_form" model="ir.ui.view">
+        <field name="name">hr.contract.form.l10n_ca_payroll</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Canadian Payroll" name="l10n_ca_payroll">
+                    <group>
+                        <group name="l10n_ca_employment" string="Employment">
+                            <field name="l10n_ca_province_id" />
+                            <field name="l10n_ca_pay_periods" />
+                            <field name="l10n_ca_cpp_exempt" />
+                            <field name="l10n_ca_ei_exempt" />
+                            <field name="l10n_ca_t4_dental_code" />
+                        </group>
+                        <group name="l10n_ca_td1_federal" string="Federal TD1">
+                            <field name="l10n_ca_td1_federal_type" />
+                            <field
+                                name="l10n_ca_td1_federal_bpa"
+                                invisible="l10n_ca_td1_federal_type != 'basic'"
+                            />
+                            <field
+                                name="l10n_ca_td1_federal_amount"
+                                invisible="l10n_ca_td1_federal_type != 'custom'"
+                            />
+                            <field name="l10n_ca_additional_federal_tax" />
+                            <field name="l10n_ca_federal_other_credits" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

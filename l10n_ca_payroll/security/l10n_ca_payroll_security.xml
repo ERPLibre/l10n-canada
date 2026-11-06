@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="l10n_ca_payroll_t4_summary_rule_company" model="ir.rule">
+        <field name="name">T4 Summary: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_payroll_t4_summary" />
+        <field name="global" eval="True" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="l10n_ca_payroll_t4_slip_rule_company" model="ir.rule">
+        <field name="name">T4 Slip: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_payroll_t4_slip" />
+        <field name="global" eval="True" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="l10n_ca_payroll_remittance_rule_company" model="ir.rule">
+        <field name="name">Payroll Remittance: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_payroll_remittance" />
+        <field name="global" eval="True" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

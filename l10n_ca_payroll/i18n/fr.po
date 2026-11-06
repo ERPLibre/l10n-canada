@@ -1,0 +1,1047 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 03:22+0000\n"
+"PO-Revision-Date: 2026-10-27 03:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_t4_dental_code__1
+msgid "1 - Not eligible to any dental care coverage"
+msgstr "1 - Non admissible à toute couverture de soins dentaires"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_t4_dental_code__2
+msgid "2 - Payee only"
+msgstr "2 - Bénéficiaire seulement"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_t4_dental_code__3
+msgid "3 - Payee, spouse and dependent children"
+msgstr ""
+"3 - Bénéficiaire, son époux ou conjoint de fait et ses enfants à charge"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_t4_dental_code__4
+msgid "4 - Payee and spouse"
+msgstr "4 - Bénéficiaire et son époux ou conjoint de fait"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_t4_dental_code__5
+msgid "5 - Payee and dependent children"
+msgstr "5 - Bénéficiaire et ses enfants à charge"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.constraint,message:l10n_ca_payroll.constraint_l10n_ca_payroll_t4_summary_company_year_unique
+msgid "A company has one year-end summary per year."
+msgstr "Une société a un seul sommaire de fin d'année par année."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_additional_federal_tax
+msgid "Additional Federal Tax per Pay"
+msgstr "Impôt fédéral supplémentaire par paie"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_additional_federal_tax
+msgid "Additional tax requested by the employee on the TD1 form."
+msgstr "Impôt supplémentaire demandé par l'employé sur le formulaire TD1."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__amount_paid
+msgid "Amount Paid"
+msgstr "Montant payé"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_82
+msgid "Amounts paid on the remittances of the year."
+msgstr "Montants payés sur les versements de l'année."
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_basic
+msgid "Basic"
+msgstr "Base"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_basic
+msgid "Basic Salary"
+msgstr "Salaire de base"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_td1_federal_type__basic
+msgid "Basic personal amount"
+msgstr "Montant personnel de base"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_td1_federal_type
+msgid ""
+"Basic personal amount: the claim is the federal basic personal amount of the"
+" year, reduced for high incomes, as when the employee files no TD1. Total "
+"claim amount: the amount of the TD1 form, 0 for claim code 0."
+msgstr ""
+"Montant personnel de base : la demande est le montant personnel de base "
+"fédéral de l'année, réduit pour les revenus élevés, comme lorsque l'employé "
+"ne remplit pas de TD1. Montant total de la demande : le montant du "
+"formulaire TD1, 0 pour le code de demande 0."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_14
+msgid "Box 14 - Employment Income"
+msgstr "Case 14 - Revenus d'emploi"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_16
+msgid "Box 16 - CPP Contributions"
+msgstr "Case 16 - Cotisations de l'employé au RPC"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_16a
+msgid "Box 16A - Second CPP Contributions"
+msgstr "Case 16A - Deuxièmes cotisations de l'employé au RPC"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_17
+msgid "Box 17 - QPP Contributions"
+msgstr "Case 17 - Cotisations de l'employé au RRQ"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_17a
+msgid "Box 17A - Second QPP Contributions"
+msgstr "Case 17A - Deuxièmes cotisations de l'employé au RRQ"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_18
+msgid "Box 18 - EI Premiums"
+msgstr "Case 18 - Cotisations de l'employé à l'AE"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_22
+msgid "Box 22 - Income Tax Deducted"
+msgstr "Case 22 - Impôt sur le revenu retenu"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_24
+msgid "Box 24 - EI Insurable Earnings"
+msgstr "Case 24 - Gains assurables d'AE"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_26
+msgid "Box 26 - CPP/QPP Pensionable Earnings"
+msgstr "Case 26 - Gains ouvrant droit à pension - RPC/RRQ"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__cpp_exempt
+msgid "Box 28 - CPP/QPP Exempt"
+msgstr "Case 28 - Exemption RPC/RRQ"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__ei_exempt
+msgid "Box 28 - EI Exempt"
+msgstr "Case 28 - Exemption AE"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_44
+msgid "Box 44 - Union Dues"
+msgstr "Case 44 - Cotisations syndicales"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_45
+msgid "Box 45 - Employer-Offered Dental Benefits"
+msgstr "Case 45 - Prestations dentaires offertes par l'employeur"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_slip_view_form
+msgid "Boxes"
+msgstr "Cases"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_payslip__l10n_ca_pension_plan__cpp
+msgid "CPP"
+msgstr "RPC"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid "CPP Contributions"
+msgstr "Cotisations au RPC"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__cpp_employee
+msgid "CPP Employee"
+msgstr "RPC - employé"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__cpp_employer
+msgid "CPP Employer"
+msgstr "RPC - employeur"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid "CPP Employer Contributions"
+msgstr "Cotisations de l'employeur au RPC"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_cpp
+msgid "CPP/QPP Contributions"
+msgstr "Cotisations au RPC/RRQ"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_cpp_employer
+msgid "CPP/QPP Employer Contributions"
+msgstr "Cotisations de l'employeur au RPC/RRQ"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_pensionable
+msgid "CPP/QPP Pensionable Earnings"
+msgstr "Gains ouvrant droit à pension - RPC/RRQ"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid "CPP2 Contributions"
+msgstr "Deuxièmes cotisations au RPC"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__cpp2_employee
+msgid "CPP2 Employee"
+msgstr "RPC2 - employé"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__cpp2_employer
+msgid "CPP2 Employer"
+msgstr "RPC2 - employeur"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid "CPP2 Employer Contributions"
+msgstr "Deuxièmes cotisations de l'employeur au RPC"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_cpp2
+msgid "CPP2/QPP2 Contributions"
+msgstr "Deuxièmes cotisations au RPC/RRQ"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_cpp2_employer
+msgid "CPP2/QPP2 Employer Contributions"
+msgstr "Deuxièmes cotisations de l'employeur au RPC/RRQ"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
+msgid "CRA Payroll Account"
+msgstr "Compte de retenues sur la paie de l'ARC"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_res_company__l10n_ca_payroll_account_number
+#: model:ir.model.fields,help:l10n_ca_payroll.field_res_config_settings__l10n_ca_payroll_account_number
+msgid ""
+"CRA payroll program account (business number followed by RP and four "
+"digits), printed on the T4 slips and the remittance vouchers."
+msgstr ""
+"Numéro de compte de programme de retenues sur la paie de l'ARC (numéro "
+"d'entreprise suivi de RP et de quatre chiffres), imprimé sur les feuillets "
+"T4 et les bordereaux de versement."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__csv_file
+msgid "CSV File"
+msgstr "Fichier CSV"
+
+#. module: l10n_ca_payroll
+#: model:ir.ui.menu,name:l10n_ca_payroll.menu_l10n_ca_payroll_root
+msgid "Canada"
+msgstr "Canada"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.hr_contract_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
+msgid "Canadian Payroll"
+msgstr "Paie canadienne"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_payslip__l10n_ca_warning
+msgid "Canadian Payroll Warning"
+msgstr "Avertissement de paie canadienne"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.hr_payslip_view_search
+msgid "Canadian Payroll Warnings"
+msgstr "Avertissements de paie canadienne"
+
+#. module: l10n_ca_payroll
+#: model:ir.ui.menu,name:l10n_ca_payroll.menu_l10n_ca_payroll_time_parameter
+msgid "Canadian Time Parameters"
+msgstr "Paramètres temporels canadiens"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__company_id
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__company_id
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
+msgid "Compute Remittances"
+msgstr "Calculer les versements"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
+msgid "Compute T4 Slips"
+msgstr "Calculer les feuillets T4"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_t4.py:0
+msgid "Compute the T4 slips before exporting them."
+msgstr "Calculez les feuillets T4 avant de les exporter."
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_t4.py:0
+msgid "Compute the remittances before exporting them."
+msgstr "Calculez les versements avant de les exporter."
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_t4_summary
+msgid "Create the year-end summary of a calendar year."
+msgstr "Créez le sommaire de fin d'année d'une année civile."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__create_date
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__create_date
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__csv_filename
+msgid "Csv Filename"
+msgstr "Nom du fichier CSV"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__total
+msgid "Current Source Deductions"
+msgstr "Retenues sur la paie courantes"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_remittance__due_date
+msgid ""
+"Date the CRA must receive the remittance. A due date on a Saturday or a "
+"Sunday moves to the next Monday; a due date on a public holiday moves to the"
+" next business day, which this date does not show."
+msgstr ""
+"Date à laquelle l'ARC doit recevoir le versement. Une échéance qui tombe un "
+"samedi ou un dimanche est reportée au lundi suivant; une échéance qui tombe "
+"un jour férié est reportée au jour ouvrable suivant, ce que cette date ne "
+"montre pas."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_payslip__l10n_ca_pay_date
+msgid ""
+"Date the remuneration is paid: the accounting date of the payslip, else its "
+"end date. It selects the calendar year of the maximums and the remittance "
+"period."
+msgstr ""
+"Date de versement de la rémunération : la date comptable du bulletin de "
+"paie, sinon sa date de fin. Elle détermine l'année civile des maximums et la"
+" période de versement."
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_ded
+msgid "Deduction"
+msgstr "Retenue"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_t4_dental_code
+msgid ""
+"Dental coverage offered to the employee by the employer, whether or not the "
+"employee uses it."
+msgstr ""
+"Couverture de soins dentaires offerte à l'employé par l'employeur, que "
+"l'employé s'en prévale ou non."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__display_name
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__display_name
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__due_date
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__due_date
+msgid "Due Date"
+msgstr "Échéance"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__ei_employee
+msgid "EI Employee"
+msgstr "AE - employé"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__ei_employer
+msgid "EI Employer"
+msgstr "AE - employeur"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_ei_employer
+msgid "EI Employer Premiums"
+msgstr "Cotisations de l'employeur à l'AE"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_insurable
+msgid "EI Insurable Earnings"
+msgstr "Gains assurables d'AE"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
+msgid "EI Premium Reduction"
+msgstr "Réduction du taux de cotisation à l'AE"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_ei
+msgid "EI Premiums"
+msgstr "Cotisations à l'AE"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__employee_id
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_slip_view_form
+msgid "Employee"
+msgstr "Employé"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__employee_count
+msgid "Employees in Last Pay Period"
+msgstr "Employés dans la dernière période de paie"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_remittance__employee_count
+msgid ""
+"Employees paid in the last pay period of the remittance period, added up "
+"over the payrolls of each pay frequency."
+msgstr ""
+"Employés payés dans la dernière période de paie de la période de versement, "
+"additionnés pour chaque fréquence de paie."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__employer_cpp
+msgid "Employer CPP"
+msgstr "RPC de l'employeur"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__employer_cpp2
+msgid "Employer CPP2"
+msgstr "RPC2 de l'employeur"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_comp
+msgid "Employer Contribution"
+msgstr "Cotisation de l'employeur"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__employer_ei
+msgid "Employer EI"
+msgstr "AE de l'employeur"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_slip_view_form
+msgid "Employer Share"
+msgstr "Part de l'employeur"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_t4_dental_code
+msgid "Employer-Offered Dental Benefits (T4 Box 45)"
+msgstr "Prestations dentaires offertes par l'employeur (case 45 du T4)"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.hr_contract_view_form
+msgid "Employment"
+msgstr "Emploi"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_cpp_exempt
+msgid "Exempt from CPP/QPP"
+msgstr "Exempté du RPC/RRQ"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_ei_exempt
+msgid "Exempt from EI"
+msgstr "Exempté de l'AE"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
+msgid "Export PD7A (CSV)"
+msgstr "Exporter le PD7A (CSV)"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
+msgid "Export T4 (CSV)"
+msgstr "Exporter les T4 (CSV)"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_td1_federal_bpa
+msgid "Federal Basic Personal Amount"
+msgstr "Montant personnel de base fédéral"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_federal_tax
+msgid "Federal Income Tax"
+msgstr "Impôt fédéral sur le revenu"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.hr_contract_view_form
+msgid "Federal TD1"
+msgstr "TD1 fédéral"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_td1_federal_type
+msgid "Federal TD1 Claim"
+msgstr "Demande TD1 fédérale"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_td1_federal_amount
+msgid "Federal TD1 Total Claim Amount"
+msgstr "Montant total de la demande TD1 fédérale"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_remittance__income_tax
+msgid ""
+"Federal income tax, plus the provincial income tax of the provinces whose "
+"tax the CRA collects."
+msgstr ""
+"Impôt fédéral sur le revenu, plus l'impôt provincial sur le revenu des "
+"provinces dont l'ARC perçoit l'impôt."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__due_date
+msgid ""
+"Filing deadline: last day of the month set by the time parameter "
+"l10n_ca.t4.due_month, in the year after the slips."
+msgstr ""
+"Date limite de production : dernier jour du mois fixé par le paramètre "
+"temporel l10n_ca.t4.due_month, dans l'année qui suit celle des feuillets."
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_gross
+#: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_gross
+msgid "Gross"
+msgstr "Brut"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__gross_payroll
+msgid "Gross Payroll"
+msgstr "Rémunération brute"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__id
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__id
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__income_tax
+msgid "Income Tax"
+msgstr "Impôt sur le revenu"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_federal_other_credits
+msgid ""
+"K3 of the CRA formulas: other federal non-refundable tax credits authorized "
+"by a tax services office, as an annual credit amount."
+msgstr ""
+"K3 des formules de l'ARC : autres crédits d'impôt non remboursables fédéraux"
+" autorisés par un bureau des services fiscaux, exprimés en montant de crédit"
+" annuel."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__write_date
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__write_date
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_14
+msgid "Line 14"
+msgstr "Ligne 14"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_16
+msgid "Line 16"
+msgstr "Ligne 16"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_16a
+msgid "Line 16A"
+msgstr "Ligne 16A"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_18
+msgid "Line 18"
+msgstr "Ligne 18"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_19
+msgid "Line 19"
+msgstr "Ligne 19"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_22
+msgid "Line 22"
+msgstr "Ligne 22"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_27
+msgid "Line 27"
+msgstr "Ligne 27"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_27a
+msgid "Line 27A"
+msgstr "Ligne 27A"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_80
+msgid "Line 80"
+msgstr "Ligne 80"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_82
+msgid "Line 82"
+msgstr "Ligne 82"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_84
+msgid "Line 84"
+msgstr "Ligne 84"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_86
+msgid "Line 86"
+msgstr "Ligne 86"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_88
+msgid "Line 88"
+msgstr "Ligne 88"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_td1_federal_bpa
+msgid ""
+"Maximum federal basic personal amount in force today. The payslip reduces it"
+" for an annual income above the phase-out threshold."
+msgstr ""
+"Montant personnel de base fédéral maximal en vigueur aujourd'hui. Le "
+"bulletin de paie le réduit pour un revenu annuel supérieur au seuil de "
+"réduction progressive."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_res_company__l10n_ca_ei_employer_multiplier
+#: model:ir.model.fields,help:l10n_ca_payroll.field_res_config_settings__l10n_ca_ei_employer_multiplier
+msgid ""
+"Multiplier of the employee EI premium assigned to the employer under the EI "
+"Premium Reduction Program. Leave 0 to use the legal multiplier of the time "
+"parameter l10n_ca.ei.employer_multiplier."
+msgstr ""
+"Multiplicateur de la cotisation d'AE de l'employé attribué à l'employeur "
+"dans le cadre du Programme de réduction du taux de cotisation à l'AE. "
+"Laissez 0 pour utiliser le multiplicateur légal du paramètre temporel "
+"l10n_ca.ei.employer_multiplier."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__name
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_net
+msgid "Net"
+msgstr "Net"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_net
+msgid "Net Salary"
+msgstr "Salaire net"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid ""
+"No %(plan)s contribution rate in force on %(date)s (time parameter "
+"%(code)s). The QPP rates of the employees working in Quebec come with the "
+"Quebec payroll module."
+msgstr ""
+"Aucun taux de cotisation au %(plan)s en vigueur le %(date)s (paramètre "
+"temporel %(code)s). Les taux du RRQ des employés qui travaillent au Québec "
+"sont fournis par le module de paie du Québec."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_ei_exempt
+msgid ""
+"No EI premium is deducted, e.g. an employee who controls more than 40% of "
+"the voting shares of the corporation."
+msgstr ""
+"Aucune cotisation d'AE n'est retenue, p. ex. pour un employé qui contrôle "
+"plus de 40 % des actions avec droit de vote de la société."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_cpp_exempt
+msgid ""
+"No pension plan contribution is deducted, e.g. an employee who receives a "
+"disability pension or filed an election to stop contributing."
+msgstr ""
+"Aucune cotisation au régime de pensions n'est retenue, p. ex. pour un "
+"employé qui reçoit une pension d'invalidité ou qui a fait le choix de cesser"
+" de cotiser."
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_remittance
+msgid "No remittance yet."
+msgstr "Aucun versement pour l'instant."
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_search
+msgid "Not Paid"
+msgstr "Non payé"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_remittance
+msgid ""
+"Open the year-end summary of the year and click \"Compute\n"
+"                Remittances\": one remittance is created per period of the\n"
+"                remitter type of the company, from the done payslips."
+msgstr ""
+"Ouvrez le sommaire de fin d'année et cliquez sur « Calculer\n"
+"                les versements » : un versement est créé par période du\n"
+"                type d'auteur de versement de la société, à partir des bulletins de paie terminés."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_federal_other_credits
+msgid "Other Federal Tax Credits (Annual)"
+msgstr "Autres crédits d'impôt fédéraux (annuels)"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_pay_periods
+msgid ""
+"P of the CRA payroll formulas. Computed from the scheduled pay; set 27 or 53"
+" for a year with an extra bi-weekly or weekly pay."
+msgstr ""
+"P des formules de calcul des retenues sur la paie de l'ARC. Calculé à partir"
+" de la fréquence de paie prévue; indiquez 27 ou 53 pour une année comportant"
+" une paie aux deux semaines ou hebdomadaire supplémentaire."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__date_from
+msgid "Paid From"
+msgstr "Payé du"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__date_to
+msgid "Paid To"
+msgstr "Payé au"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_payslip__l10n_ca_pay_date
+msgid "Pay Date"
+msgstr "Date de paie"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_pay_periods
+msgid "Pay Periods per Year"
+msgstr "Périodes de paie par année"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__payment_date
+msgid "Payment Date"
+msgstr "Date de paiement"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_res_company__l10n_ca_payroll_account_number
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_res_config_settings__l10n_ca_payroll_account_number
+msgid "Payroll Program Account"
+msgstr "Compte de programme de retenues sur la paie"
+
+#. module: l10n_ca_payroll
+#: model:ir.model,name:l10n_ca_payroll.model_l10n_ca_payroll_remittance
+msgid "Payroll Source Deduction Remittance (PD7A)"
+msgstr "Versement des retenues sur la paie (PD7A)"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
+msgid "Payroll program account and remitter type"
+msgstr ""
+"Compte de programme de retenues sur la paie et type d'auteur de versement"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__payslip_count
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__payslip_ids
+msgid "Payslips"
+msgstr "Bulletins de paie"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_payslip__l10n_ca_pension_plan
+msgid "Pension Plan"
+msgstr "Régime de pensions"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_form
+msgid "Period"
+msgstr "Période"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_province_id
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_payslip__l10n_ca_province_id
+msgid "Province of Employment"
+msgstr "Province d'emploi"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__province_code
+msgid "Province of Employment (Box 10)"
+msgstr "Province d'emploi (case 10)"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_province_id
+msgid ""
+"Province or territory where the employee reports for work. It selects the "
+"provincial tax, the pension plan (CPP or QPP) and the EI rate."
+msgstr ""
+"Province ou territoire où l'employé se présente au travail. Ce choix "
+"détermine l'impôt provincial, le régime de pensions (RPC ou RRQ) et le taux "
+"d'AE."
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_provincial_tax
+msgid "Provincial Income Tax"
+msgstr "Impôt provincial sur le revenu"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid "Provincial Income Tax (%(province)s)"
+msgstr "Impôt provincial sur le revenu (%(province)s)"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid "Provincial income tax NOT COMPUTED (%(province)s)"
+msgstr "Impôt provincial sur le revenu NON CALCULÉ (%(province)s)"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid ""
+"Provincial income tax is not computed for %(province)s: no calculation for "
+"this province is installed. The payslip withholds no provincial tax."
+msgstr ""
+"L'impôt provincial sur le revenu n'est pas calculé pour %(province)s : aucun"
+" calcul n'est installé pour cette province. Le bulletin de paie ne retient "
+"aucun impôt provincial."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_payslip__l10n_ca_pension_plan__qpp
+msgid "QPP"
+msgstr "RRQ"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid "QPP Contributions"
+msgstr "Cotisations au RRQ"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid "QPP Employer Contributions"
+msgstr "Cotisations de l'employeur au RRQ"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid "QPP2 Contributions"
+msgstr "Deuxièmes cotisations au RRQ"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid "QPP2 Employer Contributions"
+msgstr "Deuxièmes cotisations de l'employeur au RRQ"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_res_company__l10n_ca_ei_employer_multiplier
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_res_config_settings__l10n_ca_ei_employer_multiplier
+msgid "Reduced EI Employer Multiplier"
+msgstr "Multiplicateur réduit de l'employeur (AE)"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
+msgid ""
+"Reduced employer multiplier assigned by the Premium Reduction Program; 0 "
+"uses the legal multiplier"
+msgstr ""
+"Multiplicateur réduit de l'employeur attribué par le Programme de réduction "
+"du taux de cotisation; 0 utilise le multiplicateur légal"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__remittance_ids
+msgid "Remittances"
+msgstr "Versements"
+
+#. module: l10n_ca_payroll
+#: model:ir.ui.menu,name:l10n_ca_payroll.menu_l10n_ca_payroll_remittance
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
+msgid "Remittances (PD7A)"
+msgstr "Versements (PD7A)"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__remitter_type
+msgid "Remitter Type"
+msgstr "Type d'auteur de versement"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__sin
+msgid "SIN"
+msgstr "NAS"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
+msgid "Salary Structure and Accounts"
+msgstr "Structure salariale et comptes"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
+msgid "Set Up Canadian Payroll"
+msgstr "Configurer la paie canadienne"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
+msgid ""
+"Set the Canada - Base structure as default and propose the accounts of the "
+"Canadian chart on its rules"
+msgstr ""
+"Définir la structure Canada - Base par défaut et proposer les comptes du "
+"plan comptable canadien sur ses règles"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid ""
+"Set the province of employment on the contract %(contract)s to compute the "
+"Canadian deductions."
+msgstr ""
+"Indiquez la province d'emploi sur le contrat %(contract)s pour calculer les "
+"retenues canadiennes."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__sin
+msgid ""
+"Social insurance number, from the identification number of the employee."
+msgstr ""
+"Numéro d'assurance sociale, tiré du numéro d'identification de l'employé."
+
+#. module: l10n_ca_payroll
+#: model:ir.actions.act_window,name:l10n_ca_payroll.action_l10n_ca_payroll_remittance
+msgid "Source Deduction Remittances (PD7A)"
+msgstr "Versements des retenues à la source (PD7A)"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_form
+msgid "Source Deductions"
+msgstr "Retenues à la source"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__summary_id
+msgid "Summary"
+msgstr "Sommaire"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__slip_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
+msgid "T4 Slips"
+msgstr "Feuillets T4"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
+msgid "T4 Summary"
+msgstr "Sommaire T4"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_t4.py:0
+msgid "T4 Summary %(year)s"
+msgstr "Sommaire T4 %(year)s"
+
+#. module: l10n_ca_payroll
+#: model:ir.actions.act_window,name:l10n_ca_payroll.action_l10n_ca_payroll_t4_summary
+#: model:ir.ui.menu,name:l10n_ca_payroll.menu_l10n_ca_payroll_t4_summary
+msgid "T4 Year-End"
+msgstr "Fin d'année T4"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_t4_summary
+msgid ""
+"The T4 slips and the remittances are computed from the done\n"
+"                payslips whose pay date falls in the year, and can be\n"
+"                exported as CSV files to fill in the CRA web forms."
+msgstr ""
+"Les feuillets T4 et les versements sont calculés à partir des\n"
+"                bulletins de paie terminés dont la date de paie tombe dans l'année, et peuvent\n"
+"                être exportés en fichiers CSV pour remplir les formulaires Web de l'ARC."
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_list
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_slip_view_list
+msgid "Total"
+msgstr "Total"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_td1_federal_type__custom
+msgid "Total claim amount from the TD1"
+msgstr "Montant total de la demande du TD1"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__year
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__year
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_search
+msgid "Year"
+msgstr "Année"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__summary_id
+msgid "Year-End Summary"
+msgstr "Sommaire de fin d'année"

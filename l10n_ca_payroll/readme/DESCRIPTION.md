@@ -1,0 +1,37 @@
+Canadian federal payroll on top of the OCA payroll.
+
+- Salary structure *Canada - Base*: basic salary, gross, CPP/QPP, CPP2/QPP2,
+  EI, federal income tax, provincial income tax, net pay and the employer
+  CPP, CPP2 and EI contributions.
+- Deductions computed with the CRA *Payroll Deductions Formulas* (T4127,
+  option 1): annualized income, federal tax `T3 = R*A - K - K1 - K2 - K3 -
+  K4` with the basic personal amount phase-out and the Canada employment
+  amount, CPP base and first additional contributions with the basic
+  exemption per pay period, CPP2 between the YMPE and the YAMPE, EI up to
+  the maximum insurable earnings, employer EI at 1.4 times the employee
+  premium. Year-to-date maximums come from the done payslips of the
+  calendar year.
+- Every rate, ceiling, bracket table, credit amount and due date is a dated
+  time parameter (`l10n_ca.federal.*`, `l10n_ca.cpp.*`, `l10n_ca.ei.*`,
+  `l10n_ca.pd7a.*`, `l10n_ca.t4.*`) shipped for 2025 and 2026, and 2027
+  where already published.
+- Contract fields: province of employment, pay periods per year, federal
+  TD1 claim, additional tax, other federal credits, CPP/QPP and EI
+  exemptions. The birth date of the employee applies the CPP age limits.
+- Provincial income tax is left to one module per province. Without one,
+  the payslip shows a *NOT COMPUTED* line and a warning instead of a
+  silent zero.
+- Year-end: T4 slips per employee and province (boxes 10, 12, 14, 16, 16A,
+  17, 17A, 18, 22, 24, 26, 28, 44, 45), T4 Summary lines 14 to 88, PD7A
+  remittances per period of the remitter type, CSV exports to fill in the
+  CRA web forms.
+- Accounting through `payroll_account`, with accounts proposed from the
+  `ca_2023` chart.
+
+Extension points for a provincial module, on `hr.payslip`:
+`_l10n_ca_pension_plan`, `_l10n_ca_ei_rate`,
+`_l10n_ca_compute_other_contributions`, `_l10n_ca_federal_k2_extra`,
+`_l10n_ca_federal_abatement`, `_l10n_ca_provincial_tax`,
+`_l10n_ca_t4_values`, `_l10n_ca_remittance_values`. Employees working in
+Quebec contribute to the QPP, whose rates (`l10n_ca.qpp.*`) come with the
+Quebec payroll module.

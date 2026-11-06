@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="param_federal_brackets" model="base.time.parameter">
+        <field name="name">Federal income tax brackets</field>
+        <field name="code">l10n_ca.federal.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Federal income tax rates by annual taxable income, as [[threshold, rate], ...]. The bracket constant K of the payroll formulas is derived from the table and rounded to the dollar. Income Tax Act s. 117(2), indexed under s. 117.1. The lowest rate is 15% until June 2025 and 14% from July 1, 2025 (T4127 option 1, 121st edition), 14% from 2026. Sources: T4127 table 8.1, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html ; https://laws-lois.justice.gc.ca/eng/acts/I-3.3/</field>
+    </record>
+    <record id="param_federal_brackets_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_brackets" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[[0, 0.15], [57375, 0.205], [114750, 0.26], [177882, 0.29], [253414, 0.33]]</field>
+    </record>
+    <record id="param_federal_brackets_20250701" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_brackets" />
+        <field name="date_from">2025-07-01</field>
+        <field name="value">[[0, 0.14], [57375, 0.205], [114750, 0.26], [177882, 0.29], [253414, 0.33]]</field>
+    </record>
+    <record id="param_federal_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[[0, 0.14], [58523, 0.205], [117045, 0.26], [181440, 0.29], [258482, 0.33]]</field>
+    </record>
+    <record id="param_federal_credit_rate" model="base.time.parameter">
+        <field name="name">Federal non-refundable credit rate</field>
+        <field name="code">l10n_ca.federal.credit_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Lowest federal rate applied to the personal credits (K1, K2, K4 of the payroll formulas). Income Tax Act s. 117(2) and 118. Sources: https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_federal_credit_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_credit_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.15</field>
+    </record>
+    <record id="param_federal_credit_rate_20250701" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_credit_rate" />
+        <field name="date_from">2025-07-01</field>
+        <field name="value">0.14</field>
+    </record>
+    <record id="param_federal_credit_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_credit_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.14</field>
+    </record>
+    <record id="param_federal_bpa_max" model="base.time.parameter">
+        <field name="name">Federal basic personal amount (maximum)</field>
+        <field name="code">l10n_ca.federal.bpa_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Maximum federal basic personal amount (BPAF), claimed up to the phase-out start. Income Tax Act s. 118(1)(c), indexed under s. 117.1. Sources: T4127 chapter 4 and table 8.9, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html</field>
+    </record>
+    <record id="param_federal_bpa_max_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_bpa_max" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">16129</field>
+    </record>
+    <record id="param_federal_bpa_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_bpa_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">16452</field>
+    </record>
+    <record id="param_federal_bpa_min" model="base.time.parameter">
+        <field name="name">Federal basic personal amount (minimum)</field>
+        <field name="code">l10n_ca.federal.bpa_min</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Federal basic personal amount from the phase-out end (BPAF). Income Tax Act s. 118(1)(c). Source: T4127 chapter 4, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_federal_bpa_min_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_bpa_min" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">14538</field>
+    </record>
+    <record id="param_federal_bpa_min_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_bpa_min" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">14829</field>
+    </record>
+    <record id="param_federal_bpa_phaseout_start" model="base.time.parameter">
+        <field name="name">Federal basic personal amount - phase-out start</field>
+        <field name="code">l10n_ca.federal.bpa_phaseout_start</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Annual net income above which the federal basic personal amount decreases (start of the fourth federal bracket). Income Tax Act s. 118(1)(c). Source: T4127 chapter 4, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_federal_bpa_phaseout_start_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_bpa_phaseout_start" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">177882</field>
+    </record>
+    <record id="param_federal_bpa_phaseout_start_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_bpa_phaseout_start" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">181440</field>
+    </record>
+    <record id="param_federal_bpa_phaseout_end" model="base.time.parameter">
+        <field name="name">Federal basic personal amount - phase-out end</field>
+        <field name="code">l10n_ca.federal.bpa_phaseout_end</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Annual net income from which the federal basic personal amount is the minimum (start of the fifth federal bracket). Income Tax Act s. 118(1)(c). Source: T4127 chapter 4, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_federal_bpa_phaseout_end_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_bpa_phaseout_end" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">253414</field>
+    </record>
+    <record id="param_federal_bpa_phaseout_end_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_bpa_phaseout_end" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">258482</field>
+    </record>
+    <record id="param_federal_cea" model="base.time.parameter">
+        <field name="name">Canada employment amount</field>
+        <field name="code">l10n_ca.federal.canada_employment_amount</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Canada employment amount (CEA, credit K4). Income Tax Act s. 118(10). Source: T4127 table 8.2, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html</field>
+    </record>
+    <record id="param_federal_cea_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_cea" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1471</field>
+    </record>
+    <record id="param_federal_cea_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_cea" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1501</field>
+    </record>
+    <record id="param_federal_qc_abatement" model="base.time.parameter">
+        <field name="name">Federal abatement for Quebec</field>
+        <field name="code">l10n_ca.federal.qc_abatement</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Refundable Quebec abatement deducted from the basic federal tax of employees working in Quebec (T1 = T3 - 0.165 * T3). Income Tax Act s. 120(2) and Federal-Provincial Fiscal Arrangements Act s. 27. Source: T4127 table 8.2, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://laws-lois.justice.gc.ca/eng/acts/F-8/</field>
+    </record>
+    <record id="param_federal_qc_abatement_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_qc_abatement" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.165</field>
+    </record>
+    <record id="param_federal_qc_abatement_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_federal_qc_abatement" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.165</field>
+    </record>
+    <record id="param_cpp_ympe" model="base.time.parameter">
+        <field name="name">CPP year's maximum pensionable earnings (YMPE)</field>
+        <field name="code">l10n_ca.cpp.ympe</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Year's maximum pensionable earnings of the CPP. Canada Pension Plan s. 18. The 2027 value is published by the CRA in the fall: add its version when known. Sources: T4127 table 8.3, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html</field>
+    </record>
+    <record id="param_cpp_ympe_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_ympe" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">71300</field>
+    </record>
+    <record id="param_cpp_ympe_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_ympe" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">74600</field>
+    </record>
+    <record id="param_cpp_yampe" model="base.time.parameter">
+        <field name="name">CPP year's additional maximum pensionable earnings (YAMPE)</field>
+        <field name="code">l10n_ca.cpp.yampe</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Second earnings ceiling of the CPP, upper limit of the second additional contributions (CPP2) and of box 26 of the T4. Canada Pension Plan s. 18.1. Sources: T4127 table 8.6, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html</field>
+    </record>
+    <record id="param_cpp_yampe_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_yampe" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">81200</field>
+    </record>
+    <record id="param_cpp_yampe_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_yampe" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">85000</field>
+    </record>
+    <record id="param_cpp_basic_exemption" model="base.time.parameter">
+        <field name="name">CPP basic exemption</field>
+        <field name="code">l10n_ca.cpp.basic_exemption</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Annual basic exemption of the CPP, divided by the number of pay periods and truncated to the cent. Canada Pension Plan s. 19-20. Sources: T4127 table 8.3, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html</field>
+    </record>
+    <record id="param_cpp_basic_exemption_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_basic_exemption" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">3500</field>
+    </record>
+    <record id="param_cpp_basic_exemption_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_basic_exemption" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">3500</field>
+    </record>
+    <record id="param_cpp_rate" model="base.time.parameter">
+        <field name="name">CPP employee contribution rate (base + first additional)</field>
+        <field name="code">l10n_ca.cpp.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Employee CPP rate, base and first additional, between the basic exemption and the YMPE; the employer pays the same. Canada Pension Plan s. 8 and Schedule 1. 2027: base rate reduced from 4.95% to 4.75% (first additional rate unchanged at 1%) by the Spring Economic Update 2026 Implementation Act, S.C. 2026, c. 22 (Bill C-30, Royal Assent June 18, 2026), in force January 1, 2027. Sources: T4127 table 8.3, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html ; https://www.canada.ca/en/department-finance/news/2026/06/legislation-passes-to-implement-measures-from-the-spring-economic-update-2026.html ; https://www.parl.ca/legisinfo/en/bill/45-1/C-30</field>
+    </record>
+    <record id="param_cpp_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.0595</field>
+    </record>
+    <record id="param_cpp_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.0595</field>
+    </record>
+    <record id="param_cpp_rate_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_rate" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">0.0575</field>
+    </record>
+    <record id="param_cpp_base_rate" model="base.time.parameter">
+        <field name="name">CPP employee base contribution rate</field>
+        <field name="code">l10n_ca.cpp.base_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Base part of the employee CPP rate, giving the federal credit (K2); the rest of the rate is the first additional contribution, deducted from income (F5). Canada Pension Plan s. 8. 2027: 4.75% per the Spring Economic Update 2026 Implementation Act, S.C. 2026, c. 22 (Bill C-30, enacted). Sources: T4127 table 8.4, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/department-finance/news/2026/06/legislation-passes-to-implement-measures-from-the-spring-economic-update-2026.html ; https://www.parl.ca/legisinfo/en/bill/45-1/C-30</field>
+    </record>
+    <record id="param_cpp_base_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_base_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.0495</field>
+    </record>
+    <record id="param_cpp_base_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_base_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.0495</field>
+    </record>
+    <record id="param_cpp_base_rate_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_base_rate" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">0.0475</field>
+    </record>
+    <record id="param_cpp_rate2" model="base.time.parameter">
+        <field name="name">CPP second additional contribution rate (CPP2)</field>
+        <field name="code">l10n_ca.cpp.rate2</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Employee CPP2 rate between the YMPE and the YAMPE; the employer pays the same. Canada Pension Plan s. 8 and Schedule 2. Sources: T4127 table 8.6, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html</field>
+    </record>
+    <record id="param_cpp_rate2_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_rate2" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.04</field>
+    </record>
+    <record id="param_cpp_rate2_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_rate2" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.04</field>
+    </record>
+    <record id="param_cpp_age_min" model="base.time.parameter">
+        <field name="name">CPP minimum age</field>
+        <field name="code">l10n_ca.cpp.age_min</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Contributions start with the first pay of the month after the employee reaches this age. Canada Pension Plan s. 12(1). Source: T4127 chapter 6, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_cpp_age_min_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_age_min" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">18</field>
+    </record>
+    <record id="param_cpp_age_max" model="base.time.parameter">
+        <field name="name">CPP maximum age</field>
+        <field name="code">l10n_ca.cpp.age_max</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Contributions stop after the last pay of the month the employee reaches this age. Canada Pension Plan s. 12(1). Source: T4127 chapter 6, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_cpp_age_max_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_age_max" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">70</field>
+    </record>
+    <record id="param_ei_mie" model="base.time.parameter">
+        <field name="name">EI maximum insurable earnings</field>
+        <field name="code">l10n_ca.ei.mie</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Maximum annual insurable earnings; the maximum premium is this amount times the rate. Employment Insurance Act s. 4. Sources: T4127 table 8.7, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/employment-insurance-ei/ei-premium-rates-maximums.html ; https://www.canada.ca/en/employment-social-development/news/2026/09/canada-employment-insurance-commission-confirms-2027-employment-insurance-premium-rate.html ; https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/reports/premium/rates2027.html</field>
+    </record>
+    <record id="param_ei_mie_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ei_mie" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">65700</field>
+    </record>
+    <record id="param_ei_mie_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ei_mie" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">68900</field>
+    </record>
+    <record id="param_ei_mie_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ei_mie" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">70800</field>
+    </record>
+    <record id="param_ei_rate" model="base.time.parameter">
+        <field name="name">EI employee premium rate</field>
+        <field name="code">l10n_ca.ei.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Employee EI premium rate outside Quebec. Employment Insurance Act s. 66. Sources: T4127 table 8.7, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/employment-insurance-ei/ei-premium-rates-maximums.html ; https://www.canada.ca/en/employment-social-development/news/2026/09/canada-employment-insurance-commission-confirms-2027-employment-insurance-premium-rate.html ; https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/reports/premium/rates2027.html</field>
+    </record>
+    <record id="param_ei_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ei_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.0164</field>
+    </record>
+    <record id="param_ei_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ei_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.0163</field>
+    </record>
+    <record id="param_ei_rate_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ei_rate" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">0.0164</field>
+    </record>
+    <record id="param_ei_rate_qc" model="base.time.parameter">
+        <field name="name">EI employee premium rate (Quebec)</field>
+        <field name="code">l10n_ca.ei.rate_qc</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Reduced employee EI premium rate of employees working in Quebec, covered by the Quebec Parental Insurance Plan. Employment Insurance Act s. 69. Sources: T4127 table 8.7, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/employment-insurance-ei/ei-premium-rates-maximums.html ; https://www.canada.ca/en/employment-social-development/news/2026/09/canada-employment-insurance-commission-confirms-2027-employment-insurance-premium-rate.html ; https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/reports/premium/rates2027.html</field>
+    </record>
+    <record id="param_ei_rate_qc_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ei_rate_qc" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.0131</field>
+    </record>
+    <record id="param_ei_rate_qc_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ei_rate_qc" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.0130</field>
+    </record>
+    <record id="param_ei_rate_qc_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ei_rate_qc" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">0.0129</field>
+    </record>
+    <record id="param_ei_employer_multiplier" model="base.time.parameter">
+        <field name="name">EI employer premium multiplier</field>
+        <field name="code">l10n_ca.ei.employer_multiplier</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">The employer premium is this multiple of the employee premium. A reduced rate granted under the Premium Reduction Program is set on the company instead. Employment Insurance Act s. 68. Source: T4127 table 8.7, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://laws-lois.justice.gc.ca/eng/acts/E-5.6/</field>
+    </record>
+    <record id="param_ei_employer_multiplier_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ei_employer_multiplier" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1.4</field>
+    </record>
+    <record id="param_pd7a_due_day" model="base.time.parameter">
+        <field name="name">Remittance due day (regular and quarterly remitters)</field>
+        <field name="code">l10n_ca.pd7a.due_day</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Day of the month after the period (month or quarter) by which the CRA must receive the source deductions of a regular or quarterly remitter. Income Tax Regulations s. 108(1). Sources: T4001, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html ; https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/</field>
+    </record>
+    <record id="param_pd7a_due_day_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pd7a_due_day" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">15</field>
+    </record>
+    <record id="param_pd7a_accel1_split_day" model="base.time.parameter">
+        <field name="name">Accelerated remitter threshold 1 - last day of the first period</field>
+        <field name="code">l10n_ca.pd7a.accel1_split_day</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Threshold 1 accelerated remitters remit separately the remuneration paid up to this day and after it. Income Tax Regulations s. 108(1.1). Source: T4001, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html</field>
+    </record>
+    <record id="param_pd7a_accel1_split_day_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pd7a_accel1_split_day" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">15</field>
+    </record>
+    <record id="param_pd7a_accel1_first_due_day" model="base.time.parameter">
+        <field name="name">Accelerated remitter threshold 1 - due day of the first period</field>
+        <field name="code">l10n_ca.pd7a.accel1_first_due_day</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Day of the same month by which the deductions of the first period are due. Income Tax Regulations s. 108(1.1). Source: T4001, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html</field>
+    </record>
+    <record id="param_pd7a_accel1_first_due_day_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pd7a_accel1_first_due_day" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">25</field>
+    </record>
+    <record id="param_pd7a_accel1_second_due_day" model="base.time.parameter">
+        <field name="name">Accelerated remitter threshold 1 - due day of the second period</field>
+        <field name="code">l10n_ca.pd7a.accel1_second_due_day</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Day of the following month by which the deductions of the second period are due. Income Tax Regulations s. 108(1.1). Source: T4001, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html</field>
+    </record>
+    <record id="param_pd7a_accel1_second_due_day_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pd7a_accel1_second_due_day" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">10</field>
+    </record>
+    <record id="param_pd7a_accel2_period_end_days" model="base.time.parameter">
+        <field name="name">Accelerated remitter threshold 2 - period end days</field>
+        <field name="code">l10n_ca.pd7a.accel2_period_end_days</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Days ending the remittance periods of threshold 2 accelerated remitters; the last period ends with the month. Income Tax Regulations s. 108(1.11). Source: T4001, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html</field>
+    </record>
+    <record id="param_pd7a_accel2_period_end_days_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pd7a_accel2_period_end_days" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[7, 14, 21]</field>
+    </record>
+    <record id="param_pd7a_accel2_working_days" model="base.time.parameter">
+        <field name="name">Accelerated remitter threshold 2 - working days to remit</field>
+        <field name="code">l10n_ca.pd7a.accel2_working_days</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Number of working days after the end of a period by which the deductions are due. Income Tax Regulations s. 108(1.11). Source: T4001, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html</field>
+    </record>
+    <record id="param_pd7a_accel2_working_days_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pd7a_accel2_working_days" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">3</field>
+    </record>
+    <record id="param_t4_due_month" model="base.time.parameter">
+        <field name="name">T4 filing deadline month</field>
+        <field name="code">l10n_ca.t4.due_month</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">The T4 slips and summary are due on the last day of this month of the following year. Income Tax Regulations s. 205(1). Source: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/completing-filing-information-returns/t4-information-employers/t4-summary.html ; https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/</field>
+    </record>
+    <record id="param_t4_due_month_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_t4_due_month" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">2</field>
+    </record>
+</odoo>
