@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="l10n_ca_bad_debt_wizard_view_form" model="ir.ui.view">
+        <field name="name">l10n.ca.bad.debt.wizard.form</field>
+        <field name="model">l10n.ca.bad.debt.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="move_id" readonly="True" />
+                        <field name="operation" widget="radio" />
+                        <field name="date" />
+                        <field name="currency_id" invisible="True" />
+                        <field name="company_id" invisible="True" />
+                        <field name="amount" />
+                    </group>
+                    <group>
+                        <field name="account_id" />
+                        <field name="journal_id" />
+                        <field name="gst_amount" />
+                        <field name="qst_amount" />
+                    </group>
+                </group>
+                <p class="text-muted">
+                    A write-off credits the receivable and deducts the tax it
+                    contains on lines 107 and 207 of the next return. A
+                    recovery adds the tax back on lines 104 and 204.
+                </p>
+                <footer>
+                    <button
+                        name="action_confirm"
+                        type="object"
+                        string="Post"
+                        class="btn-primary"
+                    />
+                    <button special="cancel" string="Cancel" class="btn-secondary" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_l10n_ca_bad_debt_wizard" model="ir.actions.act_window">
+        <field name="name">Bad Debt</field>
+        <field name="res_model">l10n.ca.bad.debt.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

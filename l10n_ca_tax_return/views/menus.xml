@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- One entry only: the return is a workflow (compute, close, file), so it
+         sits with the other Canadian workflows rather than under Reporting. -->
+    <menuitem
+        id="menu_l10n_ca_tax_return"
+        name="Sales Tax Returns"
+        parent="l10n_ca_time_parameter.menu_l10n_ca_root"
+        action="action_l10n_ca_tax_return"
+        groups="account.group_account_manager,account.group_account_readonly"
+        sequence="10"
+    />
+</odoo>

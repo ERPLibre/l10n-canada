@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="param_gst_quick_rates_service" model="base.time.parameter">
+        <field name="name">GST/HST quick method remittance rates - services</field>
+        <field name="code">l10n_ca.gst_quick.rates.service</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Quick method remittance rates of a business that mainly provides services, by GST/HST rate of the supply (key: tax rate in percent, value: remittance rate). Column 1 of the CRA table: permanent establishment where GST at 5% applies, which includes Quebec. A company whose permanent establishment is in a participating province adds a company version with its column. Excise Tax Act, Streamlined Accounting (GST/HST) Regulations, SOR/91-51, s. 15 and 19. Source: CRA RC4058, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4058/quick-method-accounting-gst-hst.html</field>
+    </record>
+    <record id="param_gst_quick_rates_service_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gst_quick_rates_service" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">{"5": 0.036, "13": 0.105, "14": 0.113, "15": 0.12}</field>
+    </record>
+    <record id="param_gst_quick_rates_service_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gst_quick_rates_service" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">{"5": 0.036, "13": 0.105, "14": 0.113, "15": 0.12}</field>
+    </record>
+    <record id="param_gst_quick_rates_resale" model="base.time.parameter">
+        <field name="name">GST/HST quick method remittance rates - purchase for resale</field>
+        <field name="code">l10n_ca.gst_quick.rates.resale</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Quick method remittance rates of a business whose purchases for resale are at least 40% of its taxable supplies, by GST/HST rate of the supply. Column 1 of the CRA table (permanent establishment where GST at 5% applies, Quebec included). SOR/91-51, s. 15 and 19. Source: CRA RC4058, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4058/quick-method-accounting-gst-hst.html</field>
+    </record>
+    <record id="param_gst_quick_rates_resale_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gst_quick_rates_resale" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">{"5": 0.018, "13": 0.088, "14": 0.096, "15": 0.104}</field>
+    </record>
+    <record id="param_gst_quick_rates_resale_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gst_quick_rates_resale" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">{"5": 0.018, "13": 0.088, "14": 0.096, "15": 0.104}</field>
+    </record>
+    <record id="param_gst_quick_credit_rate" model="base.time.parameter">
+        <field name="name">GST/HST quick method credit rate</field>
+        <field name="code">l10n_ca.gst_quick.credit_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Rate of the quick method credit deducted on line 107, applied to the first eligible supplies (GST/HST included) of each fiscal year. SOR/91-51, s. 15(5). Source: CRA RC4058, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4058/quick-method-accounting-gst-hst.html</field>
+    </record>
+    <record id="param_gst_quick_credit_rate_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gst_quick_credit_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.01</field>
+    </record>
+    <record id="param_gst_quick_credit_rate_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gst_quick_credit_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.01</field>
+    </record>
+    <record id="param_gst_quick_credit_ceiling" model="base.time.parameter">
+        <field name="name">GST/HST quick method credit ceiling</field>
+        <field name="code">l10n_ca.gst_quick.credit_ceiling</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Eligible supplies (GST/HST included) of a fiscal year that bear the 1% quick method credit; the credit does not carry forward. SOR/91-51, s. 15(5). Source: CRA RC4058, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4058/quick-method-accounting-gst-hst.html</field>
+    </record>
+    <record id="param_gst_quick_credit_ceiling_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gst_quick_credit_ceiling" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">30000</field>
+    </record>
+    <record id="param_gst_quick_credit_ceiling_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gst_quick_credit_ceiling" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">30000</field>
+    </record>
+    <record id="param_gst_quick_threshold" model="base.time.parameter">
+        <field name="name">GST/HST quick method eligibility threshold</field>
+        <field name="code">l10n_ca.gst_quick.eligibility_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Maximum annual worldwide taxable supplies (GST/HST and zero-rated supplies included, associates included) to elect or keep the quick method. SOR/91-51, s. 19. Source: CRA RC4058, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4058/quick-method-accounting-gst-hst.html</field>
+    </record>
+    <record id="param_gst_quick_threshold_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gst_quick_threshold" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">400000</field>
+    </record>
+    <record id="param_gst_quick_threshold_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gst_quick_threshold" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">400000</field>
+    </record>
+    <record id="param_qst_quick_rate_service" model="base.time.parameter">
+        <field name="name">QST quick method remittance rate - services</field>
+        <field name="code">l10n_ca.qst_quick.rate.service</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">QST quick method remittance rate of a business that mainly provides services, applied to taxable supplies made in Quebec, QST included. Regulation respecting the Quebec sales tax, CQLR c. T-0.1, r. 2. Source: Revenu Quebec, https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/reporting-gsthst-and-qst/the-quick-method-of-accounting-for-calculating-gst-and-qst-remittances/applicable-rates/</field>
+    </record>
+    <record id="param_qst_quick_rate_service_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qst_quick_rate_service" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.066</field>
+    </record>
+    <record id="param_qst_quick_rate_service_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qst_quick_rate_service" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.066</field>
+    </record>
+    <record id="param_qst_quick_rate_resale" model="base.time.parameter">
+        <field name="name">QST quick method remittance rate - purchase for resale</field>
+        <field name="code">l10n_ca.qst_quick.rate.resale</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">QST quick method remittance rate of a retailer or wholesaler whose purchases for resale are at least 40% of its taxable supplies, applied to taxable supplies made in Quebec, QST included. CQLR c. T-0.1, r. 2. Source: Revenu Quebec, https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/reporting-gsthst-and-qst/the-quick-method-of-accounting-for-calculating-gst-and-qst-remittances/applicable-rates/</field>
+    </record>
+    <record id="param_qst_quick_rate_resale_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qst_quick_rate_resale" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.034</field>
+    </record>
+    <record id="param_qst_quick_rate_resale_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qst_quick_rate_resale" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.034</field>
+    </record>
+    <record id="param_qst_quick_credit_rate" model="base.time.parameter">
+        <field name="name">QST quick method reduction rate</field>
+        <field name="code">l10n_ca.qst_quick.credit_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Rate of the quick method reduction deducted on line 207, applied to the first eligible supplies (QST included) of each fiscal year. CQLR c. T-0.1, r. 2. Source: Revenu Quebec, https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/reporting-gsthst-and-qst/the-quick-method-of-accounting-for-calculating-gst-and-qst-remittances/applicable-rates/</field>
+    </record>
+    <record id="param_qst_quick_credit_rate_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qst_quick_credit_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.01</field>
+    </record>
+    <record id="param_qst_quick_credit_rate_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qst_quick_credit_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.01</field>
+    </record>
+    <record id="param_qst_quick_credit_ceiling" model="base.time.parameter">
+        <field name="name">QST quick method reduction ceiling</field>
+        <field name="code">l10n_ca.qst_quick.credit_ceiling</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Eligible supplies (QST included) of a fiscal year that bear the 1% reduction: the QST-included equivalent of the federal 30,000 (30,000 / 1.05 x 1.09975). CQLR c. T-0.1, r. 2. Source: Revenu Quebec, https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/reporting-gsthst-and-qst/the-quick-method-of-accounting-for-calculating-gst-and-qst-remittances/applicable-rates/. Revenu Quebec states the amount as 31,421 (QST included).</field>
+    </record>
+    <record id="param_qst_quick_credit_ceiling_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qst_quick_credit_ceiling" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">31421</field>
+    </record>
+    <record id="param_qst_quick_credit_ceiling_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qst_quick_credit_ceiling" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">31421</field>
+    </record>
+    <record id="param_qst_quick_threshold" model="base.time.parameter">
+        <field name="name">QST quick method eligibility threshold</field>
+        <field name="code">l10n_ca.qst_quick.eligibility_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Maximum annual worldwide taxable supplies (QST included, associates included) to elect or keep the QST quick method: the QST-included equivalent of the federal 400,000. CQLR c. T-0.1, r. 2. Source: Revenu Quebec, https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/reporting-gsthst-and-qst/the-quick-method-of-accounting-for-calculating-gst-and-qst-remittances/applicable-rates/</field>
+    </record>
+    <record id="param_qst_quick_threshold_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qst_quick_threshold" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">418952</field>
+    </record>
+    <record id="param_qst_quick_threshold_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qst_quick_threshold" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">418952</field>
+    </record>
+    <record id="param_due_months_periodic" model="base.time.parameter">
+        <field name="name">Sales tax return due date - monthly and quarterly filers</field>
+        <field name="code">l10n_ca.sales_tax.due_months.periodic</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Months after the end of a monthly or quarterly reporting period within which the GST/HST and QST return is filed and the net tax remitted. Excise Tax Act s. 238(1)(b) and 278(2); Act respecting the Quebec sales tax, CQLR c. T-0.1, s. 468. Source: https://laws-lois.justice.gc.ca/eng/acts/E-15/section-238.html</field>
+    </record>
+    <record id="param_due_months_periodic_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_due_months_periodic" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1</field>
+    </record>
+    <record id="param_due_months_periodic_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_due_months_periodic" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1</field>
+    </record>
+    <record id="param_due_months_annual" model="base.time.parameter">
+        <field name="name">Sales tax return due date - annual filers</field>
+        <field name="code">l10n_ca.sales_tax.due_months.annual</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Months after the end of the fiscal year within which an annual filer other than an individual or a listed financial institution files its GST/HST and QST return. Excise Tax Act s. 238(1)(a)(iii); CQLR c. T-0.1, s. 468. Source: https://laws-lois.justice.gc.ca/eng/acts/E-15/section-238.html</field>
+    </record>
+    <record id="param_due_months_annual_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_due_months_annual" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">3</field>
+    </record>
+    <record id="param_due_months_annual_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_due_months_annual" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">3</field>
+    </record>
+</odoo>

@@ -1,0 +1,1039 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_tax_return
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 03:22+0000\n"
+"PO-Revision-Date: 2026-10-27 03:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid ""
+"%(tax)s: eligible supplies %(eligible)s, remitted %(remitted)s, tax on "
+"sales of capital property %(capital_tax)s, credit %(credit)s, capital ITCs "
+"%(itc)s."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid ""
+"%(tax)s: taxable supplies of the previous fiscal year (%(amount)s) exceed "
+"the quick method threshold of %(threshold)s."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.actions.report,print_report_name:l10n_ca_tax_return.action_report_tax_return
+msgid "'Tax return - %s' % object.name"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "(quick method)"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "<strong>Business number:</strong>"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "<strong>Company:</strong>"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "<strong>Confirmation number:</strong>"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "<strong>Due date:</strong>"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "<strong>Filed on:</strong>"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "<strong>Method:</strong>"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "<strong>Period:</strong>"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "<strong>Quebec enterprise number:</strong>"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "<strong>Quick method gain:</strong>"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "<strong>Status:</strong>"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.actions.act_window,help:l10n_ca_tax_return.action_l10n_ca_tax_return
+msgid ""
+"A return reads the posted journal items of its period through\n"
+"                the tax grids of the Canadian localization: the GST/HST return\n"
+"                (GST34) or the Quebec return (FPZ-500) for GST/HST and QST.\n"
+"                Compute it, post the closing entry, then record the filing."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_bad_debt_wizard_view_form
+msgid ""
+"A write-off credits the receivable and deducts the tax it\n"
+"                    contains on lines 107 and 207 of the next return. A\n"
+"                    recovery adds the tax back on lines 104 and 204."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__account_id
+msgid "Account"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model,name:l10n_ca_tax_return.model_account_chart_template
+msgid "Account Chart Template"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.res_config_settings_view_form
+msgid "Accounts that receive the net tax when a return is closed"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__amount
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__amount
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "Amount"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__amount_due
+msgid "Amount Due"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return_line__is_quick_method
+msgid "Amount computed by the quick method instead of the tax tags."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.actions.act_window,name:l10n_ca_tax_return.action_l10n_ca_bad_debt_wizard
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.view_move_form
+msgid "Bad Debt"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/account_move.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_account_bank_statement_line__l10n_ca_bad_debt_move_ids
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_account_move__l10n_ca_bad_debt_move_ids
+msgid "Bad Debt Entries"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_company__l10n_ca_bad_debt_account_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_config_settings__l10n_ca_bad_debt_account_id
+msgid "Bad Debt Expense Account"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_account_bank_statement_line__l10n_ca_bad_debt_type
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_account_move__l10n_ca_bad_debt_type
+msgid "Bad Debt Operation"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_account_bank_statement_line__l10n_ca_bad_debt_recovered
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_account_move__l10n_ca_bad_debt_recovered
+msgid "Bad Debt Recovered"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_company__l10n_ca_bad_debt_recovery_account_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_config_settings__l10n_ca_bad_debt_recovery_account_id
+msgid "Bad Debt Recovery Account"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_account_bank_statement_line__l10n_ca_bad_debt_origin_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_account_move__l10n_ca_bad_debt_origin_id
+msgid "Bad Debt of Invoice"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.res_config_settings_view_form
+msgid "Bad Debts"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/wizards/l10n_ca_bad_debt_wizard.py:0
+msgid "Bad debt adjustments support invoices in company currency only."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__account_id
+msgid "Bad debt expense on a write-off, income on a recovery."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__account_move__l10n_ca_bad_debt_type__recovery
+msgid "Bad debt recovery"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/wizards/l10n_ca_bad_debt_wizard.py:0
+msgid "Bad debt recovery of %s"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__account_move__l10n_ca_bad_debt_type__write_off
+msgid "Bad debt write-off"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/wizards/l10n_ca_bad_debt_wizard.py:0
+msgid "Bad debt write-off of %s"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return__amount_due
+msgid ""
+"Balance after credits and debits (line 113C, or 116 + 216): positive when "
+"payable, negative when a refund is claimed."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model,name:l10n_ca_tax_return.model_l10n_ca_bad_debt_wizard
+msgid "Canadian Bad Debt Adjustment"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model,name:l10n_ca_tax_return.model_l10n_ca_tax_return
+msgid "Canadian Sales Tax Return"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model,name:l10n_ca_tax_return.model_l10n_ca_tax_return_line
+msgid "Canadian Sales Tax Return Line"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model,name:l10n_ca_tax_return.model_report_l10n_ca_tax_return_tax_return_xlsx
+msgid "Canadian Sales Tax Return XLSX"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.actions.act_window,name:l10n_ca_tax_return.action_l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.res_config_settings_view_form
+msgid "Canadian Sales Tax Returns"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_bad_debt_wizard_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "Circular formula on line %s."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "Close the return before marking it filed."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__l10n_ca_tax_return__state__closed
+msgid "Closed"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.res_config_settings_view_form
+msgid "Closing Entries"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__closing_move_id
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid "Closing Entry"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__company_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__company_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__company_id
+msgid "Company"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__currency_id
+msgid "Company Currency"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid "Compute"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "Compute the return before closing it."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__l10n_ca_tax_return__state__computed
+msgid "Computed"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__confirmation_number
+msgid "Confirmation Number"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.actions.act_window,help:l10n_ca_tax_return.action_l10n_ca_tax_return
+msgid "Create a sales tax return"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__create_date
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_account_bank_statement_line__l10n_ca_bad_debt_origin_id
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_account_move__l10n_ca_bad_debt_origin_id
+msgid "Customer invoice whose bad debt this entry writes off or recovers."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__date
+msgid "Date"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__date_from
+msgid "Date From"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__date_to
+msgid "Date To"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.res_config_settings_view_form
+msgid "Default accounts of the bad debt write-off and recovery"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid "Delete the lines and the closing entry of this return?"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__name
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "Description"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__display_name
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__l10n_ca_tax_return__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__date_due
+msgid "Due Date"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid "Export XLSX"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__expression_label
+msgid "Expression Label"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__l10n_ca_tax_return__state__filed
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_search
+msgid "Filed"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__filing_date
+msgid "Filing Date"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_search
+msgid "GST/HST"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__l10n_ca_tax_return__kind__gst_hst
+msgid "GST/HST (GST34)"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__gst_amount
+msgid "GST/HST Adjustment"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_company__l10n_ca_gst_authority_account_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_config_settings__l10n_ca_gst_authority_account_id
+msgid "GST/HST Return Account"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__hierarchy_level
+msgid "Hierarchy Level"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_res_company__l10n_ca_bad_debt_recovery_account_id
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_res_config_settings__l10n_ca_bad_debt_recovery_account_id
+msgid ""
+"Income account of a recovered bad debt. The bad debt expense account when "
+"empty."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__move_id
+msgid "Invoice"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__journal_id
+msgid "Journal"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model,name:l10n_ca_tax_return.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid "Journal Items"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_res_company__l10n_ca_tax_closing_journal_id
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_res_config_settings__l10n_ca_tax_closing_journal_id
+msgid ""
+"Journal of the closing entries and of the bad debt adjustments. The first "
+"miscellaneous journal when empty."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__kind
+msgid "Kind"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__write_date
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return__date_due
+msgid "Last day to file the return and remit the net tax."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__code
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.report_tax_return_document
+msgid "Line"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "Line %(code)s - %(name)s"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__line_ids
+msgid "Lines"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid "Mark as Filed"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__method
+msgid "Method"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__net_tax
+msgid "Net Tax"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__regular_net_tax
+msgid "Net Tax in the Books"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return__net_tax
+msgid ""
+"Net tax of the return (line 109, or 109 + 209): positive when tax is owed to"
+" the authority."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return__regular_net_tax
+msgid ""
+"Net tax under the regular method, which is the balance the closing entry "
+"moves out of the tax accounts."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid ""
+"No credit: the election does not cover the first day of the fiscal year."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "No miscellaneous journal for the closing entry."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid ""
+"No quick method remittance rate for supplies taxed at %(rate)s%% in "
+"parameter l10n_ca.gst_quick.rates.%(activity)s."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__note
+msgid "Note"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "Only a draft return can be computed."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__operation
+msgid "Operation"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__date_range_id
+msgid "Period"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_bad_debt_wizard_view_form
+msgid "Post"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid "Post Closing Entry"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid ""
+"Post the entry that moves the tax balances of the period to the authority "
+"account?"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__qst_amount
+msgid "QST Adjustment"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_search
+msgid "Quebec"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__l10n_ca_tax_return__kind__qst
+msgid "Quebec GST/HST and QST (FPZ-500)"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__is_quick_method
+msgid "Quick Method"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__quick_method_gain
+msgid "Quick Method Gain"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_company__l10n_ca_quick_method_gain_account_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_config_settings__l10n_ca_quick_method_gain_account_id
+msgid "Quick Method Gain Account"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__quick_method_note
+msgid "Quick Method Note"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__l10n_ca_tax_return__method__quick
+msgid "Quick method"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "Quick method: %s"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_res_company__l10n_ca_quick_method_gain_account_id
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_res_config_settings__l10n_ca_quick_method_gain_account_id
+msgid ""
+"Receives the difference between the tax recorded in the books and the tax "
+"remitted under the quick method."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_res_company__l10n_ca_qst_authority_account_id
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_res_config_settings__l10n_ca_qst_authority_account_id
+msgid ""
+"Receives the net GST/HST and QST of the Quebec (FPZ-500) returns when they "
+"are closed. A Quebec registrant files both taxes with Revenu Quebec."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_res_company__l10n_ca_gst_authority_account_id
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_res_config_settings__l10n_ca_gst_authority_account_id
+msgid ""
+"Receives the net tax of the GST/HST (GST34) returns when they are closed: "
+"the account of the Canada Revenue Agency."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid "Recompute"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__l10n_ca_bad_debt_wizard__operation__recovery
+msgid "Recover"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__l10n_ca_tax_return__method__regular
+msgid "Regular"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__report_line_id
+msgid "Report Line"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "Reset a closed or filed return to draft first."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__return_id
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_search
+msgid "Return"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_company__l10n_ca_qst_authority_account_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_config_settings__l10n_ca_qst_authority_account_id
+msgid "Revenu Quebec Account"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_company__l10n_ca_tax_closing_journal_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_res_config_settings__l10n_ca_tax_closing_journal_id
+msgid "Sales Tax Closing Journal"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.actions.report,name:l10n_ca_tax_return.action_report_tax_return
+msgid "Sales Tax Return (PDF)"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.actions.report,name:l10n_ca_tax_return.action_report_tax_return_xlsx
+msgid "Sales Tax Return (XLSX)"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.ui.menu,name:l10n_ca_tax_return.menu_l10n_ca_tax_return
+msgid "Sales Tax Returns"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/wizards/l10n_ca_bad_debt_wizard.py:0
+msgid "Select a posted customer invoice."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return_line__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid ""
+"Set the account of the tax authority in the accounting settings (Canadian "
+"Sales Tax Returns)."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "Set the quick method gain account in the settings."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__state
+msgid "State"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_search
+msgid "Status"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return__quick_method_gain
+msgid "Tax recorded in the books minus tax remitted under the quick method."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/wizards/l10n_ca_bad_debt_wizard.py:0
+msgid "The amount exceeds %(limit).2f, the %(what)s of the invoice."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/wizards/l10n_ca_bad_debt_wizard.py:0
+msgid "The amount must be positive."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "The period ends before it starts."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "The period of %(name)s overlaps the return %(other)s."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "The return %(other)s already closed tax accounts of this period."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid ""
+"The tax accounts hold %(books).2f for the period but the return computes a "
+"net tax of %(net).2f in the books. Recompute the return."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_search
+msgid "To File"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_list
+msgid "Total"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_l10n_ca_tax_return__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_tax_return__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields.selection,name:l10n_ca_tax_return.selection__l10n_ca_bad_debt_wizard__operation__write_off
+msgid "Write off"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,help:l10n_ca_tax_return.field_l10n_ca_bad_debt_wizard__amount
+msgid ""
+"Write-off: unpaid amount, taxes included. Recovery: amount received on the "
+"written-off debt, taxes included."
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_account_bank_statement_line__l10n_ca_bad_debt_written_off
+#: model:ir.model.fields,field_description:l10n_ca_tax_return.field_account_move__l10n_ca_bad_debt_written_off
+msgid "Written Off as Bad Debt"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_return.l10n_ca_tax_return_view_search
+msgid "Year"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+msgid "Quebec enterprise number"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/report/tax_return_xlsx.py:0
+msgid "Business number"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#. odoo-python
+#: code:addons/l10n_ca_tax_return/models/l10n_ca_tax_return.py:0
+msgid "QST"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:account.report.line,name:l10n_ca.l10n_ca_tr_qst_101
+msgid "101 - Total supplies"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:account.report.line,name:l10n_ca.l10n_ca_tr_qst_103_203
+msgid "103 - 203 - Tax amounts collectible"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:account.report.line,name:l10n_ca.l10n_ca_tr_qst_106_206
+msgid "106 - 206 - ITCs/ITRs"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:account.report.line,name:l10n_ca.l10n_ca_tr_qst_108_208
+msgid "108 - 208 - ITCs/ITRs and adjustments"
+msgstr ""
+
+#. module: l10n_ca_tax_return
+#: model:account.report.line,name:l10n_ca.l10n_ca_tr_qst_111_211
+msgid "111 - 211 - Tax public service bodies' rebate"
+msgstr ""

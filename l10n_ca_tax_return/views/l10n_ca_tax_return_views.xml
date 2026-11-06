@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="l10n_ca_tax_return_view_list" model="ir.ui.view">
+        <field name="name">l10n.ca.tax.return.list</field>
+        <field name="model">l10n.ca.tax.return</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="kind" />
+                <field name="date_from" />
+                <field name="date_to" />
+                <field name="date_due" />
+                <field name="method" optional="show" />
+                <field name="net_tax" sum="Total" />
+                <field name="filing_date" optional="show" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="currency_id" column_invisible="True" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-info="state == 'computed'"
+                    decoration-warning="state == 'closed'"
+                    decoration-success="state == 'filed'"
+                />
+            </list>
+        </field>
+    </record>
+
+    <record id="l10n_ca_tax_return_view_form" model="ir.ui.view">
+        <field name="name">l10n.ca.tax.return.form</field>
+        <field name="model">l10n.ca.tax.return</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="action_compute"
+                        type="object"
+                        string="Compute"
+                        class="btn-primary"
+                        invisible="state != 'draft'"
+                    />
+                    <button
+                        name="action_compute"
+                        type="object"
+                        string="Recompute"
+                        invisible="state != 'computed'"
+                    />
+                    <button
+                        name="action_close"
+                        type="object"
+                        string="Post Closing Entry"
+                        class="btn-primary"
+                        invisible="state != 'computed'"
+                        confirm="Post the entry that moves the tax balances of the period to the authority account?"
+                    />
+                    <button
+                        name="action_mark_filed"
+                        type="object"
+                        string="Mark as Filed"
+                        class="btn-primary"
+                        invisible="state != 'closed'"
+                    />
+                    <button
+                        name="action_print_xlsx"
+                        type="object"
+                        string="Export XLSX"
+                        invisible="state == 'draft'"
+                    />
+                    <button
+                        name="action_reset_to_draft"
+                        type="object"
+                        string="Reset to Draft"
+                        invisible="state == 'draft'"
+                        confirm="Delete the lines and the closing entry of this return?"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,computed,closed,filed"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="action_open_closing_move"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-book"
+                            invisible="not closing_move_id"
+                            string="Closing Entry"
+                        />
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="True" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="kind" readonly="state != 'draft'" />
+                            <field name="method" readonly="state != 'draft'" />
+                            <field
+                                name="date_range_id"
+                                readonly="state != 'draft'"
+                                options="{'no_create': True}"
+                            />
+                            <field name="date_from" readonly="state != 'draft'" />
+                            <field name="date_to" readonly="state != 'draft'" />
+                            <field name="date_due" />
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company" />
+                            <field name="currency_id" invisible="True" />
+                            <field name="net_tax" />
+                            <field name="amount_due" />
+                            <field
+                                name="regular_net_tax"
+                                invisible="method != 'quick'"
+                            />
+                            <field
+                                name="quick_method_gain"
+                                invisible="method != 'quick'"
+                            />
+                            <field name="closing_move_id" />
+                            <field name="filing_date" />
+                            <field name="confirmation_number" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Return" name="lines">
+                            <field name="line_ids" readonly="True">
+                                <list
+                                    decoration-bf="hierarchy_level &lt;= 1"
+                                    decoration-info="is_quick_method"
+                                >
+                                    <field name="sequence" column_invisible="True" />
+                                    <field name="hierarchy_level" column_invisible="True" />
+                                    <field name="currency_id" column_invisible="True" />
+                                    <field name="code" />
+                                    <field name="name" />
+                                    <field name="is_quick_method" optional="show" />
+                                    <field name="amount" />
+                                    <button
+                                        name="action_open_move_lines"
+                                        type="object"
+                                        icon="fa-search-plus"
+                                        title="Journal Items"
+                                    />
+                                </list>
+                            </field>
+                            <field
+                                name="quick_method_note"
+                                invisible="not quick_method_note"
+                                nolabel="1"
+                            />
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="note" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record id="l10n_ca_tax_return_view_search" model="ir.ui.view">
+        <field name="name">l10n.ca.tax.return.search</field>
+        <field name="model">l10n.ca.tax.return</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="confirmation_number" />
+                <filter
+                    name="gst_hst"
+                    string="GST/HST"
+                    domain="[('kind', '=', 'gst_hst')]"
+                />
+                <filter name="qst" string="Quebec" domain="[('kind', '=', 'qst')]" />
+                <separator />
+                <filter
+                    name="to_file"
+                    string="To File"
+                    domain="[('state', 'in', ('draft', 'computed', 'closed'))]"
+                />
+                <filter name="filed" string="Filed" domain="[('state', '=', 'filed')]" />
+                <group expand="0" string="Group By">
+                    <filter name="group_kind" string="Return" context="{'group_by': 'kind'}" />
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}" />
+                    <filter
+                        name="group_year"
+                        string="Year"
+                        context="{'group_by': 'date_to:year'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_l10n_ca_tax_return" model="ir.actions.act_window">
+        <field name="name">Canadian Sales Tax Returns</field>
+        <field name="res_model">l10n.ca.tax.return</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a sales tax return</p>
+            <p>
+                A return reads the posted journal items of its period through
+                the tax grids of the Canadian localization: the GST/HST return
+                (GST34) or the Quebec return (FPZ-500) for GST/HST and QST.
+                Compute it, post the closing entry, then record the filing.
+            </p>
+        </field>
+    </record>
+</odoo>
