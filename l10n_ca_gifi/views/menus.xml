@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <menuitem
+        id="menu_l10n_ca_gifi_statement"
+        name="GIFI Statements"
+        parent="l10n_ca_time_parameter.menu_l10n_ca_reporting"
+        action="action_l10n_ca_gifi_statement"
+        sequence="10"
+    />
+    <!-- Setup of the codes: next to the chart of accounts. -->
+    <menuitem
+        id="menu_l10n_ca_gifi_unmapped_accounts"
+        name="Accounts without GIFI Code"
+        parent="account.account_account_menu"
+        action="action_l10n_ca_gifi_unmapped_accounts"
+        groups="account.group_account_manager"
+        sequence="20"
+    />
+    <menuitem
+        id="menu_l10n_ca_gifi_code"
+        name="GIFI Codes"
+        parent="account.account_account_menu"
+        action="action_l10n_ca_gifi_code"
+        sequence="21"
+    />
+    <menuitem
+        id="menu_l10n_ca_gifi_account_type_map"
+        name="GIFI Codes by Account Type"
+        parent="account.account_account_menu"
+        action="action_l10n_ca_gifi_account_type_map"
+        groups="account.group_account_manager"
+        sequence="22"
+    />
+</odoo>

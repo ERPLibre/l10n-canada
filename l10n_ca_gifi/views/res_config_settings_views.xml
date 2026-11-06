@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.l10n_ca_gifi</field>
+        <field name="model">res.config.settings</field>
+        <field
+            name="inherit_id"
+            ref="l10n_ca_time_parameter.res_config_settings_view_form"
+        />
+        <field name="arch" type="xml">
+            <block name="l10n_ca_tax_profile" position="inside">
+                <setting
+                    string="GIFI Closing Journals"
+                    help="Year-end closing entries ignored by the GIFI statement"
+                >
+                    <field
+                        name="l10n_ca_gifi_closing_journal_ids"
+                        widget="many2many_tags"
+                        options="{'no_create': True}"
+                    />
+                </setting>
+            </block>
+        </field>
+    </record>
+</odoo>

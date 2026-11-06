@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="rule_gifi_statement_company" model="ir.rule">
+        <field name="name">GIFI statement: allowed companies</field>
+        <field name="model_id" ref="model_l10n_ca_gifi_statement" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_gifi_statement_line_company" model="ir.rule">
+        <field name="name">GIFI statement line: allowed companies</field>
+        <field name="model_id" ref="model_l10n_ca_gifi_statement_line" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_gifi_statement_check_company" model="ir.rule">
+        <field name="name">GIFI statement check: allowed companies</field>
+        <field name="model_id" ref="model_l10n_ca_gifi_statement_check" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_gifi_type_map_company" model="ir.rule">
+        <field name="name">GIFI type map: allowed companies</field>
+        <field name="model_id" ref="model_l10n_ca_gifi_account_type_map" />
+        <field
+            name="domain_force"
+        >['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

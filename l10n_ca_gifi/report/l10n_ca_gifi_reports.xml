@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="action_report_gifi_statement" model="ir.actions.report">
+        <field name="name">GIFI Statement (PDF)</field>
+        <field name="model">l10n.ca.gifi.statement</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">l10n_ca_gifi.report_gifi_statement</field>
+        <field name="report_file">l10n_ca_gifi.report_gifi_statement</field>
+        <field name="print_report_name">'GIFI_%s' % object.date_to</field>
+        <field name="binding_model_id" ref="model_l10n_ca_gifi_statement" />
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_gifi_statement_xlsx" model="ir.actions.report">
+        <field name="name">GIFI Statement (XLSX)</field>
+        <field name="model">l10n.ca.gifi.statement</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">l10n_ca_gifi.statement_xlsx</field>
+        <field name="report_file">GIFI</field>
+        <field name="binding_model_id" ref="model_l10n_ca_gifi_statement" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

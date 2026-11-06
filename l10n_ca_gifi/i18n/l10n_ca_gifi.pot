@@ -1,0 +1,4575 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_gifi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 03:22+0000\n"
+"PO-Revision-Date: 2026-10-27 03:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ca_gifi
+#: model:ir.actions.report,print_report_name:l10n_ca_gifi.action_report_gifi_statement
+msgid "'GIFI_%s' % object.date_to"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.report_gifi_statement
+msgid ""
+".\n"
+"                            Amounts in whole dollars."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_code__total_sign
+msgid ""
+"1 when the item is added to its total, -1 when it is subtracted (closing "
+"inventory, dividends, income taxes)."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_code.py:0
+msgid "A GIFI code has exactly four digits: %s"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.constraint,message:l10n_ca_gifi.constraint_l10n_ca_gifi_code_code_unique
+msgid "A GIFI code must be unique."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.actions.act_window,help:l10n_ca_gifi.action_l10n_ca_gifi_statement
+msgid ""
+"A GIFI statement turns the posted entries of a fiscal year\n"
+"                into the General Index of Financial Information: Schedule 100\n"
+"                (balance sheet and retained earnings), Schedule 125 (income\n"
+"                statement) and, for the first year, Schedule 101 (opening\n"
+"                balance sheet), with the CRA consistency checks. Export each\n"
+"                schedule as CSV for the T2 and CO-17 software, or print it."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/account_account.py:0
+msgid "A computed GIFI total cannot be mapped to an account."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_account_type_map.py:0
+msgid "A computed GIFI total cannot be mapped."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model,name:l10n_ca_gifi.model_account_account
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__account_id
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__account_account__l10n_ca_gifi_mapping__account
+msgid "Account"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Account %(account)s has no GIFI code: its balance %(balance)s is not "
+"reported."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Account %(account)s is reported under %(code)s by the fallback of its "
+"account type."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_account_type_map__account_type
+msgid "Account Type"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__account_account__l10n_ca_gifi_mapping__type
+msgid "Account type fallback"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8862
+msgid "Accounting fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__account_ids
+msgid "Accounts"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.actions.act_window,help:l10n_ca_gifi.action_l10n_ca_gifi_unmapped_accounts
+msgid ""
+"Accounts listed here are reported under the GIFI code of\n"
+"                their account type, or not reported at all when the type\n"
+"                has no code. Set a GIFI code on each of them."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1060
+msgid "Accounts receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1071
+msgid "Accounts receivable from employees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.actions.act_window,name:l10n_ca_gifi.action_l10n_ca_gifi_unmapped_accounts
+#: model:ir.ui.menu,name:l10n_ca_gifi.menu_l10n_ca_gifi_unmapped_accounts
+msgid "Accounts without GIFI Code"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1482
+msgid "Accrued investment income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1767
+msgid "Accumulated amortization of aircraft"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1905
+msgid "Accumulated amortization of asphalt and parking areas"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1681
+msgid "Accumulated amortization of buildings"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1922
+msgid "Accumulated amortization of campsites"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1911
+msgid "Accumulated amortization of capital leases – Buildings"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1913
+msgid "Accumulated amortization of capital leases – Equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1917
+msgid "Accumulated amortization of capital leases – Others"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1915
+msgid "Accumulated amortization of capital leases – Vehicles"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1775
+msgid "Accumulated amortization of computer equipment/software"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1747
+msgid "Accumulated amortization of construction and excavating equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2023
+msgid "Accumulated amortization of customer lists"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2425
+msgid "Accumulated amortization of deferred charges"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1627
+msgid ""
+"Accumulated amortization of deferred exploration and development charges"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1621
+msgid "Accumulated amortization of depletable assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1781
+msgid "Accumulated amortization of earth stations"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1761
+msgid "Accumulated amortization of exploration equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1909
+msgid "Accumulated amortization of fences"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1751
+msgid "Accumulated amortization of fishing gear and nets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1749
+msgid "Accumulated amortization of forestry and logging equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1788
+msgid "Accumulated amortization of furniture and fixtures"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2013
+msgid "Accumulated amortization of goodwill"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1631
+msgid "Accumulated amortization of gravel pits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2019
+msgid "Accumulated amortization of incorporation costs (corporations only)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2011
+msgid "Accumulated amortization of intangible assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1602
+msgid "Accumulated amortization of land improvements"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1919
+msgid "Accumulated amortization of leasehold improvements"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2017
+msgid "Accumulated amortization of licences"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1903
+msgid "Accumulated amortization of logging roads"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1741
+msgid ""
+"Accumulated amortization of machinery, equipment, furniture, and fixtures"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1683
+msgid "Accumulated amortization of manufacturing and processing plant"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1753
+msgid "Accumulated amortization of mining equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1625
+msgid "Accumulated amortization of mining properties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2075
+msgid "Accumulated amortization of mining rights"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1743
+msgid "Accumulated amortization of motor vehicles"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1777
+msgid "Accumulated amortization of musical instruments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2077
+msgid "Accumulated amortization of oil and gas rights"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1755
+msgid "Accumulated amortization of oil and gas systems"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1786
+msgid "Accumulated amortization of other machinery and equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1901
+msgid "Accumulated amortization of other tangible capital assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1623
+msgid "Accumulated amortization of petroleum and natural gas properties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1759
+msgid ""
+"Accumulated amortization of production equipment for other than resource "
+"industries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1757
+msgid ""
+"Accumulated amortization of production equipment for resource industries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1629
+msgid "Accumulated amortization of quarries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2015
+msgid "Accumulated amortization of quota"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1773
+msgid "Accumulated amortization of radio and communication equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2027
+msgid "Accumulated amortization of research and development"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2071
+msgid "Accumulated amortization of resource rights"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2025
+msgid "Accumulated amortization of rights"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1779
+msgid "Accumulated amortization of satellites"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1763
+msgid "Accumulated amortization of shipping equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1765
+msgid "Accumulated amortization of ships and boats"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1769
+msgid "Accumulated amortization of signs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1771
+msgid "Accumulated amortization of small tools"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1633
+msgid "Accumulated amortization of timber limits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2073
+msgid "Accumulated amortization of timber rights"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1745
+msgid "Accumulated amortization of tools and dies"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2021
+msgid "Accumulated amortization of trademarks/patents"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1784
+msgid "Accumulated amortization of transportation equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1907
+msgid "Accumulated amortization of wharves"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3580
+msgid "Accumulated other comprehensive income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__active
+msgid "Active"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_statement__first_year
+msgid ""
+"Adds Schedule 101, the opening balance sheet. Set when no entry is posted "
+"before the start date."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2863
+msgid "Advances due to related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8521
+msgid "Advertising"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8520
+msgid "Advertising and promotion"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9792
+msgid "Advertising, marketing costs, and promotion"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9545
+msgid "AgriStability and AgriInvest benefit"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1766
+msgid "Aircraft"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8238
+msgid "Alberta royalty tax credits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1061
+msgid "Allowance for doubtful accounts"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1072
+msgid "Allowance for doubtful accounts receivable from employees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1070
+msgid "Allowance for doubtful amounts contained in leases receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1063
+msgid "Allowance for doubtful trade accounts receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1065
+msgid "Allowance for doubtful trade accounts receivable from related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8570
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9832
+msgid "Amortization of intangible assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9833
+msgid "Amortization of milk quota"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8650
+msgid "Amortization of natural resource assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8670
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9791
+msgid "Amortization of tangible assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/report/l10n_ca_gifi_statement_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__amount
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.report_gifi_schedule
+msgid "Amount"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__amount_exact
+msgid "Amount Exact"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__amount_exact
+msgid "Amount before rounding to whole dollars."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3470
+msgid "Amounts held in trust"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3301
+msgid "Amounts owing to related Canadian parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3302
+msgid "Amounts owing to related foreign parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2620
+msgid "Amounts payable and accrued liabilities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2630
+msgid "Amounts payable to members of NPOs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1073
+msgid "Amounts receivable from members of NPOs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_account_type_map.py:0
+msgid "An account type has one fallback GIFI code per company."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__expected_sign__any
+msgid "Any"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8865
+msgid "Appraisal fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3542
+msgid "Appraisal surplus"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9479
+msgid "Aquaculture (hatching and raising)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8864
+msgid "Architect fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_code_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_code_view_search
+msgid "Archived"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9522
+msgid "Artificial insemination"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1904
+msgid "Asphalt and parking areas"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8222
+msgid "Assessments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__asset
+msgid "Assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2590
+msgid "Assets held in trust"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9793
+msgid "Bad debt"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8590
+msgid "Bad debt expense"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8250
+msgid "Bad debt recoveries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Balance sheet account %(account)s is mapped to income statement item "
+"%(code)s."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8715
+msgid "Bank charges"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2600
+msgid "Bank overdraft"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2940
+msgid "Bankers' acceptances"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9373
+msgid "Barley"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8350
+msgid "Benefits on direct wages"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9794
+msgid "Benefits related to employee salaries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3210
+msgid "Bonds and debentures"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9063
+msgid "Bonuses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2626
+msgid "Bonuses payable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8869
+msgid "Brokerage fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9795
+msgid "Building repairs and maintenance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1680
+msgid "Buildings"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1684
+msgid "Buildings under construction"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2363
+msgid "Business and government loans"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8762
+msgid "Business taxes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8760
+msgid "Business taxes, licences, and memberships"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+msgid "CSV Schedule 100"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+msgid "CSV Schedule 101"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+msgid "CSV Schedule 125"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9139
+msgid "Camp supplies"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1921
+msgid "Campsites"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1183
+msgid "Canadian bonds"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2306
+msgid "Canadian corporate bonds and debentures"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1182
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2303
+msgid "Canadian shares"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1181
+msgid "Canadian term deposits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1184
+msgid "Canadian treasury bills"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2305
+msgid "Canadian, provincial, and municipal government debt"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9376
+msgid "Canola"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1910
+msgid "Capital leases – Buildings"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1912
+msgid "Capital leases – Equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1916
+msgid "Capital leases – Others"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1914
+msgid "Capital leases – Vehicles"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9835
+msgid "Capital/business taxes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8246
+msgid "Card services"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1001
+msgid "Cash"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1000
+msgid "Cash and deposits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3701
+msgid "Cash dividends"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_7008
+msgid "Cash flow hedge effective portion gains/losses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9271
+msgid "Cash over/short"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2427
+msgid "Cash surrender value of life insurance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__category
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__category
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_code_view_search
+msgid "Category"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9471
+msgid "Cattle"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2310
+msgid "Central credit union shares"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3148
+msgid "Central, league, and federation loans"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3143
+msgid "Chartered bank loan"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/report/l10n_ca_gifi_statement_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__check_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.report_gifi_statement
+msgid "Checks"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2705
+msgid "Cheques and other items in transit"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9796
+msgid "Clearing, levelling, and draining land"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8500
+msgid "Closing inventory"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8501
+msgid "Closing inventory – Finished goods"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8503
+msgid "Closing inventory – Goods in process"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8502
+msgid "Closing inventory – Raw materials"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8048
+msgid "Coal revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/report/l10n_ca_gifi_statement_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__code
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__code
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.report_gifi_schedule
+msgid "Code"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8717
+msgid "Collection and credit costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8121
+msgid "Commission income on real estate transactions"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8120
+msgid "Commission revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9061
+msgid "Commissions"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9836
+msgid "Commissions and levies"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3500
+msgid "Common shares"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_account_type_map__company_id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__company_id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__company_id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__company_id
+msgid "Company"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8165
+msgid "Compensation for loss of fishing income or property"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__component_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_code_view_form
+msgid "Components"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+msgid "Compute"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid "Compute the statement before exporting it."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__computed_on
+msgid "Computed On"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_code__is_total
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__is_total
+msgid "Computed from other items; no account can be mapped to it."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1774
+msgid "Computer equipment/software"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9150
+msgid "Computer-related expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8913
+msgid "Condominium fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1746
+msgid "Construction and excavating equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8241
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8863
+msgid "Consulting fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9661
+msgid "Containers, twine, and baling wire"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3540
+msgid "Contributed and other surplus"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3541
+msgid "Contributed surplus"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8623
+msgid "Contributions to deferred income plans"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3324
+msgid "Contributions to qualifying environmental trust"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9375
+msgid "Corn"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__cost_of_sales
+msgid "Cost of Sales"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8518
+msgid "Cost of sales"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.actions.act_window,help:l10n_ca_gifi.action_l10n_ca_gifi_statement
+msgid "Create a GIFI statement."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_account_type_map__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_account_type_map__create_date
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__create_date
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__create_date
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__create_date
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__normal_balance__credit
+msgid "Credit"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3144
+msgid "Credit Union/Caisse Populaire loan"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8716
+msgid "Credit card charges"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2707
+msgid "Credit card loans"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8245
+msgid "Credit services"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1006
+msgid "Credit union central deposits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9062
+msgid "Crew share"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2966
+msgid "Crew shares"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9660
+msgid "Crop expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9542
+msgid "Crop insurance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9797
+msgid "Crop insurance, Revenue Protection Program, and stabilization premiums"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8435
+msgid "Crown charges"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8437
+msgid "Crown lease rentals"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8436
+msgid "Crown royalties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3547
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3743
+msgid "Currency adjustments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9990
+msgid "Current income taxes (corporations only)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2920
+msgid "Current portion of long-term liability"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9831
+msgid "Custom feed"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9617
+msgid "Custom feeding"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9601
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9798
+msgid "Custom or contract work"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2022
+msgid "Customer lists"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1460
+msgid "Customers' liability under acceptances"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9541
+msgid "Dairy subsidies"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8813
+msgid "Data processing"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__normal_balance__debit
+msgid "Debit"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2307
+msgid "Debt securities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1626
+msgid "Deferred exploration and development charges"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2770
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3220
+msgid "Deferred income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2422
+msgid "Deferred pension charges"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3328
+msgid "Deferred revenue from incomplete contracts"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2423
+msgid "Deferred unrealized exchange losses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_7002
+msgid "Defined benefit gains/losses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9275
+msgid "Delivery, freight and express"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1241
+msgid "Demand loans receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2861
+msgid "Demand notes due to related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1401
+msgid "Demand notes from related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1620
+msgid "Depletable assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3200
+msgid "Deposit liabilities of financial institutions"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8244
+msgid "Deposit services"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1002
+msgid "Deposits in Canadian banks and institutions – Canadian currency"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1003
+msgid "Deposits in Canadian banks and institutions – Foreign currency"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1004
+msgid "Deposits in foreign banks – Canadian currency"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1005
+msgid "Deposits in foreign banks – Foreign currency"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2961
+msgid "Deposits received"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8103
+msgid "Deposits with banks' interest"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_code_view_search
+msgid "Detail Items"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8412
+msgid "Development expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8460
+msgid "Direct cost amortization of natural resource assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8459
+msgid "Direct cost amortization of tangible assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8340
+msgid "Direct wages"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9064
+msgid "Directors fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9544
+msgid "Disaster Assistance Program payments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_account_type_map__display_name
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__display_name
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__display_name
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__display_name
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8095
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9608
+msgid "Dividend income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3700
+msgid "Dividends declared"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8096
+msgid "Dividends from Canadian sources"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8097
+msgid "Dividends from foreign sources"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2962
+msgid "Dividends payable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8522
+msgid "Donations"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8402
+msgid "Drilling"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1485
+msgid "Drilling advances"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1302
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2182
+msgid "Due from corporate shareholder(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1303
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2183
+msgid "Due from director(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1313
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2213
+msgid "Due from general partners"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1301
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2181
+msgid "Due from individual shareholder(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1380
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2220
+msgid "Due from joint venture(s)/partnership(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1311
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2211
+msgid "Due from limited partners"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1310
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2210
+msgid "Due from member(s)/general partner(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2190
+msgid "Due from members"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1312
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2212
+msgid "Due from members that are partnerships"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1300
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2180
+msgid "Due from shareholder(s)/director(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1314
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2214
+msgid "Due from specified members who are not limited partners"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2241
+msgid "Due from/investment in Canadian related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2246
+msgid "Due from/investment in foreign related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1400
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2240
+msgid "Due from/investment in related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2782
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3262
+msgid "Due to corporate shareholder(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2783
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3263
+msgid "Due to director(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2793
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3294
+msgid "Due to general partners"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2781
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3261
+msgid "Due to individual shareholder(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2840
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3280
+msgid "Due to joint venture(s)/partnership(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2791
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3292
+msgid "Due to limited partners"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2790
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3291
+msgid "Due to member(s)/general partner(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3270
+msgid "Due to members"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2792
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3293
+msgid "Due to members that are partnerships"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2860
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3300
+msgid "Due to related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2780
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3260
+msgid "Due to shareholder(s)/director(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2794
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3295
+msgid "Due to specified members who are not limited partners"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9279
+msgid "Dumping charges"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1780
+msgid "Earth stations"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_account_account__l10n_ca_gifi_effective_code_id
+msgid "Effective GIFI Code"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9477
+msgid "Eggs for consumption"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9221
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9799
+msgid "Electricity"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9524
+msgid "Embryo production"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8620
+msgid "Employee benefits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2627
+msgid "Employee deductions payable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9066
+msgid "Employee salaries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8622
+msgid "Employer's portion of employee benefits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__date_to
+msgid "End Date"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Entries of %(amount)s on retained earnings account %(account)s during the "
+"year are reported under %(code)s. Map a dividends account to 3700 or set the"
+" closing journal in the settings."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_res_company__l10n_ca_gifi_closing_journal_ids
+#: model:ir.model.fields,help:l10n_ca_gifi.field_res_config_settings__l10n_ca_gifi_closing_journal_ids
+msgid ""
+"Entries of these journals (year-end closing and reopening) are ignored by "
+"the GIFI statement, which reports the balances before closing."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8451
+msgid "Equipment hire and operation"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8914
+msgid "Equipment rental"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__equity
+msgid "Equity"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_7006
+msgid "Equity instruments gains/losses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2308
+msgid "Equity securities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_statement_check__level__error
+msgid "Error"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__error_count
+msgid "Error Count"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.actions.act_window,help:l10n_ca_gifi.action_l10n_ca_gifi_unmapped_accounts
+msgid "Every account has a GIFI code."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__expected_sign
+msgid "Expected Sign"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8249
+msgid "Expense recoveries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1760
+msgid "Exploration equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8411
+msgid "Exploration expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__extraordinary
+msgid "Extraordinary Items and Income Taxes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9975
+msgid "Extraordinary item(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3142
+msgid "Farm Credit Corporation loan"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__farm_expense
+msgid "Farming Expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__farm_revenue
+msgid "Farming Revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9616
+msgid "Farming joint venture income/loss"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9615
+msgid "Farming partnership income/loss"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9711
+msgid "Feed, supplements, straw, and bedding"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9800
+msgid "Fence repairs and maintenance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1908
+msgid "Fences"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9662
+msgid "Fertilizers and lime"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_statement__date_range_id
+msgid "Fills the dates from a date range."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8142
+msgid "Film rental revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__first_year
+msgid "First Year After Incorporation"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__date_range_id
+msgid "Fiscal Year"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8161
+msgid "Fish products"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9136
+msgid "Fishing gear"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1750
+msgid "Fishing gear and nets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8163
+msgid "Fishing grants, credits, and rebates"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8160
+msgid "Fishing revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8164
+msgid "Fishing subsidies"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9377
+msgid "Flaxseed"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9135
+msgid "Food and catering"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9426
+msgid "Forage crops"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8231
+msgid "Foreign exchange gains/losses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_7004
+msgid "Foreign operation translation gains/losses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2301
+msgid "Foreign shares"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1748
+msgid "Forestry and logging equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8453
+msgid "Forestry costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__formula
+msgid "Formula"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8763
+msgid "Franchise fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8438
+msgid "Freehold mineral tax"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8405
+msgid "Freehold royalties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9801
+msgid "Freight and trucking"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8457
+msgid "Freight-in and duty"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9421
+msgid "Fruit"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9224
+msgid "Fuel costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1787
+msgid "Furniture and fixtures"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9995
+msgid "Future (deferred) income tax provision (corporations only)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1481
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2421
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2963
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3240
+msgid "Future (deferred) income taxes (corporations only)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid "GIFI %(date)s - %(company)s"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_res_company__l10n_ca_gifi_closing_journal_ids
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_res_config_settings__l10n_ca_gifi_closing_journal_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.res_config_settings_view_form
+msgid "GIFI Closing Journals"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model,name:l10n_ca_gifi.model_l10n_ca_gifi_code
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_account_account__l10n_ca_gifi_code_id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_account_type_map__gifi_code_id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__gifi_code_id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__gifi_code_id
+msgid "GIFI Code"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.view_account_form
+msgid "GIFI Code (fallback)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model,name:l10n_ca_gifi.model_l10n_ca_gifi_account_type_map
+msgid "GIFI Code by Account Type"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.actions.act_window,name:l10n_ca_gifi.action_l10n_ca_gifi_code
+#: model:ir.ui.menu,name:l10n_ca_gifi.menu_l10n_ca_gifi_code
+msgid "GIFI Codes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.actions.act_window,name:l10n_ca_gifi.action_l10n_ca_gifi_account_type_map
+#: model:ir.ui.menu,name:l10n_ca_gifi.menu_l10n_ca_gifi_account_type_map
+msgid "GIFI Codes by Account Type"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_account_account__l10n_ca_gifi_mapping
+msgid "GIFI Mapping"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model,name:l10n_ca_gifi.model_l10n_ca_gifi_statement
+msgid "GIFI Statement"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.actions.report,name:l10n_ca_gifi.action_report_gifi_statement
+msgid "GIFI Statement (PDF)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.actions.report,name:l10n_ca_gifi.action_report_gifi_statement_xlsx
+msgid "GIFI Statement (XLSX)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model,name:l10n_ca_gifi.model_l10n_ca_gifi_statement_check
+msgid "GIFI Statement Check"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model,name:l10n_ca_gifi.model_l10n_ca_gifi_statement_line
+msgid "GIFI Statement Line"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model,name:l10n_ca_gifi.model_report_l10n_ca_gifi_statement_xlsx
+msgid "GIFI Statement XLSX"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.actions.act_window,name:l10n_ca_gifi.action_l10n_ca_gifi_statement
+#: model:ir.ui.menu,name:l10n_ca_gifi.menu_l10n_ca_gifi_statement
+msgid "GIFI Statements"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid "GIFI item %(code)s is reserved to partnerships (account %(account)s)."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9609
+msgid "Gains/losses on disposal of assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9014
+msgid "Garbage removal"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8043
+msgid "Gas marketing"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.report_gifi_statement
+msgid "General Index of Financial Information"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9284
+msgid "General and administrative expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9790
+msgid "General farm expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3551
+msgid "General partners' capital beginning balance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3560
+msgid "General partners' capital ending balance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3554
+msgid "General partners' contributions during the fiscal period"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3553
+msgid "General partners' drawings"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3552
+msgid "General partners' net income (loss)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2965
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3325
+msgid "General provisions/reserves"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3543
+msgid "General reserve"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_code__parent_id
+msgid ""
+"Generic item, printed in bold in guide RC4088, that heads the block of this "
+"item. The GIFI-Short groups a block under it."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8223
+msgid "Gifts"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2704
+msgid "Gold and silver certificates"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2012
+msgid "Goodwill"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8571
+msgid "Goodwill impairment loss"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8764
+msgid "Government fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2304
+msgid "Government of Canada debt"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9370
+msgid "Grains and oilseeds"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9610
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9826
+msgid "Gravel"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1630
+msgid "Gravel pits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9425
+msgid "Greenhouse and nursery products"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8404
+msgid "Gross overriding royalty"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8519
+msgid "Gross profit/loss"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Gross revenue (%(revenue)s) and total assets (%(assets)s) are under the "
+"GIFI-Short limits: the paper form T1178 may be used instead of the GIFI "
+"schedules."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8224
+msgid "Gross sales and revenues from organizational activities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8621
+msgid "Group insurance benefits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9478
+msgid "Hatching eggs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3570
+msgid "Head office account"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9223
+msgid "Heat"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9802
+msgid "Heating fuel and curing fuel"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2623
+msgid "Holdbacks payable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1068
+msgid "Holdbacks receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9603
+msgid "Horse racing"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9480
+msgid "Horses (breeding and meat)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_account_type_map__id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Income statement account %(account)s is mapped to balance sheet item "
+"%(code)s."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_7010
+msgid ""
+"Income tax relating to components of other comprehensive income "
+"(corporations only)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8234
+msgid "Income/loss of joint ventures"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8233
+msgid "Income/loss of other divisions"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8235
+msgid "Income/loss of partnerships"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8232
+msgid "Income/loss of subsidiaries/affiliates"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2018
+msgid "Incorporation costs (corporations only)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_statement_check__level__info
+msgid "Information"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8690
+msgid "Insurance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9604
+msgid "Insurance proceeds"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9803
+msgid "Insurance program overpayment recapture"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8248
+msgid "Insurance recoveries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2010
+msgid "Intangible assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9285
+msgid "Interdivisional expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8030
+msgid "Interdivisional sales"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8710
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9805
+msgid "Interest and bank charges"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8092
+msgid "Interest from Canadian bonds and debentures"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8093
+msgid "Interest from Canadian mortgage loans"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8091
+msgid "Interest from foreign sources"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8094
+msgid "Interest from other Canadian sources"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9607
+msgid "Interest income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8100
+msgid "Interest income (financial institutions)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8712
+msgid "Interest on bonds and debentures"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8714
+msgid "Interest on long-term debt"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8713
+msgid "Interest on mortgages"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8711
+msgid "Interest on short-term debt"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8740
+msgid "Interest paid (financial institutions)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8742
+msgid "Interest paid on bonds and debentures"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8741
+msgid "Interest paid on deposits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2629
+msgid "Interest payable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2862
+msgid "Interest payable to related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1067
+msgid "Interest receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1402
+msgid "Interest receivable from related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3745
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9286
+msgid "Interfund transfer"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9152
+msgid "Internet"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_code.py:0
+msgid ""
+"Invalid formula '%s': use signed four-digit codes such as '+8089 -8518'."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1120
+msgid "Inventories"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1124
+msgid "Inventory of aggregates"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1121
+msgid "Inventory of goods for sale"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1127
+msgid "Inventory of securities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1122
+msgid "Inventory parts and supplies"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1123
+msgid "Inventory properties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8458
+msgid "Inventory write-down"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2244
+msgid "Investment in Canadian related corporations at cost"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2245
+msgid "Investment in Canadian related corporations at equity"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2280
+msgid "Investment in co-tenancy"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2249
+msgid "Investment in foreign related corporations at cost"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2250
+msgid "Investment in foreign related corporations at equity"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1360
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2200
+msgid "Investment in joint venture(s)/partnership(s)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8090
+msgid "Investment revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/report/l10n_ca_gifi_statement_xlsx.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.report_gifi_schedule
+msgid "Item"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Item %(code)s holds %(amount)s while no inventory is reported. Check that "
+"these costs are purchases of goods or materials; operating expenses (rent, "
+"software, telecommunications, ...) belong to accounts mapped to the "
+"operating expense items (8520 to 9286)."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Item %(code)s is negative (%(amount)s); check the mapping of its accounts."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Item %(code)s is positive (%(amount)s); a contra account is expected to be "
+"negative."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_account_account__l10n_ca_gifi_code_id
+msgid ""
+"Item of the General Index of Financial Information where the balance of this"
+" account is reported (T2 schedules 100 and 125). Empty: the code set for the"
+" account type is used."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_code__partnership_only
+msgid "Item reserved to partnerships (T5013); not used on a T2."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_code__required
+msgid ""
+"Item that must be reported, even when nil (RC4088, Validity check items)."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8866
+msgid "Laboratory fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1600
+msgid "Land"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9280
+msgid "Land fill fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1601
+msgid "Land improvements"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_account_type_map__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_account_type_map__write_date
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__write_date
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__write_date
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__write_date
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9134
+msgid "Laundry"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__parent_id
+msgid "Lead Item"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1918
+msgid "Leasehold improvements"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9613
+msgid "Leases (such as gas, oil, well, and surface)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1069
+msgid "Leases receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_account_type_map__company_id
+msgid "Leave empty to apply the row to every company."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8861
+msgid "Legal fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9976
+msgid "Legal settlements"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/report/l10n_ca_gifi_statement_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__level
+msgid "Level"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__liability
+msgid "Liabilities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2702
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3150
+msgid "Liability for securities sold short"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2703
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3151
+msgid "Liability for securities sold under repurchase agreements"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2016
+msgid "Licences"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9823
+msgid "Licences/permits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2706
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3152
+msgid "Lien notes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8691
+msgid "Life insurance on executives"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3561
+msgid "Limited partners' capital beginning balance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3571
+msgid "Limited partners' capital ending balance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3564
+msgid "Limited partners' contribution during the fiscal period"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3563
+msgid "Limited partners' drawings"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3562
+msgid "Limited partners' net income (loss)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__line_ids
+msgid "Line"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2364
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3149
+msgid "Line of credit"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9470
+msgid "Livestock and animal products revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9710
+msgid "Livestock expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9712
+msgid "Livestock purchases"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8101
+msgid "Loan interest"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8610
+msgid "Loan losses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1240
+msgid "Loans and notes receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2701
+msgid "Loans from Canadian banks"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1403
+msgid "Loans/advances due from related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2243
+msgid "Loans/advances to Canadian related corporations"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2248
+msgid "Loans/advances to foreign related corporations"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8452
+msgid "Log yard"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8454
+msgid "Logging road costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1902
+msgid "Logging roads"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3140
+msgid "Long-term debt"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2300
+msgid "Long-term investments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2360
+msgid "Long-term loans"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3321
+msgid "Long-term obligations/commitments/capital leases"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9614
+msgid "Machine rentals"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9011
+msgid "Machine shop expense"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1782
+msgid "Machinery and equipment under construction"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9760
+msgid "Machinery expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9764
+msgid "Machinery fuel"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9761
+msgid "Machinery insurance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9765
+msgid "Machinery lease"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9762
+msgid "Machinery licences"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9763
+msgid "Machinery repairs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1740
+msgid "Machinery, equipment, furniture, and fixtures"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8239
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8871
+msgid "Management and administration fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2625
+msgid "Management fees payable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9065
+msgid "Management salaries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1682
+msgid "Manufacturing and processing plant"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9521
+msgid "Maple products"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9806
+msgid "Marketing board fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8523
+msgid "Meals and entertainment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8867
+msgid "Medical fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9201
+msgid "Meetings and conventions"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3327
+msgid "Member allocations (corporations only)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8221
+msgid "Membership fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8761
+msgid "Memberships"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9807
+msgid "Memberships/subscription fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/report/l10n_ca_gifi_statement_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__message
+msgid "Message"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9476
+msgid "Milk and cream (excluding dairy subsidies)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9714
+msgid "Minerals and salts"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1752
+msgid "Mining equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8052
+msgid "Mining partnership/joint venture income/loss"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1624
+msgid "Mining properties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8047
+msgid "Mining revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2074
+msgid "Mining rights"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8439
+msgid "Mining taxes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_7020
+msgid "Miscellaneous other comprehensive income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9374
+msgid "Mixed grains"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8916
+msgid "Moorage (boat)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2361
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3141
+msgid "Mortgages"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1244
+msgid "Mortgages receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9819
+msgid "Motor vehicle expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9829
+msgid "Motor vehicle interest and leasing costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8915
+msgid "Motor vehicle rentals"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1742
+msgid "Motor vehicles"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1776
+msgid "Musical instruments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8220
+msgid "NPO amounts received"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__name
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__name
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__expected_sign__negative
+msgid "Negative"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__net_income
+msgid "Net Income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9899
+msgid "Net farm income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid "Net income (3680) differs from item 9999 by %(gap)s."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3545
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3680
+msgid "Net income/loss"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9999
+msgid "Net income/loss after taxes and extraordinary items"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9970
+msgid "Net income/loss before taxes and extraordinary items"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9870
+msgid "Net inventory adjustment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9369
+msgid "Net non-farming income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Net non-farming income (9369) differs from total revenue less total expenses"
+" by %(gap)s."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9137
+msgid "Nets and traps"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.actions.act_window,help:l10n_ca_gifi.action_l10n_ca_gifi_account_type_map
+msgid "No fallback GIFI code yet."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9850
+msgid "Non-farming expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9650
+msgid "Non-farming income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__normal_balance
+msgid "Normal Balance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1243
+msgid "Notes receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8790
+msgid "Nova Scotia tax on large corporations"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9372
+msgid "Oats"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8912
+msgid "Occupancy costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8810
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9808
+msgid "Office expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8811
+msgid "Office stationery and supplies"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8812
+msgid "Office utilities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8051
+msgid "Oil and gas partnership/joint venture income/loss"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2076
+msgid "Oil and gas rights"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1754
+msgid "Oil and gas systems"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8440
+msgid "Oil sand leases"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8049
+msgid "Oil sands revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8300
+msgid "Opening inventory"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8301
+msgid "Opening inventory – Finished goods"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8303
+msgid "Opening inventory – Goods in process"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8302
+msgid "Opening inventory – Raw materials"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__expense
+msgid "Operating Expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2311
+msgid "Other Canadian long-term investments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__other_comprehensive_income
+msgid "Other Comprehensive Income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1920
+msgid "Other capital assets under construction"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1007
+msgid "Other cash-like instruments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9520
+msgid "Other commodities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9420
+msgid "Other crop revenues"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1480
+msgid "Other current assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2960
+msgid "Other current liabilities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2424
+msgid "Other deferred items/charges"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8450
+msgid "Other direct costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9270
+msgid "Other expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9600
+msgid "Other farm revenues/losses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9804
+msgid "Other insurance premiums"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3740
+msgid "Other items affecting retained earnings"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8410
+msgid "Other lease rentals"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1242
+msgid "Other loans receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2420
+msgid "Other long-term assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3320
+msgid "Other long-term liabilities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1785
+msgid "Other machinery and equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8162
+msgid "Other marine products"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8406
+msgid "Other producing properties rental"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8053
+msgid "Other production revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9813
+msgid "Other rental expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9010
+msgid "Other repairs and maintenance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8230
+msgid "Other revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1186
+msgid "Other short-term Canadian investments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1900
+msgid "Other tangible capital assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2302
+msgid "Other types of foreign investments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8461
+msgid "Overhead expenses allocated to cost of sales"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+msgid "PDF"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__partnership_only
+msgid "Partnership Only"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3702
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8247
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9605
+msgid "Patronage dividends"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2362
+msgid "Personal and credit card loans"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9663
+msgid "Pesticides"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1622
+msgid "Petroleum and natural gas properties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8041
+msgid "Petroleum and natural gas sales"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8042
+msgid "Petroleum and natural gas sales to related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8401
+msgid "Pipeline operations"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8045
+msgid "Pipeline revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__expected_sign__positive
+msgid "Positive"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9422
+msgid "Potatoes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9473
+msgid "Poultry"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3326
+msgid "Preference shares restated (corporations only)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3520
+msgid "Preferred shares"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9475
+msgid "Pregnant mare urine (PMU)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1484
+msgid "Prepaid expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9830
+msgid "Prepared feed"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3546
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3720
+msgid "Prior period adjustments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3147
+msgid "Private loan"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8044
+msgid "Processing revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8370
+msgid "Production costs other than resource"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1758
+msgid "Production equipment for other than resource industries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1756
+msgid "Production equipment for resource industries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9546
+msgid "Production insurance premium benefit"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8860
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9809
+msgid "Professional fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9540
+msgid "Program payment revenues"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8524
+msgid "Promotion"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9180
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9810
+msgid "Property taxes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8407
+msgid "Prospect/geological"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3145
+msgid "Provincial or territorial government loan"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8611
+msgid "Provision for loan losses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3323
+msgid "Provision for site restoration"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9827
+msgid "Purchases of commodities resold"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8320
+msgid "Purchases/cost of materials"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1628
+msgid "Quarries"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2014
+msgid "Quota"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8918
+msgid "Quota rental"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9825
+msgid "Quota rental (tobacco, dairy)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1772
+msgid "Radio and communication equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1126
+msgid "Raw materials"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8911
+msgid "Real estate rental"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8141
+msgid "Real estate rental revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8236
+msgid "Realization of deferred revenues"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8210
+msgid "Realized gains/losses on disposal of assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8211
+msgid "Realized gains/losses on sale of investments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8212
+msgid "Realized gains/losses on sale of resource properties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9570
+msgid "Rebates"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9571
+msgid "Rebates – Fuel"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9572
+msgid "Rebates – Interest"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9573
+msgid "Rebates – Property taxes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8872
+msgid "Refining and assay"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8873
+msgid "Registrar and transfer agent fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9272
+msgid "Reimbursement of parent company expense (corporations only)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9811
+msgid "Rent – Land and buildings"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9812
+msgid "Rent – Machinery"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8910
+msgid "Rental"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9606
+msgid "Rental income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8140
+msgid "Rental revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8960
+msgid "Repairs and maintenance"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8963
+msgid "Repairs and maintenance – Boats"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8961
+msgid "Repairs and maintenance – Buildings"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8964
+msgid "Repairs and maintenance – Machinery and equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8962
+msgid "Repairs and maintenance – Vehicles"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__required
+msgid "Required Item"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9612
+msgid "Resale of commodities purchased"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2026
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9282
+msgid "Research and development"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2426
+msgid "Reserve fund"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2964
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3322
+msgid "Reserves for guarantees, warranties, or indemnities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8400
+msgid "Resource production costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2070
+msgid "Resource rights"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8874
+msgid "Restructuring costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__retained_earnings
+msgid "Retained Earnings"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Retained earnings at the end (3849) differ from the balance sheet retained "
+"earnings (3600) by %(gap)s."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3600
+msgid "Retained earnings/deficit"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3849
+msgid "Retained earnings/deficit – End"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3660
+msgid "Retained earnings/deficit – Start"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_7000
+msgid "Revaluation surplus"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__category__revenue
+msgid "Revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2024
+msgid "Rights"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9012
+msgid "Road costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__total_id
+msgid "Rolls Into"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Rounding difference of %(gap)s between 3849 and 3600 reported under item "
+"3740."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8456
+msgid "Royalty costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9278
+msgid "Royalty expenses – Non-resident"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9277
+msgid "Royalty expenses – Resident"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8050
+msgid "Royalty income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8237
+msgid "Royalty income other than resource"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9060
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9814
+msgid "Salaries and wages"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9815
+msgid "Salaries and wages other than for spouse or dependants"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9816
+msgid "Salaries and wages paid to dependants"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9828
+msgid "Salaries and wages paid to spouse"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8243
+msgid "Sale of by-products"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8040
+msgid "Sales from resource properties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8020
+msgid "Sales of goods and services to related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9138
+msgid "Salt, bait, and ice"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8441
+msgid "Saskatchewan resource surcharge"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1778
+msgid "Satellites"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__schedule
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__schedule
+msgid "Schedule"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Schedule %(schedule)s: rounding difference of %(gap)s absorbed by item 3600."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__s100_line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_code_view_search
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+msgid "Schedule 100"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__schedule__100
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_statement_line__schedule__100
+msgid "Schedule 100 - Balance Sheet"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.report_gifi_statement
+msgid "Schedule 100 - Balance Sheet Information"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__s101_line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+msgid "Schedule 101"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_statement_line__schedule__101
+msgid "Schedule 101 - Opening Balance Sheet"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.report_gifi_statement
+msgid "Schedule 101 - Opening Balance Sheet Information"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_code__schedule
+msgid ""
+"Schedule 101, the opening balance sheet of the first year, uses the codes of"
+" Schedule 100."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Schedule 101: total assets differ from total liabilities and shareholder "
+"equity by %(gap)s."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__s125_line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_code_view_search
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+msgid "Schedule 125"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_code__schedule__125
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_statement_line__schedule__125
+msgid "Schedule 125 - Income Statement"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.report_gifi_statement
+msgid "Schedule 125 - Income Statement Information"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8102
+msgid "Securities interest"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1185
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2309
+msgid "Securities purchased under resale agreements"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9013
+msgid "Security"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8875
+msgid "Security commission fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1486
+msgid "Security/tender deposits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9664
+msgid "Seeds and plants"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8046
+msgid "Seismic sales"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Select the company and all its branches (%s) in the company switcher before "
+"computing the GIFI statement."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9817
+msgid "Selling costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9273
+msgid "Selling expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9523
+msgid "Semen production"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3741
+msgid "Share redemptions"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2242
+msgid "Shares in Canadian related corporations"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2247
+msgid "Shares in foreign related corporations"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8166
+msgid "Sharesperson income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9474
+msgid "Sheep and lambs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9274
+msgid "Shipping and warehouse expense"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1762
+msgid "Shipping equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1764
+msgid "Ships and boats"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9132
+msgid "Shop expense"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2700
+msgid "Short-term debt"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1187
+msgid "Short-term foreign investments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1180
+msgid "Short-term investments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_code__normal_balance
+msgid "Side of the account balance reported as a positive amount."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_code__expected_sign
+msgid ""
+"Sign of a normal amount; the GIFI statement warns about an amount of the "
+"other sign."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_code__formula
+msgid ""
+"Signed codes, such as '+8089 -8518', for a calculated item that is not the "
+"sum of one block."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1768
+msgid "Signs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8403
+msgid "Site restoration costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1770
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9131
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9820
+msgid "Small tools"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9821
+msgid "Soil testing"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9378
+msgid "Soya beans"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3742
+msgid "Special reserves (corporations and co-ops only)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__date_from
+msgid "Start Date"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_check__statement_id
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__statement_id
+msgid "Statement"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8917
+msgid "Storage"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9822
+msgid "Storage/drying"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8877
+msgid "Studio and recording"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8455
+msgid "Stumpage costs"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9110
+msgid "Sub-contracts"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3460
+msgid "Subordinated debt"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8242
+msgid "Subsidies and grants"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9130
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9818
+msgid "Supplies"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3146
+msgid "Supply company loan"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9472
+msgid "Swine"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2680
+msgid "Taxes payable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1066
+msgid "Taxes receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1483
+msgid "Taxes recoverable/refundable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8240
+msgid "Telecommunications revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9824
+msgid "Telephone"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9225
+msgid "Telephone and telecommunications"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.actions.act_window,help:l10n_ca_gifi.action_l10n_ca_gifi_account_type_map
+msgid ""
+"The GIFI code of an account without its own code is taken\n"
+"                from its account type. A row of a company wins over a row\n"
+"                without company."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid "The start date must precede the end date."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_code.py:0
+msgid "The total sign is 1 or -1."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1632
+msgid "Timber limits"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2072
+msgid "Timber rights"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9424
+msgid "Tobacco"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1744
+msgid "Tools and dies"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__is_total
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__is_total
+msgid "Total"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__total_assets
+msgid "Total Assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_code__total_sign
+msgid "Total Sign"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2179
+msgid "Total accumulated amortization of intangible capital assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2009
+msgid "Total accumulated amortization of tangible capital assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2599
+msgid "Total assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/l10n_ca_gifi_statement.py:0
+msgid ""
+"Total assets (2599) differ from total liabilities and shareholder equity "
+"(3499 + 3620) by %(gap)s."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1599
+msgid "Total current assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3139
+msgid "Total current liabilities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9368
+msgid "Total expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9898
+msgid "Total farm expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9659
+msgid "Total farm revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2178
+msgid "Total intangible capital assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3499
+msgid "Total liabilities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3585
+msgid "Total liabilities and partners' capital"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3640
+msgid "Total liabilities and shareholder equity"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2589
+msgid "Total long-term assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3450
+msgid "Total long-term liabilities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3550
+msgid "Total net income/loss"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9367
+msgid "Total operating expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3575
+msgid "Total partners' capital"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8299
+msgid "Total revenue"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8089
+msgid "Total sales of goods and services"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3620
+msgid "Total shareholder equity"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2008
+msgid "Total tangible capital assets"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_code__total_id
+msgid "Total that includes this item."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9998
+msgid "Total-other comprehensive income"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_code_view_search
+msgid "Totals"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1062
+msgid "Trade accounts receivable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1064
+msgid "Trade accounts receivable from related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2621
+msgid "Trade payables"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2622
+msgid "Trade payables to related parties"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8000
+msgid "Trade sales of goods and services"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2020
+msgid "Trademarks/patents"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8360
+msgid "Trades and sub-contracts"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8876
+msgid "Training expense"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8870
+msgid "Transfer fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1783
+msgid "Transportation equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9200
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9834
+msgid "Travel expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9611
+msgid "Trucking"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9133
+msgid "Uniforms"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__account_account__l10n_ca_gifi_mapping__none
+msgid "Unmapped"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.view_account_search
+msgid "Unmapped (no GIFI code nor fallback)"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9980
+msgid "Unrealized gains/losses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#. odoo-python
+#: code:addons/l10n_ca_gifi/models/account_account.py:0
+msgid "Unsupported search on the GIFI mapping."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9985
+msgid "Unusual items"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3548
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_3744
+msgid "Unusual revenue items"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9151
+msgid "Upgrade"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9220
+msgid "Utilities"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9423
+msgid "Vegetables"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9281
+msgid "Vehicle expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8150
+msgid "Vehicle leasing"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8868
+msgid "Veterinary fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9713
+msgid "Veterinary fees, medicine, and breeding fees"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2624
+msgid "Wages payable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields.selection,name:l10n_ca_gifi.selection__l10n_ca_gifi_statement_check__level__warning
+msgid "Warning"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,field_description:l10n_ca_gifi.field_l10n_ca_gifi_statement__warning_count
+msgid "Warning Count"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9276
+msgid "Warranty expenses"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9222
+msgid "Water"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8409
+msgid "Well abandonment and dry holes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_8408
+msgid "Well operating, fuel and equipment"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1906
+msgid "Wharves"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9371
+msgid "Wheat"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9379
+msgid "Wheat Board payments"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:ir.model.fields,help:l10n_ca_gifi.field_l10n_ca_gifi_statement_line__amount
+msgid "Whole dollars, as reported."
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_search
+msgid "With Errors"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9283
+msgid "Withholding taxes"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_2628
+msgid "Withholding taxes payable"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.view_account_search
+msgid "Without GIFI Code"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_9602
+msgid "Wood sales"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model:l10n.ca.gifi.code,name:l10n_ca_gifi.gifi_1125
+msgid "Work in progress"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+msgid "XLSX"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.res_config_settings_view_form
+msgid "Year-end closing entries ignored by the GIFI statement"
+msgstr ""
+
+#. module: l10n_ca_gifi
+#: model_terms:ir.ui.view,arch_db:l10n_ca_gifi.l10n_ca_gifi_statement_view_form
+msgid ""
+"error(s) to\n"
+"                        correct before filing: see the Checks tab."
+msgstr ""

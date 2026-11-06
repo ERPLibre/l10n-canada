@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="report_gifi_schedule">
+        <t t-set="lines" t-value="o._lines_of(schedule)" />
+        <t t-if="lines">
+            <h4 class="mt-4" t-out="title" />
+            <table class="table table-sm o_main_table">
+                <thead>
+                    <tr>
+                        <th class="text-start" style="width: 10%">Code</th>
+                        <th class="text-start">Item</th>
+                        <th class="text-end" style="width: 20%">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="lines" t-as="line" t-att-class="line.is_total and 'fw-bold' or ''">
+                        <td t-out="line.code" />
+                        <td t-out="line.name" />
+                        <td class="text-end"><span t-field="line.amount" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </t>
+    </template>
+
+    <template id="report_gifi_statement">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>General Index of Financial Information</h2>
+                        <p>
+                            <span t-field="o.company_id.name" />,
+                            <span t-field="o.date_from" /> - <span t-field="o.date_to" />.
+                            Amounts in whole dollars.
+                        </p>
+                        <t t-call="l10n_ca_gifi.report_gifi_schedule">
+                            <t t-set="schedule" t-value="'100'" />
+                            <t t-set="title">Schedule 100 - Balance Sheet Information</t>
+                        </t>
+                        <t t-call="l10n_ca_gifi.report_gifi_schedule">
+                            <t t-set="schedule" t-value="'101'" />
+                            <t t-set="title">Schedule 101 - Opening Balance Sheet Information</t>
+                        </t>
+                        <t t-call="l10n_ca_gifi.report_gifi_schedule">
+                            <t t-set="schedule" t-value="'125'" />
+                            <t t-set="title">Schedule 125 - Income Statement Information</t>
+                        </t>
+                        <t t-if="o.check_ids">
+                            <h4 class="mt-4">Checks</h4>
+                            <table class="table table-sm">
+                                <tbody>
+                                    <tr t-foreach="o.check_ids" t-as="check">
+                                        <td style="width: 15%"><span t-field="check.level" /></td>
+                                        <td t-out="check.message" />
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

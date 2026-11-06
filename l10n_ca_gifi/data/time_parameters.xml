@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="param_gifi_short_max_gross_revenue" model="base.time.parameter">
+        <field name="name">GIFI-Short: gross revenue limit</field>
+        <field name="code">l10n_ca.gifi.short_max_gross_revenue</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >A corporation may file the paper Form T1178, General Index of Financial Information - Short, when its gross revenue AND its assets are each less than this amount (insurance corporations excluded). The GIFI statement reports the eligibility as information. Reference: CRA guide RC4088 (Rev. 23), "Using the GIFI-Short", and guide RC4089. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4088/general-index-financial-information-gifi.html</field>
+    </record>
+    <record id="param_gifi_short_max_gross_revenue_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gifi_short_max_gross_revenue" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1000000</field>
+    </record>
+    <record id="param_gifi_short_max_gross_revenue_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gifi_short_max_gross_revenue" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1000000</field>
+    </record>
+
+    <record id="param_gifi_short_max_assets" model="base.time.parameter">
+        <field name="name">GIFI-Short: total assets limit</field>
+        <field name="code">l10n_ca.gifi.short_max_assets</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >A corporation may file the paper Form T1178, General Index of Financial Information - Short, when its assets AND its gross revenue are each less than this amount (insurance corporations excluded). Compared with GIFI item 2599, Total assets. Reference: CRA guide RC4088 (Rev. 23), "Using the GIFI-Short", and guide RC4089. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4088/general-index-financial-information-gifi.html</field>
+    </record>
+    <record id="param_gifi_short_max_assets_2025" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gifi_short_max_assets" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1000000</field>
+    </record>
+    <record id="param_gifi_short_max_assets_2026" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_gifi_short_max_assets" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1000000</field>
+    </record>
+</odoo>

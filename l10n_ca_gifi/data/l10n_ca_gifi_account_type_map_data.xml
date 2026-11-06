@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- GIFI code of an account without its own code, by account type.
+         Each one is the generic lead item of the matching GIFI block; a
+         cost of revenue account goes to 8450 Other direct costs rather
+         than 8320 Purchases, which is reserved to goods and materials. -->
+    <record id="type_map_asset_receivable" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">asset_receivable</field>
+        <field name="gifi_code_id" ref="gifi_1060" />
+    </record>
+    <record id="type_map_asset_cash" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">asset_cash</field>
+        <field name="gifi_code_id" ref="gifi_1000" />
+    </record>
+    <record id="type_map_asset_current" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">asset_current</field>
+        <field name="gifi_code_id" ref="gifi_1480" />
+    </record>
+    <record id="type_map_asset_non_current" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">asset_non_current</field>
+        <field name="gifi_code_id" ref="gifi_2420" />
+    </record>
+    <record id="type_map_asset_prepayments" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">asset_prepayments</field>
+        <field name="gifi_code_id" ref="gifi_1484" />
+    </record>
+    <record id="type_map_asset_fixed" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">asset_fixed</field>
+        <field name="gifi_code_id" ref="gifi_1900" />
+    </record>
+    <record id="type_map_liability_payable" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">liability_payable</field>
+        <field name="gifi_code_id" ref="gifi_2620" />
+    </record>
+    <record id="type_map_liability_credit_card" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">liability_credit_card</field>
+        <field name="gifi_code_id" ref="gifi_2707" />
+    </record>
+    <record id="type_map_liability_current" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">liability_current</field>
+        <field name="gifi_code_id" ref="gifi_2960" />
+    </record>
+    <record id="type_map_liability_non_current" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">liability_non_current</field>
+        <field name="gifi_code_id" ref="gifi_3320" />
+    </record>
+    <record id="type_map_equity" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">equity</field>
+        <field name="gifi_code_id" ref="gifi_3600" />
+    </record>
+    <record id="type_map_equity_unaffected" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">equity_unaffected</field>
+        <field name="gifi_code_id" ref="gifi_3600" />
+    </record>
+    <record id="type_map_income" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">income</field>
+        <field name="gifi_code_id" ref="gifi_8000" />
+    </record>
+    <record id="type_map_income_other" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">income_other</field>
+        <field name="gifi_code_id" ref="gifi_8230" />
+    </record>
+    <record id="type_map_expense" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">expense</field>
+        <field name="gifi_code_id" ref="gifi_9270" />
+    </record>
+    <record id="type_map_expense_depreciation" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">expense_depreciation</field>
+        <field name="gifi_code_id" ref="gifi_8670" />
+    </record>
+    <record id="type_map_expense_direct_cost" model="l10n.ca.gifi.account.type.map">
+        <field name="account_type">expense_direct_cost</field>
+        <field name="gifi_code_id" ref="gifi_8450" />
+    </record>
+</odoo>

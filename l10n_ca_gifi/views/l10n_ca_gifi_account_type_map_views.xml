@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="l10n_ca_gifi_account_type_map_view_list" model="ir.ui.view">
+        <field name="name">l10n.ca.gifi.account.type.map.list</field>
+        <field name="model">l10n.ca.gifi.account.type.map</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="account_type" />
+                <field name="gifi_code_id" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </list>
+        </field>
+    </record>
+    <record id="action_l10n_ca_gifi_account_type_map" model="ir.actions.act_window">
+        <field name="name">GIFI Codes by Account Type</field>
+        <field name="res_model">l10n.ca.gifi.account.type.map</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No fallback GIFI code yet.</p>
+            <p>
+                The GIFI code of an account without its own code is taken
+                from its account type. A row of a company wins over a row
+                without company.
+            </p>
+        </field>
+    </record>
+</odoo>

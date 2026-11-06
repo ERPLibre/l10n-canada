@@ -1,0 +1,767 @@
+id,code,name,category,schedule,is_total,normal_balance,total_sign,expected_sign,formula,partnership_only,required,active
+gifi_1000,1000,Cash and deposits,asset,100,False,debit,1,positive,,False,False,True
+gifi_1001,1001,Cash,asset,100,False,debit,1,positive,,False,False,True
+gifi_1002,1002,Deposits in Canadian banks and institutions – Canadian currency,asset,100,False,debit,1,positive,,False,False,True
+gifi_1003,1003,Deposits in Canadian banks and institutions – Foreign currency,asset,100,False,debit,1,positive,,False,False,True
+gifi_1004,1004,Deposits in foreign banks – Canadian currency,asset,100,False,debit,1,positive,,False,False,True
+gifi_1005,1005,Deposits in foreign banks – Foreign currency,asset,100,False,debit,1,positive,,False,False,True
+gifi_1006,1006,Credit union central deposits,asset,100,False,debit,1,positive,,False,False,True
+gifi_1007,1007,Other cash-like instruments,asset,100,False,debit,1,positive,,False,False,True
+gifi_1060,1060,Accounts receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1061,1061,Allowance for doubtful accounts,asset,100,False,debit,1,negative,,False,False,True
+gifi_1062,1062,Trade accounts receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1063,1063,Allowance for doubtful trade accounts receivable,asset,100,False,debit,1,negative,,False,False,True
+gifi_1064,1064,Trade accounts receivable from related parties,asset,100,False,debit,1,positive,,False,False,True
+gifi_1065,1065,Allowance for doubtful trade accounts receivable from related parties,asset,100,False,debit,1,negative,,False,False,True
+gifi_1066,1066,Taxes receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1067,1067,Interest receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1068,1068,Holdbacks receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1069,1069,Leases receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1070,1070,Allowance for doubtful amounts contained in leases receivable,asset,100,False,debit,1,negative,,False,False,True
+gifi_1071,1071,Accounts receivable from employees,asset,100,False,debit,1,positive,,False,False,True
+gifi_1072,1072,Allowance for doubtful accounts receivable from employees,asset,100,False,debit,1,negative,,False,False,True
+gifi_1073,1073,Amounts receivable from members of NPOs,asset,100,False,debit,1,positive,,False,False,True
+gifi_1120,1120,Inventories,asset,100,False,debit,1,positive,,False,False,True
+gifi_1121,1121,Inventory of goods for sale,asset,100,False,debit,1,positive,,False,False,True
+gifi_1122,1122,Inventory parts and supplies,asset,100,False,debit,1,positive,,False,False,True
+gifi_1123,1123,Inventory properties,asset,100,False,debit,1,positive,,False,False,True
+gifi_1124,1124,Inventory of aggregates,asset,100,False,debit,1,positive,,False,False,True
+gifi_1125,1125,Work in progress,asset,100,False,debit,1,positive,,False,False,True
+gifi_1126,1126,Raw materials,asset,100,False,debit,1,positive,,False,False,True
+gifi_1127,1127,Inventory of securities,asset,100,False,debit,1,positive,,False,False,True
+gifi_1180,1180,Short-term investments,asset,100,False,debit,1,positive,,False,False,True
+gifi_1181,1181,Canadian term deposits,asset,100,False,debit,1,positive,,False,False,True
+gifi_1182,1182,Canadian shares,asset,100,False,debit,1,positive,,False,False,True
+gifi_1183,1183,Canadian bonds,asset,100,False,debit,1,positive,,False,False,True
+gifi_1184,1184,Canadian treasury bills,asset,100,False,debit,1,positive,,False,False,True
+gifi_1185,1185,Securities purchased under resale agreements,asset,100,False,debit,1,positive,,False,False,True
+gifi_1186,1186,Other short-term Canadian investments,asset,100,False,debit,1,positive,,False,False,True
+gifi_1187,1187,Short-term foreign investments,asset,100,False,debit,1,positive,,False,False,True
+gifi_1240,1240,Loans and notes receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1241,1241,Demand loans receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1242,1242,Other loans receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1243,1243,Notes receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1244,1244,Mortgages receivable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1300,1300,Due from shareholder(s)/director(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_1301,1301,Due from individual shareholder(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_1302,1302,Due from corporate shareholder(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_1303,1303,Due from director(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_1310,1310,Due from member(s)/general partner(s),asset,100,False,debit,1,positive,,True,False,False
+gifi_1311,1311,Due from limited partners,asset,100,False,debit,1,positive,,True,False,False
+gifi_1312,1312,Due from members that are partnerships,asset,100,False,debit,1,positive,,True,False,False
+gifi_1313,1313,Due from general partners,asset,100,False,debit,1,positive,,True,False,False
+gifi_1314,1314,Due from specified members who are not limited partners,asset,100,False,debit,1,positive,,True,False,False
+gifi_1360,1360,Investment in joint venture(s)/partnership(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_1380,1380,Due from joint venture(s)/partnership(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_1400,1400,Due from/investment in related parties,asset,100,False,debit,1,positive,,False,False,True
+gifi_1401,1401,Demand notes from related parties,asset,100,False,debit,1,positive,,False,False,True
+gifi_1402,1402,Interest receivable from related parties,asset,100,False,debit,1,positive,,False,False,True
+gifi_1403,1403,Loans/advances due from related parties,asset,100,False,debit,1,positive,,False,False,True
+gifi_1460,1460,Customers' liability under acceptances,asset,100,False,debit,1,positive,,False,False,True
+gifi_1480,1480,Other current assets,asset,100,False,debit,1,positive,,False,False,True
+gifi_1481,1481,Future (deferred) income taxes (corporations only),asset,100,False,debit,1,positive,,False,False,True
+gifi_1482,1482,Accrued investment income,asset,100,False,debit,1,positive,,False,False,True
+gifi_1483,1483,Taxes recoverable/refundable,asset,100,False,debit,1,positive,,False,False,True
+gifi_1484,1484,Prepaid expenses,asset,100,False,debit,1,positive,,False,False,True
+gifi_1485,1485,Drilling advances,asset,100,False,debit,1,positive,,False,False,True
+gifi_1486,1486,Security/tender deposits,asset,100,False,debit,1,positive,,False,False,True
+gifi_1599,1599,Total current assets,asset,100,True,debit,1,any,,False,False,True
+gifi_1600,1600,Land,asset,100,False,debit,1,positive,,False,False,True
+gifi_1601,1601,Land improvements,asset,100,False,debit,1,positive,,False,False,True
+gifi_1602,1602,Accumulated amortization of land improvements,asset,100,False,debit,1,negative,,False,False,True
+gifi_1620,1620,Depletable assets,asset,100,False,debit,1,positive,,False,False,True
+gifi_1621,1621,Accumulated amortization of depletable assets,asset,100,False,debit,1,negative,,False,False,True
+gifi_1622,1622,Petroleum and natural gas properties,asset,100,False,debit,1,positive,,False,False,True
+gifi_1623,1623,Accumulated amortization of petroleum and natural gas properties,asset,100,False,debit,1,negative,,False,False,True
+gifi_1624,1624,Mining properties,asset,100,False,debit,1,positive,,False,False,True
+gifi_1625,1625,Accumulated amortization of mining properties,asset,100,False,debit,1,negative,,False,False,True
+gifi_1626,1626,Deferred exploration and development charges,asset,100,False,debit,1,positive,,False,False,True
+gifi_1627,1627,Accumulated amortization of deferred exploration and development charges,asset,100,False,debit,1,negative,,False,False,True
+gifi_1628,1628,Quarries,asset,100,False,debit,1,positive,,False,False,True
+gifi_1629,1629,Accumulated amortization of quarries,asset,100,False,debit,1,negative,,False,False,True
+gifi_1630,1630,Gravel pits,asset,100,False,debit,1,positive,,False,False,True
+gifi_1631,1631,Accumulated amortization of gravel pits,asset,100,False,debit,1,negative,,False,False,True
+gifi_1632,1632,Timber limits,asset,100,False,debit,1,positive,,False,False,True
+gifi_1633,1633,Accumulated amortization of timber limits,asset,100,False,debit,1,negative,,False,False,True
+gifi_1680,1680,Buildings,asset,100,False,debit,1,positive,,False,False,True
+gifi_1681,1681,Accumulated amortization of buildings,asset,100,False,debit,1,negative,,False,False,True
+gifi_1682,1682,Manufacturing and processing plant,asset,100,False,debit,1,positive,,False,False,True
+gifi_1683,1683,Accumulated amortization of manufacturing and processing plant,asset,100,False,debit,1,negative,,False,False,True
+gifi_1684,1684,Buildings under construction,asset,100,False,debit,1,positive,,False,False,True
+gifi_1740,1740,"Machinery, equipment, furniture, and fixtures",asset,100,False,debit,1,positive,,False,False,True
+gifi_1741,1741,"Accumulated amortization of machinery, equipment, furniture, and fixtures",asset,100,False,debit,1,negative,,False,False,True
+gifi_1742,1742,Motor vehicles,asset,100,False,debit,1,positive,,False,False,True
+gifi_1743,1743,Accumulated amortization of motor vehicles,asset,100,False,debit,1,negative,,False,False,True
+gifi_1744,1744,Tools and dies,asset,100,False,debit,1,positive,,False,False,True
+gifi_1745,1745,Accumulated amortization of tools and dies,asset,100,False,debit,1,negative,,False,False,True
+gifi_1746,1746,Construction and excavating equipment,asset,100,False,debit,1,positive,,False,False,True
+gifi_1747,1747,Accumulated amortization of construction and excavating equipment,asset,100,False,debit,1,negative,,False,False,True
+gifi_1748,1748,Forestry and logging equipment,asset,100,False,debit,1,positive,,False,False,True
+gifi_1749,1749,Accumulated amortization of forestry and logging equipment,asset,100,False,debit,1,negative,,False,False,True
+gifi_1750,1750,Fishing gear and nets,asset,100,False,debit,1,positive,,False,False,True
+gifi_1751,1751,Accumulated amortization of fishing gear and nets,asset,100,False,debit,1,negative,,False,False,True
+gifi_1752,1752,Mining equipment,asset,100,False,debit,1,positive,,False,False,True
+gifi_1753,1753,Accumulated amortization of mining equipment,asset,100,False,debit,1,negative,,False,False,True
+gifi_1754,1754,Oil and gas systems,asset,100,False,debit,1,positive,,False,False,True
+gifi_1755,1755,Accumulated amortization of oil and gas systems,asset,100,False,debit,1,negative,,False,False,True
+gifi_1756,1756,Production equipment for resource industries,asset,100,False,debit,1,positive,,False,False,True
+gifi_1757,1757,Accumulated amortization of production equipment for resource industries,asset,100,False,debit,1,negative,,False,False,True
+gifi_1758,1758,Production equipment for other than resource industries,asset,100,False,debit,1,positive,,False,False,True
+gifi_1759,1759,Accumulated amortization of production equipment for other than resource industries,asset,100,False,debit,1,negative,,False,False,True
+gifi_1760,1760,Exploration equipment,asset,100,False,debit,1,positive,,False,False,True
+gifi_1761,1761,Accumulated amortization of exploration equipment,asset,100,False,debit,1,negative,,False,False,True
+gifi_1762,1762,Shipping equipment,asset,100,False,debit,1,positive,,False,False,True
+gifi_1763,1763,Accumulated amortization of shipping equipment,asset,100,False,debit,1,negative,,False,False,True
+gifi_1764,1764,Ships and boats,asset,100,False,debit,1,positive,,False,False,True
+gifi_1765,1765,Accumulated amortization of ships and boats,asset,100,False,debit,1,negative,,False,False,True
+gifi_1766,1766,Aircraft,asset,100,False,debit,1,positive,,False,False,True
+gifi_1767,1767,Accumulated amortization of aircraft,asset,100,False,debit,1,negative,,False,False,True
+gifi_1768,1768,Signs,asset,100,False,debit,1,positive,,False,False,True
+gifi_1769,1769,Accumulated amortization of signs,asset,100,False,debit,1,negative,,False,False,True
+gifi_1770,1770,Small tools,asset,100,False,debit,1,positive,,False,False,True
+gifi_1771,1771,Accumulated amortization of small tools,asset,100,False,debit,1,negative,,False,False,True
+gifi_1772,1772,Radio and communication equipment,asset,100,False,debit,1,positive,,False,False,True
+gifi_1773,1773,Accumulated amortization of radio and communication equipment,asset,100,False,debit,1,negative,,False,False,True
+gifi_1774,1774,Computer equipment/software,asset,100,False,debit,1,positive,,False,False,True
+gifi_1775,1775,Accumulated amortization of computer equipment/software,asset,100,False,debit,1,negative,,False,False,True
+gifi_1776,1776,Musical instruments,asset,100,False,debit,1,positive,,False,False,True
+gifi_1777,1777,Accumulated amortization of musical instruments,asset,100,False,debit,1,negative,,False,False,True
+gifi_1778,1778,Satellites,asset,100,False,debit,1,positive,,False,False,True
+gifi_1779,1779,Accumulated amortization of satellites,asset,100,False,debit,1,negative,,False,False,True
+gifi_1780,1780,Earth stations,asset,100,False,debit,1,positive,,False,False,True
+gifi_1781,1781,Accumulated amortization of earth stations,asset,100,False,debit,1,negative,,False,False,True
+gifi_1782,1782,Machinery and equipment under construction,asset,100,False,debit,1,positive,,False,False,True
+gifi_1783,1783,Transportation equipment,asset,100,False,debit,1,positive,,False,False,True
+gifi_1784,1784,Accumulated amortization of transportation equipment,asset,100,False,debit,1,negative,,False,False,True
+gifi_1785,1785,Other machinery and equipment,asset,100,False,debit,1,positive,,False,False,True
+gifi_1786,1786,Accumulated amortization of other machinery and equipment,asset,100,False,debit,1,negative,,False,False,True
+gifi_1787,1787,Furniture and fixtures,asset,100,False,debit,1,positive,,False,False,True
+gifi_1788,1788,Accumulated amortization of furniture and fixtures,asset,100,False,debit,1,negative,,False,False,True
+gifi_1900,1900,Other tangible capital assets,asset,100,False,debit,1,positive,,False,False,True
+gifi_1901,1901,Accumulated amortization of other tangible capital assets,asset,100,False,debit,1,negative,,False,False,True
+gifi_1902,1902,Logging roads,asset,100,False,debit,1,positive,,False,False,True
+gifi_1903,1903,Accumulated amortization of logging roads,asset,100,False,debit,1,negative,,False,False,True
+gifi_1904,1904,Asphalt and parking areas,asset,100,False,debit,1,positive,,False,False,True
+gifi_1905,1905,Accumulated amortization of asphalt and parking areas,asset,100,False,debit,1,negative,,False,False,True
+gifi_1906,1906,Wharves,asset,100,False,debit,1,positive,,False,False,True
+gifi_1907,1907,Accumulated amortization of wharves,asset,100,False,debit,1,negative,,False,False,True
+gifi_1908,1908,Fences,asset,100,False,debit,1,positive,,False,False,True
+gifi_1909,1909,Accumulated amortization of fences,asset,100,False,debit,1,negative,,False,False,True
+gifi_1910,1910,Capital leases – Buildings,asset,100,False,debit,1,positive,,False,False,True
+gifi_1911,1911,Accumulated amortization of capital leases – Buildings,asset,100,False,debit,1,negative,,False,False,True
+gifi_1912,1912,Capital leases – Equipment,asset,100,False,debit,1,positive,,False,False,True
+gifi_1913,1913,Accumulated amortization of capital leases – Equipment,asset,100,False,debit,1,negative,,False,False,True
+gifi_1914,1914,Capital leases – Vehicles,asset,100,False,debit,1,positive,,False,False,True
+gifi_1915,1915,Accumulated amortization of capital leases – Vehicles,asset,100,False,debit,1,negative,,False,False,True
+gifi_1916,1916,Capital leases – Others,asset,100,False,debit,1,positive,,False,False,True
+gifi_1917,1917,Accumulated amortization of capital leases – Others,asset,100,False,debit,1,negative,,False,False,True
+gifi_1918,1918,Leasehold improvements,asset,100,False,debit,1,positive,,False,False,True
+gifi_1919,1919,Accumulated amortization of leasehold improvements,asset,100,False,debit,1,negative,,False,False,True
+gifi_1920,1920,Other capital assets under construction,asset,100,False,debit,1,positive,,False,False,True
+gifi_1921,1921,Campsites,asset,100,False,debit,1,positive,,False,False,True
+gifi_1922,1922,Accumulated amortization of campsites,asset,100,False,debit,1,negative,,False,False,True
+gifi_2008,2008,Total tangible capital assets,asset,100,True,debit,1,any,,False,False,True
+gifi_2009,2009,Total accumulated amortization of tangible capital assets,asset,100,True,debit,1,any,,False,False,True
+gifi_2010,2010,Intangible assets,asset,100,False,debit,1,positive,,False,False,True
+gifi_2011,2011,Accumulated amortization of intangible assets,asset,100,False,debit,1,negative,,False,False,True
+gifi_2012,2012,Goodwill,asset,100,False,debit,1,positive,,False,False,True
+gifi_2013,2013,Accumulated amortization of goodwill,asset,100,False,debit,1,negative,,False,False,True
+gifi_2014,2014,Quota,asset,100,False,debit,1,positive,,False,False,True
+gifi_2015,2015,Accumulated amortization of quota,asset,100,False,debit,1,negative,,False,False,True
+gifi_2016,2016,Licences,asset,100,False,debit,1,positive,,False,False,True
+gifi_2017,2017,Accumulated amortization of licences,asset,100,False,debit,1,negative,,False,False,True
+gifi_2018,2018,Incorporation costs (corporations only),asset,100,False,debit,1,positive,,False,False,True
+gifi_2019,2019,Accumulated amortization of incorporation costs (corporations only),asset,100,False,debit,1,negative,,False,False,True
+gifi_2020,2020,Trademarks/patents,asset,100,False,debit,1,positive,,False,False,True
+gifi_2021,2021,Accumulated amortization of trademarks/patents,asset,100,False,debit,1,negative,,False,False,True
+gifi_2022,2022,Customer lists,asset,100,False,debit,1,positive,,False,False,True
+gifi_2023,2023,Accumulated amortization of customer lists,asset,100,False,debit,1,negative,,False,False,True
+gifi_2024,2024,Rights,asset,100,False,debit,1,positive,,False,False,True
+gifi_2025,2025,Accumulated amortization of rights,asset,100,False,debit,1,negative,,False,False,True
+gifi_2026,2026,Research and development,asset,100,False,debit,1,positive,,False,False,True
+gifi_2027,2027,Accumulated amortization of research and development,asset,100,False,debit,1,negative,,False,False,True
+gifi_2070,2070,Resource rights,asset,100,False,debit,1,positive,,False,False,True
+gifi_2071,2071,Accumulated amortization of resource rights,asset,100,False,debit,1,negative,,False,False,True
+gifi_2072,2072,Timber rights,asset,100,False,debit,1,positive,,False,False,True
+gifi_2073,2073,Accumulated amortization of timber rights,asset,100,False,debit,1,negative,,False,False,True
+gifi_2074,2074,Mining rights,asset,100,False,debit,1,positive,,False,False,True
+gifi_2075,2075,Accumulated amortization of mining rights,asset,100,False,debit,1,negative,,False,False,True
+gifi_2076,2076,Oil and gas rights,asset,100,False,debit,1,positive,,False,False,True
+gifi_2077,2077,Accumulated amortization of oil and gas rights,asset,100,False,debit,1,negative,,False,False,True
+gifi_2178,2178,Total intangible capital assets,asset,100,True,debit,1,any,,False,False,True
+gifi_2179,2179,Total accumulated amortization of intangible capital assets,asset,100,True,debit,1,any,,False,False,True
+gifi_2180,2180,Due from shareholder(s)/director(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_2181,2181,Due from individual shareholder(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_2182,2182,Due from corporate shareholder(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_2183,2183,Due from director(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_2190,2190,Due from members,asset,100,False,debit,1,positive,,False,False,True
+gifi_2200,2200,Investment in joint venture(s)/partnership(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_2210,2210,Due from member(s)/general partner(s),asset,100,False,debit,1,positive,,True,False,False
+gifi_2211,2211,Due from limited partners,asset,100,False,debit,1,positive,,True,False,False
+gifi_2212,2212,Due from members that are partnerships,asset,100,False,debit,1,positive,,True,False,False
+gifi_2213,2213,Due from general partners,asset,100,False,debit,1,positive,,True,False,False
+gifi_2214,2214,Due from specified members who are not limited partners,asset,100,False,debit,1,positive,,True,False,False
+gifi_2220,2220,Due from joint venture(s)/partnership(s),asset,100,False,debit,1,positive,,False,False,True
+gifi_2240,2240,Due from/investment in related parties,asset,100,False,debit,1,positive,,False,False,True
+gifi_2241,2241,Due from/investment in Canadian related parties,asset,100,False,debit,1,positive,,False,False,True
+gifi_2242,2242,Shares in Canadian related corporations,asset,100,False,debit,1,positive,,False,False,True
+gifi_2243,2243,Loans/advances to Canadian related corporations,asset,100,False,debit,1,positive,,False,False,True
+gifi_2244,2244,Investment in Canadian related corporations at cost,asset,100,False,debit,1,positive,,False,False,True
+gifi_2245,2245,Investment in Canadian related corporations at equity,asset,100,False,debit,1,positive,,False,False,True
+gifi_2246,2246,Due from/investment in foreign related parties,asset,100,False,debit,1,positive,,False,False,True
+gifi_2247,2247,Shares in foreign related corporations,asset,100,False,debit,1,positive,,False,False,True
+gifi_2248,2248,Loans/advances to foreign related corporations,asset,100,False,debit,1,positive,,False,False,True
+gifi_2249,2249,Investment in foreign related corporations at cost,asset,100,False,debit,1,positive,,False,False,True
+gifi_2250,2250,Investment in foreign related corporations at equity,asset,100,False,debit,1,positive,,False,False,True
+gifi_2280,2280,Investment in co-tenancy,asset,100,False,debit,1,positive,,False,False,True
+gifi_2300,2300,Long-term investments,asset,100,False,debit,1,positive,,False,False,True
+gifi_2301,2301,Foreign shares,asset,100,False,debit,1,positive,,False,False,True
+gifi_2302,2302,Other types of foreign investments,asset,100,False,debit,1,positive,,False,False,True
+gifi_2303,2303,Canadian shares,asset,100,False,debit,1,positive,,False,False,True
+gifi_2304,2304,Government of Canada debt,asset,100,False,debit,1,positive,,False,False,True
+gifi_2305,2305,"Canadian, provincial, and municipal government debt",asset,100,False,debit,1,positive,,False,False,True
+gifi_2306,2306,Canadian corporate bonds and debentures,asset,100,False,debit,1,positive,,False,False,True
+gifi_2307,2307,Debt securities,asset,100,False,debit,1,positive,,False,False,True
+gifi_2308,2308,Equity securities,asset,100,False,debit,1,positive,,False,False,True
+gifi_2309,2309,Securities purchased under resale agreements,asset,100,False,debit,1,positive,,False,False,True
+gifi_2310,2310,Central credit union shares,asset,100,False,debit,1,positive,,False,False,True
+gifi_2311,2311,Other Canadian long-term investments,asset,100,False,debit,1,positive,,False,False,True
+gifi_2360,2360,Long-term loans,asset,100,False,debit,1,positive,,False,False,True
+gifi_2361,2361,Mortgages,asset,100,False,debit,1,positive,,False,False,True
+gifi_2362,2362,Personal and credit card loans,asset,100,False,debit,1,positive,,False,False,True
+gifi_2363,2363,Business and government loans,asset,100,False,debit,1,positive,,False,False,True
+gifi_2364,2364,Line of credit,asset,100,False,debit,1,positive,,False,False,True
+gifi_2420,2420,Other long-term assets,asset,100,False,debit,1,positive,,False,False,True
+gifi_2421,2421,Future (deferred) income taxes (corporations only),asset,100,False,debit,1,positive,,False,False,True
+gifi_2422,2422,Deferred pension charges,asset,100,False,debit,1,positive,,False,False,True
+gifi_2423,2423,Deferred unrealized exchange losses,asset,100,False,debit,1,positive,,False,False,True
+gifi_2424,2424,Other deferred items/charges,asset,100,False,debit,1,positive,,False,False,True
+gifi_2425,2425,Accumulated amortization of deferred charges,asset,100,False,debit,1,negative,,False,False,True
+gifi_2426,2426,Reserve fund,asset,100,False,debit,1,positive,,False,False,True
+gifi_2427,2427,Cash surrender value of life insurance,asset,100,False,debit,1,positive,,False,False,True
+gifi_2589,2589,Total long-term assets,asset,100,True,debit,1,any,,False,False,True
+gifi_2590,2590,Assets held in trust,asset,100,False,debit,1,positive,,False,False,True
+gifi_2599,2599,Total assets,asset,100,True,debit,1,any,,False,True,True
+gifi_2600,2600,Bank overdraft,liability,100,False,credit,1,positive,,False,False,True
+gifi_2620,2620,Amounts payable and accrued liabilities,liability,100,False,credit,1,positive,,False,False,True
+gifi_2621,2621,Trade payables,liability,100,False,credit,1,positive,,False,False,True
+gifi_2622,2622,Trade payables to related parties,liability,100,False,credit,1,positive,,False,False,True
+gifi_2623,2623,Holdbacks payable,liability,100,False,credit,1,positive,,False,False,True
+gifi_2624,2624,Wages payable,liability,100,False,credit,1,positive,,False,False,True
+gifi_2625,2625,Management fees payable,liability,100,False,credit,1,positive,,False,False,True
+gifi_2626,2626,Bonuses payable,liability,100,False,credit,1,positive,,False,False,True
+gifi_2627,2627,Employee deductions payable,liability,100,False,credit,1,positive,,False,False,True
+gifi_2628,2628,Withholding taxes payable,liability,100,False,credit,1,positive,,False,False,True
+gifi_2629,2629,Interest payable,liability,100,False,credit,1,positive,,False,False,True
+gifi_2630,2630,Amounts payable to members of NPOs,liability,100,False,credit,1,positive,,False,False,True
+gifi_2680,2680,Taxes payable,liability,100,False,credit,1,positive,,False,False,True
+gifi_2700,2700,Short-term debt,liability,100,False,credit,1,positive,,False,False,True
+gifi_2701,2701,Loans from Canadian banks,liability,100,False,credit,1,positive,,False,False,True
+gifi_2702,2702,Liability for securities sold short,liability,100,False,credit,1,positive,,False,False,True
+gifi_2703,2703,Liability for securities sold under repurchase agreements,liability,100,False,credit,1,positive,,False,False,True
+gifi_2704,2704,Gold and silver certificates,liability,100,False,credit,1,positive,,False,False,True
+gifi_2705,2705,Cheques and other items in transit,liability,100,False,credit,1,positive,,False,False,True
+gifi_2706,2706,Lien notes,liability,100,False,credit,1,positive,,False,False,True
+gifi_2707,2707,Credit card loans,liability,100,False,credit,1,positive,,False,False,True
+gifi_2770,2770,Deferred income,liability,100,False,credit,1,positive,,False,False,True
+gifi_2780,2780,Due to shareholder(s)/director(s),liability,100,False,credit,1,positive,,False,False,True
+gifi_2781,2781,Due to individual shareholder(s),liability,100,False,credit,1,positive,,False,False,True
+gifi_2782,2782,Due to corporate shareholder(s),liability,100,False,credit,1,positive,,False,False,True
+gifi_2783,2783,Due to director(s),liability,100,False,credit,1,positive,,False,False,True
+gifi_2790,2790,Due to member(s)/general partner(s),liability,100,False,credit,1,positive,,True,False,False
+gifi_2791,2791,Due to limited partners,liability,100,False,credit,1,positive,,True,False,False
+gifi_2792,2792,Due to members that are partnerships,liability,100,False,credit,1,positive,,True,False,False
+gifi_2793,2793,Due to general partners,liability,100,False,credit,1,positive,,True,False,False
+gifi_2794,2794,Due to specified members who are not limited partners,liability,100,False,credit,1,positive,,True,False,False
+gifi_2840,2840,Due to joint venture(s)/partnership(s),liability,100,False,credit,1,positive,,False,False,True
+gifi_2860,2860,Due to related parties,liability,100,False,credit,1,positive,,False,False,True
+gifi_2861,2861,Demand notes due to related parties,liability,100,False,credit,1,positive,,False,False,True
+gifi_2862,2862,Interest payable to related parties,liability,100,False,credit,1,positive,,False,False,True
+gifi_2863,2863,Advances due to related parties,liability,100,False,credit,1,positive,,False,False,True
+gifi_2920,2920,Current portion of long-term liability,liability,100,False,credit,1,positive,,False,False,True
+gifi_2940,2940,Bankers' acceptances,liability,100,False,credit,1,positive,,False,False,True
+gifi_2960,2960,Other current liabilities,liability,100,False,credit,1,positive,,False,False,True
+gifi_2961,2961,Deposits received,liability,100,False,credit,1,positive,,False,False,True
+gifi_2962,2962,Dividends payable,liability,100,False,credit,1,positive,,False,False,True
+gifi_2963,2963,Future (deferred) income taxes (corporations only),liability,100,False,credit,1,positive,,False,False,True
+gifi_2964,2964,"Reserves for guarantees, warranties, or indemnities",liability,100,False,credit,1,positive,,False,False,True
+gifi_2965,2965,General provisions/reserves,liability,100,False,credit,1,positive,,False,False,True
+gifi_2966,2966,Crew shares,liability,100,False,credit,1,positive,,False,False,True
+gifi_3139,3139,Total current liabilities,liability,100,True,credit,1,any,,False,False,True
+gifi_3140,3140,Long-term debt,liability,100,False,credit,1,positive,,False,False,True
+gifi_3141,3141,Mortgages,liability,100,False,credit,1,positive,,False,False,True
+gifi_3142,3142,Farm Credit Corporation loan,liability,100,False,credit,1,positive,,False,False,True
+gifi_3143,3143,Chartered bank loan,liability,100,False,credit,1,positive,,False,False,True
+gifi_3144,3144,Credit Union/Caisse Populaire loan,liability,100,False,credit,1,positive,,False,False,True
+gifi_3145,3145,Provincial or territorial government loan,liability,100,False,credit,1,positive,,False,False,True
+gifi_3146,3146,Supply company loan,liability,100,False,credit,1,positive,,False,False,True
+gifi_3147,3147,Private loan,liability,100,False,credit,1,positive,,False,False,True
+gifi_3148,3148,"Central, league, and federation loans",liability,100,False,credit,1,positive,,False,False,True
+gifi_3149,3149,Line of credit,liability,100,False,credit,1,positive,,False,False,True
+gifi_3150,3150,Liability for securities sold short,liability,100,False,credit,1,positive,,False,False,True
+gifi_3151,3151,Liability for securities sold under repurchase agreements,liability,100,False,credit,1,positive,,False,False,True
+gifi_3152,3152,Lien notes,liability,100,False,credit,1,positive,,False,False,True
+gifi_3200,3200,Deposit liabilities of financial institutions,liability,100,False,credit,1,positive,,False,False,True
+gifi_3210,3210,Bonds and debentures,liability,100,False,credit,1,positive,,False,False,True
+gifi_3220,3220,Deferred income,liability,100,False,credit,1,positive,,False,False,True
+gifi_3240,3240,Future (deferred) income taxes (corporations only),liability,100,False,credit,1,positive,,False,False,True
+gifi_3260,3260,Due to shareholder(s)/director(s),liability,100,False,credit,1,positive,,False,False,True
+gifi_3261,3261,Due to individual shareholder(s),liability,100,False,credit,1,positive,,False,False,True
+gifi_3262,3262,Due to corporate shareholder(s),liability,100,False,credit,1,positive,,False,False,True
+gifi_3263,3263,Due to director(s),liability,100,False,credit,1,positive,,False,False,True
+gifi_3270,3270,Due to members,liability,100,False,credit,1,positive,,False,False,True
+gifi_3280,3280,Due to joint venture(s)/partnership(s),liability,100,False,credit,1,positive,,False,False,True
+gifi_3291,3291,Due to member(s)/general partner(s),liability,100,False,credit,1,positive,,True,False,False
+gifi_3292,3292,Due to limited partners,liability,100,False,credit,1,positive,,True,False,False
+gifi_3293,3293,Due to members that are partnerships,liability,100,False,credit,1,positive,,True,False,False
+gifi_3294,3294,Due to general partners,liability,100,False,credit,1,positive,,True,False,False
+gifi_3295,3295,Due to specified members who are not limited partners,liability,100,False,credit,1,positive,,True,False,False
+gifi_3300,3300,Due to related parties,liability,100,False,credit,1,positive,,False,False,True
+gifi_3301,3301,Amounts owing to related Canadian parties,liability,100,False,credit,1,positive,,False,False,True
+gifi_3302,3302,Amounts owing to related foreign parties,liability,100,False,credit,1,positive,,False,False,True
+gifi_3320,3320,Other long-term liabilities,liability,100,False,credit,1,positive,,False,False,True
+gifi_3321,3321,Long-term obligations/commitments/capital leases,liability,100,False,credit,1,positive,,False,False,True
+gifi_3322,3322,"Reserves for guarantees, warranties, or indemnities",liability,100,False,credit,1,positive,,False,False,True
+gifi_3323,3323,Provision for site restoration,liability,100,False,credit,1,positive,,False,False,True
+gifi_3324,3324,Contributions to qualifying environmental trust,liability,100,False,credit,1,positive,,False,False,True
+gifi_3325,3325,General provisions/reserves,liability,100,False,credit,1,positive,,False,False,True
+gifi_3326,3326,Preference shares restated (corporations only),liability,100,False,credit,1,positive,,False,False,True
+gifi_3327,3327,Member allocations (corporations only),liability,100,False,credit,1,positive,,False,False,True
+gifi_3328,3328,Deferred revenue from incomplete contracts,liability,100,False,credit,1,positive,,False,False,True
+gifi_3450,3450,Total long-term liabilities,liability,100,True,credit,1,any,,False,False,True
+gifi_3460,3460,Subordinated debt,liability,100,False,credit,1,positive,,False,False,True
+gifi_3470,3470,Amounts held in trust,liability,100,False,credit,1,positive,,False,False,True
+gifi_3499,3499,Total liabilities,liability,100,True,credit,1,any,,False,True,True
+gifi_3500,3500,Common shares,equity,100,False,credit,1,positive,,False,False,True
+gifi_3520,3520,Preferred shares,equity,100,False,credit,1,positive,,False,False,True
+gifi_3540,3540,Contributed and other surplus,equity,100,False,credit,1,positive,,False,False,True
+gifi_3541,3541,Contributed surplus,equity,100,False,credit,1,positive,,False,False,True
+gifi_3542,3542,Appraisal surplus,equity,100,False,credit,1,positive,,False,False,True
+gifi_3543,3543,General reserve,equity,100,False,credit,1,positive,,False,False,True
+gifi_3545,3545,Net income/loss,equity,100,False,credit,1,any,,True,False,False
+gifi_3546,3546,Prior period adjustments,equity,100,False,credit,1,positive,,True,False,False
+gifi_3547,3547,Currency adjustments,equity,100,False,credit,1,positive,,True,False,False
+gifi_3548,3548,Unusual revenue items,equity,100,False,credit,1,positive,,True,False,False
+gifi_3550,3550,Total net income/loss,equity,100,True,credit,1,any,,True,False,False
+gifi_3551,3551,General partners' capital beginning balance,equity,100,False,credit,1,positive,,True,False,False
+gifi_3552,3552,General partners' net income (loss),equity,100,False,credit,1,positive,,True,False,False
+gifi_3553,3553,General partners' drawings,equity,100,False,credit,1,positive,,True,False,False
+gifi_3554,3554,General partners' contributions during the fiscal period,equity,100,False,credit,1,positive,,True,False,False
+gifi_3560,3560,General partners' capital ending balance,equity,100,False,credit,1,positive,,True,False,False
+gifi_3561,3561,Limited partners' capital beginning balance,equity,100,False,credit,1,positive,,True,False,False
+gifi_3562,3562,Limited partners' net income (loss),equity,100,False,credit,1,positive,,True,False,False
+gifi_3563,3563,Limited partners' drawings,equity,100,False,credit,1,positive,,True,False,False
+gifi_3564,3564,Limited partners' contribution during the fiscal period,equity,100,False,credit,1,positive,,True,False,False
+gifi_3570,3570,Head office account,equity,100,False,credit,1,positive,,False,False,True
+gifi_3571,3571,Limited partners' capital ending balance,equity,100,False,credit,1,positive,,True,False,False
+gifi_3575,3575,Total partners' capital,equity,100,True,credit,1,any,,True,False,False
+gifi_3580,3580,Accumulated other comprehensive income,equity,100,False,credit,1,any,,False,False,True
+gifi_3585,3585,Total liabilities and partners' capital,equity,100,True,credit,1,any,,True,False,False
+gifi_3600,3600,Retained earnings/deficit,equity,100,False,credit,1,any,,False,False,True
+gifi_3620,3620,Total shareholder equity,equity,100,True,credit,1,any,,False,True,True
+gifi_3640,3640,Total liabilities and shareholder equity,equity,100,True,credit,1,any,,False,False,True
+gifi_3660,3660,Retained earnings/deficit – Start,retained_earnings,100,True,credit,1,any,,False,False,True
+gifi_3680,3680,Net income/loss,retained_earnings,100,True,credit,1,any,,False,False,True
+gifi_3700,3700,Dividends declared,retained_earnings,100,False,debit,-1,positive,,False,False,True
+gifi_3701,3701,Cash dividends,retained_earnings,100,False,debit,-1,positive,,False,False,True
+gifi_3702,3702,Patronage dividends,retained_earnings,100,False,debit,-1,positive,,False,False,True
+gifi_3720,3720,Prior period adjustments,retained_earnings,100,False,credit,1,any,,False,False,True
+gifi_3740,3740,Other items affecting retained earnings,retained_earnings,100,False,credit,1,any,,False,False,True
+gifi_3741,3741,Share redemptions,retained_earnings,100,False,credit,1,any,,False,False,True
+gifi_3742,3742,Special reserves (corporations and co-ops only),retained_earnings,100,False,credit,1,any,,False,False,True
+gifi_3743,3743,Currency adjustments,retained_earnings,100,False,credit,1,any,,False,False,True
+gifi_3744,3744,Unusual revenue items,retained_earnings,100,False,credit,1,any,,False,False,True
+gifi_3745,3745,Interfund transfer,retained_earnings,100,False,credit,1,any,,False,False,True
+gifi_3849,3849,Retained earnings/deficit – End,retained_earnings,100,True,credit,1,any,,False,True,True
+gifi_7000,7000,Revaluation surplus,other_comprehensive_income,125,False,credit,1,any,,False,False,True
+gifi_7002,7002,Defined benefit gains/losses,other_comprehensive_income,125,False,credit,1,any,,False,False,True
+gifi_7004,7004,Foreign operation translation gains/losses,other_comprehensive_income,125,False,credit,1,any,,False,False,True
+gifi_7006,7006,Equity instruments gains/losses,other_comprehensive_income,125,False,credit,1,any,,False,False,True
+gifi_7008,7008,Cash flow hedge effective portion gains/losses,other_comprehensive_income,125,False,credit,1,any,,False,False,True
+gifi_7010,7010,Income tax relating to components of other comprehensive income (corporations only),other_comprehensive_income,125,False,credit,1,any,,False,False,True
+gifi_7020,7020,Miscellaneous other comprehensive income,other_comprehensive_income,125,False,credit,1,any,,False,False,True
+gifi_8000,8000,Trade sales of goods and services,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8020,8020,Sales of goods and services to related parties,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8030,8030,Interdivisional sales,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8040,8040,Sales from resource properties,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8041,8041,Petroleum and natural gas sales,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8042,8042,Petroleum and natural gas sales to related parties,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8043,8043,Gas marketing,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8044,8044,Processing revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8045,8045,Pipeline revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8046,8046,Seismic sales,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8047,8047,Mining revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8048,8048,Coal revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8049,8049,Oil sands revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8050,8050,Royalty income,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8051,8051,Oil and gas partnership/joint venture income/loss,revenue,125,False,credit,1,any,,False,False,True
+gifi_8052,8052,Mining partnership/joint venture income/loss,revenue,125,False,credit,1,any,,False,False,True
+gifi_8053,8053,Other production revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8089,8089,Total sales of goods and services,revenue,125,True,credit,1,any,,False,False,True
+gifi_8090,8090,Investment revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8091,8091,Interest from foreign sources,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8092,8092,Interest from Canadian bonds and debentures,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8093,8093,Interest from Canadian mortgage loans,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8094,8094,Interest from other Canadian sources,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8095,8095,Dividend income,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8096,8096,Dividends from Canadian sources,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8097,8097,Dividends from foreign sources,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8100,8100,Interest income (financial institutions),revenue,125,False,credit,1,positive,,False,False,True
+gifi_8101,8101,Loan interest,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8102,8102,Securities interest,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8103,8103,Deposits with banks' interest,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8120,8120,Commission revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8121,8121,Commission income on real estate transactions,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8140,8140,Rental revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8141,8141,Real estate rental revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8142,8142,Film rental revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8150,8150,Vehicle leasing,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8160,8160,Fishing revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8161,8161,Fish products,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8162,8162,Other marine products,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8163,8163,"Fishing grants, credits, and rebates",revenue,125,False,credit,1,positive,,False,False,True
+gifi_8164,8164,Fishing subsidies,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8165,8165,Compensation for loss of fishing income or property,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8166,8166,Sharesperson income,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8210,8210,Realized gains/losses on disposal of assets,revenue,125,False,credit,1,any,,False,False,True
+gifi_8211,8211,Realized gains/losses on sale of investments,revenue,125,False,credit,1,any,,False,False,True
+gifi_8212,8212,Realized gains/losses on sale of resource properties,revenue,125,False,credit,1,any,,False,False,True
+gifi_8220,8220,NPO amounts received,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8221,8221,Membership fees,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8222,8222,Assessments,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8223,8223,Gifts,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8224,8224,Gross sales and revenues from organizational activities,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8230,8230,Other revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8231,8231,Foreign exchange gains/losses,revenue,125,False,credit,1,any,,False,False,True
+gifi_8232,8232,Income/loss of subsidiaries/affiliates,revenue,125,False,credit,1,any,,False,False,True
+gifi_8233,8233,Income/loss of other divisions,revenue,125,False,credit,1,any,,False,False,True
+gifi_8234,8234,Income/loss of joint ventures,revenue,125,False,credit,1,any,,False,False,True
+gifi_8235,8235,Income/loss of partnerships,revenue,125,False,credit,1,any,,False,False,True
+gifi_8236,8236,Realization of deferred revenues,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8237,8237,Royalty income other than resource,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8238,8238,Alberta royalty tax credits,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8239,8239,Management and administration fees,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8240,8240,Telecommunications revenue,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8241,8241,Consulting fees,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8242,8242,Subsidies and grants,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8243,8243,Sale of by-products,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8244,8244,Deposit services,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8245,8245,Credit services,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8246,8246,Card services,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8247,8247,Patronage dividends,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8248,8248,Insurance recoveries,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8249,8249,Expense recoveries,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8250,8250,Bad debt recoveries,revenue,125,False,credit,1,positive,,False,False,True
+gifi_8299,8299,Total revenue,revenue,125,True,credit,1,any,,False,True,True
+gifi_8300,8300,Opening inventory,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8301,8301,Opening inventory – Finished goods,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8302,8302,Opening inventory – Raw materials,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8303,8303,Opening inventory – Goods in process,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8320,8320,Purchases/cost of materials,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8340,8340,Direct wages,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8350,8350,Benefits on direct wages,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8360,8360,Trades and sub-contracts,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8370,8370,Production costs other than resource,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8400,8400,Resource production costs,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8401,8401,Pipeline operations,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8402,8402,Drilling,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8403,8403,Site restoration costs,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8404,8404,Gross overriding royalty,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8405,8405,Freehold royalties,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8406,8406,Other producing properties rental,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8407,8407,Prospect/geological,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8408,8408,"Well operating, fuel and equipment",cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8409,8409,Well abandonment and dry holes,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8410,8410,Other lease rentals,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8411,8411,Exploration expenses,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8412,8412,Development expenses,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8435,8435,Crown charges,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8436,8436,Crown royalties,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8437,8437,Crown lease rentals,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8438,8438,Freehold mineral tax,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8439,8439,Mining taxes,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8440,8440,Oil sand leases,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8441,8441,Saskatchewan resource surcharge,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8450,8450,Other direct costs,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8451,8451,Equipment hire and operation,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8452,8452,Log yard,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8453,8453,Forestry costs,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8454,8454,Logging road costs,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8455,8455,Stumpage costs,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8456,8456,Royalty costs,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8457,8457,Freight-in and duty,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8458,8458,Inventory write-down,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8459,8459,Direct cost amortization of tangible assets,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8460,8460,Direct cost amortization of natural resource assets,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8461,8461,Overhead expenses allocated to cost of sales,cost_of_sales,125,False,debit,1,positive,,False,False,True
+gifi_8500,8500,Closing inventory,cost_of_sales,125,False,credit,-1,positive,,False,False,True
+gifi_8501,8501,Closing inventory – Finished goods,cost_of_sales,125,False,credit,-1,positive,,False,False,True
+gifi_8502,8502,Closing inventory – Raw materials,cost_of_sales,125,False,credit,-1,positive,,False,False,True
+gifi_8503,8503,Closing inventory – Goods in process,cost_of_sales,125,False,credit,-1,positive,,False,False,True
+gifi_8518,8518,Cost of sales,cost_of_sales,125,True,debit,1,any,,False,False,True
+gifi_8519,8519,Gross profit/loss,cost_of_sales,125,True,debit,1,any,+8089 -8518,False,False,True
+gifi_8520,8520,Advertising and promotion,expense,125,False,debit,1,positive,,False,False,True
+gifi_8521,8521,Advertising,expense,125,False,debit,1,positive,,False,False,True
+gifi_8522,8522,Donations,expense,125,False,debit,1,positive,,False,False,True
+gifi_8523,8523,Meals and entertainment,expense,125,False,debit,1,positive,,False,False,True
+gifi_8524,8524,Promotion,expense,125,False,debit,1,positive,,False,False,True
+gifi_8570,8570,Amortization of intangible assets,expense,125,False,debit,1,positive,,False,False,True
+gifi_8571,8571,Goodwill impairment loss,expense,125,False,debit,1,positive,,False,False,True
+gifi_8590,8590,Bad debt expense,expense,125,False,debit,1,positive,,False,False,True
+gifi_8610,8610,Loan losses,expense,125,False,debit,1,positive,,False,False,True
+gifi_8611,8611,Provision for loan losses,expense,125,False,debit,1,positive,,False,False,True
+gifi_8620,8620,Employee benefits,expense,125,False,debit,1,positive,,False,False,True
+gifi_8621,8621,Group insurance benefits,expense,125,False,debit,1,positive,,False,False,True
+gifi_8622,8622,Employer's portion of employee benefits,expense,125,False,debit,1,positive,,False,False,True
+gifi_8623,8623,Contributions to deferred income plans,expense,125,False,debit,1,positive,,False,False,True
+gifi_8650,8650,Amortization of natural resource assets,expense,125,False,debit,1,positive,,False,False,True
+gifi_8670,8670,Amortization of tangible assets,expense,125,False,debit,1,positive,,False,False,True
+gifi_8690,8690,Insurance,expense,125,False,debit,1,positive,,False,False,True
+gifi_8691,8691,Life insurance on executives,expense,125,False,debit,1,positive,,False,False,True
+gifi_8710,8710,Interest and bank charges,expense,125,False,debit,1,positive,,False,False,True
+gifi_8711,8711,Interest on short-term debt,expense,125,False,debit,1,positive,,False,False,True
+gifi_8712,8712,Interest on bonds and debentures,expense,125,False,debit,1,positive,,False,False,True
+gifi_8713,8713,Interest on mortgages,expense,125,False,debit,1,positive,,False,False,True
+gifi_8714,8714,Interest on long-term debt,expense,125,False,debit,1,positive,,False,False,True
+gifi_8715,8715,Bank charges,expense,125,False,debit,1,positive,,False,False,True
+gifi_8716,8716,Credit card charges,expense,125,False,debit,1,positive,,False,False,True
+gifi_8717,8717,Collection and credit costs,expense,125,False,debit,1,positive,,False,False,True
+gifi_8740,8740,Interest paid (financial institutions),expense,125,False,debit,1,positive,,False,False,True
+gifi_8741,8741,Interest paid on deposits,expense,125,False,debit,1,positive,,False,False,True
+gifi_8742,8742,Interest paid on bonds and debentures,expense,125,False,debit,1,positive,,False,False,True
+gifi_8760,8760,"Business taxes, licences, and memberships",expense,125,False,debit,1,positive,,False,False,True
+gifi_8761,8761,Memberships,expense,125,False,debit,1,positive,,False,False,True
+gifi_8762,8762,Business taxes,expense,125,False,debit,1,positive,,False,False,True
+gifi_8763,8763,Franchise fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8764,8764,Government fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8790,8790,Nova Scotia tax on large corporations,expense,125,False,debit,1,positive,,False,False,True
+gifi_8810,8810,Office expenses,expense,125,False,debit,1,positive,,False,False,True
+gifi_8811,8811,Office stationery and supplies,expense,125,False,debit,1,positive,,False,False,True
+gifi_8812,8812,Office utilities,expense,125,False,debit,1,positive,,False,False,True
+gifi_8813,8813,Data processing,expense,125,False,debit,1,positive,,False,False,True
+gifi_8860,8860,Professional fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8861,8861,Legal fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8862,8862,Accounting fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8863,8863,Consulting fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8864,8864,Architect fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8865,8865,Appraisal fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8866,8866,Laboratory fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8867,8867,Medical fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8868,8868,Veterinary fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8869,8869,Brokerage fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8870,8870,Transfer fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8871,8871,Management and administration fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8872,8872,Refining and assay,expense,125,False,debit,1,positive,,False,False,True
+gifi_8873,8873,Registrar and transfer agent fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8874,8874,Restructuring costs,expense,125,False,debit,1,positive,,False,False,True
+gifi_8875,8875,Security commission fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8876,8876,Training expense,expense,125,False,debit,1,positive,,False,False,True
+gifi_8877,8877,Studio and recording,expense,125,False,debit,1,positive,,False,False,True
+gifi_8910,8910,Rental,expense,125,False,debit,1,positive,,False,False,True
+gifi_8911,8911,Real estate rental,expense,125,False,debit,1,positive,,False,False,True
+gifi_8912,8912,Occupancy costs,expense,125,False,debit,1,positive,,False,False,True
+gifi_8913,8913,Condominium fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_8914,8914,Equipment rental,expense,125,False,debit,1,positive,,False,False,True
+gifi_8915,8915,Motor vehicle rentals,expense,125,False,debit,1,positive,,False,False,True
+gifi_8916,8916,Moorage (boat),expense,125,False,debit,1,positive,,False,False,True
+gifi_8917,8917,Storage,expense,125,False,debit,1,positive,,False,False,True
+gifi_8918,8918,Quota rental,expense,125,False,debit,1,positive,,False,False,True
+gifi_8960,8960,Repairs and maintenance,expense,125,False,debit,1,positive,,False,False,True
+gifi_8961,8961,Repairs and maintenance – Buildings,expense,125,False,debit,1,positive,,False,False,True
+gifi_8962,8962,Repairs and maintenance – Vehicles,expense,125,False,debit,1,positive,,False,False,True
+gifi_8963,8963,Repairs and maintenance – Boats,expense,125,False,debit,1,positive,,False,False,True
+gifi_8964,8964,Repairs and maintenance – Machinery and equipment,expense,125,False,debit,1,positive,,False,False,True
+gifi_9010,9010,Other repairs and maintenance,expense,125,False,debit,1,positive,,False,False,True
+gifi_9011,9011,Machine shop expense,expense,125,False,debit,1,positive,,False,False,True
+gifi_9012,9012,Road costs,expense,125,False,debit,1,positive,,False,False,True
+gifi_9013,9013,Security,expense,125,False,debit,1,positive,,False,False,True
+gifi_9014,9014,Garbage removal,expense,125,False,debit,1,positive,,False,False,True
+gifi_9060,9060,Salaries and wages,expense,125,False,debit,1,positive,,False,False,True
+gifi_9061,9061,Commissions,expense,125,False,debit,1,positive,,False,False,True
+gifi_9062,9062,Crew share,expense,125,False,debit,1,positive,,False,False,True
+gifi_9063,9063,Bonuses,expense,125,False,debit,1,positive,,False,False,True
+gifi_9064,9064,Directors fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_9065,9065,Management salaries,expense,125,False,debit,1,positive,,False,False,True
+gifi_9066,9066,Employee salaries,expense,125,False,debit,1,positive,,False,False,True
+gifi_9110,9110,Sub-contracts,expense,125,False,debit,1,positive,,False,False,True
+gifi_9130,9130,Supplies,expense,125,False,debit,1,positive,,False,False,True
+gifi_9131,9131,Small tools,expense,125,False,debit,1,positive,,False,False,True
+gifi_9132,9132,Shop expense,expense,125,False,debit,1,positive,,False,False,True
+gifi_9133,9133,Uniforms,expense,125,False,debit,1,positive,,False,False,True
+gifi_9134,9134,Laundry,expense,125,False,debit,1,positive,,False,False,True
+gifi_9135,9135,Food and catering,expense,125,False,debit,1,positive,,False,False,True
+gifi_9136,9136,Fishing gear,expense,125,False,debit,1,positive,,False,False,True
+gifi_9137,9137,Nets and traps,expense,125,False,debit,1,positive,,False,False,True
+gifi_9138,9138,"Salt, bait, and ice",expense,125,False,debit,1,positive,,False,False,True
+gifi_9139,9139,Camp supplies,expense,125,False,debit,1,positive,,False,False,True
+gifi_9150,9150,Computer-related expenses,expense,125,False,debit,1,positive,,False,False,True
+gifi_9151,9151,Upgrade,expense,125,False,debit,1,positive,,False,False,True
+gifi_9152,9152,Internet,expense,125,False,debit,1,positive,,False,False,True
+gifi_9180,9180,Property taxes,expense,125,False,debit,1,positive,,False,False,True
+gifi_9200,9200,Travel expenses,expense,125,False,debit,1,positive,,False,False,True
+gifi_9201,9201,Meetings and conventions,expense,125,False,debit,1,positive,,False,False,True
+gifi_9220,9220,Utilities,expense,125,False,debit,1,positive,,False,False,True
+gifi_9221,9221,Electricity,expense,125,False,debit,1,positive,,False,False,True
+gifi_9222,9222,Water,expense,125,False,debit,1,positive,,False,False,True
+gifi_9223,9223,Heat,expense,125,False,debit,1,positive,,False,False,True
+gifi_9224,9224,Fuel costs,expense,125,False,debit,1,positive,,False,False,True
+gifi_9225,9225,Telephone and telecommunications,expense,125,False,debit,1,positive,,False,False,True
+gifi_9270,9270,Other expenses,expense,125,False,debit,1,positive,,False,False,True
+gifi_9271,9271,Cash over/short,expense,125,False,debit,1,positive,,False,False,True
+gifi_9272,9272,Reimbursement of parent company expense (corporations only),expense,125,False,debit,1,positive,,False,False,True
+gifi_9273,9273,Selling expenses,expense,125,False,debit,1,positive,,False,False,True
+gifi_9274,9274,Shipping and warehouse expense,expense,125,False,debit,1,positive,,False,False,True
+gifi_9275,9275,"Delivery, freight and express",expense,125,False,debit,1,positive,,False,False,True
+gifi_9276,9276,Warranty expenses,expense,125,False,debit,1,positive,,False,False,True
+gifi_9277,9277,Royalty expenses – Resident,expense,125,False,debit,1,positive,,False,False,True
+gifi_9278,9278,Royalty expenses – Non-resident,expense,125,False,debit,1,positive,,False,False,True
+gifi_9279,9279,Dumping charges,expense,125,False,debit,1,positive,,False,False,True
+gifi_9280,9280,Land fill fees,expense,125,False,debit,1,positive,,False,False,True
+gifi_9281,9281,Vehicle expenses,expense,125,False,debit,1,positive,,False,False,True
+gifi_9282,9282,Research and development,expense,125,False,debit,1,positive,,False,False,True
+gifi_9283,9283,Withholding taxes,expense,125,False,debit,1,positive,,False,False,True
+gifi_9284,9284,General and administrative expenses,expense,125,False,debit,1,positive,,False,False,True
+gifi_9285,9285,Interdivisional expenses,expense,125,False,debit,1,positive,,False,False,True
+gifi_9286,9286,Interfund transfer,expense,125,False,debit,1,positive,,False,False,True
+gifi_9367,9367,Total operating expenses,expense,125,True,debit,1,any,,False,False,True
+gifi_9368,9368,Total expenses,expense,125,True,debit,-1,any,,False,True,True
+gifi_9369,9369,Net non-farming income,expense,125,True,debit,1,any,,False,True,True
+gifi_9370,9370,Grains and oilseeds,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9371,9371,Wheat,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9372,9372,Oats,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9373,9373,Barley,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9374,9374,Mixed grains,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9375,9375,Corn,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9376,9376,Canola,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9377,9377,Flaxseed,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9378,9378,Soya beans,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9379,9379,Wheat Board payments,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9420,9420,Other crop revenues,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9421,9421,Fruit,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9422,9422,Potatoes,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9423,9423,Vegetables,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9424,9424,Tobacco,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9425,9425,Greenhouse and nursery products,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9426,9426,Forage crops,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9470,9470,Livestock and animal products revenue,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9471,9471,Cattle,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9472,9472,Swine,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9473,9473,Poultry,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9474,9474,Sheep and lambs,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9475,9475,Pregnant mare urine (PMU),farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9476,9476,Milk and cream (excluding dairy subsidies),farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9477,9477,Eggs for consumption,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9478,9478,Hatching eggs,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9479,9479,Aquaculture (hatching and raising),farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9480,9480,Horses (breeding and meat),farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9520,9520,Other commodities,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9521,9521,Maple products,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9522,9522,Artificial insemination,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9523,9523,Semen production,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9524,9524,Embryo production,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9540,9540,Program payment revenues,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9541,9541,Dairy subsidies,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9542,9542,Crop insurance,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9544,9544,Disaster Assistance Program payments,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9545,9545,AgriStability and AgriInvest benefit,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9546,9546,Production insurance premium benefit,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9570,9570,Rebates,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9571,9571,Rebates – Fuel,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9572,9572,Rebates – Interest,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9573,9573,Rebates – Property taxes,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9600,9600,Other farm revenues/losses,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9601,9601,Custom or contract work,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9602,9602,Wood sales,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9603,9603,Horse racing,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9604,9604,Insurance proceeds,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9605,9605,Patronage dividends,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9606,9606,Rental income,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9607,9607,Interest income,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9608,9608,Dividend income,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9609,9609,Gains/losses on disposal of assets,farm_revenue,125,False,credit,1,any,,False,False,True
+gifi_9610,9610,Gravel,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9611,9611,Trucking,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9612,9612,Resale of commodities purchased,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9613,9613,"Leases (such as gas, oil, well, and surface)",farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9614,9614,Machine rentals,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9615,9615,Farming partnership income/loss,farm_revenue,125,False,credit,1,any,,False,False,True
+gifi_9616,9616,Farming joint venture income/loss,farm_revenue,125,False,credit,1,any,,False,False,True
+gifi_9617,9617,Custom feeding,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9650,9650,Non-farming income,farm_revenue,125,False,credit,1,positive,,False,False,True
+gifi_9659,9659,Total farm revenue,farm_revenue,125,True,credit,1,any,,False,False,True
+gifi_9660,9660,Crop expenses,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9661,9661,"Containers, twine, and baling wire",farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9662,9662,Fertilizers and lime,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9663,9663,Pesticides,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9664,9664,Seeds and plants,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9710,9710,Livestock expenses,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9711,9711,"Feed, supplements, straw, and bedding",farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9712,9712,Livestock purchases,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9713,9713,"Veterinary fees, medicine, and breeding fees",farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9714,9714,Minerals and salts,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9760,9760,Machinery expenses,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9761,9761,Machinery insurance,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9762,9762,Machinery licences,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9763,9763,Machinery repairs,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9764,9764,Machinery fuel,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9765,9765,Machinery lease,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9790,9790,General farm expenses,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9791,9791,Amortization of tangible assets,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9792,9792,"Advertising, marketing costs, and promotion",farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9793,9793,Bad debt,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9794,9794,Benefits related to employee salaries,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9795,9795,Building repairs and maintenance,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9796,9796,"Clearing, levelling, and draining land",farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9797,9797,"Crop insurance, Revenue Protection Program, and stabilization premiums",farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9798,9798,Custom or contract work,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9799,9799,Electricity,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9800,9800,Fence repairs and maintenance,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9801,9801,Freight and trucking,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9802,9802,Heating fuel and curing fuel,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9803,9803,Insurance program overpayment recapture,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9804,9804,Other insurance premiums,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9805,9805,Interest and bank charges,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9806,9806,Marketing board fees,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9807,9807,Memberships/subscription fees,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9808,9808,Office expenses,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9809,9809,Professional fees,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9810,9810,Property taxes,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9811,9811,Rent – Land and buildings,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9812,9812,Rent – Machinery,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9813,9813,Other rental expenses,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9814,9814,Salaries and wages,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9815,9815,Salaries and wages other than for spouse or dependants,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9816,9816,Salaries and wages paid to dependants,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9817,9817,Selling costs,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9818,9818,Supplies,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9819,9819,Motor vehicle expenses,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9820,9820,Small tools,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9821,9821,Soil testing,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9822,9822,Storage/drying,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9823,9823,Licences/permits,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9824,9824,Telephone,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9825,9825,"Quota rental (tobacco, dairy)",farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9826,9826,Gravel,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9827,9827,Purchases of commodities resold,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9828,9828,Salaries and wages paid to spouse,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9829,9829,Motor vehicle interest and leasing costs,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9830,9830,Prepared feed,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9831,9831,Custom feed,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9832,9832,Amortization of intangible assets,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9833,9833,Amortization of milk quota,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9834,9834,Travel expenses,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9835,9835,Capital/business taxes,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9836,9836,Commissions and levies,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9850,9850,Non-farming expenses,farm_expense,125,False,debit,1,positive,,False,False,True
+gifi_9870,9870,Net inventory adjustment,farm_expense,125,False,debit,1,any,,False,False,True
+gifi_9898,9898,Total farm expenses,farm_expense,125,True,debit,-1,any,,False,False,True
+gifi_9899,9899,Net farm income,farm_expense,125,True,debit,1,any,,False,False,True
+gifi_9970,9970,Net income/loss before taxes and extraordinary items,extraordinary,125,True,credit,1,any,,False,True,True
+gifi_9975,9975,Extraordinary item(s),extraordinary,125,False,credit,1,any,,False,False,True
+gifi_9976,9976,Legal settlements,extraordinary,125,False,credit,1,any,,False,False,True
+gifi_9980,9980,Unrealized gains/losses,extraordinary,125,False,credit,1,any,,False,False,True
+gifi_9985,9985,Unusual items,extraordinary,125,False,credit,1,any,,False,False,True
+gifi_9990,9990,Current income taxes (corporations only),extraordinary,125,False,debit,-1,positive,,False,False,True
+gifi_9995,9995,Future (deferred) income tax provision (corporations only),extraordinary,125,False,debit,-1,positive,,False,False,True
+gifi_9998,9998,Total-other comprehensive income,extraordinary,125,True,credit,1,any,,False,False,True
+gifi_9999,9999,Net income/loss after taxes and extraordinary items,extraordinary,125,True,credit,1,any,,False,True,True

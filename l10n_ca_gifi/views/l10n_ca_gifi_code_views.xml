@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="l10n_ca_gifi_code_view_list" model="ir.ui.view">
+        <field name="name">l10n.ca.gifi.code.list</field>
+        <field name="model">l10n.ca.gifi.code</field>
+        <field name="arch" type="xml">
+            <list decoration-bf="is_total" decoration-muted="not active">
+                <field name="code" />
+                <field name="name" />
+                <field name="category" />
+                <field name="schedule" optional="show" />
+                <field name="is_total" optional="show" />
+                <field name="total_id" optional="show" />
+                <field name="total_sign" optional="hide" />
+                <field name="parent_id" optional="hide" />
+                <field name="normal_balance" optional="hide" />
+                <field name="required" optional="hide" />
+                <field name="active" column_invisible="True" />
+            </list>
+        </field>
+    </record>
+    <record id="l10n_ca_gifi_code_view_form" model="ir.ui.view">
+        <field name="name">l10n.ca.gifi.code.form</field>
+        <field name="model">l10n.ca.gifi.code</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="code" class="oe_inline" placeholder="1001" />
+                            -
+                            <field name="name" class="oe_inline" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="category" />
+                            <field name="schedule" />
+                            <field name="parent_id" />
+                            <field name="active" invisible="1" />
+                        </group>
+                        <group>
+                            <field name="is_total" />
+                            <field name="total_id" />
+                            <field name="total_sign" />
+                            <field name="formula" invisible="not is_total" />
+                        </group>
+                        <group>
+                            <field name="normal_balance" />
+                            <field name="expected_sign" />
+                        </group>
+                        <group>
+                            <field name="required" />
+                            <field name="partnership_only" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Components" name="components" invisible="not is_total">
+                            <field name="component_ids">
+                                <list>
+                                    <field name="code" />
+                                    <field name="name" />
+                                    <field name="total_sign" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="l10n_ca_gifi_code_view_search" model="ir.ui.view">
+        <field name="name">l10n.ca.gifi.code.search</field>
+        <field name="model">l10n.ca.gifi.code</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code" />
+                <field name="name" />
+                <field name="total_id" />
+                <filter string="Schedule 100" name="s100" domain="[('schedule', '=', '100')]" />
+                <filter string="Schedule 125" name="s125" domain="[('schedule', '=', '125')]" />
+                <separator />
+                <filter string="Totals" name="totals" domain="[('is_total', '=', True)]" />
+                <filter string="Detail Items" name="details" domain="[('is_total', '=', False)]" />
+                <separator />
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]" />
+                <group>
+                    <filter string="Category" name="group_category" context="{'group_by': 'category'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_l10n_ca_gifi_code" model="ir.actions.act_window">
+        <field name="name">GIFI Codes</field>
+        <field name="res_model">l10n.ca.gifi.code</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

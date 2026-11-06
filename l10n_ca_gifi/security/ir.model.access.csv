@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gifi_code_user,GIFI code user,model_l10n_ca_gifi_code,account.group_account_readonly,1,0,0,0
+access_gifi_code_invoice,GIFI code invoicing,model_l10n_ca_gifi_code,account.group_account_invoice,1,0,0,0
+access_gifi_code_manager,GIFI code manager,model_l10n_ca_gifi_code,account.group_account_manager,1,1,1,1
+access_gifi_type_map_user,GIFI type map user,model_l10n_ca_gifi_account_type_map,account.group_account_readonly,1,0,0,0
+access_gifi_type_map_invoice,GIFI type map invoicing,model_l10n_ca_gifi_account_type_map,account.group_account_invoice,1,0,0,0
+access_gifi_type_map_manager,GIFI type map manager,model_l10n_ca_gifi_account_type_map,account.group_account_manager,1,1,1,1
+access_gifi_statement_readonly,GIFI statement readonly,model_l10n_ca_gifi_statement,account.group_account_readonly,1,0,0,0
+access_gifi_statement_user,GIFI statement user,model_l10n_ca_gifi_statement,account.group_account_user,1,1,1,1
+access_gifi_statement_line_readonly,GIFI statement line readonly,model_l10n_ca_gifi_statement_line,account.group_account_readonly,1,0,0,0
+access_gifi_statement_line_user,GIFI statement line user,model_l10n_ca_gifi_statement_line,account.group_account_user,1,1,1,1
+access_gifi_statement_check_readonly,GIFI statement check readonly,model_l10n_ca_gifi_statement_check,account.group_account_readonly,1,0,0,0
+access_gifi_statement_check_user,GIFI statement check user,model_l10n_ca_gifi_statement_check,account.group_account_user,1,1,1,1
+access_gifi_statement_manager,GIFI statement manager,model_l10n_ca_gifi_statement,account.group_account_manager,1,1,1,1
+access_gifi_statement_line_manager,GIFI statement line manager,model_l10n_ca_gifi_statement_line,account.group_account_manager,1,1,1,1
+access_gifi_statement_check_manager,GIFI statement check manager,model_l10n_ca_gifi_statement_check,account.group_account_manager,1,1,1,1
