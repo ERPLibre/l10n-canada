@@ -1,0 +1,101 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_corporate_tax_cca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 03:22+0000\n"
+"PO-Revision-Date: 2026-10-27 03:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_corporate_tax_cca
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax_cca/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "%(item)s - %(schedule)s"
+msgstr "%(item)s - %(schedule)s"
+
+#. module: l10n_ca_corporate_tax_cca
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax_cca/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Book depreciation of assets in other expense accounts"
+msgstr ""
+"Amortissement comptable des immobilisations dans d'autres comptes de charges"
+
+#. module: l10n_ca_corporate_tax_cca
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax_cca/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Book gain on disposal of assets reversed (line 401)"
+msgstr ""
+"Gain comptable sur la disposition d'immobilisations annulé (ligne 401)"
+
+#. module: l10n_ca_corporate_tax_cca
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax_cca/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Book loss on disposal of assets reversed (line 111)"
+msgstr ""
+"Perte comptable sur la disposition d'immobilisations annulée (ligne 111)"
+
+#. module: l10n_ca_corporate_tax_cca
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax_cca/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Capital cost allowance claimed (line 403)"
+msgstr "Déduction pour amortissement demandée (ligne 403)"
+
+#. module: l10n_ca_corporate_tax_cca
+#: model:ir.model,name:l10n_ca_corporate_tax_cca.model_l10n_ca_corporate_tax_estimate
+msgid "Corporate Income Tax Estimate"
+msgstr "Estimation de l'impôt sur le revenu des sociétés"
+
+#. module: l10n_ca_corporate_tax_cca
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax_cca/models/l10n_ca_corporate_tax_estimate.py:0
+msgid ""
+"No federal CCA schedule ends on %(date)s: the capital cost allowance is not "
+"loaded from the assets."
+msgstr ""
+"Aucune annexe fédérale de DPA ne se termine le %(date)s : la déduction pour "
+"amortissement n'est pas chargée à partir des immobilisations."
+
+#. module: l10n_ca_corporate_tax_cca
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax_cca/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Recapture of capital cost allowance (line 107)"
+msgstr "Récupération de l'amortissement (ligne 107)"
+
+#. module: l10n_ca_corporate_tax_cca
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax_cca/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Terminal loss (line 404)"
+msgstr "Perte finale (ligne 404)"
+
+#. module: l10n_ca_corporate_tax_cca
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax_cca/models/l10n_ca_corporate_tax_estimate.py:0
+msgid ""
+"The CCA lines loaded (%(loaded)s) differ from %(schedule)s (%(expected)s): "
+"click Load from Accounting again."
+msgstr ""
+"Les lignes de DPA chargées (%(loaded)s) diffèrent de %(schedule)s "
+"(%(expected)s) : cliquez de nouveau sur Charger depuis la comptabilité."
+
+#. module: l10n_ca_corporate_tax_cca
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax_cca/models/l10n_ca_corporate_tax_estimate.py:0
+msgid ""
+"The Quebec CCA schedule gives a Quebec taxable income %(difference)s "
+"different from the federal one (positive: higher). The estimate computes "
+"both taxes on the federal taxable income, so the Quebec tax is estimated on "
+"that difference too."
+msgstr ""
+"L'annexe de DPA du Québec donne un revenu imposable du Québec différent du "
+"revenu fédéral de %(difference)s (positif : plus élevé). L'estimation "
+"calcule les deux impôts sur le revenu imposable fédéral; l'impôt du Québec "
+"est donc aussi estimé sur cet écart."
