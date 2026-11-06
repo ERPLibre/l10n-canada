@@ -1,0 +1,298 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_time_parameter
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 03:22+0000\n"
+"PO-Revision-Date: 2026-10-27 03:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_payroll_remitter_type__accelerated_1
+msgid "Accelerated threshold 1 (twice a month)"
+msgstr "Accéléré – seuil 1 (deux fois par mois)"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_payroll_remitter_type__accelerated_2
+msgid "Accelerated threshold 2 (up to 4 times a month)"
+msgstr "Accéléré – seuil 2 (jusqu'à 4 fois par mois)"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_gst_filing_frequency__annual
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_qc_remitter_type__annual
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_qst_filing_frequency__annual
+msgid "Annual"
+msgstr "Annuel"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.ui.menu,name:l10n_ca_time_parameter.menu_l10n_ca_reporting
+#: model:ir.ui.menu,name:l10n_ca_time_parameter.menu_l10n_ca_root
+msgid "Canada"
+msgstr "Canada"
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.ui.view,arch_db:l10n_ca_time_parameter.res_config_settings_view_form
+msgid "Canadian Tax Profile"
+msgstr "Profil fiscal canadien"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.actions.act_window,name:l10n_ca_time_parameter.action_l10n_ca_time_parameter
+#: model:ir.ui.menu,name:l10n_ca_time_parameter.menu_l10n_ca_time_parameter
+msgid "Canadian Time Parameters"
+msgstr "Paramètres temporels canadiens"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_company__l10n_ca_ccpc
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_ccpc
+msgid "Canadian-Controlled Private Corporation"
+msgstr "Société privée sous contrôle canadien"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model,name:l10n_ca_time_parameter.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model,name:l10n_ca_time_parameter.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de configuration"
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.ui.view,arch_db:l10n_ca_time_parameter.res_config_settings_view_form
+msgid "Corporation"
+msgstr "Société"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,help:l10n_ca_time_parameter.field_res_company__l10n_ca_ccpc
+#: model:ir.model.fields,help:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_ccpc
+msgid ""
+"Enables the small business deduction and the CCPC rules (quarterly "
+"instalments, enhanced refundable credits)."
+msgstr ""
+"Active la déduction pour petite entreprise (DPE) et les règles des SPCC "
+"(acomptes provisionnels trimestriels, crédits remboursables bonifiés)."
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.ui.view,arch_db:l10n_ca_time_parameter.res_config_settings_view_form
+msgid "Filing frequencies of the GST/HST and QST returns"
+msgstr "Fréquences de production des déclarations de TPS/TVH et de TVQ"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,help:l10n_ca_time_parameter.field_res_company__l10n_ca_qc_remitter_type
+#: model:ir.model.fields,help:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_qc_remitter_type
+msgid ""
+"Frequency assigned by Revenu Quebec to the remittances of source deductions "
+"and employer contributions. A new employer remits monthly."
+msgstr ""
+"Fréquence attribuée par Revenu Québec aux versements des retenues à la "
+"source et des cotisations de l'employeur. Un nouvel employeur verse "
+"mensuellement."
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_company__l10n_ca_gst_filing_frequency
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_gst_filing_frequency
+msgid "GST/HST Filing Frequency"
+msgstr "Fréquence de production de la TPS/TVH"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_company__l10n_ca_instalment_frequency
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_instalment_frequency
+msgid "Income Tax Instalments"
+msgstr "Acomptes provisionnels d'impôt"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_gst_filing_frequency__monthly
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_instalment_frequency__monthly
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_qc_remitter_type__monthly
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_qst_filing_frequency__monthly
+msgid "Monthly"
+msgstr "Mensuel"
+
+#. module: l10n_ca_time_parameter
+#. odoo-python
+#: code:addons/l10n_ca_time_parameter/models/res_company.py:0
+msgid ""
+"No Canadian time parameter '%(code)s' in force on %(date)s. Add a version "
+"under Invoicing (Accounting) > Configuration > Canadian Time Parameters."
+msgstr ""
+"Aucun paramètre temporel canadien « %(code)s » en vigueur le %(date)s. "
+"Ajoutez une version sous Facturation (Comptabilité) > Configuration > "
+"Paramètres temporels canadiens."
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.actions.act_window,help:l10n_ca_time_parameter.action_l10n_ca_time_parameter
+msgid "No Canadian time parameter yet."
+msgstr "Aucun paramètre temporel canadien pour l'instant."
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_payroll_remitter_type__none
+msgid "No payroll"
+msgstr "Aucune paie"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_instalment_frequency__none
+msgid "None"
+msgstr "Aucun"
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.ui.view,arch_db:l10n_ca_time_parameter.res_config_settings_view_form
+msgid "Payroll"
+msgstr "Paie"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_quick_method_activity__resale
+msgid "Purchase for resale"
+msgstr "Achat en vue de la revente"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_company__l10n_ca_qst_filing_frequency
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_qst_filing_frequency
+msgid "QST Filing Frequency"
+msgstr "Fréquence de production de la TVQ"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_gst_filing_frequency__quarterly
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_instalment_frequency__quarterly
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_payroll_remitter_type__quarterly
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_qc_remitter_type__quarterly
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_qst_filing_frequency__quarterly
+msgid "Quarterly"
+msgstr "Trimestriel"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_company__l10n_ca_neq
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_neq
+msgid "Quebec Enterprise Number (NEQ)"
+msgstr "Numéro d'entreprise du Québec (NEQ)"
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.ui.view,arch_db:l10n_ca_time_parameter.res_config_settings_view_form
+msgid "Quick Method"
+msgstr "Méthode rapide"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_company__l10n_ca_quick_method_activity
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_quick_method_activity
+msgid "Quick Method Activity"
+msgstr "Activité selon la méthode rapide"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_company__l10n_ca_quick_method_date
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_quick_method_date
+msgid "Quick Method Effective Date"
+msgstr "Date d'entrée en vigueur de la méthode rapide"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_company__l10n_ca_quick_method
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_quick_method
+msgid "Quick Method of Accounting"
+msgstr "Méthode rapide de comptabilité"
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.actions.act_window,help:l10n_ca_time_parameter.action_l10n_ca_time_parameter
+msgid ""
+"Rates, thresholds and bracket tables used by the Canadian\n"
+"                localization. Each parameter keeps one version per effective\n"
+"                date: add a version when a budget or a new year changes a\n"
+"                value, the past periods keep the value that applied to them."
+msgstr ""
+"Taux, seuils et tables de tranches utilisés par la localisation\n"
+"                canadienne. Chaque paramètre conserve une version par date d'entrée\n"
+"                en vigueur : ajoutez une version lorsqu'un budget ou une nouvelle\n"
+"                année modifie une valeur, les périodes passées conservent la valeur qui s'y appliquait."
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_payroll_remitter_type__regular
+msgid "Regular (monthly)"
+msgstr "Régulier (mensuel)"
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.ui.view,arch_db:l10n_ca_time_parameter.res_config_settings_view_form
+msgid "Remit a fixed percentage of tax-included sales"
+msgstr "Verser un pourcentage fixe des ventes taxes comprises"
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.ui.view,arch_db:l10n_ca_time_parameter.res_config_settings_view_form
+msgid "Remitter types of the source deductions (CRA, Revenu Quebec)"
+msgstr ""
+"Types d'auteur de versement des retenues à la source (ARC, Revenu Québec)"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_company__l10n_ca_qc_remitter_type
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_qc_remitter_type
+msgid "Revenu Quebec Remittance Frequency"
+msgstr "Fréquence des versements à Revenu Québec"
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.ui.view,arch_db:l10n_ca_time_parameter.res_config_settings_view_form
+msgid "Sales Tax Returns"
+msgstr "Déclarations de taxes de vente"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,help:l10n_ca_time_parameter.field_res_company__l10n_ca_quick_method_activity
+#: model:ir.model.fields,help:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_quick_method_activity
+msgid ""
+"Selects the remittance rate table: service businesses and resellers have "
+"different quick method rates. The resale rates require that the cost of the "
+"goods purchased for resale, basic groceries excluded, is at least 40% of the"
+" annual taxable sales."
+msgstr ""
+"Détermine la table des taux de versement : les entreprises de services et "
+"les revendeurs ont des taux différents selon la méthode rapide. Les taux des"
+" revendeurs exigent que le coût des biens achetés pour la revente, produits "
+"alimentaires de base exclus, atteigne au moins 40 % des ventes taxables "
+"annuelles."
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_quick_method_activity__service
+msgid "Services"
+msgstr "Services"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_company__l10n_ca_payroll_remitter_type
+#: model:ir.model.fields,field_description:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_payroll_remitter_type
+msgid "Source Deduction Remitter Type"
+msgstr "Type d'auteur de versement des retenues à la source"
+
+#. module: l10n_ca_time_parameter
+#: model_terms:ir.ui.view,arch_db:l10n_ca_time_parameter.res_config_settings_view_form
+msgid "Status and identifiers used by the corporate tax modules"
+msgstr "Statut et identifiants utilisés par les modules d'impôt des sociétés"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields,help:l10n_ca_time_parameter.field_res_company__l10n_ca_quick_method
+#: model:ir.model.fields,help:l10n_ca_time_parameter.field_res_config_settings__l10n_ca_quick_method
+msgid ""
+"The GST/HST and QST returns use the quick method: tax remitted is a fixed "
+"percentage of tax-included sales. It is not available to businesses that "
+"provide legal, accounting or actuarial services, bookkeeping, financial or "
+"tax consulting, or that prepare tax returns, nor to listed financial "
+"institutions, charities, qualifying non-profit organizations and selected "
+"public service bodies."
+msgstr ""
+"Les déclarations de TPS/TVH et de TVQ utilisent la méthode rapide : la taxe "
+"versée est un pourcentage fixe des ventes taxes comprises. Elle n'est pas "
+"offerte aux entreprises qui rendent des services juridiques, comptables ou "
+"actuariels, de tenue de livres ou de consultation financière ou fiscale, ou "
+"qui préparent des déclarations de revenus, ni aux institutions financières "
+"désignées, aux organismes de bienfaisance, aux organismes sans but lucratif "
+"admissibles et aux organismes déterminés de services publics."
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_qc_remitter_type__twice_monthly
+msgid "Twice a month"
+msgstr "Deux fois par mois"
+
+#. module: l10n_ca_time_parameter
+#: model:ir.model.fields.selection,name:l10n_ca_time_parameter.selection__res_company__l10n_ca_qc_remitter_type__weekly
+msgid "Weekly"
+msgstr "Hebdomadaire"

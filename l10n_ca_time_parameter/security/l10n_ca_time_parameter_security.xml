@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Accounting managers maintain the Canadian rate tables. -->
+    <record id="account.group_account_manager" model="res.groups">
+        <field
+            name="implied_ids"
+            eval="[(4, ref('base_time_parameter.group_time_parameter'))]"
+        />
+    </record>
+    <!-- The rules of base_time_parameter hide records without company,
+         which are the parameters shipped by the localization. -->
+    <function model="ir.rule" name="write">
+        <value
+            eval="[ref('base_time_parameter.base_time_parameter_multi_company_rule'), ref('base_time_parameter.base_time_parameter_version_multi_company_rule')]"
+        />
+        <value
+            eval="{'domain_force': &quot;['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]&quot;}"
+        />
+    </function>
+</odoo>

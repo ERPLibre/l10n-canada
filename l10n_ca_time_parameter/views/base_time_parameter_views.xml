@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Shared parents of the Canadian localization menus. In Community,
+         the invoicing administrator holds account.group_account_manager
+         without the read-only accounting group: both are listed. -->
+    <menuitem
+        id="menu_l10n_ca_root"
+        name="Canada"
+        parent="account.menu_finance"
+        groups="account.group_account_invoice,account.group_account_readonly"
+        sequence="25"
+    />
+    <menuitem
+        id="menu_l10n_ca_reporting"
+        name="Canada"
+        parent="account.menu_finance_reports"
+        groups="account.group_account_manager,account.group_account_readonly"
+        sequence="50"
+    />
+    <record id="action_l10n_ca_time_parameter" model="ir.actions.act_window">
+        <field name="name">Canadian Time Parameters</field>
+        <field name="res_model">base.time.parameter</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('code', '=like', 'l10n_ca.%')]</field>
+        <field
+            name="context"
+            eval="{'default_country_id': ref('base.ca'), 'default_company_id': False}"
+        />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No Canadian time parameter yet.
+            </p>
+            <p>
+                Rates, thresholds and bracket tables used by the Canadian
+                localization. Each parameter keeps one version per effective
+                date: add a version when a budget or a new year changes a
+                value, the past periods keep the value that applied to them.
+            </p>
+        </field>
+    </record>
+    <menuitem
+        id="menu_l10n_ca_time_parameter"
+        name="Canadian Time Parameters"
+        parent="account.menu_finance_configuration"
+        action="action_l10n_ca_time_parameter"
+        groups="base_time_parameter.group_time_parameter"
+        sequence="90"
+    />
+</odoo>

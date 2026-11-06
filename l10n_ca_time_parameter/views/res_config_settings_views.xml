@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.l10n_ca_time_parameter</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <!-- A <setting> labels only its first field: every field gets its
+                 own labelled row. -->
+            <xpath expr="//app[@name='account']" position="inside">
+                <block
+                    title="Canadian Tax Profile"
+                    name="l10n_ca_tax_profile"
+                    invisible="country_code != 'CA'"
+                >
+                    <setting
+                        string="Corporation"
+                        help="Status and identifiers used by the corporate tax modules"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label for="l10n_ca_ccpc" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_ccpc" />
+                            </div>
+                            <div class="row mt8">
+                                <label for="l10n_ca_neq" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_neq" />
+                            </div>
+                            <div class="row mt8">
+                                <label for="l10n_ca_instalment_frequency" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_instalment_frequency" />
+                            </div>
+                        </div>
+                    </setting>
+                    <setting
+                        string="Sales Tax Returns"
+                        help="Filing frequencies of the GST/HST and QST returns"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label for="l10n_ca_gst_filing_frequency" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_gst_filing_frequency" />
+                            </div>
+                            <div class="row mt8">
+                                <label for="l10n_ca_qst_filing_frequency" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_qst_filing_frequency" />
+                            </div>
+                        </div>
+                    </setting>
+                    <setting
+                        string="Quick Method"
+                        help="Remit a fixed percentage of tax-included sales"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label for="l10n_ca_quick_method" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_quick_method" />
+                            </div>
+                            <div invisible="not l10n_ca_quick_method">
+                                <div class="row mt8">
+                                    <label for="l10n_ca_quick_method_date" class="col-lg-5 o_light_label" />
+                                    <field name="l10n_ca_quick_method_date" />
+                                </div>
+                                <div class="row mt8">
+                                    <label for="l10n_ca_quick_method_activity" class="col-lg-5 o_light_label" />
+                                    <field name="l10n_ca_quick_method_activity" />
+                                </div>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting
+                        string="Payroll"
+                        help="Remitter types of the source deductions (CRA, Revenu Quebec)"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label for="l10n_ca_payroll_remitter_type" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_payroll_remitter_type" />
+                            </div>
+                            <div class="row mt8">
+                                <label for="l10n_ca_qc_remitter_type" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_qc_remitter_type" />
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
