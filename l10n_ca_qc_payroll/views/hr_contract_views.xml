@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="hr_contract_view_form" model="ir.ui.view">
+        <field name="name">hr.contract.form.l10n_ca_qc_payroll</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="l10n_ca_payroll.hr_contract_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page[@name='l10n_ca_payroll']/group"
+                position="after"
+            >
+                <field name="l10n_ca_province_code" invisible="1" />
+                <group invisible="l10n_ca_province_code != 'QC'">
+                    <group name="l10n_ca_qc_tp1015_3" string="Quebec TP-1015.3">
+                        <field name="l10n_ca_qc_claim_type" />
+                        <field
+                            name="l10n_ca_qc_bpa"
+                            invisible="l10n_ca_qc_claim_type != 'basic'"
+                        />
+                        <field
+                            name="l10n_ca_qc_claim_amount"
+                            invisible="l10n_ca_qc_claim_type != 'custom'"
+                        />
+                        <field
+                            name="l10n_ca_qc_claim_year"
+                            options="{'format': false}"
+                            invisible="l10n_ca_qc_claim_type != 'custom'"
+                            required="l10n_ca_qc_claim_type == 'custom'"
+                        />
+                        <field name="l10n_ca_qc_claim_non_indexed" />
+                        <field name="l10n_ca_qc_deductions" />
+                        <field
+                            name="l10n_ca_qc_deductions_date"
+                            invisible="not l10n_ca_qc_deductions"
+                        />
+                        <field name="l10n_ca_qc_additional_tax" />
+                        <field name="l10n_ca_qc_tax_exempt" />
+                    </group>
+                    <group name="l10n_ca_qc_other" string="Quebec - Other">
+                        <field name="l10n_ca_qc_authorized_deductions" />
+                        <field name="l10n_ca_qc_authorized_credits" />
+                        <field
+                            name="l10n_ca_qc_authorized_date"
+                            invisible="not l10n_ca_qc_authorized_deductions and not l10n_ca_qc_authorized_credits"
+                        />
+                        <field name="l10n_ca_qc_ftq_withholding" />
+                        <field name="l10n_ca_qc_fondaction_withholding" />
+                        <field name="l10n_ca_qc_cnesst_exempt" />
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

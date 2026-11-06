@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Payee of the Quebec source deductions and employer contributions -->
+    <record id="partner_revenu_quebec" model="res.partner">
+        <field name="name">Revenu Québec</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_qc" />
+    </record>
+    <record id="register_revenu_quebec" model="hr.contribution.register">
+        <field name="name">Revenu Québec</field>
+        <field name="partner_id" ref="partner_revenu_quebec" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Quebec source deductions and employer contributions (QPIP, health services fund, CNESST, labour standards, WSDRF).</field>
+    </record>
+
+    <!-- F of TP-1015.F: the rules of this category, negative like every
+         deduction, lower the Quebec taxable income of the period. They
+         must run before the statutory rules (sequence below 110), which
+         read the category total once. -->
+    <record id="categ_qc_tax_deduction" model="hr.salary.rule.category">
+        <field name="name">Deduction Reducing the Quebec Taxable Income</field>
+        <field name="code">CA_QC_TAXDED</field>
+        <field name="parent_id" ref="l10n_ca_payroll.categ_ded" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Employee contributions withheld at source that TP-1015.F subtracts from the gross remuneration (variable F): RPP, RRSP, VRSP or PRPP, FHSA, retirement compensation arrangement, CIP deduction. Give the rules a sequence below 110.</field>
+    </record>
+
+    <!-- Every rule below applies only to an employment in Quebec. -->
+    <record id="rule_qc_salary" model="hr.salary.rule">
+        <field name="name">Quebec Remuneration Subject to Employer Contributions</field>
+        <field name="code">CA_QC_SAL</field>
+        <field name="sequence">112</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "QC"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["qc_salary"]</field>
+        <field
+            name="note"
+        >Eligible salary under the QPIP (RL-1 box I, T4 box 56) and base of the health services fund, labour standards and CNESST contributions.</field>
+    </record>
+    <record id="rule_qpip" model="hr.salary.rule">
+        <field name="name">QPIP Premiums</field>
+        <field name="code">CA_QPIP</field>
+        <field name="sequence">135</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_ded" />
+        <field name="register_id" ref="register_revenu_quebec" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "QC"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = -l10n_ca.get(contract, categories.GROSS)["qpip"]</field>
+        <field
+            name="note"
+        >Employee Quebec Parental Insurance Plan premium (TP-1015.F part 4.1), up to the annual maximum.</field>
+    </record>
+    <record id="rule_qpip_employer" model="hr.salary.rule">
+        <field name="name">QPIP Employer Premiums</field>
+        <field name="code">CA_QPIP_ER</field>
+        <field name="sequence">320</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_revenu_quebec" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "QC"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["qpip_employer"]</field>
+    </record>
+    <record id="rule_hsf" model="hr.salary.rule">
+        <field name="name">Health Services Fund</field>
+        <field name="code">CA_QC_HSF</field>
+        <field name="sequence">330</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_revenu_quebec" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "QC"</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["qc_hsf"]
+result_name = ca["qc_hsf_line_name"]</field>
+    </record>
+    <record id="rule_cnt" model="hr.salary.rule">
+        <field name="name">Labour Standards Contribution (CNT)</field>
+        <field name="code">CA_QC_CNT</field>
+        <field name="sequence">340</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_revenu_quebec" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "QC" and not contract.company_id.l10n_ca_qc_cnt_exempt</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["qc_cnt"]</field>
+        <field
+            name="note"
+        >Accrual of the contribution related to labour standards, paid with the RL-1 summary.</field>
+    </record>
+    <record id="rule_cnesst" model="hr.salary.rule">
+        <field name="name">CNESST Premium</field>
+        <field name="code">CA_QC_CNESST</field>
+        <field name="sequence">350</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_revenu_quebec" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "QC" and bool(contract.company_id.l10n_ca_qc_cnesst_rate) and not contract.l10n_ca_qc_cnesst_exempt</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["qc_cnesst"]</field>
+        <field
+            name="note"
+        >Occupational health and safety premium at the CNESST rate of the company, paid with the periodic remittances to Revenu Quebec.</field>
+    </record>
+    <record id="rule_wsdrf" model="hr.salary.rule">
+        <field name="name">WSDRF Contribution</field>
+        <field name="code">CA_QC_WSDRF</field>
+        <field name="sequence">360</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_revenu_quebec" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "QC" and l10n_ca.get(contract, categories.GROSS)["qc_wsdrf"] != 0</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["qc_wsdrf"]</field>
+        <field
+            name="note"
+        >Accrual of the Workforce Skills Development and Recognition Fund contribution when the total payroll exceeds the threshold; the RL-1 summary deducts the eligible training expenditures.</field>
+    </record>
+</odoo>

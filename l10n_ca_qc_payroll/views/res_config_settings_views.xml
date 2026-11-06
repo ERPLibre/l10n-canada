@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.l10n_ca_qc_payroll</field>
+        <field name="model">res.config.settings</field>
+        <field
+            name="inherit_id"
+            ref="l10n_ca_payroll.res_config_settings_view_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='l10n_ca_payroll']" position="after">
+                <block title="Quebec Payroll" name="l10n_ca_qc_payroll">
+                    <setting
+                        string="Revenu Québec File"
+                        help="Identification number of the source deductions file and remittance frequency"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label
+                                    for="l10n_ca_qc_rq_account_number"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_qc_rq_account_number" />
+                            </div>
+                            <div class="row mt8">
+                                <label
+                                    for="l10n_ca_qc_remitter_type"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_qc_remitter_type" />
+                            </div>
+                        </div>
+                    </setting>
+                    <setting
+                        string="Health Services Fund"
+                        help="Sector of the employer and total payroll that sets the estimated rate"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label
+                                    for="l10n_ca_qc_hsf_sector"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_qc_hsf_sector" />
+                            </div>
+                            <div class="row mt8">
+                                <label
+                                    for="l10n_ca_qc_hsf_basis"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_qc_hsf_basis" />
+                            </div>
+                            <div
+                                class="row mt8"
+                                invisible="l10n_ca_qc_hsf_basis != 'estimate'"
+                            >
+                                <label
+                                    for="l10n_ca_qc_total_payroll_estimate"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_qc_total_payroll_estimate" />
+                            </div>
+                            <div class="row mt8">
+                                <label
+                                    for="l10n_ca_qc_associated_payroll"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_qc_associated_payroll" />
+                            </div>
+                        </div>
+                    </setting>
+                    <setting
+                        string="WSDRF"
+                        help="Payroll of the company alone subject to the WSDRF contribution, compared with its threshold"
+                        invisible="l10n_ca_qc_hsf_basis != 'estimate'"
+                    >
+                        <field name="l10n_ca_qc_wsdrf_payroll_estimate" />
+                    </setting>
+                    <setting
+                        string="CNESST"
+                        help="Rate per $100 of insurable payroll from the classification decision of the year"
+                    >
+                        <field name="l10n_ca_qc_cnesst_rate" />
+                    </setting>
+                    <setting
+                        string="Labour Standards"
+                        help="Check if the employer is not subject to the contribution related to labour standards"
+                    >
+                        <field name="l10n_ca_qc_cnt_exempt" />
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

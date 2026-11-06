@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <menuitem
+        id="menu_l10n_ca_qc_rl1_summary"
+        name="RL-1 Year-End (Quebec)"
+        parent="l10n_ca_payroll.menu_l10n_ca_payroll_root"
+        action="action_l10n_ca_qc_rl1_summary"
+        sequence="30"
+    />
+    <menuitem
+        id="menu_l10n_ca_qc_payroll_remittance"
+        name="Remittances (Revenu Québec)"
+        parent="l10n_ca_payroll.menu_l10n_ca_payroll_root"
+        action="action_l10n_ca_qc_payroll_remittance"
+        sequence="40"
+    />
+</odoo>

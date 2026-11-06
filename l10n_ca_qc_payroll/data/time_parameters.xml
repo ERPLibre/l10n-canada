@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="param_qpp_ympe" model="base.time.parameter">
+        <field name="name">QPP maximum pensionable earnings</field>
+        <field name="code">l10n_ca.qpp.ympe</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Maximum pensionable earnings (MPE) of the Quebec Pension Plan; the base and first additional contributions stop at this amount. Act respecting the Québec Pension Plan. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/calculating-source-deductions-and-contributions/qpp-contributions/maximum-pensionable-earnings-and-contribution-rate/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-9</field>
+    </record>
+    <record id="param_qpp_ympe_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_ympe" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">71300</field>
+    </record>
+    <record id="param_qpp_ympe_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_ympe" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">74600</field>
+    </record>
+    <record id="param_qpp_yampe" model="base.time.parameter">
+        <field name="name">QPP additional maximum pensionable earnings</field>
+        <field name="code">l10n_ca.qpp.yampe</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Additional maximum pensionable earnings: the second additional contribution applies between the MPE and this amount (114% of the MPE from 2025). Act respecting the Québec Pension Plan. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/calculating-source-deductions-and-contributions/qpp-contributions/maximum-pensionable-earnings-and-contribution-rate/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-9</field>
+    </record>
+    <record id="param_qpp_yampe_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_yampe" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">81200</field>
+    </record>
+    <record id="param_qpp_yampe_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_yampe" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">85000</field>
+    </record>
+    <record id="param_qpp_basic_exemption" model="base.time.parameter">
+        <field name="name">QPP basic exemption</field>
+        <field name="code">l10n_ca.qpp.basic_exemption</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Annual basic exemption of the QPP, prorated per pay period and truncated to the cent (TP-1015.F-V section 3.1). Act respecting the Québec Pension Plan. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/calculating-source-deductions-and-contributions/qpp-contributions/maximum-pensionable-earnings-and-contribution-rate/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-9</field>
+    </record>
+    <record id="param_qpp_basic_exemption_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_basic_exemption" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">3500</field>
+    </record>
+    <record id="param_qpp_basic_exemption_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_basic_exemption" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">3500</field>
+    </record>
+    <record id="param_qpp_rate" model="base.time.parameter">
+        <field name="name">QPP employee contribution rate (base + first additional)</field>
+        <field name="code">l10n_ca.qpp.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Employee QPP contribution rate, base plus first additional contribution; the employer pays the same amount. 2026: 6.30% (5.30% base + 1%) after the one-year cut of the base rate announced in Finance Québec bulletin 2025-8 and applied by Revenu Québec (amendment of s. 44.1 of the Act respecting the Québec Pension Plan). The bulletin states that the s. 44.1 rule applies again for 2027. Act respecting the Québec Pension Plan, s. 44.1, 50 and 63. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/FR/BULFR_2025-8.pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-9</field>
+    </record>
+    <record id="param_qpp_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.064</field>
+    </record>
+    <record id="param_qpp_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.063</field>
+    </record>
+    <record id="param_qpp_base_rate" model="base.time.parameter">
+        <field name="name">QPP employee base contribution rate</field>
+        <field name="code">l10n_ca.qpp.base_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Base part of the employee QPP rate. The remainder (rate - base_rate) is the first additional contribution, deductible in the Quebec (CSA of TP-1015.F-V) and federal (F5A of T4127) formulas. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/FR/BULFR_2025-8.pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-9</field>
+    </record>
+    <record id="param_qpp_base_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_base_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.054</field>
+    </record>
+    <record id="param_qpp_base_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_base_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.053</field>
+    </record>
+    <record id="param_qpp_rate2" model="base.time.parameter">
+        <field name="name">QPP second additional contribution rate</field>
+        <field name="code">l10n_ca.qpp.rate2</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Employee rate of the second additional QPP contribution (QPP2) on pensionable earnings between the MPE and the additional MPE; the employer pays the same amount. Act respecting the Québec Pension Plan. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/calculating-source-deductions-and-contributions/qpp-contributions/maximum-pensionable-earnings-and-contribution-rate/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-9</field>
+    </record>
+    <record id="param_qpp_rate2_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_rate2" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.04</field>
+    </record>
+    <record id="param_qpp_rate2_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_rate2" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.04</field>
+    </record>
+    <record id="param_qpp_age_min" model="base.time.parameter">
+        <field name="name">QPP minimum age</field>
+        <field name="code">l10n_ca.qpp.age_min</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Remuneration paid up to the end of the month the employee turns this age is not pensionable under the QPP (RL-1.G-V, box G). Act respecting the Québec Pension Plan. Sources: https://www.revenuquebec.ca/documents/en/formulaires/rl/RL-1.G-V(2025-12).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-9</field>
+    </record>
+    <record id="param_qpp_age_min_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_age_min" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">18</field>
+    </record>
+    <record id="param_qpp_last_contribution_age" model="base.time.parameter">
+        <field name="name">QPP last contribution year (age)</field>
+        <field name="code">l10n_ca.qpp.last_contribution_age</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">QPP contributions are withheld until December 31 of the year in which the employee reaches this age and stop on January 1 of the following year (TP-1015.G-V section 4.5.5). Unlike the CPP, the QPP has no stop at age 70. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/rl/RL-1.G-V(2025-12).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-9</field>
+    </record>
+    <record id="param_qpp_last_contribution_age_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpp_last_contribution_age" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">72</field>
+    </record>
+    <record id="param_qpip_mie" model="base.time.parameter">
+        <field name="name">QPIP maximum insurable earnings</field>
+        <field name="code">l10n_ca.qpip.mie</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Maximum insurable earnings of the Quebec Parental Insurance Plan, per employee and year (box I of the RL-1 is capped at it). Act respecting parental insurance. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/calculating-source-deductions-and-contributions/qpip-premiums/maximum-insurable-earnings-and-premium-rate/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/A-29.011</field>
+    </record>
+    <record id="param_qpip_mie_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpip_mie" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">98000</field>
+    </record>
+    <record id="param_qpip_mie_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpip_mie" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">103000</field>
+    </record>
+    <record id="param_qpip_rate" model="base.time.parameter">
+        <field name="name">QPIP employee premium rate</field>
+        <field name="code">l10n_ca.qpip.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Employee QPIP premium rate on eligible salary (TP-1015.F-V section 4.1). 2026: 13% cut decreed by s. 78.1 of the Act respecting parental insurance (S.Q. 2025, c. 32). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/calculating-source-deductions-and-contributions/qpip-premiums/maximum-insurable-earnings-and-premium-rate/ ; https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/FR/BULFR_2025-8.pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/A-29.011</field>
+    </record>
+    <record id="param_qpip_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpip_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.00494</field>
+    </record>
+    <record id="param_qpip_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpip_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.0043</field>
+    </record>
+    <record id="param_qpip_employer_rate" model="base.time.parameter">
+        <field name="name">QPIP employer premium rate</field>
+        <field name="code">l10n_ca.qpip.employer_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Employer QPIP premium rate on the eligible salary of each employee, 1.4 times the employee rate (TP-1015.F-V section 4.2). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/calculating-source-deductions-and-contributions/qpip-premiums/maximum-insurable-earnings-and-premium-rate/ ; https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/FR/BULFR_2025-8.pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/A-29.011</field>
+    </record>
+    <record id="param_qpip_employer_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpip_employer_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.00692</field>
+    </record>
+    <record id="param_qpip_employer_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qpip_employer_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.00602</field>
+    </record>
+    <record id="param_qc_brackets" model="base.time.parameter">
+        <field name="name">Quebec income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.qc.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Quebec income tax rates by annual taxable income I, as [[threshold, rate], ...] (TP-1015.F-V step 2, variable T). The constant K is derived from the table and truncated to the dollar, as in the published table (2026: 0, 2,717, 8,151, 10,465). Taxation Act, s. 750, indexed under s. 750.1. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_brackets_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_brackets" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[[0, 0.14], [53255, 0.19], [106495, 0.24], [129590, 0.2575]]</field>
+    </record>
+    <record id="param_qc_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[[0, 0.14], [54345, 0.19], [108680, 0.24], [132245, 0.2575]]</field>
+    </record>
+    <record id="param_qc_credit_rate" model="base.time.parameter">
+        <field name="name">Quebec personal tax credit rate</field>
+        <field name="code">l10n_ca.qc.credit_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Rate applied to E, the value of the personal tax credits of the TP-1015.3-V (0.14 x E in step 2 of TP-1015.F-V). Taxation Act, s. 752.0.0.1 and following. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_credit_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_credit_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.14</field>
+    </record>
+    <record id="param_qc_credit_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_credit_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.14</field>
+    </record>
+    <record id="param_qc_bpa" model="base.time.parameter">
+        <field name="name">Quebec basic personal amount</field>
+        <field name="code">l10n_ca.qc.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Basic personal amount, used as E1 for an employee who did not file form TP-1015.3-V (TP-1015.F-V, variable E1). Taxation Act, s. 752.0.0.1. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_bpa_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_bpa" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">18571</field>
+    </record>
+    <record id="param_qc_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">18952</field>
+    </record>
+    <record id="param_qc_indexation_rate" model="base.time.parameter">
+        <field name="name">Quebec indexation rate of the personal income tax system</field>
+        <field name="code">l10n_ca.qc.indexation_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Indexation rate of the year, read at January 1 of each year. E1 of a TP-1015.3-V filed for an earlier year is multiplied by 1 + the rate of each following year up to the year of the pay (TP-1015.F-V variable E1: "la valeur de la variable E1 pour 2025 multipliée par 1,0205"); the employee does not file a new form for the annual indexation (TP-1015.G-V part 3.4.1). A year without its own version stops the computation. 2026: "Pour 2026, le taux d'indexation du régime d'imposition des particuliers est de 2,05 %" (TP-1015.F-V and TP-1015.G-V, main changes). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/publications/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_indexation_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_indexation_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.0205</field>
+    </record>
+    <record id="param_qc_labour_fund_credit_rate" model="base.time.parameter">
+        <field name="name">Quebec labour-sponsored fund tax credit rate</field>
+        <field name="code">l10n_ca.qc.labour_fund_credit_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Rate of the labour-sponsored fund tax credit in the annual tax: Y = (T x I) - K - K1 - (0,14 x E) - (0,15 x P x Q) - (0,15 x P x Q1), Q and Q1 being the amounts withheld per pay for class A shares of the Fonds de solidarité FTQ and class A or B shares of Fondaction (TP-1015.F-V step 2 and appendix 1). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record
+        id="param_qc_labour_fund_credit_rate_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_qc_labour_fund_credit_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.15</field>
+    </record>
+    <record id="param_qc_worker_deduction_rate" model="base.time.parameter">
+        <field name="name">Quebec deduction for workers - rate</field>
+        <field name="code">l10n_ca.qc.worker_deduction_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Rate of the deduction for workers H = rate x D per pay period (TP-1015.F-V step 1). Taxation Act, s. 358.0.1. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_worker_deduction_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_worker_deduction_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.06</field>
+    </record>
+    <record id="param_qc_worker_deduction_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_worker_deduction_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.06</field>
+    </record>
+    <record id="param_qc_worker_deduction_max" model="base.time.parameter">
+        <field name="name">Quebec deduction for workers - annual maximum</field>
+        <field name="code">l10n_ca.qc.worker_deduction_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Annual maximum of the deduction for workers; the maximum per pay period is this amount divided by P (TP-1015.F-V step 1). Taxation Act, s. 358.0.1. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_worker_deduction_max_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_worker_deduction_max" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1420</field>
+    </record>
+    <record id="param_qc_worker_deduction_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_worker_deduction_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1450</field>
+    </record>
+    <record id="param_qc_hsf_formula" model="base.time.parameter">
+        <field name="name">Health Services Fund rate formula</field>
+        <field name="code">l10n_ca.qc.hsf.formula</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">HSF contribution rate in percent per employer sector, as {sector: [a, b]}: W = a + b x S, S being the total payroll in millions bounded by l10n_ca.qc.hsf.payroll_min and payroll_max, the rate rounded half up to two decimals (TP-1015.F-V part 5). Sectors: general (all employers other than primary/manufacturing and public sector), primary_manufacturing (more than 50% of the payroll in NAICS 11, 21, 31-33), public (flat 4.26%). The temporary 2026-2027 exemption of some agriculture, forestry and fishing employers (bulletin 2025-8) is not modelled. Act respecting the Régie de l'assurance maladie du Québec, s. 34. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/cotisation-de-lemployeur-fss/seuil-de-la-masse-salariale-totale-et-taux-de-cotisation-au-fss/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-5</field>
+    </record>
+    <record id="param_qc_hsf_formula_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_hsf_formula" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">{"general": [1.2662, 0.3838], "primary_manufacturing": [0.8074, 0.4426], "public": [4.26, 0.0]}</field>
+    </record>
+    <record id="param_qc_hsf_formula_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_hsf_formula" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">{"general": [1.2662, 0.3838], "primary_manufacturing": [0.8074, 0.4426], "public": [4.26, 0.0]}</field>
+    </record>
+    <record id="param_qc_hsf_payroll_min" model="base.time.parameter">
+        <field name="name">Health Services Fund - total payroll of the minimum rate</field>
+        <field name="code">l10n_ca.qc.hsf.payroll_min</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Total payroll up to which the HSF formula uses S = this amount / 1,000,000 (the minimum rate: 1.65% general, 1.25% primary and manufacturing). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/cotisation-de-lemployeur-fss/seuil-de-la-masse-salariale-totale-et-taux-de-cotisation-au-fss/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-5</field>
+    </record>
+    <record id="param_qc_hsf_payroll_min_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_hsf_payroll_min" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1000000</field>
+    </record>
+    <record id="param_qc_hsf_payroll_min_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_hsf_payroll_min" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1000000</field>
+    </record>
+    <record id="param_qc_hsf_payroll_max" model="base.time.parameter">
+        <field name="name">Health Services Fund - total payroll of the maximum rate</field>
+        <field name="code">l10n_ca.qc.hsf.payroll_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Total payroll from which the HSF formula uses S = this amount / 1,000,000 (rate 4.26%). Raised from 7.5 to 7.8 million for 2025 and kept at 7.8 million for 2026 and later years. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/cotisation-de-lemployeur-fss/seuil-de-la-masse-salariale-totale-et-taux-de-cotisation-au-fss/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/R-5</field>
+    </record>
+    <record id="param_qc_hsf_payroll_max_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_hsf_payroll_max" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">7800000</field>
+    </record>
+    <record id="param_qc_hsf_payroll_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_hsf_payroll_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">7800000</field>
+    </record>
+    <record id="param_qc_cnt_rate" model="base.time.parameter">
+        <field name="name">Labour standards contribution rate (CNT)</field>
+        <field name="code">l10n_ca.qc.cnt.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Contribution related to labour standards, as a rate of the remuneration subject to it, paid with the RL-1 summary (line 63). Act respecting labour standards, s. 39.0.2. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.revenuquebec.ca/fr/services-en-ligne/formulaires-et-publications/rlz-1-s-g/guide-du-sommaire-1-sommaire-des-retenues-et-des-cotisations-de-lemployeur/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/N-1.1</field>
+    </record>
+    <record id="param_qc_cnt_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_cnt_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.0006</field>
+    </record>
+    <record id="param_qc_cnt_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_cnt_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.0006</field>
+    </record>
+    <record id="param_qc_cnt_max" model="base.time.parameter">
+        <field name="name">Labour standards contribution - maximum remuneration</field>
+        <field name="code">l10n_ca.qc.cnt.max_remuneration</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Maximum remuneration subject to the labour standards contribution, per employee and year (the QPIP maximum insurable earnings). Act respecting labour standards, s. 39.0.1. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.revenuquebec.ca/fr/services-en-ligne/formulaires-et-publications/rlz-1-s-g/guide-du-sommaire-1-sommaire-des-retenues-et-des-cotisations-de-lemployeur/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/N-1.1</field>
+    </record>
+    <record id="param_qc_cnt_max_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_cnt_max" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">98000</field>
+    </record>
+    <record id="param_qc_cnt_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_cnt_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">103000</field>
+    </record>
+    <record id="param_qc_wsdrf_rate" model="base.time.parameter">
+        <field name="name">WSDRF participation rate</field>
+        <field name="code">l10n_ca.qc.wsdrf.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Share of the total payroll an employer above the threshold must spend on eligible training, the shortfall being paid to the Workforce Skills Development and Recognition Fund (RL-1 summary line 73). Act to promote workforce skills development and recognition, s. 3. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.revenuquebec.ca/fr/services-en-ligne/formulaires-et-publications/rlz-1-s-g/guide-du-sommaire-1-sommaire-des-retenues-et-des-cotisations-de-lemployeur/ ; https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/fonds-de-developpement-et-de-reconnaissance-des-competences-de-la-main-doeuvre/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/D-8.3</field>
+    </record>
+    <record id="param_qc_wsdrf_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_wsdrf_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.01</field>
+    </record>
+    <record id="param_qc_wsdrf_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_wsdrf_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.01</field>
+    </record>
+    <record id="param_qc_wsdrf_threshold" model="base.time.parameter">
+        <field name="name">WSDRF total payroll threshold</field>
+        <field name="code">l10n_ca.qc.wsdrf.payroll_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">The WSDRF participation applies when the total payroll of the year exceeds this amount (RL-1 summary line 71). Act to promote workforce skills development and recognition, s. 4 and schedule. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.revenuquebec.ca/fr/services-en-ligne/formulaires-et-publications/rlz-1-s-g/guide-du-sommaire-1-sommaire-des-retenues-et-des-cotisations-de-lemployeur/ ; https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/fonds-de-developpement-et-de-reconnaissance-des-competences-de-la-main-doeuvre/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/D-8.3</field>
+    </record>
+    <record id="param_qc_wsdrf_threshold_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_wsdrf_threshold" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">2000000</field>
+    </record>
+    <record id="param_qc_wsdrf_threshold_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_wsdrf_threshold" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">2000000</field>
+    </record>
+    <record id="param_qc_cnesst_max" model="base.time.parameter">
+        <field name="name">CNESST maximum annual insurable earnings</field>
+        <field name="code">l10n_ca.qc.cnesst.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Maximum annual insurable earnings per worker for the occupational health and safety premium; the employer rate per $100 is set by the CNESST classification decision and entered on the company. The premium is paid with the periodic Revenu Québec remittances (TP-1015.G-V section 11.8). Act respecting industrial accidents and occupational diseases, s. 66. Secondary sources for the amount. Sources: https://www.cnesst.gouv.qc.ca/fr/organisation/documentation/formulaires-publications/salaire-maximum-annuel-assurable ; https://cdn-contenu.quebec.ca/cdn-contenu/gouvernement/travailler/Services_employes_Etat/Remuneration/Deductions_base_2026.pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/A-3.001</field>
+    </record>
+    <record id="param_qc_cnesst_max_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_cnesst_max" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">98000</field>
+    </record>
+    <record id="param_qc_cnesst_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_cnesst_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">103000</field>
+    </record>
+    <record id="param_qc_rl1_due_month" model="base.time.parameter">
+        <field name="name">RL-1 filing month</field>
+        <field name="code">l10n_ca.qc.rl1.due_month</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">The RL-1 slips and the RL-1 summary (RLZ-1.S) are due on the last day of this month of the following year, as is the payment of the labour standards and WSDRF contributions (RL-1.G-V section 4.2). A deadline on a Saturday, a Sunday or a public holiday moves to the next business day (TP-1015.G-V part 11.3). A business that ceases operations files within 30 days after the cessation, and an employer that permanently stops its periodic payments because it has no more employees by the 20th of the month after its last payment (RLZ-1.S, filing deadline). Taxation Act and its regulation. Sources: https://www.revenuquebec.ca/documents/en/formulaires/rl/RL-1.G-V(2025-12).pdf ; https://www.revenuquebec.ca/fr/services-en-ligne/formulaires-et-publications/rlz-1-s-g/guide-du-sommaire-1-sommaire-des-retenues-et-des-cotisations-de-lemployeur/ ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_rl1_due_month_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_rl1_due_month" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">2</field>
+    </record>
+    <record id="param_qc_remittance_due_day" model="base.time.parameter">
+        <field name="name">Revenu Québec remittance due day (monthly, quarterly, annual)</field>
+        <field name="code">l10n_ca.qc.remittance.due_day</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Day of the month following the period on which monthly, quarterly and annual remittances of source deductions and employer contributions are due (TP-1015.G-V table 7). Taxation Act, s. 1015 and its regulation. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_remittance_due_day_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_remittance_due_day" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">15</field>
+    </record>
+    <record id="param_qc_remittance_split_day" model="base.time.parameter">
+        <field name="name">Revenu Québec twice-monthly remittance split day</field>
+        <field name="code">l10n_ca.qc.remittance.twice_monthly_split_day</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Last day of the first twice-monthly remittance period: remuneration paid before the 16th (TP-1015.G-V table 7). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_remittance_split_day_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_remittance_split_day" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">15</field>
+    </record>
+    <record id="param_qc_remittance_first_due_day" model="base.time.parameter">
+        <field name="name">Revenu Québec twice-monthly first due day</field>
+        <field name="code">l10n_ca.qc.remittance.twice_monthly_first_due_day</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Day of the same month on which the remittance for remuneration paid before the 16th is due (TP-1015.G-V table 7). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_remittance_first_due_day_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_remittance_first_due_day" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">25</field>
+    </record>
+    <record id="param_qc_remittance_second_due_day" model="base.time.parameter">
+        <field name="name">Revenu Québec twice-monthly second due day</field>
+        <field name="code">l10n_ca.qc.remittance.twice_monthly_second_due_day</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Day of the following month on which the remittance for remuneration paid from the 16th to the end of the month is due (TP-1015.G-V table 7). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_remittance_second_due_day_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_remittance_second_due_day" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">10</field>
+    </record>
+    <record id="param_qc_remittance_weekly_days" model="base.time.parameter">
+        <field name="name">Revenu Québec weekly remittance period ends</field>
+        <field name="code">l10n_ca.qc.remittance.weekly_period_end_days</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Last days of the first three weekly remittance periods of a month; the fourth ends on the last day of the month (TP-1015.G-V table 7). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_remittance_weekly_days_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_remittance_weekly_days" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[7, 14, 21]</field>
+    </record>
+    <record id="param_qc_remittance_weekly_working_days" model="base.time.parameter">
+        <field name="name">Revenu Québec weekly remittance delay (business days)</field>
+        <field name="code">l10n_ca.qc.remittance.weekly_working_days</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">A weekly remittance is due on this business day after the last day of the period (TP-1015.G-V table 7). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="param_qc_remittance_weekly_working_days_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_remittance_weekly_working_days" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">3</field>
+    </record>
+</odoo>

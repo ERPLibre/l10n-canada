@@ -1,0 +1,1977 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_qc_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 03:22+0000\n"
+"PO-Revision-Date: 2026-10-27 03:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "21 QPP - employee contributions"
+msgstr "21 RRQ - cotisations des employées et employés"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "21 QPP - employees"
+msgstr "21 RRQ - employés"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "22 QPP - employer"
+msgstr "22 RRQ - employeur"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "22 QPP - employer contribution"
+msgstr "22 RRQ - cotisation de l'employeur"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "23 Additional QPP - employees"
+msgstr "23 RRQ supplémentaire - employés"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "23 QPP - employee additional contributions"
+msgstr "23 RRQ - cotisations supplémentaires des employées et employés"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "24 Additional QPP - employer"
+msgstr "24 RRQ supplémentaire - employeur"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "24 QPP - employer additional contribution"
+msgstr "24 RRQ - cotisation supplémentaire de l'employeur"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "25 QPP - total"
+msgstr "25 Cotisations au RRQ"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "25 QPP total"
+msgstr "25 Total RRQ"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "28 QPIP - employee premiums"
+msgstr "28 RQAP - cotisations des employées et employés"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "28 QPIP - employees"
+msgstr "28 RQAP - employés"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "29 QPIP - employer"
+msgstr "29 RQAP - employeur"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "29 QPIP - employer premium"
+msgstr "29 RQAP - cotisation de l'employeur"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "30 QPIP - total"
+msgstr "30 Cotisations au RQAP"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "30 QPIP total"
+msgstr "30 Total RQAP"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "35 Income tax withheld"
+msgstr "35 Impôt du Québec retenu"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "35 Quebec income tax withheld (RL-1)"
+msgstr "35 Impôt du Québec retenu selon les relevés 1"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "38 Total"
+msgstr "38 Total"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "38 Total source deductions"
+msgstr ""
+"38 Total des retenues d'impôt du Québec et des cotisations au RRQ et au RQAP"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "44 QPP paid or payable in the year"
+msgstr "44 RRQ payé ou à payer dans l'année"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "44 QPP remitted"
+msgstr "44 RRQ versé"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "45 QPIP paid or payable in the year"
+msgstr "45 RQAP payé ou à payer dans l'année"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "45 QPIP remitted"
+msgstr "45 RQAP versé"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "46 Income tax paid or payable in the year"
+msgstr "46 Impôt du Québec payé ou à payer dans l'année"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "46 Income tax remitted"
+msgstr "46 Impôt versé"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "47 Total paid or payable"
+msgstr "47 Total payé ou à payer dans l'année"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "47 Total remitted"
+msgstr "47 Total des versements"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "48 Balance"
+msgstr "48 Solde"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "48 Balance (refund if negative)"
+msgstr "48 Solde à payer ou remboursement (si négatif)"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "50.1 Total payroll"
+msgstr "50.1 Masse salariale totale"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "51 Salaries subject"
+msgstr "51 Salaires assujettis"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "51 Salaries subject to the HSF"
+msgstr "51 Salaires assujettis"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "52 Salaries eligible for an HSF contribution credit"
+msgstr "52 Salaires admissibles à un crédit de cotisation au FSS"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "52 Salaries eligible for an HSF credit"
+msgstr "52 Salaires admissibles à un crédit au FSS"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "52.1 HSF contribution credit specification"
+msgstr "52.1 Précision du crédit de cotisation au FSS"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "52.1 HSF credit specification"
+msgstr "52.1 Précision sur le crédit au FSS"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "53 Line 51 minus line 52"
+msgstr "53 Ligne 51 moins ligne 52"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "54 HSF contribution rate (%)"
+msgstr "54 Taux de cotisation au FSS (%)"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "54 Rate (%)"
+msgstr "54 Taux (%)"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "55 Contribution"
+msgstr "55 Cotisation"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "55 HSF contribution"
+msgstr "55 Cotisation au FSS"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "56 HSF paid or payable in the year"
+msgstr "56 FSS payé ou à payer dans l'année"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "56 Remitted"
+msgstr "56 Montant versé"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "57 Balance"
+msgstr "57 Solde"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "57 HSF balance"
+msgstr "57 Cotisation au FSS (solde à payer ou remboursement)"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "61 Remuneration subject"
+msgstr "61 Rémunération assujettie"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "61 Remuneration subject to the labour standards contribution"
+msgstr ""
+"61 Rémunérations assujetties à la cotisation relative aux normes du travail"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "63 Contribution"
+msgstr "63 Cotisation"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "63 Labour standards contribution"
+msgstr "63 Cotisation relative aux normes du travail"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "64 Labour standards contribution paid"
+msgstr "64 Cotisation relative aux normes du travail déjà payée"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "64 Paid"
+msgstr "64 Montant payé"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "71 Total payroll"
+msgstr "71 Masse salariale totale"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "71 Total payroll (WSDRF)"
+msgstr "71 Masse salariale (FDRCMO)"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "73 Participation"
+msgstr "73 Participation"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "73 Participation (line 71 x 1%)"
+msgstr "73 Participation (ligne 71 × 1 %)"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "74 Eligible training expenditures used"
+msgstr "74 Dépenses de formation admissibles utilisées"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "74 Training expenditures"
+msgstr "74 Dépenses de formation"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "75 Contribution"
+msgstr "75 Cotisation"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "75 WSDRF contribution"
+msgstr "75 Cotisation au FDRCMO"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "80 Balance"
+msgstr "80 Solde"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "81 Refund"
+msgstr "81 Remboursement"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "82 Balance due"
+msgstr "82 Solde à payer"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__l10n_ca_qc_rl1_slip__slip_code__a
+msgid "A - Amended"
+msgstr "A - Modifié"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "A Employment income"
+msgstr "A Revenus d'emploi"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.constraint,message:l10n_ca_qc_payroll.constraint_l10n_ca_qc_rl1_summary_company_year_unique
+msgid "A company has one RL-1 summary per year."
+msgstr "Une société a un seul sommaire des relevés 1 par année."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_additional_tax
+msgid "Additional Quebec Tax per Pay"
+msgstr "Impôt du Québec supplémentaire par paie"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__amount_paid
+msgid "Amount Paid"
+msgstr "Montant payé"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Amount paid"
+msgstr "Montant payé"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__hr_contract__l10n_ca_qc_claim_type__custom
+msgid "Amounts from the TP-1015.3"
+msgstr "Montants du TP-1015.3"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "B.A QPP contribution"
+msgstr "B.A Cotisation au RRQ"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "B.B Additional QPP contribution"
+msgstr "B.B Cotisation supplémentaire au RRQ"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "Balance"
+msgstr "Solde"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__hr_contract__l10n_ca_qc_claim_type__basic
+msgid "Basic personal amount"
+msgstr "Montant personnel de base"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_claim_type
+msgid ""
+"Basic personal amount: the personal tax credits are the Quebec basic "
+"personal amount of the year, as for an employee who files no TP-1015.3 form."
+" Amounts from the TP-1015.3: the amounts of lines 7 and 9 of the form."
+msgstr ""
+"Montant personnel de base : les crédits d'impôt personnels correspondent au "
+"montant personnel de base du Québec de l'année, comme pour un employé qui ne"
+" remplit pas de formulaire TP-1015.3. Montants du TP-1015.3 : les montants "
+"des lignes 7 et 9 du formulaire."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_payroll_t4_slip__box_55
+msgid "Box 55 - PPIP Premiums"
+msgstr "Case 55 - Cotisations de l'employé au RPAP"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_payroll_t4_slip__box_56
+msgid "Box 56 - PPIP Insurable Earnings"
+msgstr "Case 56 - Gains assurables du RPAP"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_a
+msgid "Box A - Employment Income"
+msgstr "Case A - Revenus d'emploi"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_b_a
+msgid "Box B.A - QPP Contribution"
+msgstr "Case B.A - Cotisation au RRQ"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_b_b
+msgid "Box B.B - Additional QPP Contribution"
+msgstr "Case B.B - Cotisation supplémentaire au RRQ"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_c
+msgid "Box C - EI Premium"
+msgstr "Case C - Cotisation à l'assurance emploi"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_e
+msgid "Box E - Quebec Income Tax Withheld"
+msgstr "Case E - Impôt du Québec retenu"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_f
+msgid "Box F - Union Dues"
+msgstr "Case F - Cotisation syndicale"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_g
+msgid "Box G - Pensionable Salary under the QPP"
+msgstr "Case G - Salaire admissible au RRQ"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_h
+msgid "Box H - QPIP Premium"
+msgstr "Case H - Cotisation au RQAP"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_i
+msgid "Box I - Eligible Salary under the QPIP"
+msgstr "Case I - Salaire admissible au RQAP"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_slip_view_form
+msgid "Boxes"
+msgstr "Cases"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__cessation_date
+msgid "Business Cessation Date"
+msgstr "Date de cessation des activités"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "C EI premium"
+msgstr "C Cotisation à l'assurance emploi"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__cnesst
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "CNESST"
+msgstr "CNESST"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "CNESST (Declaration of Wages)"
+msgstr "CNESST (Déclaration des salaires)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__cnesst_base
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__cnesst_insurable
+msgid "CNESST Insurable Earnings"
+msgstr "Salaires assurables CNESST"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__cnesst_paid
+msgid "CNESST Periodic Payments"
+msgstr "Versements périodiques CNESST"
+
+#. module: l10n_ca_qc_payroll
+#: model:hr.salary.rule,name:l10n_ca_qc_payroll.rule_cnesst
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__cnesst
+msgid "CNESST Premium"
+msgstr "Prime CNESST"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_cnesst_rate
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_cnesst_rate
+msgid "CNESST Rate per $100"
+msgstr "Taux CNESST par tranche de 100 $"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__csv_file
+msgid "CSV File"
+msgstr "Fichier CSV"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model,name:l10n_ca_qc_payroll.model_l10n_ca_payroll_t4_summary
+msgid "Canadian Payroll Year-End (T4 Summary)"
+msgstr "Fin d'année de la paie canadienne (sommaire T4)"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid ""
+"Check if the employer is not subject to the contribution related to labour "
+"standards"
+msgstr ""
+"Cochez si l'employeur n'est pas assujetti à la cotisation relative aux "
+"normes du travail"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__slip_code
+msgid ""
+"Code du relevé: R for an original slip, A for an amended slip, D for a "
+"cancelled slip."
+msgstr ""
+"Code du relevé : R pour un relevé original, A pour un relevé modifié, D pour"
+" un relevé annulé."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__company_id
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__company_id
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "Compute RL-1 Slips"
+msgstr "Calculer les relevés 1"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "Compute Remittances"
+msgstr "Calculer les versements"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Compute the RL-1 slips before exporting them."
+msgstr "Calculez les relevés 1 avant de les exporter."
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Compute the remittances before exporting them."
+msgstr "Calculez les versements avant de les exporter."
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_qc_payroll.action_l10n_ca_qc_rl1_summary
+msgid "Create the RL-1 summary of a calendar year."
+msgstr "Créez le sommaire des relevés 1 d'une année civile."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__create_date
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__create_date
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_authorized_credits
+msgid "Credits Authorized by Revenu Quebec (TP-1016)"
+msgstr "Crédits autorisés par Revenu Québec (TP-1016)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__csv_filename
+msgid "Csv Filename"
+msgstr "Nom du fichier CSV"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__l10n_ca_qc_rl1_slip__slip_code__d
+msgid "D - Cancelled"
+msgstr "D - Annulé"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__due_date
+msgid ""
+"Date Revenu Quebec must receive the remittance. A due date on a Saturday, a "
+"Sunday or a non-business day moves to the next business day; weekly due "
+"dates count business days. The Quebec public holidays and the Revenu Quebec "
+"closure days are known when the Tax Compliance Calendar module is installed;"
+" without it, only Saturdays and Sundays are not business days."
+msgstr ""
+"Date à laquelle Revenu Québec doit recevoir le versement. Une échéance qui "
+"tombe un samedi, un dimanche ou un jour non ouvrable est reportée au jour "
+"ouvrable suivant; les échéances hebdomadaires comptent les jours ouvrables. "
+"Les jours fériés du Québec et les jours de fermeture de Revenu Québec sont "
+"connus lorsque le module Calendrier de conformité fiscale est installé; sans"
+" lui, seuls les samedis et les dimanches ne sont pas des jours ouvrables."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__last_remittance_date
+msgid ""
+"Date of the last periodic payment of source deductions and employer "
+"contributions, when the employer stops them for good because it has no more "
+"employees. The RL-1 summary and slips are then due on the 20th of the "
+"following month."
+msgstr ""
+"Date du dernier paiement périodique des retenues à la source et des "
+"cotisations de l'employeur, lorsque l'employeur cesse définitivement ces "
+"paiements parce qu'il n'a plus d'employés. Le sommaire et les relevés 1 sont"
+" alors à produire au plus tard le 20 du mois suivant."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__cessation_date
+msgid ""
+"Date the business stopped operating. The RL-1 summary and slips are then due"
+" within 30 days after it."
+msgstr ""
+"Date à laquelle l'entreprise a cessé ses activités. Le sommaire et les "
+"relevés 1 sont alors à produire au plus tard le 30e jour qui suit."
+
+#. module: l10n_ca_qc_payroll
+#: model:hr.salary.rule.category,name:l10n_ca_qc_payroll.categ_qc_tax_deduction
+msgid "Deduction Reducing the Quebec Taxable Income"
+msgstr "Déduction qui réduit le revenu imposable du Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_authorized_deductions
+msgid "Deductions Authorized by Revenu Quebec (TP-1016)"
+msgstr "Déductions autorisées par Revenu Québec (TP-1016)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__display_name
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__display_name
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__due_date
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__due_date
+msgid "Due Date"
+msgstr "Échéance"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Due date"
+msgstr "Date d'échéance"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "E Quebec income tax withheld"
+msgstr "E Impôt du Québec retenu"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_claim_amount
+msgid ""
+"E1 of the TP-1015.F formulas: indexed value of the personal tax credits, "
+"line 7 of form TP-1015.3. 0 for an employee who claims no credit. A pay of a"
+" later year multiplies it by 1 + the indexation rate of each following year."
+msgstr ""
+"E1 des formules du TP-1015.F : valeur indexée des crédits d'impôt "
+"personnels, ligne 7 du formulaire TP-1015.3. 0 pour un employé qui ne "
+"demande aucun crédit. Pour une paie d'une année postérieure, le montant est "
+"multiplié par 1 + le taux d'indexation de chaque année suivante."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_claim_non_indexed
+msgid ""
+"E2 of the TP-1015.F formulas: non-indexed value of the personal tax credits,"
+" line 9 of form TP-1015.3."
+msgstr ""
+"E2 des formules du TP-1015.F : valeur non indexée des crédits d'impôt "
+"personnels, ligne 9 du formulaire TP-1015.3."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__training_expenses
+msgid "Eligible Training Expenditures"
+msgstr "Dépenses de formation admissibles"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__training_expenses
+msgid ""
+"Eligible training expenditures of the year, plus the balance carried forward"
+" (lines 79.1 to 79.3 of the worksheet). Only the part up to line 73 is used."
+msgstr ""
+"Dépenses de formation admissibles de l'année, plus le solde reporté (lignes "
+"79.1 à 79.3 de la grille de calcul). Seule la partie jusqu'à concurrence de "
+"la ligne 73 est utilisée."
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__employee_id
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_slip_view_form
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Employee"
+msgstr "Employé"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model,name:l10n_ca_qc_payroll.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrat de l'employé"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__qpip
+msgid "Employee and employer QPIP premiums (column C)."
+msgstr "Cotisations au RQAP de l'employé et de l'employeur (colonne C)."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__qpp
+msgid ""
+"Employee and employer QPP contributions, second additional contributions "
+"included (column B of the RL-1 summary)."
+msgstr ""
+"Cotisations au RRQ de l'employé et de l'employeur, cotisations "
+"supplémentaires de deuxième niveau comprises (colonne B du sommaire des "
+"relevés 1)."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__employee_count
+msgid "Employees"
+msgstr "Employés"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_slip_view_form
+msgid "Employer Contributions"
+msgstr "Cotisations de l'employeur"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__employer_qpip
+msgid "Employer QPIP"
+msgstr "RQAP de l'employeur"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__employer_qpp
+msgid "Employer QPP"
+msgstr "RRQ de l'employeur"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__employer_qpp2
+msgid "Employer QPP2"
+msgstr "RRQ2 de l'employeur"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "Entered Amounts"
+msgstr "Montants saisis"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_tax_exempt
+msgid "Exempt from Quebec Income Tax Withholding"
+msgstr "Exempté de la retenue d'impôt du Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "Export RL-1 (CSV)"
+msgstr "Exporter les relevés 1 (CSV)"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "Export Remittances (CSV)"
+msgstr "Exporter les versements (CSV)"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "F Union dues"
+msgstr "F Cotisation syndicale"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__due_date
+msgid ""
+"Filing deadline of the RL-1 slips and summary, and payment deadline of the "
+"labour standards and WSDRF contributions: last day of the month set by the "
+"time parameter l10n_ca.qc.rl1.due_month, in the year after the slips. A "
+"business cessation brings it to 30 days after the cessation, and a last "
+"periodic remittance to the 20th of the following month, when earlier. A "
+"deadline on a Saturday, a Sunday or a non-business day moves to the next "
+"business day."
+msgstr ""
+"Date limite de production des relevés 1 et du sommaire, et date limite de "
+"paiement de la cotisation pour la CNT et de la cotisation au FDRCMO : "
+"dernier jour du mois fixé par le paramètre temporel "
+"l10n_ca.qc.rl1.due_month, dans l'année qui suit celle des relevés. Une "
+"cessation des activités la ramène au 30e jour qui suit la cessation, et un "
+"dernier paiement périodique au 20 du mois suivant, lorsque cette date est "
+"antérieure. Une date limite qui tombe un samedi, un dimanche ou un jour non "
+"ouvrable est reportée au jour ouvrable suivant."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_fondaction_withholding
+msgid "Fondaction Withholding per Pay"
+msgstr "Retenue par paie pour Fondaction"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_ftq_withholding
+msgid "Fonds de solidarité FTQ Withholding per Pay"
+msgstr "Retenue par paie pour le Fonds de solidarité FTQ"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "G Pensionable salary or wages under the QPP"
+msgstr "G Salaire admissible au RRQ"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__res_company__l10n_ca_qc_hsf_sector__general
+msgid "General (all other employers)"
+msgstr "Général (tous les autres employeurs)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__gross_payroll
+msgid "Gross Payroll"
+msgstr "Masse salariale brute"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Gross payroll"
+msgstr "Masse salariale brute"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "H QPIP premium"
+msgstr "H Cotisation au RQAP"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__hsf_accrued
+msgid "HSF Accrued on Payslips"
+msgstr "FSS comptabilisé sur les bulletins de paie"
+
+#. module: l10n_ca_qc_payroll
+#: model:hr.salary.rule,name:l10n_ca_qc_payroll.rule_hsf
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__hsf
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__hsf
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid "Health Services Fund"
+msgstr "Fonds des services de santé"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/hr_payslip.py:0
+#, python-format
+msgid "Health Services Fund (%(rate)s%%)"
+msgstr "Fonds des services de santé (%(rate)s %%)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__hsf
+msgid ""
+"Health Services Fund (column E). With the new employer basis, the rate is "
+"the one of the total payroll paid from January 1 to the end of the period, "
+"applied to the subject salaries of the period."
+msgstr ""
+"Fonds des services de santé (colonne E). Avec la base du nouvel employeur, "
+"le taux est celui de la masse salariale totale versée du 1er janvier à la "
+"fin de la période, appliqué aux salaires assujettis de la période."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_hsf_basis
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_hsf_basis
+msgid "Health Services Fund Rate Basis"
+msgstr "Base du taux du Fonds des services de santé"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_hsf_sector
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_hsf_sector
+msgid "Health Services Fund Sector"
+msgstr "Secteur pour le Fonds des services de santé"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__hsf_accrued
+msgid ""
+"Health Services Fund of the payslips at the estimated rate; line 57 holds "
+"the adjustment to the actual rate."
+msgstr ""
+"Cotisation au Fonds des services de santé des bulletins de paie au taux "
+"estimé; la ligne 57 contient l'ajustement au taux réel."
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Health services fund"
+msgstr "Fonds des services de santé"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "I Eligible salary or wages under the QPIP"
+msgstr "I Salaire admissible au RQAP"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__id
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__id
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid ""
+"Identification number of the source deductions file and remittance frequency"
+msgstr ""
+"Numéro d'identification du dossier de retenues à la source et fréquence des "
+"versements"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_rq_account_number
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_rq_account_number
+msgid ""
+"Identification number of the source deductions file at Revenu Quebec (ten "
+"digits followed by RS and four digits), printed on the RL-1 slips and the "
+"RL-1 summary."
+msgstr ""
+"Numéro d'identification du dossier de retenues à la source auprès de Revenu "
+"Québec (dix chiffres suivis de RS et de quatre chiffres), imprimé sur les "
+"relevés 1 et le sommaire des relevés 1."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_deductions
+msgid ""
+"J of the TP-1015.F formulas: annual deductions claimed on line 19 of form "
+"TP-1015.3 (for example the deduction for residents of designated remote "
+"areas)."
+msgstr ""
+"J des formules du TP-1015.F : déductions annuelles demandées à la ligne 19 "
+"du formulaire TP-1015.3 (par exemple, la déduction pour les habitants d'une "
+"région éloignée reconnue)."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_authorized_deductions
+msgid ""
+"J1 of the TP-1015.F formulas: annual deductions authorized after an "
+"application for a reduction in source deductions (form TP-1016)."
+msgstr ""
+"J1 des formules du TP-1015.F : déductions annuelles autorisées à la suite "
+"d'une demande de réduction des retenues à la source (formulaire TP-1016)."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_authorized_credits
+msgid ""
+"K1 of the TP-1015.F formulas: annual non-refundable tax credits authorized "
+"after a TP-1016 application, as a credit amount."
+msgstr ""
+"K1 des formules du TP-1015.F : crédits d'impôt non remboursables annuels "
+"autorisés à la suite d'une demande TP-1016, exprimés en montant de crédit."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_additional_tax
+msgid ""
+"L of the TP-1015.F formulas: additional income tax the employee asks to have"
+" withheld on each pay (form TP-1015.3 or TP-1017)."
+msgstr ""
+"L des formules du TP-1015.F : impôt supplémentaire que l'employé demande de "
+"retenir sur chaque paie (formulaire TP-1015.3 ou TP-1017)."
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid "Labour Standards"
+msgstr "Normes du travail"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "Labour Standards (CNT)"
+msgstr "Normes du travail (CNT)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__cnt
+msgid "Labour Standards Contribution"
+msgstr "Cotisation pour la CNT"
+
+#. module: l10n_ca_qc_payroll
+#: model:hr.salary.rule,name:l10n_ca_qc_payroll.rule_cnt
+msgid "Labour Standards Contribution (CNT)"
+msgstr "Cotisation relative aux normes du travail (CNT)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__cnt_paid
+msgid "Labour Standards Contribution Already Paid"
+msgstr "Cotisation pour la CNT déjà payée"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__last_remittance_date
+msgid "Last Periodic Remittance (No More Employees)"
+msgstr "Dernier paiement périodique (plus d'employés)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__write_date
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__write_date
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_21
+msgid "Line 21"
+msgstr "Ligne 21"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_22
+msgid "Line 22"
+msgstr "Ligne 22"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_23
+msgid "Line 23"
+msgstr "Ligne 23"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_24
+msgid "Line 24"
+msgstr "Ligne 24"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_25
+msgid "Line 25"
+msgstr "Ligne 25"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_28
+msgid "Line 28"
+msgstr "Ligne 28"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_29
+msgid "Line 29"
+msgstr "Ligne 29"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_30
+msgid "Line 30"
+msgstr "Ligne 30"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_35
+msgid "Line 35"
+msgstr "Ligne 35"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_38
+msgid "Line 38"
+msgstr "Ligne 38"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_44
+msgid "Line 44"
+msgstr "Ligne 44"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_45
+msgid "Line 45"
+msgstr "Ligne 45"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_46
+msgid "Line 46"
+msgstr "Ligne 46"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_47
+msgid "Line 47"
+msgstr "Ligne 47"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_48
+msgid "Line 48"
+msgstr "Ligne 48"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_50_1
+msgid "Line 50.1"
+msgstr "Ligne 50.1"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_51
+msgid "Line 51"
+msgstr "Ligne 51"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_52
+msgid "Line 52"
+msgstr "Ligne 52"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_52_1
+msgid "Line 52.1"
+msgstr "Ligne 52.1"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_53
+msgid "Line 53"
+msgstr "Ligne 53"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_54
+msgid "Line 54"
+msgstr "Ligne 54"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_55
+msgid "Line 55"
+msgstr "Ligne 55"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_56
+msgid "Line 56"
+msgstr "Ligne 56"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_57
+msgid "Line 57"
+msgstr "Ligne 57"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_61
+msgid "Line 61"
+msgstr "Ligne 61"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_63
+msgid "Line 63"
+msgstr "Ligne 63"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_64
+msgid "Line 64"
+msgstr "Ligne 64"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__cnt_paid
+msgid ""
+"Line 64: payment of the labour standards contribution already made for the "
+"year."
+msgstr ""
+"Ligne 64 : paiement de la cotisation pour la CNT déjà effectué pour l'année."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_71
+msgid "Line 71"
+msgstr "Ligne 71"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_73
+msgid "Line 73"
+msgstr "Ligne 73"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_74
+msgid "Line 74"
+msgstr "Ligne 74"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_75
+msgid "Line 75"
+msgstr "Ligne 75"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_80
+msgid "Line 80"
+msgstr "Ligne 80"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_81
+msgid "Line 81"
+msgstr "Ligne 81"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_82
+msgid "Line 82"
+msgstr "Ligne 82"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__name
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/hr_contract.py:0
+#, python-format
+msgid ""
+"No Quebec indexation rate for %(year)s (time parameter %(code)s): the "
+"TP-1015.3 amounts of the contract %(contract)s, declared for %(claim_year)s,"
+" cannot be indexed. Add the rate of %(year)s, or enter the amounts of a "
+"TP-1015.3 filed for a later year."
+msgstr ""
+"Aucun taux d'indexation du Québec pour %(year)s (paramètre temporel "
+"%(code)s) : les montants du TP-1015.3 du contrat %(contract)s, déclarés pour"
+" %(claim_year)s, ne peuvent pas être indexés. Ajoutez le taux de %(year)s ou"
+" saisissez les montants d'un TP-1015.3 rempli pour une année postérieure."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_cnesst_exempt
+msgid ""
+"No occupational health and safety premium on this remuneration, e.g. a "
+"director of the corporation without personal coverage."
+msgstr ""
+"Aucune prime de santé et de sécurité du travail sur cette rémunération, p. "
+"ex. pour un administrateur de la société sans protection personnelle."
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_qc_payroll.action_l10n_ca_qc_payroll_remittance
+msgid "No remittance yet."
+msgstr "Aucun versement pour l'instant."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_cnesst_exempt
+msgid "Not Covered by the CNESST"
+msgstr "Non couvert par la CNESST"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_payroll_remittance_view_search
+msgid "Not Paid"
+msgstr "Non payé"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_cnt_exempt
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_cnt_exempt
+msgid "Not Subject to the Labour Standards Contribution"
+msgstr "Non assujetti à la cotisation relative aux normes du travail"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Number of RL-1 slips"
+msgstr "Nombre de relevés 1"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_qc_payroll.action_l10n_ca_qc_payroll_remittance
+msgid ""
+"Open the RL-1 summary of the year and click \"Compute\n"
+"                Remittances\": one remittance is created per period of the\n"
+"                Revenu Québec frequency of the company, from the done\n"
+"                payslips of the employees working in Quebec."
+msgstr ""
+"Ouvrez le sommaire des relevés 1 de l'année et cliquez sur « Calculer\n"
+"                les versements » : un versement est créé par période selon la\n"
+"                fréquence Revenu Québec de la société, à partir des bulletins de paie\n"
+"                terminés des employés qui travaillent au Québec."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__date_from
+msgid "Paid From"
+msgstr "Payé du"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__date_to
+msgid "Paid To"
+msgstr "Payé au"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Paid from"
+msgstr "Payé du"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Paid to"
+msgstr "Payé au"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_authorized_date
+msgid ""
+"Pay date from which the deductions and credits authorized by Revenu Quebec "
+"apply. When it falls after the first pay of its year, each annual amount is "
+"spread over the pays left: P x amount / PR, PR being the pays of the year "
+"left from that date (TP-1015.F, variables J1 and K1). Empty: the amounts "
+"apply from January 1."
+msgstr ""
+"Date de paie à partir de laquelle les déductions et les crédits autorisés "
+"par Revenu Québec s'appliquent. Si elle tombe après la première paie de son "
+"année, chaque montant annuel est réparti sur les paies qui restent : P x "
+"montant / PR, PR étant le nombre de paies de l'année qui restent à partir de"
+" cette date (TP-1015.F, variables J1 et K1). Vide : les montants "
+"s'appliquent dès le 1er janvier."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_deductions_date
+msgid ""
+"Pay date from which the deductions of line 19 apply. When it falls after the"
+" first pay of its year, the annual amount is spread over the pays left: P x "
+"amount / PR, PR being the pays of the year left from that date (TP-1015.F, "
+"variable J). Empty: the amount applies from January 1."
+msgstr ""
+"Date de paie à partir de laquelle les déductions de la ligne 19 "
+"s'appliquent. Si elle tombe après la première paie de son année, le montant "
+"annuel est réparti sur les paies qui restent : P x montant / PR, PR étant le"
+" nombre de paies de l'année qui restent à partir de cette date (TP-1015.F, "
+"variable J). Vide : le montant s'applique dès le 1er janvier."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__payment_date
+msgid "Payment Date"
+msgstr "Date de paiement"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Payment date"
+msgstr "Date du paiement"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__associated_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_associated_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_associated_payroll
+msgid "Payroll of Associated Employers"
+msgstr "Masse salariale des employeurs associés"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid ""
+"Payroll of the company alone subject to the WSDRF contribution, compared "
+"with its threshold"
+msgstr ""
+"Masse salariale de la société seule assujettie à la cotisation au FDRCMO, "
+"comparée à son seuil"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model,name:l10n_ca_qc_payroll.model_hr_payslip
+msgid "Payslip"
+msgstr "Bulletin de paie"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__payslip_count
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__payslip_ids
+msgid "Payslips"
+msgstr "Bulletins de paie"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_payroll_remittance_view_form
+msgid "Period"
+msgstr "Période"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__cnesst
+msgid ""
+"Periodic payment of the occupational health and safety premium, entered in "
+"the CNESST box of the remittance slip."
+msgstr ""
+"Versement périodique de la prime de santé et de sécurité du travail, inscrit"
+" dans la case CNESST du bordereau de paiement."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_wsdrf_payroll_estimate
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_wsdrf_payroll_estimate
+msgid "Previous Year Payroll (WSDRF)"
+msgstr "Masse salariale de l'année précédente (FDRCMO)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_total_payroll_estimate
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_total_payroll_estimate
+msgid "Previous Year Total Payroll"
+msgstr "Masse salariale totale de l'année précédente"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__res_company__l10n_ca_qc_hsf_sector__primary_manufacturing
+msgid "Primary and manufacturing sectors"
+msgstr "Secteurs primaire et manufacturier"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_hsf_sector
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_hsf_sector
+msgid ""
+"Primary and manufacturing: more than 50% of the total payroll is "
+"attributable to activities of NAICS codes 11, 21 and 31 to 33. The sector "
+"selects the rate formula of the time parameter l10n_ca.qc.hsf.formula."
+msgstr ""
+"Secteurs primaire et manufacturier : plus de 50 % de la masse salariale "
+"totale est attribuable à des activités des codes SCIAN 11, 21 et 31 à 33. Le"
+" secteur détermine la formule de taux du paramètre temporel "
+"l10n_ca.qc.hsf.formula."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__res_company__l10n_ca_qc_hsf_sector__public
+msgid "Public sector"
+msgstr "Secteur public"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_ftq_withholding
+msgid ""
+"Q of the TP-1015.F formulas: amount withheld on each pay to buy class A "
+"shares of the Fonds de solidarité FTQ. The Quebec tax of the year is reduced"
+" by 15% x P x Q. The amounts withheld for the year do not exceed 5,000 $ for"
+" both funds. Leave 0 when the withholding is subtracted from the gross "
+"remuneration instead (TP-1015.G part 3.3.3)."
+msgstr ""
+"Q des formules du TP-1015.F : somme retenue sur chaque paie pour l'achat "
+"d'actions de catégorie A du Fonds de solidarité FTQ. L'impôt du Québec de "
+"l'année est réduit de 15 % x P x Q. Les sommes retenues pour l'année ne "
+"dépassent pas 5 000 $ pour les deux fonds. Laisser 0 si la retenue est "
+"plutôt soustraite de la rémunération brute (TP-1015.G, partie 3.3.3)."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_fondaction_withholding
+msgid ""
+"Q1 of the TP-1015.F formulas: amount withheld on each pay to buy class A or "
+"B shares of Fondaction. The Quebec tax of the year is reduced by 15% x P x "
+"Q1. The amounts withheld for the year do not exceed 5,000 $ for both funds. "
+"Leave 0 when the withholding is subtracted from the gross remuneration "
+"instead (TP-1015.G part 3.3.3)."
+msgstr ""
+"Q1 des formules du TP-1015.F : somme retenue sur chaque paie pour l'achat "
+"d'actions de catégorie A ou B de Fondaction. L'impôt du Québec de l'année "
+"est réduit de 15 % x P x Q1. Les sommes retenues pour l'année ne dépassent "
+"pas 5 000 $ pour les deux fonds. Laisser 0 si la retenue est plutôt "
+"soustraite de la rémunération brute (TP-1015.G, partie 3.3.3)."
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__qpip
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "QPIP"
+msgstr "RQAP"
+
+#. module: l10n_ca_qc_payroll
+#: model:hr.salary.rule,name:l10n_ca_qc_payroll.rule_qpip_employer
+msgid "QPIP Employer Premiums"
+msgstr "Cotisations de l'employeur au RQAP"
+
+#. module: l10n_ca_qc_payroll
+#: model:hr.salary.rule,name:l10n_ca_qc_payroll.rule_qpip
+msgid "QPIP Premiums"
+msgstr "Cotisations au RQAP"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__qpp
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "QPP"
+msgstr "RRQ"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "QPP, QPIP and Quebec Income Tax"
+msgstr "RRQ, RQAP et impôt du Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.hr_contract_view_form
+msgid "Quebec - Other"
+msgstr "Québec - Autres"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_bpa
+msgid "Quebec Basic Personal Amount"
+msgstr "Montant personnel de base du Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__income_tax
+msgid "Quebec Income Tax"
+msgstr "Impôt du Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid "Quebec Payroll"
+msgstr "Paie du Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model,name:l10n_ca_qc_payroll.model_l10n_ca_qc_rl1_summary
+msgid "Quebec Payroll Year-End (RL-1 Summary)"
+msgstr "Fin d'année de la paie du Québec (sommaire des relevés 1)"
+
+#. module: l10n_ca_qc_payroll
+#: model:hr.salary.rule,name:l10n_ca_qc_payroll.rule_qc_salary
+msgid "Quebec Remuneration Subject to Employer Contributions"
+msgstr "Rémunération au Québec assujettie aux cotisations de l'employeur"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.hr_contract_view_form
+msgid "Quebec TP-1015.3"
+msgstr "TP-1015.3 du Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_claim_type
+msgid "Quebec TP-1015.3 Claim"
+msgstr "Demande TP-1015.3 du Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_bpa
+msgid "Quebec basic personal amount in force today."
+msgstr "Montant personnel de base du Québec en vigueur aujourd'hui."
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Quebec income tax"
+msgstr "Impôt du Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__income_tax
+msgid "Quebec income tax withheld (column D)."
+msgstr "Impôt du Québec retenu (colonne D)."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__l10n_ca_qc_rl1_slip__slip_code__r
+msgid "R - Original"
+msgstr "R - Original"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model,name:l10n_ca_qc_payroll.model_l10n_ca_qc_rl1_slip
+msgid "RL-1 Slip"
+msgstr "Relevé 1"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__slip_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "RL-1 Slips"
+msgstr "Relevés 1"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__summary_id
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "RL-1 Summary"
+msgstr "Sommaire des relevés 1"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "RL-1 Summary %(year)s"
+msgstr "Sommaire des relevés 1 %(year)s"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.actions.act_window,name:l10n_ca_qc_payroll.action_l10n_ca_qc_rl1_summary
+msgid "RL-1 Year-End"
+msgstr "Fin d'année RL-1"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.ui.menu,name:l10n_ca_qc_payroll.menu_l10n_ca_qc_rl1_summary
+msgid "RL-1 Year-End (Quebec)"
+msgstr "Fin d'année RL-1 (Québec)"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid ""
+"Rate per $100 of insurable payroll from the classification decision of the "
+"year"
+msgstr ""
+"Taux par tranche de 100 $ de masse salariale assurable selon la décision de "
+"classification de l'année"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_cnesst_rate
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_cnesst_rate
+msgid ""
+"Rate per $100 of insurable payroll set by the CNESST classification decision"
+" of the year (or the letter announcing a new rate). Leave 0 when the company"
+" has no CNESST coverage."
+msgstr ""
+"Taux par tranche de 100 $ de masse salariale assurable fixé par la décision "
+"de classification de la CNESST de l'année (ou par la lettre annonçant un "
+"nouveau taux). Laissez 0 si la société n'est pas couverte par la CNESST."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_cnt_exempt
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_cnt_exempt
+msgid ""
+"Religious institutions, charities helping persons in need free of charge, "
+"businesses governed by the Canada Labour Code and international "
+"organizations do not pay the contribution related to labour standards."
+msgstr ""
+"Les institutions religieuses, les organismes de bienfaisance qui aident "
+"gratuitement les personnes dans le besoin, les entreprises régies par le "
+"Code canadien du travail et les organisations internationales ne paient pas "
+"la cotisation relative aux normes du travail."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__remitter_type
+msgid "Remittance Frequency"
+msgstr "Fréquence des versements"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_payroll_remittance_view_form
+msgid "Remittance Slip"
+msgstr "Bordereau de paiement"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__remittance_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+msgid "Remittances"
+msgstr "Versements"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.ui.menu,name:l10n_ca_qc_payroll.menu_l10n_ca_qc_payroll_remittance
+msgid "Remittances (Revenu Québec)"
+msgstr "Versements (Revenu Québec)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__cnt_base
+msgid "Remuneration Subject to the CNT"
+msgstr "Rémunération assujettie à la cotisation pour la CNT"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__cnesst_insurable
+msgid ""
+"Remuneration capped at the maximum insurable earnings per worker, to report "
+"on the CNESST Déclaration des salaires."
+msgstr ""
+"Rémunération plafonnée au maximum des salaires assurables par travailleur, à"
+" déclarer dans la Déclaration des salaires de la CNESST."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_wsdrf_payroll_estimate
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_wsdrf_payroll_estimate
+msgid ""
+"Remuneration of the previous year paid by the company alone and subject to "
+"the WSDRF contribution (line 51 of the RL-1 summary), without the associated"
+" employers nor the remuneration paid outside Quebec. Above the threshold of "
+"the time parameter l10n_ca.qc.wsdrf.payroll_threshold, the payslips accrue "
+"the WSDRF contribution. With the new employer basis, the remuneration paid "
+"since January 1 is used instead."
+msgstr ""
+"Rémunération de l'année précédente versée par la société seule et assujettie"
+" à la cotisation au FDRCMO (ligne 51 du sommaire des relevés 1), sans les "
+"employeurs associés ni la rémunération versée hors Québec. Au-delà du seuil "
+"du paramètre temporel l10n_ca.qc.wsdrf.payroll_threshold, les bulletins de "
+"paie comptabilisent la cotisation au FDRCMO. Avec la base du nouvel "
+"employeur, la rémunération versée depuis le 1er janvier est utilisée à la "
+"place."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__associated_payroll
+msgid ""
+"Remuneration paid in the year by the employers associated with the company "
+"on December 31, added to line 50.1."
+msgstr ""
+"Rémunération versée dans l'année par les employeurs associés à la société au"
+" 31 décembre, ajoutée à la ligne 50.1."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_associated_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_associated_payroll
+msgid ""
+"Remuneration paid since January 1 of the current year by the employers "
+"associated with the company on December 31. It is added to the payroll of "
+"the company to determine the Health Services Fund rate: of the periodic "
+"payments with the new employer basis, which requires updating it each "
+"remittance period, and of the RL-1 summary (line 50.1), where it is the "
+"amount of the whole year."
+msgstr ""
+"Rémunération versée depuis le 1er janvier de l'année en cours par les "
+"employeurs associés à la société au 31 décembre. Elle s'ajoute à la masse "
+"salariale de la société pour déterminer le taux du Fonds des services de "
+"santé : celui des versements périodiques avec la base du nouvel employeur, "
+"ce qui demande de la mettre à jour à chaque période de versement, et celui "
+"du sommaire des relevés 1 (ligne 50.1), où c'est le montant de toute "
+"l'année."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_rq_account_number
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_rq_account_number
+msgid "Revenu Quebec Identification Number"
+msgstr "Numéro d'identification de Revenu Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model,name:l10n_ca_qc_payroll.model_l10n_ca_qc_payroll_remittance
+msgid "Revenu Quebec Remittance of Source Deductions (TPZ-1015.R.14)"
+msgstr "Versement des retenues à la source à Revenu Québec (TPZ-1015.R.14)"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid "Revenu Québec File"
+msgstr "Dossier Revenu Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.actions.act_window,name:l10n_ca_qc_payroll.action_l10n_ca_qc_payroll_remittance
+msgid "Revenu Québec Remittances"
+msgstr "Versements à Revenu Québec"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__sin
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "SIN"
+msgstr "NAS"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_52
+msgid ""
+"Salaries eligible for a Health Services Fund contribution credit: subject "
+"salaries paid for the exemption period of a major investment project with "
+"the annual certificate of the Minister of Finance (TP-1015.G part 6.3). They"
+" stay in the total payroll of line 50.1 and are subtracted from line 51 on "
+"line 53."
+msgstr ""
+"Salaires admissibles à un crédit de cotisation au Fonds des services de "
+"santé : salaires assujettis versés pour la période d'exemption d'un grand "
+"projet d'investissement visé par l'attestation annuelle du ministre des "
+"Finances (TP-1015.G, partie 6.3). Ils restent dans la masse salariale totale"
+" de la ligne 50.1 et sont soustraits de la ligne 51 à la ligne 53."
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid "Sector of the employer and total payroll that sets the estimated rate"
+msgstr ""
+"Secteur de l'employeur et masse salariale totale qui fixe le taux estimé"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__slip_code
+msgid "Slip Code"
+msgstr "Code du relevé"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__slip_count
+msgid "Slip Count"
+msgstr "Nombre de relevés"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Slip code"
+msgstr "Code du relevé"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__sin
+msgid ""
+"Social insurance number, from the identification number of the employee."
+msgstr ""
+"Numéro d'assurance sociale, tiré du numéro d'identification de l'employé."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_52_1
+msgid "Specification of the HSF contribution credit of line 52."
+msgstr "Précision sur le crédit de cotisation au FSS de la ligne 52."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_province_code
+msgid "State Code"
+msgstr "Code de la province"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__summary_id
+msgid "Summary"
+msgstr "Sommaire"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model,name:l10n_ca_qc_payroll.model_l10n_ca_payroll_t4_slip
+msgid "T4 Slip"
+msgstr "Feuillet T4"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_deductions
+msgid "TP-1015.3 Line 19 (Annual Deductions)"
+msgstr "TP-1015.3 ligne 19 (déductions annuelles)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_deductions_date
+msgid "TP-1015.3 Line 19 Effective Date"
+msgstr "Date d'effet de la ligne 19 du TP-1015.3"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_claim_amount
+msgid "TP-1015.3 Line 7 (Indexed Credits)"
+msgstr "TP-1015.3 ligne 7 (crédits indexés)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_claim_non_indexed
+msgid "TP-1015.3 Line 9 (Non-Indexed Credits)"
+msgstr "TP-1015.3 ligne 9 (crédits non indexés)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_claim_year
+msgid "TP-1015.3 Year"
+msgstr "Année du TP-1015.3"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_authorized_date
+msgid "TP-1016 Authorization Effective Date"
+msgstr "Date d'effet de l'autorisation TP-1016"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_qc_payroll.action_l10n_ca_qc_rl1_summary
+msgid ""
+"The RL-1 slips, the Revenu Québec remittances and the RL-1\n"
+"                summary lines (QPP, QPIP, income tax, health services fund,\n"
+"                labour standards, WSDRF) are computed from the done payslips\n"
+"                of the employees working in Quebec, and can be exported as\n"
+"                CSV files to fill in the online services of Revenu Québec."
+msgstr ""
+"Les relevés 1, les versements à Revenu Québec et les lignes du\n"
+"                sommaire des relevés 1 (RRQ, RQAP, impôt, Fonds des services de santé,\n"
+"                normes du travail, FDRCMO) sont calculés à partir des bulletins de paie terminés\n"
+"                des employés qui travaillent au Québec, et peuvent être exportés en\n"
+"                fichiers CSV pour remplir les services en ligne de Revenu Québec."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_tax_exempt
+msgid ""
+"The employee asked on form TP-1015.3 to be exempt from source deductions of "
+"Quebec income tax for the year."
+msgstr ""
+"L'employé a demandé, sur le formulaire TP-1015.3, à être exempté des "
+"retenues à la source d'impôt du Québec pour l'année."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_province_code
+msgid "The state code."
+msgstr "Le code de la province."
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__total
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_payroll_t4_slip_view_list
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_payroll_remittance_view_list
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_slip_view_list
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "Total"
+msgstr "Total"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__res_company__l10n_ca_qc_hsf_basis__estimate
+msgid "Total payroll of the previous year"
+msgstr "Masse salariale totale de l'année précédente"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_total_payroll_estimate
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_total_payroll_estimate
+msgid ""
+"Total payroll of the previous year, including the employers associated with "
+"the company on December 31 and the remuneration paid outside Quebec. It sets"
+" the estimated Health Services Fund rate."
+msgstr ""
+"Masse salariale totale de l'année précédente, y compris celle des employeurs"
+" associés à la société au 31 décembre et la rémunération versée hors Québec."
+" Elle fixe le taux estimé du Fonds des services de santé."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__res_company__l10n_ca_qc_hsf_basis__year_to_date
+msgid "Total payroll paid since January 1 (new employer)"
+msgstr ""
+"Masse salariale totale versée depuis le 1er janvier (nouvel employeur)"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_50_1
+msgid ""
+"Total payroll that sets the HSF rate: remuneration of all the done payslips "
+"of the year, outside Quebec included, plus the payroll of the associated "
+"employers."
+msgstr ""
+"Masse salariale totale qui fixe le taux du FSS : rémunération de tous les "
+"bulletins de paie terminés de l'année, y compris hors Québec, plus la masse "
+"salariale des employeurs associés."
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_hsf_basis
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_hsf_basis
+msgid ""
+"Total payroll used for the rate of the periodic HSF payments. An employer in"
+" its first two years of contributions uses the payroll paid from January 1 "
+"to the end of the remittance period, associated employers included, and each"
+" remittance applies the rate of its period; the others use the total payroll"
+" of the previous year. The RL-1 summary recomputes the rate from the actual "
+"total payroll."
+msgstr ""
+"Masse salariale totale utilisée pour le taux des versements périodiques au "
+"FSS. Un employeur dans ses deux premières années de cotisation utilise la "
+"masse salariale versée du 1er janvier à la fin de la période de versement, "
+"employeurs associés compris, et chaque versement applique le taux de sa "
+"période; les autres utilisent la masse salariale totale de l'année "
+"précédente. Le sommaire des relevés 1 recalcule le taux à partir de la masse"
+" salariale totale réelle."
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid "WSDRF"
+msgstr "FDRCMO"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__wsdrf
+msgid "WSDRF Accrued"
+msgstr "FDRCMO comptabilisé"
+
+#. module: l10n_ca_qc_payroll
+#: model:hr.salary.rule,name:l10n_ca_qc_payroll.rule_wsdrf
+msgid "WSDRF Contribution"
+msgstr "Cotisation au FDRCMO"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__year
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__year
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_payroll_remittance_view_search
+msgid "Year"
+msgstr "Année"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_claim_year
+msgid ""
+"Year the TP-1015.3 amounts were declared for. The employee files no new form"
+" for the annual indexation: on a pay of a later year, line 7 is multiplied "
+"by 1 + the rate of the time parameter l10n_ca.qc.indexation_rate of each "
+"year after this one."
+msgstr ""
+"Année pour laquelle les montants du TP-1015.3 ont été déclarés. L'employé ne"
+" remplit pas de nouveau formulaire pour l'indexation annuelle : sur une paie"
+" d'une année postérieure, la ligne 7 est multipliée par 1 + le taux du "
+"paramètre temporel l10n_ca.qc.indexation_rate de chaque année qui suit "
+"celle-ci."

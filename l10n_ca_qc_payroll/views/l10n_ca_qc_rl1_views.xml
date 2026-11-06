@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="l10n_ca_qc_rl1_slip_view_list" model="ir.ui.view">
+        <field name="name">l10n_ca.qc.rl1.slip.list</field>
+        <field name="model">l10n_ca.qc.rl1.slip</field>
+        <field name="arch" type="xml">
+            <list create="false">
+                <field name="currency_id" column_invisible="True" />
+                <field name="employee_id" />
+                <field name="slip_code" optional="hide" />
+                <field name="box_a" sum="Total" />
+                <field name="box_b_a" sum="Total" />
+                <field name="box_b_b" sum="Total" optional="show" />
+                <field name="box_c" sum="Total" optional="show" />
+                <field name="box_e" sum="Total" />
+                <field name="box_g" optional="show" />
+                <field name="box_h" sum="Total" />
+                <field name="box_i" optional="show" />
+                <field name="hsf" sum="Total" optional="hide" />
+                <field name="cnt" sum="Total" optional="hide" />
+                <field name="cnesst" sum="Total" optional="hide" />
+            </list>
+        </field>
+    </record>
+    <record id="l10n_ca_qc_rl1_slip_view_form" model="ir.ui.view">
+        <field name="name">l10n_ca.qc.rl1.slip.form</field>
+        <field name="model">l10n_ca.qc.rl1.slip</field>
+        <field name="arch" type="xml">
+            <form create="false">
+                <sheet>
+                    <group>
+                        <group string="Employee">
+                            <field name="currency_id" invisible="1" />
+                            <field name="employee_id" readonly="1" />
+                            <field name="sin" />
+                            <field name="year" />
+                            <field name="slip_code" />
+                        </group>
+                        <group string="Boxes">
+                            <field name="box_a" />
+                            <field name="box_b_a" />
+                            <field name="box_b_b" />
+                            <field name="box_c" />
+                            <field name="box_e" />
+                            <field name="box_f" />
+                            <field name="box_g" />
+                            <field name="box_h" />
+                            <field name="box_i" />
+                        </group>
+                        <group string="Employer Contributions">
+                            <field name="employer_qpp" />
+                            <field name="employer_qpp2" />
+                            <field name="employer_qpip" />
+                            <field name="hsf" />
+                            <field name="cnt_base" />
+                            <field name="cnt" />
+                            <field name="cnesst_base" />
+                            <field name="cnesst" />
+                            <field name="wsdrf" />
+                        </group>
+                    </group>
+                    <field name="payslip_ids" readonly="1" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="l10n_ca_qc_rl1_summary_view_list" model="ir.ui.view">
+        <field name="name">l10n_ca.qc.rl1.summary.list</field>
+        <field name="model">l10n_ca.qc.rl1.summary</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="currency_id" column_invisible="True" />
+                <field name="name" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="due_date" />
+                <field name="line_51" />
+                <field name="line_38" />
+                <field name="line_55" />
+                <field name="line_80" />
+                <field name="slip_count" />
+            </list>
+        </field>
+    </record>
+    <record id="l10n_ca_qc_rl1_summary_view_form" model="ir.ui.view">
+        <field name="name">l10n_ca.qc.rl1.summary.form</field>
+        <field name="model">l10n_ca.qc.rl1.summary</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="action_compute_slips"
+                        type="object"
+                        string="Compute RL-1 Slips"
+                        class="btn-primary"
+                    />
+                    <button
+                        name="action_compute_remittances"
+                        type="object"
+                        string="Compute Remittances"
+                    />
+                    <button
+                        name="action_export_rl1_csv"
+                        type="object"
+                        string="Export RL-1 (CSV)"
+                        invisible="not slip_ids"
+                    />
+                    <button
+                        name="action_export_remittance_csv"
+                        type="object"
+                        string="Export Remittances (CSV)"
+                        invisible="not remittance_ids"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="year" options="{'format': false}" />
+                            <field name="company_id" />
+                            <field name="currency_id" invisible="1" />
+                            <field name="due_date" />
+                            <field name="cessation_date" />
+                            <field name="last_remittance_date" />
+                            <field name="slip_count" />
+                            <field name="csv_filename" invisible="1" />
+                        </group>
+                        <group string="Entered Amounts">
+                            <field name="associated_payroll" />
+                            <field name="training_expenses" />
+                            <field name="cnt_paid" />
+                        </group>
+                    </group>
+                    <group>
+                        <group string="QPP, QPIP and Quebec Income Tax">
+                            <field name="line_21" string="21 QPP - employees" />
+                            <field name="line_22" string="22 QPP - employer" />
+                            <field
+                                name="line_23"
+                                string="23 Additional QPP - employees"
+                            />
+                            <field
+                                name="line_24"
+                                string="24 Additional QPP - employer"
+                            />
+                            <field name="line_25" string="25 QPP total" />
+                            <field name="line_28" string="28 QPIP - employees" />
+                            <field name="line_29" string="29 QPIP - employer" />
+                            <field name="line_30" string="30 QPIP total" />
+                            <field name="line_35" string="35 Income tax withheld" />
+                            <field name="line_38" string="38 Total" />
+                            <field name="line_44" string="44 QPP remitted" />
+                            <field name="line_45" string="45 QPIP remitted" />
+                            <field name="line_46" string="46 Income tax remitted" />
+                            <field name="line_47" string="47 Total remitted" />
+                            <field name="line_48" string="48 Balance" />
+                        </group>
+                        <group string="Health Services Fund">
+                            <field name="line_50_1" string="50.1 Total payroll" />
+                            <field name="line_51" string="51 Salaries subject" />
+                            <field
+                                name="line_52_1"
+                                string="52.1 HSF credit specification"
+                            />
+                            <field
+                                name="line_52"
+                                string="52 Salaries eligible for an HSF credit"
+                            />
+                            <field name="line_53" string="53 Line 51 minus line 52" />
+                            <field name="line_54" string="54 Rate (%)" />
+                            <field name="line_55" string="55 Contribution" />
+                            <field name="line_56" string="56 Remitted" />
+                            <field name="line_57" string="57 Balance" />
+                            <field name="hsf_accrued" />
+                        </group>
+                        <group string="Labour Standards (CNT)">
+                            <field name="line_61" string="61 Remuneration subject" />
+                            <field name="line_63" string="63 Contribution" />
+                            <field name="line_64" string="64 Paid" />
+                        </group>
+                        <group string="WSDRF">
+                            <field name="line_71" string="71 Total payroll" />
+                            <field name="line_73" string="73 Participation" />
+                            <field name="line_74" string="74 Training expenditures" />
+                            <field name="line_75" string="75 Contribution" />
+                        </group>
+                        <group string="Balance">
+                            <field name="line_80" string="80 Balance" />
+                            <field name="line_81" string="81 Refund" />
+                            <field name="line_82" string="82 Balance due" />
+                        </group>
+                        <group string="CNESST (Declaration of Wages)">
+                            <field name="cnesst_insurable" />
+                            <field name="cnesst_paid" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="RL-1 Slips" name="slips">
+                            <field name="slip_ids" />
+                        </page>
+                        <page string="Remittances" name="remittances">
+                            <field name="remittance_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_l10n_ca_qc_rl1_summary" model="ir.actions.act_window">
+        <field name="name">RL-1 Year-End</field>
+        <field name="res_model">l10n_ca.qc.rl1.summary</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the RL-1 summary of a calendar year.
+            </p>
+            <p>
+                The RL-1 slips, the Revenu Québec remittances and the RL-1
+                summary lines (QPP, QPIP, income tax, health services fund,
+                labour standards, WSDRF) are computed from the done payslips
+                of the employees working in Quebec, and can be exported as
+                CSV files to fill in the online services of Revenu Québec.
+            </p>
+        </field>
+    </record>
+</odoo>
