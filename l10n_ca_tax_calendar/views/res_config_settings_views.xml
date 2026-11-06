@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.l10n_ca_tax_calendar</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='account']" position="inside">
+                <block
+                    title="Canadian Tax Calendar"
+                    name="l10n_ca_tax_calendar"
+                    invisible="country_code != 'CA'"
+                >
+                    <setting
+                        string="Reminders"
+                        help="Who is reminded, how early, and how far ahead deadlines are created"
+                    >
+                        <field name="l10n_ca_tax_deadline_user_id" />
+                        <field name="l10n_ca_tax_deadline_reminder_days" />
+                        <field name="l10n_ca_tax_deadline_horizon_months" />
+                    </setting>
+                    <setting
+                        string="Sales Tax Instalments"
+                        help="Net tax of the previous fiscal year; annual filers reaching the threshold pay quarterly instalments"
+                    >
+                        <field name="l10n_ca_gst_prior_net_tax" />
+                        <field name="l10n_ca_qst_prior_net_tax" />
+                    </setting>
+                    <setting
+                        string="Quebec Income Tax Instalments"
+                        help="Quebec frequency, when it differs from the federal one"
+                    >
+                        <field name="l10n_ca_qc_instalment_frequency" />
+                    </setting>
+                    <setting
+                        string="Information Returns"
+                        help="Dividends or interest reported on T5 and RL-3 slips"
+                    >
+                        <field name="l10n_ca_files_t5" />
+                    </setting>
+                    <setting
+                        string="Enterprise Register"
+                        help="The annual updating declaration is filed with the CO-17 return"
+                    >
+                        <field name="l10n_ca_req_combined_with_co17" />
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

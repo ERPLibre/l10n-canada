@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_l10n_ca_tax_deadline_rule_invoice,l10n.ca.tax.deadline.rule billing,model_l10n_ca_tax_deadline_rule,account.group_account_invoice,1,0,0,0
+access_l10n_ca_tax_deadline_rule_readonly,l10n.ca.tax.deadline.rule auditor,model_l10n_ca_tax_deadline_rule,account.group_account_readonly,1,0,0,0
+access_l10n_ca_tax_deadline_rule_manager,l10n.ca.tax.deadline.rule manager,model_l10n_ca_tax_deadline_rule,account.group_account_manager,1,1,1,1
+access_l10n_ca_tax_deadline_invoice,l10n.ca.tax.deadline billing,model_l10n_ca_tax_deadline,account.group_account_invoice,1,1,0,0
+access_l10n_ca_tax_deadline_readonly,l10n.ca.tax.deadline auditor,model_l10n_ca_tax_deadline,account.group_account_readonly,1,0,0,0
+access_l10n_ca_tax_deadline_manager,l10n.ca.tax.deadline manager,model_l10n_ca_tax_deadline,account.group_account_manager,1,1,1,1
+access_calendar_public_holiday_account_manager,calendar.public.holiday account manager,calendar_public_holiday.model_calendar_public_holiday,account.group_account_manager,1,1,1,1
+access_calendar_public_holiday_line_account_manager,calendar.public.holiday.line account manager,calendar_public_holiday.model_calendar_public_holiday_line,account.group_account_manager,1,1,1,1

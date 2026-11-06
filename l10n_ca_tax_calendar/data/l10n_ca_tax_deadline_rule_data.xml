@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="rule_gst_return_monthly" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">10</field>
+        <field name="code">gst_return_monthly</field>
+        <field name="name">GST/HST return and payment (monthly filer)</field>
+        <field name="authority">cra</field>
+        <field name="category">sales_tax</field>
+        <field name="period_type">fiscal_month</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_gst_return_monthly</field>
+        <field name="condition_domain">[('l10n_ca_gst_filing_frequency', '=', 'monthly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Return and net tax due one month after the end of the reporting period. Excise Tax Act ss. 238(1)(b) and 228(2)(b). https://laws-lois.justice.gc.ca/eng/acts/E-15/ https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4022/general-information-gst-hst-registrants.html</field>
+    </record>
+    <record id="rule_gst_return_quarterly" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">20</field>
+        <field name="code">gst_return_quarterly</field>
+        <field name="name">GST/HST return and payment (quarterly filer)</field>
+        <field name="authority">cra</field>
+        <field name="category">sales_tax</field>
+        <field name="period_type">fiscal_quarter</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_gst_return_quarterly</field>
+        <field name="condition_domain">[('l10n_ca_gst_filing_frequency', '=', 'quarterly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Return and net tax due one month after the end of the reporting period. Excise Tax Act ss. 238(1)(b) and 228(2)(b). https://laws-lois.justice.gc.ca/eng/acts/E-15/ https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4022/general-information-gst-hst-registrants.html</field>
+    </record>
+    <record id="rule_gst_return_annual" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">30</field>
+        <field name="code">gst_return_annual</field>
+        <field name="name">GST/HST return and payment (annual filer)</field>
+        <field name="authority">cra</field>
+        <field name="category">sales_tax</field>
+        <field name="period_type">fiscal_year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_gst_return_annual</field>
+        <field name="condition_domain">[('l10n_ca_gst_filing_frequency', '=', 'annual')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Annual filer other than an individual: return and net tax due three months after the end of the fiscal year. Excise Tax Act ss. 238(1)(a)(iii) and 228(2)(b). https://laws-lois.justice.gc.ca/eng/acts/E-15/ https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4022/general-information-gst-hst-registrants.html</field>
+    </record>
+    <record id="rule_gst_instalment" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">40</field>
+        <field name="code">gst_instalment</field>
+        <field name="name">GST/HST quarterly instalment (annual filer)</field>
+        <field name="authority">cra</field>
+        <field name="category">sales_tax</field>
+        <field name="period_type">fiscal_quarter</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_gst_instalment</field>
+        <field name="condition_domain">[('l10n_ca_gst_filing_frequency', '=', 'annual'), ('l10n_ca_gst_instalments_required', '=', True)]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Annual filer whose net tax reaches the instalment threshold: instalment due one month after the end of each fiscal quarter. Excise Tax Act s. 237. https://laws-lois.justice.gc.ca/eng/acts/E-15/ https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/pay-instalment/when-to-pay.html</field>
+    </record>
+    <record id="rule_qst_return_monthly" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">50</field>
+        <field name="code">qst_return_monthly</field>
+        <field name="name">QST return and payment (monthly filer)</field>
+        <field name="authority">rq</field>
+        <field name="category">sales_tax</field>
+        <field name="period_type">fiscal_month</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_qst_return_monthly</field>
+        <field name="condition_domain">[('l10n_ca_qst_filing_frequency', '=', 'monthly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Return and net tax due one month after the end of the reporting period. Act respecting the Quebec sales tax, s. 468. https://www.legisquebec.gouv.qc.ca/en/document/cs/T-0.1</field>
+    </record>
+    <record id="rule_qst_return_quarterly" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">60</field>
+        <field name="code">qst_return_quarterly</field>
+        <field name="name">QST return and payment (quarterly filer)</field>
+        <field name="authority">rq</field>
+        <field name="category">sales_tax</field>
+        <field name="period_type">fiscal_quarter</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_qst_return_quarterly</field>
+        <field name="condition_domain">[('l10n_ca_qst_filing_frequency', '=', 'quarterly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Return and net tax due one month after the end of the reporting period. Act respecting the Quebec sales tax, s. 468. https://www.legisquebec.gouv.qc.ca/en/document/cs/T-0.1</field>
+    </record>
+    <record id="rule_qst_return_annual" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">70</field>
+        <field name="code">qst_return_annual</field>
+        <field name="name">QST return and payment (annual filer)</field>
+        <field name="authority">rq</field>
+        <field name="category">sales_tax</field>
+        <field name="period_type">fiscal_year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_qst_return_annual</field>
+        <field name="condition_domain">[('l10n_ca_qst_filing_frequency', '=', 'annual')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Annual filer other than an individual: return and net tax due three months after the end of the fiscal year. Act respecting the Quebec sales tax, s. 468. https://www.legisquebec.gouv.qc.ca/en/document/cs/T-0.1</field>
+    </record>
+    <record id="rule_qst_instalment" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">80</field>
+        <field name="code">qst_instalment</field>
+        <field name="name">QST quarterly instalment (annual filer)</field>
+        <field name="authority">rq</field>
+        <field name="category">sales_tax</field>
+        <field name="period_type">fiscal_quarter</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_qst_instalment</field>
+        <field name="condition_domain">[('l10n_ca_qst_filing_frequency', '=', 'annual'), ('l10n_ca_qst_instalments_required', '=', True)]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Annual filer whose net tax reaches the instalment threshold: instalment due within one month after the end of each fiscal quarter. Act respecting the Quebec sales tax, s. 458.0.1. https://www.legisquebec.gouv.qc.ca/en/document/cs/T-0.1 https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/reporting-gst-and-qst/remittance-or-refund/gst-and-qst-instalments/</field>
+    </record>
+    <record id="rule_cit_instalment_monthly_federal" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">90</field>
+        <field name="code">cit_instalment_monthly_federal</field>
+        <field name="name">Federal corporate income tax instalment (monthly)</field>
+        <field name="authority">cra</field>
+        <field name="category">income_tax</field>
+        <field name="period_type">fiscal_month</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_cit_instalment_monthly_federal</field>
+        <field name="condition_domain">[('l10n_ca_instalment_frequency', '=', 'monthly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Instalment due on the last day of each month of the taxation year. Income Tax Act s. 157(1)(a). https://laws-lois.justice.gc.ca/eng/acts/I-3.3/ https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-businesses/2026-tax-deadlines-canadian-businesses-self-employed-individuals.html</field>
+    </record>
+    <record id="rule_cit_instalment_quarterly_federal" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">100</field>
+        <field name="code">cit_instalment_quarterly_federal</field>
+        <field name="name">Federal corporate income tax instalment (quarterly, small CCPC)</field>
+        <field name="authority">cra</field>
+        <field name="category">income_tax</field>
+        <field name="period_type">fiscal_quarter</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_cit_instalment_quarterly_federal</field>
+        <field name="condition_domain">[('l10n_ca_instalment_frequency', '=', 'quarterly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Small Canadian-controlled private corporation: instalment due on the last day of each quarter of the taxation year. Income Tax Act s. 157(1.1). https://laws-lois.justice.gc.ca/eng/acts/I-3.3/ https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-businesses/2026-tax-deadlines-canadian-businesses-self-employed-individuals.html</field>
+    </record>
+    <record id="rule_cit_instalment_monthly_quebec" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">110</field>
+        <field name="code">cit_instalment_monthly_quebec</field>
+        <field name="name">Quebec corporate income tax instalment (monthly)</field>
+        <field name="authority">rq</field>
+        <field name="category">income_tax</field>
+        <field name="period_type">fiscal_month</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_cit_instalment_monthly_quebec</field>
+        <field name="condition_domain">['|', ('l10n_ca_qc_instalment_frequency', '=', 'monthly'), '&amp;', ('l10n_ca_qc_instalment_frequency', '=', False), ('l10n_ca_instalment_frequency', '=', 'monthly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Instalment due on or before the last day of each month of the taxation year. Taxation Act (Quebec) s. 1027(a)(i). https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="rule_cit_instalment_quarterly_quebec" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">120</field>
+        <field name="code">cit_instalment_quarterly_quebec</field>
+        <field name="name">Quebec corporate income tax instalment (quarterly, qualified CCPC)</field>
+        <field name="authority">rq</field>
+        <field name="category">income_tax</field>
+        <field name="period_type">fiscal_quarter</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_cit_instalment_quarterly_quebec</field>
+        <field name="condition_domain">['|', ('l10n_ca_qc_instalment_frequency', '=', 'quarterly'), '&amp;', ('l10n_ca_qc_instalment_frequency', '=', False), ('l10n_ca_instalment_frequency', '=', 'quarterly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Qualified Canadian-controlled private corporation: instalment due on or before the last day of each three-month period of the taxation year. Taxation Act (Quebec) ss. 1027(a)(iii) and 1027.0.1. https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="rule_cit_balance_federal" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">130</field>
+        <field name="code">cit_balance_federal</field>
+        <field name="name">Federal corporate income tax balance</field>
+        <field name="authority">cra</field>
+        <field name="category">income_tax</field>
+        <field name="period_type">fiscal_year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_cit_balance_federal</field>
+        <field name="condition_domain">[('l10n_ca_ccpc', '=', False)]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Balance-due day of a corporation: end of the second month after the end of the taxation year. Income Tax Act ss. 157(1)(b) and 248(1) balance-due day. https://laws-lois.justice.gc.ca/eng/acts/I-3.3/ https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-businesses/2026-tax-deadlines-canadian-businesses-self-employed-individuals.html</field>
+    </record>
+    <record id="rule_cit_balance_federal_ccpc" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">140</field>
+        <field name="code">cit_balance_federal_ccpc</field>
+        <field name="name">Federal corporate income tax balance (CCPC)</field>
+        <field name="authority">cra</field>
+        <field name="category">income_tax</field>
+        <field name="period_type">fiscal_year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_cit_balance_federal_ccpc</field>
+        <field name="condition_domain">[('l10n_ca_ccpc', '=', True)]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Balance-due day of a CCPC that claims the small business deduction and whose taxable income of the previous year does not exceed its business limit: end of the third month after the end of the taxation year. Income Tax Act s. 248(1) balance-due day (d)(i). https://laws-lois.justice.gc.ca/eng/acts/I-3.3/ https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-businesses/2026-tax-deadlines-canadian-businesses-self-employed-individuals.html</field>
+    </record>
+    <record id="rule_cit_balance_quebec" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">150</field>
+        <field name="code">cit_balance_quebec</field>
+        <field name="name">Quebec corporate income tax balance</field>
+        <field name="authority">rq</field>
+        <field name="category">income_tax</field>
+        <field name="period_type">fiscal_year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_cit_balance_quebec</field>
+        <field name="condition_domain">[]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Balance-due day of a corporation: last day of the two-month period ending after the end of the taxation year, CCPC included. Taxation Act (Quebec) ss. 1 balance-due day and 1027(b). https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="rule_t2_return" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">160</field>
+        <field name="code">t2_return</field>
+        <field name="name">T2 corporation income tax return</field>
+        <field name="authority">cra</field>
+        <field name="category">income_tax</field>
+        <field name="period_type">fiscal_year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_t2_return</field>
+        <field name="condition_domain">[]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Return due within six months after the end of the taxation year. Income Tax Act s. 150(1)(a). https://laws-lois.justice.gc.ca/eng/acts/I-3.3/ https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-businesses/2026-tax-deadlines-canadian-businesses-self-employed-individuals.html</field>
+    </record>
+    <record id="rule_co17_return" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">170</field>
+        <field name="code">co17_return</field>
+        <field name="name">CO-17 corporation income tax return</field>
+        <field name="authority">rq</field>
+        <field name="category">income_tax</field>
+        <field name="period_type">fiscal_year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_co17_return</field>
+        <field name="condition_domain">[]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Return due within six months from the end of the taxation year. Taxation Act (Quebec) s. 1000(2)(a). https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+    </record>
+    <record id="rule_payroll_federal_quarterly" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">180</field>
+        <field name="code">payroll_federal_quarterly</field>
+        <field name="name">Source deductions remittance to the CRA (quarterly)</field>
+        <field name="authority">cra</field>
+        <field name="category">payroll</field>
+        <field name="period_type">quarter</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_payroll_federal_quarterly</field>
+        <field name="condition_domain">[('l10n_ca_payroll_remitter_type', '=', 'quarterly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Quarterly remitter: due on the 15th day of the month after each calendar quarter. Income Tax Regulations s. 108(1.12). https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/ https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/remitting-source-deductions/how-when-remit-due-dates.html</field>
+    </record>
+    <record id="rule_payroll_federal_regular" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">190</field>
+        <field name="code">payroll_federal_regular</field>
+        <field name="name">Source deductions remittance to the CRA (regular)</field>
+        <field name="authority">cra</field>
+        <field name="category">payroll</field>
+        <field name="period_type">month</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_payroll_federal_regular</field>
+        <field name="condition_domain">[('l10n_ca_payroll_remitter_type', '=', 'regular')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Regular remitter: due on the 15th day of the month after the month the remuneration is paid. Income Tax Regulations s. 108(1). https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/ https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/remitting-source-deductions/how-when-remit-due-dates.html</field>
+    </record>
+    <record id="rule_payroll_federal_accelerated_1" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">200</field>
+        <field name="code">payroll_federal_accelerated_1</field>
+        <field name="name">Source deductions remittance to the CRA (accelerated threshold 1)</field>
+        <field name="authority">cra</field>
+        <field name="category">payroll</field>
+        <field name="period_type">semi_month</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_payroll_federal_accelerated_1</field>
+        <field name="condition_domain">[('l10n_ca_payroll_remitter_type', '=', 'accelerated_1')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Accelerated threshold 1: remuneration paid from the 1st to the 15th is due on the 25th of the month, from the 16th to the end of the month on the 10th of the next month. Income Tax Regulations s. 108(1.1)(a). https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/ https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/remitting-source-deductions/how-when-remit-due-dates.html</field>
+    </record>
+    <record id="rule_payroll_federal_accelerated_2" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">210</field>
+        <field name="code">payroll_federal_accelerated_2</field>
+        <field name="name">Source deductions remittance to the CRA (accelerated threshold 2)</field>
+        <field name="authority">cra</field>
+        <field name="category">payroll</field>
+        <field name="period_type">quarter_month</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_payroll_federal_accelerated_2</field>
+        <field name="condition_domain">[('l10n_ca_payroll_remitter_type', '=', 'accelerated_2')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">Accelerated threshold 2: due the 3rd working day after the 7th, the 14th, the 21st and the last day of the month. Income Tax Regulations s. 108(1.1)(b). https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/ https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/remitting-source-deductions/how-when-remit-due-dates.html</field>
+    </record>
+    <record id="rule_payroll_quebec_annual" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">215</field>
+        <field name="code">payroll_quebec_annual</field>
+        <field name="name">Source deductions remittance to Revenu Quebec (annual)</field>
+        <field name="authority">rq</field>
+        <field name="category">payroll</field>
+        <field name="period_type">year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_payroll_quebec_annual</field>
+        <field name="condition_domain">[('l10n_ca_qc_payroll_frequency', '=', 'annual')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="holiday_jurisdiction">quebec_payroll</field>
+        <field name="description">Annual remitter (source deductions and employer contributions of the previous year of $2,400 or less): due on the 15th day of the month after the last month of the year, January 15 in most cases. Guide for employers TP-1015.G, Table 7. A day the offices of Revenu Quebec are closed is not a business day, as the guide states. https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/remitting-source-deductions-and-employer-contributions/frequency-of-remittances/</field>
+    </record>
+    <record id="rule_payroll_quebec_quarterly" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">220</field>
+        <field name="code">payroll_quebec_quarterly</field>
+        <field name="name">Source deductions remittance to Revenu Quebec (quarterly)</field>
+        <field name="authority">rq</field>
+        <field name="category">payroll</field>
+        <field name="period_type">quarter</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_payroll_quebec_quarterly</field>
+        <field name="condition_domain">[('l10n_ca_qc_payroll_frequency', '=', 'quarterly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="holiday_jurisdiction">quebec_payroll</field>
+        <field name="description">Quarterly remitter: due on the 15th day of the month after each calendar quarter. Guide for employers TP-1015.G. A day the offices of Revenu Quebec are closed is not a business day, as the guide states. https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/remitting-source-deductions-and-employer-contributions/frequency-of-remittances/</field>
+    </record>
+    <record id="rule_payroll_quebec_monthly" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">230</field>
+        <field name="code">payroll_quebec_monthly</field>
+        <field name="name">Source deductions remittance to Revenu Quebec (monthly)</field>
+        <field name="authority">rq</field>
+        <field name="category">payroll</field>
+        <field name="period_type">month</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_payroll_quebec_monthly</field>
+        <field name="condition_domain">[('l10n_ca_qc_payroll_frequency', '=', 'monthly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="holiday_jurisdiction">quebec_payroll</field>
+        <field name="description">Monthly remitter: due on the 15th day of the month after the month the remuneration is paid. Guide for employers TP-1015.G. A day the offices of Revenu Quebec are closed is not a business day, as the guide states. https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/remitting-source-deductions-and-employer-contributions/frequency-of-remittances/</field>
+    </record>
+    <record id="rule_payroll_quebec_twice_monthly" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">240</field>
+        <field name="code">payroll_quebec_twice_monthly</field>
+        <field name="name">Source deductions remittance to Revenu Quebec (twice a month)</field>
+        <field name="authority">rq</field>
+        <field name="category">payroll</field>
+        <field name="period_type">semi_month</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_payroll_quebec_twice_monthly</field>
+        <field name="condition_domain">[('l10n_ca_qc_payroll_frequency', '=', 'twice_monthly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="holiday_jurisdiction">quebec_payroll</field>
+        <field name="description">Twice-monthly remitter: remuneration paid from the 1st to the 15th is due on the 25th, from the 16th to the end of the month on the 10th of the next month. Guide for employers TP-1015.G. A day the offices of Revenu Quebec are closed is not a business day, as the guide states. https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/remitting-source-deductions-and-employer-contributions/frequency-of-remittances/</field>
+    </record>
+    <record id="rule_payroll_quebec_weekly" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">250</field>
+        <field name="code">payroll_quebec_weekly</field>
+        <field name="name">Source deductions remittance to Revenu Quebec (weekly)</field>
+        <field name="authority">rq</field>
+        <field name="category">payroll</field>
+        <field name="period_type">quarter_month</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_payroll_quebec_weekly</field>
+        <field name="condition_domain">[('l10n_ca_qc_payroll_frequency', '=', 'weekly')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="holiday_jurisdiction">quebec_payroll</field>
+        <field name="description">Weekly remitter: due the 3rd business day after the 7th, the 14th, the 21st and the last day of the month. Guide for employers TP-1015.G. A day the offices of Revenu Quebec are closed is not a business day, as the guide states. https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/remitting-source-deductions-and-employer-contributions/frequency-of-remittances/</field>
+    </record>
+    <record id="rule_t4_summary" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">260</field>
+        <field name="code">t4_summary</field>
+        <field name="name">T4 slips and T4 Summary</field>
+        <field name="authority">cra</field>
+        <field name="category">payroll</field>
+        <field name="period_type">year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_t4_summary</field>
+        <field name="condition_domain">[('l10n_ca_payroll_remitter_type', '!=', 'none')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">T4 information return due on or before the last day of February of the following calendar year. Income Tax Regulations ss. 200(1) and 205(1). https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/ https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-businesses/2026-tax-deadlines-canadian-businesses-self-employed-individuals.html</field>
+    </record>
+    <record id="rule_t5_summary" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">270</field>
+        <field name="code">t5_summary</field>
+        <field name="name">T5 slips and T5 Summary</field>
+        <field name="authority">cra</field>
+        <field name="category">payroll</field>
+        <field name="period_type">year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_t5_summary</field>
+        <field name="condition_domain">[('l10n_ca_files_t5', '=', True)]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">T5 information return (dividends, interest) due on or before the last day of February of the following calendar year. Income Tax Regulations ss. 201(1) and 205(1). https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/</field>
+    </record>
+    <record id="rule_rl1_summary" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">280</field>
+        <field name="code">rl1_summary</field>
+        <field name="name">RL-1 slips and RL-1 Summary</field>
+        <field name="authority">rq</field>
+        <field name="category">payroll</field>
+        <field name="period_type">year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_rl1_summary</field>
+        <field name="condition_domain">[('l10n_ca_qc_payroll_frequency', '!=', 'none')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">RL slips and RL-1 summary due by the last day of February of the following year, together with the labour standards (CNT) contribution, the WSDRF (FDRCMO) contribution if any, and the part of the Health Services Fund balance caused by the gap between the actual and the estimated rate. The balance of Quebec income tax withheld and of QPP and QPIP contributions (summary line 48) is due with the last December remittance, not with the summary; paid with the summary, it bears interest and may bring a penalty. TP-1015.G, ss. 11.3 and 11.6. https://www.revenuquebec.ca/en/businesses/rl-slips-and-summaries/sending-rl-slips-and-summaries/filing-deadline/</field>
+    </record>
+    <record id="rule_hsf_reconciliation" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">290</field>
+        <field name="code">hsf_reconciliation</field>
+        <field name="name">Health Services Fund contribution reconciliation (RL-1 Summary)</field>
+        <field name="authority">rq</field>
+        <field name="category">payroll</field>
+        <field name="period_type">year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_hsf_reconciliation</field>
+        <field name="condition_domain">[('l10n_ca_qc_payroll_frequency', '!=', 'none')]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">The employer contribution to the Health Services Fund of the year is reconciled on the RL-1 summary, due by the last day of February of the following year. Only the part of the balance caused by the gap between the actual and the estimated contribution rate is payable by that date; the rest of the HSF balance is due with the last December remittance. TP-1015.G, ss. 6.6 and 11.6. https://www.revenuquebec.ca/en/businesses/rl-slips-and-summaries/sending-rl-slips-and-summaries/filing-deadline/</field>
+    </record>
+    <record id="rule_rl3_summary" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">300</field>
+        <field name="code">rl3_summary</field>
+        <field name="name">RL-3 slips and RL-3 Summary</field>
+        <field name="authority">rq</field>
+        <field name="category">payroll</field>
+        <field name="period_type">year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_rl3_summary</field>
+        <field name="condition_domain">[('l10n_ca_files_t5', '=', True)]</field>
+        <field name="due_date_shift">next_business_day</field>
+        <field name="description">RL-3 slips (investment income) and summary due by the last day of February of the following year. https://www.revenuquebec.ca/en/businesses/rl-slips-and-summaries/sending-rl-slips-and-summaries/filing-deadline/</field>
+    </record>
+    <record id="rule_cnesst_wages" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">310</field>
+        <field name="code">cnesst_wages</field>
+        <field name="name">CNESST statement of wages</field>
+        <field name="authority">cnesst</field>
+        <field name="category">payroll</field>
+        <field name="period_type">year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_cnesst_wages</field>
+        <field name="condition_domain">[('l10n_ca_qc_payroll_frequency', '!=', 'none')]</field>
+        <field name="due_date_shift">none</field>
+        <field name="description">Statement of the gross wages of the previous year, to be sent before March 15: the last day is March 14. An employer whose last worker leaves sends it at the latest 45 days after that departure. Act respecting industrial accidents and occupational diseases, s. 291, and its regulation on the statement of wages. No weekend postponement is applied: the CNESST publishes none. https://www.cnesst.gouv.qc.ca/fr/demarches-formulaires/employeurs/assurance-sante-securite-travail/obligations-annuelles-prime-assurance/declaration-salaires/production-transmission https://www.cnesst.gouv.qc.ca/fr/demarches-formulaires/employeurs/assurance-sante-securite-travail/obligations-annuelles-prime-assurance/declaration-salaires/declaration-salaires-en-retard</field>
+    </record>
+    <record id="rule_req_annual_update_combined" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">320</field>
+        <field name="code">req_annual_update_combined</field>
+        <field name="name">Annual updating declaration (filed with the CO-17)</field>
+        <field name="authority">req</field>
+        <field name="category">registry</field>
+        <field name="period_type">fiscal_year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_req_annual_update_combined</field>
+        <field name="condition_domain">[('l10n_ca_req_combined_with_co17', '=', True)]</field>
+        <field name="due_date_shift">none</field>
+        <field name="description">Legal person whose annual updating declaration is combined with its income tax return: due no later than six months after the end of its fiscal year. Act respecting the legal publicity of enterprises. https://www.quebec.ca/entreprises-et-travailleurs-autonomes/mettre-a-jour-informations/declaration-mise-a-jour/annuelle</field>
+    </record>
+    <record id="rule_req_fee_combined" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">330</field>
+        <field name="code">req_fee_combined</field>
+        <field name="name">Annual registration fee (filed with the CO-17)</field>
+        <field name="authority">req</field>
+        <field name="category">registry</field>
+        <field name="period_type">fiscal_year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_req_fee_combined</field>
+        <field name="condition_domain">[('l10n_ca_req_combined_with_co17', '=', True)]</field>
+        <field name="due_date_shift">none</field>
+        <field name="description">Legal person whose annual updating declaration is combined with its income tax return: annual registration fee payable no later than two months after the end of its fiscal year. https://www.quebec.ca/entreprises-et-travailleurs-autonomes/mettre-a-jour-informations/declaration-mise-a-jour/annuelle</field>
+    </record>
+    <record id="rule_req_annual_update" model="l10n.ca.tax.deadline.rule">
+        <field name="sequence">340</field>
+        <field name="code">req_annual_update</field>
+        <field name="name">Annual updating declaration (May 15 to November 15)</field>
+        <field name="authority">req</field>
+        <field name="category">registry</field>
+        <field name="period_type">year</field>
+        <field name="timing_param_code">l10n_ca.tax_calendar.timing_req_annual_update</field>
+        <field name="condition_domain">[('l10n_ca_req_combined_with_co17', '=', False)]</field>
+        <field name="due_date_shift">none</field>
+        <field name="description">Legal person whose declaration is not combined with its income tax return: filing period from May 15 to November 15 of each year. https://www.quebec.ca/entreprises-et-travailleurs-autonomes/mettre-a-jour-informations/declaration-mise-a-jour/annuelle</field>
+    </record>
+</odoo>

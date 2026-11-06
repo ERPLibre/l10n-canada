@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <menuitem
+        id="menu_l10n_ca_tax_deadline"
+        name="Tax Deadlines"
+        parent="l10n_ca_time_parameter.menu_l10n_ca_root"
+        action="action_l10n_ca_tax_deadline"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_l10n_ca_tax_deadline_generate"
+        name="Generate Deadlines"
+        parent="l10n_ca_time_parameter.menu_l10n_ca_root"
+        action="action_l10n_ca_tax_deadline_generate"
+        groups="account.group_account_manager"
+        sequence="20"
+    />
+    <menuitem
+        id="menu_l10n_ca_tax_deadline_rule"
+        name="Deadline Rules"
+        parent="l10n_ca_time_parameter.menu_l10n_ca_root"
+        action="action_l10n_ca_tax_deadline_rule"
+        groups="account.group_account_manager"
+        sequence="80"
+    />
+    <menuitem
+        id="menu_l10n_ca_public_holiday"
+        name="Public Holidays"
+        parent="l10n_ca_time_parameter.menu_l10n_ca_root"
+        action="action_l10n_ca_public_holiday"
+        groups="account.group_account_manager"
+        sequence="90"
+    />
+</odoo>

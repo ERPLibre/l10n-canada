@@ -1,0 +1,1577 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_tax_calendar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 03:33+0000\n"
+"PO-Revision-Date: 2026-10-27 03:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ca_tax_calendar
+#. odoo-python
+#: code:addons/l10n_ca_tax_calendar/models/l10n_ca_tax_deadline.py:0
+msgid "%(start)s to %(end)s"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_company__l10n_ca_tax_deadline_reminder_days
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_tax_deadline_reminder_days
+msgid "A reminder activity is scheduled this many days before each due date."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.constraint,message:l10n_ca_tax_calendar.constraint_l10n_ca_tax_deadline_rule_company_period_uniq
+msgid "A rule has one deadline per company and period."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__active
+msgid "Active"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model,name:l10n_ca_tax_calendar.model_mail_activity
+msgid "Activity"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_company__l10n_ca_qc_payroll_frequency__annual
+msgid "Annual"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_req_combined_with_co17
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_req_combined_with_co17
+msgid "Annual Update Filed With the CO-17"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_req_fee_combined
+msgid "Annual registration fee (filed with the CO-17)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_req_annual_update
+msgid "Annual updating declaration (May 15 to November 15)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_req_annual_update_combined
+msgid "Annual updating declaration (filed with the CO-17)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__condition_domain
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_rule_view_form
+msgid "Applies When"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_rule_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_rule_view_search
+msgid "Archived"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__authority
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__authority
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_rule_view_search
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "Authority"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__authority__cnesst
+msgid "CNESST"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_cnesst_wages
+msgid "CNESST statement of wages"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_co17_return
+msgid "CO-17 corporation income tax return"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "CRA"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model,name:l10n_ca_tax_calendar.model_calendar_public_holiday
+msgid "Calendar Public Holiday"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model,name:l10n_ca_tax_calendar.model_calendar_public_holiday_line
+msgid "Calendar Public Holiday Line"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__period_type__month
+msgid "Calendar month"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__period_type__quarter
+msgid "Calendar quarter"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__period_type__year
+msgid "Calendar year"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__authority__cra
+msgid "Canada Revenue Agency"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.actions.server,name:l10n_ca_tax_calendar.ir_cron_l10n_ca_tax_deadline_ir_actions_server
+msgid "Canada: Generate Tax Deadlines and Reminders"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_calendar_public_holiday_line__l10n_ca_jurisdiction
+msgid "Canadian Deadlines Moved"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid "Canadian Tax Calendar"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model,name:l10n_ca_tax_calendar.model_l10n_ca_tax_deadline
+msgid "Canadian Tax Deadline"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model,name:l10n_ca_tax_calendar.model_l10n_ca_tax_deadline_rule
+msgid "Canadian Tax Deadline Rule"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline__state__cancel
+msgid "Cancelled"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__category
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__category
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_rule_view_search
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "Category"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__code
+msgid "Code"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__timing_param_code
+msgid ""
+"Code of a dated JSON time parameter holding the timing, read at the period "
+"end. Keys: months, days, business_days (true: days are business days), "
+"fixed_month, fixed_day, fixed_year_offset. When set, it replaces the timing "
+"fields below."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__color
+msgid "Color"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__company_id
+msgid "Company"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__reference
+msgid "Confirmation number of the filing or the payment."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__offset_business_days
+msgid "Count the days as business days of the authority."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__create_date
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__current_timing
+msgid "Current Timing"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__fixed_day
+msgid ""
+"Day of the fixed date; a day past the end of the month means its last day "
+"(31 in February is the last day of February)."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__days_left
+msgid "Days Left"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__offset_days
+msgid "Days added after the months."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__deadline_ids
+msgid "Deadline"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.ui.menu,name:l10n_ca_tax_calendar.menu_l10n_ca_tax_deadline_rule
+msgid "Deadline Rules"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#. odoo-python
+#: code:addons/l10n_ca_tax_calendar/models/l10n_ca_tax_deadline.py:0
+msgid "Deadline marked as done."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_rule_view_form
+msgid "Deadlines"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_calendar_public_holiday_line__l10n_ca_jurisdiction
+msgid ""
+"Deadlines that move to the next business day when they fall on this holiday:"
+" federal ones (CRA), Quebec ones (Revenu Quebec, Registraire des "
+"entreprises, CNESST) or both. A day Revenu Quebec is closed without being a "
+"legal holiday moves only the source deduction remittances to Revenu Quebec."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__rule_description
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__description
+msgid "Description"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__display_name
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid "Dividends or interest reported on T5 and RL-3 slips"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__condition_domain
+msgid ""
+"Domain on the company: the rule creates deadlines only for the companies "
+"that match it, e.g. the filing frequency of the tax profile."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline__state__done
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_list
+msgid "Done"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__done_date
+msgid "Done Date"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__due_date
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_rule_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "Due Date"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "Due Month"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "Due in 30 Days"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_qc_payroll_frequency
+msgid "Effective Revenu Quebec Remittance Frequency"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__category__registry
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid "Enterprise Register"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__holiday_jurisdiction__federal
+msgid "Federal"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__calendar_public_holiday_line__l10n_ca_jurisdiction__both
+msgid "Federal and Quebec"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_cit_balance_federal
+msgid "Federal corporate income tax balance"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_cit_balance_federal_ccpc
+msgid "Federal corporate income tax balance (CCPC)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_cit_instalment_monthly_federal
+msgid "Federal corporate income tax instalment (monthly)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_cit_instalment_quarterly_federal
+msgid "Federal corporate income tax instalment (quarterly, small CCPC)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__calendar_public_holiday_line__l10n_ca_jurisdiction__federal
+msgid "Federal only"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:mail.activity.type,summary:l10n_ca_tax_calendar.mail_activity_type_tax_deadline
+msgid "File or pay before the due date"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__period_type__fiscal_month
+msgid "Fiscal month"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__period_type__fiscal_quarter
+msgid "Fiscal quarter"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__period_type__fiscal_year
+msgid "Fiscal year"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__fixed_day
+msgid "Fixed Day"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__fixed_month
+msgid "Fixed Month"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__fixed_year_offset
+msgid "Fixed Year Offset"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_company__l10n_ca_qc_instalment_frequency
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_qc_instalment_frequency
+msgid ""
+"Frequency of the Quebec corporate income tax instalments, whose quarterly "
+"conditions differ from the federal ones. Empty: the federal frequency."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_gst_instalments_required
+msgid "GST/HST Instalments Required"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_gst_prior_net_tax
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_gst_prior_net_tax
+msgid "GST/HST Net Tax of the Previous Year"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_gst_instalment
+msgid "GST/HST quarterly instalment (annual filer)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_gst_return_annual
+msgid "GST/HST return and payment (annual filer)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_gst_return_monthly
+msgid "GST/HST return and payment (monthly filer)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_gst_return_quarterly
+msgid "GST/HST return and payment (quarterly filer)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.actions.server,name:l10n_ca_tax_calendar.action_l10n_ca_tax_deadline_generate
+#: model:ir.ui.menu,name:l10n_ca_tax_calendar.menu_l10n_ca_tax_deadline_generate
+msgid "Generate Deadlines"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__period_type__semi_month
+msgid "Half month (1-15, 16-end)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_hsf_reconciliation
+msgid "Health Services Fund contribution reconciliation (RL-1 Summary)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__holiday_jurisdiction
+msgid "Holiday Jurisdiction"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__id
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__category__income_tax
+msgid "Income Tax"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid "Information Returns"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#. odoo-python
+#: code:addons/l10n_ca_tax_calendar/models/l10n_ca_tax_deadline_rule.py:0
+msgid "Invalid condition on rule %(rule)s: %(error)s"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__is_overdue
+msgid "Is Overdue"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_files_t5
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_files_t5
+msgid "Issues T5 and RL-3 Slips"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__write_date
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_form
+msgid "Legal Rule"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_rule_view_form
+msgid "Legal Rule and Sources"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__rule_description
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__description
+msgid "Legal rule behind the deadline and its official sources."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_form
+msgid "Mark as Done"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_company__l10n_ca_qc_instalment_frequency__monthly
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_company__l10n_ca_qc_payroll_frequency__monthly
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_config_settings__l10n_ca_qc_instalment_frequency__monthly
+msgid "Monthly"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__offset_months
+msgid ""
+"Months added to the period end; a period ending on the last day of a month "
+"gives the last day of the target month."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "My Deadlines"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__name
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_company__l10n_ca_gst_prior_net_tax
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_gst_prior_net_tax
+msgid ""
+"Net tax of the last fiscal year. An annual filer pays quarterly instalments "
+"when it reaches the threshold of the time parameter "
+"l10n_ca.tax_calendar.gst_instalment_threshold."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_company__l10n_ca_qst_prior_net_tax
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_qst_prior_net_tax
+msgid ""
+"Net tax of the last fiscal year. An annual filer pays quarterly instalments "
+"when it reaches the threshold of the time parameter "
+"l10n_ca.tax_calendar.qst_instalment_threshold."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid ""
+"Net tax of the previous fiscal year; annual filers reaching the threshold "
+"pay quarterly instalments"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__due_date_shift__next_business_day
+msgid "Next business day"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__due_date_shift
+msgid ""
+"Next business day: a due date on a Saturday, a Sunday or a public holiday of"
+" the authority moves to the next business day."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_company__l10n_ca_qc_payroll_frequency__none
+msgid "No payroll"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__due_date_shift__none
+msgid "No shift"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.actions.act_window,help:l10n_ca_tax_calendar.action_l10n_ca_tax_deadline
+msgid "No tax deadline yet."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_company__l10n_ca_qc_instalment_frequency__none
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_config_settings__l10n_ca_qc_instalment_frequency__none
+msgid "None"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__offset_business_days
+msgid "Offset Business Days"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__offset_days
+msgid "Offset Days"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__offset_months
+msgid "Offset Months"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "Overdue"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__category__payroll
+msgid "Payroll"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__period_end
+msgid "Period End"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__period_start
+msgid "Period Start"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__period_type
+msgid "Period Type"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__period_type
+msgid ""
+"Periods whose end anchors the due date. Fiscal periods follow the fiscal "
+"year end of the company, the others the calendar."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.actions.act_window,name:l10n_ca_tax_calendar.action_l10n_ca_public_holiday
+#: model:ir.ui.menu,name:l10n_ca_tax_calendar.menu_l10n_ca_public_holiday
+msgid "Public Holidays"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__holiday_jurisdiction
+msgid ""
+"Public holidays used for the weekend and holiday rule and for business days."
+" The source deduction remittances to Revenu Quebec also skip the days its "
+"offices are closed."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_qst_instalments_required
+msgid "QST Instalments Required"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_qst_prior_net_tax
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_qst_prior_net_tax
+msgid "QST Net Tax of the Previous Year"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_qst_instalment
+msgid "QST quarterly instalment (annual filer)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_qst_return_annual
+msgid "QST return and payment (annual filer)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_qst_return_monthly
+msgid "QST return and payment (monthly filer)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_qst_return_quarterly
+msgid "QST return and payment (quarterly filer)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__period_type__quarter_month
+msgid "Quarter of month (1-7, 8-14, 15-21, 22-end)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_company__l10n_ca_qc_instalment_frequency__quarterly
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_company__l10n_ca_qc_payroll_frequency__quarterly
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_config_settings__l10n_ca_qc_instalment_frequency__quarterly
+msgid "Quarterly"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__holiday_jurisdiction__quebec
+msgid "Quebec"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_cit_balance_quebec
+msgid "Quebec corporate income tax balance"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_cit_instalment_monthly_quebec
+msgid "Quebec corporate income tax instalment (monthly)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_cit_instalment_quarterly_quebec
+msgid "Quebec corporate income tax instalment (quarterly, qualified CCPC)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid "Quebec frequency, when it differs from the federal one"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_qc_instalment_frequency
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_qc_instalment_frequency
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid "Quebec Income Tax Instalments"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__calendar_public_holiday_line__l10n_ca_jurisdiction__quebec
+msgid "Quebec only"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__holiday_jurisdiction__quebec_payroll
+msgid "Quebec, Revenu Quebec closures included"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_rl1_summary
+msgid "RL-1 slips and RL-1 Summary"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_rl3_summary
+msgid "RL-3 slips and RL-3 Summary"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_company__l10n_ca_tax_deadline_user_id
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_tax_deadline_user_id
+msgid ""
+"Receives the reminder activities of the tax deadlines whose rule names no "
+"responsible."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__user_id
+msgid ""
+"Receives the reminders of this rule instead of the responsible set in the "
+"company settings."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__reference
+msgid "Reference"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "Registraire and CNESST"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__authority__req
+msgid "Registraire des entreprises"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__reminder_activity_id
+msgid "Reminder Activity"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__reminder_sent
+msgid "Reminder Sent"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid "Reminders"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_form
+msgid "Reset to To Do"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__user_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__user_id
+msgid "Responsible"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__authority__rq
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "Revenu Quebec"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__calendar_public_holiday_line__l10n_ca_jurisdiction__quebec_payroll
+msgid "Revenu Quebec closed (source deductions)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__rule_id
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_rule_view_form
+msgid "Rule"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid "Sales Tax Instalments"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline_rule__category__sales_tax
+msgid "Sales Taxes"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__sequence
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.actions.act_window,help:l10n_ca_tax_calendar.action_l10n_ca_tax_deadline
+msgid ""
+"Set the Canadian tax profile of the company in the accounting\n"
+"                settings, then run <em>Generate Deadlines</em>: the deadlines due in\n"
+"                the coming months appear here, and a reminder activity is\n"
+"                scheduled before each due date."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_payroll_quebec_annual
+msgid "Source deductions remittance to Revenu Quebec (annual)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_payroll_quebec_monthly
+msgid "Source deductions remittance to Revenu Quebec (monthly)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_payroll_quebec_quarterly
+msgid "Source deductions remittance to Revenu Quebec (quarterly)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_payroll_quebec_twice_monthly
+msgid "Source deductions remittance to Revenu Quebec (twice a month)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_payroll_quebec_weekly
+msgid "Source deductions remittance to Revenu Quebec (weekly)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_payroll_federal_accelerated_1
+msgid "Source deductions remittance to the CRA (accelerated threshold 1)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_payroll_federal_accelerated_2
+msgid "Source deductions remittance to the CRA (accelerated threshold 2)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_payroll_federal_quarterly
+msgid "Source deductions remittance to the CRA (quarterly)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_payroll_federal_regular
+msgid "Source deductions remittance to the CRA (regular)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__state
+msgid "State"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "Status"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_t2_return
+msgid "T2 corporation income tax return"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_t4_summary
+msgid "T4 slips and T4 Summary"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,name:l10n_ca_tax_calendar.rule_t5_summary
+msgid "T5 slips and T5 Summary"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:mail.activity.type,name:l10n_ca_tax_calendar.mail_activity_type_tax_deadline
+msgid "Tax Deadline"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_tax_deadline_horizon_months
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_tax_deadline_horizon_months
+msgid "Tax Deadline Horizon (months)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_tax_deadline_reminder_days
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_tax_deadline_reminder_days
+msgid "Tax Deadline Reminder (days)"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_company__l10n_ca_tax_deadline_user_id
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_tax_deadline_user_id
+msgid "Tax Deadline Responsible"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.actions.act_window,name:l10n_ca_tax_calendar.action_l10n_ca_tax_deadline_rule
+msgid "Tax Deadline Rules"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.actions.act_window,name:l10n_ca_tax_calendar.action_l10n_ca_tax_deadline
+#: model:ir.ui.menu,name:l10n_ca_tax_calendar.menu_l10n_ca_tax_deadline
+msgid "Tax Deadlines"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid "The annual updating declaration is filed with the CO-17 return"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_company__l10n_ca_req_combined_with_co17
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_req_combined_with_co17
+msgid ""
+"The annual updating declaration of the enterprise register is combined with "
+"the Quebec income tax return. Otherwise it is filed during the yearly period"
+" set by the Registraire des entreprises."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.constraint,message:l10n_ca_tax_calendar.constraint_l10n_ca_tax_deadline_rule_code_uniq
+msgid "The code of a tax deadline rule must be unique."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_company__l10n_ca_files_t5
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_files_t5
+msgid "The company pays dividends or interest reported on T5 and RL-3 slips."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#. odoo-python
+#: code:addons/l10n_ca_tax_calendar/models/l10n_ca_tax_deadline_rule.py:0
+msgid "The fixed month must be between 1 and 12."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_company__l10n_ca_tax_deadline_horizon_months
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_res_config_settings__l10n_ca_tax_deadline_horizon_months
+msgid ""
+"The scheduled action creates the deadlines due within this many months."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#. odoo-python
+#: code:addons/l10n_ca_tax_calendar/models/l10n_ca_tax_deadline_rule.py:0
+msgid "Time parameter %(code)s must be a JSON object with the keys %(keys)s."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__timing_param_code
+msgid "Timing Parameter"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__l10n_ca_tax_deadline__state__todo
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.l10n_ca_tax_deadline_view_search
+msgid "To Do"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_company__l10n_ca_qc_payroll_frequency__twice_monthly
+msgid "Twice a month"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,field_description:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__due_date_shift
+msgid "Weekend and Holiday Rule"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields.selection,name:l10n_ca_tax_calendar.selection__res_company__l10n_ca_qc_payroll_frequency__weekly
+msgid "Weekly"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__fixed_month
+msgid ""
+"When set (1-12), the due date is a fixed day of this month instead of an "
+"offset from the period end."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model_terms:ir.ui.view,arch_db:l10n_ca_tax_calendar.res_config_settings_view_form
+msgid "Who is reminded, how early, and how far ahead deadlines are created"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:ir.model.fields,help:l10n_ca_tax_calendar.field_l10n_ca_tax_deadline_rule__fixed_year_offset
+msgid "Year of the fixed date relative to the year of the period end."
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_gst_return_monthly
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_gst_return_quarterly
+msgid ""
+"Return and net tax due one month after the end of the reporting period. "
+"Excise Tax Act ss. 238(1)(b) and 228(2)(b). https://laws-"
+"lois.justice.gc.ca/eng/acts/E-15/ https://www.canada.ca/en/revenue-"
+"agency/services/forms-publications/publications/rc4022/general-information-"
+"gst-hst-registrants.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_gst_return_annual
+msgid ""
+"Annual filer other than an individual: return and net tax due three months "
+"after the end of the fiscal year. Excise Tax Act ss. 238(1)(a)(iii) and "
+"228(2)(b). https://laws-lois.justice.gc.ca/eng/acts/E-15/ "
+"https://www.canada.ca/en/revenue-agency/services/forms-"
+"publications/publications/rc4022/general-information-gst-hst-"
+"registrants.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_gst_instalment
+msgid ""
+"Annual filer whose net tax reaches the instalment threshold: instalment due "
+"one month after the end of each fiscal quarter. Excise Tax Act s. 237. "
+"https://laws-lois.justice.gc.ca/eng/acts/E-15/ "
+"https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-"
+"hst-businesses/pay-instalment/when-to-pay.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_qst_return_monthly
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_qst_return_quarterly
+msgid ""
+"Return and net tax due one month after the end of the reporting period. Act "
+"respecting the Quebec sales tax, s. 468. "
+"https://www.legisquebec.gouv.qc.ca/en/document/cs/T-0.1"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_qst_return_annual
+msgid ""
+"Annual filer other than an individual: return and net tax due three months "
+"after the end of the fiscal year. Act respecting the Quebec sales tax, s. "
+"468. https://www.legisquebec.gouv.qc.ca/en/document/cs/T-0.1"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_qst_instalment
+msgid ""
+"Annual filer whose net tax reaches the instalment threshold: instalment due "
+"within one month after the end of each fiscal quarter. Act respecting the "
+"Quebec sales tax, s. 458.0.1. "
+"https://www.legisquebec.gouv.qc.ca/en/document/cs/T-0.1 "
+"https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-"
+"qst/reporting-gst-and-qst/remittance-or-refund/gst-and-qst-instalments/"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_cit_instalment_monthly_federal
+msgid ""
+"Instalment due on the last day of each month of the taxation year. Income "
+"Tax Act s. 157(1)(a). https://laws-lois.justice.gc.ca/eng/acts/I-3.3/ "
+"https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-"
+"businesses/2026-tax-deadlines-canadian-businesses-self-employed-"
+"individuals.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_cit_instalment_quarterly_federal
+msgid ""
+"Small Canadian-controlled private corporation: instalment due on the last "
+"day of each quarter of the taxation year. Income Tax Act s. 157(1.1). "
+"https://laws-lois.justice.gc.ca/eng/acts/I-3.3/ "
+"https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-"
+"businesses/2026-tax-deadlines-canadian-businesses-self-employed-"
+"individuals.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_cit_instalment_monthly_quebec
+msgid ""
+"Instalment due on or before the last day of each month of the taxation year."
+" Taxation Act (Quebec) s. 1027(a)(i). "
+"https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_cit_instalment_quarterly_quebec
+msgid ""
+"Qualified Canadian-controlled private corporation: instalment due on or "
+"before the last day of each three-month period of the taxation year. "
+"Taxation Act (Quebec) ss. 1027(a)(iii) and 1027.0.1. "
+"https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_cit_balance_federal
+msgid ""
+"Balance-due day of a corporation: end of the second month after the end of "
+"the taxation year. Income Tax Act ss. 157(1)(b) and 248(1) balance-due day. "
+"https://laws-lois.justice.gc.ca/eng/acts/I-3.3/ "
+"https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-"
+"businesses/2026-tax-deadlines-canadian-businesses-self-employed-"
+"individuals.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_cit_balance_federal_ccpc
+msgid ""
+"Balance-due day of a CCPC that claims the small business deduction and whose"
+" taxable income of the previous year does not exceed its business limit: end"
+" of the third month after the end of the taxation year. Income Tax Act s. "
+"248(1) balance-due day (d)(i). https://laws-"
+"lois.justice.gc.ca/eng/acts/I-3.3/ "
+"https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-"
+"businesses/2026-tax-deadlines-canadian-businesses-self-employed-"
+"individuals.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_cit_balance_quebec
+msgid ""
+"Balance-due day of a corporation: last day of the two-month period ending "
+"after the end of the taxation year, CCPC included. Taxation Act (Quebec) ss."
+" 1 balance-due day and 1027(b). "
+"https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_t2_return
+msgid ""
+"Return due within six months after the end of the taxation year. Income Tax "
+"Act s. 150(1)(a). https://laws-lois.justice.gc.ca/eng/acts/I-3.3/ "
+"https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-"
+"businesses/2026-tax-deadlines-canadian-businesses-self-employed-"
+"individuals.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_co17_return
+msgid ""
+"Return due within six months from the end of the taxation year. Taxation Act"
+" (Quebec) s. 1000(2)(a). "
+"https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_payroll_federal_quarterly
+msgid ""
+"Quarterly remitter: due on the 15th day of the month after each calendar "
+"quarter. Income Tax Regulations s. 108(1.12). https://laws-"
+"lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/ "
+"https://www.canada.ca/en/revenue-"
+"agency/services/tax/businesses/topics/payroll/remitting-source-"
+"deductions/how-when-remit-due-dates.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_payroll_federal_regular
+msgid ""
+"Regular remitter: due on the 15th day of the month after the month the "
+"remuneration is paid. Income Tax Regulations s. 108(1). https://laws-"
+"lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/ "
+"https://www.canada.ca/en/revenue-"
+"agency/services/tax/businesses/topics/payroll/remitting-source-"
+"deductions/how-when-remit-due-dates.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_payroll_federal_accelerated_1
+msgid ""
+"Accelerated threshold 1: remuneration paid from the 1st to the 15th is due "
+"on the 25th of the month, from the 16th to the end of the month on the 10th "
+"of the next month. Income Tax Regulations s. 108(1.1)(a). https://laws-"
+"lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/ "
+"https://www.canada.ca/en/revenue-"
+"agency/services/tax/businesses/topics/payroll/remitting-source-"
+"deductions/how-when-remit-due-dates.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_payroll_federal_accelerated_2
+msgid ""
+"Accelerated threshold 2: due the 3rd working day after the 7th, the 14th, "
+"the 21st and the last day of the month. Income Tax Regulations s. "
+"108(1.1)(b). https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/"
+" https://www.canada.ca/en/revenue-"
+"agency/services/tax/businesses/topics/payroll/remitting-source-"
+"deductions/how-when-remit-due-dates.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_payroll_quebec_annual
+msgid ""
+"Annual remitter (source deductions and employer contributions of the "
+"previous year of $2,400 or less): due on the 15th day of the month after the"
+" last month of the year, January 15 in most cases. Guide for employers "
+"TP-1015.G, Table 7. A day the offices of Revenu Quebec are closed is not a "
+"business day, as the guide states. "
+"https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-"
+"contributions/remitting-source-deductions-and-employer-"
+"contributions/frequency-of-remittances/"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_payroll_quebec_quarterly
+msgid ""
+"Quarterly remitter: due on the 15th day of the month after each calendar "
+"quarter. Guide for employers TP-1015.G. A day the offices of Revenu Quebec "
+"are closed is not a business day, as the guide states. "
+"https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-"
+"contributions/remitting-source-deductions-and-employer-"
+"contributions/frequency-of-remittances/"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_payroll_quebec_monthly
+msgid ""
+"Monthly remitter: due on the 15th day of the month after the month the "
+"remuneration is paid. Guide for employers TP-1015.G. A day the offices of "
+"Revenu Quebec are closed is not a business day, as the guide states. "
+"https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-"
+"contributions/remitting-source-deductions-and-employer-"
+"contributions/frequency-of-remittances/"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_payroll_quebec_twice_monthly
+msgid ""
+"Twice-monthly remitter: remuneration paid from the 1st to the 15th is due on"
+" the 25th, from the 16th to the end of the month on the 10th of the next "
+"month. Guide for employers TP-1015.G. A day the offices of Revenu Quebec are"
+" closed is not a business day, as the guide states. "
+"https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-"
+"contributions/remitting-source-deductions-and-employer-"
+"contributions/frequency-of-remittances/"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_payroll_quebec_weekly
+msgid ""
+"Weekly remitter: due the 3rd business day after the 7th, the 14th, the 21st "
+"and the last day of the month. Guide for employers TP-1015.G. A day the "
+"offices of Revenu Quebec are closed is not a business day, as the guide "
+"states. https://www.revenuquebec.ca/en/businesses/source-deductions-and-"
+"employer-contributions/remitting-source-deductions-and-employer-"
+"contributions/frequency-of-remittances/"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_t4_summary
+msgid ""
+"T4 information return due on or before the last day of February of the "
+"following calendar year. Income Tax Regulations ss. 200(1) and 205(1). "
+"https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/ "
+"https://www.canada.ca/en/services/taxes/resources-for-small-and-medium-"
+"businesses/2026-tax-deadlines-canadian-businesses-self-employed-"
+"individuals.html"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_t5_summary
+msgid ""
+"T5 information return (dividends, interest) due on or before the last day of"
+" February of the following calendar year. Income Tax Regulations ss. 201(1) "
+"and 205(1). https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_rl1_summary
+msgid ""
+"RL slips and RL-1 summary due by the last day of February of the following "
+"year, together with the labour standards (CNT) contribution, the WSDRF "
+"(FDRCMO) contribution if any, and the part of the Health Services Fund "
+"balance caused by the gap between the actual and the estimated rate. The "
+"balance of Quebec income tax withheld and of QPP and QPIP contributions "
+"(summary line 48) is due with the last December remittance, not with the "
+"summary; paid with the summary, it bears interest and may bring a penalty. "
+"TP-1015.G, ss. 11.3 and 11.6. https://www.revenuquebec.ca/en/businesses/rl-"
+"slips-and-summaries/sending-rl-slips-and-summaries/filing-deadline/"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_hsf_reconciliation
+msgid ""
+"The employer contribution to the Health Services Fund of the year is "
+"reconciled on the RL-1 summary, due by the last day of February of the "
+"following year. Only the part of the balance caused by the gap between the "
+"actual and the estimated contribution rate is payable by that date; the rest"
+" of the HSF balance is due with the last December remittance. TP-1015.G, ss."
+" 6.6 and 11.6. https://www.revenuquebec.ca/en/businesses/rl-slips-and-"
+"summaries/sending-rl-slips-and-summaries/filing-deadline/"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_rl3_summary
+msgid ""
+"RL-3 slips (investment income) and summary due by the last day of February "
+"of the following year. https://www.revenuquebec.ca/en/businesses/rl-slips-"
+"and-summaries/sending-rl-slips-and-summaries/filing-deadline/"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_cnesst_wages
+msgid ""
+"Statement of the gross wages of the previous year, to be sent before March "
+"15: the last day is March 14. An employer whose last worker leaves sends it "
+"at the latest 45 days after that departure. Act respecting industrial "
+"accidents and occupational diseases, s. 291, and its regulation on the "
+"statement of wages. No weekend postponement is applied: the CNESST publishes"
+" none. https://www.cnesst.gouv.qc.ca/fr/demarches-"
+"formulaires/employeurs/assurance-sante-securite-travail/obligations-"
+"annuelles-prime-assurance/declaration-salaires/production-transmission "
+"https://www.cnesst.gouv.qc.ca/fr/demarches-formulaires/employeurs/assurance-"
+"sante-securite-travail/obligations-annuelles-prime-assurance/declaration-"
+"salaires/declaration-salaires-en-retard"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_req_annual_update_combined
+msgid ""
+"Legal person whose annual updating declaration is combined with its income "
+"tax return: due no later than six months after the end of its fiscal year. "
+"Act respecting the legal publicity of enterprises. "
+"https://www.quebec.ca/entreprises-et-travailleurs-autonomes/mettre-a-jour-"
+"informations/declaration-mise-a-jour/annuelle"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_req_fee_combined
+msgid ""
+"Legal person whose annual updating declaration is combined with its income "
+"tax return: annual registration fee payable no later than two months after "
+"the end of its fiscal year. https://www.quebec.ca/entreprises-et-"
+"travailleurs-autonomes/mettre-a-jour-informations/declaration-mise-a-"
+"jour/annuelle"
+msgstr ""
+
+#. module: l10n_ca_tax_calendar
+#: model:l10n.ca.tax.deadline.rule,description:l10n_ca_tax_calendar.rule_req_annual_update
+msgid ""
+"Legal person whose declaration is not combined with its income tax return: "
+"filing period from May 15 to November 15 of each year. "
+"https://www.quebec.ca/entreprises-et-travailleurs-autonomes/mettre-a-jour-"
+"informations/declaration-mise-a-jour/annuelle"
+msgstr ""
