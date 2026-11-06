@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="report_l10n_ca_dividend_slip_xlsx" model="ir.actions.report">
+        <field name="name">T5 and RL-3 Slips (XLSX)</field>
+        <field name="model">l10n.ca.dividend.slip</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">l10n_ca_corporate_tax.dividend_slip_xlsx</field>
+        <field name="report_file">dividend_slips</field>
+        <field name="binding_model_id" ref="model_l10n_ca_dividend_slip" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

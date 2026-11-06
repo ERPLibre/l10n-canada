@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="param_corp_tax_prescribed_rate" model="base.time.parameter">
+        <field name="name">CRA prescribed rate - taxable benefits on loans</field>
+        <field name="code">l10n_ca.corp_tax.prescribed_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Annual prescribed interest rate used to compute the deemed interest benefit on interest-free and low-interest loans to shareholders and employees, one version per calendar quarter. Income Tax Regulations s. 4301(c); ITA s. 80.4(2), 80.4(7). Revenu Quebec applies the same rate to the equivalent Quebec benefit. Source: https://www.canada.ca/en/revenue-agency/services/tax/prescribed-interest-rates/2026-q4.html (and the page of each quarter).</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.06</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20240401" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2024-04-01</field>
+        <field name="value">0.06</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20240701" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2024-07-01</field>
+        <field name="value">0.05</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20241001" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2024-10-01</field>
+        <field name="value">0.05</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.04</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20250401" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2025-04-01</field>
+        <field name="value">0.04</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20250701" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2025-07-01</field>
+        <field name="value">0.03</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20251001" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2025-10-01</field>
+        <field name="value">0.03</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.03</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20260401" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2026-04-01</field>
+        <field name="value">0.03</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20260701" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2026-07-01</field>
+        <field name="value">0.03</field>
+    </record>
+    <record id="param_corp_tax_prescribed_rate_20261001" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_prescribed_rate" />
+        <field name="date_from">2026-10-01</field>
+        <field name="value">0.03</field>
+    </record>
+    <record id="param_corp_tax_s15_2_repayment_years" model="base.time.parameter">
+        <field name="name">Shareholder loan repayment delay (years)</field>
+        <field name="code">l10n_ca.corp_tax.s15_2_repayment_years</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Number of years after the end of the lender's taxation year in which the loan was made within which the loan must be repaid to avoid the income inclusion. ITA s. 15(2.6). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-15.html</field>
+    </record>
+    <record id="param_corp_tax_s15_2_repayment_years_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_s15_2_repayment_years" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">1</field>
+    </record>
+    <record id="param_corp_tax_s15_2_repayment_years_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_s15_2_repayment_years" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1</field>
+    </record>
+    <record id="param_corp_tax_s15_2_repayment_years_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_s15_2_repayment_years" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1</field>
+    </record>
+    <record id="param_corp_tax_s80_4_interest_days" model="base.time.parameter">
+        <field name="name">Deemed interest - days to pay interest</field>
+        <field name="code">l10n_ca.corp_tax.s80_4_interest_days</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Interest on a shareholder loan paid not later than this number of days after the end of the calendar year reduces the deemed interest benefit. ITA s. 80.4(1)(c), 80.4(2)(b). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-80.4.html</field>
+    </record>
+    <record id="param_corp_tax_s80_4_interest_days_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_s80_4_interest_days" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">30</field>
+    </record>
+    <record id="param_corp_tax_s80_4_interest_days_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_s80_4_interest_days" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">30</field>
+    </record>
+    <record id="param_corp_tax_s80_4_interest_days_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_s80_4_interest_days" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">30</field>
+    </record>
+    <record id="param_qc_sbd_hours_lower" model="base.time.parameter">
+        <field name="name">Quebec SBD - remunerated hours lower threshold</field>
+        <field name="code">l10n_ca.qc_sbd.hours_lower</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Total remunerated hours at or below which the Quebec small business deduction rate is nil; the rate grows linearly up to the upper threshold. Taxation Act (Quebec) s. 771.2.1.2; Quebec Information Bulletin 2026-3, section 1. Source: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/EN/BULEN_2026-3.pdf</field>
+    </record>
+    <record id="param_qc_sbd_hours_lower_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_hours_lower" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">5000</field>
+    </record>
+    <record id="param_qc_sbd_hours_lower_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_hours_lower" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">5000</field>
+    </record>
+    <record id="param_qc_sbd_hours_lower_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_hours_lower" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">5000</field>
+    </record>
+    <record id="param_qc_sbd_hours_upper" model="base.time.parameter">
+        <field name="name">Quebec SBD - remunerated hours upper threshold</field>
+        <field name="code">l10n_ca.qc_sbd.hours_upper</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Total remunerated hours (the corporation's employees in the year, or the corporation and its associated corporations in the preceding year) from which the full Quebec small business deduction rate applies. Taxation Act (Quebec) s. 771.2.1.2; Quebec Information Bulletin 2026-3, section 1. Source: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/EN/BULEN_2026-3.pdf</field>
+    </record>
+    <record id="param_qc_sbd_hours_upper_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_hours_upper" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">5500</field>
+    </record>
+    <record id="param_qc_sbd_hours_upper_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_hours_upper" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">5500</field>
+    </record>
+    <record id="param_qc_sbd_hours_upper_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_hours_upper" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">5500</field>
+    </record>
+    <record id="param_qc_sbd_weekly_hours_cap" model="base.time.parameter">
+        <field name="name">Quebec SBD - weekly hours counted per employee</field>
+        <field name="code">l10n_ca.qc_sbd.weekly_hours_cap</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Maximum number of hours per week counted for each employee in the remunerated hours of the Quebec small business deduction. Taxation Act (Quebec) s. 771.2.1.1 (definition of remunerated hours); Revenu Quebec form CO-771 instructions. Source: https://www.revenuquebec.ca/en/online-services/forms-and-publications/current-details/co-771-ch/</field>
+    </record>
+    <record id="param_qc_sbd_weekly_hours_cap_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_weekly_hours_cap" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">40</field>
+    </record>
+    <record id="param_qc_sbd_weekly_hours_cap_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_weekly_hours_cap" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">40</field>
+    </record>
+    <record id="param_qc_sbd_weekly_hours_cap_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_weekly_hours_cap" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">40</field>
+    </record>
+    <record id="param_qc_sbd_shareholder_hours_factor" model="base.time.parameter">
+        <field name="name">Quebec SBD - majority shareholder hours factor</field>
+        <field name="code">l10n_ca.qc_sbd.shareholder_hours_factor</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Multiplier of the hours that a person holding, directly or indirectly, the majority of the voting shares of the corporation works during the taxation year to take an active part in its business, when these hours are included in the remunerated hours of the Quebec small business deduction. All the hours worked count, paid or not. Revenu Quebec form CO-771, notes 2 and 3 to lines 07a and 07b. Source: https://www.revenuquebec.ca/en/online-services/forms-and-publications/current-details/co-771-ch/</field>
+    </record>
+    <record id="param_qc_sbd_shareholder_hours_factor_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_shareholder_hours_factor" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">1.1</field>
+    </record>
+    <record id="param_qc_sbd_shareholder_hours_factor_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_shareholder_hours_factor" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1.1</field>
+    </record>
+    <record id="param_qc_sbd_shareholder_hours_factor_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_shareholder_hours_factor" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1.1</field>
+    </record>
+    <record id="param_qc_sbd_pm_ratio_lower" model="base.time.parameter">
+        <field name="name">Quebec SBD - primary and manufacturing lower ratio</field>
+        <field name="code">l10n_ca.qc_sbd.pm_ratio_lower</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Proportion of primary and manufacturing sectors activities at or below which the sector criterion gives no Quebec small business deduction (linear up to the upper ratio). Quebec Information Bulletin 2026-3, section 1. Source: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/EN/BULEN_2026-3.pdf</field>
+    </record>
+    <record id="param_qc_sbd_pm_ratio_lower_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_pm_ratio_lower" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.25</field>
+    </record>
+    <record id="param_qc_sbd_pm_ratio_lower_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_pm_ratio_lower" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.25</field>
+    </record>
+    <record id="param_qc_sbd_pm_ratio_lower_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_pm_ratio_lower" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.25</field>
+    </record>
+    <record id="param_qc_sbd_pm_ratio_upper" model="base.time.parameter">
+        <field name="name">Quebec SBD - primary and manufacturing upper ratio</field>
+        <field name="code">l10n_ca.qc_sbd.pm_ratio_upper</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Proportion of primary and manufacturing sectors activities from which the sector criterion gives the full Quebec small business deduction rate. Quebec Information Bulletin 2026-3, section 1. Source: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/EN/BULEN_2026-3.pdf</field>
+    </record>
+    <record id="param_qc_sbd_pm_ratio_upper_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_pm_ratio_upper" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.50</field>
+    </record>
+    <record id="param_qc_sbd_pm_ratio_upper_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_pm_ratio_upper" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.50</field>
+    </record>
+    <record id="param_qc_sbd_pm_ratio_upper_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_sbd_pm_ratio_upper" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.50</field>
+    </record>
+    <record id="param_corp_tax_fed_base_rate" model="base.time.parameter">
+        <field name="name">Federal Part I basic rate</field>
+        <field name="code">l10n_ca.corp_tax.fed.base_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Basic rate of Part I tax on taxable income. ITA s. 123(1)(a). Sources: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-123.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html</field>
+    </record>
+    <record id="param_corp_tax_fed_base_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_base_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.38</field>
+    </record>
+    <record id="param_corp_tax_fed_base_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_base_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.38</field>
+    </record>
+    <record id="param_corp_tax_fed_base_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_base_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.38</field>
+    </record>
+    <record id="param_corp_tax_fed_abatement_rate" model="base.time.parameter">
+        <field name="name">Federal abatement</field>
+        <field name="code">l10n_ca.corp_tax.fed.abatement_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Deduction for taxable income earned in a province. ITA s. 124(1). Sources: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-124.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html</field>
+    </record>
+    <record id="param_corp_tax_fed_abatement_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_abatement_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.10</field>
+    </record>
+    <record id="param_corp_tax_fed_abatement_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_abatement_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.10</field>
+    </record>
+    <record id="param_corp_tax_fed_abatement_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_abatement_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.10</field>
+    </record>
+    <record id="param_corp_tax_fed_general_reduction_rate" model="base.time.parameter">
+        <field name="name">Federal general rate reduction</field>
+        <field name="code">l10n_ca.corp_tax.fed.general_reduction_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">General rate reduction on full rate taxable income. ITA s. 123.4(2). Sources: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-123.4.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html</field>
+    </record>
+    <record id="param_corp_tax_fed_general_reduction_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_general_reduction_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.13</field>
+    </record>
+    <record id="param_corp_tax_fed_general_reduction_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_general_reduction_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.13</field>
+    </record>
+    <record id="param_corp_tax_fed_general_reduction_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_general_reduction_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.13</field>
+    </record>
+    <record id="param_corp_tax_fed_sbd_rate" model="base.time.parameter">
+        <field name="name">Federal small business deduction rate</field>
+        <field name="code">l10n_ca.corp_tax.fed.sbd_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Small business deduction rate for days after 2018 (net rate 9% after abatement). ITA s. 125(1.1). Sources: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-125.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html</field>
+    </record>
+    <record id="param_corp_tax_fed_sbd_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_sbd_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.19</field>
+    </record>
+    <record id="param_corp_tax_fed_sbd_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_sbd_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.19</field>
+    </record>
+    <record id="param_corp_tax_fed_sbd_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_sbd_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.19</field>
+    </record>
+    <record id="param_corp_tax_fed_business_limit" model="base.time.parameter">
+        <field name="name">Federal business limit</field>
+        <field name="code">l10n_ca.corp_tax.fed.business_limit</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Business limit of a CCPC not associated with another CCPC, also the denominator of the passive income grind. ITA s. 125(2), 125(5.1)(b). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-125.html</field>
+    </record>
+    <record id="param_corp_tax_fed_business_limit_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_business_limit" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_fed_business_limit_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_business_limit" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_fed_business_limit_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_business_limit" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_fed_short_year_weeks" model="base.time.parameter">
+        <field name="name">Business limit - short year in weeks</field>
+        <field name="code">l10n_ca.corp_tax.fed.short_year_weeks</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">A taxation year shorter than this number of weeks prorates the business limit by days / 365. ITA s. 125(5)(b). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-125.html</field>
+    </record>
+    <record id="param_corp_tax_fed_short_year_weeks_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_short_year_weeks" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">51</field>
+    </record>
+    <record id="param_corp_tax_fed_short_year_weeks_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_short_year_weeks" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">51</field>
+    </record>
+    <record id="param_corp_tax_fed_short_year_weeks_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_short_year_weeks" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">51</field>
+    </record>
+    <record id="param_corp_tax_fed_tc_grind_lower" model="base.time.parameter">
+        <field name="name">Business limit grind - taxable capital lower</field>
+        <field name="code">l10n_ca.corp_tax.fed.tc_grind_lower</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Taxable capital employed in Canada (associated group, preceding year) from which the business limit is reduced linearly. ITA s. 125(5.1)(a): A x 0.225% x (C - $10M) / $90,000. Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-125.html</field>
+    </record>
+    <record id="param_corp_tax_fed_tc_grind_lower_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_tc_grind_lower" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_fed_tc_grind_lower_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_tc_grind_lower" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_fed_tc_grind_lower_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_tc_grind_lower" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_fed_tc_grind_upper" model="base.time.parameter">
+        <field name="name">Business limit grind - taxable capital upper</field>
+        <field name="code">l10n_ca.corp_tax.fed.tc_grind_upper</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Taxable capital at which the business limit reaches nil (0.225% x $40M = $90,000). ITA s. 125(5.1)(a), for taxation years beginning after April 6, 2022. Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-125.html</field>
+    </record>
+    <record id="param_corp_tax_fed_tc_grind_upper_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_tc_grind_upper" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">50000000</field>
+    </record>
+    <record id="param_corp_tax_fed_tc_grind_upper_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_tc_grind_upper" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">50000000</field>
+    </record>
+    <record id="param_corp_tax_fed_tc_grind_upper_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_tc_grind_upper" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">50000000</field>
+    </record>
+    <record id="param_corp_tax_fed_aaii_grind_threshold" model="base.time.parameter">
+        <field name="name">Business limit grind - passive income threshold</field>
+        <field name="code">l10n_ca.corp_tax.fed.aaii_grind_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Adjusted aggregate investment income of the preceding year above which the business limit is reduced. ITA s. 125(5.1)(b): D / $500,000 x 5 x (E - $50,000). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-125.html</field>
+    </record>
+    <record id="param_corp_tax_fed_aaii_grind_threshold_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_aaii_grind_threshold" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">50000</field>
+    </record>
+    <record id="param_corp_tax_fed_aaii_grind_threshold_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_aaii_grind_threshold" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">50000</field>
+    </record>
+    <record id="param_corp_tax_fed_aaii_grind_threshold_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_aaii_grind_threshold" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">50000</field>
+    </record>
+    <record id="param_corp_tax_fed_aaii_grind_multiplier" model="base.time.parameter">
+        <field name="name">Business limit grind - passive income multiplier</field>
+        <field name="code">l10n_ca.corp_tax.fed.aaii_grind_multiplier</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Reduction of the business limit per dollar of adjusted aggregate investment income above the threshold. ITA s. 125(5.1)(b). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-125.html</field>
+    </record>
+    <record id="param_corp_tax_fed_aaii_grind_multiplier_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_aaii_grind_multiplier" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">5</field>
+    </record>
+    <record id="param_corp_tax_fed_aaii_grind_multiplier_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_aaii_grind_multiplier" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">5</field>
+    </record>
+    <record id="param_corp_tax_fed_aaii_grind_multiplier_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_aaii_grind_multiplier" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">5</field>
+    </record>
+    <record id="param_corp_tax_fed_psb_additional_rate" model="base.time.parameter">
+        <field name="name">Federal additional tax on personal services business income</field>
+        <field name="code">l10n_ca.corp_tax.fed.psb_additional_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Additional tax on personal services business income; that income gets neither the small business deduction nor the general rate reduction. ITA s. 123.5. Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-123.5.html</field>
+    </record>
+    <record id="param_corp_tax_fed_psb_additional_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_psb_additional_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.05</field>
+    </record>
+    <record id="param_corp_tax_fed_psb_additional_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_psb_additional_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.05</field>
+    </record>
+    <record id="param_corp_tax_fed_psb_additional_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_psb_additional_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.05</field>
+    </record>
+    <record id="param_corp_tax_fed_art_rate" model="base.time.parameter">
+        <field name="name">Federal additional refundable tax on investment income</field>
+        <field name="code">l10n_ca.corp_tax.fed.art_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">10 2/3% of the lesser of aggregate investment income and taxable income in excess of the small business deduction base. ITA s. 123.3. Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-123.3.html</field>
+    </record>
+    <record id="param_corp_tax_fed_art_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_art_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.106667</field>
+    </record>
+    <record id="param_corp_tax_fed_art_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_art_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.106667</field>
+    </record>
+    <record id="param_corp_tax_fed_art_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_art_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.106667</field>
+    </record>
+    <record id="param_corp_tax_fed_nerdtoh_rate" model="base.time.parameter">
+        <field name="name">Federal refundable portion of Part I tax</field>
+        <field name="code">l10n_ca.corp_tax.fed.nerdtoh_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">30 2/3% of aggregate investment income added to the non-eligible refundable dividend tax on hand. ITA s. 129(4) (definition of non-eligible refundable dividend tax on hand). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-129.html</field>
+    </record>
+    <record id="param_corp_tax_fed_nerdtoh_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_nerdtoh_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.306667</field>
+    </record>
+    <record id="param_corp_tax_fed_nerdtoh_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_nerdtoh_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.306667</field>
+    </record>
+    <record id="param_corp_tax_fed_nerdtoh_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_nerdtoh_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.306667</field>
+    </record>
+    <record id="param_corp_tax_fed_dividend_refund_rate" model="base.time.parameter">
+        <field name="name">Federal dividend refund rate</field>
+        <field name="code">l10n_ca.corp_tax.fed.dividend_refund_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Dividend refund per dollar of taxable dividends paid, limited by the refundable dividend tax on hand. ITA s. 129(1)(a). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-129.html</field>
+    </record>
+    <record id="param_corp_tax_fed_dividend_refund_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_dividend_refund_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.383333</field>
+    </record>
+    <record id="param_corp_tax_fed_dividend_refund_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_dividend_refund_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.383333</field>
+    </record>
+    <record id="param_corp_tax_fed_dividend_refund_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_dividend_refund_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.383333</field>
+    </record>
+    <record id="param_corp_tax_meals_deductible_rate" model="base.time.parameter">
+        <field name="name">Meals and entertainment - deductible portion</field>
+        <field name="code">l10n_ca.corp_tax.meals_deductible_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Deductible portion of food, beverages and entertainment expenses; the rest is added back to accounting income. ITA s. 67.1(1); Taxation Act (Quebec) s. 421.1. Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-67.1.html</field>
+    </record>
+    <record id="param_corp_tax_meals_deductible_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_meals_deductible_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.5</field>
+    </record>
+    <record id="param_corp_tax_meals_deductible_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_meals_deductible_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.5</field>
+    </record>
+    <record id="param_corp_tax_meals_deductible_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_meals_deductible_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.5</field>
+    </record>
+    <record id="param_corp_tax_fed_balance_due_months" model="base.time.parameter">
+        <field name="name">Federal balance-due - months after year end</field>
+        <field name="code">l10n_ca.corp_tax.fed.balance_due_months</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">The balance of Part I tax is due this number of months after the end of the taxation year. ITA s. 157(1)(b) and definition of balance-due day, s. 248(1). Sources: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-248.html ; https://cpaquebec.ca/-/media/docs/developpement-professionnel/avis-experts/fiscalite-taxes-planification-financiere/guide_delais_fiscalite.pdf</field>
+    </record>
+    <record id="param_corp_tax_fed_balance_due_months_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_balance_due_months" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">2</field>
+    </record>
+    <record id="param_corp_tax_fed_balance_due_months_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_balance_due_months" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">2</field>
+    </record>
+    <record id="param_corp_tax_fed_balance_due_months_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_balance_due_months" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">2</field>
+    </record>
+    <record id="param_corp_tax_fed_balance_due_months_ccpc" model="base.time.parameter">
+        <field name="name">Federal balance-due - months for a small CCPC</field>
+        <field name="code">l10n_ca.corp_tax.fed.balance_due_months_ccpc</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Balance-due delay for a CCPC throughout the year that claims the small business deduction and whose taxable income (associated group) of the preceding year does not exceed its business limit. ITA s. 248(1) balance-due day (d)(i). Sources: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-248.html ; https://cpaquebec.ca/-/media/docs/developpement-professionnel/avis-experts/fiscalite-taxes-planification-financiere/guide_delais_fiscalite.pdf</field>
+    </record>
+    <record id="param_corp_tax_fed_balance_due_months_ccpc_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_balance_due_months_ccpc" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">3</field>
+    </record>
+    <record id="param_corp_tax_fed_balance_due_months_ccpc_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_balance_due_months_ccpc" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">3</field>
+    </record>
+    <record id="param_corp_tax_fed_balance_due_months_ccpc_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_balance_due_months_ccpc" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">3</field>
+    </record>
+    <record id="param_corp_tax_qc_balance_due_months" model="base.time.parameter">
+        <field name="name">Quebec balance - months after year end</field>
+        <field name="code">l10n_ca.corp_tax.qc.balance_due_months</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">The balance of Quebec income tax is due this number of months after the end of the taxation year. Taxation Act (Quebec) s. 1027. Source: https://cpaquebec.ca/-/media/docs/developpement-professionnel/avis-experts/fiscalite-taxes-planification-financiere/guide_delais_fiscalite.pdf</field>
+    </record>
+    <record id="param_corp_tax_qc_balance_due_months_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_balance_due_months" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">2</field>
+    </record>
+    <record id="param_corp_tax_qc_balance_due_months_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_balance_due_months" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">2</field>
+    </record>
+    <record id="param_corp_tax_qc_balance_due_months_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_balance_due_months" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">2</field>
+    </record>
+    <record id="param_corp_tax_qc_balance_due_months_ccpc" model="base.time.parameter">
+        <field name="name">Quebec balance - months for a small CCPC</field>
+        <field name="code">l10n_ca.corp_tax.qc.balance_due_months_ccpc</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Quebec balance delay for a CCPC entitled to the small business deduction. The CPA Quebec deadline guide states 2 months in all cases for Quebec; set 3 if Revenu Quebec confirms the federal extension applies. Taxation Act (Quebec) s. 1027. Source: https://cpaquebec.ca/-/media/docs/developpement-professionnel/avis-experts/fiscalite-taxes-planification-financiere/guide_delais_fiscalite.pdf</field>
+    </record>
+    <record id="param_corp_tax_qc_balance_due_months_ccpc_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_balance_due_months_ccpc" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">2</field>
+    </record>
+    <record id="param_corp_tax_qc_balance_due_months_ccpc_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_balance_due_months_ccpc" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">2</field>
+    </record>
+    <record id="param_corp_tax_qc_balance_due_months_ccpc_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_balance_due_months_ccpc" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">2</field>
+    </record>
+    <record id="param_corp_tax_filing_months" model="base.time.parameter">
+        <field name="name">Corporate return filing - months after year end</field>
+        <field name="code">l10n_ca.corp_tax.filing_months</field>
+        <field name="type">integer</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">The T2 and CO-17 returns are due this number of months after the end of the taxation year. ITA s. 150(1)(a); Taxation Act (Quebec) s. 1000. Source: https://cpaquebec.ca/-/media/docs/developpement-professionnel/avis-experts/fiscalite-taxes-planification-financiere/guide_delais_fiscalite.pdf</field>
+    </record>
+    <record id="param_corp_tax_filing_months_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_filing_months" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">6</field>
+    </record>
+    <record id="param_corp_tax_filing_months_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_filing_months" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">6</field>
+    </record>
+    <record id="param_corp_tax_filing_months_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_filing_months" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">6</field>
+    </record>
+    <record id="param_corp_tax_fed_instalment_threshold" model="base.time.parameter">
+        <field name="name">Federal instalments - threshold</field>
+        <field name="code">l10n_ca.corp_tax.fed.instalment_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">No instalment is required when the tax of the year or the first instalment base (preceding year) does not exceed this amount. ITA s. 157(2.1). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-157.html</field>
+    </record>
+    <record id="param_corp_tax_fed_instalment_threshold_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_instalment_threshold" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">3000</field>
+    </record>
+    <record id="param_corp_tax_fed_instalment_threshold_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_instalment_threshold" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">3000</field>
+    </record>
+    <record id="param_corp_tax_fed_instalment_threshold_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_instalment_threshold" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">3000</field>
+    </record>
+    <record id="param_corp_tax_qc_instalment_threshold" model="base.time.parameter">
+        <field name="name">Quebec instalments - threshold</field>
+        <field name="code">l10n_ca.corp_tax.qc.instalment_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Quebec counterpart of the instalment threshold of corporations. Taxation Act (Quebec) s. 1027. Source: https://www.revenuquebec.ca/en/businesses/income-tax/corporation-income-tax/</field>
+    </record>
+    <record id="param_corp_tax_qc_instalment_threshold_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_instalment_threshold" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">3000</field>
+    </record>
+    <record id="param_corp_tax_qc_instalment_threshold_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_instalment_threshold" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">3000</field>
+    </record>
+    <record id="param_corp_tax_qc_instalment_threshold_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_instalment_threshold" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">3000</field>
+    </record>
+    <record id="param_corp_tax_fed_quarterly_taxable_income_max" model="base.time.parameter">
+        <field name="name">Quarterly instalments - taxable income maximum</field>
+        <field name="code">l10n_ca.corp_tax.fed.quarterly_taxable_income_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">A small-CCPC may pay quarterly instalments when its taxable income (associated group) for the year or the preceding year does not exceed this amount. ITA s. 157(1.2)(a). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-157.html</field>
+    </record>
+    <record id="param_corp_tax_fed_quarterly_taxable_income_max_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_quarterly_taxable_income_max" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_fed_quarterly_taxable_income_max_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_quarterly_taxable_income_max" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_fed_quarterly_taxable_income_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_quarterly_taxable_income_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_fed_quarterly_taxable_capital_max" model="base.time.parameter">
+        <field name="name">Quarterly instalments - taxable capital maximum</field>
+        <field name="code">l10n_ca.corp_tax.fed.quarterly_taxable_capital_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Taxable capital employed in Canada (associated group) above which quarterly instalments are not available. ITA s. 157(1.2)(b). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-157.html</field>
+    </record>
+    <record id="param_corp_tax_fed_quarterly_taxable_capital_max_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_quarterly_taxable_capital_max" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_fed_quarterly_taxable_capital_max_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_quarterly_taxable_capital_max" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_fed_quarterly_taxable_capital_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_fed_quarterly_taxable_capital_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_qc_quarterly_taxable_income_max" model="base.time.parameter">
+        <field name="name">Quebec quarterly instalments - taxable income maximum</field>
+        <field name="code">l10n_ca.corp_tax.qc.quarterly_taxable_income_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">A CCPC may pay its Quebec instalments quarterly when its taxable income, including that of its associated corporations, for the current or the preceding taxation year does not exceed this amount, the other conditions being met. Guide CO-17.G, section 3.9.3: "son revenu imposable, y compris celui des sociétés associées, pour l'année d'imposition en cours ou pour l'année d'imposition précédente, ne dépasse pas 500 000 $". Taxation Act (Quebec) s. 1027. Source: https://www.revenuquebec.ca/fr/services-en-ligne/formulaires-et-publications/co-17-g/guide-de-la-declaration-de-revenus-des-societes/</field>
+    </record>
+    <record id="param_corp_tax_qc_quarterly_taxable_income_max_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_quarterly_taxable_income_max" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_qc_quarterly_taxable_income_max_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_quarterly_taxable_income_max" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_qc_quarterly_taxable_income_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_quarterly_taxable_income_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_qc_quarterly_paid_up_capital_max" model="base.time.parameter">
+        <field name="name">Quebec quarterly instalments - paid-up capital maximum</field>
+        <field name="code">l10n_ca.corp_tax.qc.quarterly_paid_up_capital_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">A CCPC may pay its Quebec instalments quarterly when its paid-up capital, including that of its associated corporations, for the current or the preceding taxation year does not exceed this amount, the other conditions being met. Guide CO-17.G, section 3.9.3: "son capital versé, y compris celui des sociétés associées, pour l'année d'imposition en cours ou pour l'année d'imposition précédente, ne dépasse pas 10 millions de dollars". Taxation Act (Quebec) s. 1027. Source: https://www.revenuquebec.ca/fr/services-en-ligne/formulaires-et-publications/co-17-g/guide-de-la-declaration-de-revenus-des-societes/</field>
+    </record>
+    <record id="param_corp_tax_qc_quarterly_paid_up_capital_max_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_quarterly_paid_up_capital_max" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_qc_quarterly_paid_up_capital_max_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_quarterly_paid_up_capital_max" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_qc_quarterly_paid_up_capital_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_quarterly_paid_up_capital_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_qc_general_rate" model="base.time.parameter">
+        <field name="name">Quebec general corporate rate</field>
+        <field name="code">l10n_ca.corp_tax.qc.general_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">General Quebec income tax rate of corporations. Taxation Act (Quebec) s. 771(1). Source: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/EN/BULEN_2026-3.pdf</field>
+    </record>
+    <record id="param_corp_tax_qc_general_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_general_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.115</field>
+    </record>
+    <record id="param_corp_tax_qc_general_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_general_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.115</field>
+    </record>
+    <record id="param_corp_tax_qc_general_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_general_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.115</field>
+    </record>
+    <record id="param_corp_tax_qc_sbd_rate" model="base.time.parameter">
+        <field name="name">Quebec small business deduction rate</field>
+        <field name="code">l10n_ca.corp_tax.qc.sbd_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Maximum Quebec small business deduction rate (reduction of the general rate on eligible active business income), multiplied by the remunerated hours or sector factor. Read at the FIRST DAY of the taxation year: 8.3% (3.2% net) before; 9.3% (2.2% net) for taxation years starting after April 29, 2026 - announced in Quebec Information Bulletin 2026-3, legislation to follow. Taxation Act (Quebec) s. 771.2.1. Source: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/EN/BULEN_2026-3.pdf</field>
+    </record>
+    <record id="param_corp_tax_qc_sbd_rate_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_sbd_rate" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.083</field>
+    </record>
+    <record id="param_corp_tax_qc_sbd_rate_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_sbd_rate" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.083</field>
+    </record>
+    <record id="param_corp_tax_qc_sbd_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_sbd_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.083</field>
+    </record>
+    <record id="param_corp_tax_qc_sbd_rate_20260430" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_sbd_rate" />
+        <field name="date_from">2026-04-30</field>
+        <field name="value">0.093</field>
+    </record>
+    <record id="param_corp_tax_qc_business_limit" model="base.time.parameter">
+        <field name="name">Quebec business limit</field>
+        <field name="code">l10n_ca.corp_tax.qc.business_limit</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Quebec business limit of the small business deduction, before its proration for a short taxation year and its paid-up capital and passive income grinds (Revenu Quebec form CO-771, part 8.1). Taxation Act (Quebec) s. 771.2.1.2; Quebec Information Bulletin 2026-3, note 1. Source: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/EN/BULEN_2026-3.pdf</field>
+    </record>
+    <record id="param_corp_tax_qc_business_limit_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_business_limit" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_qc_business_limit_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_business_limit" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_qc_business_limit_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_business_limit" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">500000</field>
+    </record>
+    <record id="param_corp_tax_qc_short_year_weeks" model="base.time.parameter">
+        <field name="name">Quebec business limit - short year in weeks</field>
+        <field name="code">l10n_ca.corp_tax.qc.short_year_weeks</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">A taxation year shorter than this number of weeks prorates the Quebec business limit by days / 365, before the paid-up capital and passive income grinds. Revenu Quebec form CO-771, lines 76 to 80 and note 10; guide CO-17.G, section 4.4.3.9. Source: https://www.revenuquebec.ca/en/online-services/forms-and-publications/current-details/co-771-ch/</field>
+    </record>
+    <record id="param_corp_tax_qc_short_year_weeks_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_short_year_weeks" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">51</field>
+    </record>
+    <record id="param_corp_tax_qc_short_year_weeks_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_short_year_weeks" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">51</field>
+    </record>
+    <record id="param_corp_tax_qc_short_year_weeks_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_short_year_weeks" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">51</field>
+    </record>
+    <record id="param_corp_tax_qc_pc_grind_lower" model="base.time.parameter">
+        <field name="name">Quebec business limit grind - paid-up capital lower</field>
+        <field name="code">l10n_ca.corp_tax.qc.pc_grind_lower</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Paid-up capital (the corporation and its associated corporations, last taxation year ended in the preceding calendar year; amount J of form CO-771) above which the Quebec business limit is reduced linearly, for taxation years beginning on or after April 7, 2022. Revenu Quebec form CO-771, lines 84 to 95; guide CO-17.G, section 4.4.3.9. Source: https://www.revenuquebec.ca/en/online-services/forms-and-publications/current-details/co-771-ch/</field>
+    </record>
+    <record id="param_corp_tax_qc_pc_grind_lower_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_pc_grind_lower" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_qc_pc_grind_lower_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_pc_grind_lower" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_qc_pc_grind_lower_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_pc_grind_lower" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">10000000</field>
+    </record>
+    <record id="param_corp_tax_qc_pc_grind_upper" model="base.time.parameter">
+        <field name="name">Quebec business limit grind - paid-up capital upper</field>
+        <field name="code">l10n_ca.corp_tax.qc.pc_grind_upper</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Paid-up capital (amount J of form CO-771) from which the Quebec business limit is nil, for taxation years beginning on or after April 7, 2022 (reduction: (J - lower) / 40 million x the business limit). Revenu Quebec form CO-771, lines 84 to 95 and note 11; guide CO-17.G, section 4.4.3.9. Source: https://www.revenuquebec.ca/en/online-services/forms-and-publications/current-details/co-771-ch/</field>
+    </record>
+    <record id="param_corp_tax_qc_pc_grind_upper_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_pc_grind_upper" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">50000000</field>
+    </record>
+    <record id="param_corp_tax_qc_pc_grind_upper_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_pc_grind_upper" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">50000000</field>
+    </record>
+    <record id="param_corp_tax_qc_pc_grind_upper_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_corp_tax_qc_pc_grind_upper" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">50000000</field>
+    </record>
+    <record id="param_dividend_fed_eligible_gross_up" model="base.time.parameter">
+        <field name="name">Federal gross-up - eligible dividends</field>
+        <field name="code">l10n_ca.dividend.fed.eligible_gross_up</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Gross-up of eligible dividends (taxable amount = 138% of the actual amount). ITA s. 82(1)(b)(ii). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-82.html</field>
+    </record>
+    <record id="param_dividend_fed_eligible_gross_up_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_eligible_gross_up" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.38</field>
+    </record>
+    <record id="param_dividend_fed_eligible_gross_up_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_eligible_gross_up" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.38</field>
+    </record>
+    <record id="param_dividend_fed_eligible_gross_up_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_eligible_gross_up" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.38</field>
+    </record>
+    <record id="param_dividend_fed_non_eligible_gross_up" model="base.time.parameter">
+        <field name="name">Federal gross-up - other than eligible dividends</field>
+        <field name="code">l10n_ca.dividend.fed.non_eligible_gross_up</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Gross-up of other than eligible dividends for 2019 and later (taxable amount = 115%). ITA s. 82(1)(b)(i). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-82.html</field>
+    </record>
+    <record id="param_dividend_fed_non_eligible_gross_up_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_non_eligible_gross_up" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.15</field>
+    </record>
+    <record id="param_dividend_fed_non_eligible_gross_up_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_non_eligible_gross_up" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.15</field>
+    </record>
+    <record id="param_dividend_fed_non_eligible_gross_up_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_non_eligible_gross_up" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.15</field>
+    </record>
+    <record id="param_dividend_fed_eligible_credit" model="base.time.parameter">
+        <field name="name">Federal dividend tax credit - eligible</field>
+        <field name="code">l10n_ca.dividend.fed.eligible_credit</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Federal dividend tax credit as a fraction of the taxable amount of eligible dividends: 6/11 of the gross-up = 15.0198% of the taxable amount (T5 box 26). ITA s. 121(b). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-121.html</field>
+    </record>
+    <record id="param_dividend_fed_eligible_credit_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_eligible_credit" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.150198</field>
+    </record>
+    <record id="param_dividend_fed_eligible_credit_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_eligible_credit" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.150198</field>
+    </record>
+    <record id="param_dividend_fed_eligible_credit_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_eligible_credit" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.150198</field>
+    </record>
+    <record id="param_dividend_fed_non_eligible_credit" model="base.time.parameter">
+        <field name="name">Federal dividend tax credit - other than eligible</field>
+        <field name="code">l10n_ca.dividend.fed.non_eligible_credit</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Federal dividend tax credit as a fraction of the taxable amount of other than eligible dividends: 9/13 of the gross-up = 9.0301% of the taxable amount (T5 box 12). ITA s. 121(a). Source: https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-121.html</field>
+    </record>
+    <record id="param_dividend_fed_non_eligible_credit_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_non_eligible_credit" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.090301</field>
+    </record>
+    <record id="param_dividend_fed_non_eligible_credit_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_non_eligible_credit" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.090301</field>
+    </record>
+    <record id="param_dividend_fed_non_eligible_credit_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_fed_non_eligible_credit" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.090301</field>
+    </record>
+    <record id="param_dividend_qc_eligible_gross_up" model="base.time.parameter">
+        <field name="name">Quebec gross-up - eligible dividends</field>
+        <field name="code">l10n_ca.dividend.qc.eligible_gross_up</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Quebec gross-up of eligible dividends (RL-3 box B). Taxation Act (Quebec) s. 497. Source: https://www.revenuquebec.ca/fr/citoyens/declaration-de-revenus/produire-votre-declaration-de-revenus/comment-remplir-votre-declaration-de-revenus/aide-par-ligne/400-a-447-impot-et-cotisations/ligne-415/</field>
+    </record>
+    <record id="param_dividend_qc_eligible_gross_up_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_eligible_gross_up" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.38</field>
+    </record>
+    <record id="param_dividend_qc_eligible_gross_up_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_eligible_gross_up" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.38</field>
+    </record>
+    <record id="param_dividend_qc_eligible_gross_up_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_eligible_gross_up" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.38</field>
+    </record>
+    <record id="param_dividend_qc_non_eligible_gross_up" model="base.time.parameter">
+        <field name="name">Quebec gross-up - ordinary dividends</field>
+        <field name="code">l10n_ca.dividend.qc.non_eligible_gross_up</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Quebec gross-up of ordinary (other than eligible) dividends; unchanged by Quebec Information Bulletin 2026-3. Taxation Act (Quebec) s. 497. Source: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/EN/BULEN_2026-3.pdf</field>
+    </record>
+    <record id="param_dividend_qc_non_eligible_gross_up_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_non_eligible_gross_up" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.15</field>
+    </record>
+    <record id="param_dividend_qc_non_eligible_gross_up_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_non_eligible_gross_up" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.15</field>
+    </record>
+    <record id="param_dividend_qc_non_eligible_gross_up_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_non_eligible_gross_up" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.15</field>
+    </record>
+    <record id="param_dividend_qc_eligible_credit" model="base.time.parameter">
+        <field name="name">Quebec dividend tax credit - eligible</field>
+        <field name="code">l10n_ca.dividend.qc.eligible_credit</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Quebec dividend tax credit on eligible dividends: 11.7% of the taxable amount (16.146% of the actual amount, RL-3 box C). Taxation Act (Quebec) s. 767. Source: https://www.revenuquebec.ca/fr/citoyens/declaration-de-revenus/produire-votre-declaration-de-revenus/comment-remplir-votre-declaration-de-revenus/aide-par-ligne/400-a-447-impot-et-cotisations/ligne-415/</field>
+    </record>
+    <record id="param_dividend_qc_eligible_credit_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_eligible_credit" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.117</field>
+    </record>
+    <record id="param_dividend_qc_eligible_credit_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_eligible_credit" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.117</field>
+    </record>
+    <record id="param_dividend_qc_eligible_credit_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_eligible_credit" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.117</field>
+    </record>
+    <record id="param_dividend_qc_non_eligible_credit" model="base.time.parameter">
+        <field name="name">Quebec dividend tax credit - ordinary</field>
+        <field name="code">l10n_ca.dividend.qc.non_eligible_credit</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">Quebec dividend tax credit on ordinary dividends as a fraction of the taxable amount, read at the payment date: 3.42% (3.933% of the actual amount); 2.69% (3.09% of the actual amount) for dividends received after December 31, 2026 - announced in Quebec Information Bulletin 2026-3, legislation to follow. Taxation Act (Quebec) s. 767. Source: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/EN/BULEN_2026-3.pdf</field>
+    </record>
+    <record id="param_dividend_qc_non_eligible_credit_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_non_eligible_credit" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">0.0342</field>
+    </record>
+    <record id="param_dividend_qc_non_eligible_credit_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_non_eligible_credit" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">0.0342</field>
+    </record>
+    <record id="param_dividend_qc_non_eligible_credit_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_non_eligible_credit" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.0342</field>
+    </record>
+    <record id="param_dividend_qc_non_eligible_credit_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_qc_non_eligible_credit" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">0.0269</field>
+    </record>
+    <record id="param_dividend_t5_min_amount" model="base.time.parameter">
+        <field name="name">T5 slip - minimum amount</field>
+        <field name="code">l10n_ca.dividend.t5_min_amount</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field name="description">A T5 slip is not required for a recipient whose total amount for the calendar year is less than this amount. Administrative threshold of the CRA T5 guide (T4015, "When you do not have to prepare a T5 slip"); Income Tax Regulations s. 201 itself sets no amount. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4015/t5-guide-return-investment-income.html</field>
+    </record>
+    <record id="param_dividend_t5_min_amount_20240101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_t5_min_amount" />
+        <field name="date_from">2024-01-01</field>
+        <field name="value">50</field>
+    </record>
+    <record id="param_dividend_t5_min_amount_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_t5_min_amount" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">50</field>
+    </record>
+    <record id="param_dividend_t5_min_amount_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_dividend_t5_min_amount" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">50</field>
+    </record>
+</odoo>

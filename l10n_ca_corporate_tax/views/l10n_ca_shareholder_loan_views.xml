@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_l10n_ca_shareholder_loan_list" model="ir.ui.view">
+        <field name="name">l10n.ca.shareholder.loan.list</field>
+        <field name="model">l10n.ca.shareholder.loan</field>
+        <field name="arch" type="xml">
+            <list
+                decoration-danger="state == 'included'"
+                decoration-warning="state == 'at_risk'"
+                decoration-muted="state in ('none', 'repaid')"
+                create="false"
+            >
+                <field name="partner_id" />
+                <field name="date_to" />
+                <field name="opening_balance" sum="Total" />
+                <field name="advance_amount" sum="Total" />
+                <field name="repayment_amount" sum="Total" />
+                <field name="closing_balance" sum="Total" />
+                <field name="loan_amount" sum="Total" />
+                <field name="deadline_date" />
+                <field name="unrepaid_amount" sum="Total" />
+                <field name="inclusion_amount" sum="Total" />
+                <field name="interest_benefit" sum="Total" />
+                <field name="state" widget="badge" />
+                <field name="company_id" groups="base.group_multi_company" optional="hide" />
+                <field name="currency_id" column_invisible="1" />
+            </list>
+        </field>
+    </record>
+    <record id="view_l10n_ca_shareholder_loan_form" model="ir.ui.view">
+        <field name="name">l10n.ca.shareholder.loan.form</field>
+        <field name="model">l10n.ca.shareholder.loan</field>
+        <field name="arch" type="xml">
+            <form create="false">
+                <header>
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <div class="alert alert-warning" role="alert" invisible="state != 'at_risk'">
+                        Loans of this year are still unpaid: repay them before the
+                        deadline or they become taxable to the shareholder (ITA s. 15(2)).
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="partner_id" readonly="1" /></h1>
+                    </div>
+                    <group>
+                        <group string="Fiscal Year">
+                            <field name="date_from" readonly="1" />
+                            <field name="date_to" readonly="1" />
+                            <field name="computed_on" readonly="1" />
+                            <field name="company_id" groups="base.group_multi_company" readonly="1" />
+                            <field name="currency_id" invisible="1" />
+                        </group>
+                        <group string="Balances">
+                            <field name="opening_balance" readonly="1" />
+                            <field name="advance_amount" readonly="1" />
+                            <field name="repayment_amount" readonly="1" />
+                            <field name="closing_balance" readonly="1" />
+                        </group>
+                        <group string="Repayment Rule (s. 15(2), 15(2.6))">
+                            <field name="loan_amount" readonly="1" />
+                            <field name="deadline_date" readonly="1" />
+                            <field name="unrepaid_amount" readonly="1" />
+                            <field name="inclusion_amount" readonly="1" />
+                        </group>
+                        <group string="Deemed Interest (s. 80.4)">
+                            <field name="benefit_year" readonly="1" />
+                            <field name="deemed_interest" readonly="1" />
+                            <field name="interest_paid" />
+                            <field name="interest_benefit" />
+                        </group>
+                    </group>
+                    <field name="note" placeholder="Notes" />
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+    <record id="view_l10n_ca_shareholder_loan_search" model="ir.ui.view">
+        <field name="name">l10n.ca.shareholder.loan.search</field>
+        <field name="model">l10n.ca.shareholder.loan</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="partner_id" />
+                <filter name="at_risk" string="To Repay" domain="[('state', '=', 'at_risk')]" />
+                <filter name="included" string="Taxable" domain="[('state', '=', 'included')]" />
+                <group expand="0" string="Group By">
+                    <filter name="group_partner" string="Shareholder" context="{'group_by': 'partner_id'}" />
+                    <filter name="group_year" string="Fiscal Year End" context="{'group_by': 'date_to:year'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_l10n_ca_shareholder_loan" model="ir.actions.act_window">
+        <field name="name">Shareholder Loans</field>
+        <field name="res_model">l10n.ca.shareholder.loan</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No shareholder loan follow-up yet.</p>
+            <p>
+                Flag the shareholder loan accounts in the chart of accounts and the
+                shareholders on their partner form, then use Compute Shareholder Loans.
+            </p>
+        </field>
+    </record>
+    <menuitem
+        id="menu_l10n_ca_shareholder_loan"
+        name="Shareholder Loans"
+        parent="menu_l10n_ca_corporate_tax"
+        action="action_l10n_ca_shareholder_loan"
+        sequence="10"
+    />
+</odoo>

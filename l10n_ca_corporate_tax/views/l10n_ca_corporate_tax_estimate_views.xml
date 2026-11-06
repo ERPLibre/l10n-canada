@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_l10n_ca_corporate_tax_estimate_list" model="ir.ui.view">
+        <field name="name">l10n.ca.corporate.tax.estimate.list</field>
+        <field name="model">l10n.ca.corporate.tax.estimate</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="date_from" />
+                <field name="date_to" />
+                <field name="accounting_income" />
+                <field name="taxable_income" />
+                <field name="federal_tax" />
+                <field name="quebec_tax" />
+                <field name="total_tax" />
+                <field name="company_id" groups="base.group_multi_company" optional="hide" />
+                <field name="currency_id" column_invisible="1" />
+            </list>
+        </field>
+    </record>
+    <record id="view_l10n_ca_corporate_tax_estimate_form" model="ir.ui.view">
+        <field name="name">l10n.ca.corporate.tax.estimate.form</field>
+        <field name="model">l10n.ca.corporate.tax.estimate</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_load_accounting" type="object" string="Load from Accounting" class="btn-primary" />
+                    <button name="action_compute_instalments" type="object" string="Compute Instalments" />
+                </header>
+                <sheet>
+                    <div class="alert alert-info" role="alert">
+                        <strong>Estimate only.</strong> This page helps plan the corporate
+                        income tax and the instalments; it is not a T2 or CO-17 return.
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1" /></h1>
+                    </div>
+                    <group>
+                        <group string="Fiscal Year">
+                            <field name="date_from" />
+                            <field name="date_to" />
+                            <field name="ccpc" />
+                            <field name="company_id" groups="base.group_multi_company" />
+                            <field name="currency_id" invisible="1" />
+                        </group>
+                        <group string="Deadlines">
+                            <field name="fed_balance_due_date" />
+                            <field name="qc_balance_due_date" />
+                            <field name="filing_due_date" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Taxable Income" name="income">
+                            <group>
+                                <group>
+                                    <field name="accounting_income" />
+                                    <field name="loss_carryforward" />
+                                    <field name="taxable_income" />
+                                </group>
+                                <group>
+                                    <field name="investment_income" />
+                                    <field name="psb_income" />
+                                    <field name="active_income" />
+                                </group>
+                            </group>
+                            <field name="adjustment_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle" />
+                                    <field name="adjustment_type" />
+                                    <field name="name" />
+                                    <field name="amount" sum="Total" />
+                                    <field name="auto" />
+                                    <field name="currency_id" column_invisible="1" />
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Business Limit" name="business_limit">
+                            <group>
+                                <group string="Associated Group">
+                                    <field name="business_limit_allocation" />
+                                    <field name="taxable_capital" />
+                                    <field name="previous_aaii" />
+                                </group>
+                                <group string="Result">
+                                    <field name="business_limit" />
+                                    <field name="business_limit_reduction" />
+                                    <field name="reduced_business_limit" />
+                                    <field name="sbd_income" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Federal" name="federal">
+                            <group>
+                                <group>
+                                    <field name="fed_base_tax" />
+                                    <field name="fed_abatement" />
+                                    <field name="fed_sbd" />
+                                    <field name="fed_full_rate_income" />
+                                    <field name="fed_general_reduction" />
+                                    <field name="fed_refundable_tax" />
+                                    <field name="fed_psb_tax" />
+                                    <field name="federal_tax" />
+                                </group>
+                                <group string="Refundable Tax">
+                                    <field name="nerdtoh_addition" />
+                                    <field name="non_eligible_dividends_paid" />
+                                    <field name="dividend_refund" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Quebec" name="quebec">
+                            <group>
+                                <group>
+                                    <field name="qc_general_tax" />
+                                    <field name="qc_business_limit" />
+                                    <field name="qc_sbd_rate" />
+                                    <field name="qc_sbd_factor" />
+                                    <field name="paid_hours_id" />
+                                    <field name="qc_sbd" />
+                                    <field name="quebec_tax" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Instalments" name="instalments">
+                            <group>
+                                <group string="Preceding Year">
+                                    <field name="previous_taxable_income" />
+                                    <field name="previous_sbd_claimed" />
+                                    <field name="previous_business_income" />
+                                    <field name="previous_qc_paid_up_capital" />
+                                    <field name="previous_federal_tax" />
+                                    <field name="previous_quebec_tax" />
+                                </group>
+                                <group string="This Year">
+                                    <field name="group_taxable_income" />
+                                    <field name="qc_paid_up_capital" />
+                                    <field name="tax_obligations_met" />
+                                    <field name="instalment_frequency" />
+                                    <field name="qc_instalment_frequency" />
+                                    <field name="fed_instalments_required" />
+                                    <field name="qc_instalments_required" />
+                                    <field name="total_tax" />
+                                </group>
+                            </group>
+                            <field name="instalment_ids">
+                                <list editable="bottom">
+                                    <field name="date" />
+                                    <field name="jurisdiction" />
+                                    <field name="amount" sum="Total" />
+                                    <field name="currency_id" column_invisible="1" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                    <field name="warning_message" readonly="1" class="text-warning" />
+                    <field name="note" placeholder="Notes" />
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+    <record id="action_l10n_ca_corporate_tax_estimate" model="ir.actions.act_window">
+        <field name="name">Corporate Tax Estimates</field>
+        <field name="res_model">l10n.ca.corporate.tax.estimate</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem
+        id="menu_l10n_ca_corporate_tax_estimate"
+        name="Corporate Tax Estimates"
+        parent="menu_l10n_ca_corporate_tax"
+        action="action_l10n_ca_corporate_tax_estimate"
+        sequence="40"
+    />
+</odoo>

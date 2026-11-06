@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="seq_l10n_ca_dividend" model="ir.sequence">
+        <field name="name">Dividend</field>
+        <field name="code">l10n.ca.dividend</field>
+        <field name="prefix">DIV/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+</odoo>

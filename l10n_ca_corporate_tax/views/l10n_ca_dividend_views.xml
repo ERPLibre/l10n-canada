@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_l10n_ca_dividend_list" model="ir.ui.view">
+        <field name="name">l10n.ca.dividend.list</field>
+        <field name="model">l10n.ca.dividend</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state == 'cancel'">
+                <field name="name" />
+                <field name="partner_id" />
+                <field name="resolution_date" />
+                <field name="payment_date" />
+                <field name="dividend_type" />
+                <field name="amount" sum="Total" />
+                <field name="state" widget="badge" />
+                <field name="company_id" groups="base.group_multi_company" optional="hide" />
+                <field name="currency_id" column_invisible="1" />
+            </list>
+        </field>
+    </record>
+    <record id="view_l10n_ca_dividend_form" model="ir.ui.view">
+        <field name="name">l10n.ca.dividend.form</field>
+        <field name="model">l10n.ca.dividend</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_declare" type="object" string="Declare" class="btn-primary" invisible="state != 'draft'" />
+                    <button name="action_pay" type="object" string="Pay" class="btn-primary" invisible="state != 'declared'" />
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state == 'cancel'" confirm="The posted entries will be reversed. Continue?" />
+                    <button name="action_draft" type="object" string="Reset to Draft" invisible="state != 'cancel'" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,declared,paid" />
+                </header>
+                <sheet>
+                    <div class="alert alert-warning" role="alert" invisible="not warning_message">
+                        <field name="warning_message" />
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1" /></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" readonly="state != 'draft'" />
+                            <field name="dividend_type" readonly="state != 'draft'" />
+                            <field name="amount" readonly="state != 'draft'" />
+                            <field name="company_id" groups="base.group_multi_company" readonly="state != 'draft'" />
+                            <field name="currency_id" invisible="1" />
+                        </group>
+                        <group>
+                            <field name="resolution_date" readonly="state != 'draft'" />
+                            <field name="payment_date" readonly="state in ('paid', 'cancel')" />
+                            <field name="payment_journal_id" readonly="state in ('paid', 'cancel')" />
+                            <field name="declaration_move_id" />
+                            <field name="payment_move_id" />
+                        </group>
+                    </group>
+                    <field name="note" placeholder="Notes (resolution reference, ...)" />
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+    <record id="action_l10n_ca_dividend" model="ir.actions.act_window">
+        <field name="name">Dividends</field>
+        <field name="res_model">l10n.ca.dividend</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem
+        id="menu_l10n_ca_dividend"
+        name="Dividends"
+        parent="menu_l10n_ca_corporate_tax"
+        action="action_l10n_ca_dividend"
+        sequence="50"
+    />
+</odoo>

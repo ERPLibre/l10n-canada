@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="rule_l10n_ca_shareholder_loan_company" model="ir.rule">
+        <field name="name">l10n ca shareholder loan: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_shareholder_loan" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_l10n_ca_paid_hours_company" model="ir.rule">
+        <field name="name">l10n ca paid hours: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_paid_hours" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_l10n_ca_paid_hours_line_company" model="ir.rule">
+        <field name="name">l10n ca paid hours line: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_paid_hours_line" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_l10n_ca_corporate_tax_estimate_company" model="ir.rule">
+        <field name="name">l10n ca corporate tax estimate: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_corporate_tax_estimate" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_l10n_ca_corporate_tax_adjustment_company" model="ir.rule">
+        <field name="name">l10n ca corporate tax adjustment: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_corporate_tax_adjustment" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_l10n_ca_corporate_tax_instalment_company" model="ir.rule">
+        <field name="name">l10n ca corporate tax instalment: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_corporate_tax_instalment" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_l10n_ca_dividend_company" model="ir.rule">
+        <field name="name">l10n ca dividend: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_dividend" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_l10n_ca_dividend_slip_company" model="ir.rule">
+        <field name="name">l10n ca dividend slip: multi-company</field>
+        <field name="model_id" ref="model_l10n_ca_dividend_slip" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

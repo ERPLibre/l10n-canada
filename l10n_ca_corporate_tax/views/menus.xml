@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <menuitem
+        id="menu_l10n_ca_corporate_tax"
+        name="Corporate Tax"
+        parent="l10n_ca_time_parameter.menu_l10n_ca_root"
+        sequence="30"
+    />
+</odoo>

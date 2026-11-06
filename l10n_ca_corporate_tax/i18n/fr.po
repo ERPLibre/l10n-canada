@@ -1,0 +1,2411 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_corporate_tax
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 03:22+0000\n"
+"PO-Revision-Date: 2026-10-27 03:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_shareholder_loan.py:0
+msgid ""
+"%(amount)s %(currency)s lent to %(partner)s in the fiscal year ending "
+"%(year_end)s is still unpaid. Unless it is repaid by %(deadline)s, it is "
+"taxable to the shareholder (ITA s. 15(2))."
+msgstr ""
+"Le montant de %(amount)s %(currency)s prêté à %(partner)s au cours de "
+"l'exercice se terminant le %(year_end)s est toujours impayé. À moins d'être "
+"remboursé au plus tard le %(deadline)s, il est imposable pour l'actionnaire "
+"(LIR, par. 15(2))."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid ""
+"<strong>Estimate only.</strong> This page helps plan the corporate\n"
+"                        income tax and the instalments; it is not a T2 or CO-17 return."
+msgstr ""
+"<strong>Estimation seulement.</strong> Cette page aide à planifier l'impôt sur le revenu\n"
+"                        des sociétés et les acomptes provisionnels; ce n'est pas une déclaration T2 ou CO-17."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.constraint,message:l10n_ca_corporate_tax.constraint_l10n_ca_dividend_l10n_ca_dividend_positive
+msgid "A dividend must be positive."
+msgstr "Un dividende doit être positif."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__source
+msgid ""
+"A person holding, directly or indirectly, the majority of the voting shares "
+"counts all the hours worked to take an active part in the business, paid or "
+"not, multiplied by the shareholder hours factor; hours already counted "
+"elsewhere must not be typed again. Other people count only paid hours."
+msgstr ""
+"Une personne détenant, directement ou indirectement, la majorité des actions"
+" avec droit de vote compte toutes les heures travaillées pour prendre une "
+"part active aux activités de la société, payées ou non, multipliées par le "
+"facteur des heures de l'actionnaire; les heures déjà comptées ailleurs ne "
+"doivent pas être saisies de nouveau. Les autres personnes ne comptent que "
+"les heures payées."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__accounting_income
+msgid "Accounting Income Before Taxes"
+msgstr "Bénéfice comptable avant impôts"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.res_config_settings_view_form
+msgid "Accounts and journal of the dividend declaration entries"
+msgstr "Comptes et journal des écritures de déclaration de dividendes"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_needaction
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_needaction
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_needaction
+msgid "Action Needed"
+msgstr "Nécessite une action"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__active_income
+msgid "Active Business Income"
+msgstr "Revenu tiré d'une entreprise exploitée activement"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_ids
+msgid "Activities"
+msgstr "Activités"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Décoration d'exception d'activité"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_state
+msgid "Activity State"
+msgstr "État de l'activité"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icône du type d'activité"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__nerdtoh_addition
+msgid ""
+"Added to the non-eligible refundable dividend tax on hand; recovered when "
+"taxable dividends are paid."
+msgstr ""
+"Ajouté à l'impôt en main remboursable au titre de dividendes non déterminés;"
+" récupéré lors du versement de dividendes imposables."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__fed_refundable_tax
+msgid "Additional Refundable Tax on Investment Income"
+msgstr "Impôt remboursable supplémentaire sur le revenu de placement"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__fed_psb_tax
+msgid "Additional Tax on PSB Income"
+msgstr "Impôt supplémentaire sur le revenu d'une EPSP"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_aaii
+msgid "Adjusted Aggregate Investment Income of the Preceding Year"
+msgstr "Revenu de placement total ajusté de l'année précédente"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__adjustment_ids
+msgid "Adjustments"
+msgstr "Ajustements"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__advance_amount
+msgid "Advances"
+msgstr "Avances"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__loan_amount
+msgid ""
+"Advances of the year not covered by an amount the company owed the "
+"shareholder."
+msgstr ""
+"Avances de l'année non couvertes par un montant que la société devait à "
+"l'actionnaire."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__investment_income
+msgid "Aggregate Investment Income"
+msgstr "Revenu de placement total"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__amount
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__amount
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__amount
+msgid "Amount"
+msgstr "Montant"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__inclusion_amount
+msgid "Amount Taxable to the Shareholder"
+msgstr "Montant imposable pour l'actionnaire"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Associated Group"
+msgstr "Groupe associé"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__sector_exempt
+msgid ""
+"At least the upper ratio of the activities are primary or manufacturing "
+"sectors activities: the full Quebec small business deduction applies "
+"whatever the hours."
+msgstr ""
+"Au moins le ratio supérieur des activités relève des secteurs primaire ou "
+"manufacturier : la pleine déduction pour petite entreprise du Québec "
+"s'applique, quelles que soient les heures."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_attachment_count
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_attachment_count
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__auto
+msgid "Automatic"
+msgstr "Automatique"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__opening_balance
+msgid ""
+"Balance of the shareholder loan accounts at the start of the year; positive "
+"when the shareholder owes the company."
+msgstr ""
+"Solde des comptes de prêt à l'actionnaire au début de l'année; positif "
+"lorsque l'actionnaire doit de l'argent à la société."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_form
+msgid "Balances"
+msgstr "Soldes"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__benefit_year
+msgid "Benefit Calendar Year"
+msgstr "Année civile de l'avantage"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_adjustment__adjustment_type__depreciation
+msgid "Book depreciation"
+msgstr "Amortissement comptable"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Book depreciation added back"
+msgstr "Amortissement comptable réintégré"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_business_income
+msgid "Business Income in the Preceding Year"
+msgstr "Revenu d'entreprise dans l'année précédente"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__business_limit
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Business Limit"
+msgstr "Plafond des affaires"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__business_limit_allocation
+msgid "Business Limit Allocated (%)"
+msgstr "Plafond des affaires attribué (%)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__business_limit_reduction
+msgid "Business Limit Grind"
+msgstr "Réduction du plafond des affaires"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__ccpc
+msgid "CCPC"
+msgstr "SPCC"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__csv_file
+msgid "CSV File"
+msgstr "Fichier CSV"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__year
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__year
+msgid "Calendar Year"
+msgstr "Année civile"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__benefit_year
+msgid ""
+"Calendar year of the deemed interest benefit: the year of the fiscal year "
+"end."
+msgstr ""
+"Année civile de l'avantage au titre des intérêts réputés : l'année de la fin"
+" de l'exercice."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.actions.server,name:l10n_ca_corporate_tax.ir_cron_l10n_ca_shareholder_loan_ir_actions_server
+msgid "Canada: shareholder loan deadlines"
+msgstr "Canada : échéances des prêts aux actionnaires"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_dividend__state__cancel
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_adjustment__adjustment_type__cca
+msgid "Capital cost allowance"
+msgstr "Déduction pour amortissement"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "City"
+msgstr "Ville"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_slip_wizard_form
+msgid "Close"
+msgstr "Fermer"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__closing_balance
+msgid "Closing Balance"
+msgstr "Solde de clôture"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__company_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__company_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__company_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__company_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__company_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__company_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__company_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__company_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__company_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_wizard_form
+msgid "Compute"
+msgstr "Calculer"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Compute Instalments"
+msgstr "Calculer les acomptes provisionnels"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model,name:l10n_ca_corporate_tax.model_l10n_ca_shareholder_loan_wizard
+msgid "Compute Shareholder Loan Follow-up"
+msgstr "Calculer le suivi des prêts aux actionnaires"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.actions.act_window,name:l10n_ca_corporate_tax.action_l10n_ca_shareholder_loan_wizard
+#: model:ir.ui.menu,name:l10n_ca_corporate_tax.menu_l10n_ca_shareholder_loan_wizard
+msgid "Compute Shareholder Loans"
+msgstr "Calculer les prêts aux actionnaires"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_partner__l10n_ca_related_person
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_users__l10n_ca_related_person
+msgid "Connected to a Shareholder"
+msgstr "Lié à un actionnaire"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model,name:l10n_ca_corporate_tax.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.ui.menu,name:l10n_ca_corporate_tax.menu_l10n_ca_corporate_tax
+msgid "Corporate Tax"
+msgstr "Impôt des sociétés"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model,name:l10n_ca_corporate_tax.model_l10n_ca_corporate_tax_adjustment
+msgid "Corporate Tax Estimate Adjustment"
+msgstr "Ajustement de l'estimation de l'impôt des sociétés"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.actions.act_window,name:l10n_ca_corporate_tax.action_l10n_ca_corporate_tax_estimate
+#: model:ir.ui.menu,name:l10n_ca_corporate_tax.menu_l10n_ca_corporate_tax_estimate
+msgid "Corporate Tax Estimates"
+msgstr "Estimations de l'impôt des sociétés"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model,name:l10n_ca_corporate_tax.model_l10n_ca_corporate_tax_instalment
+msgid "Corporate Tax Instalment"
+msgstr "Acompte provisionnel d'impôt des sociétés"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_company__l10n_ca_corporate_tax_user_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_corporate_tax_user_id
+msgid "Corporate Tax Responsible"
+msgstr "Responsable de l'impôt des sociétés"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_account_account__l10n_ca_tax_treatment
+msgid "Corporate Tax Treatment"
+msgstr "Traitement fiscal (impôt des sociétés)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__counted_hours
+msgid "Counted Hours"
+msgstr "Heures comptées"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__own_hours
+msgid ""
+"Counted hours of the year: manual lines plus the hours brought by a payroll "
+"bridge."
+msgstr ""
+"Heures comptées de l'année : lignes manuelles plus les heures fournies par "
+"un lien avec la paie."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__auto
+msgid "Created from the books; replaced at the next load."
+msgstr "Créé à partir des livres comptables; remplacé au prochain chargement."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__create_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__create_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__create_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__create_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__create_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__create_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__create_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__create_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__csv_filename
+msgid "Csv Filename"
+msgstr "Nom du fichier CSV"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__currency_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__computed_on
+msgid "Date at which repayments were taken into account."
+msgstr "Date à laquelle les remboursements ont été pris en compte."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_dividend__resolution_date
+msgid "Date of the directors' resolution declaring the dividend."
+msgstr "Date de la résolution des administrateurs déclarant le dividende."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_dividend__payment_date
+msgid ""
+"Date the dividend is paid: it decides the calendar year of the T5 and RL-3 "
+"slips and the rates applied."
+msgstr ""
+"Date de versement du dividende : elle détermine l'année civile des feuillets"
+" T5 et des relevés 3 (RL-3) ainsi que les taux appliqués."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Deadlines"
+msgstr "Échéances"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_account_account__l10n_ca_shareholder_loan
+msgid ""
+"Debit balances of this account per partner are amounts lent to a shareholder"
+" or a connected person: the shareholder loan follow-up (ITA s. 15(2), 80.4) "
+"reads its journal items."
+msgstr ""
+"Les soldes débiteurs de ce compte par partenaire sont des montants prêtés à "
+"un actionnaire ou à une personne liée : le suivi des prêts aux actionnaires "
+"(LIR, par. 15(2), art. 80.4) lit ses écritures de journal."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__declaration_move_id
+msgid "Declaration Entry"
+msgstr "Écriture de déclaration"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_form
+msgid "Declare"
+msgstr "Déclarer"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_dividend__state__declared
+msgid "Declared"
+msgstr "Déclaré"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_form
+msgid "Deemed Interest (s. 80.4)"
+msgstr "Intérêts réputés (art. 80.4)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__deemed_interest
+msgid "Deemed Interest at Prescribed Rate"
+msgstr "Intérêts réputés au taux prescrit"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__name
+msgid "Description"
+msgstr "Description"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__display_name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__display_name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__display_name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__display_name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__display_name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__display_name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__display_name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__display_name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid "Dividend %(type)s - %(partner)s"
+msgstr "Dividende %(type)s - %(partner)s"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_company__l10n_ca_dividend_journal_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_dividend_journal_id
+msgid "Dividend Declaration Journal"
+msgstr "Journal de déclaration des dividendes"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__dividend_refund
+msgid "Dividend Refund (Estimate)"
+msgstr "Remboursement au titre de dividendes (estimation)"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid "Dividend payment - %s"
+msgstr "Versement de dividende - %s"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/report/l10n_ca_dividend_slip_xlsx.py:0
+msgid "Dividend slips"
+msgstr "Feuillets de dividendes"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model,name:l10n_ca_corporate_tax.model_l10n_ca_dividend
+msgid "Dividend to a Shareholder"
+msgstr "Dividende à un actionnaire"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.actions.act_window,name:l10n_ca_corporate_tax.action_l10n_ca_dividend
+#: model:ir.ui.menu,name:l10n_ca_corporate_tax.menu_l10n_ca_dividend
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.res_config_settings_view_form
+msgid "Dividends"
+msgstr "Dividendes"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_company__l10n_ca_dividend_account_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_dividend_account_id
+msgid "Dividends Declared Account"
+msgstr "Compte des dividendes déclarés"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_company__l10n_ca_dividend_payable_account_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_dividend_payable_account_id
+msgid "Dividends Payable Account"
+msgstr "Compte des dividendes à payer"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_dividend__state__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__date
+msgid "Due Date"
+msgstr "Date d'échéance"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_dividend__dividend_type__eligible
+msgid "Eligible"
+msgstr "Déterminé"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid ""
+"Eligible dividends of the fiscal year exceed the general rate income pool "
+"(GRIP) by %(excess).2f: the excess is an excessive eligible dividend "
+"designation subject to Part III.1 tax. Consider designating it as an "
+"ordinary dividend or electing under ITA s. 185.1(2)."
+msgstr ""
+"Les dividendes déterminés de l'exercice dépassent le compte de revenu à taux"
+" général (CRTG) de %(excess).2f : l'excédent constitue une désignation "
+"excessive de dividende déterminé assujettie à l'impôt de la partie III.1. "
+"Envisagez de le désigner comme dividende ordinaire ou de faire le choix "
+"prévu au par. 185.1(2) de la LIR."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_paid_hours_line__source__employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__name
+msgid "Employee or Description"
+msgstr "Employé ou description"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__ccpc
+msgid ""
+"Enables the small business deduction and the CCPC rules (quarterly "
+"instalments, enhanced refundable credits)."
+msgstr ""
+"Active la déduction pour petite entreprise et les règles des SPCC (acomptes "
+"provisionnels trimestriels, crédits remboursables bonifiés)."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_company__l10n_ca_dividend_account_id
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_dividend_account_id
+msgid ""
+"Equity account debited when a dividend is declared (retained earnings or "
+"dividends declared)."
+msgstr ""
+"Compte de capitaux propres débité lors de la déclaration d'un dividende "
+"(bénéfices non répartis ou dividendes déclarés)."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__estimate_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__estimate_id
+msgid "Estimate"
+msgstr "Estimation"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Estimate %s"
+msgstr "Estimation %s"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__t5_required
+msgid ""
+"False when the dividends paid to the recipient in the year are below the "
+"minimum amount of the T5 return."
+msgstr ""
+"Faux lorsque les dividendes versés au bénéficiaire dans l'année sont "
+"inférieurs au montant minimal de la déclaration T5."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Federal"
+msgstr "Fédéral"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_instalment__jurisdiction__federal
+msgid "Federal (CRA)"
+msgstr "Fédéral (ARC)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__fed_abatement
+msgid "Federal Abatement"
+msgstr "Abattement d'impôt fédéral"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__fed_balance_due_date
+msgid "Federal Balance Due"
+msgstr "Solde dû au fédéral"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__fed_base_tax
+msgid "Federal Basic Tax"
+msgstr "Impôt fédéral de base"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__fed_general_reduction
+msgid "Federal General Rate Reduction"
+msgstr "Réduction du taux général fédéral"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__instalment_frequency
+msgid "Federal Instalment Frequency"
+msgstr "Fréquence des acomptes provisionnels fédéraux"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__fed_instalments_required
+msgid "Federal Instalments Required"
+msgstr "Acomptes provisionnels fédéraux requis"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__federal_tax
+msgid "Federal Part I Tax"
+msgstr "Impôt fédéral de la partie I"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__total_tax
+msgid ""
+"Federal Part I tax plus Quebec tax, less the estimated dividend refund."
+msgstr ""
+"Impôt fédéral de la partie I plus l'impôt du Québec, moins le remboursement "
+"au titre de dividendes estimé."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__fed_sbd
+msgid "Federal Small Business Deduction"
+msgstr "Déduction pour petite entreprise fédérale"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_federal_tax
+msgid "Federal Tax of the Preceding Year"
+msgstr "Impôt fédéral de l'année précédente"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_federal_tax
+msgid ""
+"First instalment base: instalments are required only when both this amount "
+"and the tax of the year exceed the threshold."
+msgstr ""
+"Première base de calcul des acomptes : les acomptes provisionnels ne sont "
+"requis que si ce montant et l'impôt de l'année dépassent tous deux le seuil."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_paid_hours_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_form
+msgid "Fiscal Year"
+msgstr "Exercice"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__date_to
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__date_to
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__date_to
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__date_to
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_search
+msgid "Fiscal Year End"
+msgstr "Fin de l'exercice"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__date_from
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__date_from
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__date_from
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__date_from
+msgid "Fiscal Year Start"
+msgstr "Début de l'exercice"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.actions.act_window,help:l10n_ca_corporate_tax.action_l10n_ca_shareholder_loan
+msgid ""
+"Flag the shareholder loan accounts in the chart of accounts and the\n"
+"                shareholders on their partner form, then use Compute Shareholder Loans."
+msgstr ""
+"Marquez les comptes de prêt aux actionnaires dans le plan comptable et les\n"
+"                actionnaires sur leur fiche de partenaire, puis utilisez Calculer les prêts aux actionnaires."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_follower_ids
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_follower_ids
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_follower_ids
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_partner_ids
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_partner_ids
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnés (partenaires)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icône Font Awesome, p. ex. fa-tasks"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__sbd_factor
+msgid ""
+"Fraction of the Quebec small business deduction rate the company is entitled"
+" to: 0 at or below the lower hours threshold, 1 at or above the upper "
+"threshold, linear in between."
+msgstr ""
+"Fraction du taux de la déduction pour petite entreprise du Québec à laquelle"
+" la société a droit : 0 au seuil inférieur d'heures ou en deçà, 1 au seuil "
+"supérieur ou au-delà, linéaire entre les deux."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_company__l10n_ca_qc_instalment_frequency
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_qc_instalment_frequency
+msgid ""
+"Frequency of the Quebec corporate income tax instalments, whose quarterly "
+"conditions differ from the federal ones. Empty: the federal frequency."
+msgstr ""
+"Fréquence des acomptes provisionnels d'impôt des sociétés du Québec, dont "
+"les conditions des versements trimestriels diffèrent des conditions "
+"fédérales. Vide : la fréquence fédérale."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__fed_full_rate_income
+msgid "Full Rate Taxable Income"
+msgstr "Revenu imposable au plein taux"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_company__l10n_ca_grip_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_grip_date
+msgid "GRIP Balance Date"
+msgstr "Date du solde du CRTG"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_company__l10n_ca_grip_balance
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_grip_balance
+msgid ""
+"GRIP available at the date below, from schedule 53 of the T2 return. "
+"Eligible dividends above it are excessive eligible dividend designations "
+"(Part III.1 tax)."
+msgstr ""
+"CRTG disponible à la date ci-dessous, selon l'annexe 53 de la déclaration "
+"T2. Les dividendes déterminés qui le dépassent constituent des désignations "
+"excessives de dividendes déterminés (impôt de la partie III.1)."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.res_config_settings_view_form
+msgid "GRIP of schedule 53, checked when eligible dividends are declared"
+msgstr ""
+"CRTG de l'annexe 53, vérifié lors de la déclaration de dividendes déterminés"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.res_config_settings_view_form
+msgid "General Rate Income Pool"
+msgstr "Compte de revenu à taux général"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_company__l10n_ca_grip_balance
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_grip_balance
+msgid "General Rate Income Pool (GRIP)"
+msgstr "Compte de revenu à taux général (CRTG)"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_slip_wizard_form
+msgid "Generate"
+msgstr "Générer"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model,name:l10n_ca_corporate_tax.model_l10n_ca_dividend_slip_wizard
+msgid "Generate T5 and RL-3 Dividend Slips"
+msgstr "Générer les feuillets T5 et les relevés 3 (RL-3) de dividendes"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.actions.act_window,name:l10n_ca_corporate_tax.action_l10n_ca_dividend_slip_wizard
+#: model:ir.ui.menu,name:l10n_ca_corporate_tax.menu_l10n_ca_dividend_slip_wizard
+msgid "Generate T5 and RL-3 Slips"
+msgstr "Générer les feuillets T5 et les relevés 3 (RL-3)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__retained_hours
+msgid ""
+"Greater of the hours of the company in the year, brought to a full year, and"
+" the hours of the company and its associated corporations in the preceding "
+"year."
+msgstr ""
+"Le plus élevé des heures de la société dans l'année, ramenées à une année "
+"complète, et des heures de la société et de ses sociétés associées dans "
+"l'année précédente."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__business_limit_reduction
+msgid ""
+"Greater of the taxable capital grind and the passive income grind (ITA s. "
+"125(5.1))."
+msgstr ""
+"La plus élevée de la réduction liée au capital imposable et de la réduction "
+"liée au revenu de placement passif (LIR, par. 125(5.1))."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_slip_search
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_search
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__has_message
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__has_message
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__has_message
+msgid "Has Message"
+msgstr "A un message"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__line_ids
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__hours
+msgid "Hours"
+msgstr "Heures"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__retained_hours
+msgid "Hours Retained"
+msgstr "Heures retenues"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__counted_hours
+msgid ""
+"Hours capped at the weekly maximum times the weeks, then, for a majority "
+"shareholder, multiplied by the shareholder hours factor."
+msgstr ""
+"Heures plafonnées au maximum hebdomadaire multiplié par le nombre de "
+"semaines, puis, pour un actionnaire majoritaire, multipliées par le facteur "
+"des heures de l'actionnaire."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__associated_hours
+msgid "Hours of Associated Corporations"
+msgstr "Heures des sociétés associées"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__own_hours
+msgid "Hours of the Company"
+msgstr "Heures de la société"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__own_hours_annualized
+msgid "Hours of the Company, Full Year"
+msgstr "Heures de la société, année complète"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__own_hours_annualized
+msgid ""
+"Hours of the company brought to a full year: multiplied by 365 and divided "
+"by the days of the fiscal year when it has fewer than 365 days. The hours of"
+" the preceding year are not annualized."
+msgstr ""
+"Heures de la société ramenées à une année complète : multipliées par 365 et "
+"divisées par le nombre de jours de l'exercice lorsqu'il compte moins de 365 "
+"jours. Les heures de l'année précédente ne sont pas annualisées."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_exception_icon
+msgid "Icon"
+msgstr "Icône"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icône pour indiquer une activité d'exception."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_needaction
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_needaction
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si coché, de nouveaux messages requièrent votre attention."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_has_error
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_has_error
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si coché, certains messages ont une erreur d'envoi."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__sbd_income
+msgid "Income Eligible for the SBD"
+msgstr "Revenu admissible à la DPE"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__investment_income
+msgid ""
+"Income from property (interest, rents, taxable capital gains, ...) included "
+"in taxable income; it gets no small business deduction and bears the "
+"refundable tax."
+msgstr ""
+"Revenu de biens (intérêts, loyers, gains en capital imposables, ...) inclus "
+"dans le revenu imposable; il ne donne droit à aucune déduction pour petite "
+"entreprise et est assujetti à l'impôt remboursable."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__psb_income
+msgid ""
+"Income of an incorporated employee: no small business deduction nor general "
+"rate reduction, and an additional federal tax."
+msgstr ""
+"Revenu d'un employé constitué en société : ni déduction pour petite "
+"entreprise ni réduction du taux général, et un impôt fédéral supplémentaire."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__instalment_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Instalments"
+msgstr "Acomptes provisionnels"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Instalments are required although the company profile says none."
+msgstr ""
+"Des acomptes provisionnels sont requis, bien que le profil de la société "
+"n'en indique aucun."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__interest_paid
+msgid "Interest Paid by the Shareholder"
+msgstr "Intérêts payés par l'actionnaire"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__interest_paid
+msgid ""
+"Interest for the calendar year paid by the shareholder within 30 days after "
+"its end; it reduces the benefit."
+msgstr ""
+"Intérêts de l'année civile payés par l'actionnaire dans les 30 jours suivant"
+" sa fin; ils réduisent l'avantage."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__investment_income_used
+msgid "Investment Income Taxed"
+msgstr "Revenu de placement imposé"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__account_account__l10n_ca_tax_treatment__investment
+msgid "Investment income"
+msgstr "Revenu de placement"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_is_follower
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_is_follower
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_is_follower
+msgid "Is Follower"
+msgstr "Est un abonné"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__jurisdiction
+msgid "Jurisdiction"
+msgstr "Administration fiscale"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__write_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__write_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_instalment__write_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__write_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__write_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__write_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__write_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__write_date
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__dividend_refund
+msgid ""
+"Lesser of the refundable portion of the year and the dividend refund rate "
+"times the non-eligible dividends paid in the year. Opening refundable "
+"dividend tax on hand balances are not tracked."
+msgstr ""
+"Le moins élevé de la partie remboursable de l'année et du taux de "
+"remboursement au titre de dividendes multiplié par les dividendes non "
+"déterminés versés dans l'année. Les soldes d'ouverture de l'impôt en main "
+"remboursable au titre de dividendes ne sont pas suivis."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_company__l10n_ca_dividend_payable_account_id
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_dividend_payable_account_id
+msgid ""
+"Liability account credited at declaration and debited at payment; a "
+"reconcilable account matches both entries."
+msgstr ""
+"Compte de passif crédité à la déclaration et débité au versement; un compte "
+"lettrable rapproche les deux écritures."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Load from Accounting"
+msgstr "Charger depuis la comptabilité"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__loan_amount
+msgid "Loans Made in the Year"
+msgstr "Prêts consentis dans l'année"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__unrepaid_amount
+msgid "Loans of the Year Still Unpaid"
+msgstr "Prêts de l'année toujours impayés"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_form
+msgid ""
+"Loans of this year are still unpaid: repay them before the\n"
+"                        deadline or they become taxable to the shareholder (ITA s. 15(2))."
+msgstr ""
+"Des prêts de cette année sont toujours impayés : remboursez-les avant\n"
+"                        l'échéance, sinon ils deviennent imposables pour l'actionnaire (LIR, par. 15(2))."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__loss_carryforward
+msgid "Losses of other years deducted in computing taxable income."
+msgstr "Pertes d'autres années déduites dans le calcul du revenu imposable."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_paid_hours_line__source__shareholder
+msgid "Majority shareholder (hours worked)"
+msgstr "Actionnaire majoritaire (heures travaillées)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_adjustment__adjustment_type__meals
+msgid "Meals and entertainment"
+msgstr "Frais de repas et de représentation"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__account_account__l10n_ca_tax_treatment__meals
+msgid "Meals and entertainment (partially deductible)"
+msgstr "Frais de repas et de représentation (partiellement déductibles)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_has_error
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_has_error
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur d'envoi du message"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_ids
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_ids
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_estimate__instalment_frequency__monthly
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_estimate__qc_instalment_frequency__monthly
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__res_company__l10n_ca_qc_instalment_frequency__monthly
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__res_config_settings__l10n_ca_qc_instalment_frequency__monthly
+msgid "Monthly"
+msgstr "Mensuel"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Échéance de mon activité"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__name
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__accounting_income
+msgid ""
+"Net income of the profit and loss accounts for the fiscal year, loaded from "
+"the posted entries."
+msgstr ""
+"Bénéfice net des comptes de résultat de l'exercice, chargé à partir des "
+"écritures comptabilisées."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Événement de calendrier de la prochaine activité"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Échéance de la prochaine activité"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_summary
+msgid "Next Activity Summary"
+msgstr "Résumé de la prochaine activité"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type de la prochaine activité"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+#: code:addons/l10n_ca_corporate_tax/report/l10n_ca_dividend_slip_xlsx.py:0
+msgid "No"
+msgstr "Non"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_shareholder_loan__state__none
+msgid "No loan made in the year"
+msgstr "Aucun prêt consenti dans l'année"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_corporate_tax_estimate.py:0
+msgid ""
+"No remunerated hours record for this fiscal year: the Quebec small business "
+"deduction is estimated at nil."
+msgstr ""
+"Aucun enregistrement d'heures rémunérées pour cet exercice : la déduction "
+"pour petite entreprise du Québec est estimée à zéro."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.actions.act_window,help:l10n_ca_corporate_tax.action_l10n_ca_shareholder_loan
+msgid "No shareholder loan follow-up yet."
+msgstr "Aucun suivi de prêt aux actionnaires pour l'instant."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__loss_carryforward
+msgid "Non-Capital Losses Applied"
+msgstr "Pertes autres qu'en capital appliquées"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__non_eligible_dividends_paid
+msgid "Non-Eligible Dividends Paid in the Year"
+msgstr "Dividendes non déterminés versés dans l'année"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__account_account__l10n_ca_tax_treatment__non_deductible
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_adjustment__adjustment_type__non_deductible
+msgid "Non-deductible expense"
+msgstr "Dépense non déductible"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Non-deductible expenses"
+msgstr "Dépenses non déductibles"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_corporate_tax_estimate.py:0
+msgid "Non-deductible meals and entertainment"
+msgstr "Frais de repas et de représentation non déductibles"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__res_company__l10n_ca_qc_instalment_frequency__none
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__res_config_settings__l10n_ca_qc_instalment_frequency__none
+msgid "None"
+msgstr "Aucun"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__note
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__note
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__note
+msgid "Note"
+msgstr "Note"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_form
+msgid "Notes"
+msgstr "Notes"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_form
+msgid "Notes (resolution reference, ...)"
+msgstr "Notes (référence de la résolution, ...)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_needaction_counter
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_needaction_counter
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_company__l10n_ca_shareholder_loan_reminder_days
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_shareholder_loan_reminder_days
+msgid ""
+"Number of days before the repayment deadline of a shareholder loan at which "
+"the scheduled action creates a to-do activity."
+msgstr ""
+"Nombre de jours avant l'échéance de remboursement d'un prêt à un actionnaire"
+" auquel l'action planifiée crée une activité à faire."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_has_error_counter
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_has_error_counter
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_needaction_counter
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_needaction_counter
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Nombre de messages nécessitant une action"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__message_has_error_counter
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_dividend__message_has_error_counter
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec une erreur d'envoi"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_aaii
+msgid ""
+"Of the company and its associated corporations: above the threshold, it "
+"reduces the business limit."
+msgstr ""
+"De la société et de ses sociétés associées : au-delà du seuil, il réduit le "
+"plafond des affaires."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_taxable_income
+msgid ""
+"Of the company and its associated corporations; decides the three-month "
+"balance-due delay and the quarterly instalments."
+msgstr ""
+"De la société et de ses sociétés associées; détermine le délai de trois mois"
+" pour le solde dû et les acomptes provisionnels trimestriels."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.constraint,message:l10n_ca_corporate_tax.constraint_l10n_ca_paid_hours_l10n_ca_paid_hours_unique
+msgid "One remunerated hours record per fiscal year."
+msgstr "Un seul enregistrement d'heures rémunérées par exercice."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.constraint,message:l10n_ca_corporate_tax.constraint_l10n_ca_shareholder_loan_l10n_ca_shareholder_loan_unique
+msgid "One shareholder loan follow-up per partner and fiscal year."
+msgstr ""
+"Un seul suivi de prêt aux actionnaires par partenaire et par exercice."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.constraint,message:l10n_ca_corporate_tax.constraint_l10n_ca_dividend_slip_l10n_ca_dividend_slip_unique
+msgid "One slip per recipient and year."
+msgstr "Un seul feuillet par bénéficiaire et par année."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__deadline_date
+msgid ""
+"One year after the end of the fiscal year in which the loans were made (ITA "
+"s. 15(2.6))."
+msgstr ""
+"Un an après la fin de l'exercice au cours duquel les prêts ont été consentis"
+" (LIR, par. 15(2.6))."
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid "Only a cancelled dividend can be reset to draft."
+msgstr "Seul un dividende annulé peut être remis en brouillon."
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid "Only a declared dividend can be paid."
+msgstr "Seul un dividende déclaré peut être versé."
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid "Only a draft dividend can be declared."
+msgstr "Seul un dividende en brouillon peut être déclaré."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_slip_wizard_form
+msgid "Open Slips"
+msgstr "Ouvrir les feuillets"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__opening_balance
+msgid "Opening Balance"
+msgstr "Solde d'ouverture"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_adjustment__adjustment_type__other
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_paid_hours_line__source__other
+msgid "Other"
+msgstr "Autre"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_paid_hours_form
+msgid "Other Criteria"
+msgstr "Autres critères"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_dividend__dividend_type__non_eligible
+msgid "Other than eligible (ordinary)"
+msgstr "Non déterminé (ordinaire)"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.res_config_settings_view_form
+msgid "Owner-Manager Corporate Tax"
+msgstr "Impôt des sociétés du propriétaire-dirigeant"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_qc_paid_up_capital
+msgid ""
+"Paid-up capital of the company and its associated corporations for the "
+"preceding year. For the Quebec business limit, it is amount J of form "
+"CO-771: the paid-up capital of their last taxation year ended in the "
+"preceding calendar year, doubled for an insurance corporation or a financial"
+" institution; left at zero, the federal taxable capital stands for it in "
+"that grind."
+msgstr ""
+"Capital versé de la société et de ses sociétés associées pour l'année "
+"précédente. Pour le plafond des affaires du Québec, il s'agit du montant J "
+"du formulaire CO-771 : le capital versé de leur dernière année d'imposition "
+"terminée dans l'année civile précédente, doublé pour une société d'assurance"
+" ou une institution financière; laissé à zéro, le capital imposable fédéral "
+"en tient lieu pour cette réduction."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__qc_paid_up_capital
+msgid ""
+"Paid-up capital of the company and its associated corporations for the year."
+" Quebec quarterly instalments require this amount or the one of the "
+"preceding year not to exceed the maximum."
+msgstr ""
+"Capital versé de la société et de ses sociétés associées pour l'année. Les "
+"versements trimestriels au Québec exigent que ce montant ou celui de l'année"
+" précédente ne dépasse pas le maximum."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__psb_income_used
+msgid "PSB Income Taxed"
+msgstr "Revenu d'EPSP imposé"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_dividend__state__paid
+msgid "Paid"
+msgstr "Versé"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__paid_hours_id
+msgid "Paid Hours"
+msgstr "Heures payées"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__unrepaid_amount
+msgid ""
+"Part of the loans made in the year still unpaid at the deadline, or at the "
+"situation date when the deadline is ahead."
+msgstr ""
+"Partie des prêts consentis dans l'année toujours impayée à l'échéance, ou à "
+"la date de situation lorsque l'échéance n'est pas encore atteinte."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_form
+msgid "Pay"
+msgstr "Verser"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__payment_date
+msgid "Payment Date"
+msgstr "Date de versement"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__payment_move_id
+msgid "Payment Entry"
+msgstr "Écriture de versement"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__payment_journal_id
+msgid "Payment Journal"
+msgstr "Journal de paiement"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_partner__l10n_ca_related_person
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_users__l10n_ca_related_person
+msgid ""
+"Person connected with a shareholder (ITA s. 15(2.1)), such as a spouse or a "
+"child: loans to this person follow the shareholder loan rules."
+msgstr ""
+"Personne rattachée à un actionnaire (LIR, par. 15(2.1)), comme un conjoint "
+"ou un enfant : les prêts à cette personne suivent les règles des prêts aux "
+"actionnaires."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__psb_income
+msgid "Personal Services Business Income"
+msgstr "Revenu d'une entreprise de prestation de services personnels"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__amount
+msgid "Positive: added to accounting income. Negative: deducted."
+msgstr "Positif : ajouté au bénéfice comptable. Négatif : déduit."
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "Postal Code"
+msgstr "Code postal"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__previous_id
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Preceding Year"
+msgstr "Année précédente"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__previous_group_hours
+msgid "Preceding Year, with Associated Corporations"
+msgstr "Année précédente, avec les sociétés associées"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__deemed_interest
+msgid ""
+"Prescribed rate applied day by day to the loans outstanding in the calendar "
+"year and not included in income (ITA s. 80.4(2))."
+msgstr ""
+"Taux prescrit appliqué jour après jour aux prêts impayés dans l'année civile"
+" et non inclus dans le revenu (LIR, par. 80.4(2))."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__primary_manufacturing_ratio
+msgid "Primary and Manufacturing Activities (%)"
+msgstr "Activités des secteurs primaire et manufacturier (%)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__sector_exempt
+msgid "Primary and Manufacturing Sectors Corporation"
+msgstr "Société des secteurs primaire et manufacturier"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__primary_manufacturing_ratio
+msgid ""
+"Proportion of primary and manufacturing sectors activities. Between the "
+"lower and upper ratios, the deduction grows linearly."
+msgstr ""
+"Proportion des activités des secteurs primaire et manufacturier. Entre les "
+"ratios inférieur et supérieur, la déduction augmente de façon linéaire."
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "Province"
+msgstr "Province"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_estimate__instalment_frequency__quarterly
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_estimate__qc_instalment_frequency__quarterly
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__res_company__l10n_ca_qc_instalment_frequency__quarterly
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__res_config_settings__l10n_ca_qc_instalment_frequency__quarterly
+msgid "Quarterly"
+msgstr "Trimestriel"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Quebec"
+msgstr "Québec"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_corporate_tax_instalment__jurisdiction__quebec
+msgid "Quebec (Revenu Quebec)"
+msgstr "Québec (Revenu Québec)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__qc_balance_due_date
+msgid "Quebec Balance Due"
+msgstr "Solde dû au Québec"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__qc_business_limit
+msgid "Quebec Business Limit"
+msgstr "Plafond des affaires du Québec"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.res_config_settings_view_form
+msgid "Quebec frequency, when it differs from the federal one"
+msgstr "Fréquence au Québec, lorsqu'elle diffère de la fréquence fédérale"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__quebec_tax
+msgid "Quebec Income Tax"
+msgstr "Impôt sur le revenu du Québec"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_company__l10n_ca_qc_instalment_frequency
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_qc_instalment_frequency
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.res_config_settings_view_form
+msgid "Quebec Income Tax Instalments"
+msgstr "Acomptes provisionnels d'impôt du Québec"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__qc_instalment_frequency
+msgid "Quebec Instalment Frequency"
+msgstr "Fréquence des acomptes provisionnels du Québec"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__qc_instalments_required
+msgid "Quebec Instalments Required"
+msgstr "Acomptes provisionnels du Québec requis"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_qc_paid_up_capital
+msgid "Quebec Paid-Up Capital of the Preceding Year"
+msgstr "Capital versé (Québec) de l'année précédente"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__qc_paid_up_capital
+msgid "Quebec Paid-Up Capital of the Year"
+msgstr "Capital versé de l'année (Québec)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.actions.act_window,name:l10n_ca_corporate_tax.action_l10n_ca_paid_hours
+#: model:ir.ui.menu,name:l10n_ca_corporate_tax.menu_l10n_ca_paid_hours
+msgid "Quebec Remunerated Hours"
+msgstr "Heures rémunérées (Québec)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__qc_sbd_factor
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__sbd_factor
+msgid "Quebec SBD Factor"
+msgstr "Facteur de la DPE du Québec"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__qc_sbd_rate
+msgid "Quebec SBD Rate"
+msgstr "Taux de la DPE du Québec"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model,name:l10n_ca_corporate_tax.model_l10n_ca_paid_hours_line
+msgid "Quebec SBD Remunerated Hours Line"
+msgstr "Ligne d'heures rémunérées pour la DPE du Québec"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__qc_sbd
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_paid_hours_form
+msgid "Quebec Small Business Deduction"
+msgstr "Déduction pour petite entreprise du Québec"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__qc_general_tax
+msgid "Quebec Tax at the General Rate"
+msgstr "Impôt du Québec au taux général"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_quebec_tax
+msgid "Quebec Tax of the Preceding Year"
+msgstr "Impôt du Québec de l'année précédente"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_slip_form
+msgid "RL-3 (Revenu Quebec)"
+msgstr "RL-3 (Revenu Québec)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__rl3_box_a1
+msgid "RL-3 Box A1"
+msgstr "RL-3 case A1"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__rl3_box_a2
+msgid "RL-3 Box A2"
+msgstr "RL-3 case A2"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__rl3_box_b
+msgid "RL-3 Box B"
+msgstr "RL-3 case B"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__rl3_box_c
+msgid "RL-3 Box C"
+msgstr "RL-3 case C"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__rl3_count
+msgid "RL-3 Slips"
+msgstr "Relevés 3 (RL-3)"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_slip_wizard_form
+msgid "RL-3 Summary"
+msgstr "Sommaire des relevés 3 (RL-3)"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+#: code:addons/l10n_ca_corporate_tax/report/l10n_ca_dividend_slip_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__partner_id
+msgid "Recipient"
+msgstr "Bénéficiaire"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__reduced_business_limit
+msgid "Reduced Business Limit"
+msgstr "Plafond des affaires réduit"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__nerdtoh_addition
+msgid "Refundable Portion of Part I Tax"
+msgstr "Partie remboursable de l'impôt de la partie I"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Refundable Tax"
+msgstr "Impôt remboursable"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__paid_hours_id
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_paid_hours_form
+msgid "Remunerated Hours"
+msgstr "Heures rémunérées"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_paid_hours__associated_hours
+msgid ""
+"Remunerated hours of the employees of the corporations associated with the "
+"company, for their taxation years ending in this period. They count only "
+"when this year is the preceding year of the year being assessed."
+msgstr ""
+"Heures rémunérées des employés des sociétés associées à la société, pour "
+"leurs années d'imposition se terminant dans cette période. Elles ne comptent"
+" que lorsque cette année est l'année précédant l'année évaluée."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_shareholder_loan__state__repaid
+msgid "Repaid in time"
+msgstr "Remboursé à temps"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_shareholder_loan.py:0
+msgid "Repay the shareholder loan"
+msgstr "Rembourser le prêt à l'actionnaire"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__deadline_date
+msgid "Repayment Deadline"
+msgstr "Échéance de remboursement"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_form
+msgid "Repayment Rule (s. 15(2), 15(2.6))"
+msgstr "Règle de remboursement (par. 15(2), 15(2.6))"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__repayment_amount
+msgid "Repayments"
+msgstr "Remboursements"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__as_of
+msgid "Repayments recorded after this date are ignored."
+msgstr "Les remboursements enregistrés après cette date sont ignorés."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_form
+msgid "Reset to Draft"
+msgstr "Remettre en brouillon"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__resolution_date
+msgid "Resolution Date"
+msgstr "Date de la résolution"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_user_id
+msgid "Responsible User"
+msgstr "Utilisateur responsable"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Result"
+msgstr "Résultat"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid "Reversal of %s"
+msgstr "Contrepassation de %s"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_sbd_claimed
+msgid "SBD Claimed in the Preceding Year"
+msgstr "DPE demandée dans l'année précédente"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid ""
+"Set the following in Invoicing (Accounting) > Configuration > Settings > "
+"Owner-Manager Corporate Tax: %s"
+msgstr ""
+"Configurez les éléments suivants dans Facturation (Comptabilité) > "
+"Configuration > Paramètres > Impôt des sociétés du propriétaire-dirigeant : "
+"%s"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid "Set the payment journal and the payment date."
+msgstr "Indiquez le journal de paiement et la date de versement."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__business_limit_allocation
+msgid ""
+"Share of the business limit allocated to the company when it is associated "
+"with other corporations (schedule 23 / CO-771.1.3)."
+msgstr ""
+"Part du plafond des affaires attribuée à la société lorsqu'elle est associée"
+" à d'autres sociétés (annexe 23 / CO-771.1.3)."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__partner_id
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_partner__l10n_ca_shareholder
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_users__l10n_ca_shareholder
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_search
+msgid "Shareholder"
+msgstr "Actionnaire"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_partner_property_form
+msgid "Shareholder (Canada)"
+msgstr "Actionnaire (Canada)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_account_account__l10n_ca_shareholder_loan
+msgid "Shareholder Loan"
+msgstr "Prêt à un actionnaire"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model,name:l10n_ca_corporate_tax.model_l10n_ca_shareholder_loan
+msgid "Shareholder Loan Follow-up"
+msgstr "Suivi des prêts aux actionnaires"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_company__l10n_ca_shareholder_loan_reminder_days
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_shareholder_loan_reminder_days
+msgid "Shareholder Loan Reminder (days)"
+msgstr "Rappel de prêt à un actionnaire (jours)"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.res_config_settings_view_form
+msgid "Shareholder Loan Reminders"
+msgstr "Rappels de prêts aux actionnaires"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.actions.act_window,name:l10n_ca_corporate_tax.action_l10n_ca_shareholder_loan
+#: model:ir.ui.menu,name:l10n_ca_corporate_tax.menu_l10n_ca_shareholder_loan
+msgid "Shareholder Loans"
+msgstr "Prêts aux actionnaires"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_partner__l10n_ca_shareholder
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_users__l10n_ca_shareholder
+msgid ""
+"Shareholder of the company: recipient of dividends and subject to the "
+"shareholder loan rules."
+msgstr ""
+"Actionnaire de la société : bénéficiaire de dividendes et assujetti aux "
+"règles des prêts aux actionnaires."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__partner_id
+msgid "Shareholder or Connected Person"
+msgstr "Actionnaire ou personne rattachée"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__computed_on
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan_wizard__as_of
+msgid "Situation As Of"
+msgstr "Situation au"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__slip_ids
+msgid "Slips"
+msgstr "Feuillets"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__source
+msgid "Source"
+msgstr "Source"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__state
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__state
+msgid "State"
+msgstr "État"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard : la date d'échéance est déjà dépassée\n"
+"Aujourd'hui : la date de l'activité est aujourd'hui\n"
+"Planifiée : activités futures."
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "Street"
+msgstr "Rue"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__filing_due_date
+msgid "T2 and CO-17 Filing Deadline"
+msgstr "Date limite de production des déclarations T2 et CO-17"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_slip_form
+msgid "T5 (CRA)"
+msgstr "T5 (ARC)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__t5_box_10
+msgid "T5 Box 10"
+msgstr "T5 case 10"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__t5_box_11
+msgid "T5 Box 11"
+msgstr "T5 case 11"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__t5_box_12
+msgid "T5 Box 12"
+msgstr "T5 case 12"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__t5_box_24
+msgid "T5 Box 24"
+msgstr "T5 case 24"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__t5_box_25
+msgid "T5 Box 25"
+msgstr "T5 case 25"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__t5_box_26
+msgid "T5 Box 26"
+msgstr "T5 case 26"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+#: code:addons/l10n_ca_corporate_tax/report/l10n_ca_dividend_slip_xlsx.py:0
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip__t5_required
+msgid "T5 Required"
+msgstr "T5 requis"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__t5_count
+msgid "T5 Slips"
+msgstr "Feuillets T5"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_slip_wizard_form
+msgid "T5 Summary"
+msgstr "Sommaire T5"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model,name:l10n_ca_corporate_tax.model_l10n_ca_dividend_slip
+msgid "T5 and RL-3 Dividend Slip Data"
+msgstr "Données des feuillets T5 et des relevés 3 (RL-3) de dividendes"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model,name:l10n_ca_corporate_tax.model_report_l10n_ca_corporate_tax_dividend_slip_xlsx
+msgid "T5 and RL-3 Dividend Slips Workbook"
+msgstr "Classeur des feuillets T5 et des relevés 3 (RL-3) de dividendes"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.actions.act_window,name:l10n_ca_corporate_tax.action_l10n_ca_dividend_slip
+#: model:ir.ui.menu,name:l10n_ca_corporate_tax.menu_l10n_ca_dividend_slip
+msgid "T5 and RL-3 Slips"
+msgstr "Feuillets T5 et relevés 3 (RL-3)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.actions.report,name:l10n_ca_corporate_tax.report_l10n_ca_dividend_slip_xlsx
+msgid "T5 and RL-3 Slips (XLSX)"
+msgstr "Feuillets T5 et relevés 3 (RL-3) (XLSX)"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__tax_obligations_met
+msgid "Tax Obligations Met in the Last 12 Months"
+msgstr "Obligations fiscales remplies au cours des 12 derniers mois"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_search
+msgid "Taxable"
+msgstr "Imposable"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__taxable_capital
+msgid "Taxable Capital of the Preceding Year"
+msgstr "Capital imposable de l'année précédente"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__taxable_income
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "Taxable Income"
+msgstr "Revenu imposable"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__group_taxable_income
+msgid "Taxable Income of the Associated Group"
+msgstr "Revenu imposable du groupe associé"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_taxable_income
+msgid "Taxable Income of the Preceding Year"
+msgstr "Revenu imposable de l'année précédente"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__group_taxable_income
+msgid ""
+"Taxable income of the year of the company and its associated corporations, "
+"compared with the quarterly instalment maximum. Below the taxable income of "
+"the company, the latter is used."
+msgstr ""
+"Revenu imposable de l'année de la société et de ses sociétés associées, "
+"comparé au maximum des versements trimestriels. S'il est inférieur au revenu"
+" imposable de la société, ce dernier est utilisé."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__interest_benefit
+msgid "Taxable Interest Benefit"
+msgstr "Avantage imposable au titre des intérêts"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__taxable_capital
+msgid ""
+"Taxable capital employed in Canada of the company and its associated "
+"corporations for the preceding year."
+msgstr ""
+"Capital imposable utilisé au Canada de la société et de ses sociétés "
+"associées pour l'année précédente."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_shareholder_loan__state__included
+msgid "Taxable to the shareholder"
+msgstr "Imposable pour l'actionnaire"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__tax_obligations_met
+msgid ""
+"The company filed its returns and paid or remitted the amounts due over the "
+"last 12 months, a condition of the quarterly instalments federally and in "
+"Quebec."
+msgstr ""
+"La société a produit ses déclarations et payé ou remis les montants dus au "
+"cours des 12 derniers mois, une condition des versements trimestriels au "
+"fédéral et au Québec."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__previous_business_income
+msgid ""
+"The company had income from a qualifying business carried on in Canada in "
+"the preceding year, a condition of the Quebec quarterly instalments. The SBD"
+" claimed in the preceding year implies it."
+msgstr ""
+"La société a eu un revenu provenant d'une entreprise admissible qu'elle "
+"exploite au Canada pendant l'année précédente, une condition des versements "
+"trimestriels au Québec. La DPE demandée dans l'année précédente l'implique."
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_corporate_tax_estimate.py:0
+msgid ""
+"The company profile says quarterly instalments, but the small-CCPC "
+"conditions are not met: monthly instalments are estimated."
+msgstr ""
+"Le profil de la société indique des acomptes provisionnels trimestriels, "
+"mais les conditions applicables aux petites SPCC ne sont pas remplies : des "
+"acomptes mensuels sont estimés."
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_corporate_tax_estimate.py:0
+msgid ""
+"The company profile says quarterly Quebec instalments, but the Quebec "
+"conditions are not met: monthly Quebec instalments are estimated."
+msgstr ""
+"Le profil de la société indique des acomptes provisionnels trimestriels au "
+"Québec, mais les conditions du Québec ne sont pas remplies : des acomptes "
+"mensuels au Québec sont estimés."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_paid_hours_form
+msgid ""
+"The full Quebec small business deduction needs 5,500 remunerated\n"
+"                        hours (thresholds in the Canadian Time Parameters): the hours of\n"
+"                        the company in the year, or of the company and its associated\n"
+"                        corporations in the preceding year. Between the two thresholds\n"
+"                        the deduction is reduced linearly."
+msgstr ""
+"La pleine déduction pour petite entreprise du Québec exige 5 500 heures\n"
+"                        rémunérées (seuils dans les paramètres temporels canadiens) : les heures de\n"
+"                        la société dans l'année, ou de la société et de ses sociétés associées\n"
+"                        dans l'année précédente. Entre les deux seuils,\n"
+"                        la déduction est réduite de façon linéaire."
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid "The journal %s has no default account."
+msgstr "Le journal %s n'a pas de compte par défaut."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_form
+msgid "The posted entries will be reversed. Continue?"
+msgstr "Les écritures comptabilisées seront contrepassées. Continuer?"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend.py:0
+msgid "The recipient is not flagged as a shareholder."
+msgstr "Le bénéficiaire n'est pas marqué comme actionnaire."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+msgid "This Year"
+msgstr "Cette année"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_corporate_tax_estimate.py:0
+msgid ""
+"This is an estimate for planning purposes, not a tax return. File the T2 and"
+" CO-17 returns with certified software."
+msgstr ""
+"Ceci est une estimation à des fins de planification, et non une déclaration "
+"de revenus. Produisez les déclarations T2 et CO-17 avec un logiciel "
+"homologué."
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_search
+msgid "To Repay"
+msgstr "À rembourser"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields.selection,name:l10n_ca_corporate_tax.selection__l10n_ca_shareholder_loan__state__at_risk
+msgid "To repay before the deadline"
+msgstr "À rembourser avant l'échéance"
+
+#. module: l10n_ca_corporate_tax
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.res_config_settings_view_form
+msgid "To-do activity before the repayment deadline of a shareholder loan"
+msgstr ""
+"Activité à faire avant l'échéance de remboursement d'un prêt à un "
+"actionnaire"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+#: code:addons/l10n_ca_corporate_tax/report/l10n_ca_dividend_slip_xlsx.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_corporate_tax_estimate_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_list
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_slip_list
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_paid_hours_form
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_shareholder_loan_list
+msgid "Total"
+msgstr "Total"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__total_tax
+msgid "Total Estimated Tax"
+msgstr "Impôt total estimé"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__rl3_box_a1
+msgid "Total RL-3 Box A1"
+msgstr "Total RL-3 case A1"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__rl3_box_a2
+msgid "Total RL-3 Box A2"
+msgstr "Total RL-3 case A2"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__rl3_box_b
+msgid "Total RL-3 Box B"
+msgstr "Total RL-3 case B"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__rl3_box_c
+msgid "Total RL-3 Box C"
+msgstr "Total RL-3 case C"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__t5_box_10
+msgid "Total T5 Box 10"
+msgstr "Total T5 case 10"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__t5_box_11
+msgid "Total T5 Box 11"
+msgstr "Total T5 case 11"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__t5_box_12
+msgid "Total T5 Box 12"
+msgstr "Total T5 case 12"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__t5_box_24
+msgid "Total T5 Box 24"
+msgstr "Total T5 case 24"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__t5_box_25
+msgid "Total T5 Box 25"
+msgstr "Total T5 case 25"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend_slip_wizard__t5_box_26
+msgid "Total T5 Box 26"
+msgstr "Total T5 case 26"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_adjustment__adjustment_type
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__dividend_type
+msgid "Type"
+msgstr "Type"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type de l'activité d'exception enregistrée."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__inclusion_amount
+msgid ""
+"Unpaid at the deadline: included in the shareholder's income for the year "
+"the loan was made (ITA s. 15(2)), on the T4A or T5 and RL slips."
+msgstr ""
+"Impayé à l'échéance : inclus dans le revenu de l'actionnaire pour l'année où"
+" le prêt a été consenti (LIR, par. 15(2)), sur les feuillets T4A ou T5 et "
+"les relevés RL."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_account_account__l10n_ca_tax_treatment
+msgid ""
+"Used by the corporate tax estimate: meals and entertainment are added back "
+"for their non-deductible portion, non-deductible expenses (fines, income tax"
+" expense, ...) are added back in full, and investment income is proposed as "
+"aggregate investment income."
+msgstr ""
+"Utilisé par l'estimation de l'impôt des sociétés : les frais de repas et de "
+"représentation sont réintégrés pour leur partie non déductible, les dépenses"
+" non déductibles (amendes, charge d'impôt sur le revenu, ...) sont "
+"réintégrées en totalité, et le revenu de placement est proposé comme revenu "
+"de placement total."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_company__l10n_ca_corporate_tax_user_id
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_res_config_settings__l10n_ca_corporate_tax_user_id
+msgid ""
+"User who receives the shareholder loan reminders. Without one, the reminders"
+" go to the administrator."
+msgstr ""
+"Utilisateur qui reçoit les rappels de prêts aux actionnaires. À défaut, les "
+"rappels sont envoyés à l'administrateur."
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__warning_message
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__warning_message
+msgid "Warning Message"
+msgstr "Message d'avertissement"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__website_message_ids
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_dividend__website_message_ids
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__website_message_ids
+msgid "Website Messages"
+msgstr "Messages du site web"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_corporate_tax_estimate__website_message_ids
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_dividend__website_message_ids
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_shareholder_loan__website_message_ids
+msgid "Website communication history"
+msgstr "Historique des communications du site web"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,field_description:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__weeks
+msgid "Weeks"
+msgstr "Semaines"
+
+#. module: l10n_ca_corporate_tax
+#: model:ir.model.fields,help:l10n_ca_corporate_tax.field_l10n_ca_paid_hours_line__weeks
+msgid ""
+"Weeks worked. When set, the counted hours are capped at the weekly maximum "
+"times the weeks."
+msgstr ""
+"Semaines travaillées. Si renseigné, les heures comptées sont plafonnées au "
+"maximum hebdomadaire multiplié par le nombre de semaines."
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+#: code:addons/l10n_ca_corporate_tax/report/l10n_ca_dividend_slip_xlsx.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_ca_corporate_tax.view_l10n_ca_dividend_slip_search
+msgid "Year"
+msgstr "Année"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+#: code:addons/l10n_ca_corporate_tax/report/l10n_ca_dividend_slip_xlsx.py:0
+msgid "Yes"
+msgstr "Oui"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "T5 box 24 - Actual amount of eligible dividends"
+msgstr "T5 case 24 - Montant réel des dividendes déterminés"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "T5 box 25 - Taxable amount of eligible dividends"
+msgstr "T5 case 25 - Montant imposable des dividendes déterminés"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "T5 box 26 - Dividend tax credit for eligible dividends"
+msgstr "T5 case 26 - Crédit d'impôt pour dividendes déterminés"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "T5 box 10 - Actual amount of other than eligible dividends"
+msgstr ""
+"T5 case 10 - Montant réel des dividendes autres que des dividendes "
+"déterminés"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "T5 box 11 - Taxable amount of other than eligible dividends"
+msgstr ""
+"T5 case 11 - Montant imposable des dividendes autres que des dividendes "
+"déterminés"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "T5 box 12 - Dividend tax credit for other than eligible dividends"
+msgstr ""
+"T5 case 12 - Crédit d'impôt pour dividendes autres que des dividendes "
+"déterminés"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "RL-3 box A1 - Actual amount of eligible dividends"
+msgstr "RL-3 case A1 - Montant réel des dividendes déterminés"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "RL-3 box A2 - Actual amount of ordinary dividends"
+msgstr "RL-3 case A2 - Montant réel des dividendes ordinaires"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "RL-3 box B - Taxable amount of eligible and ordinary dividends"
+msgstr ""
+"RL-3 case B - Montant imposable des dividendes déterminés et ordinaires"
+
+#. module: l10n_ca_corporate_tax
+#. odoo-python
+#: code:addons/l10n_ca_corporate_tax/models/l10n_ca_dividend_slip.py:0
+msgid "RL-3 box C - Dividend tax credit"
+msgstr "RL-3 case C - Crédit d'impôt pour dividendes"

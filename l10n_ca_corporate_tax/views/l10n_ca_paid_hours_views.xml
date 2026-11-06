@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_l10n_ca_paid_hours_list" model="ir.ui.view">
+        <field name="name">l10n.ca.paid.hours.list</field>
+        <field name="model">l10n.ca.paid.hours</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="date_from" />
+                <field name="date_to" />
+                <field name="own_hours" />
+                <field name="associated_hours" />
+                <field name="retained_hours" />
+                <field name="sbd_factor" />
+                <field name="sector_exempt" />
+                <field name="company_id" groups="base.group_multi_company" optional="hide" />
+            </list>
+        </field>
+    </record>
+    <record id="view_l10n_ca_paid_hours_form" model="ir.ui.view">
+        <field name="name">l10n.ca.paid.hours.form</field>
+        <field name="model">l10n.ca.paid.hours</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>Remunerated Hours <field name="name" class="oe_inline" readonly="1" /></h1>
+                    </div>
+                    <group>
+                        <group string="Fiscal Year">
+                            <field name="date_from" />
+                            <field name="date_to" />
+                            <field name="company_id" groups="base.group_multi_company" />
+                        </group>
+                        <group string="Quebec Small Business Deduction">
+                            <field name="own_hours" />
+                            <field name="own_hours_annualized" />
+                            <field name="previous_id" />
+                            <field name="previous_group_hours" />
+                            <field name="retained_hours" />
+                            <field name="sbd_factor" />
+                        </group>
+                        <group string="Other Criteria">
+                            <field name="associated_hours" />
+                            <field name="sector_exempt" />
+                            <field name="primary_manufacturing_ratio" invisible="sector_exempt" />
+                        </group>
+                    </group>
+                    <field name="line_ids">
+                        <list editable="bottom">
+                            <field name="source" />
+                            <field name="name" />
+                            <field name="hours" sum="Total" />
+                            <field name="weeks" optional="show" />
+                            <field name="counted_hours" sum="Total" />
+                        </list>
+                    </field>
+                    <p class="text-muted">
+                        The full Quebec small business deduction needs 5,500 remunerated
+                        hours (thresholds in the Canadian Time Parameters): the hours of
+                        the company in the year, or of the company and its associated
+                        corporations in the preceding year. Between the two thresholds
+                        the deduction is reduced linearly.
+                    </p>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_l10n_ca_paid_hours" model="ir.actions.act_window">
+        <field name="name">Quebec Remunerated Hours</field>
+        <field name="res_model">l10n.ca.paid.hours</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem
+        id="menu_l10n_ca_paid_hours"
+        name="Quebec Remunerated Hours"
+        parent="menu_l10n_ca_corporate_tax"
+        action="action_l10n_ca_paid_hours"
+        sequence="30"
+    />
+</odoo>

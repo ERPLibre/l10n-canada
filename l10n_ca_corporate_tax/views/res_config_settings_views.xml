@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.l10n_ca_corporate_tax</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='account']" position="inside">
+                <block
+                    title="Owner-Manager Corporate Tax"
+                    name="l10n_ca_corporate_tax"
+                    invisible="country_code != 'CA'"
+                >
+                    <setting
+                        string="Dividends"
+                        help="Accounts and journal of the dividend declaration entries"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label for="l10n_ca_dividend_account_id" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_dividend_account_id" />
+                            </div>
+                            <div class="row">
+                                <label for="l10n_ca_dividend_payable_account_id" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_dividend_payable_account_id" />
+                            </div>
+                            <div class="row">
+                                <label for="l10n_ca_dividend_journal_id" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_dividend_journal_id" />
+                            </div>
+                        </div>
+                    </setting>
+                    <setting
+                        string="General Rate Income Pool"
+                        help="GRIP of schedule 53, checked when eligible dividends are declared"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label for="l10n_ca_grip_balance" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_grip_balance" />
+                            </div>
+                            <div class="row">
+                                <label for="l10n_ca_grip_date" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_grip_date" />
+                            </div>
+                        </div>
+                    </setting>
+                    <setting
+                        string="Quebec Income Tax Instalments"
+                        help="Quebec frequency, when it differs from the federal one"
+                    >
+                        <field name="l10n_ca_qc_instalment_frequency" />
+                    </setting>
+                    <setting
+                        string="Shareholder Loan Reminders"
+                        help="To-do activity before the repayment deadline of a shareholder loan"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label for="l10n_ca_shareholder_loan_reminder_days" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_shareholder_loan_reminder_days" />
+                            </div>
+                            <div class="row">
+                                <label for="l10n_ca_corporate_tax_user_id" class="col-lg-5 o_light_label" />
+                                <field name="l10n_ca_corporate_tax_user_id" />
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
