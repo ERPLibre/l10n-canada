@@ -169,7 +169,7 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
         self.assertEqual(rate(1000000, day), 1.65)
         # 2,000,000: 1.2662 + 0.3838 * 2 = 2.0338 -> 2.03
         self.assertEqual(rate(2000000, day), 2.03)
-        # From 7,800,000: 1.2662 + 0.3838 * 7.8 = 4.26026 -> 4.26
+        # From 7,800,000: 1.2662 + 0.3838 * 7.8 = 4.25984 -> 4.26
         self.assertEqual(rate(7800000, day), 4.26)
         self.assertEqual(rate(20000000, day), 4.26)
         self.company.l10n_ca_qc_hsf_sector = "primary_manufacturing"
