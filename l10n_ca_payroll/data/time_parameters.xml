@@ -514,7 +514,7 @@
         <field name="type">integer</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">The T4 slips and summary are due on the last day of this month of the following year. Income Tax Regulations s. 205(1). Source: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/completing-filing-information-returns/t4-information-employers/t4-summary.html ; https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/</field>
+        <field name="description">The T4 slips and summary are due on the last day of this month of the following year. Income Tax Regulations s. 205(1); T4001, Filing information returns: "on or before the last day of February of the following calendar year". Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/completing-filing-information-returns/t4-information-employers/t4-summary.html ; https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/</field>
     </record>
     <record id="param_t4_due_month_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_t4_due_month" />
