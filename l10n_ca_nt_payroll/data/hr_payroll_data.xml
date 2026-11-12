@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Payee of the Northwest Territories payroll tax withheld from the
+         employees. The territorial income tax is remitted to the CRA with
+         the federal deductions. -->
+    <record id="partner_gnwt" model="res.partner">
+        <field name="name">Government of the Northwest Territories</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_nt" />
+    </record>
+    <record id="register_gnwt_payroll_tax" model="hr.contribution.register">
+        <field
+            name="name"
+        >Government of the Northwest Territories - Payroll Tax</field>
+        <field name="partner_id" ref="partner_gnwt" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Northwest Territories payroll tax withheld from the employees (Payroll Tax Act), remitted to the Department of Finance by the 20th day of the month after the reporting period; annual return by February 28.</field>
+    </record>
+    <!-- Payee of the workers' compensation assessments. -->
+    <record id="partner_wscc_nt" model="res.partner">
+        <field
+            name="name"
+        >Workers' Safety and Compensation Commission (Northwest Territories)</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_nt" />
+    </record>
+    <record id="register_wscc_nt" model="hr.contribution.register">
+        <field name="name">WSCC - Northwest Territories</field>
+        <field name="partner_id" ref="partner_wscc_nt" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Northwest Territories workers' compensation assessments of the Workers' Safety and Compensation Commission.</field>
+    </record>
+
+    <!-- Every rule below applies only to an employment in the Northwest
+         Territories. The territorial income tax is the line of the federal
+         rule CA_PIT. -->
+    <record id="rule_nt_salary" model="hr.salary.rule">
+        <field name="name">Northwest Territories Remuneration</field>
+        <field name="code">CA_NT_SAL</field>
+        <field name="sequence">114</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NT"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["province_remuneration"]</field>
+        <field
+            name="note"
+        >Remuneration of the pay in the Northwest Territories: its year-to-date total gives the insurable remuneration left after a credit note.</field>
+    </record>
+    <record id="rule_nt_wcb_insurable" model="hr.salary.rule">
+        <field name="name">WSCC Assessable Payroll (Northwest Territories)</field>
+        <field name="code">CA_NT_WCB_IE</field>
+        <field name="sequence">115</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NT"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["wcb_insurable"]</field>
+        <field
+            name="note"
+        >Assessable payroll of the pay up to the Year's Maximum Insurable Remuneration of the Northwest Territories, less the assessable payroll of the year so far; 0 for a contract not covered.</field>
+    </record>
+    <record id="rule_nt_payroll_tax" model="hr.salary.rule">
+        <field name="name">Northwest Territories Payroll Tax</field>
+        <field name="code">CA_NT_PAYROLL_TAX</field>
+        <field name="sequence">160</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_ded" />
+        <field name="register_id" ref="register_gnwt_payroll_tax" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NT" and l10n_ca.get(contract, categories.GROSS)["nt_payroll_tax"] != 0</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = -l10n_ca.get(contract, categories.GROSS)["nt_payroll_tax"]</field>
+        <field
+            name="note"
+        >Payroll tax borne by the employee and withheld by the employer: the rate of the time parameter l10n_ca.nt.payroll_tax.rate on the gross of the pay. It does not lower the taxable income of the CRA formulas. No line for a contract exempt from the tax.</field>
+    </record>
+    <record id="rule_nt_wcb" model="hr.salary.rule">
+        <field name="name">WSCC Assessment (Northwest Territories)</field>
+        <field name="code">CA_NT_WCB</field>
+        <field name="sequence">380</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_wscc_nt" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NT" and l10n_ca.get(contract, categories.GROSS)["wcb"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["wcb"]
+result_name = ca["wcb_line_name"]</field>
+        <field
+            name="note"
+        >WSCC assessment at the rate per $100 of the provincial payroll account of the company, on the assessable payroll of the pay up to the Year's Maximum Insurable Remuneration.</field>
+    </record>
+</odoo>

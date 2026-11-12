@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the Northwest Territories payroll.
+     l10n_ca_payroll/tools/sources_page.py writes
+     static/description/sources.html from this file: run it after a
+     change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_123" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Steps 4 to 6 (T4, K1P, K2P, T2); Northwest Territories tables unchanged from the 122nd edition (January 2026), tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+        <field
+            name="summary"
+        >2026 Northwest Territories brackets and constants KP and basic personal amount. The edition lists the Northwest Territories among the jurisdictions without change on July 1, 2026.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_122" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Step 4; tables 8.1, 8.2 and 8.16</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field
+            name="summary"
+        >Northwest Territories rates 5.9%, 8.6%, 12.2% and 14.05% from 53,003, 106,009 and 172,346 (KP 1,431, 5,247 and 8,436); basic personal amount 18,198; no surtax, reduction or labour-sponsored funds credit.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_td1nt_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >TD1NT 2026 Northwest Territories Personal Tax Credits Return</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Line 1 (basic personal amount) and the total claim amount</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1nt.html</field>
+        <field
+            name="summary"
+        >Northwest Territories basic personal amount of 18,198 for 2026 and the total claim amount TCP entered on the contract.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_finance_personal" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">page</field>
+        <field name="name">Personal Income Tax</field>
+        <field
+            name="publisher"
+        >Government of the Northwest Territories, Department of Finance</field>
+        <field
+            name="url"
+        >https://www.fin.gov.nt.ca/en/services/licences-taxes-and-fees/personal-income-tax</field>
+        <field
+            name="summary"
+        >The Northwest Territories income tax brackets and credit amounts are indexed every year with the federal index factor; the CRA collects the territorial tax with the federal tax.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_finance_payroll_tax" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">page</field>
+        <field name="name">Payroll Tax for Employers</field>
+        <field
+            name="publisher"
+        >Government of the Northwest Territories, Department of Finance</field>
+        <field
+            name="url"
+        >https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employers</field>
+        <field
+            name="summary"
+        >Remuneration subject to the payroll tax: salaries and wages, bonuses, gratuities, commissions and honoraria, vacation travel assistance, stock options, taxable allowances and benefits, employer RRSP contributions, retiring allowances. Registration within 21 days of the first pay. Reporting period by the estimated payroll of the year: monthly above 1,000,000, quarterly above 600,000, semi-annual above 200,000, annual otherwise, monthly during the season for a seasonal employer. Remittance return, even nil, by the 20th day of the month after the period; annual return by February 28.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_payroll_tax_act" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">statute</field>
+        <field name="name">Payroll Tax Act, SNWT 1993, c. 11</field>
+        <field
+            name="publisher"
+        >Government of the Northwest Territories, Department of Justice</field>
+        <field
+            name="reference"
+        >Sections 1 (remuneration), 3 (tax of 2% of the employee) and 5 (withholding by the employer)</field>
+        <field
+            name="url"
+        >https://gnwt.ca/sites/default/files/legacy_justice/files/legislation/payroll-tax/payroll-tax.a.pdf</field>
+        <field
+            name="summary"
+        >Every employee pays a tax of 2% of the remuneration paid in the year, which the employer withholds from the remuneration. Remuneration: the employment income under s. 5(1), 6 and 7 of the Income Tax Act, except a pension paid after retirement and the amounts deductible under s. 8(1)(c) or 110(2) of that Act. An employee who normally works outside the territory owes the tax on the days worked in it.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_payroll_tax_regulations" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">statute</field>
+        <field name="name">Payroll Tax Regulations, R-049-93</field>
+        <field
+            name="publisher"
+        >Government of the Northwest Territories, Department of Justice</field>
+        <field
+            name="reference"
+        >Section 2 (prescribed amount), sections 8 to 10 and Schedule A (reporting periods and returns)</field>
+        <field
+            name="url"
+        >https://gnwt.ca/sites/default/files/legacy_justice/files/legislation/payroll-tax/payroll-tax.r1.pdf</field>
+        <field
+            name="summary"
+        >Prescribed amount of 5,000: an employee who normally works outside the territory owes no tax when the remuneration from the employer in the year does not exceed it. Remittance by the 20th day of the month after the reporting period; annual return by February 28.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wscc_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">page</field>
+        <field name="name">Employer Rates</field>
+        <field
+            name="publisher"
+        >Workers' Safety and Compensation Commission</field>
+        <field name="reference">Table of the Year's Maximum Insurable Remuneration</field>
+        <field
+            name="url"
+        >https://wscc.nt.ca/employer-services/employer-rates</field>
+        <field
+            name="summary"
+        >Year's Maximum Insurable Remuneration of the Northwest Territories: 112,600 in 2025, 116,000 in 2026 (110,600 shared with Nunavut in 2024). Average provisional assessment rate of 2.40 per $100 of assessable payroll in 2026; the rate of each industry subclass is on WSCC Connect.</field>
+        <field name="watch_key">wscc_ymir_nt</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wscc_report_payroll" model="l10n_ca.payroll.source">
+        <field name="sequence">90</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">page</field>
+        <field name="name">Report Payroll</field>
+        <field
+            name="publisher"
+        >Workers' Safety and Compensation Commission</field>
+        <field
+            name="url"
+        >https://wscc.nt.ca/employer-services/report-payroll</field>
+        <field
+            name="summary"
+        >Annual Payroll Report, the actual payroll of the previous year and an estimate of the current year, due February 28. Directors of a corporation, business owners and the self-employed are not covered automatically; Personal Optional Coverage from 37% of the YMIR up to the YMIR.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wscc_policy_02_01" model="l10n_ca.payroll.source">
+        <field name="sequence">100</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">publication</field>
+        <field name="name">WSCC Policy Manual, Policy 02.01 Employer Assessments</field>
+        <field
+            name="publisher"
+        >Workers' Safety and Compensation Commission</field>
+        <field name="reference">Policy 02.01, in force since April 3, 2023</field>
+        <field
+            name="url"
+        >https://wscc.nt.ca/sites/default/files/documents/Policy%20Manual%20-%20Updated%20June%2030%202026.pdf</field>
+        <field
+            name="summary"
+        >Assessment = (assessable payroll / 100) x the rate of the industry subclass, the payroll of each worker capped at the YMIR; minimum assessment of 200. Payment by March 31, or by instalments of March 31, May 31, July 31 and September 30 for an assessment of 1,000 or more.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workers_compensation_act" model="l10n_ca.payroll.source">
+        <field name="sequence">110</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">statute</field>
+        <field name="name">Workers' Compensation Act, SNWT 2007, c. 21</field>
+        <field
+            name="publisher"
+        >Government of the Northwest Territories, Department of Justice</field>
+        <field
+            name="url"
+        >https://gnwt.ca/resources/workers-compensation-act?justice=en</field>
+        <field
+            name="summary"
+        >Statute of the workers' compensation of the Northwest Territories, administered by the Workers' Safety and Compensation Commission.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workers_compensation_regulations" model="l10n_ca.payroll.source">
+        <field name="sequence">120</field>
+        <field name="jurisdiction">northwest_territories</field>
+        <field name="kind">statute</field>
+        <field
+            name="name"
+        >Workers' Compensation General Regulations, R-080-2010</field>
+        <field
+            name="publisher"
+        >Government of the Northwest Territories, Department of Justice</field>
+        <field
+            name="reference"
+        >Section 1 (maximum remuneration), as amended by R-001-2026</field>
+        <field
+            name="url"
+        >https://gnwt.ca/sites/default/files/documents/Workers%20Compensation%20General%20Regulations_0.pdf</field>
+        <field
+            name="summary"
+        >Maximum remuneration of 116,000 for each year, for a worker and for the assessable payroll of the employers, in force January 1, 2026.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>

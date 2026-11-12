@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Northwest Territories income tax, T4127 option 1 -->
+    <record id="param_nt_brackets" model="base.time.parameter">
+        <field
+            name="name"
+        >Northwest Territories income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.nt.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Northwest Territories rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P). 2026: 5.9% from 0, 8.6% from 53,003, 12.2% from 106,009, 14.05% from 172,346. The constant KP is derived from the table and rounded to the dollar like the federal K: 0, 1,431, 5,247, 8,436. The rate of the first bracket is the lowest territorial rate of K1P and K2P (0.059). The Northwest Territories did not change on July 1, 2026. T4127 122nd edition (January 2026), table 8.1; 123rd edition (July 2026), table 8.1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+    </record>
+    <record id="param_nt_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nt_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.059], [53003, 0.086], [106009, 0.122], [172346, 0.1405]]</field>
+    </record>
+    <record id="param_nt_bpa" model="base.time.parameter">
+        <field name="name">Northwest Territories basic personal amount</field>
+        <field name="code">l10n_ca.nt.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >TCP of an employee who files no TD1NT: K1P = lowest territorial rate x TCP (0.059 x 18,198 = 1,073.68 in 2026). The Northwest Territories have no income-tested basic personal amount. 2026: 18,198, indexation rate 2.0%, the federal index factor the territory applies to its brackets and credit amounts. T4127 122nd edition (January 2026), table 8.2; TD1NT 2026 line 1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1nt.html ; https://www.fin.gov.nt.ca/en/services/licences-taxes-and-fees/personal-income-tax</field>
+    </record>
+    <record id="param_nt_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nt_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">18198</field>
+    </record>
+
+    <!-- Northwest Territories payroll tax, borne by the employee -->
+    <record id="param_nt_payroll_tax_rate" model="base.time.parameter">
+        <field name="name">Northwest Territories payroll tax rate</field>
+        <field name="code">l10n_ca.nt.payroll_tax.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Payroll tax of the employee, withheld by the employer on each pay: tax = rate x the gross of the pay, rounded to the cent (salary rule CA_NT_PAYROLL_TAX). Payroll Tax Act, SNWT 1993, c. 11, s. 3(1): "Every employee is liable to pay to the Government a tax in the amount equal to 2% of the remuneration paid to the employee in the year"; s. 5(1): the employer collects it by deducting or withholding it from the remuneration. Remuneration: the amounts included in employment income under s. 5(1), 6 and 7 of the Income Tax Act (Canada), except a pension paid to a former employee after retirement and the amounts deductible under s. 8(1)(c) or 110(2) of that Act. An employee who normally works outside the territory owes the tax on the days worked in it, and none when the remuneration from the employer in the year does not exceed 5,000 (Act s. 3(2) to (2.2); Payroll Tax Regulations, R-049-93, s. 2). 2026: 0.02. Sources: https://gnwt.ca/sites/default/files/legacy_justice/files/legislation/payroll-tax/payroll-tax.a.pdf ; https://gnwt.ca/sites/default/files/legacy_justice/files/legislation/payroll-tax/payroll-tax.r1.pdf ; https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employers</field>
+    </record>
+    <record id="param_nt_payroll_tax_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nt_payroll_tax_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.02</field>
+    </record>
+
+    <!-- Workers' Safety and Compensation Commission -->
+    <record id="param_nt_wcb_max_insurable" model="base.time.parameter">
+        <field
+            name="name"
+        >WSCC Year's Maximum Insurable Remuneration (Northwest Territories)</field>
+        <field name="code">l10n_ca.nt.wcb.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Year's Maximum Insurable Remuneration (YMIR) per worker in the Northwest Territories: the assessable payroll of the pay is min(gross, maximum - assessable payroll of the year so far); assessment = (assessable payroll / 100) x the rate of the industry subclass. 2026: 116,000 (Workers' Compensation General Regulations, R-080-2010, s. 1(c), as amended by R-001-2026; WSCC: "The 2026 Year's Maximum Insurable Remuneration (YMIR) for the NWT is $116,000"). The Northwest Territories and Nunavut have distinct maximums since 2025. 2027 not published. Sources: https://wscc.nt.ca/employer-services/employer-rates ; https://wscc.nt.ca/employer-services/report-payroll ; https://gnwt.ca/sites/default/files/documents/Workers%20Compensation%20General%20Regulations_0.pdf</field>
+    </record>
+    <record id="param_nt_wcb_max_insurable_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nt_wcb_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">116000</field>
+    </record>
+</odoo>
