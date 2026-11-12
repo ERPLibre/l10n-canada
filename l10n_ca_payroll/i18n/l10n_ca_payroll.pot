@@ -541,7 +541,8 @@ msgstr ""
 #: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__due_date
 msgid ""
 "Filing deadline: last day of the month set by the time parameter "
-"l10n_ca.t4.due_month, in the year after the slips."
+"l10n_ca.t4.due_month, in the year after the slips, moved to the next Monday "
+"when it falls on a weekend."
 msgstr ""
 
 #. module: l10n_ca_payroll

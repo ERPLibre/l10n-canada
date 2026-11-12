@@ -248,8 +248,9 @@ Derived figures:
 - The parameters are read at the end of each remittance period, and the T4
   month on January 1 of the following year: a version dated in the year
   changes the periods that end after it.
-- The T4 due date is the last day of the month and is not moved off a
-  weekend; T4001 then accepts the next business day.
+- The T4 due date is the last day of the month, moved to the next Monday
+  when it falls on a Saturday or a Sunday, as for the remittances:
+  February 28, 2027 is a Sunday, so the 2026 slips are due March 1, 2027.
 
 ### Worked examples
 

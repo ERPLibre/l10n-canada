@@ -341,7 +341,8 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         self.assertAlmostEqual(summary.line_27, 4230.45)
         self.assertAlmostEqual(summary.line_27a, 416.0)
         self.assertEqual(summary.line_88, 1)
-        self.assertEqual(summary.due_date, date(2027, 2, 28))
+        # February 28, 2027 is a Sunday: the deadline moves to Monday.
+        self.assertEqual(summary.due_date, date(2027, 3, 1))
         self.assertAlmostEqual(
             summary.line_80,
             2 * 4230.45 + 2 * 416.0 + 1123.07 + 1572.30 + t4.box_22,

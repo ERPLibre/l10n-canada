@@ -10,6 +10,8 @@ from datetime import date as Date
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
+from .l10n_ca_payroll_remittance import _next_weekday
+
 # T4 slip boxes: (field, CSV header).
 T4_BOXES = [
     ("box_14", "14 Employment income"),
@@ -73,7 +75,8 @@ class L10nCaPayrollT4Summary(models.Model):
         compute="_compute_due_date",
         store=True,
         help="Filing deadline: last day of the month set by the time "
-        "parameter l10n_ca.t4.due_month, in the year after the slips.",
+        "parameter l10n_ca.t4.due_month, in the year after the slips, moved "
+        "to the next Monday when it falls on a weekend.",
     )
     slip_ids = fields.One2many(
         "l10n_ca.payroll.t4.slip", "summary_id", string="T4 Slips"
@@ -125,7 +128,7 @@ class L10nCaPayrollT4Summary(models.Model):
                 "l10n_ca.t4.due_month", Date(following, 1, 1), default=2
             )
             last_day = calendar.monthrange(following, int(month))[1]
-            summary.due_date = Date(following, int(month), last_day)
+            summary.due_date = _next_weekday(Date(following, int(month), last_day))
 
     @api.depends(
         "slip_ids.box_14",
