@@ -408,6 +408,15 @@ class HrPayslip(models.Model):
         province = vals["province"]
         prefix = self._l10n_ca_province_prefix(province)
         if not prefix:
+            # The rules of a province module read these keys whether or not
+            # its province is registered.
+            for key in (
+                "province_remuneration",
+                "employer_tax",
+                "wcb_insurable",
+                "wcb",
+            ):
+                vals.setdefault(key, 0.0)
             return vals
         company = vals["company"]
         contract = vals["contract"]

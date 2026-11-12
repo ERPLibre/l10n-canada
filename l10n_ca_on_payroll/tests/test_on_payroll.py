@@ -522,8 +522,15 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         )
 
     def test_other_province_not_computed(self):
-        contract = self._contract(5000.0, province=self.alberta)
-        slip = self._slip(contract, "2026-03-01", "2026-03-31")
+        # Ontario registered alone, whatever other province modules are
+        # installed: Alberta has no provincial computation.
+        with patch.object(
+            type(self.env["hr.payslip"]),
+            "_l10n_ca_province_prefixes",
+            lambda self: {"ON": "l10n_ca.on"},
+        ):
+            contract = self._contract(5000.0, province=self.alberta)
+            slip = self._slip(contract, "2026-03-01", "2026-03-31")
         line = slip.line_ids.filtered(lambda line: line.code == "CA_PIT")
         self.assertIn("NOT COMPUTED", line.name)
         codes = slip.line_ids.mapped("code")

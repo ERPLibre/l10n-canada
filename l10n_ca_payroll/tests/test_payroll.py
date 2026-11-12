@@ -47,6 +47,19 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         cls.quebec = cls.env.ref("base.state_ca_qc")
         cls.journal = cls.company_data["default_journal_misc"]
 
+    def setUp(self):
+        super().setUp()
+        # The federal deductions alone: whatever province modules are
+        # installed, no province is registered with the provincial engine,
+        # so New Brunswick and Alberta bear no provincial tax here.
+        self.startPatcher(
+            patch.object(
+                type(self.env["hr.payslip"]),
+                "_l10n_ca_province_prefixes",
+                lambda self: {},
+            )
+        )
+
     # ------------------------------------------------------------------
     # Helpers
     # ------------------------------------------------------------------
