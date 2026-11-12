@@ -26,6 +26,10 @@ category ``CA_LUMP_DED`` withheld from them (F3). They are part of the
 gross: the contributions apply to the whole pay, while the income tax
 annualizes only the regular part I = gross - B and taxes B with the bonus
 formulas.
+
+The RPP, RRSP and similar contributions withheld from the regular pay are
+the rules of category ``CA_TAX_DED`` (F of the formulas). They lower the
+taxable income of the pay, not its pensionable or insurable earnings.
 """
 
 import math
@@ -51,10 +55,12 @@ PENSION_CODES = (
     "CA_F5B",
 )
 
-# Salary rule categories of the non-periodic payments (B) and of the
-# deductions withheld from them (F3).
+# Salary rule categories of the non-periodic payments (B), of the
+# deductions withheld from them (F3) and of the deductions withheld from
+# the regular pay that lower its taxable income (F).
 NONPERIODIC_CATEGORY = "CA_LUMP"
 NONPERIODIC_DEDUCTION_CATEGORY = "CA_LUMP_DED"
+TAX_DEDUCTION_CATEGORY = "CA_TAX_DED"
 
 
 def _round(amount):
@@ -66,10 +72,11 @@ class L10nCaPayrollRuleHelper:
 
     ``get(contract, gross)`` returns the dictionary of
     ``hr.payslip._l10n_ca_compute`` and computes it once per contract,
-    gross and non-periodic payments: the statutory rules each read one key
-    without recomputing the year-to-date totals. ``categories`` is the
-    object of the category totals of the payslip being computed, from
-    which the non-periodic payments and their deductions are read. A
+    gross, non-periodic payments and deductions: the statutory rules each
+    read one key without recomputing the year-to-date totals.
+    ``categories`` is the object of the category totals of the payslip
+    being computed, from which the non-periodic payments and the
+    deductions F3 and F are read. A
     helper is built for each payslip computation, so a recomputation never
     reads the values of the previous one.
     """
@@ -87,10 +94,17 @@ class L10nCaPayrollRuleHelper:
     def get(self, contract, gross):
         nonperiodic = self._category_total(NONPERIODIC_CATEGORY)
         deductions = -self._category_total(NONPERIODIC_DEDUCTION_CATEGORY)
-        key = (contract.id, _round(gross), _round(nonperiodic), _round(deductions))
+        tax_deductions = -self._category_total(TAX_DEDUCTION_CATEGORY)
+        key = (
+            contract.id,
+            _round(gross),
+            _round(nonperiodic),
+            _round(deductions),
+            _round(tax_deductions),
+        )
         if key not in self.cache:
             self.cache[key] = self.payslip._l10n_ca_compute(
-                contract, gross, nonperiodic, deductions
+                contract, gross, nonperiodic, deductions, tax_deductions
             )
         return self.cache[key]
 
@@ -316,16 +330,22 @@ class HrPayslip(models.Model):
                 totals[line.code] += sign * line.total
         return totals
 
-    def _l10n_ca_compute(self, contract, gross, nonperiodic=0.0, deductions=0.0):
+    def _l10n_ca_compute(
+        self, contract, gross, nonperiodic=0.0, deductions=0.0, tax_deductions=0.0
+    ):
         """Return the statutory amounts of ``contract`` for ``gross``.
 
         ``nonperiodic`` is the part of ``gross`` paid as bonuses or other
         non-periodic payments (B), ``deductions`` the deductions withheld
-        from them (F3). Amounts are positive and rounded to the cent; the
-        salary rules give the deductions their negative sign.
+        from them (F3), ``tax_deductions`` the deductions withheld from the
+        regular pay that lower its taxable income (F). Amounts are positive
+        and rounded to the cent; the salary rules give the deductions their
+        negative sign.
         """
         self.ensure_one()
-        vals = self._l10n_ca_prepare_values(contract, gross, nonperiodic, deductions)
+        vals = self._l10n_ca_prepare_values(
+            contract, gross, nonperiodic, deductions, tax_deductions
+        )
         self._l10n_ca_compute_contributions(vals)
         self._l10n_ca_compute_federal_tax(vals)
         self._l10n_ca_compute_provincial_tax(vals)
@@ -355,7 +375,9 @@ class HrPayslip(models.Model):
         )
         return self._l10n_ca_compute_contributions(regular)
 
-    def _l10n_ca_prepare_values(self, contract, gross, nonperiodic=0.0, deductions=0.0):
+    def _l10n_ca_prepare_values(
+        self, contract, gross, nonperiodic=0.0, deductions=0.0, tax_deductions=0.0
+    ):
         province = contract.l10n_ca_province_id
         if not province:
             raise UserError(
@@ -369,6 +391,7 @@ class HrPayslip(models.Model):
         plan = self._l10n_ca_pension_plan(province)
         nonperiodic = min(max(nonperiodic, 0.0), max(gross, 0.0))
         deductions = min(max(deductions, 0.0), nonperiodic)
+        tax_deductions = min(max(tax_deductions, 0.0), max(gross - nonperiodic, 0.0))
         return {
             "company": self.company_id,
             "contract": contract,
@@ -380,6 +403,7 @@ class HrPayslip(models.Model):
             "nonperiodic": nonperiodic,
             "nonperiodic_deductions": deductions,
             "nonperiodic_net": _round(nonperiodic - deductions),
+            "tax_deductions": _round(tax_deductions),
             "plan": plan,
             "pension_label": plan.upper(),
             "line_names": self._l10n_ca_pension_line_names(plan),
@@ -644,9 +668,10 @@ class HrPayslip(models.Model):
     def _l10n_ca_compute_federal_tax(self, vals):
         """Federal tax per period, T4127 option 1.
 
-        Regular pay: A = P * (I - F5A), I = gross - B, F5A = F5 * (PI - B)
-        / PI; tax per period = T1 / P + L. Non-periodic payments add TB
-        (``_l10n_ca_federal_bonus_tax``).
+        Regular pay: A = P * (I - F - F5A), I = gross - B, F the deductions
+        of category CA_TAX_DED, F5A = F5 * (PI - B) / PI; tax per period =
+        T1 / P + L. The Canada employment amount counts P * I, before F.
+        Non-periodic payments add TB (``_l10n_ca_federal_bonus_tax``).
         """
         company = vals["company"]
         contract = vals["contract"]
@@ -660,7 +685,7 @@ class HrPayslip(models.Model):
         if nonperiodic:
             regular = self._l10n_ca_regular_values(vals, regular_gross)
         additional = _round(contract.l10n_ca_additional_federal_tax)
-        annual = periods * (regular_gross - f5a)
+        annual = periods * (regular_gross - vals["tax_deductions"] - f5a)
         vals.update(
             {
                 "federal_annual_income": annual,
@@ -696,7 +721,7 @@ class HrPayslip(models.Model):
 
         Regular bonus calculation of T4127: TB = T1 of A with the payment
         payable now less T1 of A without it, where
-        A = P * (I - F5A) + (B - F3 - F5B) + (B1 - F5BYTD), the last term
+        A = P * (I - F - F5A) + (B - F3 - F5B) + (B1 - F5BYTD), the last term
         dropped without the payment. B1 and F5BYTD are the year-to-date
         totals of rules CA_NPP and CA_F5B. K2 adds the contributions on
         the payment once (``_l10n_ca_federal_k2``). When A with the
@@ -708,7 +733,7 @@ class HrPayslip(models.Model):
         periods = vals["periods"]
         param = company._l10n_ca_param
         regular_gross = regular["gross"]
-        base = max(0.0, periods * (regular_gross - f5a))
+        base = max(0.0, periods * (regular_gross - vals["tax_deductions"] - f5a))
         payment = max(0.0, vals["nonperiodic_net"] - vals["f5b"])
         previous = max(0.0, vals["ytd"]["nonperiodic"] - vals["ytd"]["f5b"])
         with_payment = base + payment + previous
@@ -804,6 +829,7 @@ class HrPayslip(models.Model):
             "box_17": -qpp_totals["CA_CPP"],
             "box_17a": -qpp_totals["CA_CPP2"],
             "box_18": -totals["CA_EI"],
+            "box_20": -totals["CA_RPP"],
             "box_22": income_tax,
             "box_24": min(insurable, mie) if mie is not None else insurable,
             "box_26": min(pensionable, yampe) if yampe is not None else pensionable,

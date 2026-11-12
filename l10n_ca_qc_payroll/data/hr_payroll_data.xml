@@ -18,10 +18,11 @@
         >Quebec source deductions and employer contributions (QPIP, health services fund, CNESST, labour standards, WSDRF).</field>
     </record>
 
-    <!-- F of TP-1015.F: the rules of this category, negative like every
-         deduction, lower the Quebec taxable income of the period. They
-         must run before the statutory rules (sequence below 110), which
-         read the category total once. -->
+    <!-- Part of F of TP-1015.F that only Quebec subtracts: the rules of
+         this category, negative like every deduction, lower the Quebec
+         taxable income of the period, with those of the federal category
+         CA_TAX_DED. They must run before the statutory rules (sequence
+         below 100), which read the category total once. -->
     <record id="categ_qc_tax_deduction" model="hr.salary.rule.category">
         <field name="name">Deduction Reducing the Quebec Taxable Income</field>
         <field name="code">CA_QC_TAXDED</field>
@@ -29,7 +30,7 @@
         <field name="company_id" eval="False" />
         <field
             name="note"
-        >Employee contributions withheld at source that TP-1015.F subtracts from the gross remuneration (variable F): RPP, RRSP, VRSP or PRPP, FHSA, retirement compensation arrangement, CIP deduction. Give the rules a sequence below 110.</field>
+        >Employee amounts withheld at source that TP-1015.F subtracts from the gross remuneration (variable F) and T4127 does not, such as an FHSA contribution or the CIP deduction. RPP, RRSP, VRSP and PRPP contributions go in the category Deduction Reducing the Taxable Income (CA_TAX_DED), which lowers both taxable incomes. Give the rules a sequence below 100.</field>
     </record>
 
     <!-- Every rule below applies only to an employment in Quebec. -->

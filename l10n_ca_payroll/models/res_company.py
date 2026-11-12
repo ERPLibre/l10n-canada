@@ -8,6 +8,8 @@ from odoo import fields, models
 # shrink by the same amount. Employer contributions are positive.
 _CA_2023_RULE_ACCOUNTS = {
     "rule_gross": ("l10n_ca_512110", "l10n_ca_221203"),
+    "rule_rpp": ("l10n_ca_221206", "l10n_ca_221203"),
+    "rule_rrsp": ("l10n_ca_221206", "l10n_ca_221203"),
     "rule_cpp": ("l10n_ca_221206", "l10n_ca_221203"),
     "rule_cpp2": ("l10n_ca_221206", "l10n_ca_221203"),
     "rule_ei": ("l10n_ca_221206", "l10n_ca_221203"),

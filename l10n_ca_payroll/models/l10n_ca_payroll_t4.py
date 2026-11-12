@@ -20,6 +20,7 @@ T4_BOXES = [
     ("box_17", "17 Employee's QPP contributions"),
     ("box_17a", "17A Employee's second QPP contributions"),
     ("box_18", "18 Employee's EI premiums"),
+    ("box_20", "20 RPP contributions"),
     ("box_22", "22 Income tax deducted"),
     ("box_24", "24 EI insurable earnings"),
     ("box_26", "26 CPP/QPP pensionable earnings"),
@@ -35,6 +36,7 @@ SUMMARY_LINES = [
     ("line_27a", "27A Employer's second CPP contributions"),
     ("line_18", "18 Employees' EI premiums"),
     ("line_19", "19 Employer's EI premiums"),
+    ("line_20", "20 RPP contributions"),
     ("line_22", "22 Income tax deducted"),
     ("line_80", "80 Total deductions reported"),
     ("line_82", "82 Minus: remittances"),
@@ -89,6 +91,12 @@ class L10nCaPayrollT4Summary(models.Model):
     line_16a = fields.Monetary(compute="_compute_lines", store=True)
     line_18 = fields.Monetary(compute="_compute_lines", store=True)
     line_19 = fields.Monetary(compute="_compute_lines", store=True)
+    line_20 = fields.Monetary(
+        compute="_compute_lines",
+        store=True,
+        help="Employee RPP contributions of the slips (box 20), for "
+        "information: they are not part of the deductions to remit.",
+    )
     line_22 = fields.Monetary(compute="_compute_lines", store=True)
     line_27 = fields.Monetary(compute="_compute_lines", store=True)
     line_27a = fields.Monetary(compute="_compute_lines", store=True)
@@ -135,6 +143,7 @@ class L10nCaPayrollT4Summary(models.Model):
         "slip_ids.box_16",
         "slip_ids.box_16a",
         "slip_ids.box_18",
+        "slip_ids.box_20",
         "slip_ids.box_22",
         "slip_ids.employer_cpp",
         "slip_ids.employer_cpp2",
@@ -150,6 +159,7 @@ class L10nCaPayrollT4Summary(models.Model):
                 "line_16a": sum(slips.mapped("box_16a")),
                 "line_18": sum(slips.mapped("box_18")),
                 "line_19": sum(slips.mapped("employer_ei")),
+                "line_20": sum(slips.mapped("box_20")),
                 "line_22": sum(slips.mapped("box_22")),
                 "line_27": sum(slips.mapped("employer_cpp")),
                 "line_27a": sum(slips.mapped("employer_cpp2")),
@@ -342,6 +352,7 @@ class L10nCaPayrollT4Slip(models.Model):
     box_17 = fields.Monetary(string="Box 17 - QPP Contributions")
     box_17a = fields.Monetary(string="Box 17A - Second QPP Contributions")
     box_18 = fields.Monetary(string="Box 18 - EI Premiums")
+    box_20 = fields.Monetary(string="Box 20 - RPP Contributions")
     box_22 = fields.Monetary(string="Box 22 - Income Tax Deducted")
     box_24 = fields.Monetary(string="Box 24 - EI Insurable Earnings")
     box_26 = fields.Monetary(string="Box 26 - CPP/QPP Pensionable Earnings")

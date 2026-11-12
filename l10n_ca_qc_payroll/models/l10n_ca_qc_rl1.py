@@ -22,6 +22,7 @@ RL1_BOXES = [
     ("box_b_a", _lt("B.A QPP contribution")),
     ("box_b_b", _lt("B.B Additional QPP contribution")),
     ("box_c", _lt("C EI premium")),
+    ("box_d", _lt("D RPP contributions")),
     ("box_e", _lt("E Quebec income tax withheld")),
     ("box_f", _lt("F Union dues")),
     ("box_g", _lt("G Pensionable salary or wages under the QPP")),
@@ -550,6 +551,7 @@ class L10nCaQcRl1Slip(models.Model):
     box_b_a = fields.Monetary(string="Box B.A - QPP Contribution")
     box_b_b = fields.Monetary(string="Box B.B - Additional QPP Contribution")
     box_c = fields.Monetary(string="Box C - EI Premium")
+    box_d = fields.Monetary(string="Box D - RPP Contributions")
     box_e = fields.Monetary(string="Box E - Quebec Income Tax Withheld")
     box_f = fields.Monetary(string="Box F - Union Dues")
     box_g = fields.Monetary(string="Box G - Pensionable Salary under the QPP")

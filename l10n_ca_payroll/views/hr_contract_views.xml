@@ -30,6 +30,13 @@
                             <field name="l10n_ca_additional_federal_tax" />
                             <field name="l10n_ca_federal_other_credits" />
                         </group>
+                        <group
+                            name="l10n_ca_tax_deductions"
+                            string="Retirement Savings Withheld"
+                        >
+                            <field name="l10n_ca_rpp_amount" />
+                            <field name="l10n_ca_rrsp_amount" />
+                        </group>
                     </group>
                 </page>
             </xpath>

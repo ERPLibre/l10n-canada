@@ -72,6 +72,20 @@ class HrContract(models.Model):
         "credits authorized by a tax services office, as an annual credit "
         "amount.",
     )
+    l10n_ca_rpp_amount = fields.Monetary(
+        string="RPP Contribution per Pay",
+        help="Employee contribution to a registered pension plan withheld "
+        "from each pay by salary rule CA_RPP, with the RPP input of the "
+        "payslip. It lowers the taxable income of the pay (F of the CRA and "
+        "Revenu Quebec formulas) and is reported in box 20 of the T4.",
+    )
+    l10n_ca_rrsp_amount = fields.Monetary(
+        string="RRSP Contribution per Pay",
+        help="Employee contribution to an RRSP, a PRPP or a VRSP withheld "
+        "from each pay by salary rule CA_RRSP, with the RRSP input of the "
+        "payslip. It lowers the taxable income of the pay (F of the CRA and "
+        "Revenu Quebec formulas).",
+    )
     l10n_ca_t4_dental_code = fields.Selection(
         [
             ("1", "1 - Not eligible to any dental care coverage"),

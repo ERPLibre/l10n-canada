@@ -7,12 +7,13 @@ Payroll > Configuration > Settings > Canadian Payroll:
 - click *Set Up Canadian Payroll*: the company gets the *Canada - Base*
   structure as default and, with the `ca_2023` chart, the salary rules get
   their accounts (salaries 512110, employer contributions 512121, wages
-  payable 221203, source deductions payable 221206). Accounts already set
-  are kept; change them on each salary rule.
+  payable 221203, source deductions and RPP or RRSP contributions payable
+  221206). Accounts already set are kept; change them on each salary rule.
 
 On each contract, page *Canadian Payroll*: province of employment, pay
 periods per year (computed from the scheduled pay, "Bi-monthly" meaning
-twice a month), federal TD1 claim, additional tax, exemptions. The wage of
+twice a month), federal TD1 claim, additional tax, RPP and RRSP
+contributions withheld per pay, exemptions. The wage of
 the contract is monthly; the basic salary of a pay is wage * 12 / pay
 periods. Set the birth date of the employee for the CPP age limits, and
 the identification number for the SIN printed on the T4.
@@ -289,8 +290,8 @@ these amounts (`tests/test_payroll.py`).
   (table 8.7); employer EI **1,572.30**. Federal tax 2,744.73 (months 1-4,
   A = 178,234.99, K = 10,241, K2 = 649.95), 2,746.92, 2,678.97, 2,782.97.
   T4 box 24 capped at **68,900**, box 26 at **85,000**; T4 due
-  2027-03-01 (February 28 is a Sunday). January remittance 5,081.83, due 2026-02-16 (February 15
-  is a Sunday). `test_maximums_t4_and_remittances`
+  2027-03-01 (February 28 is a Sunday). January remittance 5,081.83, due
+  2026-02-16 (February 15 is a Sunday). `test_maximums_t4_and_remittances`
 - **Refund** — a refunded January payslip leaves February as a first pay:
   CPP 875.15, EI 244.50. `test_refund_reduces_year_to_date`
 - **CPP at 70** — 70th birthday in March: PM = 3, maximum 4,230.45 × 3 /
@@ -298,6 +299,15 @@ these amounts (`tests/test_payroll.py`).
   `test_cpp_stops_at_70`
 - **CPP at 18** — 18th birthday in March: no CPP in March, 280.15 in
   April. `test_cpp_starts_after_18`
+- **RPP and RRSP contributions (F)** — 5,000 a month in Ontario, RPP of
+  300 on the contract and RRSP of 100 in the payslip input: F = 400,
+  A = 12 × (5,000 − 400 − 47.0840) = 54,634.99, R = 14%, K = 0;
+  T3 = 4,607.01, **federal tax 383.92** instead of 444.86. CPP, EI and
+  box 14 keep the gross of 5,000; box 20 is 300.
+  `test_rpp_and_rrsp_lower_the_taxable_income`
+- **2027 maximums** — 30,000 a month in 2027: CPP 1,708.23 × 2, then
+  792.54 (maximum **4,209.00**); CPP2 **428.00** in March; EI 492.00 × 2,
+  then 177.12 (maximum **1,161.12**). `test_maximums_2027`
 - **T4127 regular bonus example** — 1,000 a week, an earlier bonus of
   1,500 (F5B 14.60) and a bonus of 2,500 payable now: C = 204.25,
   F5A = 9.81, F5B = 24.52, EI = 57.05; regular tax 81.55; K2 adds 23.03

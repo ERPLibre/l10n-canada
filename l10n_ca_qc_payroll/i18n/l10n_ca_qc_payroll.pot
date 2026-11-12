@@ -467,6 +467,11 @@ msgid "Box C - EI Premium"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_d
+msgid "Box D - RPP Contributions"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_e
 msgid "Box E - Quebec Income Tax Withheld"
 msgstr ""
@@ -635,6 +640,12 @@ msgstr ""
 #. module: l10n_ca_qc_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__l10n_ca_qc_rl1_slip__slip_code__d
 msgid "D - Cancelled"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "D RPP contributions"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll

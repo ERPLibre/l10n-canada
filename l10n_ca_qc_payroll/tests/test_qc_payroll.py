@@ -298,24 +298,11 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
 
     def test_example_appendix_1(self):
         """TP-1015.F appendix 1: RPP (F) and labour-sponsored funds (Q, Q1)."""
-        rule = self.env["hr.salary.rule"].create(
-            {
-                "name": "Registered Pension Plan",
-                "code": "TEST_RPP",
-                "sequence": 50,
-                "category_id": self.env.ref(
-                    "l10n_ca_qc_payroll.categ_qc_tax_deduction"
-                ).id,
-                "condition_select": "none",
-                "amount_select": "fix",
-                "amount_fix": -200.0,
-            }
-        )
-        self.structure.rule_ids = [(4, rule.id)]
         # 8,666.67 * 12 / 26 = 4,000.00 every two weeks.
         contract = self._contract(
             8666.67,
             schedule="bi-weekly",
+            l10n_ca_rpp_amount=200.0,
             l10n_ca_qc_claim_type="custom",
             l10n_ca_qc_claim_amount=21830.0,
             l10n_ca_qc_claim_year=2026,
@@ -329,7 +316,35 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
         #   - 0.15 * 26 * 150 = 11,557.37 -> 444.51, as in the appendix.
         self._assert_lines(
             slip,
-            {"BASIC": 4000.0, "TEST_RPP": -200.0, "CA_CPP": -243.52, "CA_PIT": -444.51},
+            {"BASIC": 4000.0, "CA_RPP": -200.0, "CA_CPP": -243.52, "CA_PIT": -444.51},
+        )
+        rl1 = slip._l10n_ca_qc_rl1_values(2026)
+        self.assertAlmostEqual(rl1["box_a"], 4000.0)
+        self.assertAlmostEqual(rl1["box_d"], 200.0)
+
+    def test_quebec_only_deduction(self):
+        """A rule of category CA_QC_TAXDED lowers the Quebec tax only."""
+        rule = self.env["hr.salary.rule"].create(
+            {
+                "name": "FHSA Contribution",
+                "code": "TEST_FHSA",
+                "sequence": 50,
+                "category_id": self.env.ref(
+                    "l10n_ca_qc_payroll.categ_qc_tax_deduction"
+                ).id,
+                "condition_select": "none",
+                "amount_select": "fix",
+                "amount_fix": -100.0,
+            }
+        )
+        self.structure.rule_ids = [(4, rule.id)]
+        contract = self._contract(5000.0)
+        slip = self._slip(contract, "2026-03-01", "2026-03-31")
+        # Federal tax as in test_monthly_5000: 368.94.
+        # Quebec: I = 12 * (5,000 - 100 - 120.83 - 47.08) = 56,785.08
+        #   Y = 0.19 * 56,785.08 - 2,717 - 0.14 * 18,952 = 5,418.89 -> 451.57
+        self._assert_lines(
+            slip, {"TEST_FHSA": -100.0, "CA_FIT": -368.94, "CA_PIT": -451.57}
         )
 
     def test_example_appendix_2(self):

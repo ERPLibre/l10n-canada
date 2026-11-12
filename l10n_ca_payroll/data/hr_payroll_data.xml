@@ -48,6 +48,18 @@
             name="note"
         >RPP or RRSP contributions withheld from the non-periodic payments of the period (F3 of T4127; the reduction of B2 in TP-1015.F). They lower the payment taxed with the bonus formulas. Give the rules a sequence below 100.</field>
     </record>
+    <!-- F of T4127 and TP-1015.F: the rules of this category must run
+         before the statutory rules (sequence below 100), which read the
+         category total once. -->
+    <record id="categ_tax_ded" model="hr.salary.rule.category">
+        <field name="name">Deduction Reducing the Taxable Income</field>
+        <field name="code">CA_TAX_DED</field>
+        <field name="parent_id" ref="categ_ded" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Employee contributions to an RPP, an RRSP, a PRPP or a VRSP, or to a retirement compensation arrangement, withheld from the regular pay of the period (F of T4127 and of TP-1015.F). They lower the taxable income of the pay, not the pensionable or insurable earnings. Give the rules a sequence below 100.</field>
+    </record>
 
     <!-- Payee of the federal source deductions -->
     <record id="partner_receiver_general" model="res.partner">
@@ -97,6 +109,54 @@
         <field name="name">Bonus</field>
         <field name="code">CA_BONUS</field>
         <field name="input_id" ref="rule_bonus" />
+    </record>
+
+    <!-- Retirement savings withheld from the pay (F) -->
+    <record id="rule_rpp" model="hr.salary.rule">
+        <field name="name">RPP Contribution</field>
+        <field name="code">CA_RPP</field>
+        <field name="sequence">30</field>
+        <field name="category_id" ref="categ_tax_ded" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = bool(contract.l10n_ca_rpp_amount or (inputs.CA_RPP and inputs.CA_RPP.amount))</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = -(contract.l10n_ca_rpp_amount + (inputs.CA_RPP.amount if inputs.CA_RPP else 0.0))</field>
+        <field
+            name="note"
+        >Employee registered pension plan contribution: the amount per pay of the contract plus the RPP input of the payslip. Box 20 of the T4, box D of the RL-1.</field>
+    </record>
+    <record id="rule_input_rpp" model="hr.rule.input">
+        <field name="name">RPP Contribution</field>
+        <field name="code">CA_RPP</field>
+        <field name="input_id" ref="rule_rpp" />
+    </record>
+    <record id="rule_rrsp" model="hr.salary.rule">
+        <field name="name">RRSP Contribution</field>
+        <field name="code">CA_RRSP</field>
+        <field name="sequence">31</field>
+        <field name="category_id" ref="categ_tax_ded" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = bool(contract.l10n_ca_rrsp_amount or (inputs.CA_RRSP and inputs.CA_RRSP.amount))</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = -(contract.l10n_ca_rrsp_amount + (inputs.CA_RRSP.amount if inputs.CA_RRSP else 0.0))</field>
+        <field
+            name="note"
+        >Employee RRSP, PRPP or VRSP contribution: the amount per pay of the contract plus the RRSP input of the payslip.</field>
+    </record>
+    <record id="rule_input_rrsp" model="hr.rule.input">
+        <field name="name">RRSP Contribution</field>
+        <field name="code">CA_RRSP</field>
+        <field name="input_id" ref="rule_rrsp" />
     </record>
     <record id="rule_gross" model="hr.salary.rule">
         <field name="name">Gross</field>
@@ -287,6 +347,8 @@ result_name = ca["line_names"]["CA_CPP2_ER"]</field>
             eval="[(6, 0, [
                 ref('rule_basic'),
                 ref('rule_bonus'),
+                ref('rule_rpp'),
+                ref('rule_rrsp'),
                 ref('rule_gross'),
                 ref('rule_pensionable'),
                 ref('rule_insurable'),

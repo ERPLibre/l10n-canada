@@ -474,6 +474,11 @@ msgid "Box C - EI Premium"
 msgstr "Case C - Cotisation à l'assurance emploi"
 
 #. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_d
+msgid "Box D - RPP Contributions"
+msgstr "Case D - Cotisation à un RPA"
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_slip__box_e
 msgid "Box E - Quebec Income Tax Withheld"
 msgstr "Case E - Impôt du Québec retenu"
@@ -647,6 +652,12 @@ msgstr "Devise"
 #: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__l10n_ca_qc_rl1_slip__slip_code__d
 msgid "D - Cancelled"
 msgstr "D - Annulé"
+
+#. module: l10n_ca_qc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
+msgid "D RPP contributions"
+msgstr "D Cotisation à un RPA"
 
 #. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__due_date

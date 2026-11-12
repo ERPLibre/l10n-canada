@@ -134,6 +134,11 @@ msgid "Box 18 - EI Premiums"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_20
+msgid "Box 20 - RPP Contributions"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__box_22
 msgid "Box 22 - Income Tax Deducted"
 msgstr ""
@@ -383,6 +388,11 @@ msgid "Deduction From a Bonus or Lump-Sum Payment"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_tax_ded
+msgid "Deduction Reducing the Taxable Income"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_t4_dental_code
 msgid ""
 "Dental coverage offered to the employee by the employer, whether or not the "
@@ -436,6 +446,30 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__employee_id
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_slip_view_form
 msgid "Employee"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_20
+msgid ""
+"Employee RPP contributions of the slips (box 20), for information: they are "
+"not part of the deductions to remit."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_rpp_amount
+msgid ""
+"Employee contribution to a registered pension plan withheld from each pay by"
+" salary rule CA_RPP, with the RPP input of the payslip. It lowers the "
+"taxable income of the pay (F of the CRA and Revenu Quebec formulas) and is "
+"reported in box 20 of the T4."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_rrsp_amount
+msgid ""
+"Employee contribution to an RRSP, a PRPP or a VRSP withheld from each pay by"
+" salary rule CA_RRSP, with the RRSP input of the payslip. It lowers the "
+"taxable income of the pay (F of the CRA and Revenu Quebec formulas)."
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -612,6 +646,11 @@ msgstr ""
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_19
 msgid "Line 19"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_20
+msgid "Line 20"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -874,6 +913,26 @@ msgid "QPP2 Employer Contributions"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_rpp
+msgid "RPP Contribution"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_rpp_amount
+msgid "RPP Contribution per Pay"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_rrsp
+msgid "RRSP Contribution"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_rrsp_amount
+msgid "RRSP Contribution per Pay"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_res_company__l10n_ca_ei_employer_multiplier
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_res_config_settings__l10n_ca_ei_employer_multiplier
 msgid "Reduced EI Employer Multiplier"
@@ -900,6 +959,11 @@ msgstr ""
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__remitter_type
 msgid "Remitter Type"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.hr_contract_view_form
+msgid "Retirement Savings Withheld"
 msgstr ""
 
 #. module: l10n_ca_payroll

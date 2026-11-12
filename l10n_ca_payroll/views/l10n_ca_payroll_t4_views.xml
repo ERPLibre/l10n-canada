@@ -16,6 +16,7 @@
                 <field name="box_17" sum="Total" optional="hide" />
                 <field name="box_17a" sum="Total" optional="hide" />
                 <field name="box_18" sum="Total" />
+                <field name="box_20" sum="Total" optional="hide" />
                 <field name="box_22" sum="Total" />
                 <field name="box_24" optional="show" />
                 <field name="box_26" optional="show" />
@@ -46,6 +47,7 @@
                             <field name="box_17" />
                             <field name="box_17a" />
                             <field name="box_18" />
+                            <field name="box_20" />
                             <field name="box_22" />
                             <field name="box_24" />
                             <field name="box_26" />
@@ -132,6 +134,7 @@
                             <field name="line_27a" />
                             <field name="line_18" />
                             <field name="line_19" />
+                            <field name="line_20" />
                             <field name="line_22" />
                             <field name="line_80" />
                             <field name="line_82" />

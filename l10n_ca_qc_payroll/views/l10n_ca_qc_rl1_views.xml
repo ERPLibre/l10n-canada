@@ -14,6 +14,7 @@
                 <field name="box_b_a" sum="Total" />
                 <field name="box_b_b" sum="Total" optional="show" />
                 <field name="box_c" sum="Total" optional="show" />
+                <field name="box_d" sum="Total" optional="hide" />
                 <field name="box_e" sum="Total" />
                 <field name="box_g" optional="show" />
                 <field name="box_h" sum="Total" />
@@ -43,6 +44,7 @@
                             <field name="box_b_a" />
                             <field name="box_b_b" />
                             <field name="box_c" />
+                            <field name="box_d" />
                             <field name="box_e" />
                             <field name="box_f" />
                             <field name="box_g" />

@@ -21,10 +21,12 @@ employment in Quebec (province code QC):
 The amounts land in the ``vals`` dictionary of ``_l10n_ca_compute`` under
 ``qc_*`` and ``qpip*`` keys, read by the Quebec salary rules.
 
-F of TP-1015.F is the total of the rules of category ``CA_QC_TAXDED``
-computed before the statutory rules: the rule helper of this module reads
-it from the category totals of the payslip being computed and passes it in
-the context key ``l10n_ca_qc_tax_deductions``.
+F of TP-1015.F is the total of the rules of category ``CA_TAX_DED`` of the
+federal module (RPP, RRSP, PRPP, VRSP), which is also F of T4127, plus the
+rules of category ``CA_QC_TAXDED``, the deductions that only Quebec
+subtracts. Both run before the statutory rules: the rule helper of this
+module reads ``CA_QC_TAXDED`` from the category totals of the payslip being
+computed and passes it in the context key ``l10n_ca_qc_tax_deductions``.
 """
 
 import math
@@ -38,7 +40,8 @@ from odoo.addons.l10n_ca_time_parameter.tools import marginal_rate
 
 from ..tools import quebec_constant
 
-# Salary rule category whose total is F of TP-1015.F.
+# Salary rule category of the deductions that lower the Quebec taxable
+# income only; with the federal CA_TAX_DED they make F of TP-1015.F.
 TAX_DEDUCTION_CATEGORY = "CA_QC_TAXDED"
 
 
@@ -66,11 +69,11 @@ def _is_quebec(province):
 
 
 class L10nCaQcPayrollRuleHelper(L10nCaPayrollRuleHelper):
-    """Rule helper that also passes F of TP-1015.F to the computation.
+    """Rule helper that also passes the Quebec-only deductions of F.
 
     ``categories`` is the object of the category totals of the payslip
-    being computed. When a rule asks for the statutory amounts, F is the
-    total of category ``CA_QC_TAXDED`` so far, made positive, and reaches
+    being computed. When a rule asks for the statutory amounts, the total
+    of category ``CA_QC_TAXDED`` so far, made positive, reaches
     ``hr.payslip._l10n_ca_compute`` in the context key
     ``l10n_ca_qc_tax_deductions``.
     """
@@ -245,8 +248,12 @@ class HrPayslip(models.Model):
             return False, 0
         return applies, months
 
-    def _l10n_ca_prepare_values(self, contract, gross, nonperiodic=0.0, deductions=0.0):
-        vals = super()._l10n_ca_prepare_values(contract, gross, nonperiodic, deductions)
+    def _l10n_ca_prepare_values(
+        self, contract, gross, nonperiodic=0.0, deductions=0.0, tax_deductions=0.0
+    ):
+        vals = super()._l10n_ca_prepare_values(
+            contract, gross, nonperiodic, deductions, tax_deductions
+        )
         vals["qc_tax_deductions"] = self.env.context.get(
             "l10n_ca_qc_tax_deductions", 0.0
         )
@@ -408,8 +415,9 @@ class HrPayslip(models.Model):
 
         Regular payments (2.1.1): I = P * (G - F - H - CSA) - J - J1, G
         being the gross less the lump-sum payments B2 of the pay, F the
-        rules of category CA_QC_TAXDED of the period
-        (``qc_tax_deductions``), H = min(0.06 * G, maximum / P) the
+        rules of categories CA_TAX_DED and CA_QC_TAXDED of the period
+        (``tax_deductions`` and ``qc_tax_deductions``), H = min(0.06 * G,
+        maximum / P) the
         deduction for workers, on G before F, and CSA = CS * (S3 - B2) / S3
         the share of G in CS, the first and second additional QPP
         contributions of the period. J, J1 and K1 are spread over the pays
@@ -441,7 +449,7 @@ class HrPayslip(models.Model):
             if nonperiodic and pensionable > 0:
                 additional_qpp *= (pensionable - nonperiodic) / pensionable
             additional_qpp = _round(additional_qpp)
-        tax_deductions = vals.get("qc_tax_deductions", 0.0)
+        tax_deductions = vals["tax_deductions"] + vals.get("qc_tax_deductions", 0.0)
         deductions = self._l10n_ca_qc_annualized(
             vals, contract.l10n_ca_qc_deductions, contract.l10n_ca_qc_deductions_date
         )
@@ -612,6 +620,7 @@ class HrPayslip(models.Model):
             "box_b_a": -qpp_totals["CA_CPP"],
             "box_b_b": box_b_b,
             "box_c": -totals["CA_EI"],
+            "box_d": -totals["CA_RPP"],
             "box_e": -totals["CA_PIT"],
             "box_f": -totals["CA_UNION"],
             "box_g": min(qpp_totals["CA_PE"], pension_cap),

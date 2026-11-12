@@ -29,9 +29,13 @@ the year, the Fonds de solidarité FTQ and Fondaction withholdings per pay,
 the additional Quebec tax per pay, the exemption from withholding and the
 CNESST coverage.
 
-Employee contributions that reduce the Quebec taxable income (RPP, RRSP,
-VRSP or PRPP, FHSA; variable F of TP-1015.F) go in salary rules of category
-*Deduction Reducing the Quebec Taxable Income*, with a sequence below 110.
+RPP, RRSP, VRSP and PRPP contributions withheld per pay are entered on the
+contract or in the *RPP Contribution* and *RRSP Contribution* inputs of the
+payslip (Canadian federal payroll module): they lower both the federal and
+the Quebec taxable income, and the RPP ones are reported in box D of the
+RL-1. The other employee amounts that only TP-1015.F subtracts (FHSA, CIP
+deduction; variable F) go in salary rules of category *Deduction Reducing
+the Quebec Taxable Income*, with a sequence below 100.
 
 Due dates skip the Quebec public holidays and the Revenu Québec closure
 days when the *Canada - Tax Compliance Calendar* module is installed;
@@ -338,7 +342,13 @@ with the basic personal amount as E. The federal tax is computed by
   - The tax of the pay is 444.51, the amount of the appendix for the first
     18 pays.
 
-  Test: `test_example_appendix_1`.
+  The RPP contribution is the amount per pay of the contract, which also
+  gives box D of the RL-1 (200). Test: `test_example_appendix_1`.
+- **Deduction for Quebec only**: 5,000 a month with an FHSA contribution of
+  100 in category *Deduction Reducing the Quebec Taxable Income*. The
+  federal tax stays 368.94; I = 12 x (5,000 - 100 - 120.83 - 47.08) =
+  56,785.08 and Y = 0.19 x 56,785.08 - 2,717 - 2,653.28 = 5,418.89, so the
+  Quebec tax is 451.57. Test: `test_quebec_only_deduction`.
 - **TP-1015.F-V appendix 2** (retroactive payment, second method): 1,500 a
   week (P = 52) with an RPP contribution of 100, and a retroactive payment
   of 4,000 of which 400 go to the RPP.

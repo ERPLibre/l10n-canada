@@ -20,18 +20,25 @@ Canadian federal payroll on top of the OCA payroll.
   the year included), or a flat rate when that income is at most 5,000.
   RPP or RRSP contributions withheld from the payment go in category
   *Deduction From a Bonus or Lump-Sum Payment*.
+- RPP, RRSP, PRPP and VRSP contributions withheld from the regular pay: an
+  amount per pay on the contract, plus the *RPP Contribution* or *RRSP
+  Contribution* input of the payslip, in category *Deduction Reducing the
+  Taxable Income* (`CA_TAX_DED`). They lower the annual taxable income
+  (F of T4127), not the CPP and EI earnings; the RPP contributions are
+  reported in box 20 of the T4.
 - Every rate, ceiling, bracket table, credit amount and due date is a dated
   time parameter (`l10n_ca.federal.*`, `l10n_ca.cpp.*`, `l10n_ca.ei.*`,
   `l10n_ca.pd7a.*`, `l10n_ca.t4.*`) shipped for 2025 and 2026, and 2027
   where already published.
 - Contract fields: province of employment, pay periods per year, federal
-  TD1 claim, additional tax, other federal credits, CPP/QPP and EI
-  exemptions. The birth date of the employee applies the CPP age limits.
+  TD1 claim, additional tax, other federal credits, RPP and RRSP
+  contributions per pay, CPP/QPP and EI exemptions. The birth date of the
+  employee applies the CPP age limits.
 - Provincial income tax is left to one module per province. Without one,
   the payslip shows a *NOT COMPUTED* line and a warning instead of a
   silent zero.
 - Year-end: T4 slips per employee and province (boxes 10, 12, 14, 16, 16A,
-  17, 17A, 18, 22, 24, 26, 28, 44, 45), T4 Summary lines 14 to 88, PD7A
+  17, 17A, 18, 20, 22, 24, 26, 28, 44, 45), T4 Summary lines 14 to 88, PD7A
   remittances per period of the remitter type, CSV exports to fill in the
   CRA web forms.
 - Accounting through `payroll_account`, with accounts proposed from the

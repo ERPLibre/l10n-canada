@@ -12,7 +12,8 @@ for employees whose province of employment is Quebec.
 - Quebec income tax per the Revenu Québec *Formulas to Calculate Source
   Deductions and Contributions* (TP-1015.F) for regular payments: annual
   taxable income, deduction for workers, deduction of the additional QPP
-  contributions, TP-1015.3 claim (basic personal amount by default),
+  contributions, RPP, RRSP and similar contributions withheld at source
+  (F), TP-1015.3 claim (basic personal amount by default),
   deductions and credits authorized on a TP-1016, additional tax per pay.
   Bonuses, retroactive payments and other similar lump-sum payments follow
   the second method of section 2.1.2: the rate of the bracket of the
@@ -26,7 +27,7 @@ for employees whose province of employment is Quebec.
 - Every rate, maximum, bracket table, credit amount and due date is a dated
   time parameter (`l10n_ca.qpp.*`, `l10n_ca.qpip.*`, `l10n_ca.qc.*`) shipped
   for 2025 and 2026.
-- Year-end: RL-1 slips (boxes A, B.A, B.B, C, E, F, G, H, I), RL-1 summary
+- Year-end: RL-1 slips (boxes A, B.A, B.B, C, D, E, F, G, H, I), RL-1 summary
   (RLZ-1.S lines 21 to 82, with the reconciliation of the health services
   fund, labour standards and WSDRF contributions), Revenu Québec
   remittances per period of the company frequency (TPZ-1015.R.14), T4 boxes
