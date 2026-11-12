@@ -1,0 +1,295 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_sk_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-12 18:53+0000\n"
+"PO-Revision-Date: 2026-11-12 18:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_finance_structure
+msgid "2026 Personal Income Tax Structure"
+msgstr "Structure de l'impôt sur le revenu des particuliers 2026"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_t4127_123
+msgid ""
+"2026 Saskatchewan brackets, constants KP, basic personal amount and LCP. The"
+" edition lists Saskatchewan among the provinces without change on July 1, "
+"2026, and its upcoming changes for January 1, 2027 give no Saskatchewan "
+"figure."
+msgstr ""
+"Tranches, constantes KP, montant personnel de base et LCP de la Saskatchewan"
+" pour 2026. L'édition range la Saskatchewan parmi les provinces sans "
+"changement au 1er juillet 2026, et ses changements à venir au 1er janvier "
+"2027 ne donnent aucun montant de la Saskatchewan."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_finance_structure
+msgid ""
+"2026 Saskatchewan rates: 10.5% on the first 54,532, 12.5% on the next "
+"101,273 and 14.5% on the remainder; basic personal amount 20,381; credits at"
+" the lowest rate, 10.5%."
+msgstr ""
+"Taux de la Saskatchewan pour 2026 : 10,5 % sur les premiers 54 532, 12,5 % "
+"sur les 101 273 suivants et 14,5 % sur l'excédent ; montant personnel de "
+"base de 20 381 ; crédits au taux le plus bas, 10,5 %."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_wcbsask_eps
+msgid ""
+"Actual assessable wages of the previous year and estimate of the current "
+"year, due February 28; an underestimate penalty applies when the actual "
+"wages exceed the estimate by more than 50%."
+msgstr ""
+"Salaires cotisables réels de l'année précédente et estimation de l'année en "
+"cours, dus le 28 février ; une pénalité de sous-estimation s'applique "
+"lorsque les salaires réels dépassent l'estimation de plus de 50 %."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_wcbsask_reporting
+msgid ""
+"Assessable earnings x premium rate = premiums; assessable earnings are the "
+"gross earnings (box 14 of the T4) up to the maximum per worker; a worker of "
+"several provinces has a prorated maximum, Saskatchewan gross / total gross x"
+" maximum."
+msgstr ""
+"Gains cotisables x taux de prime = primes ; les gains cotisables sont les "
+"gains bruts (case 14 du T4) jusqu'au maximum par travailleur ; le maximum "
+"d'un travailleur de plusieurs provinces est calculé au prorata : brut en "
+"Saskatchewan / brut total x maximum."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_wcbsask_premium_payments
+msgid ""
+"Assessable earnings: gross earnings before deductions, up to the maximum of "
+"the year. Industry premium rate: a dollar amount per 100 of assessable "
+"payroll. Premiums of 5 or more are payable on the statement of account, due "
+"30 days after it and/or on April 1 and September 1 depending on the annual "
+"assessment."
+msgstr ""
+"Gains cotisables : gains bruts avant retenues, jusqu'au maximum de l'année. "
+"Taux de prime de l'industrie : un montant en dollars par tranche de 100 de "
+"masse salariale cotisable. Les primes de 5 ou plus sont exigibles sur le "
+"relevé de compte, dues 30 jours après celui-ci ou le 1er avril et le 1er "
+"septembre selon la cotisation annuelle."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_t4127_122
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_t4127_123
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_td1sk_2026
+msgid "Canada Revenue Agency"
+msgstr "Agence du revenu du Canada"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_wcbsask_premium_payments
+msgid "Employer Premium Payments (POL 25/2025)"
+msgstr "Paiement des primes par l'employeur (POL 25/2025)"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_wcbsask_eps
+msgid "Employer's Payroll Statement (EPS)"
+msgstr "Déclaration de la masse salariale de l'employeur (EPS)"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_finance_structure
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_finance_taxes
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_workers_compensation_act
+msgid "Government of Saskatchewan"
+msgstr "Gouvernement de la Saskatchewan"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_wcbsask_premium_rates
+msgid ""
+"Industry premium rates per 100 of assessable payroll, by rate code, adjusted"
+" by the Experience Rating Program; the employer enters the rate of its "
+"premium rate notice on its provincial payroll account."
+msgstr ""
+"Taux de prime de l'industrie par tranche de 100 de masse salariale "
+"cotisable, par code de taux, ajustés par le programme de tarification par "
+"incidence ; l'employeur saisit le taux de son avis de taux de prime dans son"
+" compte provincial de paie."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_finance_taxes
+msgid ""
+"List of the provincial taxes administered by the Ministry of Finance: "
+"corporation capital and income taxes, fuel tax, insurance premiums tax, "
+"liquor consumption tax, prorated vehicle tax, PST, tobacco and vapour "
+"products taxes. Saskatchewan levies no employer payroll tax: the list has "
+"none."
+msgstr ""
+"Liste des taxes provinciales administrées par le ministère des Finances : "
+"impôts sur le capital et sur le revenu des sociétés, taxe sur les "
+"carburants, taxe sur les primes d'assurance, taxe sur la consommation "
+"d'alcool, taxe proportionnelle sur les véhicules, TVP, taxes sur le tabac et"
+" les produits de vapotage. La Saskatchewan ne perçoit aucune taxe sur la "
+"masse salariale : la liste n'en contient pas."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_wcbsask_maximum
+msgid "Maximum Assessable Earnings"
+msgstr "Gains cotisables maximums"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_wcbsask_maximum
+msgid ""
+"Maximum assessable wage rate per worker, set each year under section 137(2) "
+"of The Workers' Compensation Act, 2013: 96,945 in 2023, 99,945 in 2024, "
+"104,531 in 2025, 108,223 in 2026. No premium on the earnings above it."
+msgstr ""
+"Salaire cotisable maximum par travailleur, fixé chaque année en vertu du "
+"paragraphe 137(2) de The Workers' Compensation Act, 2013 : 96 945 en 2023, "
+"99 945 en 2024, 104 531 en 2025, 108 223 en 2026. Aucune prime sur les gains"
+" qui le dépassent."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_wcbsask_personal_coverage
+msgid "Optional Personal Coverage"
+msgstr "Protection personnelle facultative"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_wcbsask_premium_rates
+msgid "Premium Rates and How They're Set"
+msgstr "Taux de prime et leur établissement"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_wcbsask_personal_coverage
+msgid ""
+"Proprietors, partners and, since January 1, 2025, directors of a corporation"
+" paid on a T4 are not workers: their earnings are not assessable unless they"
+" buy optional personal coverage."
+msgstr ""
+"Les propriétaires, les associés et, depuis le 1er janvier 2025, les "
+"administrateurs d'une société rémunérés sur un T4 ne sont pas des "
+"travailleurs : leurs gains ne sont pas cotisables, à moins qu'ils n'achètent"
+" une protection personnelle facultative."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_finance_taxes
+msgid "Provincial Taxes, Policies and Bulletins"
+msgstr "Taxes, politiques et bulletins provinciaux"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_wcbsask_reporting
+msgid "Reporting Assessable Earnings (fact sheet)"
+msgstr "Déclaration des gains cotisables (fiche d'information)"
+
+#. module: l10n_ca_sk_payroll
+#: model:hr.salary.rule,name:l10n_ca_sk_payroll.rule_sk_salary
+msgid "Saskatchewan Remuneration"
+msgstr "Rémunération en Saskatchewan"
+
+#. module: l10n_ca_sk_payroll
+#: model:hr.salary.rule,name:l10n_ca_sk_payroll.rule_sk_wcb_insurable
+msgid "Saskatchewan WCB Assessable Earnings"
+msgstr "Gains cotisables de la WCB de la Saskatchewan"
+
+#. module: l10n_ca_sk_payroll
+#. odoo-python
+#: code:addons/l10n_ca_sk_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_sk_payroll.rule_sk_wcb
+msgid "Saskatchewan WCB Premium"
+msgstr "Prime de la WCB de la Saskatchewan"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_wcbsask_eps
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_wcbsask_maximum
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_wcbsask_personal_coverage
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_wcbsask_premium_payments
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_wcbsask_premium_rates
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_sk_payroll.source_wcbsask_reporting
+msgid "Saskatchewan Workers' Compensation Board"
+msgstr "Saskatchewan Workers' Compensation Board (WCB)"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_td1sk_2026
+msgid ""
+"Saskatchewan basic personal amount of 20,381 for 2026 and the total claim "
+"amount TCP entered on the contract."
+msgstr ""
+"Montant personnel de base de la Saskatchewan de 20 381 pour 2026 et le "
+"montant total de la demande TCP saisi au contrat."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_t4127_122
+msgid ""
+"Saskatchewan rates 10.5%, 12.5% and 14.5% from 54,532 and 155,805 (KP 1,091 "
+"and 4,207); basic personal amount 20,381, indexed at 2.0% and raised by 500 "
+"a year for four taxation years by The Saskatchewan Affordability Act; "
+"labour-sponsored funds credit LCP of 17.5% of the shares withheld, at most "
+"875 a year."
+msgstr ""
+"Taux de la Saskatchewan de 10,5 %, 12,5 % et 14,5 % à partir de 54 532 et "
+"155 805 (KP 1 091 et 4 207) ; montant personnel de base de 20 381, indexé de"
+" 2,0 % et augmenté de 500 par année pendant quatre années d'imposition par "
+"The Saskatchewan Affordability Act ; crédit LCP pour fonds de travailleurs "
+"de 17,5 % des actions retenues, au plus 875 par année."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_t4127_122
+msgid "T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 122e édition (1er "
+"janvier 2026)"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_t4127_123
+msgid "T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 123e édition (1er "
+"juillet 2026)"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_td1sk_2026
+msgid "TD1SK 2026 Saskatchewan Personal Tax Credits Return"
+msgstr ""
+"TD1SK 2026 Déclaration des crédits d'impôt personnels de la Saskatchewan"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_sk_payroll.source_workers_compensation_act
+msgid ""
+"The WCB sets a maximum assessable wage rate for each year; the assessment is"
+" payable within one month of its notice or another period the WCB sets."
+msgstr ""
+"La WCB fixe un salaire cotisable maximum pour chaque année ; la cotisation "
+"est payable dans le mois qui suit son avis ou dans un autre délai fixé par "
+"la WCB."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_sk_payroll.source_workers_compensation_act
+msgid "The Workers' Compensation Act, 2013, SS 2013, c. W-17.11"
+msgstr "The Workers' Compensation Act, 2013, SS 2013, ch. W-17.11"
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_sk_payroll.source_workers_compensation_act
+msgid ""
+"The statute could not be read automatically (CanLII refuses the request; the"
+" Publications Saskatchewan download failed on its certificate chain). The "
+"sections are quoted by WCB policy POL 25/2025 and the maximum assessable "
+"earnings page; confirm them and the consolidation date in a browser."
+msgstr ""
+"La loi n'a pas pu être lue automatiquement (CanLII refuse la requête ; le "
+"téléchargement de Publications Saskatchewan a échoué sur sa chaîne de "
+"certificats). Les articles sont cités par la politique POL 25/2025 de la WCB"
+" et par la page des gains cotisables maximums ; les confirmer, ainsi que la "
+"date de la codification, dans un navigateur."
+
+#. module: l10n_ca_sk_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_sk_payroll.source_wcbsask_premium_payments
+msgid ""
+"The thresholds of the April 1 and September 1 due dates are in the appendix "
+"of PRO 25/2025, not read."
+msgstr ""
+"Les seuils des échéances du 1er avril et du 1er septembre sont dans l'annexe"
+" de PRO 25/2025, non lue."

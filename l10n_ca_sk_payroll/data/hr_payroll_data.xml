@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Payee of the Saskatchewan WCB premiums. The Saskatchewan income tax
+         is remitted to the CRA with the federal deductions. -->
+    <record id="partner_wcbsask" model="res.partner">
+        <field name="name">Saskatchewan Workers' Compensation Board</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_sk" />
+    </record>
+    <record id="register_wcbsask" model="hr.contribution.register">
+        <field name="name">Saskatchewan Workers' Compensation Board</field>
+        <field name="partner_id" ref="partner_wcbsask" />
+        <field name="company_id" eval="False" />
+        <field name="note">Saskatchewan workers' compensation premiums.</field>
+    </record>
+
+    <!-- Every rule below applies only to an employment in Saskatchewan.
+         The Saskatchewan income tax is the line of the federal rule
+         CA_PIT. -->
+    <record id="rule_sk_salary" model="hr.salary.rule">
+        <field name="name">Saskatchewan Remuneration</field>
+        <field name="code">CA_SK_SAL</field>
+        <field name="sequence">114</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "SK"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["province_remuneration"]</field>
+        <field
+            name="note"
+        >Remuneration of the pay in Saskatchewan: its year-to-date total gives the assessable earnings left after a credit note.</field>
+    </record>
+    <record id="rule_sk_wcb_insurable" model="hr.salary.rule">
+        <field name="name">Saskatchewan WCB Assessable Earnings</field>
+        <field name="code">CA_SK_WCB_IE</field>
+        <field name="sequence">115</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "SK"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["wcb_insurable"]</field>
+        <field
+            name="note"
+        >Assessable earnings of the pay up to the Saskatchewan WCB maximum assessable wage rate of the year, less the assessable earnings of the year so far; 0 for a contract not covered.</field>
+    </record>
+    <record id="rule_sk_wcb" model="hr.salary.rule">
+        <field name="name">Saskatchewan WCB Premium</field>
+        <field name="code">CA_SK_WCB</field>
+        <field name="sequence">380</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_wcbsask" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "SK" and l10n_ca.get(contract, categories.GROSS)["wcb"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["wcb"]
+result_name = ca["wcb_line_name"]</field>
+        <field
+            name="note"
+        >Saskatchewan WCB premium at the industry premium rate per $100 of the provincial payroll account of the company, on the assessable earnings of the pay up to the maximum of the year.</field>
+    </record>
+</odoo>

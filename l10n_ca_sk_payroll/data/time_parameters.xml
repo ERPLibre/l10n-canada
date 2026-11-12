@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Saskatchewan income tax, T4127 option 1 -->
+    <record id="param_sk_brackets" model="base.time.parameter">
+        <field name="name">Saskatchewan income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.sk.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Saskatchewan rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P). The constant KP is derived from the table and rounded to the dollar like the federal K: 2026 0, 1,091, 4,207. The rate of the first bracket is the lowest Saskatchewan rate of K1P and K2P (0.105). Saskatchewan did not change on July 1, 2026. T4127 122nd edition (January 2026), table 8.1; 123rd edition (July 2026), table 8.1; the 2026 Personal Income Tax Structure of the Government of Saskatchewan (10.5% on the first 54,532, 12.5% on the next 101,273, 14.5% on the remainder). Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.saskatchewan.ca/residents/taxes-and-investments/personal-income-tax/personal-income-tax-structure</field>
+    </record>
+    <record id="param_sk_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_sk_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[[0, 0.105], [54532, 0.125], [155805, 0.145]]</field>
+    </record>
+    <record id="param_sk_bpa" model="base.time.parameter">
+        <field name="name">Saskatchewan basic personal amount</field>
+        <field name="code">l10n_ca.sk.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >TCP of an employee who files no TD1SK: K1P = lowest Saskatchewan rate x TCP. Saskatchewan has no income-tested basic personal amount. 2026: 20,381, the 2025 amount indexed at 2.0% plus 500 of The Saskatchewan Affordability Act, which adds 500 in each of four taxation years on top of the indexation; the next years are shipped only once published. T4127 122nd edition (January 2026), What's new and table 8.2; TD1SK 2026 line 1; the 2026 Personal Income Tax Structure of the Government of Saskatchewan. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1sk.html ; https://www.saskatchewan.ca/residents/taxes-and-investments/personal-income-tax/personal-income-tax-structure</field>
+    </record>
+    <record id="param_sk_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_sk_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">20381</field>
+    </record>
+    <record id="param_sk_lcp_rate" model="base.time.parameter">
+        <field name="name">Saskatchewan labour-sponsored funds tax credit rate</field>
+        <field name="code">l10n_ca.sk.lcp_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >LCP = the lesser of the maximum and this rate (17.5%) x the shares of a prescribed labour-sponsored venture capital corporation withheld on the pay; T2 is lowered by P x LCP, at most the maximum for the year. T4127 122nd edition (January 2026), step 5, Saskatchewan, and table 8.2; unchanged by the 123rd edition (July 2026). Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+    </record>
+    <record id="param_sk_lcp_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_sk_lcp_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.175</field>
+    </record>
+    <record id="param_sk_lcp_max" model="base.time.parameter">
+        <field name="name">Saskatchewan labour-sponsored funds tax credit maximum</field>
+        <field name="code">l10n_ca.sk.lcp_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum LCP credit of a pay and of the whole year: 875. T4127 122nd edition (January 2026), step 5, Saskatchewan, and table 8.2; unchanged by the 123rd edition (July 2026). Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+    </record>
+    <record id="param_sk_lcp_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_sk_lcp_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">875</field>
+    </record>
+
+    <!-- Saskatchewan Workers' Compensation Board -->
+    <record id="param_sk_wcb_max_insurable" model="base.time.parameter">
+        <field name="name">Saskatchewan WCB maximum assessable earnings</field>
+        <field name="code">l10n_ca.sk.wcb.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum assessable wage rate per worker and calendar year, set each year by the WCB (The Workers' Compensation Act, 2013, s. 137(2)): the assessable earnings of the pay are min(gross, maximum - assessable earnings of the year so far). 2026: 108,223 (2025: 104,531). The 2027 maximum is not published yet. Sources: https://www.wcbsask.com/maximum-assessable-earnings ; https://www.wcbsask.com/policy-and-procedure/employer-premium-payments-pol-252025</field>
+    </record>
+    <record id="param_sk_wcb_max_insurable_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_sk_wcb_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">108223</field>
+    </record>
+</odoo>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the Saskatchewan payroll.
+     l10n_ca_payroll/tools/sources_page.py writes
+     static/description/sources.html from this file: run it after a
+     change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_123" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Steps 4 to 6 (T4, K1P, K2P, T2, LCP); Saskatchewan tables unchanged from the 122nd edition (January 2026), tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+        <field
+            name="summary"
+        >2026 Saskatchewan brackets, constants KP, basic personal amount and LCP. The edition lists Saskatchewan among the provinces without change on July 1, 2026, and its upcoming changes for January 1, 2027 give no Saskatchewan figure.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_122" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >What's new (The Saskatchewan Affordability Act); step 5, Saskatchewan (LCP); tables 8.1, 8.2 and 8.20</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field
+            name="summary"
+        >Saskatchewan rates 10.5%, 12.5% and 14.5% from 54,532 and 155,805 (KP 1,091 and 4,207); basic personal amount 20,381, indexed at 2.0% and raised by 500 a year for four taxation years by The Saskatchewan Affordability Act; labour-sponsored funds credit LCP of 17.5% of the shares withheld, at most 875 a year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_td1sk_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">publication</field>
+        <field name="name">TD1SK 2026 Saskatchewan Personal Tax Credits Return</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Line 1 (basic personal amount) and the total claim amount</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1sk.html</field>
+        <field
+            name="summary"
+        >Saskatchewan basic personal amount of 20,381 for 2026 and the total claim amount TCP entered on the contract.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_finance_structure" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">page</field>
+        <field name="name">2026 Personal Income Tax Structure</field>
+        <field name="publisher">Government of Saskatchewan</field>
+        <field
+            name="url"
+        >https://www.saskatchewan.ca/residents/taxes-and-investments/personal-income-tax/personal-income-tax-structure</field>
+        <field
+            name="summary"
+        >2026 Saskatchewan rates: 10.5% on the first 54,532, 12.5% on the next 101,273 and 14.5% on the remainder; basic personal amount 20,381; credits at the lowest rate, 10.5%.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_finance_taxes" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">page</field>
+        <field name="name">Provincial Taxes, Policies and Bulletins</field>
+        <field name="publisher">Government of Saskatchewan</field>
+        <field
+            name="url"
+        >https://www.saskatchewan.ca/business/taxes-licensing-and-reporting/provincial-taxes-policies-and-bulletins</field>
+        <field
+            name="summary"
+        >List of the provincial taxes administered by the Ministry of Finance: corporation capital and income taxes, fuel tax, insurance premiums tax, liquor consumption tax, prorated vehicle tax, PST, tobacco and vapour products taxes. Saskatchewan levies no employer payroll tax: the list has none.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcbsask_maximum" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">page</field>
+        <field name="name">Maximum Assessable Earnings</field>
+        <field name="publisher">Saskatchewan Workers' Compensation Board</field>
+        <field name="reference">Table of the yearly maximums</field>
+        <field name="url">https://www.wcbsask.com/maximum-assessable-earnings</field>
+        <field
+            name="summary"
+        >Maximum assessable wage rate per worker, set each year under section 137(2) of The Workers' Compensation Act, 2013: 96,945 in 2023, 99,945 in 2024, 104,531 in 2025, 108,223 in 2026. No premium on the earnings above it.</field>
+        <field name="watch_key">wcbsask_maximum</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcbsask_premium_payments" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">page</field>
+        <field name="name">Employer Premium Payments (POL 25/2025)</field>
+        <field name="publisher">Saskatchewan Workers' Compensation Board</field>
+        <field
+            name="url"
+        >https://www.wcbsask.com/policy-and-procedure/employer-premium-payments-pol-252025</field>
+        <field
+            name="summary"
+        >Assessable earnings: gross earnings before deductions, up to the maximum of the year. Industry premium rate: a dollar amount per 100 of assessable payroll. Premiums of 5 or more are payable on the statement of account, due 30 days after it and/or on April 1 and September 1 depending on the annual assessment.</field>
+        <field name="state">to_verify</field>
+        <field
+            name="verification_note"
+        >The thresholds of the April 1 and September 1 due dates are in the appendix of PRO 25/2025, not read.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcbsask_eps" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">page</field>
+        <field name="name">Employer's Payroll Statement (EPS)</field>
+        <field name="publisher">Saskatchewan Workers' Compensation Board</field>
+        <field
+            name="url"
+        >https://www.wcbsask.com/employers-payroll-statement-eps</field>
+        <field
+            name="summary"
+        >Actual assessable wages of the previous year and estimate of the current year, due February 28; an underestimate penalty applies when the actual wages exceed the estimate by more than 50%.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcbsask_reporting" model="l10n_ca.payroll.source">
+        <field name="sequence">90</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">publication</field>
+        <field name="name">Reporting Assessable Earnings (fact sheet)</field>
+        <field name="publisher">Saskatchewan Workers' Compensation Board</field>
+        <field
+            name="url"
+        >https://www.wcbsask.com/sites/default/files/2025-12/Reporting%20assessable%20earnings.pdf</field>
+        <field
+            name="summary"
+        >Assessable earnings x premium rate = premiums; assessable earnings are the gross earnings (box 14 of the T4) up to the maximum per worker; a worker of several provinces has a prorated maximum, Saskatchewan gross / total gross x maximum.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcbsask_personal_coverage" model="l10n_ca.payroll.source">
+        <field name="sequence">100</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">page</field>
+        <field name="name">Optional Personal Coverage</field>
+        <field name="publisher">Saskatchewan Workers' Compensation Board</field>
+        <field
+            name="url"
+        >https://www.wcbsask.com/optional-personal-coverage</field>
+        <field
+            name="summary"
+        >Proprietors, partners and, since January 1, 2025, directors of a corporation paid on a T4 are not workers: their earnings are not assessable unless they buy optional personal coverage.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcbsask_premium_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">110</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">page</field>
+        <field name="name">Premium Rates and How They're Set</field>
+        <field name="publisher">Saskatchewan Workers' Compensation Board</field>
+        <field
+            name="url"
+        >https://www.wcbsask.com/premium-rates-and-how-theyre-set</field>
+        <field
+            name="summary"
+        >Industry premium rates per 100 of assessable payroll, by rate code, adjusted by the Experience Rating Program; the employer enters the rate of its premium rate notice on its provincial payroll account.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workers_compensation_act" model="l10n_ca.payroll.source">
+        <field name="sequence">120</field>
+        <field name="jurisdiction">saskatchewan</field>
+        <field name="kind">statute</field>
+        <field
+            name="name"
+        >The Workers' Compensation Act, 2013, SS 2013, c. W-17.11</field>
+        <field name="publisher">Government of Saskatchewan</field>
+        <field
+            name="reference"
+        >Sections 137(2) (maximum assessable wage rate) and 141(2) (payment of the assessment)</field>
+        <field
+            name="url"
+        >https://publications.saskatchewan.ca/api/v1/products/69362/formats/77104/download</field>
+        <field
+            name="summary"
+        >The WCB sets a maximum assessable wage rate for each year; the assessment is payable within one month of its notice or another period the WCB sets.</field>
+        <field name="state">to_verify</field>
+        <field
+            name="verification_note"
+        >The statute could not be read automatically (CanLII refuses the request; the Publications Saskatchewan download failed on its certificate chain). The sections are quoted by WCB policy POL 25/2025 and the maximum assessable earnings page; confirm them and the consolidation date in a browser.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>
