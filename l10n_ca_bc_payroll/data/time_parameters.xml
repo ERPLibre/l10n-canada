@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- British Columbia income tax, T4127 option 1 -->
+    <record id="param_bc_brackets" model="base.time.parameter">
+        <field name="name">British Columbia income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.bc.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >British Columbia rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P). Thresholds 50,363, 100,728, 115,648, 140,430, 190,405 and 265,545 at 7.70%, 10.50%, 12.29%, 14.70%, 16.80% and 20.50%. The rate of the first bracket is the lowest British Columbia rate of K1P and K2P: 5.06% from January 1, 2026; 6.14% from July 1, 2026, the rate of 5.60% for 2026 prorated over the pays of the second half of the year; 5.60% from January 1, 2027. The constant KP is derived from the table and rounded to the dollar like the federal K: January 2026 0, 1,330, 4,150, 6,220, 9,604, 13,603, 23,428; July 2026 0, 786, 3,606, 5,676, 9,061, 13,059, 22,884; 2027 0, 1,058, 3,878, 5,948, 9,332, 13,331, 23,156. Budget 2026 pauses the indexation of the brackets for 2027 to 2030 at their 2026 levels. T4127 122nd edition (January 2026), table 8.1; 123rd edition (July 2026), "What's new for July 1, 2026", "Upcoming changes for January 1, 2027" and table 8.1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/tax-rates</field>
+    </record>
+    <record id="param_bc_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.0506], [50363, 0.077], [100728, 0.105], [115648, 0.1229], [140430, 0.147], [190405, 0.168], [265545, 0.205]]</field>
+    </record>
+    <record id="param_bc_brackets_20260701" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_brackets" />
+        <field name="date_from">2026-07-01</field>
+        <field
+            name="value"
+        >[[0, 0.0614], [50363, 0.077], [100728, 0.105], [115648, 0.1229], [140430, 0.147], [190405, 0.168], [265545, 0.205]]</field>
+    </record>
+    <record id="param_bc_brackets_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_brackets" />
+        <field name="date_from">2027-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.056], [50363, 0.077], [100728, 0.105], [115648, 0.1229], [140430, 0.147], [190405, 0.168], [265545, 0.205]]</field>
+    </record>
+    <record id="param_bc_bpa" model="base.time.parameter">
+        <field name="name">British Columbia basic personal amount</field>
+        <field name="code">l10n_ca.bc.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >TCP of an employee who files no TD1BC: K1P = lowest British Columbia rate x TCP. 13,216 for 2026 (indexation rate 2.2%), unchanged on July 1, 2026; 13,216 for 2027, Budget 2026 pausing the indexation of the non-refundable tax credits for 2027 to 2030 at their 2026 levels. T4127 122nd edition (January 2026), table 8.2; 123rd edition (July 2026), table 8.2 and "Upcoming changes for January 1, 2027"; TD1BC 2026 line 1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1bc.html ; https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/basic</field>
+    </record>
+    <record id="param_bc_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">13216</field>
+    </record>
+    <record id="param_bc_bpa_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_bpa" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">13216</field>
+    </record>
+
+    <!-- BC tax reduction, factor S of T4127 step 5 -->
+    <record id="param_bc_tax_reduction_basic" model="base.time.parameter">
+        <field name="name">British Columbia tax reduction basic amount (S2)</field>
+        <field name="code">l10n_ca.bc.tax_reduction_basic</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >S2, the basic reduction of factor S: S = min(T4, S2) when A is at most l10n_ca.bc.tax_reduction_threshold, min(T4, S2 - (A - threshold) x l10n_ca.bc.tax_reduction_rate) when A is at most l10n_ca.bc.tax_reduction_max_income, 0 above. 575 from January 1, 2026; 805 from July 1, 2026, the amount of 690 for 2026 prorated over the pays of the second half of the year; 690 from January 1, 2027 (690 for 2026 to 2030). T4127 122nd edition (January 2026), step 5, British Columbia, and table 8.2; 123rd edition (July 2026), "What's new for July 1, 2026", step 5 and table 8.2. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/basic</field>
+    </record>
+    <record id="param_bc_tax_reduction_basic_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_tax_reduction_basic" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">575</field>
+    </record>
+    <record id="param_bc_tax_reduction_basic_20260701" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_tax_reduction_basic" />
+        <field name="date_from">2026-07-01</field>
+        <field name="value">805</field>
+    </record>
+    <record id="param_bc_tax_reduction_basic_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_tax_reduction_basic" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">690</field>
+    </record>
+    <record id="param_bc_tax_reduction_threshold" model="base.time.parameter">
+        <field name="name">British Columbia tax reduction income threshold</field>
+        <field name="code">l10n_ca.bc.tax_reduction_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Annual income A up to which factor S is the lesser of T4 and S2; above it S2 is reduced by l10n_ca.bc.tax_reduction_rate of the excess. 25,570 for 2026, unchanged on July 1, 2026; Budget 2026 pauses its indexation for 2027 to 2030. T4127 122nd edition (January 2026) and 123rd edition (July 2026), step 5, British Columbia. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/basic</field>
+    </record>
+    <record id="param_bc_tax_reduction_threshold_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_tax_reduction_threshold" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">25570</field>
+    </record>
+    <record id="param_bc_tax_reduction_rate" model="base.time.parameter">
+        <field name="name">British Columbia tax reduction rate</field>
+        <field name="code">l10n_ca.bc.tax_reduction_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Rate of the reduction of S2 on the annual income A above l10n_ca.bc.tax_reduction_threshold: 3.56% (0.0356) for 2026. T4127 122nd edition (January 2026) and 123rd edition (July 2026), step 5, British Columbia. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/basic</field>
+    </record>
+    <record id="param_bc_tax_reduction_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_tax_reduction_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.0356</field>
+    </record>
+    <record id="param_bc_tax_reduction_max_income" model="base.time.parameter">
+        <field name="name">British Columbia tax reduction maximum income</field>
+        <field name="code">l10n_ca.bc.tax_reduction_max_income</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Annual income A above which factor S is 0, the legislated maximum net income of the reduction. 41,722 from January 1, 2026 (25,570 + 575 / 3.56%); 44,952 from July 1, 2026, the maximum of the annual basic reduction of 690 (25,570 + 690 / 3.56%), which the July edition keeps with the prorated S2 of 805 so that no reduction goes to an income above the legislated maximum. Budget 2026 pauses its indexation for 2027 to 2030. T4127 122nd edition (January 2026), step 5, British Columbia; 123rd edition (July 2026), step 5, the amount marked with an asterisk. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/basic</field>
+    </record>
+    <record id="param_bc_tax_reduction_max_income_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_tax_reduction_max_income" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">41722</field>
+    </record>
+    <record id="param_bc_tax_reduction_max_income_20260701" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_tax_reduction_max_income" />
+        <field name="date_from">2026-07-01</field>
+        <field name="value">44952</field>
+    </record>
+
+    <!-- Employer Health Tax -->
+    <record id="param_bc_employer_tax_rates" model="base.time.parameter">
+        <field name="name">British Columbia Employer Health Tax rates</field>
+        <field name="code">l10n_ca.bc.employer_tax.rates</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Rate of the Employer Health Tax by annual total British Columbia remuneration of the employer, as [[threshold, rate], ...]; a remuneration equal to a threshold keeps the lower rate. Up to 1,500,000 the notch rate of 5.85%, applied to the remuneration above the exemption l10n_ca.bc.employer_tax.exemption; above 1,500,000 the rate of 1.95%, applied to the whole remuneration since l10n_ca.bc.employer_tax.exemption_threshold then removes the exemption. The two meet at 29,250 for 1,500,000. Amounts fixed by the Act, not indexed, since the return for 2024. Employer Health Tax Act, SBC 2018, c. 42, ss. 8, 10 and 11. Sources: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/18042 ; https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview</field>
+    </record>
+    <record id="param_bc_employer_tax_rates_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_employer_tax_rates" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[[0, 0.0585], [1500000, 0.0195]]</field>
+    </record>
+    <record id="param_bc_employer_tax_exemption" model="base.time.parameter">
+        <field name="name">British Columbia Employer Health Tax exemption</field>
+        <field name="code">l10n_ca.bc.employer_tax.exemption</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Annual exemption deducted from the British Columbia remuneration of an employer whose total remuneration is at most l10n_ca.bc.employer_tax.exemption_threshold: no tax up to 1,000,000, then the notch rate on the excess. Associated employers share one exemption by an allocation agreement when their combined remuneration is at most 1,500,000, and have none above. Prorated by days for a part-year permanent establishment. 1,000,000 since the return for 2024. Employer Health Tax Act, SBC 2018, c. 42, ss. 10, 11, 17 and 18. Sources: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/18042 ; https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview ; https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview/eht-associated-employers</field>
+    </record>
+    <record id="param_bc_employer_tax_exemption_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_employer_tax_exemption" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1000000</field>
+    </record>
+    <record id="param_bc_employer_tax_exemption_threshold" model="base.time.parameter">
+        <field name="name">British Columbia Employer Health Tax exemption threshold</field>
+        <field name="code">l10n_ca.bc.employer_tax.exemption_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Annual total British Columbia remuneration above which the employer has no exemption and pays 1.95% of its whole remuneration: 1,500,000, the upper limit of the notch. Employer Health Tax Act, SBC 2018, c. 42, ss. 8 and 11. Sources: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/18042 ; https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview</field>
+    </record>
+    <record
+        id="param_bc_employer_tax_exemption_threshold_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_bc_employer_tax_exemption_threshold" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1500000</field>
+    </record>
+    <record id="param_bc_employer_tax_charity_rates" model="base.time.parameter">
+        <field
+            name="name"
+        >British Columbia Employer Health Tax rates of a charitable or non-profit employer</field>
+        <field name="code">l10n_ca.bc.employer_tax.charity_rates</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Rates of l10n_ca.bc.employer_tax.rates for a provincial payroll account marked as a registered charity and not associated: up to 4,500,000 the notch rate of 2.925% on the remuneration above the charity exemption of 1,500,000; above 4,500,000 the rate of 1.95% on the whole remuneration. The Act applies these amounts to each qualifying location; the payslip applies them to the whole British Columbia remuneration of the company. Employer Health Tax Act, SBC 2018, c. 42, ss. 20, 21 and 29. Sources: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/18042 ; https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview/eht-charitable-nonprofit</field>
+    </record>
+    <record
+        id="param_bc_employer_tax_charity_rates_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_bc_employer_tax_charity_rates" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[[0, 0.02925], [4500000, 0.0195]]</field>
+    </record>
+    <record id="param_bc_employer_tax_charity_exemption" model="base.time.parameter">
+        <field
+            name="name"
+        >British Columbia Employer Health Tax exemption of a charitable or non-profit employer</field>
+        <field name="code">l10n_ca.bc.employer_tax.charity_exemption</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Exemption of a charitable or non-profit employer whose remuneration is at most l10n_ca.bc.employer_tax.charity_exemption_threshold: 1,500,000. Employer Health Tax Act, SBC 2018, c. 42, ss. 20 and 21. Sources: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/18042 ; https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview/eht-charitable-nonprofit</field>
+    </record>
+    <record
+        id="param_bc_employer_tax_charity_exemption_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_bc_employer_tax_charity_exemption" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1500000</field>
+    </record>
+    <record
+        id="param_bc_employer_tax_charity_exemption_threshold"
+        model="base.time.parameter"
+    >
+        <field
+            name="name"
+        >British Columbia Employer Health Tax exemption threshold of a charitable or non-profit employer</field>
+        <field name="code">l10n_ca.bc.employer_tax.charity_exemption_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Remuneration above which a charitable or non-profit employer has no exemption and pays 1.95% of its whole remuneration: 4,500,000. The two charity branches meet at 87,750 for 4,500,000. Employer Health Tax Act, SBC 2018, c. 42, ss. 21 and 29. Sources: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/18042 ; https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview/eht-charitable-nonprofit</field>
+    </record>
+    <record
+        id="param_bc_employer_tax_charity_exemption_threshold_20260101"
+        model="base.time.parameter.version"
+    >
+        <field
+            name="parameter_id"
+            ref="param_bc_employer_tax_charity_exemption_threshold"
+        />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">4500000</field>
+    </record>
+
+    <!-- WorkSafeBC -->
+    <record id="param_bc_wcb_max_insurable" model="base.time.parameter">
+        <field name="name">WorkSafeBC maximum assessable earnings</field>
+        <field name="code">l10n_ca.bc.wcb.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum wage rate of the year: WorkSafeBC assesses the payroll of each worker up to it, the earnings above it being excess earnings. The assessable earnings of the pay are min(gross, maximum - assessable earnings of the year so far). Set by WorkSafeBC before the end of the previous year (Workers Compensation Act, RSBC 2019, c. 1, s. 209). 2026: 127,500; 2027: 130,800. Sources: https://www.worksafebc.com/en/law-policy/claims-rehabilitation/compensation-related-maximum-wage-rates ; https://www.worksafebc.com/en/insurance/manage-account/report-payroll-pay-premiums ; https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/19001_04</field>
+    </record>
+    <record id="param_bc_wcb_max_insurable_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_wcb_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">127500</field>
+    </record>
+    <record id="param_bc_wcb_max_insurable_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_bc_wcb_max_insurable" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">130800</field>
+    </record>
+</odoo>

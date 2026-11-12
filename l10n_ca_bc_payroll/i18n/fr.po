@@ -1,0 +1,354 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_bc_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-12 18:53+0000\n"
+"PO-Revision-Date: 2026-11-12 18:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_bc_tax_rates
+msgid ""
+"2026 brackets with the lowest rate of 5.60% (Budget 2026); indexation of the"
+" brackets paused for the 2027 to 2030 tax years."
+msgstr ""
+"Tranches de 2026 avec le taux le plus bas de 5,60 % (budget 2026) ; "
+"indexation des tranches suspendue pour les années d'imposition 2027 à 2030."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_worksafebc_rates_2027
+msgid "2027 Premium Rates"
+msgstr "Taux de prime de 2027"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_eht_associated
+msgid ""
+"Associated employers whose combined British Columbia remuneration is more "
+"than 1,000,000 and at most 1,500,000 share the exemption of 1,000,000 by an "
+"allocation agreement; above 1,500,000 none of them has an exemption."
+msgstr ""
+"Les employeurs associés dont la rémunération combinée en Colombie-"
+"Britannique dépasse 1 000 000 sans excéder 1 500 000 se partagent "
+"l'exemption de 1 000 000 par une convention de répartition ; au-delà de 1 "
+"500 000, aucun d'eux n'a d'exemption."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_bc_tax_credits
+msgid ""
+"Basic personal amount of 13,216 for 2026; indexation of the basic personal "
+"tax credits paused for 2027 to 2030. B.C. tax reduction credit of 690 for "
+"2026 to 2030 (Budget 2026), net income threshold 25,570, reduction factor "
+"3.56%, maximum net income 44,952, indexation paused for 2027 to 2030."
+msgstr ""
+"Montant personnel de base de 13 216 pour 2026 ; indexation des crédits "
+"d'impôt personnels de base suspendue de 2027 à 2030. Crédit de réduction "
+"d'impôt de la C.-B. de 690 pour 2026 à 2030 (budget 2026), seuil de revenu "
+"net de 25 570, facteur de réduction de 3,56 %, revenu net maximum de 44 952,"
+" indexation suspendue de 2027 à 2030."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_workers_compensation_act
+msgid ""
+"Before the end of each calendar year, WorkSafeBC determines the maximum wage"
+" rate of the following year, which may be rounded to the nearest 100."
+msgstr ""
+"Avant la fin de chaque année civile, WorkSafeBC fixe le taux de salaire "
+"maximum de l'année suivante, qui peut être arrondi à la centaine la plus "
+"proche."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_bc_tax_credits
+msgid "British Columbia Basic Tax Credits"
+msgstr "Crédits d'impôt de base de la Colombie-Britannique"
+
+#. module: l10n_ca_bc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_bc_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_bc_payroll.rule_bc_employer_tax
+msgid "British Columbia Employer Health Tax"
+msgstr "Impôt-santé des employeurs de la Colombie-Britannique"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_bc_tax_rates
+msgid "British Columbia Personal Income Tax Rates"
+msgstr ""
+"Taux de l'impôt sur le revenu des particuliers de la Colombie-Britannique"
+
+#. module: l10n_ca_bc_payroll
+#: model:hr.salary.rule,name:l10n_ca_bc_payroll.rule_bc_salary
+msgid "British Columbia Remuneration"
+msgstr "Rémunération en Colombie-Britannique"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_td1bc_2026
+msgid ""
+"British Columbia basic personal amount of 13,216 for 2026 and the total "
+"claim amount TCP entered on the contract."
+msgstr ""
+"Montant personnel de base de la Colombie-Britannique de 13 216 pour 2026 et "
+"le montant total de la demande TCP saisi au contrat."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_t4127_122
+msgid ""
+"British Columbia rates 5.06%, 7.70%, 10.50%, 12.29%, 14.70%, 16.80% and "
+"20.50% from 50,363, 100,728, 115,648, 140,430, 190,405 and 265,545; basic "
+"personal amount 13,216; BC tax reduction S2 of 575, reduced by 3.56% of A "
+"above 25,570, nil above 41,722."
+msgstr ""
+"Taux de la Colombie-Britannique de 5,06 %, 7,70 %, 10,50 %, 12,29 %, 14,70 "
+"%, 16,80 % et 20,50 % à partir de 50 363, 100 728, 115 648, 140 430, 190 405"
+" et 265 545 ; montant personnel de base de 13 216 ; réduction d'impôt de la "
+"C.-B. S2 de 575, diminuée de 3,56 % de A au-delà de 25 570, nulle au-delà de"
+" 41 722."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_bc_budget_2026
+msgid "Budget 2026, Backgrounder 3: Tax Measures"
+msgstr "Budget 2026, document d'information 3 : mesures fiscales"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_t4127_122
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_t4127_123
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_td1bc_2026
+msgid "Canada Revenue Agency"
+msgstr "Agence du revenu du Canada"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_worksafebc_maximum
+msgid "Compensation-Related Maximum Wage Rates"
+msgstr "Taux de salaire maximum aux fins de l'indemnisation"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_employer_health_tax_act
+msgid "Employer Health Tax Act, SBC 2018, c. 42"
+msgstr "Employer Health Tax Act, SBC 2018, ch. 42"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_eht_overview
+msgid "Employer Health Tax Overview"
+msgstr "Aperçu de l'impôt-santé des employeurs"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_eht_associated
+msgid "Employer Health Tax: Associated Employers"
+msgstr "Impôt-santé des employeurs : employeurs associés"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_eht_charities
+msgid "Employer Health Tax: Charitable and Non-Profit Employers"
+msgstr ""
+"Impôt-santé des employeurs : employeurs de bienfaisance et sans but lucratif"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_eht_file_pay
+msgid "Employer Health Tax: File and Pay"
+msgstr "Impôt-santé des employeurs : déclaration et paiement"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_eht_charities
+msgid ""
+"Exemption of 1,500,000 per qualifying location; 2.925% x (remuneration - "
+"1,500,000) up to 4,500,000; 1.95% of the remuneration above. A remuneration "
+"of 2,500,000 bears 29,250."
+msgstr ""
+"Exemption de 1 500 000 par établissement admissible ; 2,925 % x "
+"(rémunération - 1 500 000) jusqu'à 4 500 000 ; 1,95 % de la rémunération au-"
+"delà. Une rémunération de 2 500 000 supporte 29 250."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_bc_budget_2026
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_bc_tax_credits
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_bc_tax_rates
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_eht_associated
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_eht_charities
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_eht_file_pay
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_eht_overview
+msgid "Government of British Columbia"
+msgstr "Gouvernement de la Colombie-Britannique"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_employer_health_tax_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_workers_compensation_act
+msgid "King's Printer for British Columbia"
+msgstr "Imprimeur du Roi pour la Colombie-Britannique"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_t4127_123
+msgid ""
+"Lowest British Columbia rate of 5.60% for 2026 and later years, applied as "
+"6.14% from the first pay of July 2026 (constants KP 786 to 22,884); basic "
+"reduction S2 of 690 for 2026 and later years, applied as 805 from July 2026,"
+" with the maximum income of the reduction at 44,952. Indexation of the "
+"brackets and of the non-refundable tax credits paused for 2027 to 2030 at "
+"their 2026 levels."
+msgstr ""
+"Taux le plus bas de la Colombie-Britannique de 5,60 % pour 2026 et les "
+"années suivantes, appliqué à 6,14 % à partir de la première paie de juillet "
+"2026 (constantes KP de 786 à 22 884) ; réduction de base S2 de 690 pour 2026"
+" et les années suivantes, appliquée à 805 à partir de juillet 2026, le "
+"revenu maximum de la réduction étant de 44 952. Indexation des tranches et "
+"des crédits d'impôt non remboursables suspendue de 2027 à 2030 à leurs "
+"niveaux de 2026."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_bc_budget_2026
+msgid ""
+"Lowest personal income tax rate raised from 5.06% to 5.60%, B.C. tax "
+"reduction credit increased, tax bracket indexing paused from 2027 until "
+"2030. No Employer Health Tax measure."
+msgstr ""
+"Taux le plus bas de l'impôt sur le revenu des particuliers relevé de 5,06 % "
+"à 5,60 %, crédit de réduction d'impôt de la C.-B. augmenté, indexation des "
+"tranches d'imposition suspendue de 2027 à 2030. Aucune mesure sur l'impôt-"
+"santé des employeurs."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_worksafebc_maximum
+msgid ""
+"Maximum wage rate of the year: 121,500 in 2025, 127,500 in 2026, 130,800 in "
+"2027, each effective January 1."
+msgstr ""
+"Taux de salaire maximum de l'année : 121 500 en 2025, 127 500 en 2026, 130 "
+"800 en 2027, chacun en vigueur le 1er janvier."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_worksafebc_deadlines
+msgid "Payroll Reporting Dates and Deadlines"
+msgstr "Dates et échéances de déclaration de la masse salariale"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_worksafebc_deadlines
+msgid ""
+"Premiums under 2,000 a year: annual report and payment due on the date "
+"assigned in early March. Otherwise quarterly: April 20, July 20, October 20 "
+"and January 20, reconciliation of the previous year by February 28."
+msgstr ""
+"Primes de moins de 2 000 par année : déclaration et paiement annuels à la "
+"date assignée au début de mars. Sinon, trimestriellement : 20 avril, 20 "
+"juillet, 20 octobre et 20 janvier, rapprochement de l'année précédente au "
+"plus tard le 28 février."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_eht_file_pay
+msgid ""
+"Quarterly instalments due June 15, September 15 and December 15 when the tax"
+" of the previous year exceeded 2,925, each 25% of the lesser of the previous"
+" year's tax and the estimate of the year; return and balance due March 31 of"
+" the following year."
+msgstr ""
+"Acomptes trimestriels exigibles les 15 juin, 15 septembre et 15 décembre "
+"lorsque l'impôt de l'année précédente a dépassé 2 925, chacun de 25 % du "
+"moindre de l'impôt de l'année précédente et de l'estimation de l'année ; "
+"déclaration et solde exigibles le 31 mars de l'année suivante."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_worksafebc_rates_2027
+msgid ""
+"Rate per $100 of assessable payroll of each classification unit, adjusted by"
+" experience rating, read by the employer on its rate notice; average base "
+"rate of 1.55 for 2027."
+msgstr ""
+"Taux par tranche de 100 $ de masse salariale cotisable de chaque unité de "
+"classification, ajusté selon le dossier d'expérience, lu par l'employeur sur"
+" son avis de taux ; taux de base moyen de 1,55 pour 2027."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_worksafebc_payroll
+msgid "Report Payroll and Pay Premiums"
+msgstr "Déclarer la masse salariale et payer les primes"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_eht_overview
+msgid ""
+"Since the return for 2024: no tax on a British Columbia remuneration of "
+"1,000,000 or less; 5.85% x (remuneration - 1,000,000) between 1,000,000.01 "
+"and 1,500,000; 1.95% of the total remuneration above 1,500,000."
+msgstr ""
+"Depuis la déclaration de 2024 : aucun impôt sur une rémunération en "
+"Colombie-Britannique de 1 000 000 ou moins ; 5,85 % x (rémunération - 1 000 "
+"000) entre 1 000 000,01 et 1 500 000 ; 1,95 % de la rémunération totale au-"
+"delà de 1 500 000."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_t4127_122
+msgid "T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 122e édition (1er "
+"janvier 2026)"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_t4127_123
+msgid "T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 123e édition (1er "
+"juillet 2026)"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_td1bc_2026
+msgid "TD1BC 2026 British Columbia Personal Tax Credits Return"
+msgstr ""
+"TD1BC 2026 Déclaration des crédits d'impôt personnels de la Colombie-"
+"Britannique"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_employer_health_tax_act
+msgid ""
+"Tax of 1.95% of the British Columbia remuneration of the year; none up to "
+"1,000,000; 5.85% of the excess over 1,000,000 up to 1,500,000. Charitable or"
+" non-profit employers: none up to 1,500,000 per qualifying location, 2.925% "
+"of the excess up to 4,500,000, 1.95% above. Associated employers share one "
+"exemption by an allocation agreement."
+msgstr ""
+"Impôt de 1,95 % de la rémunération en Colombie-Britannique de l'année ; "
+"aucun jusqu'à 1 000 000 ; 5,85 % de l'excédent sur 1 000 000 jusqu'à 1 500 "
+"000. Employeurs de bienfaisance ou sans but lucratif : aucun jusqu'à 1 500 "
+"000 par établissement admissible, 2,925 % de l'excédent jusqu'à 4 500 000, "
+"1,95 % au-delà. Les employeurs associés se partagent une exemption par une "
+"convention de répartition."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_worksafebc_deadlines
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_worksafebc_maximum
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_worksafebc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_bc_payroll.source_worksafebc_rates_2027
+msgid "WorkSafeBC"
+msgstr "WorkSafeBC"
+
+#. module: l10n_ca_bc_payroll
+#: model:hr.salary.rule,name:l10n_ca_bc_payroll.rule_bc_wcb_insurable
+msgid "WorkSafeBC Assessable Earnings"
+msgstr "Gains cotisables de WorkSafeBC"
+
+#. module: l10n_ca_bc_payroll
+#. odoo-python
+#: code:addons/l10n_ca_bc_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_bc_payroll.rule_bc_wcb
+msgid "WorkSafeBC Premium"
+msgstr "Prime de WorkSafeBC"
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_bc_payroll.source_worksafebc_payroll
+msgid ""
+"WorkSafeBC assesses up to the maximum wage rate for each worker of the "
+"assessable payroll; the earnings above it are excess earnings, excluded from"
+" the assessable payroll."
+msgstr ""
+"WorkSafeBC cotise jusqu'au taux de salaire maximum pour chaque travailleur "
+"de la masse salariale cotisable ; les gains au-delà sont des gains "
+"excédentaires, exclus de la masse salariale cotisable."
+
+#. module: l10n_ca_bc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_bc_payroll.source_workers_compensation_act
+msgid "Workers Compensation Act, RSBC 2019, c. 1"
+msgstr "Workers Compensation Act, RSBC 2019, ch. 1"

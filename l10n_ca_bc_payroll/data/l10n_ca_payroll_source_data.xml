@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the British Columbia payroll.
+     l10n_ca_payroll/tools/sources_page.py writes
+     static/description/sources.html from this file: run it after a
+     change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_123" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >What's new for July 1, 2026 (British Columbia); Upcoming changes for January 1, 2027; step 5, British Columbia (K1P, K2P, S); tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+        <field
+            name="summary"
+        >Lowest British Columbia rate of 5.60% for 2026 and later years, applied as 6.14% from the first pay of July 2026 (constants KP 786 to 22,884); basic reduction S2 of 690 for 2026 and later years, applied as 805 from July 2026, with the maximum income of the reduction at 44,952. Indexation of the brackets and of the non-refundable tax credits paused for 2027 to 2030 at their 2026 levels.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_122" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Step 5, British Columbia (S); tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field
+            name="summary"
+        >British Columbia rates 5.06%, 7.70%, 10.50%, 12.29%, 14.70%, 16.80% and 20.50% from 50,363, 100,728, 115,648, 140,430, 190,405 and 265,545; basic personal amount 13,216; BC tax reduction S2 of 575, reduced by 3.56% of A above 25,570, nil above 41,722.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_td1bc_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >TD1BC 2026 British Columbia Personal Tax Credits Return</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Line 1 (basic personal amount) and the total claim amount</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1bc.html</field>
+        <field
+            name="summary"
+        >British Columbia basic personal amount of 13,216 for 2026 and the total claim amount TCP entered on the contract.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_bc_tax_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field name="name">British Columbia Personal Income Tax Rates</field>
+        <field name="publisher">Government of British Columbia</field>
+        <field
+            name="url"
+        >https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/tax-rates</field>
+        <field
+            name="summary"
+        >2026 brackets with the lowest rate of 5.60% (Budget 2026); indexation of the brackets paused for the 2027 to 2030 tax years.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_bc_tax_credits" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field name="name">British Columbia Basic Tax Credits</field>
+        <field name="publisher">Government of British Columbia</field>
+        <field
+            name="reference"
+        >Basic personal amount; B.C. tax reduction credit</field>
+        <field
+            name="url"
+        >https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/basic</field>
+        <field
+            name="summary"
+        >Basic personal amount of 13,216 for 2026; indexation of the basic personal tax credits paused for 2027 to 2030. B.C. tax reduction credit of 690 for 2026 to 2030 (Budget 2026), net income threshold 25,570, reduction factor 3.56%, maximum net income 44,952, indexation paused for 2027 to 2030.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_bc_budget_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field name="name">Budget 2026, Backgrounder 3: Tax Measures</field>
+        <field name="publisher">Government of British Columbia</field>
+        <field
+            name="url"
+        >https://www.bcbudget.gov.bc.ca/2026/accessibility/2026_Backgrounder_3.htm</field>
+        <field
+            name="summary"
+        >Lowest personal income tax rate raised from 5.06% to 5.60%, B.C. tax reduction credit increased, tax bracket indexing paused from 2027 until 2030. No Employer Health Tax measure.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_employer_health_tax_act" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">statute</field>
+        <field name="name">Employer Health Tax Act, SBC 2018, c. 42</field>
+        <field name="publisher">King's Printer for British Columbia</field>
+        <field
+            name="reference"
+        >Sections 8, 10 and 11 (rate, exemption, notch); 13 to 18 (associated employers); 20, 21 and 29 (charitable or non-profit employers); 32 and 41 (return and instalments)</field>
+        <field
+            name="url"
+        >https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/18042</field>
+        <field
+            name="summary"
+        >Tax of 1.95% of the British Columbia remuneration of the year; none up to 1,000,000; 5.85% of the excess over 1,000,000 up to 1,500,000. Charitable or non-profit employers: none up to 1,500,000 per qualifying location, 2.925% of the excess up to 4,500,000, 1.95% above. Associated employers share one exemption by an allocation agreement.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_eht_overview" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field name="name">Employer Health Tax Overview</field>
+        <field name="publisher">Government of British Columbia</field>
+        <field
+            name="url"
+        >https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview</field>
+        <field
+            name="summary"
+        >Since the return for 2024: no tax on a British Columbia remuneration of 1,000,000 or less; 5.85% x (remuneration - 1,000,000) between 1,000,000.01 and 1,500,000; 1.95% of the total remuneration above 1,500,000.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_eht_charities" model="l10n_ca.payroll.source">
+        <field name="sequence">90</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field
+            name="name"
+        >Employer Health Tax: Charitable and Non-Profit Employers</field>
+        <field name="publisher">Government of British Columbia</field>
+        <field
+            name="url"
+        >https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview/eht-charitable-nonprofit</field>
+        <field
+            name="summary"
+        >Exemption of 1,500,000 per qualifying location; 2.925% x (remuneration - 1,500,000) up to 4,500,000; 1.95% of the remuneration above. A remuneration of 2,500,000 bears 29,250.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_eht_associated" model="l10n_ca.payroll.source">
+        <field name="sequence">100</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field name="name">Employer Health Tax: Associated Employers</field>
+        <field name="publisher">Government of British Columbia</field>
+        <field
+            name="url"
+        >https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview/eht-associated-employers</field>
+        <field
+            name="summary"
+        >Associated employers whose combined British Columbia remuneration is more than 1,000,000 and at most 1,500,000 share the exemption of 1,000,000 by an allocation agreement; above 1,500,000 none of them has an exemption.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_eht_file_pay" model="l10n_ca.payroll.source">
+        <field name="sequence">110</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field name="name">Employer Health Tax: File and Pay</field>
+        <field name="publisher">Government of British Columbia</field>
+        <field
+            name="url"
+        >https://www2.gov.bc.ca/gov/content/taxes/employer-health-tax/employer-health-tax-overview/eht-file-pay</field>
+        <field
+            name="summary"
+        >Quarterly instalments due June 15, September 15 and December 15 when the tax of the previous year exceeded 2,925, each 25% of the lesser of the previous year's tax and the estimate of the year; return and balance due March 31 of the following year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_worksafebc_maximum" model="l10n_ca.payroll.source">
+        <field name="sequence">120</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field name="name">Compensation-Related Maximum Wage Rates</field>
+        <field name="publisher">WorkSafeBC</field>
+        <field
+            name="url"
+        >https://www.worksafebc.com/en/law-policy/claims-rehabilitation/compensation-related-maximum-wage-rates</field>
+        <field
+            name="summary"
+        >Maximum wage rate of the year: 121,500 in 2025, 127,500 in 2026, 130,800 in 2027, each effective January 1.</field>
+        <field name="watch_key">worksafebc_maximum</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_worksafebc_payroll" model="l10n_ca.payroll.source">
+        <field name="sequence">130</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field name="name">Report Payroll and Pay Premiums</field>
+        <field name="publisher">WorkSafeBC</field>
+        <field
+            name="url"
+        >https://www.worksafebc.com/en/insurance/manage-account/report-payroll-pay-premiums</field>
+        <field
+            name="summary"
+        >WorkSafeBC assesses up to the maximum wage rate for each worker of the assessable payroll; the earnings above it are excess earnings, excluded from the assessable payroll.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_worksafebc_deadlines" model="l10n_ca.payroll.source">
+        <field name="sequence">140</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field name="name">Payroll Reporting Dates and Deadlines</field>
+        <field name="publisher">WorkSafeBC</field>
+        <field
+            name="url"
+        >https://www.worksafebc.com/en/insurance/manage-account/report-payroll-pay-premiums/date-deadlines</field>
+        <field
+            name="summary"
+        >Premiums under 2,000 a year: annual report and payment due on the date assigned in early March. Otherwise quarterly: April 20, July 20, October 20 and January 20, reconciliation of the previous year by February 28.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_worksafebc_rates_2027" model="l10n_ca.payroll.source">
+        <field name="sequence">150</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">page</field>
+        <field name="name">2027 Premium Rates</field>
+        <field name="publisher">WorkSafeBC</field>
+        <field
+            name="url"
+        >https://www.worksafebc.com/en/insurance/know-coverage-costs/industry-premium-rates/2027-rates</field>
+        <field
+            name="summary"
+        >Rate per $100 of assessable payroll of each classification unit, adjusted by experience rating, read by the employer on its rate notice; average base rate of 1.55 for 2027.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workers_compensation_act" model="l10n_ca.payroll.source">
+        <field name="sequence">160</field>
+        <field name="jurisdiction">british_columbia</field>
+        <field name="kind">statute</field>
+        <field name="name">Workers Compensation Act, RSBC 2019, c. 1</field>
+        <field name="publisher">King's Printer for British Columbia</field>
+        <field
+            name="reference"
+        >Part 4, section 209 (maximum wage rate for average earnings)</field>
+        <field
+            name="url"
+        >https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/19001_04</field>
+        <field
+            name="summary"
+        >Before the end of each calendar year, WorkSafeBC determines the maximum wage rate of the following year, which may be rounded to the nearest 100.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>

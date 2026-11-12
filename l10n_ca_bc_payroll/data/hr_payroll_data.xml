@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Payees of the British Columbia employer contributions. The British
+         Columbia income tax is remitted to the CRA with the federal
+         deductions. -->
+    <record id="partner_bc_finance" model="res.partner">
+        <field name="name">British Columbia Ministry of Finance</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_bc" />
+    </record>
+    <record id="register_bc_finance" model="hr.contribution.register">
+        <field name="name">British Columbia Ministry of Finance</field>
+        <field name="partner_id" ref="partner_bc_finance" />
+        <field name="company_id" eval="False" />
+        <field name="note">British Columbia Employer Health Tax.</field>
+    </record>
+    <record id="partner_worksafebc" model="res.partner">
+        <field name="name">WorkSafeBC</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_bc" />
+    </record>
+    <record id="register_worksafebc" model="hr.contribution.register">
+        <field name="name">WorkSafeBC</field>
+        <field name="partner_id" ref="partner_worksafebc" />
+        <field name="company_id" eval="False" />
+        <field name="note">British Columbia workers' compensation premiums.</field>
+    </record>
+
+    <!-- Every rule below applies only to an employment in British Columbia.
+         The British Columbia income tax is the line of the federal rule
+         CA_PIT. -->
+    <record id="rule_bc_salary" model="hr.salary.rule">
+        <field name="name">British Columbia Remuneration</field>
+        <field name="code">CA_BC_SAL</field>
+        <field name="sequence">114</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "BC"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["province_remuneration"]</field>
+        <field
+            name="note"
+        >Remuneration of the pay counted in the total British Columbia remuneration of the company: its year-to-date total consumes the Employer Health Tax exemption and gives the assessable earnings left after a credit note.</field>
+    </record>
+    <record id="rule_bc_wcb_insurable" model="hr.salary.rule">
+        <field name="name">WorkSafeBC Assessable Earnings</field>
+        <field name="code">CA_BC_WCB_IE</field>
+        <field name="sequence">115</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "BC"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["wcb_insurable"]</field>
+        <field
+            name="note"
+        >Assessable earnings of the pay up to the WorkSafeBC maximum wage rate of the year, less the assessable earnings of the year so far; 0 for a contract not covered.</field>
+    </record>
+    <record id="rule_bc_employer_tax" model="hr.salary.rule">
+        <field name="name">British Columbia Employer Health Tax</field>
+        <field name="code">CA_BC_ER_TAX</field>
+        <field name="sequence">370</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_bc_finance" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "BC" and l10n_ca.get(contract, categories.GROSS)["employer_tax"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["employer_tax"]
+result_name = ca["employer_tax_line_name"]</field>
+        <field
+            name="note"
+        >Accrual of the Employer Health Tax: the rate of the annual total British Columbia remuneration of the company applied to the remuneration of the pay above the exemption left in the year.</field>
+    </record>
+    <record id="rule_bc_wcb" model="hr.salary.rule">
+        <field name="name">WorkSafeBC Premium</field>
+        <field name="code">CA_BC_WCB</field>
+        <field name="sequence">380</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_worksafebc" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "BC" and l10n_ca.get(contract, categories.GROSS)["wcb"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["wcb"]
+result_name = ca["wcb_line_name"]</field>
+        <field
+            name="note"
+        >WorkSafeBC premium at the rate per $100 of the provincial payroll account of the company, on the assessable earnings of the pay up to the maximum wage rate of the year.</field>
+    </record>
+</odoo>
