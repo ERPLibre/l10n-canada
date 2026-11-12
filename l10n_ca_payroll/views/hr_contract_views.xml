@@ -33,6 +33,7 @@
                             />
                             <field name="l10n_ca_additional_federal_tax" />
                             <field name="l10n_ca_federal_other_credits" />
+                            <field name="l10n_ca_prescribed_zone_deduction" />
                         </group>
                         <field name="l10n_ca_prov_computed" invisible="1" />
                         <field name="l10n_ca_province_code" invisible="1" />

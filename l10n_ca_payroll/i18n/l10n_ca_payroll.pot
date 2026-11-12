@@ -1037,6 +1037,15 @@ msgid "Gross Payroll"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_prescribed_zone_deduction
+msgid ""
+"HD of the CRA formulas: annual deduction for living in a prescribed northern"
+" zone claimed on the TD1. It lowers the annual taxable income A of the "
+"federal tax and of the provincial or territorial tax computed with the CRA "
+"formulas."
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__has_employer_tax
 msgid "Has Employer Tax"
 msgstr ""
@@ -1572,6 +1581,11 @@ msgid ""
 "Premium or assessment rate per $100 of insurable earnings of the annual "
 "notice of the board for the classification of the company. Leave 0 when the "
 "company has no account with the board: the payslip then computes no premium."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_prescribed_zone_deduction
+msgid "Prescribed Zone Deduction (Annual)"
 msgstr ""
 
 #. module: l10n_ca_payroll

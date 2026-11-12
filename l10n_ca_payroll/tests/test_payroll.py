@@ -268,6 +268,26 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         slip.action_payslip_done()
         self.assertAlmostEqual(slip._l10n_ca_t4_values(2026)["box_18"], 81.50)
 
+    def test_prescribed_zone_deduction(self):
+        """HD lowers A: example 1 of the T4032 for the Northwest Territories.
+
+        1,300 a week, RRSP 80, HD 4,015: A = 52 x (1,300 - 12.33 - 80) -
+        4,015 = 58,783.84; the CRA gives 5,134.78 of federal tax for the
+        year, 98.75 a week.
+        """
+        # 5,633.33 x 12 / 52 = 1,300.00 a week.
+        contract = self._contract(
+            5633.33,
+            schedule="weekly",
+            l10n_ca_rrsp_amount=80.0,
+            l10n_ca_prescribed_zone_deduction=4015.0,
+        )
+        slip = self._slip(contract, "2026-03-02", "2026-03-08")
+        self._assert_lines(slip, {"CA_CPP": -73.35, "CA_EI": -21.19, "CA_FIT": -98.75})
+        vals = slip._l10n_ca_compute(contract, 1300.0, tax_deductions=80.0)
+        # The example rounds F5A to 12.33; the module keeps 12.3277: 0.12.
+        self.assertAlmostEqual(vals["federal_annual_income"], 58783.84, delta=0.15)
+
     def test_low_income_no_tax(self):
         contract = self._contract(1000.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")

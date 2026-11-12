@@ -726,9 +726,10 @@ class HrPayslip(models.Model):
     def _l10n_ca_compute_federal_tax(self, vals):
         """Federal tax per period, T4127 option 1.
 
-        Regular pay: A = P * (I - F - F2 - F5A - U1), I = gross - B, F the
-        deductions of category CA_TAX_DED, F2 + U1 those of category
-        CA_FED_TAX_DED, F5A = F5 * (PI - B) / PI; tax per period =
+        Regular pay: A = P * (I - F - F2 - F5A - U1) - HD, I = gross - B, F
+        the deductions of category CA_TAX_DED, F2 + U1 those of category
+        CA_FED_TAX_DED, F5A = F5 * (PI - B) / PI, HD the prescribed zone
+        deduction of the contract; tax per period =
         T1 / P + L. The Canada employment amount counts P * I, before F.
         Non-periodic payments add TB (``_l10n_ca_federal_bonus_tax``).
         """
@@ -745,8 +746,9 @@ class HrPayslip(models.Model):
             regular = self._l10n_ca_regular_values(vals, regular_gross)
         additional = _round(contract.l10n_ca_additional_federal_tax)
         self._l10n_ca_check_indexation(vals, "l10n_ca.federal.bpa_max")
-        annual = periods * (
-            regular_gross - self._l10n_ca_regular_deductions(vals) - f5a
+        annual = (
+            periods * (regular_gross - self._l10n_ca_regular_deductions(vals) - f5a)
+            - contract.l10n_ca_prescribed_zone_deduction
         )
         vals.update(
             {
@@ -808,15 +810,15 @@ class HrPayslip(models.Model):
 
         Regular bonus calculation of T4127: TB = T1 of A with the payment
         payable now less T1 of A without it, where
-        A = P * (I - F - F2 - F5A - U1) + (B - F3 - F5B) + (B1 - F5BYTD), the last term
-        dropped without the payment. B1 and F5BYTD are the year-to-date
+        A = P * (I - F - F2 - F5A - U1) - HD + (B - F3 - F5B) + (B1 - F5BYTD), the
+        last term dropped without the payment. B1 and F5BYTD are the year-to-date
         totals of rules CA_NPP and CA_F5B. K2 adds the contributions on
         the payment once (``_l10n_ca_federal_k2``). When A with the
         payment is at most ``l10n_ca.federal.bonus_flat_threshold``, TB is
         the flat rate of the payment less F3, a rate of its own in Quebec.
         A pay without regular remuneration takes I, F, F2, U1 and F5A of the
         most recent one (``_l10n_ca_recent_regular_pay``), as T4127 asks.
-        ``federal_bonus_base`` keeps P * (I - F - F2 - F5A - U1) for the
+        ``federal_bonus_base`` keeps P * (I - F - F2 - F5A - U1) - HD for the
         provincial bonus tax.
         """
         company = vals["company"]
@@ -837,7 +839,9 @@ class HrPayslip(models.Model):
                         "the year."
                     )
                 )
-        base = max(0.0, periods * net)
+        base = max(
+            0.0, periods * net - vals["contract"].l10n_ca_prescribed_zone_deduction
+        )
         payment = max(0.0, vals["nonperiodic_net"] - vals["f5b"])
         previous = max(0.0, vals["ytd"]["nonperiodic"] - vals["ytd"]["f5b"])
         with_payment = base + payment + previous

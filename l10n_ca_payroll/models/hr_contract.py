@@ -66,6 +66,13 @@ class HrContract(models.Model):
         string="Additional Federal Tax per Pay",
         help="Additional tax requested by the employee on the TD1 form.",
     )
+    l10n_ca_prescribed_zone_deduction = fields.Monetary(
+        string="Prescribed Zone Deduction (Annual)",
+        help="HD of the CRA formulas: annual deduction for living in a "
+        "prescribed northern zone claimed on the TD1. It lowers the annual "
+        "taxable income A of the federal tax and of the provincial or "
+        "territorial tax computed with the CRA formulas.",
+    )
     l10n_ca_federal_other_credits = fields.Monetary(
         string="Other Federal Tax Credits (Annual)",
         help="K3 of the CRA formulas: other federal non-refundable tax "

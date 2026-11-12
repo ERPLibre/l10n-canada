@@ -1146,6 +1146,19 @@ msgid "Gross Payroll"
 msgstr "Rémunération brute"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_prescribed_zone_deduction
+msgid ""
+"HD of the CRA formulas: annual deduction for living in a prescribed northern"
+" zone claimed on the TD1. It lowers the annual taxable income A of the "
+"federal tax and of the provincial or territorial tax computed with the CRA "
+"formulas."
+msgstr ""
+"HD des formules de l'ARC : déduction annuelle pour les habitants d'une zone "
+"nordique visée par règlement demandée sur le TD1. Elle réduit le revenu "
+"imposable annuel A de l'impôt fédéral et de l'impôt provincial ou "
+"territorial calculé selon les formules de l'ARC."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__has_employer_tax
 msgid "Has Employer Tax"
 msgstr "A une taxe de l'employeur"
@@ -1730,6 +1743,11 @@ msgstr ""
 "l'avis annuel de l'organisme pour la classification de la société. Laissez 0"
 " si la société n'a pas de compte auprès de l'organisme : le bulletin ne "
 "calcule alors aucune prime."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_prescribed_zone_deduction
+msgid "Prescribed Zone Deduction (Annual)"
+msgstr "Déduction pour résidents d'une zone visée par règlement (annuelle)"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_previous_payroll
