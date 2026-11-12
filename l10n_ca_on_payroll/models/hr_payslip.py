@@ -252,18 +252,17 @@ class HrPayslip(models.Model):
         Regular pay: A is the federal annual taxable income, T2 of A per
         ``_l10n_ca_on_annual_tax`` with K2P = K2 of the regular
         contributions at the lowest Ontario rate; tax per period =
-        T2 / P rounded to the cent, plus the additional Ontario tax of the
-        contract. Non-periodic payments add ``_l10n_ca_on_bonus_tax``. The
-        amount is rounded on its own, as the federal module rounds T1 / P,
-        where T4127 rounds (T1 + T2) / P once: the total can differ by 0.01.
-        A pay of a year without a version of ``l10n_ca.on.bpa`` warns that
+        (T1 + T2) / P rounded once, less the federal tax of the period
+        (``_l10n_ca_provincial_regular_tax``), plus the additional Ontario
+        tax of the contract. Non-periodic payments add
+        ``_l10n_ca_on_bonus_tax``. A pay of a year without a version of
+        ``l10n_ca.on.bpa`` warns that
         it uses the indexed amounts of an earlier year.
         """
         if not _is_ontario(vals["province"]):
             return super()._l10n_ca_provincial_tax(vals)
         self._l10n_ca_check_indexation(vals, "l10n_ca.on.bpa")
         contract = vals["contract"]
-        periods = vals["periods"]
         annual = vals["federal_annual_income"]
         nonperiodic = vals["nonperiodic"]
         regular = vals
@@ -281,7 +280,9 @@ class HrPayslip(models.Model):
                 "on_health_premium": annual_tax["health_premium"],
                 "on_tax_reduction": annual_tax["tax_reduction"],
                 "on_annual_tax": annual_tax["tax"],
-                "on_regular_tax": _round(annual_tax["tax"] / periods),
+                "on_regular_tax": self._l10n_ca_provincial_regular_tax(
+                    vals, annual_tax["tax"]
+                ),
                 "on_bonus_tax": 0.0,
             }
         )

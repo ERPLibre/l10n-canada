@@ -263,6 +263,60 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
             },
         )
 
+    def test_t4032_federal_example_below_ympe(self):
+        """Step-by-step example of the T4032 for Quebec, January 2026.
+
+        1,300 a week with an RRSP contribution of 80 withheld at source:
+        QPP = 0.063 x (1,300 - 67.30) = 77.66, EI = 0.013 x 1,300 = 16.90,
+        QPIP = 0.0043 x 1,300 = 5.59, F5A = 77.66 x 0.01 / 0.063 = 12.33,
+        A = 52 x (1,300 - 12.33 - 80) = 62,798.84. K2Q credits 52 times the
+        base QPP, the EI and the QPIP of the week. The CRA gives 4,940.70
+        of federal tax for the year after the abatement: 95.01 a week.
+        """
+        # 5,633.33 x 12 / 52 = 1,300.00 a week.
+        contract = self._contract(5633.33, schedule="weekly", l10n_ca_rrsp_amount=80.0)
+        slip = self._slip(contract, "2026-03-02", "2026-03-08")
+        self._assert_lines(
+            slip,
+            {
+                "BASIC": 1300.0,
+                "CA_CPP": -77.66,
+                "CA_EI": -16.90,
+                "CA_QPIP": -5.59,
+                "CA_FIT": -95.01,
+            },
+        )
+
+    def test_t4032_federal_example_above_ympe(self):
+        """Second example of the T4032 for Quebec: 1,600 a week.
+
+        The QPP and EI maximums are reached, 24 of QPP2 is withheld on a
+        year-to-date pensionable income of 75,200: the week bears 0.04 x
+        1,600 = 64 of QPP2 and 0.0043 x 1,600 = 6.88 of QPIP. A = 52 x
+        1,536 = 79,872; K2Q takes the QPP and EI maximums and 52 x 6.88 of
+        QPIP. The CRA gives 7,810.00 of federal tax for the year after the
+        abatement: 150.19 a week.
+        """
+        # 6,933.33 x 12 / 52 = 1,600.00 a week.
+        contract = self._contract(6933.33, schedule="weekly")
+        first = self._slip(
+            contract, "2026-01-05", "2026-01-11", done=True, bonus=73600.0
+        )
+        self._assert_lines(
+            first, {"CA_CPP": -4479.30, "CA_EI": -895.70, "CA_CPP2": -24.0}
+        )
+        slip = self._slip(contract, "2026-01-12", "2026-01-18")
+        self._assert_lines(
+            slip,
+            {
+                "CA_CPP": 0.0,
+                "CA_CPP2": -64.0,
+                "CA_EI": 0.0,
+                "CA_QPIP": -6.88,
+                "CA_FIT": -150.19,
+            },
+        )
+
     def test_claim_additional_tax_and_exemption(self):
         contract = self._contract(
             5000.0,

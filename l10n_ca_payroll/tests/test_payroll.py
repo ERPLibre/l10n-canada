@@ -210,6 +210,64 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
             },
         )
 
+    def test_semi_monthly(self):
+        # bi-monthly is read as twice a month: 5,000 * 12 / 24 = 2,500.
+        contract = self._contract(5000.0, schedule="bi-monthly")
+        self.assertEqual(contract.l10n_ca_pay_periods, 24)
+        slip = self._slip(contract, "2026-03-01", "2026-03-15")
+        # Exemption 3,500 / 24 = 145.83. C = 0.0595 * 2,354.17 = 140.07
+        # EI = 0.0163 * 2,500 = 40.75
+        # A = 24 * (2,500 - 140.07 * 0.01 / 0.0595) = 59,435.01
+        # K2 = 0.14 * (24 * 140.07 * 0.0495 / 0.0595 + 24 * 40.75) = 528.46
+        # T3 = 0.205 * 59,435.01 - 3,804 - 2,303.28 - 528.46 - 210.14
+        #    = 5,338.30 -> per pay 222.43
+        self._assert_lines(
+            slip,
+            {"BASIC": 2500.0, "CA_CPP": -140.07, "CA_EI": -40.75, "CA_FIT": -222.43},
+        )
+
+    def test_27_pay_periods(self):
+        # A bi-weekly year of 27 pays: P = 27 everywhere, 5,400 * 12 / 27
+        # = 2,400 a pay.
+        contract = self._contract(5400.0, schedule="bi-weekly", l10n_ca_pay_periods=27)
+        slip = self._slip(contract, "2026-03-02", "2026-03-15")
+        # Exemption 3,500 / 27 = 129.62. C = 0.0595 * 2,270.38 = 135.09
+        # EI = 39.12; A = 27 * (2,400 - 135.09 * 0.01 / 0.0595) = 64,186.99
+        # K2 = 0.14 * (27 * 135.09 * 0.0495 / 0.0595 + 27 * 39.12) = 572.69
+        # T3 = 0.205 * 64,186.99 - 3,804 - 2,303.28 - 572.69 - 210.14
+        #    = 6,268.22 -> per pay 6,268.22 / 27 = 232.16
+        self._assert_lines(
+            slip,
+            {"BASIC": 2400.0, "CA_CPP": -135.09, "CA_EI": -39.12, "CA_FIT": -232.16},
+        )
+
+    def test_pay_date_selects_the_year(self):
+        """A December period paid in January belongs to the new year.
+
+        The pay date selects the rates and the year-to-date amounts: the
+        November 2025 pay that reaches the 2025 maximums does not count,
+        and the 2026 EI rate (1.63%, 1.64% in 2025) applies.
+        """
+        contract = self._contract(5000.0, date_start="2025-01-01")
+        self._slip(contract, "2025-11-01", "2025-11-30", done=True, bonus=80000.0)
+        slip = self.env["hr.payslip"].create(
+            {
+                "employee_id": contract.employee_id.id,
+                "contract_id": contract.id,
+                "struct_id": self.structure.id,
+                "company_id": self.company.id,
+                "date_from": "2025-12-01",
+                "date_to": "2025-12-31",
+                "date": "2026-01-02",
+            }
+        )
+        slip.compute_sheet()
+        self.assertEqual(slip.l10n_ca_pay_date, date(2026, 1, 2))
+        # 2026: C = 0.0595 * (5,000 - 291.66) = 280.15, EI = 81.50.
+        self._assert_lines(slip, {"CA_CPP": -280.15, "CA_EI": -81.50})
+        slip.action_payslip_done()
+        self.assertAlmostEqual(slip._l10n_ca_t4_values(2026)["box_18"], 81.50)
+
     def test_low_income_no_tax(self):
         contract = self._contract(1000.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")

@@ -126,11 +126,11 @@ The formulas:
   (0.0530 - 0.0495) / 0.0630 to the base CPP maximum, DQ being the QPP
   withheld before the transfer: K2P is then the K2RP of T4127.
 - K3P = the other Ontario credits of the contract (annual credit amount).
-- T2 = T4 + V1 + V2 - S, at least 0; tax per pay = T2 / P rounded to the
-  cent, plus the additional Ontario tax of the contract. The federal
-  module rounds T1 / P on its own line, so the total withheld can differ
-  by 0.01 from T4127, which rounds (T1 + T2) / P once: at 5,000 a month,
-  444.86 + 248.48 = 693.34 against 8,320.01 / 12 = 693.33.
+- T2 = T4 + V1 + V2 - S, at least 0. T4127 rounds the tax of the pay
+  once, (T1 + T2) / P: the Ontario line is that total less the federal
+  line, T1 / P rounded on its own, plus the additional Ontario tax of the
+  contract. At 5,000 a month, (5,338.28 + 2,981.73) / 12 = 693.33, of
+  which 444.86 federal and 248.47 Ontario.
 - Claim code E: T2 = V2.
 - Bonus, retroactive pay or other non-periodic payment: TB = T2 of A with
   the payment less T2 of A without it, each T2 recomputed in full (T4, V1,

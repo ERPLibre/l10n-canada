@@ -206,15 +206,17 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         #   T4 = 0.0915 x 59,434.99 - 2,210 - 655.94 - 190.63 = 2,381.73
         #   V1 = 0 (T4 <= 5,818); S = 0 (2 x 300 < T4)
         #   V2 = min(600, 450 + 0.25 x (59,434.99 - 48,000)) = 600
-        #   T2 = 2,381.73 + 600 = 2,981.73 -> 2,981.73 / 12 = 248.48
+        #   T2 = 2,381.73 + 600 = 2,981.73
+        # T4127 rounds the tax of the period once: (5,338.28 + 2,981.73) /
+        # 12 = 693.33, of which 444.86 federal and 248.47 Ontario.
         self._assert_lines(
             slip,
             {
                 "CA_CPP": -280.15,
                 "CA_EI": -81.50,
                 "CA_FIT": -444.86,
-                "CA_PIT": -248.48,
-                "NET": 5000.0 - 280.15 - 81.50 - 444.86 - 248.48,
+                "CA_PIT": -248.47,
+                "NET": 5000.0 - 280.15 - 81.50 - 444.86 - 248.47,
                 "CA_ON_SAL": 5000.0,
                 "CA_ON_WSIB_IE": 5000.0,
             },
@@ -227,14 +229,67 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         codes = slip.line_ids.mapped("code")
         self.assertNotIn("CA_ON_EHT", codes)
         self.assertNotIn("CA_ON_WSIB", codes)
-        # The CRA collects the Ontario tax: box 22 = 444.86 + 248.48.
+        # The CRA collects the Ontario tax: box 22 = 444.86 + 248.47.
         slip.action_payslip_done()
-        self.assertAlmostEqual(slip._l10n_ca_t4_values(2026)["box_22"], 693.34)
-        # Each line is rounded on its own; T4127 rounds (T1 + T2) / P
-        # once: (5,338.28 + 2,981.73) / 12 = 693.33.
-        vals = slip._l10n_ca_compute(contract, 5000.0)
-        self.assertAlmostEqual(
-            (vals["federal_annual_tax"] + vals["on_annual_tax"]) / 12, 693.33, places=2
+        self.assertAlmostEqual(slip._l10n_ca_t4_values(2026)["box_22"], 693.33)
+
+    def test_t4032_example_below_ympe(self):
+        """Step-by-step example of the T4032 for Ontario, January 2026.
+
+        1,300 a week with an RRSP contribution of 80 withheld at source:
+        C = 0.0595 x (1,300 - 67.30) = 73.35, EI = 0.0163 x 1,300 = 21.19,
+        F5A = 73.35 x 0.01 / 0.0595 = 12.33, A = 52 x (1,300 - 12.33 - 80)
+        = 62,798.84. The CRA gives 5,957.85 of federal tax and 3,264.26 of
+        Ontario tax for the year, (5,957.85 + 3,264.26) / 52 = 177.35 for
+        the week, of which 5,957.85 / 52 = 114.57 federal.
+        """
+        # 5,633.33 x 12 / 52 = 1,300.00 a week.
+        contract = self._contract(
+            5633.33, schedule_pay="weekly", l10n_ca_rrsp_amount=80.0
+        )
+        slip = self._slip(contract, "2026-03-02", "2026-03-08")
+        self._assert_lines(
+            slip,
+            {
+                "BASIC": 1300.0,
+                "CA_RRSP": -80.0,
+                "CA_CPP": -73.35,
+                "CA_EI": -21.19,
+                "CA_FIT": -114.57,
+                "CA_PIT": -62.78,
+            },
+        )
+
+    def test_t4032_example_above_ympe(self):
+        """Second example of the T4032 for Ontario: 1,600 a week.
+
+        The CPP and EI maximums are reached; the year-to-date pensionable
+        earnings exceed the YMPE, so the pay bears 0.04 x 1,600 = 64 of
+        CPP2, deducted from the income: A = 52 x 1,536 = 79,872, and K2
+        takes both maximums. The CRA gives 9,406.39 federal and 4,957.90
+        Ontario for the year: 14,364.29 / 52 = 276.24, of which 9,406.39 /
+        52 = 180.89 federal.
+        """
+        # 6,933.33 x 12 / 52 = 1,600.00 a week.
+        contract = self._contract(6933.33, schedule_pay="weekly")
+        # A first pay of 76,000 reaches both maximums and bears (76,000 -
+        # 74,600) x 0.04 = 56 of CPP2.
+        first = self._slip(
+            contract, "2026-01-05", "2026-01-11", done=True, bonus=74400.0
+        )
+        self._assert_lines(
+            first, {"CA_CPP": -4230.45, "CA_EI": -1123.07, "CA_CPP2": -56.0}
+        )
+        slip = self._slip(contract, "2026-01-12", "2026-01-18")
+        self._assert_lines(
+            slip,
+            {
+                "CA_CPP": 0.0,
+                "CA_CPP2": -64.0,
+                "CA_EI": 0.0,
+                "CA_FIT": -180.89,
+                "CA_PIT": -95.35,
+            },
         )
 
     def test_tax_reduction_with_dependants(self):

@@ -928,6 +928,18 @@ class HrPayslip(models.Model):
             return income, income - deductions - f5a
         return None
 
+    def _l10n_ca_provincial_regular_tax(self, vals, annual_tax):
+        """Return the provincial tax of the regular pay for the annual T2.
+
+        T4127 rounds the tax of the period once, (T1 + T2) / P: the
+        provincial amount is that total less the federal tax of the period
+        rounded on its own, so that the two lines add up to the rounded
+        total. It is never negative, T2 being at least 0.
+        """
+        federal = vals.get("federal_annual_tax", 0.0)
+        total = _round((federal + annual_tax) / vals["periods"])
+        return _round(total - vals["federal_regular_tax"])
+
     def _l10n_ca_compute_provincial_tax(self, vals):
         province = vals["province"]
         tax = self._l10n_ca_provincial_tax(vals)
