@@ -8,7 +8,9 @@ value}`` for ``year``, or ``None`` while the page does not show that year
 yet. A page whose structure no longer matches raises ``PageChanged``: the
 caller reports it as a change of the page, never as a missing year. A
 watcher of kind ``probe`` only tells whether a document exists: its
-``extract`` receives the HTTP status instead of the content.
+``extract`` receives the HTTP status instead of the content. A watcher of
+kind ``yearly`` reads a page whose address holds the year: until that page
+exists (HTTP 404 or 410), the year is not yet published.
 
 Values follow the storage format of the time parameters: amounts as
 numbers, rates as decimals, brackets as ``[[threshold, rate], ...]`` without

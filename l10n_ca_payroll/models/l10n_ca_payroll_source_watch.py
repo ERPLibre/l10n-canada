@@ -111,14 +111,17 @@ class L10nCaPayrollSource(models.Model):
     def _l10n_ca_same(found, stored):
         """Return whether a figure read on a page matches the parameter.
 
-        Brackets read on a page lack the first one: they match the stored
-        brackets above 0.
+        Brackets read on a page that lack the first one, from 0, match the
+        stored brackets above 0.
         """
         if isinstance(found, list):
-            if not isinstance(stored, list):
+            if not isinstance(stored, list) or not found:
                 return False
-            above = [list(map(float, b)) for b in stored if float(b[0]) > 0]
-            return [list(map(float, b)) for b in found] == above
+            found = [list(map(float, b)) for b in found]
+            stored = [list(map(float, b)) for b in stored]
+            if found[0][0] > 0:
+                stored = [b for b in stored if b[0] > 0]
+            return found == stored
         try:
             return abs(float(found) - float(stored)) < 1e-6
         except (TypeError, ValueError):
@@ -143,6 +146,8 @@ class L10nCaPayrollSource(models.Model):
         try:
             if probe:
                 values = watcher.extract(status, year)
+            elif status in (404, 410) and watcher.kind == "yearly":
+                values = None
             elif status != 200:
                 raise PageChanged(f"HTTP {status}")
             else:
