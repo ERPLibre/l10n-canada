@@ -149,6 +149,7 @@ class TestSourceWatch(TransactionCase):
 
         with patch.object(self.Source, "_l10n_ca_fetch", fetch):
             self.t4127.action_l10n_ca_watch_acknowledge()
+        self.assertEqual(self.t4127.watch_published_year, 0)
         self.assertEqual(self.t4127.watch_acknowledged_year, 2027)
         self.assertEqual(self.t4127.watch_state, "ok")
         self.assertFalse(self._todo(self.t4127))
@@ -185,6 +186,51 @@ class TestSourceWatch(TransactionCase):
             "l10n_ca.federal.bpa_max: 16800.0 published for 2027, no version yet.",
             source.watch_message,
         )
+
+    def test_year_in_force_missing_is_a_change(self):
+        # The page lists 2025 only: 2026, the year in force, is gone.
+        self._check(self.cpp, _cpp_page([("2025", "71,300", "5.95")]))
+        self.assertEqual(self.cpp.watch_state, "changed")
+        self.assertIn("no figures for 2026", self.cpp.watch_message)
+
+    def test_any_watcher_error_is_a_change(self):
+        # A row with too few cells makes the extractor fail on its own.
+        page = (
+            b"<html><body><table><caption>CPP contribution rates, maximums "
+            b"and exemptions all years</caption><tr><td>2026</td></tr></table>"
+            b"</body></html>"
+        )
+        self._check(self.cpp, page)
+        self.assertEqual(self.cpp.watch_state, "changed")
+        self._check(self.cpp, b"")
+        self.assertEqual(self.cpp.watch_state, "changed")
+
+    def test_each_page_is_read_once_per_run(self):
+        calls = []
+
+        def fetch(self_, url, probe=False):
+            calls.append(url)
+            return 200, _cpp_page(
+                [("New 2027", "76,700", "5.75"), ("2026", "74,600", "5.95")]
+            )
+
+        with patch.object(self.Source, "_l10n_ca_fetch", fetch):
+            self.cpp.action_l10n_ca_watch()
+        self.assertEqual(len(calls), 1)
+
+    def test_same_finding_in_another_language_is_not_new(self):
+        page = _cpp_page([("New 2027", "77,000", "5.75"), ("2026", "74,600", "5.95")])
+        self._check(self.cpp, page)
+        messages = len(self.cpp.message_ids)
+        self.env["res.lang"]._activate_lang("fr_CA")
+        source = self.cpp.with_context(lang="fr_CA")
+        self._check(source, page)
+        self.assertEqual(len(self.cpp.message_ids), messages)
+        # A connection error gives the same finding every week.
+        self._check(self.cpp, requests.ConnectionError("pool at 0x1"))
+        messages = len(self.cpp.message_ids)
+        self._check(self.cpp, requests.ConnectionError("pool at 0x2"))
+        self.assertEqual(len(self.cpp.message_ids), messages)
 
     def test_cron_survives_a_failing_watcher(self):
         def fetch(self_, url, probe=False):

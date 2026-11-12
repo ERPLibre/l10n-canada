@@ -20,7 +20,7 @@ the first bracket, which the pages do not give.
 import re
 from collections import namedtuple
 
-from lxml import html
+from lxml import etree, html
 
 Watcher = namedtuple("Watcher", "label url extract kind", defaults=("html",))
 
@@ -61,7 +61,7 @@ def document(content):
         if isinstance(content, bytes):
             return html.fromstring(content, parser=html.HTMLParser(encoding="utf-8"))
         return html.fromstring(content)
-    except (ValueError, TypeError) as error:
+    except (ValueError, TypeError, etree.ParserError) as error:
         raise PageChanged("not an HTML page") from error
 
 
@@ -173,7 +173,9 @@ def cra_indexation(content, year):
     brackets = find_table(content, r"^Tax bracket thresholds")
     credits = find_table(content, r"^Amounts relating to non-refundable tax credits")
     column = _year_column(brackets, year)
-    if column is None or _year_column(credits, year) != column:
+    if _year_column(credits, year) != column:
+        raise PageChanged(f"{year} is not in the same column of both tables")
+    if column is None:
         return None
     thresholds = []
     for row in brackets[1:]:

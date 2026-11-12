@@ -1529,6 +1529,11 @@ msgid "Publication watch"
 msgstr "Surveillance des publications"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_published_year
+msgid "Published Year"
+msgstr "Année publiée"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__watch_state__published
 msgid "Published, not in the parameters"
 msgstr "Publié, absent des paramètres"
@@ -1978,6 +1983,11 @@ msgid "Verified Date"
 msgstr "Date de vérification"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_digest
+msgid "Watch Digest"
+msgstr "Empreinte de la vérification"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_state
 msgid "Watch State"
 msgstr "État de la surveillance"
@@ -2028,6 +2038,15 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_search
 msgid "Year"
 msgstr "Année"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_published_year
+msgid ""
+"Year whose publication the last check found, for a watcher that detects a "
+"publication without reading figures."
+msgstr ""
+"Année dont la dernière vérification a trouvé la publication, pour un "
+"observateur qui détecte une publication sans en lire les chiffres."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__summary_id
