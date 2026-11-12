@@ -49,6 +49,9 @@ class TestSourceWatch(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        # The messages are translated: read them in English whatever the
+        # languages installed.
+        cls.env = cls.env(context=dict(cls.env.context, lang="en_US"))
         cls.manager = cls.env["res.users"].create(
             {
                 "name": "Payroll Watch Manager",

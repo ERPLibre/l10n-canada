@@ -390,7 +390,7 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
         cnesst = self.env.ref("l10n_ca_qc_payroll.source_cnesst_max")
         qpp = self.env.ref("l10n_ca_qc_payroll.source_retraite_quebec_contributions")
         with patch.object(Source, "_l10n_ca_fetch", fetch):
-            (cnesst | qpp).action_l10n_ca_watch()
+            (cnesst | qpp).with_context(lang="en_US").action_l10n_ca_watch()
         # CNESST: 103,000 for 2026 and 106,000 for 2027, both shipped.
         self.assertEqual(cnesst.watch_state, "ok")
         # QPP: 2026 matches; the 2027 figures of the page have no version.
