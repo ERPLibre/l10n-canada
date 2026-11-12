@@ -6,7 +6,13 @@ que lorsqu'une source officielle la publie : aucune n'est calculée ni
 estimée. Les paramètres qui ne changent pas n'ont pas besoin d'une version
 2027, la version 2026 reste en vigueur.
 
-État au 12 novembre 2026.
+État au 12 novembre 2026, après une seconde recherche le même jour : aucune
+nouvelle valeur 2027 n'est publiée depuis la première.
+
+Le cron hebdomadaire *Paie canadienne : vérifier les sources officielles*
+surveille désormais ces publications (Paie > Configuration > Sources
+officielles canadiennes) : il compare les chiffres trouvés aux paramètres et
+crée une activité quand une valeur paraît, diffère, ou qu'une page change.
 
 ## Ajoutées
 
@@ -49,7 +55,15 @@ suivantes »).
 - [ ] `l10n_ca.federal.qc_abatement` : 16,5 % prévu par la loi, à confirmer
       dans le T4127 2027 (aucune version à ajouter s'il ne change pas)
 
-Le facteur d'indexation fédéral de 2027 n'est pas publié par l'ARC.
+Le facteur d'indexation fédéral de 2027 n'est pas publié par l'ARC. La page
+« Quoi de neuf » de l'ARC annonce une entrée sur les taux du RPC de 2027 pour
+le 30 novembre 2026 ; les montants indexés de 2026 avaient paru le
+24 novembre 2025.
+
+- [ ] Taux du RPC de 2027 (0,0575 et 0,0475, déjà livrés) : la section 5 de
+      L.C. 2026, ch. 22 entre en vigueur par décret (RPC art. 114(4)) ; aucun
+      décret n'est paru dans la Gazette du Canada, Partie II, au 4 novembre
+      2026. L'ARC publie déjà 5,75 %. Voir la source « à vérifier » dans Odoo.
 
 ### Québec — impôt : Finances Québec (indexation 2027), TP-1015.F et TP-1015.G-V de janvier 2027
 
@@ -61,6 +75,10 @@ Le facteur d'indexation fédéral de 2027 n'est pas publié par l'ARC.
 - [ ] `l10n_ca.qc.credit_rate`, `l10n_ca.qc.worker_deduction_rate`,
       `l10n_ca.qc.lump_sum_flat_rate` : aucun changement annoncé, à
       confirmer dans le TP-1015.F 2027
+- [ ] `l10n_ca.qc.labour_fund_credit_rate` : dès 2027, l'art. 776.1.4.2.1
+      LI refuse le crédit quand le revenu imposable de la deuxième année
+      précédente dépasse le seuil de la dernière tranche ; le TP-1015.F de
+      2027 dira comment Q et Q1 en tiennent compte
 
 ### Québec — RRQ : Retraite Québec
 
@@ -69,7 +87,9 @@ Le facteur d'indexation fédéral de 2027 n'est pas publié par l'ARC.
       les a pas encore publiés
 - [ ] `l10n_ca.qpp.base_rate`, `l10n_ca.qpp.rate` : la baisse à 5,30 % ne
       vise que 2026 ; le bulletin 2025-8 indique que l'art. 44.1 de la
-      LRRQ s'applique de nouveau en 2027, sans taux publié
+      LRRQ s'applique de nouveau en 2027, sans taux publié. Le taux de 2026
+      repose sur l'art. 106 du projet de loi 6 (déposé le 12 mai 2026), dont
+      l'adoption n'est pas confirmée
 - [ ] `l10n_ca.qpp.rate2`, `l10n_ca.qpp.basic_exemption` : à confirmer
 
 ### Québec — RQAP et normes du travail
@@ -85,7 +105,16 @@ Le facteur d'indexation fédéral de 2027 n'est pas publié par l'ARC.
       changement annoncé
 
 Les pages de Revenu Québec et de LégisQuébec ont refusé la lecture
-automatique (HTTP 403) : à consulter dans un navigateur.
+automatique (HTTP 403) : à consulter dans un navigateur. Les PDF de Revenu
+Québec, eux, répondent : le TP-1015.F et le TP-1015.G de janvier 2027
+répondent 410 tant qu'ils ne sont pas publiés, et le cron les guette.
+
+### Ontario
+
+- [x] `l10n_ca.on.wsib.max_insurable` 2027 : 126 700 (WSIB, page des taux
+      de 2027) — dans le module `l10n_ca_on_payroll`
+- [ ] Tranches, montant personnel de base, seuils de la surtaxe, réduction
+      d'impôt de l'Ontario pour 2027 : T4127 de janvier 2027
 
 ## Pour chaque valeur publiée
 
