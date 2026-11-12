@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Alberta income tax, T4127 option 1 -->
+    <record id="param_ab_brackets" model="base.time.parameter">
+        <field name="name">Alberta income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.ab.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Alberta rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P - K5P). 2026: 8% up to 61,200, 10% to 154,259, 12% to 185,111, 13% to 246,813, 14% to 370,220 and 15% above. The constant KP is derived from the table and rounded to the dollar like the federal K: 2026 0, 1,224, 4,309, 6,160, 8,628, 12,331. The rate of the first bracket is the lowest Alberta rate of K1P, K2P and K5P (0.08, the first bracket of 8% since 2025). Alberta did not change on July 1, 2026. T4127 122nd edition (January 2026), table 8.1; 123rd edition (July 2026), table 8.1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.alberta.ca/personal-income-tax</field>
+    </record>
+    <record id="param_ab_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ab_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.08], [61200, 0.1], [154259, 0.12], [185111, 0.13], [246813, 0.14], [370220, 0.15]]</field>
+    </record>
+    <record id="param_ab_bpa" model="base.time.parameter">
+        <field name="name">Alberta basic personal amount</field>
+        <field name="code">l10n_ca.ab.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >TCP of an employee who files no TD1AB: K1P = 0.08 x TCP. Alberta has no income-tested basic personal amount. 2026: 22,769 (indexation rate 2.0%). T4127 122nd edition (January 2026), step 4, Alberta, and table 8.2; TD1AB 2026 line 1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1ab.html</field>
+    </record>
+    <record id="param_ab_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ab_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">22769</field>
+    </record>
+    <record id="param_ab_supplemental_threshold" model="base.time.parameter">
+        <field name="name">Alberta supplemental tax credit threshold</field>
+        <field
+            name="code"
+        >l10n_ca.ab.supplemental_credit.threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Threshold of the Alberta supplemental tax credit K5P = ((K1P + K2P) - threshold) x rate, 0 if negative (T4127 122nd edition, step 4, Alberta: "K5P = ((K1P + K2P) - $4,896.00) x 0.25"; K5P is the provincial supplemental non-refundable tax credit, computed at the lowest provincial rate). 2026: 4,896.00, the value at the lowest rate of the credit amounts up to the top of the first bracket (0.08 x 61,200): the T4032-AB states the same credit as 2% of the total claim amount and CPP and EI credit amounts above 61,200. Alberta did not change on July 1, 2026. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4032-payroll-deductions-tables/t4032ab-jan/t4032ab-january-general-information.html</field>
+    </record>
+    <record id="param_ab_supplemental_threshold_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ab_supplemental_threshold" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">4896</field>
+    </record>
+    <record id="param_ab_supplemental_rate" model="base.time.parameter">
+        <field name="name">Alberta supplemental tax credit rate</field>
+        <field name="code">l10n_ca.ab.supplemental_credit.rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Rate of the Alberta supplemental tax credit K5P = ((K1P + K2P) - threshold) x rate, 0 if negative (T4127 122nd edition, step 4, Alberta). 2026: 0.25, which turns the excess of K1P + K2P, valued at the lowest rate of 8%, into 2% of the credit amounts above 61,200 (0.25 x 0.08 = 0.02, the difference between the second rate of 10% and the lowest rate; T4032-AB, step-by-step example above the YMPE, line 19). Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4032-payroll-deductions-tables/t4032ab-jan/t4032ab-january-general-information.html</field>
+    </record>
+    <record id="param_ab_supplemental_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ab_supplemental_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.25</field>
+    </record>
+
+    <!-- WCB-Alberta -->
+    <record id="param_ab_wcb_max_insurable" model="base.time.parameter">
+        <field name="name">WCB-Alberta maximum assessable earnings</field>
+        <field name="code">l10n_ca.ab.wcb.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Yearly maximum assessable earnings (MAE) per worker: the assessable earnings of the pay are min(gross, maximum - assessable earnings of the year so far); premium = assessable earnings / 100 x the rate of the employer. Set each year by WCB-Alberta to cover the full wages of at least 90% of the workers of the province; the maximum compensable earnings set by board order under section 56(18) of the Workers' Compensation Act are equal to it in 2025 and 2026. 2026: 110,900 (fact sheet WCB-615: "in 2026, the MAE is $110,900"; board order of November 25, 2025). 2027 not yet published. Sources: https://www.wcb.ab.ca/assets/pdfs/employers/EFS_Maximum_compensable_and_assessable_earnings.pdf ; https://wcb.ab.ca/assets/pdfs/public/policy/manual/2026_mce_board_order.pdf</field>
+    </record>
+    <record id="param_ab_wcb_max_insurable_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ab_wcb_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">110900</field>
+    </record>
+</odoo>

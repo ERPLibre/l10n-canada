@@ -1,0 +1,249 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_ab_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-12 15:22+0000\n"
+"PO-Revision-Date: 2026-11-12 15:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_alberta_personal_income_tax
+msgid ""
+"2025 and 2026 Alberta tax brackets: 8% up to 61,200 in 2026 (60,000 in "
+"2025), then 10%, 12%, 13%, 14% and 15%; thresholds and credit amounts "
+"indexed by 2% in 2026."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_t4127_123
+msgid ""
+"2026 Alberta brackets, constants KP and basic personal amount. The edition "
+"lists Alberta among the provinces without change on July 1, 2026, and "
+"announces no Alberta change for January 1, 2027."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_workers_compensation_act
+msgid "Alberta King's Printer"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:hr.salary.rule,name:l10n_ca_ab_payroll.rule_ab_salary
+msgid "Alberta Remuneration"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_td1ab_2026
+msgid ""
+"Alberta basic personal amount of 22,769 for 2026 and the total claim amount "
+"TCP entered on the contract."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_alberta_no_payroll_tax
+msgid ""
+"Alberta levies no employer payroll tax: the province is \"free of provincial"
+" sales tax, payroll tax and provincial capital tax\" and has \"no payroll "
+"taxes\"."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_t4127_122
+msgid ""
+"Alberta rates 8%, 10%, 12%, 13%, 14% and 15% from 61,200, 154,259, 185,111, "
+"246,813 and 370,220 (the first bracket of 8% applies since 2025); basic "
+"personal amount 22,769; K1P and K2P at 8%; supplemental tax credit K5P = "
+"((K1P + K2P) - 4,896.00) x 0.25, 0 if negative."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_wcb_annual_returns
+msgid "Annual Returns"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_wcb_board_order_2026
+msgid "Board Order: Setting of Maximum Compensable Earnings (MCE) for 2026"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_wcb_board_orders
+msgid "Board Orders"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_wcb_personal_coverage
+msgid ""
+"Business owners, partners and directors are not automatically covered, only "
+"their workers; optional personal coverage from 34,200 to 110,900 in 2026."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_t4032ab_2026
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_t4127_122
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_t4127_123
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_td1ab_2026
+msgid "Canada Revenue Agency"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_alberta_no_payroll_tax
+msgid "Government of Alberta"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_alberta_personal_income_tax
+msgid "Government of Alberta, Treasury Board and Finance"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_wcb_board_orders
+msgid ""
+"Index of the board orders: the order setting the maximum compensable "
+"earnings of the next year is passed at the board meeting of late November."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_wcb_maximum_fact_sheet
+msgid "Maximum Compensable and Assessable Earnings (fact sheet WCB-615)"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_wcb_maximum_fact_sheet
+msgid ""
+"Maximum assessable earnings (MAE) per worker: 106,400 in 2025, 110,900 in "
+"2026; each worker's earnings are capped at the MAE before they are added to "
+"the total assessable earnings. MAE and maximum compensable earnings are set "
+"to cover the full wages of at least 90% of the workers of the province. "
+"Reissued near January 1."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_wcb_board_order_2026
+msgid ""
+"Maximum compensable earnings of 110,900 for 2026, 4.2% over the 106,400 of "
+"2025, passed on November 25, 2025."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_wcb_pay_premiums
+msgid "Pay Premiums"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_wcb_personal_coverage
+msgid "Personal Coverage"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_alberta_personal_income_tax
+msgid "Personal Income Tax"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_wcb_rate_setting
+msgid ""
+"Premium = assessable earnings / 100 x the rate of the employer, the rate of "
+"its rate group adjusted by its own experience; 2026 average rate 1.46 per "
+"$100 of assessable earnings."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_wcb_pay_premiums
+msgid ""
+"Premiums are invoiced from the estimate of the annual return and paid by the"
+" invoice due date, or in monthly instalments by pre-authorized debit on "
+"request; minimum premium of 200 per account and calendar year."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_wcb_rate_setting
+msgid "Rate Setting"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_t4032ab_2026
+msgid "T4032-AB Payroll Deductions Tables, Alberta (January 1, 2026)"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_t4127_122
+msgid "T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_t4127_123
+msgid "T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_td1ab_2026
+msgid "TD1AB 2026 Alberta Personal Tax Credits Return"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_workers_compensation_act
+msgid ""
+"The Board assesses employers on a percentage of the payroll or another rate "
+"it chooses (s. 97); net earnings above an amount prescribed by order of the "
+"Board are not taken into account (s. 56(18))."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_wcb_annual_returns
+msgid ""
+"The annual return reports the assessable earnings paid in the year just "
+"ended and estimates those of the current year; filed online from January 1 "
+"to February 28."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_ab_payroll.source_t4032ab_2026
+msgid ""
+"Two worked examples that the tests reproduce: 1,300 a week with an RRSP of "
+"80, 170.20 of tax; 1,600 a week above the YMPE with a TD1AB claim of 60,000,"
+" 210.18 of tax, of which the Alberta supplemental tax credit of 2% of the "
+"credit amounts above 61,200 (68.85 a year)."
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:hr.salary.rule,name:l10n_ca_ab_payroll.rule_ab_wcb_insurable
+msgid "WCB-Alberta Assessable Earnings"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#. odoo-python
+#: code:addons/l10n_ca_ab_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_ab_payroll.rule_ab_wcb
+msgid "WCB-Alberta Premium"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_alberta_no_payroll_tax
+msgid "Why Invest in Alberta: Competitive Tax System"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_ab_payroll.source_workers_compensation_act
+msgid "Workers' Compensation Act, RSA 2000, c. W-15"
+msgstr ""
+
+#. module: l10n_ca_ab_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_wcb_annual_returns
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_wcb_board_order_2026
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_wcb_board_orders
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_wcb_maximum_fact_sheet
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_wcb_pay_premiums
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_wcb_personal_coverage
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_ab_payroll.source_wcb_rate_setting
+msgid "Workers' Compensation Board - Alberta"
+msgstr ""
