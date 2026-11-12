@@ -9,7 +9,7 @@ Shipped 2026 parameters used by the derivations: rates 9.4% / 14% from
 LCP 20% of the shares withheld, at most 2,000; WorkSafeNB maximum
 assessable earnings 85,800 (2027: 88,200). The federal amounts are those
 of the tests of l10n_ca_payroll: at 5,000 a month, C = 280.15, EI = 81.50,
-A = 59,434.99, T1 = 5,338.28 and 444.86 of federal tax.
+A = 59,435.04, T1 = 5,338.29 and 444.86 of federal tax.
 
 K2P = 0.094 x (min(P x C x 0.0495 / 0.0595, 3,519.45) + min(P x EI,
 1,123.07)), the federal K2 items at the lowest New Brunswick rate.
@@ -145,11 +145,11 @@ class TestNewBrunswickPayroll(AccountTestInvoicingCommon):
         self.assertTrue(contract.l10n_ca_prov_computed)
         self.assertEqual(contract.l10n_ca_prov_bpa, 13664.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
-        # A = 59,434.99 > 52,333 -> V 0.14, KP 2,407
+        # A = 59,435.04 > 52,333 -> V 0.14, KP 2,407
         #   K2P = 0.094 x (12 x 280.15 x 0.0495 / 0.0595 + 12 x 81.50)
         #       = 0.094 x (2,796.79 + 978) = 354.83
-        #   T4 = 0.14 x 59,434.99 - 2,407 - 1,284.42 - 354.83 = 4,274.65
-        # (5,338.28 + 4,274.65) / 12 = 801.08, of which 444.86 federal and
+        #   T4 = 0.14 x 59,435.04 - 2,407 - 1,284.42 - 354.83 = 4,274.66
+        # (5,338.29 + 4,274.66) / 12 = 801.08, of which 444.86 federal and
         # 356.22 New Brunswick.
         self._assert_lines(
             slip,
@@ -223,8 +223,8 @@ class TestNewBrunswickPayroll(AccountTestInvoicingCommon):
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
         self._assert_lines(slip, {"CA_FIT": -444.86, "CA_PIT": 0.0})
         # TD1NB claim 0, other credits 120 and 20 of additional tax:
-        # T4 = 0.14 x 59,434.99 - 2,407 - 354.83 - 120 = 5,439.07
-        # (5,338.28 + 5,439.07) / 12 = 898.11 -> 898.11 - 444.86 + 20
+        # T4 = 0.14 x 59,435.04 - 2,407 - 354.83 - 120 = 5,439.08
+        # (5,338.29 + 5,439.08) / 12 = 898.11 -> 898.11 - 444.86 + 20
         contract = self._contract(
             5000.0,
             l10n_ca_prov_td1_type="custom",
@@ -237,8 +237,8 @@ class TestNewBrunswickPayroll(AccountTestInvoicingCommon):
 
     def test_labour_sponsored_funds_credit(self):
         # 100 of shares a month: LCP = min(2,000, 20% x 100) = 20 a pay,
-        # P x LCP = 240 for the year: T2 = 4,274.65 - 240 = 4,034.65 and
-        # (5,338.28 + 4,034.65) / 12 = 781.08 -> 336.22 New Brunswick.
+        # P x LCP = 240 for the year: T2 = 4,274.66 - 240 = 4,034.66 and
+        # (5,338.29 + 4,034.66) / 12 = 781.08 -> 336.22 New Brunswick.
         contract = self._contract(5000.0, l10n_ca_lsvcc_amount=100.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
         self._assert_lines(

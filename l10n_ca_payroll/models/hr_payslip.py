@@ -656,18 +656,23 @@ class HrPayslip(models.Model):
         """F5 of the pay and its share F5B on the non-periodic payments.
 
         F5 = C * (rate - base rate) / rate + C2, the first and second
-        additional contributions of the pay; F5B = F5 * B / PI (T4127),
-        which TP-1015.F calls CSB. A pay without pensionable earnings has
-        no F5B.
+        additional contributions of the pay. ``f5`` is rounded to the cent,
+        as in the examples of T4127 and of the T4032, and lowers A through
+        F5A; ``f5_exact`` keeps all the decimals for F5B = F5 * B / PI
+        (T4127), which TP-1015.F calls CSB, and for the CS of the Quebec
+        tax, which TP-1015.F rounds after its own proration. A pay without
+        pensionable earnings has no F5B.
         """
         params = vals["pension_params"]
-        f5 = vals["cpp"] * (params["rate"] - params["base_rate"]) / params["rate"]
-        f5 += vals["cpp2"]
+        f5_exact = (
+            vals["cpp"] * (params["rate"] - params["base_rate"]) / params["rate"]
+            + vals["cpp2"]
+        )
         pensionable = vals["pensionable"]
         f5b = 0.0
         if vals["nonperiodic"] and pensionable > 0:
-            f5b = _round(f5 * min(vals["nonperiodic"], pensionable) / pensionable)
-        vals.update({"f5": f5, "f5b": f5b})
+            f5b = _round(f5_exact * min(vals["nonperiodic"], pensionable) / pensionable)
+        vals.update({"f5": _round(f5_exact), "f5_exact": f5_exact, "f5b": f5b})
         return vals
 
     def _l10n_ca_federal_k2(self, vals, credit_rate, regular=None):

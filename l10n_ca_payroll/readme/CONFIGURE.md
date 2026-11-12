@@ -302,9 +302,9 @@ these amounts (`tests/test_payroll.py`).
 
 - **Monthly pay of 5,000 in New Brunswick** — exemption 291.66;
   C = 0.0595 × 4,708.34 = 280.15; C2 = 0; EI = 0.0163 × 5,000 = 81.50,
-  employer 114.10; F5A = 47.08; A = 12 × (5,000 − 47.0840) = 59,434.99,
+  employer 114.10; F5 = 47.08 (rounded to the cent); A = 12 × (5,000 − 47.08) = 59,435.04,
   R = 20.5%, K = 3,804; K1 = 2,303.28; K2 = 0.14 × (2,796.79 + 978)
-  = 528.47; K4 = 210.14; T3 = 5,338.28; **federal tax 444.86**.
+  = 528.47; K4 = 210.14; T3 = 5,338.29; **federal tax 444.86**.
   `test_monthly_new_brunswick`
 - **Bi-weekly pay** — monthly wage 5,200 → 2,400 per pay (P = 26);
   exemption 134.61; C = 134.79; EI = 39.12, employer 54.77;
@@ -318,7 +318,7 @@ these amounts (`tests/test_payroll.py`).
   R = 33%, K = 26,024, K2 = 649.95 (both maximums); T3 = 69,061.39;
   **federal tax 5,755.12**. `test_basic_personal_amount_phase_out`
 - **TD1 claim code 0 and additional tax** — 5,000 a month, TC = 0:
-  T3 = 5,338.28 + 2,303.28 = 7,641.56 → 636.80, plus 50.00 requested:
+  T3 = 5,338.29 + 2,303.28 = 7,641.57 → 636.80, plus 50.00 requested:
   **686.80**. `test_td1_claim_and_additional_tax`
 - **CPP and EI exemptions** — 5,000 a month: A = 60,000, K2 = 0,
   T3 = 5,982.58, **federal tax 498.55**. `test_exemptions`
@@ -340,13 +340,13 @@ these amounts (`tests/test_payroll.py`).
   April. `test_cpp_starts_after_18`
 - **RPP and RRSP contributions (F)** — 5,000 a month in New Brunswick, RPP of
   300 on the contract and RRSP of 100 in the payslip input: F = 400,
-  A = 12 × (5,000 − 400 − 47.0840) = 54,634.99, R = 14%, K = 0;
+  A = 12 × (5,000 − 400 − 47.08) = 54,635.04, R = 14%, K = 0;
   T3 = 4,607.01, **federal tax 383.92** instead of 444.86. CPP, EI and
   box 14 keep the gross of 5,000; box 20 is 300.
   `test_rpp_and_rrsp_lower_the_taxable_income`
 - **Union dues and support payments (U1, F2)** — 5,000 a month in
   New Brunswick, union dues of 50 on the contract and a support payment of 100
-  in the payslip input: A = 12 × (5,000 − 150 − 47.0840) = 57,634.99,
+  in the payslip input: A = 12 × (5,000 − 150 − 47.08) = 57,635.04,
   R = 14%; T3 = 5,027.01, **federal tax 418.92**; box 44 is 50.
   `test_union_dues_and_support_lower_the_taxable_income`
 - **Transfer from QPP to CPP** — 10,000 a month, January to June in
@@ -357,7 +357,7 @@ these amounts (`tests/test_payroll.py`).
   `test_transfer_from_qpp_to_cpp`
 - **Bonus without regular pay** — after three pays of 5,000, a pay of a
   bonus of 10,000 alone takes I of the most recent regular pay (T4127): A
-  goes from 59,434.99 to 69,337.91, K2 adds 90.10, **TB = 1,940.00**. With
+  goes from 59,435.04 to 69,337.96, K2 adds 90.10, **TB = 1,940.00**. With
   no regular pay before it, the payslip warns that the bonus is taxed as the
   only income of the year. `test_bonus_without_regular_pay`
 - A pay of a year whose indexed amounts are not entered (no version of
@@ -380,7 +380,7 @@ these amounts (`tests/test_payroll.py`).
   employer 91.00; K2 = 528.44; T3 = 5,338.32; T1 = 0.835 × T3;
   **federal tax 371.46**. `test_quebec_federal_abatement`
 - **QPIP credit through the K2 hook** — the same pay with a QPIP item of
-  0.43% (maximum 442.90, table 8.8): K2 + 36.12, **federal tax 368.94**.
+  0.43% (maximum 442.90, table 8.8): K2 + 36.12, **federal tax 368.95**.
   `test_quebec_k2_extension_point`
 - **Transfer from CPP to QPP** — 40,000 a month, January in New Brunswick
   (CPP 2,362.65), then Quebec: the CPP withheld counts as 2,362.65 ×

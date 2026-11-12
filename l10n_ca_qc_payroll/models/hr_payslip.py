@@ -468,7 +468,7 @@ class HrPayslip(models.Model):
         worker_deduction = self._l10n_ca_qc_worker_deduction(vals, salary)
         additional_qpp = 0.0
         if vals["plan"] == "qpp":
-            additional_qpp = vals["f5"]
+            additional_qpp = vals["f5_exact"]
             pensionable = vals["pensionable"]
             if nonperiodic and pensionable > 0:
                 additional_qpp *= (pensionable - nonperiodic) / pensionable

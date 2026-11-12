@@ -193,11 +193,11 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
         # QPP C = 0.063 * (5,000 - 3,500 / 12 = 291.66) = 296.63; C2 = 0
         # EI = 0.013 * 5,000 = 65.00, employer 1.4 * 65 = 91.00
         # QPIP = 0.0043 * 5,000 = 21.50, employer 0.00602 * 5,000 = 30.10
-        # Federal: A = 12 * (5,000 - 296.63 * 0.01 / 0.063) = 59,434.99,
+        # Federal: A = 12 * (5,000 - 296.63 * 0.01 / 0.063) = 59,435.04,
         #   K2 = 0.14 * (12 * 296.63 * 0.053 / 0.063) + 0.14 * 780
         #      + 0.14 * min(12 * 21.50, 442.90) = 564.56
-        #   T3 = 0.205 * 59,434.99 - 3,804 - 2,303.28 - 564.56 - 210.14
-        #      = 5,302.20; T1 = 0.835 * T3 = 4,427.33 -> 368.94
+        #   T3 = 0.205 * 59,435.04 - 3,804 - 2,303.28 - 564.56 - 210.14
+        #      = 5,302.20; T1 = 0.835 * T3 = 4,427.34 -> 368.95
         # Quebec: H = min(0.06 * 5,000, 1,450 / 12) = 120.83
         #   CSA = 296.63 * 0.01 / 0.063 = 47.08
         #   I = 12 * (5,000 - 120.83 - 47.08) = 57,985.08 -> T 0.19, K 2,717
@@ -211,9 +211,9 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
                 "CA_CPP2": 0.0,
                 "CA_EI": -65.0,
                 "CA_QPIP": -21.50,
-                "CA_FIT": -368.94,
+                "CA_FIT": -368.95,
                 "CA_PIT": -470.57,
-                "NET": 5000.0 - 296.63 - 65.0 - 21.50 - 368.94 - 470.57,
+                "NET": 5000.0 - 296.63 - 65.0 - 21.50 - 368.95 - 470.57,
                 "CA_CPP_ER": 296.63,
                 "CA_EI_ER": 91.0,
                 "CA_QPIP_ER": 30.10,
@@ -329,7 +329,7 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
         self._assert_lines(slip, {"CA_PIT": -716.68})
         contract.l10n_ca_qc_tax_exempt = True
         slip = self._slip(contract, "2026-04-01", "2026-04-30")
-        self._assert_lines(slip, {"CA_PIT": 0.0, "CA_FIT": -368.94})
+        self._assert_lines(slip, {"CA_PIT": 0.0, "CA_FIT": -368.95})
 
     def test_claim_indexation(self):
         """Line 7 of an earlier TP-1015.3 is indexed (TP-1015.F, E1)."""
@@ -473,11 +473,11 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
         self.structure.rule_ids = [(4, rule.id)]
         contract = self._contract(5000.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
-        # Federal tax as in test_monthly_5000: 368.94.
+        # Federal tax as in test_monthly_5000: 368.95.
         # Quebec: I = 12 * (5,000 - 100 - 120.83 - 47.08) = 56,785.08
         #   Y = 0.19 * 56,785.08 - 2,717 - 0.14 * 18,952 = 5,418.89 -> 451.57
         self._assert_lines(
-            slip, {"TEST_FHSA": -100.0, "CA_FIT": -368.94, "CA_PIT": -451.57}
+            slip, {"TEST_FHSA": -100.0, "CA_FIT": -368.95, "CA_PIT": -451.57}
         )
 
     def test_example_appendix_2(self):

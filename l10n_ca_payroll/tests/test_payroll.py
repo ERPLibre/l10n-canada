@@ -154,14 +154,14 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         # C = 0.0595 * (5,000 - 291.66) = 280.146 -> 280.15
         # C2: W = 74,600; 0 + 5,000 - 74,600 < 0 -> 0
         # EI = 0.0163 * 5,000 = 81.50; employer 1.4 * 81.50 = 114.10
-        # F5A = 280.15 * 0.01 / 0.0595 = 47.0840
-        # A = 12 * (5,000 - 47.0840) = 59,434.99 -> R 0.205, K 3,804
+        # F5 = 280.15 * 0.01 / 0.0595 = 47.08 (rounded to the cent)
+        # A = 12 * (5,000 - 47.08) = 59,435.04 -> R 0.205, K 3,804
         # K1 = 0.14 * 16,452 = 2,303.28
         # K2 = 0.14 * (12 * 280.15 * 0.0495 / 0.0595) + 0.14 * (12 * 81.50)
         #    = 0.14 * 2,796.79 + 0.14 * 978 = 528.47
         # K4 = 0.14 * 1,501 = 210.14
-        # T3 = 0.205 * 59,434.99 - 3,804 - 2,303.28 - 528.47 - 210.14
-        #    = 5,338.28 -> per pay 444.86
+        # T3 = 0.205 * 59,435.04 - 3,804 - 2,303.28 - 528.47 - 210.14
+        #    = 5,338.29 -> per pay 444.86
         self._assert_lines(
             slip,
             {
@@ -285,8 +285,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         slip = self._slip(contract, "2026-03-02", "2026-03-08")
         self._assert_lines(slip, {"CA_CPP": -73.35, "CA_EI": -21.19, "CA_FIT": -98.75})
         vals = slip._l10n_ca_compute(contract, 1300.0, tax_deductions=80.0)
-        # The example rounds F5A to 12.33; the module keeps 12.3277: 0.12.
-        self.assertAlmostEqual(vals["federal_annual_income"], 58783.84, delta=0.15)
+        self.assertAlmostEqual(vals["federal_annual_income"], 58783.84, places=2)
 
     def test_low_income_no_tax(self):
         contract = self._contract(1000.0)
@@ -314,7 +313,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
             l10n_ca_additional_federal_tax=50.0,
         )
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
-        # Claim code 0: K1 = 0, T3 = 5,338.28 + 2,303.28 = 7,641.56
+        # Claim code 0: K1 = 0, T3 = 5,338.29 + 2,303.28 = 7,641.57
         # -> 636.80 per pay, plus 50.00 requested on the TD1.
         self._assert_lines(slip, {"CA_FIT": -686.80})
 
@@ -508,8 +507,8 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         )
         slip.compute_sheet()
         # As in test_monthly_new_brunswick, with F = 300 + 100 = 400:
-        # A = 12 * (5,000 - 400 - 47.0840) = 54,634.99 -> R 0.14, K 0
-        # T3 = 0.14 * 54,634.99 - 2,303.28 - 528.47 - 210.14 = 4,607.01
+        # A = 12 * (5,000 - 400 - 47.08) = 54,635.04 -> R 0.14, K 0
+        # T3 = 0.14 * 54,635.04 - 2,303.28 - 528.47 - 210.14 = 4,607.01
         #    -> per pay 383.92. CPP, EI and the T4 box 14 keep the gross.
         self._assert_lines(
             slip,
@@ -553,8 +552,8 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         )
         slip.compute_sheet()
         # As in test_monthly_new_brunswick, with U1 = 50 and F2 = 100:
-        # A = 12 * (5,000 - 150 - 47.0840) = 57,634.99 -> R 0.14, K 0
-        # T3 = 0.14 * 57,634.99 - 2,303.28 - 528.47 - 210.14 = 5,027.01
+        # A = 12 * (5,000 - 150 - 47.08) = 57,635.04 -> R 0.14, K 0
+        # T3 = 0.14 * 57,635.04 - 2,303.28 - 528.47 - 210.14 = 5,027.01
         #    -> per pay 418.92
         self._assert_lines(
             slip,
@@ -738,11 +737,11 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         ):
             slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # QPP C = 0.063 * (5,000 - 291.66) = 296.63; EI = 0.013 * 5,000 = 65
-        # F5A = 296.63 * 0.01 / 0.063 = 47.0841; A = 59,434.99
+        # F5 = 296.63 * 0.01 / 0.063 = 47.08; A = 59,435.04
         # K2 = 0.14 * (12 * 296.63 * 0.053 / 0.063) + 0.14 * (12 * 65)
         #    = 0.14 * 2,994.55 + 0.14 * 780 = 528.44
-        # T3 = 0.205 * 59,434.99 - 3,804 - 2,303.28 - 528.44 - 210.14
-        #    = 5,338.32; T1 = T3 * (1 - 0.165) = 4,457.49 -> 371.46
+        # T3 = 0.205 * 59,435.04 - 3,804 - 2,303.28 - 528.44 - 210.14
+        #    = 5,338.32; T1 = T3 * (1 - 0.165) = 4,457.50 -> 371.46
         self._assert_lines(
             slip,
             {
@@ -777,8 +776,8 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         ):
             slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # K2 += 0.14 * 12 * 21.50 = 36.12 -> T3 = 5,302.20,
-        # T1 = 4,427.33 -> 368.94
-        self._assert_lines(slip, {"CA_FIT": -368.94})
+        # T1 = 4,427.34 -> 368.95
+        self._assert_lines(slip, {"CA_FIT": -368.95})
 
     def test_transfer_from_qpp_to_cpp(self):
         """QPP withheld before a transfer out of Quebec counts against the CPP.
@@ -816,10 +815,10 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         self._monthly_slips(contract, [1, 2, 3])
         contract.wage = 0.0
         slip = self._slip(contract, "2026-04-01", "2026-04-30", bonus=10000.0)
-        # March: I = 5,000, F5A = 280.15 * 0.01 / 0.0595 = 47.084, so A
-        #   without the bonus = 12 * 4,952.916 = 59,434.99.
+        # March: I = 5,000, F5 = 280.15 * 0.01 / 0.0595 = 47.08, so A
+        #   without the bonus = 12 * 4,952.92 = 59,435.04.
         # April: C = 0.0595 * (10,000 - 291.66) = 577.65, F5B = 577.65 *
-        #   0.01 / 0.0595 = 97.08; A with = 59,434.99 + 9,902.92 = 69,337.91,
+        #   0.01 / 0.0595 = 97.08; A with = 59,435.04 + 9,902.92 = 69,337.96,
         #   both in the 20.5% bracket. K2 with the bonus = 0.14 * (577.65 *
         #   0.0495 / 0.0595 + 163.00) = 90.10, without = 0.
         # TB = 0.205 * 9,902.92 - 90.10 = 1,940.00.

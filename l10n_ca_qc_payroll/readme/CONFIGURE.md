@@ -347,7 +347,7 @@ with the basic personal amount as E. The federal tax is computed by
     2,717. Y = 11,017.17 - 2,717 - 2,653.28 = 5,646.89, and the tax of the
     pay is 470.57.
   - Employer: HSF 1.65% x 5,000 = 82.50 and CNT 3.00.
-  - Federal tax: 368.94 (EI 65.00).
+  - Federal tax: 368.95 (EI 65.00).
 
   Test: `test_monthly_5000`.
 - **Bi-weekly pay of 3,000** (P = 26):
@@ -361,7 +361,7 @@ with the basic personal amount as E. The federal tax is computed by
 - **TP-1015.3 with E = 0 and additional tax**: on the 5,000 pay, Y =
   8,300.17 gives 691.68, and 25.00 of additional tax brings the total to
   716.68. With the exemption from withholding, the Quebec tax is 0 and the
-  federal tax stays 368.94. Test: `test_claim_additional_tax_and_exemption`.
+  federal tax stays 368.95. Test: `test_claim_additional_tax_and_exemption`.
 - **Indexation of a TP-1015.3**: line 7 = 20,000 on a form of 2026 gives a
   tax of 458.35. The same amount on a form of 2025 becomes E1 = 20,000 x
   1.0205 = 20,410, which gives 453.56. A form of 2024 is refused, because no
@@ -383,7 +383,7 @@ with the basic personal amount as E. The federal tax is computed by
   `test_union_dues_lower_the_federal_tax_only`.
 - **Deduction for Quebec only**: 5,000 a month with an FHSA contribution of
   100 in category *Deduction Reducing the Quebec Taxable Income*. The
-  federal tax stays 368.94; I = 12 x (5,000 - 100 - 120.83 - 47.08) =
+  federal tax stays 368.95; I = 12 x (5,000 - 100 - 120.83 - 47.08) =
   56,785.08 and Y = 0.19 x 56,785.08 - 2,717 - 2,653.28 = 5,418.89, so the
   Quebec tax is 451.57. Test: `test_quebec_only_deduction`.
 - **TP-1015.F-V appendix 2** (retroactive payment, second method): 1,500 a

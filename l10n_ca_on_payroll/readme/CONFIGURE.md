@@ -132,8 +132,8 @@ The formulas:
 - T2 = T4 + V1 + V2 - S, at least 0. T4127 rounds the tax of the pay
   once, (T1 + T2) / P: the Ontario line is that total less the federal
   line, T1 / P rounded on its own, plus the additional Ontario tax of the
-  contract. At 5,000 a month, (5,338.28 + 2,981.73) / 12 = 693.33, of
-  which 444.86 federal and 248.47 Ontario.
+  contract. At 5,000 a month, (5,338.29 + 2,981.74) / 12 = 693.34, of
+  which 444.86 federal and 248.48 Ontario.
 - Claim code E: T2 = V2.
 - Bonus, retroactive pay or other non-periodic payment: TB = T2 of A with
   the payment less T2 of A without it, each T2 recomputed in full (T4, V1,
@@ -257,10 +257,10 @@ parameters. Each pay is monthly (P = 12), in 2026, in Ontario, with the
 basic personal amount, unless stated otherwise.
 
 - **5,000 a month**: C = 280.15, EI = 81.50, A = 12 x (5,000 - 280.15 x
-  0.01 / 0.0595) = 59,434.99, federal tax 444.86. V = 0.0915, KP = 2,210,
+  0.01 / 0.0595) = 59,435.04, federal tax 444.86. V = 0.0915, KP = 2,210,
   K1P = 655.94, K2P = 0.0505 x (2,796.79 + 978) = 190.63, T4 = 0.0915 x
-  59,434.99 - 2,210 - 655.94 - 190.63 = 2,381.73, V1 = 0, V2 = 600, S = 0,
-  T2 = 2,981.73: Ontario tax 248.48. Box 22 of the T4 = 693.34.
+  59,435.04 - 2,210 - 655.94 - 190.63 = 2,381.74, V1 = 0, V2 = 600, S = 0,
+  T2 = 2,981.74: Ontario tax 248.48. Box 22 of the T4 = 693.34.
 - **Tax reduction**: 2,800 a month, A = 33,298.99, K2P = 102.90, T4 =
   922.75, V2 = 300. Without dependant, S = 0 and the tax is 101.90; with
   one dependant under 19, S = 2 x (300 + 554) - 922.75 = 785.25, T2 =
@@ -275,14 +275,14 @@ basic personal amount, unless stated otherwise.
   withheld: 25.00. At 1,500 a month, A = 17,854.99 and nothing is withheld.
 - **TD1ON claim 0, other credits 120 and additional tax 20**: T4 =
   2,917.67, T2 = 3,517.67: 293.14 + 20.00 = 313.14.
-- **Union dues of 50**: A = 58,834.99, T4 = 2,326.83, T2 = 2,926.83:
+- **Union dues of 50**: A = 58,835.04, T4 = 2,326.83, T2 = 2,926.83:
   243.90.
 - **Bonus of 3,000 on a pay of 5,000**: C = 458.65, EI = 130.40, F5B =
   28.91. Regular A = 59,421.87, T2 = 2,980.53: 248.38. With the bonus, A =
   62,392.96, K2P = 0.0505 x 3,972.19 = 200.60, T2 = 3,242.42: TB = 261.89.
   The federal tax is 444.63 + 581.44.
 - **Bonus alone**: after three pays of 5,000, a pay of a bonus of 10,000
-  without salary: A without = 59,434.99 (March), A with = 69,337.91, K2P
+  without salary: A without = 59,435.04 (March), A with = 69,337.96, K2P
   with = 0.0505 x 643.57 = 32.50: TB = 0.0915 x 9,902.92 - 32.50 = 873.62.
 - **Transfer from Quebec**: 10,000 a month, January to June in Quebec (QPP
   3,669.78), then Ontario. In September both maximums are reached: K2RP =

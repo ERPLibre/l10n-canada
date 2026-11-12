@@ -40,8 +40,8 @@ partner or non-salaried officer without optional coverage.
 
 ## Worked examples (tests)
 
-- 5,000 a month: A = 59,434.99; T4 = 0.14 x 59,434.99 - 2,407 - 1,284.42
-  - 354.83 = 4,274.65; (5,338.28 + 4,274.65) / 12 = 801.08, of which
+- 5,000 a month: A = 59,435.04; T4 = 0.14 x 59,435.04 - 2,407 - 1,284.42
+  - 354.83 = 4,274.66; (5,338.29 + 4,274.66) / 12 = 801.08, of which
   444.86 federal and 356.22 New Brunswick.
 - T4032 for New Brunswick, 1,300 a week with an RRSP of 80: 204.93 (the
   CRA's total), 114.57 federal and 90.36 New Brunswick; 1,600 a week above

@@ -205,25 +205,25 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         contract = self._contract(5000.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # As in the federal test: C = 280.15, EI = 81.50, A = 12 x (5,000
-        # - 280.15 x 0.01 / 0.0595) = 59,434.99, federal tax 444.86.
+        # - 280.15 x 0.01 / 0.0595) = 59,435.04, federal tax 444.86.
         # Ontario: A > 53,891 -> V 0.0915, KP 2,210
         #   K1P = 0.0505 x 12,989 = 655.94
         #   K2P = 0.0505 x (12 x 280.15 x 0.0495 / 0.0595 + 12 x 81.50)
         #       = 0.0505 x (2,796.79 + 978) = 190.63
-        #   T4 = 0.0915 x 59,434.99 - 2,210 - 655.94 - 190.63 = 2,381.73
+        #   T4 = 0.0915 x 59,435.04 - 2,210 - 655.94 - 190.63 = 2,381.74
         #   V1 = 0 (T4 <= 5,818); S = 0 (2 x 300 < T4)
-        #   V2 = min(600, 450 + 0.25 x (59,434.99 - 48,000)) = 600
-        #   T2 = 2,381.73 + 600 = 2,981.73
-        # T4127 rounds the tax of the period once: (5,338.28 + 2,981.73) /
-        # 12 = 693.33, of which 444.86 federal and 248.47 Ontario.
+        #   V2 = min(600, 450 + 0.25 x (59,435.04 - 48,000)) = 600
+        #   T2 = 2,381.74 + 600 = 2,981.73
+        # T4127 rounds the tax of the period once: (5,338.29 + 2,981.74) /
+        # 12 = 693.34, of which 444.86 federal and 248.48 Ontario.
         self._assert_lines(
             slip,
             {
                 "CA_CPP": -280.15,
                 "CA_EI": -81.50,
                 "CA_FIT": -444.86,
-                "CA_PIT": -248.47,
-                "NET": 5000.0 - 280.15 - 81.50 - 444.86 - 248.47,
+                "CA_PIT": -248.48,
+                "NET": 5000.0 - 280.15 - 81.50 - 444.86 - 248.48,
                 "CA_ON_SAL": 5000.0,
                 "CA_ON_WSIB_IE": 5000.0,
             },
@@ -236,9 +236,9 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         codes = slip.line_ids.mapped("code")
         self.assertNotIn("CA_ON_EHT", codes)
         self.assertNotIn("CA_ON_WSIB", codes)
-        # The CRA collects the Ontario tax: box 22 = 444.86 + 248.47.
+        # The CRA collects the Ontario tax: box 22 = 444.86 + 248.48.
         slip.action_payslip_done()
-        self.assertAlmostEqual(slip._l10n_ca_t4_values(2026)["box_22"], 693.33)
+        self.assertAlmostEqual(slip._l10n_ca_t4_values(2026)["box_22"], 693.34)
 
     def test_t4032_example_below_ympe(self):
         """Step-by-step example of the T4032 for Ontario, January 2026.
@@ -368,17 +368,17 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         )
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # As in test_monthly_5000 with K1P = 0 (claim code 0), K3P = 120:
-        # T4 = 0.0915 x 59,434.99 - 2,210 - 190.63 - 120 = 2,917.67
-        # T2 = 2,917.67 + 600 = 3,517.67 -> 293.14, plus 20.00 requested.
+        # T4 = 0.0915 x 59,435.04 - 2,210 - 190.63 - 120 = 2,917.68
+        # T2 = 2,917.68 + 600 = 3,517.68 -> 293.14, plus 20.00 requested.
         self._assert_lines(slip, {"CA_PIT": -313.14})
 
     def test_union_dues_lower_the_ontario_tax(self):
         contract = self._contract(5000.0, l10n_ca_union_dues_amount=50.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
-        # U1 = 50: A = 12 x (5,000 - 50 - 47.0840) = 58,834.99; K2P as in
+        # U1 = 50: A = 12 x (5,000 - 50 - 47.08) = 58,835.04; K2P as in
         # test_monthly_5000 (the dues do not change C nor EI).
-        # T4 = 0.0915 x 58,834.99 - 2,210 - 655.94 - 190.63 = 2,326.83
-        # T2 = 2,326.83 + 600 = 2,926.83 -> 243.90
+        # T4 = 0.0915 x 58,835.04 - 2,210 - 655.94 - 190.63 = 2,326.84
+        # T2 = 2,326.84 + 600 = 2,926.84 -> 243.90
         self._assert_lines(slip, {"CA_UNION": -50.0, "CA_PIT": -243.90})
 
     def test_bonus(self):
@@ -426,17 +426,17 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         contract.wage = 0.0
         slip = self._slip(contract, "2026-04-01", "2026-04-30", bonus=10000.0)
         # As in the federal test: A without the bonus is the one of March,
-        #   12 x (5,000 - 280.15 x 0.01 / 0.0595) = 59,434.99; C = 577.65,
-        #   EI = 163.00, F5B = 97.08, A with = 59,434.99 + 9,902.92 =
-        #   69,337.91. Both A in the 9.15% bracket (KP 2,210).
+        #   12 x (5,000 - 280.15 x 0.01 / 0.0595) = 59,435.04; C = 577.65,
+        #   EI = 163.00, F5B = 97.08, A with = 59,435.04 + 9,902.92 =
+        #   69,337.96. Both A in the 9.15% bracket (KP 2,210).
         # K2P with the bonus = 0.0505 x (577.65 x 0.0495 / 0.0595 + 163.00)
         #   = 0.0505 x 643.57 = 32.50; without = 0 (no regular contribution).
-        # T4 with = 0.0915 x 69,337.91 - 2,210 - 655.94 - 32.50 = 3,445.97
-        # T4 without = 0.0915 x 59,434.99 - 2,210 - 655.94 = 2,572.36
+        # T4 with = 0.0915 x 69,337.96 - 2,210 - 655.94 - 32.50 = 3,445.98
+        # T4 without = 0.0915 x 59,435.04 - 2,210 - 655.94 = 2,572.37
         # V1 = 0 and V2 = 600 for both, S = 0:
-        # TB = 4,045.97 - 3,172.36 = 873.62 (0.0915 x 9,902.92 - 32.50).
+        # TB = 4,045.98 - 3,172.37 = 873.62 (0.0915 x 9,902.92 - 32.50).
         # Taking A without from this pay (0) would tax the whole bonus as
-        # the only income of the year: 4,045.97.
+        # the only income of the year: 4,045.98.
         self._assert_lines(
             slip, {"GROSS": 10000.0, "CA_FIT": -1940.0, "CA_PIT": -873.62}
         )
@@ -444,11 +444,11 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
     def test_2025_values(self):
         contract = self._contract(5000.0, start="2025-01-01")
         slip = self._slip(contract, "2025-03-01", "2025-03-31")
-        # 2025: C = 280.15, EI = 0.0164 x 5,000 = 82.00, A = 59,434.99
+        # 2025: C = 280.15, EI = 0.0164 x 5,000 = 82.00, A = 59,435.04
         # A > 52,886 -> V 0.0915, KP 2,168; K1P = 0.0505 x 12,747 = 643.72
         # K2P = 0.0505 x (2,796.79 + 12 x 82) = 0.0505 x 3,780.79 = 190.93
-        # T4 = 0.0915 x 59,434.99 - 2,168 - 643.72 - 190.93 = 2,435.65
-        # T2 = 2,435.65 + 600 = 3,035.65 -> 252.97
+        # T4 = 0.0915 x 59,435.04 - 2,168 - 643.72 - 190.93 = 2,435.66
+        # T2 = 2,435.66 + 600 = 3,035.66 -> 252.97
         self._assert_lines(slip, {"CA_EI": -82.0, "CA_PIT": -252.97})
         contract = self._contract(15000.0, start="2025-01-01")
         slip = self._slip(contract, "2025-03-01", "2025-03-31")
