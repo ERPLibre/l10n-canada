@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the federal payroll. tools/sources_page.py writes
+     static/description/sources.html from this file: run it after a change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_jan_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 122nd edition (January 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Ch. 2 (BPAF), ch. 4 (option 1, bonus formulas), ch. 6 (CPP, table 6.1), ch. 7 (EI), tables 8.1 to 8.9 (2026) and 8.22 to 8.28 (2025)</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field
+            name="summary"
+        >Federal brackets and credits of 2026, CPP and EI figures of 2025 and 2026, the formulas of the federal tax, of the bonus tax and of the contributions, the bonus flat rates and the CPP age limits.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_jan_2025" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 120th edition (January 1, 2025)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Table 8.1 for 2025, ch. 4 (credit rate of 15%)</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field
+            name="summary"
+        >Federal brackets and credit rate of January 1 to June 30, 2025 (lowest rate of 15%, constants 0, 3,156, 9,467, 14,803, 24,940).</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_jul_2025" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 121st edition (July 1, 2025)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Tables 8.1 and 8.2 for 2025, ch. 4 (credit rate of 14%)</field>
+        <field
+            name="url"
+        >https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html</field>
+        <field
+            name="summary"
+        >Federal brackets, credit rate, basic personal amounts and Canada employment amount from July 1, 2025 (lowest rate of 14%).</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_cra_cpp_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">page</field>
+        <field name="name">CPP contribution rates, maximums and exemptions</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Table by year, 2027 row</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html</field>
+        <field
+            name="summary"
+        >YMPE, basic exemption and CPP rate of each year, including the 2027 YMPE (76,700) and rate (5.75%).</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_cra_cpp2_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">page</field>
+        <field
+            name="name"
+        >Second additional CPP contribution rates and maximums</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Table by year, 2027 row</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/calculating-deductions/making-deductions/second-additional-cpp-contribution-rates-maximums.html</field>
+        <field
+            name="summary"
+        >YAMPE and CPP2 rate of each year, including the 2027 YAMPE (87,400).</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_cra_ei_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">page</field>
+        <field name="name">EI premium rates and maximums</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Federal and Quebec tables by year</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/employment-insurance-ei/ei-premium-rates-maximums.html</field>
+        <field
+            name="summary"
+        >EI maximum insurable earnings and employee rates, outside Quebec and in Quebec.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_esdc_ei_2027" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >Canada Employment Insurance Commission confirms the 2027 premium rate</field>
+        <field name="publisher">Employment and Social Development Canada</field>
+        <field name="reference">News release, September 2026, and 2027 premium rate report</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/employment-social-development/news/2026/09/canada-employment-insurance-commission-confirms-2027-employment-insurance-premium-rate.html</field>
+        <field
+            name="summary"
+        >2027 EI maximum insurable earnings (70,800) and rates (1.64%, 1.29% in Quebec).</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_cpp_2027_rate_cut" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">statute</field>
+        <field
+            name="name"
+        >Spring Economic Update 2026 Implementation Act, S.C. 2026, c. 22</field>
+        <field name="publisher">Department of Finance Canada</field>
+        <field name="reference">Bill C-30, Division 5 (CPP base rate)</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/department-finance/news/2026/06/legislation-passes-to-implement-measures-from-the-spring-economic-update-2026.html</field>
+        <field
+            name="summary"
+        >Base CPP rate from 9.9% to 9.5% (employee and employer combined): the 2027 versions of the CPP rates, which the CRA applies from January 1, 2027.</field>
+        <field name="state">to_verify</field>
+        <field
+            name="verification_note"
+        >Division 5 (s. 41 to 44) comes into force on a day fixed by order in council under s. 114(4) of the Canada Pension Plan, which needs the consent of two thirds of the included provinces having two thirds of their population (s. 44(2) of the Act). No such order appears in the Canada Gazette, Part II, up to the issue of November 4, 2026, and the CPP consolidation lists s. 41 to 43 as not in force; the CRA already publishes 5.75% for 2027. Check the Canada Gazette, Part II, for the order, and https://laws-lois.justice.gc.ca/eng/AnnualStatutes/2026_22/FullText.html.</field>
+    </record>
+    <record id="source_t4001" model="l10n_ca.payroll.source">
+        <field name="sequence">90</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4001 Employers' Guide – Payroll Deductions and Remittances</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Remittance due dates; Filing information returns</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html</field>
+        <field
+            name="summary"
+        >Due days of each remitter type, next business day for a weekend or a holiday, T4 due on the last day of February of the following year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4_summary" model="l10n_ca.payroll.source">
+        <field name="sequence">100</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">page</field>
+        <field name="name">T4 Summary</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Lines of the T4 Summary</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/completing-filing-information-returns/t4-information-employers/t4-summary.html</field>
+        <field name="summary">Lines of the T4 Summary and its filing deadline.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_income_tax_act" model="l10n_ca.payroll.source">
+        <field name="sequence">110</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">statute</field>
+        <field name="name">Income Tax Act, R.S.C. 1985, c. 1 (5th Supp.)</field>
+        <field name="publisher">Department of Justice Canada</field>
+        <field
+            name="reference"
+        >s. 117(2) (rates), 117.1 (indexing), 118 and 118(1)(c) (basic personal amount), 118(10) (Canada employment amount), 120(2) (Quebec abatement)</field>
+        <field name="url">https://laws-lois.justice.gc.ca/eng/acts/I-3.3/</field>
+        <field
+            name="summary"
+        >Rates, indexing and credits behind the federal tax; S.C. 2026, c. 2 sets the lowest rate at 14.5% for 2025 and 14% from 2026.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_income_tax_regulations" model="l10n_ca.payroll.source">
+        <field name="sequence">120</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">statute</field>
+        <field name="name">Income Tax Regulations, C.R.C., c. 945</field>
+        <field name="publisher">Department of Justice Canada</field>
+        <field
+            name="reference"
+        >s. 108(1) and 108(1.1)(a) and (b) (remittance due dates), 205(1) (T4 filing deadline)</field>
+        <field
+            name="url"
+        >https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/</field>
+        <field
+            name="summary"
+        >Remittance periods and due dates of each remitter type, and the T4 filing deadline.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_fpfaa" model="l10n_ca.payroll.source">
+        <field name="sequence">130</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">statute</field>
+        <field name="name">Federal-Provincial Fiscal Arrangements Act</field>
+        <field name="publisher">Department of Justice Canada</field>
+        <field name="reference">s. 27 (abatement units)</field>
+        <field name="url">https://laws-lois.justice.gc.ca/eng/acts/F-8/</field>
+        <field
+            name="summary"
+        >Abatement of 16.5% of the basic federal tax for an employment in Quebec.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_canada_pension_plan" model="l10n_ca.payroll.source">
+        <field name="sequence">140</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">statute</field>
+        <field name="name">Canada Pension Plan, R.S.C. 1985, c. C-8</field>
+        <field name="publisher">Department of Justice Canada</field>
+        <field
+            name="reference"
+        >s. 8 and Schedules 1 and 2 (rates), 12(1) (age limits), 18 (YMPE), 18.1 (YAMPE), 19 and 20 (basic exemption)</field>
+        <field name="url">https://laws-lois.justice.gc.ca/eng/acts/C-8/</field>
+        <field
+            name="summary"
+        >Contribution rates, earnings ceilings, basic exemption and age limits of the CPP.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_employment_insurance_act" model="l10n_ca.payroll.source">
+        <field name="sequence">150</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">statute</field>
+        <field name="name">Employment Insurance Act, S.C. 1996, c. 23</field>
+        <field name="publisher">Department of Justice Canada</field>
+        <field
+            name="reference"
+        >s. 4 (maximum insurable earnings), 66 (rate), 68 (employer premium), 69 (reduced rate of Quebec)</field>
+        <field name="url">https://laws-lois.justice.gc.ca/eng/acts/E-5.6/</field>
+        <field
+            name="summary"
+        >Maximum insurable earnings, employee rate, employer multiplier and Quebec reduced rate.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>

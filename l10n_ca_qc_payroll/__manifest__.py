@@ -16,6 +16,7 @@
         "security/ir.model.access.csv",
         "data/time_parameters.xml",
         "data/hr_payroll_data.xml",
+        "data/l10n_ca_payroll_source_data.xml",
         "views/hr_contract_views.xml",
         "views/l10n_ca_payroll_t4_views.xml",
         "views/l10n_ca_qc_remittance_views.xml",

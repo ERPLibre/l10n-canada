@@ -11,6 +11,7 @@ credit rate 14%, Quebec abatement 16.5%.
 """
 
 from datetime import date
+from pathlib import Path
 from unittest.mock import patch
 
 from odoo.exceptions import UserError
@@ -18,6 +19,7 @@ from odoo.tests import tagged
 
 from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 from odoo.addons.l10n_ca_payroll.models.hr_payslip import HrPayslip
+from odoo.addons.l10n_ca_payroll.tools import sources_page
 
 # Federal K2 items without those a provincial module adds.
 FEDERAL_K2_ITEMS = HrPayslip._l10n_ca_federal_k2_items
@@ -495,6 +497,38 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         slip.compute_sheet()
         self.assertAlmostEqual(self._line(slip, "CA_FIT"), -418.92)
         self.assertAlmostEqual(slip._l10n_ca_t4_values(2026)["box_44"], 0.0)
+
+    def test_official_sources(self):
+        source = self.env.ref("l10n_ca_payroll.source_cra_cpp_rates")
+        self.assertIn("l10n_ca.cpp.ympe", source.parameter_ids.mapped("code"))
+        # Only the payroll parameters are linked, not the corporate tax ones
+        # that cite the same Act.
+        act = self.env.ref("l10n_ca_payroll.source_income_tax_act")
+        self.assertTrue(
+            all(
+                code.startswith(sources_page.PAYROLL_PREFIXES)
+                for code in act.parameter_ids.mapped("code")
+            )
+        )
+        # Every federal payroll parameter cites at least one source.
+        sources = self.env["l10n_ca.payroll.source"].search(
+            [("jurisdiction", "=", "federal")]
+        )
+        cited = sources.parameter_ids
+        parameters = (
+            self.env["base.time.parameter"]
+            .search([("code", "=like", "l10n_ca.%")])
+            .filtered(lambda p: p.code.startswith(sources_page.PAYROLL_PREFIXES[:5]))
+        )
+        self.assertFalse(parameters - cited, "parameters without an official source")
+        # The static page is generated from the same data.
+        module_dir = Path(sources_page.__file__).resolve().parents[1]
+        page = module_dir / sources_page.PAGE_FILE
+        self.assertEqual(
+            page.read_text(encoding="utf-8"),
+            sources_page.render(module_dir),
+            "static/description/sources.html is out of date: run tools/sources_page.py",
+        )
 
     def test_maximums_2027(self):
         # 2027: YMPE 76,700, YAMPE 87,400, rate 5.75%, EI MIE 70,800 at 1.64%.

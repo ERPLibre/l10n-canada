@@ -16,6 +16,23 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_tp1015f_2026
+msgid ""
+"2026 QPP, QPIP, Quebec income tax (brackets, basic personal amount, "
+"deduction for workers, indexation rate, labour-sponsored fund credit), lump-"
+"sum and Health Services Fund figures, and the worked examples of the "
+"appendices."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_finances_bulletin_2025_8
+msgid ""
+"2026 cut of the QPP base rate and of the QPIP rates (13%); a temporary "
+"2026-2027 HSF exemption for some agriculture, forestry and fishing "
+"employers, which the module does not model."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #. odoo-python
 #: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
 msgid "21 QPP - employee contributions"
@@ -386,6 +403,39 @@ msgid "A company has one RL-1 summary per year."
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_qc_atmp_act
+msgid ""
+"Act respecting industrial accidents and occupational diseases, CQLR c. "
+"A-3.001"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_qc_labour_standards_act
+msgid "Act respecting labour standards, CQLR c. N-1.1"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_qc_parental_insurance_act
+msgid "Act respecting parental insurance, CQLR c. A-29.011"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_qc_qpp_act
+msgid "Act respecting the Québec Pension Plan, CQLR c. R-9"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_qc_ramq_act
+msgid "Act respecting the Régie de l'assurance maladie du Québec, CQLR c. R-5"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_qc_workforce_act
+msgid ""
+"Act to promote workforce skills development and recognition, CQLR c. D-8.3"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_additional_tax
 msgid "Additional Quebec Tax per Pay"
 msgstr ""
@@ -404,6 +454,13 @@ msgstr ""
 #. module: l10n_ca_qc_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__hr_contract__l10n_ca_qc_claim_type__custom
 msgid "Amounts from the TP-1015.3"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_qc_labour_fund_statute
+msgid ""
+"An Act mainly to implement certain provisions of the Budget Speech of 2024, "
+"S.Q. 2024, c. 11"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -499,6 +556,16 @@ msgstr ""
 #. module: l10n_ca_qc_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_slip_view_form
 msgid "Boxes"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_finances_bulletin_2024_3
+msgid "Bulletin d'information 2024-3"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_finances_bulletin_2025_8
+msgid "Bulletin d'information 2025-8"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -599,6 +666,13 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
 msgid "Compute the remittances before exporting them."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_qc_payroll.source_qc_taxation_regulation
+msgid ""
+"Consolidated text in a browser: "
+"https://www.legisquebec.gouv.qc.ca/en/document/cr/I-3,%20r.%201#se:1086r65"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -830,8 +904,29 @@ msgid "Fondaction Withholding per Pay"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_rq_wsdrf_page
+msgid ""
+"Fonds de développement et de reconnaissance des compétences de la "
+"main-d'œuvre"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_ftq_withholding
 msgid "Fonds de solidarité FTQ Withholding per Pay"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_tp1015f_2025
+msgid ""
+"Formulas to Calculate Source Deductions and Contributions, TP-1015.F-V "
+"(2025-01)"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_tp1015f_2026
+msgid ""
+"Formulas to Calculate Source Deductions and Contributions, TP-1015.F-V "
+"(2026-01)"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -846,6 +941,23 @@ msgid "General (all other employers)"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_qc_atmp_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_qc_labour_standards_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_qc_parental_insurance_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_qc_qpp_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_qc_ramq_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_qc_taxation_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_qc_workforce_act
+msgid "Gouvernement du Québec (LégisQuébec)"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_qc_labour_fund_statute
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_qc_taxation_regulation
+msgid "Gouvernement du Québec (Publications du Québec)"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__gross_payroll
 msgid "Gross Payroll"
 msgstr ""
@@ -857,6 +969,23 @@ msgid "Gross payroll"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_rlz1s_guide
+msgid "Guide du sommaire 1, RLZ-1.S.G"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_tp1015g_2026
+msgid ""
+"Guide for Employers: Source Deductions and Contributions, TP-1015.G-V "
+"(2026-01)"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_rl1_guide
+msgid "Guide to Filing the RL-1 Slip, RL-1.G-V (2025-12)"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #. odoo-python
 #: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
 msgid "H QPIP premium"
@@ -865,6 +994,13 @@ msgstr ""
 #. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__hsf_accrued
 msgid "HSF Accrued on Payslips"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_rq_hsf_page
+msgid ""
+"HSF payroll thresholds (1,000,000 and 7,800,000 for 2026 and later years) "
+"and rate formulas."
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -901,6 +1037,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_hsf_sector
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_hsf_sector
 msgid "Health Services Fund Sector"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_qc_ramq_act
+msgid "Health Services Fund contribution and its rates."
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -996,6 +1137,33 @@ msgstr ""
 #. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__cnt_paid
 msgid "Labour Standards Contribution Already Paid"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_rlz1s_guide
+msgid ""
+"Labour standards and WSDRF lines of the RL-1 summary, and its deadlines "
+"after a cessation of activities."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_qc_labour_standards_act
+msgid "Labour standards contribution: rate and remuneration subject to it."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_qc_labour_fund_statute
+msgid ""
+"Labour-sponsored fund credit of 15%; from 2027, no credit when the taxable "
+"income of the second preceding year exceeds the threshold of the top "
+"bracket."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_finances_bulletin_2024_3
+msgid ""
+"Labour-sponsored fund credit: 15% of the price of the shares, on at most "
+"5,000 of shares a year."
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -1200,6 +1368,18 @@ msgid "Lump-Sum Payments"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_cnesst_max
+msgid ""
+"Maximum annual insurable earnings of each rating year: 98,000 (2025), "
+"103,000 (2026), 106,000 (2027)."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_qc_atmp_act
+msgid "Maximum annual insurable earnings of the CNESST."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__res_company__l10n_ca_qc_lump_sum_method__1
 msgid "Method 1: income of the year to date"
 msgstr ""
@@ -1227,6 +1407,12 @@ msgid ""
 " applies the rate of the bracket of the annualized pay to the whole payment."
 " Both withhold the flat rate when the annual salary and the lump sums total "
 "at most the basic personal amount."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_finances_bulletin_2024_3
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_finances_bulletin_2025_8
+msgid "Ministère des Finances du Québec"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -1379,6 +1565,11 @@ msgid ""
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_qc_parental_insurance_act
+msgid "Power of the government to set the QPIP premium rates by regulation."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_wsdrf_payroll_estimate
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_wsdrf_payroll_estimate
 msgid "Previous Year Payroll (WSDRF)"
@@ -1447,10 +1638,48 @@ msgid "QPIP Premiums"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_rq_qpip_page
+msgid ""
+"QPIP maximum insurable earnings and employee and employer rates of each "
+"year."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_rq_qpip_page
+msgid "QPIP maximum insurable earnings and premium rate"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #. odoo-python
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__qpp
 #: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
 msgid "QPP"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_tp1015g_2026
+msgid ""
+"QPP ages, indexation of the TP-1015.3, periodic HSF payments, labour "
+"standards contribution, WSDRF, remittance frequencies and due dates, CNESST "
+"periodic payments."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_qc_qpp_act
+msgid ""
+"QPP contribution rates, maximum pensionable earnings and contribution ages."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_rq_qpp_page
+msgid "QPP maximum pensionable earnings and contribution rate"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_rq_qpp_page
+msgid ""
+"QPP maximum pensionable earnings, additional maximum, exemption and rates of"
+" each year."
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -1521,6 +1750,13 @@ msgid "Quebec income tax withheld (column D)."
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_qc_taxation_act
+msgid ""
+"Quebec rates, indexation, credits, deduction for workers and remittance "
+"obligations."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__l10n_ca_qc_rl1_slip__slip_code__r
 msgid "R - Original"
 msgstr ""
@@ -1560,6 +1796,20 @@ msgid "RL-1 Year-End (Quebec)"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_rl1_guide
+msgid ""
+"RL-1 filing deadline (last day of February of the following year) and the "
+"cap of box G."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_qc_taxation_regulation
+msgid ""
+"RL-1 slips and RL-1 summary due on the last day of February of the year "
+"after the slips."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
 msgid ""
 "Rate per $100 of insurable payroll from the classification decision of the "
@@ -1573,6 +1823,11 @@ msgid ""
 "Rate per $100 of insurable payroll set by the CNESST classification decision"
 " of the year (or the letter announcing a new rate). Leave 0 when the company"
 " has no CNESST coverage."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_qc_taxation_regulation
+msgid "Regulation respecting the Taxation Act, CQLR c. I-3, r. 1"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -1660,6 +1915,19 @@ msgid "Revenu Quebec Remittance of Source Deductions (TPZ-1015.R.14)"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_rl1_guide
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_rlz1s_guide
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_rq_hsf_page
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_rq_qpip_page
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_rq_qpp_page
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_rq_wsdrf_page
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_tp1015f_2025
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_tp1015f_2026
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_tp1015g_2026
+msgid "Revenu Québec"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
 msgid "Revenu Québec File"
 msgstr ""
@@ -1677,6 +1945,11 @@ msgid "SIN"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_cnesst_max
+msgid "Salaire maximum annuel assurable"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,help:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__line_52
 msgid ""
 "Salaries eligible for a Health Services Fund contribution credit: subject "
@@ -1689,6 +1962,11 @@ msgstr ""
 #. module: l10n_ca_qc_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
 msgid "Sector of the employer and total payroll that sets the estimated rate"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_rq_hsf_page
+msgid "Seuil de la masse salariale totale et taux de cotisation au FSS"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -1764,6 +2042,23 @@ msgid "TP-1016 Authorization Effective Date"
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_qc_taxation_act
+msgid "Taxation Act, CQLR c. I-3"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_qc_payroll.source_qc_qpp_act
+msgid ""
+"The 2026 base rate of 10.6% (5.3% each), which Revenu Québec applies, is "
+"enacted by s. 106 of Bill 6 of the 43rd Legislature, introduced on May 12, "
+"2026; its passage is not confirmed (https://www.assnat.qc.ca/fr/travaux-"
+"parlementaires/projets-loi/projet-loi-6-43-3.html). For 2027, bulletin "
+"2025-8 states that the s. 44.1 rule applies again as written: check the 2027"
+" rate in the January 2027 TP-1015.F. Section 44.1 in a browser: "
+"https://www.legisquebec.gouv.qc.ca/en/document/cs/R-9#se:44_1"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model_terms:ir.actions.act_window,help:l10n_ca_qc_payroll.action_l10n_ca_qc_rl1_summary
 msgid ""
 "The RL-1 slips, the Revenu Québec remittances and the RL-1\n"
@@ -1774,10 +2069,24 @@ msgid ""
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_qc_payroll.source_qc_taxation_act
+msgid ""
+"The consolidated text refuses automatic reading; the sections were confirmed"
+" in the annual statutes of Publications du Québec. In a browser: "
+"https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3#se:358_0_3 , #se:750_2"
+" , #se:750_3 and #se:776_1_1 ."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_tax_exempt
 msgid ""
 "The employee asked on form TP-1015.3 to be exempt from source deductions of "
 "Quebec income tax for the year."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_tp1015f_2025
+msgid "The same figures for 2025."
 msgstr ""
 
 #. module: l10n_ca_qc_payroll
@@ -1848,6 +2157,16 @@ msgstr ""
 #. module: l10n_ca_qc_payroll
 #: model:hr.salary.rule,name:l10n_ca_qc_payroll.rule_wsdrf
 msgid "WSDRF Contribution"
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_qc_workforce_act
+msgid "WSDRF participation: payroll threshold and rate."
+msgstr ""
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_rq_wsdrf_page
+msgid "WSDRF payroll threshold (2,000,000) and rate (1%)."
 msgstr ""
 
 #. module: l10n_ca_qc_payroll

@@ -15,12 +15,14 @@ total payroll of 1,000,000; CNT 0.06% up to 103,000. Federal: brackets
 """
 
 from datetime import date
+from pathlib import Path
 from unittest.mock import patch
 
 from odoo.exceptions import UserError
 from odoo.tests import tagged
 
 from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.addons.l10n_ca_payroll.tools import sources_page
 from odoo.addons.l10n_ca_qc_payroll.tools import quebec_constant
 
 
@@ -334,6 +336,30 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
         )
         rl1 = slip._l10n_ca_qc_rl1_values(2026)
         self.assertAlmostEqual(rl1["box_f"], 60.0)
+
+    def test_official_sources(self):
+        sources = self.env["l10n_ca.payroll.source"].search(
+            [("jurisdiction", "=", "quebec")]
+        )
+        parameters = self.env["base.time.parameter"].search(
+            [
+                "|",
+                "|",
+                ("code", "=like", "l10n_ca.qc.%"),
+                ("code", "=like", "l10n_ca.qpp.%"),
+                ("code", "=like", "l10n_ca.qpip.%"),
+            ]
+        )
+        self.assertFalse(
+            parameters - sources.parameter_ids, "parameters without an official source"
+        )
+        module_dir = Path(__file__).resolve().parents[1]
+        self.assertEqual(
+            (module_dir / sources_page.PAGE_FILE).read_text(encoding="utf-8"),
+            sources_page.render(module_dir),
+            "static/description/sources.html is out of date: run "
+            "l10n_ca_payroll/tools/sources_page.py",
+        )
 
     def test_quebec_only_deduction(self):
         """A rule of category CA_QC_TAXDED lowers the Quebec tax only."""

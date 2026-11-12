@@ -31,4 +31,12 @@
         groups="base_time_parameter.group_time_parameter"
         sequence="90"
     />
+    <menuitem
+        id="menu_l10n_ca_payroll_source"
+        name="Canadian Official Sources"
+        parent="payroll.payroll_menu_configuration"
+        action="action_l10n_ca_payroll_source"
+        groups="payroll.group_payroll_user"
+        sequence="91"
+    />
 </odoo>

@@ -233,7 +233,7 @@
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Second earnings ceiling of the CPP, upper limit of the second additional contributions (CPP2) and of box 26 of the T4. Canada Pension Plan s. 18.1. Sources: T4127 table 8.6, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html</field>
+        <field name="description">Second earnings ceiling of the CPP, upper limit of the second additional contributions (CPP2) and of box 26 of the T4. Canada Pension Plan s. 18.1. Sources: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/calculating-deductions/making-deductions/second-additional-cpp-contribution-rates-maximums.html ; T4127 table 8.6, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html</field>
     </record>
     <record id="param_cpp_yampe_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_cpp_yampe" />

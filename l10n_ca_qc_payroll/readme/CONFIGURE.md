@@ -56,6 +56,14 @@ December).
 
 ## Parameters and their sources
 
+The official sources are also records: Payroll > Configuration > Canadian
+Official Sources lists each publication, page and statute, the time
+parameters whose description cites it, and whether it was verified or is
+still to confirm in a browser, with the note that says what to check. The
+page `static/description/sources.html` shows the same records; regenerate it
+with `python3 l10n_ca_payroll/tools/sources_page.py <module>` after changing
+`data/l10n_ca_payroll_source_data.xml`, as a test checks it is up to date.
+
 Every rate, ceiling, bracket table, credit amount and due date the Quebec
 computation uses is a dated time parameter (Payroll > Configuration >
 Canadian Time Parameters). A new year or a budget measure is a new version

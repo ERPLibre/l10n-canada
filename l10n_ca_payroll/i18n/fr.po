@@ -27,6 +27,15 @@ msgid "2 - Payee only"
 msgstr "2 - Bénéficiaire seulement"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_esdc_ei_2027
+msgid ""
+"2027 EI maximum insurable earnings (70,800) and rates (1.64%, 1.29% in "
+"Quebec)."
+msgstr ""
+"Maximum de la rémunération assurable de l'AE de 2027 (70 800) et taux (1,64 "
+"% et 1,29 % au Québec)."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_t4_dental_code__3
 msgid "3 - Payee, spouse and dependent children"
 msgstr ""
@@ -46,6 +55,13 @@ msgstr "5 - Bénéficiaire et ses enfants à charge"
 #: model:ir.model.constraint,message:l10n_ca_payroll.constraint_l10n_ca_payroll_t4_summary_company_year_unique
 msgid "A company has one year-end summary per year."
 msgstr "Une société a un seul sommaire de fin d'année par année."
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_fpfaa
+msgid ""
+"Abatement of 16.5% of the basic federal tax for an employment in Quebec."
+msgstr ""
+"Abattement de 16,5 % de l'impôt fédéral de base pour un emploi au Québec."
 
 #. module: l10n_ca_payroll
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_f5b
@@ -90,6 +106,16 @@ msgstr "Montant payé"
 #: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_82
 msgid "Amounts paid on the remittances of the year."
 msgstr "Montants payés sur les versements de l'année."
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_cpp_2027_rate_cut
+msgid ""
+"Base CPP rate from 9.9% to 9.5% (employee and employer combined): the 2027 "
+"versions of the CPP rates, which the CRA applies from January 1, 2027."
+msgstr ""
+"Taux de base du RPC ramené de 9,9 % à 9,5 % (employé et employeur combinés) "
+": versions 2027 des taux du RPC, que l'ARC applique à compter du 1er janvier"
+" 2027."
 
 #. module: l10n_ca_payroll
 #: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_basic
@@ -231,6 +257,11 @@ msgid "CPP Employer Contributions"
 msgstr "Cotisations de l'employeur au RPC"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_cra_cpp_rates
+msgid "CPP contribution rates, maximums and exemptions"
+msgstr "Taux, maximums et exemptions des cotisations au RPC"
+
+#. module: l10n_ca_payroll
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_cpp
 msgid "CPP/QPP Contributions"
 msgstr "Cotisations au RPC/RRQ"
@@ -304,6 +335,36 @@ msgid "Canada"
 msgstr "Canada"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_esdc_ei_2027
+msgid "Canada Employment Insurance Commission confirms the 2027 premium rate"
+msgstr ""
+"La Commission de l'assurance-emploi du Canada confirme le taux de cotisation"
+" de 2027"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_canada_pension_plan
+msgid "Canada Pension Plan, R.S.C. 1985, c. C-8"
+msgstr "Régime de pensions du Canada, L.R.C. 1985, c. C-8"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_cra_cpp2_rates
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_cra_cpp_rates
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_cra_ei_rates
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_t4001
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_t4127_jan_2025
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_t4127_jan_2026
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_t4127_jul_2025
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_t4_summary
+msgid "Canada Revenue Agency"
+msgstr "Agence du revenu du Canada"
+
+#. module: l10n_ca_payroll
+#: model:ir.actions.act_window,name:l10n_ca_payroll.action_l10n_ca_payroll_source
+#: model:ir.ui.menu,name:l10n_ca_payroll.menu_l10n_ca_payroll_source
+msgid "Canadian Official Sources"
+msgstr "Sources officielles canadiennes"
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.hr_contract_view_form
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
 msgid "Canadian Payroll"
@@ -354,6 +415,15 @@ msgid "Compute the remittances before exporting them."
 msgstr "Calculez les versements avant de les exporter."
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_canada_pension_plan
+msgid ""
+"Contribution rates, earnings ceilings, basic exemption and age limits of the"
+" CPP."
+msgstr ""
+"Taux de cotisation, plafonds des gains, exemption de base et limites d'âge "
+"du RPC."
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_t4_summary
 msgid "Create the year-end summary of a calendar year."
 msgstr "Créez le sommaire de fin d'année d'une année civile."
@@ -402,6 +472,11 @@ msgstr ""
 "montre pas."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__verified_date
+msgid "Date the figures were last compared with the official text."
+msgstr "Date de la dernière comparaison des données avec le texte officiel."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_payslip__l10n_ca_pay_date
 msgid ""
 "Date the remuneration is paid: the accounting date of the payslip, else its "
@@ -442,6 +517,20 @@ msgstr ""
 "l'employé s'en prévale ou non."
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_cpp_2027_rate_cut
+msgid "Department of Finance Canada"
+msgstr "Ministère des Finances Canada"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_canada_pension_plan
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_employment_insurance_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_fpfaa
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_income_tax_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_income_tax_regulations
+msgid "Department of Justice Canada"
+msgstr "Ministère de la Justice Canada"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__display_name
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__display_name
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__display_name
@@ -449,10 +538,42 @@ msgid "Display Name"
 msgstr "Nom d'affichage"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_payroll.source_cpp_2027_rate_cut
+msgid ""
+"Division 5 (s. 41 to 44) comes into force on a day fixed by order in council"
+" under s. 114(4) of the Canada Pension Plan, which needs the consent of two "
+"thirds of the included provinces having two thirds of their population (s. "
+"44(2) of the Act). No such order appears in the Canada Gazette, Part II, up "
+"to the issue of November 4, 2026, and the CPP consolidation lists s. 41 to "
+"43 as not in force; the CRA already publishes 5.75% for 2027. Check the "
+"Canada Gazette, Part II, for the order, and https://laws-"
+"lois.justice.gc.ca/eng/AnnualStatutes/2026_22/FullText.html."
+msgstr ""
+"La section 5 (art. 41 à 44) entre en vigueur à la date fixée par décret en "
+"vertu de l'art. 114(4) du Régime de pensions du Canada, ce qui exige le "
+"consentement des deux tiers des provinces incluses comptant les deux tiers "
+"de leur population (art. 44(2) de la Loi). Aucun décret de ce genre ne "
+"paraît dans la Gazette du Canada, Partie II, jusqu'au numéro du 4 novembre "
+"2026, et la codification du RPC indique que les art. 41 à 43 ne sont pas en "
+"vigueur; l'ARC publie déjà 5,75 % pour 2027. Vérifier la parution du décret "
+"dans la Gazette du Canada, Partie II, ainsi que https://laws-"
+"lois.justice.gc.ca/eng/AnnualStatutes/2026_22/FullText.html."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__due_date
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__due_date
 msgid "Due Date"
 msgstr "Échéance"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_t4001
+msgid ""
+"Due days of each remitter type, next business day for a weekend or a "
+"holiday, T4 due on the last day of February of the following year."
+msgstr ""
+"Jours d'échéance de chaque type d'auteur de versement, report au jour "
+"ouvrable suivant pour une fin de semaine ou un jour férié, T4 à produire au "
+"plus tard le dernier jour de février de l'année suivante."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__ei_employee
@@ -483,6 +604,28 @@ msgstr "Réduction du taux de cotisation à l'AE"
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_ei
 msgid "EI Premiums"
 msgstr "Cotisations à l'AE"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_cra_ei_rates
+msgid ""
+"EI maximum insurable earnings and employee rates, outside Quebec and in "
+"Quebec."
+msgstr ""
+"Maximum de la rémunération assurable de l'AE et taux de l'employé, hors "
+"Québec et au Québec."
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_cra_ei_rates
+msgid "EI premium rates and maximums"
+msgstr "Taux et maximums des cotisations d'AE"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__reference
+msgid ""
+"Edition, table, part or section of the source that the payroll relies on."
+msgstr ""
+"Édition, table, partie ou section de la source sur laquelle s'appuie la "
+"paie."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__employee_id
@@ -574,6 +717,16 @@ msgid "Employment"
 msgstr "Emploi"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_employment_insurance_act
+msgid "Employment Insurance Act, S.C. 1996, c. 23"
+msgstr "Loi sur l'assurance-emploi, L.C. 1996, c. 23"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_esdc_ei_2027
+msgid "Employment and Social Development Canada"
+msgstr "Emploi et Développement social Canada"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_cpp_exempt
 msgid "Exempt from CPP/QPP"
 msgstr "Exempté du RPC/RRQ"
@@ -592,6 +745,12 @@ msgstr "Exporter le PD7A (CSV)"
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
 msgid "Export T4 (CSV)"
 msgstr "Exporter les T4 (CSV)"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__federal
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_search
+msgid "Federal"
+msgstr "Fédéral"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_td1_federal_bpa
@@ -619,6 +778,36 @@ msgid "Federal TD1 Total Claim Amount"
 msgstr "Montant total de la demande TD1 fédérale"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_t4127_jan_2025
+msgid ""
+"Federal brackets and credit rate of January 1 to June 30, 2025 (lowest rate "
+"of 15%, constants 0, 3,156, 9,467, 14,803, 24,940)."
+msgstr ""
+"Tranches d'imposition et taux de crédit fédéraux du 1er janvier au 30 juin "
+"2025 (taux le plus bas de 15 %, constantes 0; 3 156; 9 467; 14 803; 24 940)."
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_t4127_jan_2026
+msgid ""
+"Federal brackets and credits of 2026, CPP and EI figures of 2025 and 2026, "
+"the formulas of the federal tax, of the bonus tax and of the contributions, "
+"the bonus flat rates and the CPP age limits."
+msgstr ""
+"Tranches d'imposition et crédits fédéraux de 2026, données du RPC et de l'AE"
+" de 2025 et de 2026, formules de l'impôt fédéral, de l'impôt sur les primes "
+"et des cotisations, taux forfaitaires des primes et limites d'âge du RPC."
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_t4127_jul_2025
+msgid ""
+"Federal brackets, credit rate, basic personal amounts and Canada employment "
+"amount from July 1, 2025 (lowest rate of 14%)."
+msgstr ""
+"Tranches d'imposition, taux de crédit, montants personnels de base et "
+"montant canadien pour emploi fédéraux à compter du 1er juillet 2025 (taux le"
+" plus bas de 14 %)."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_remittance__income_tax
 msgid ""
 "Federal income tax, plus the provincial income tax of the provinces whose "
@@ -626,6 +815,18 @@ msgid ""
 msgstr ""
 "Impôt fédéral sur le revenu, plus l'impôt provincial sur le revenu des "
 "provinces dont l'ARC perçoit l'impôt."
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_fpfaa
+msgid "Federal-Provincial Fiscal Arrangements Act"
+msgstr ""
+"Loi sur les arrangements fiscaux entre le gouvernement fédéral et les "
+"provinces"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__summary
+msgid "Figures and rules of the payroll that come from it."
+msgstr "Données et règles de la paie qui en proviennent."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__due_date
@@ -662,6 +863,22 @@ msgid "Income Tax"
 msgstr "Impôt sur le revenu"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_income_tax_act
+msgid "Income Tax Act, R.S.C. 1985, c. 1 (5th Supp.)"
+msgstr "Loi de l'impôt sur le revenu, L.R.C. 1985, c. 1 (5e suppl.)"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_income_tax_regulations
+msgid "Income Tax Regulations, C.R.C., c. 945"
+msgstr "Règlement de l'impôt sur le revenu, C.R.C., c. 945"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__jurisdiction
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_search
+msgid "Jurisdiction"
+msgstr "Compétence"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_federal_other_credits
 msgid ""
 "K3 of the CRA formulas: other federal non-refundable tax credits authorized "
@@ -670,6 +887,11 @@ msgstr ""
 "K3 des formules de l'ARC : autres crédits d'impôt non remboursables fédéraux"
 " autorisés par un bureau des services fiscaux, exprimés en montant de crédit"
 " annuel."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__kind
+msgid "Kind"
+msgstr "Type"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__write_uid
@@ -756,6 +978,11 @@ msgid "Line 88"
 msgstr "Ligne 88"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_t4_summary
+msgid "Lines of the T4 Summary and its filing deadline."
+msgstr "Lignes du sommaire T4 et sa date limite de production."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_td1_federal_bpa
 msgid ""
 "Maximum federal basic personal amount in force today. The payslip reduces it"
@@ -764,6 +991,15 @@ msgstr ""
 "Montant personnel de base fédéral maximal en vigueur aujourd'hui. Le "
 "bulletin de paie le réduit pour un revenu annuel supérieur au seuil de "
 "réduction progressive."
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_employment_insurance_act
+msgid ""
+"Maximum insurable earnings, employee rate, employer multiplier and Quebec "
+"reduced rate."
+msgstr ""
+"Maximum de la rémunération assurable, taux de l'employé, multiplicateur de "
+"l'employeur et taux réduit du Québec."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_res_company__l10n_ca_ei_employer_multiplier
@@ -816,6 +1052,11 @@ msgstr ""
 "plus de 40 % des actions avec droit de vote de la société."
 
 #. module: l10n_ca_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_source
+msgid "No official source"
+msgstr "Aucune source officielle"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_cpp_exempt
 msgid ""
 "No pension plan contribution is deducted, e.g. an employee who receives a "
@@ -839,6 +1080,17 @@ msgstr "Paiements non périodiques moins leurs retenues"
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_search
 msgid "Not Paid"
 msgstr "Non payé"
+
+#. module: l10n_ca_payroll
+#: model:ir.model,name:l10n_ca_payroll.model_l10n_ca_payroll_source
+msgid "Official Source of the Canadian Payroll"
+msgstr "Source officielle de la paie canadienne"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__ontario
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_search
+msgid "Ontario"
+msgstr "Ontario"
 
 #. module: l10n_ca_payroll
 #: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_remittance
@@ -880,6 +1132,11 @@ msgstr "Payé du"
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__date_to
 msgid "Paid To"
 msgstr "Payé au"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__parameter_count
+msgid "Parameter Count"
+msgstr "Nombre de paramètres"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_payslip__l10n_ca_pay_date
@@ -979,6 +1236,16 @@ msgstr ""
 "aucun impôt provincial."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__kind__publication
+msgid "Publication"
+msgstr "Publication"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__publisher
+msgid "Publisher"
+msgstr "Éditeur"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_payslip__l10n_ca_pension_plan__qpp
 msgid "QPP"
 msgstr "RRQ"
@@ -1008,6 +1275,12 @@ msgid "QPP2 Employer Contributions"
 msgstr "Deuxièmes cotisations de l'employeur au RRQ"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__quebec
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_search
+msgid "Quebec"
+msgstr "Québec"
+
+#. module: l10n_ca_payroll
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_rpp
 msgid "RPP Contribution"
 msgstr "Cotisation à un RPA"
@@ -1028,6 +1301,16 @@ msgid "RRSP Contribution per Pay"
 msgstr "Cotisation à un REER par paie"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_income_tax_act
+msgid ""
+"Rates, indexing and credits behind the federal tax; S.C. 2026, c. 2 sets the"
+" lowest rate at 14.5% for 2025 and 14% from 2026."
+msgstr ""
+"Taux, indexation et crédits sur lesquels repose l'impôt fédéral; L.C. 2026, "
+"c. 2 fixe le taux le plus bas à 14,5 % pour 2025 et à 14 % à compter de "
+"2026."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_res_company__l10n_ca_ei_employer_multiplier
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_res_config_settings__l10n_ca_ei_employer_multiplier
 msgid "Reduced EI Employer Multiplier"
@@ -1041,6 +1324,20 @@ msgid ""
 msgstr ""
 "Multiplicateur réduit de l'employeur attribué par le Programme de réduction "
 "du taux de cotisation; 0 utilise le multiplicateur légal"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__reference
+msgid "Reference"
+msgstr "Référence"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_income_tax_regulations
+msgid ""
+"Remittance periods and due dates of each remitter type, and the T4 filing "
+"deadline."
+msgstr ""
+"Périodes de versement et échéances de chaque type d'auteur de versement, et "
+"date limite de production des T4."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__remittance_ids
@@ -1072,6 +1369,16 @@ msgstr "NAS"
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
 msgid "Salary Structure and Accounts"
 msgstr "Structure salariale et comptes"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_cra_cpp2_rates
+msgid "Second additional CPP contribution rates and maximums"
+msgstr "Taux et maximums des deuxièmes cotisations supplémentaires au RPC"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__sequence
+msgid "Sequence"
+msgstr "Séquence"
 
 #. module: l10n_ca_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.res_config_settings_view_form
@@ -1115,6 +1422,18 @@ msgid "Source Deductions"
 msgstr "Retenues à la source"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_cpp_2027_rate_cut
+msgid "Spring Economic Update 2026 Implementation Act, S.C. 2026, c. 22"
+msgstr ""
+"Loi d'exécution de la mise à jour économique du printemps 2026, L.C. 2026, "
+"c. 22"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__kind__statute
+msgid "Statute or Regulation"
+msgstr "Loi ou règlement"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__summary_id
 msgid "Summary"
 msgstr "Sommaire"
@@ -1153,6 +1472,32 @@ msgid "T4 Year-End"
 msgstr "Fin d'année T4"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_t4001
+msgid "T4001 Employers' Guide – Payroll Deductions and Remittances"
+msgstr "T4001 Guide de l'employeur – Retenues sur la paie et versements"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_t4127_jan_2025
+msgid "T4127 Payroll Deductions Formulas, 120th edition (January 1, 2025)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 120e édition (1er "
+"janvier 2025)"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_t4127_jul_2025
+msgid "T4127 Payroll Deductions Formulas, 121st edition (July 1, 2025)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 121e édition (1er "
+"juillet 2025)"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_t4127_jan_2026
+msgid "T4127 Payroll Deductions Formulas, 122nd edition (January 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 122e édition (1er "
+"janvier 2026)"
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_t4_summary
 msgid ""
 "The T4 slips and the remittances are computed from the done\n"
@@ -1162,6 +1507,15 @@ msgstr ""
 "Les feuillets T4 et les versements sont calculés à partir des\n"
 "                bulletins de paie terminés dont la date de paie tombe dans l'année, et peuvent\n"
 "                être exportés en fichiers CSV pour remplir les formulaires Web de l'ARC."
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_source
+msgid ""
+"The payroll modules list here the publications, pages and\n"
+"                statutes their rates, ceilings and due dates come from."
+msgstr ""
+"Les modules de paie énumèrent ici les publications, pages et\n"
+"                lois d'où proviennent leurs taux, plafonds et échéances."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_union_issues_receipts
@@ -1178,6 +1532,41 @@ msgstr ""
 "reçus."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__parameter_ids
+msgid "Time Parameters"
+msgstr "Paramètres temporels"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_form
+msgid "Time parameters citing this source"
+msgstr "Paramètres temporels qui citent cette source"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__parameter_ids
+msgid "Time parameters whose description cites the URL of the source."
+msgstr "Paramètres temporels dont la description cite l'URL de la source."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__state__to_verify
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_search
+msgid "To Verify"
+msgstr "À vérifier"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__state
+msgid ""
+"To Verify: the official text could not be read automatically; the note says "
+"what to confirm in a browser."
+msgstr ""
+"À vérifier : le texte officiel n'a pas pu être lu automatiquement; la note "
+"indique ce qu'il faut confirmer dans un navigateur."
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_form
+msgid "To confirm in a browser"
+msgstr "À confirmer dans un navigateur"
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_list
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_slip_view_list
 msgid "Total"
@@ -1187,6 +1576,11 @@ msgstr "Total"
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_td1_federal_type__custom
 msgid "Total claim amount from the TD1"
 msgstr "Montant total de la demande du TD1"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__url
+msgid "URL"
+msgstr "URL"
 
 #. module: l10n_ca_payroll
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_union
@@ -1216,6 +1610,52 @@ msgstr ""
 "réduisent le revenu imposable des formules de l'ARC (U1), pas celui du "
 "Québec, et figurent à la case 44 du T4 et à la case F du RL-1, sauf si le "
 "syndicat délivre ses propres reçus."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__state
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_search
+msgid "Verification"
+msgstr "Vérification"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__verification_note
+msgid "Verification Note"
+msgstr "Note de vérification"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__state__verified
+msgid "Verified"
+msgstr "Vérifiée"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__verified_date
+msgid "Verified Date"
+msgstr "Date de vérification"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__kind__page
+msgid "Web Page"
+msgstr "Page Web"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_form
+msgid "What the payroll takes from it"
+msgstr "Ce que la paie en tire"
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_cra_cpp2_rates
+msgid "YAMPE and CPP2 rate of each year, including the 2027 YAMPE (87,400)."
+msgstr ""
+"MSGAP et taux du RPC2 de chaque année, y compris le MSGAP de 2027 (87 400)."
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_cra_cpp_rates
+msgid ""
+"YMPE, basic exemption and CPP rate of each year, including the 2027 YMPE "
+"(76,700) and rate (5.75%)."
+msgstr ""
+"MGAP, exemption de base et taux du RPC de chaque année, y compris le MGAP de"
+" 2027 (76 700) et le taux (5,75 %)."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__year
