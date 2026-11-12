@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the Nova Scotia payroll.
+     l10n_ca_payroll/tools/sources_page.py writes
+     static/description/sources.html from this file: run it after a
+     change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_123" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Steps 4 to 6 (T4, K1P, K2P, T2, LCP); Nova Scotia tables unchanged from the 122nd edition (January 2026), tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+        <field
+            name="summary"
+        >2026 Nova Scotia brackets and constants KP and basic personal amount. The edition lists Nova Scotia among the provinces without change on July 1, 2026, and announces no Nova Scotia change for January 1, 2027.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_122" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Changes for Nova Scotia (BPANS); step 5, Nova Scotia (LCP); tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field
+            name="summary"
+        >Nova Scotia rates 8.79%, 14.95%, 16.67%, 17.5% and 21% from 30,995, 61,991, 97,417 and 157,124; basic personal amount 11,932, the same for every income since the BPANS formula is removed for 2026; labour-sponsored funds credit LCP of 20% of the shares withheld, at most 2,000 a year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_td1ns_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">publication</field>
+        <field name="name">TD1NS 2026 Nova Scotia Personal Tax Credits Return</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Line 1 (basic personal amount) and the total claim amount</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1ns.html</field>
+        <field
+            name="summary"
+        >Nova Scotia basic personal amount of 11,932 for 2026 and the total claim amount TCP entered on the contract.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_finance_personal" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">page</field>
+        <field name="name">Personal income tax rates and indexation</field>
+        <field name="publisher">Government of Nova Scotia</field>
+        <field
+            name="url"
+        >https://www.novascotia.ca/personal-income-tax-rates-and-indexation</field>
+        <field
+            name="summary"
+        >Nova Scotia taxable income brackets of 2026 (8.79% to 30,995, 14.95% to 61,991, 16.67% to 97,417, 17.5% to 157,124, 21% above) and basic personal amount of 11,932; indexation rate of 1.6% for 2026.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_ns_maximum" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">page</field>
+        <field name="name">Maximum Assessable Earnings</field>
+        <field name="publisher">Workers' Compensation Board of Nova Scotia</field>
+        <field
+            name="reference"
+        >Maximum of the next year and table of the previous years</field>
+        <field
+            name="url"
+        >https://www.wcb.ns.ca/employers/workplace-injury-insurance/rates-and-premiums/maximum-assessable</field>
+        <field
+            name="summary"
+        >Maximum assessable earnings per worker, effective January 1: 76,300 in 2025, 79,900 in 2026, 83,300 in 2027; 135.7% of the Nova Scotia average industrial wage. Employers pay premiums only on the earnings of a worker up to the maximum.</field>
+        <field name="watch_key">wcb_ns_maximum</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_ns_rates_premiums" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">page</field>
+        <field name="name">Insurance Rates and Premiums</field>
+        <field name="publisher">Workers' Compensation Board of Nova Scotia</field>
+        <field
+            name="url"
+        >https://www.wcb.ns.ca/employers/workplace-injury-insurance/rates-premiums</field>
+        <field
+            name="summary"
+        >Premium = rate per $100 x assessable payroll, the gross earnings of the covered workers each up to the yearly maximum. Each employer is notified on September 1 of its rate for the next calendar year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_ns_rates_set" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">page</field>
+        <field name="name">How Assessment Rates are Set</field>
+        <field name="publisher">Workers' Compensation Board of Nova Scotia</field>
+        <field
+            name="url"
+        >https://www.wcb.ns.ca/employers/workplace-injury-insurance/rates-premiums/how-rates-are-set</field>
+        <field
+            name="summary"
+        >Rate of an employer = rate of its industry rate group adjusted by experience rating, plus the safety association levy and a surcharge where they apply. Average rate 2.65 per $100 of assessable payroll, 2.25 from January 1, 2027.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_ns_payment" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">page</field>
+        <field name="name">Payment and Reporting</field>
+        <field name="publisher">Workers' Compensation Board of Nova Scotia</field>
+        <field
+            name="url"
+        >https://www.wcb.ns.ca/employers/workplace-injury-insurance/rates-premiums/payment-reporting</field>
+        <field
+            name="summary"
+        >Monthly or quarterly report of the assessable payroll, by pay date, with the payment, due the 15th of the month that follows the reporting period, even for a nil payroll.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_ns_coverage" model="l10n_ca.payroll.source">
+        <field name="sequence">90</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">page</field>
+        <field name="name">Do You Need WCB Coverage</field>
+        <field name="publisher">Workers' Compensation Board of Nova Scotia</field>
+        <field
+            name="url"
+        >https://www.wcb.ns.ca/employers/workplace-injury-insurance/do-you-need-coverage</field>
+        <field
+            name="summary"
+        >Coverage mandatory in a mandatory industry with 3 or more workers at the same time; officers and directors active in the business count as workers; proprietors and partners are not workers and may buy optional coverage.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workers_compensation_act" model="l10n_ca.payroll.source">
+        <field name="sequence">100</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">statute</field>
+        <field name="name">Workers' Compensation Act, SNS 1994-95, c. 10</field>
+        <field name="publisher">Nova Scotia House of Assembly</field>
+        <field
+            name="reference"
+        >Sections 41 (maximum gross annual earnings) and 124 (assessable payroll)</field>
+        <field
+            name="url"
+        >https://www.nslegislature.ca/sites/default/files/legc/statutes/workers'%20compensation.pdf</field>
+        <field
+            name="summary"
+        >Maximum gross annual earnings: a percentage of the average industrial wage for the Province set by the Governor in Council (s. 41(c)); the payroll on which the Board assesses an employer excludes the remuneration of a worker above that maximum (s. 124(2)).</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workers_compensation_regulations" model="l10n_ca.payroll.source">
+        <field name="sequence">110</field>
+        <field name="jurisdiction">nova_scotia</field>
+        <field name="kind">statute</field>
+        <field name="name">Workers' Compensation General Regulations</field>
+        <field name="publisher">Government of Nova Scotia</field>
+        <field
+            name="reference"
+        >Sections 1A (assessable payroll), 22 (maximum earnings) and 35 (reporting and remittance)</field>
+        <field
+            name="url"
+        >https://novascotia.ca/just/regulations/regs/wocgen.htm</field>
+        <field
+            name="summary"
+        >Assessable payroll: the employment earnings of box 14 of the T4 slips. Maximum earnings: 135.7% of the average industrial wage for Nova Scotia of the 12 months ending March 31 of the previous year, rounded to the nearest 100. Assessable payroll reported and assessments remitted at the same time as the remittances to the CRA, unless the Board approves otherwise.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>

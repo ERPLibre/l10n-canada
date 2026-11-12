@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Payee of the WCB Nova Scotia premiums. The Nova Scotia income tax
+         is remitted to the CRA with the federal deductions. -->
+    <record id="partner_wcb_ns" model="res.partner">
+        <field name="name">Workers' Compensation Board of Nova Scotia</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_ns" />
+    </record>
+    <record id="register_wcb_ns" model="hr.contribution.register">
+        <field name="name">WCB Nova Scotia</field>
+        <field name="partner_id" ref="partner_wcb_ns" />
+        <field name="company_id" eval="False" />
+        <field name="note">Nova Scotia workers' compensation premiums.</field>
+    </record>
+
+    <!-- Every rule below applies only to an employment in Nova Scotia.
+         The Nova Scotia income tax is the line of the federal rule
+         CA_PIT. -->
+    <record id="rule_ns_salary" model="hr.salary.rule">
+        <field name="name">Nova Scotia Remuneration</field>
+        <field name="code">CA_NS_SAL</field>
+        <field name="sequence">114</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NS"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["province_remuneration"]</field>
+        <field
+            name="note"
+        >Remuneration of the pay in Nova Scotia: its year-to-date total gives the assessable earnings left after a credit note.</field>
+    </record>
+    <record id="rule_ns_wcb_insurable" model="hr.salary.rule">
+        <field name="name">WCB Nova Scotia Assessable Earnings</field>
+        <field name="code">CA_NS_WCB_IE</field>
+        <field name="sequence">115</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NS"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["wcb_insurable"]</field>
+        <field
+            name="note"
+        >Assessable earnings of the pay up to the WCB Nova Scotia yearly maximum, less the assessable earnings of the year so far; 0 for a contract not covered.</field>
+    </record>
+    <record id="rule_ns_wcb" model="hr.salary.rule">
+        <field name="name">WCB Nova Scotia Premium</field>
+        <field name="code">CA_NS_WCB</field>
+        <field name="sequence">380</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_wcb_ns" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NS" and l10n_ca.get(contract, categories.GROSS)["wcb"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["wcb"]
+result_name = ca["wcb_line_name"]</field>
+        <field
+            name="note"
+        >WCB Nova Scotia premium at the rate per $100 of the provincial payroll account of the company, on the assessable earnings of the pay up to the yearly maximum.</field>
+    </record>
+</odoo>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Nova Scotia income tax, T4127 option 1 -->
+    <record id="param_ns_brackets" model="base.time.parameter">
+        <field name="name">Nova Scotia income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.ns.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Nova Scotia rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P). 2026: 8.79% from 0, 14.95% from 30,995, 16.67% from 61,991, 17.5% from 97,417, 21% from 157,124. The constant KP is derived from the table and rounded to the dollar like the federal K: 0, 1,909, 2,976, 3,784, 9,283. The rate of the first bracket is the lowest Nova Scotia rate of K1P and K2P (0.0879). Nova Scotia did not change on July 1, 2026. T4127 122nd edition (January 2026), table 8.1; 123rd edition (July 2026), table 8.1; Nova Scotia Finance, taxable income brackets of 2026. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.novascotia.ca/personal-income-tax-rates-and-indexation</field>
+    </record>
+    <record id="param_ns_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ns_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.0879], [30995, 0.1495], [61991, 0.1667], [97417, 0.175], [157124, 0.21]]</field>
+    </record>
+    <record id="param_ns_bpa" model="base.time.parameter">
+        <field name="name">Nova Scotia basic personal amount</field>
+        <field name="code">l10n_ca.ns.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >TCP of an employee who files no TD1NS: K1P = lowest Nova Scotia rate x TCP. 2026: 11,932 (K1P = 0.0879 x 11,932 = 1,048.82). From 2026 the amount is the same for every income: T4127 removes the income-tested BPANS formula and the employer uses the maximum for every employee. Indexation rate 1.6% for 2026. T4127 122nd edition (January 2026), Nova Scotia changes and table 8.2; TD1NS 2026 line 1; Nova Scotia Finance, non-refundable tax credits of 2026. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1ns.html ; https://www.novascotia.ca/personal-income-tax-rates-and-indexation</field>
+    </record>
+    <record id="param_ns_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ns_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">11932</field>
+    </record>
+    <record id="param_ns_lcp_rate" model="base.time.parameter">
+        <field name="name">Nova Scotia labour-sponsored funds tax credit rate</field>
+        <field name="code">l10n_ca.ns.lcp_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >LCP = the lesser of the maximum and this rate (20%) x the shares of a labour-sponsored venture capital corporation withheld on the pay; T2 is lowered by P x LCP, at most the maximum for the year. T4127 122nd edition (January 2026), step 5, Nova Scotia, and table 8.2. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_ns_lcp_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ns_lcp_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.2</field>
+    </record>
+    <record id="param_ns_lcp_max" model="base.time.parameter">
+        <field name="name">Nova Scotia labour-sponsored funds tax credit maximum</field>
+        <field name="code">l10n_ca.ns.lcp_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum LCP credit of a pay and of the whole year: 2,000. T4127 122nd edition (January 2026), step 5, Nova Scotia, and table 8.2. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_ns_lcp_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ns_lcp_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">2000</field>
+    </record>
+
+    <!-- WCB Nova Scotia -->
+    <record id="param_ns_wcb_max_insurable" model="base.time.parameter">
+        <field name="name">WCB Nova Scotia maximum assessable earnings</field>
+        <field name="code">l10n_ca.ns.wcb.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Yearly maximum assessable earnings per worker, effective January 1: the assessable earnings of the pay are min(gross, maximum - assessable earnings of the year so far). 135.7% of the average industrial wage for Nova Scotia of the 12 months ending March 31 of the previous year, rounded to the nearest 100 (Workers' Compensation Act, ss. 41(c) and 124(2); Workers' Compensation General Regulations, s. 22). 2026: 79,900; 2027: 83,300 (WCB Nova Scotia, Maximum Assessable Earnings). Sources: https://www.wcb.ns.ca/employers/workplace-injury-insurance/rates-and-premiums/maximum-assessable ; https://www.nslegislature.ca/sites/default/files/legc/statutes/workers'%20compensation.pdf ; https://novascotia.ca/just/regulations/regs/wocgen.htm</field>
+    </record>
+    <record id="param_ns_wcb_max_insurable_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ns_wcb_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">79900</field>
+    </record>
+    <record id="param_ns_wcb_max_insurable_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_ns_wcb_max_insurable" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">83300</field>
+    </record>
+</odoo>
