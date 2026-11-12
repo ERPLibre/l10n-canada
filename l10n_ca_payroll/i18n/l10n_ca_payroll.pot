@@ -61,6 +61,16 @@ msgid "Additional tax requested by the employee on the TD1 form."
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_support_amount
+msgid ""
+"Alimony or maintenance payments withheld from each pay under a legal "
+"document dated before May 1, 1997 (salary rule CA_SUPPORT, with the support "
+"input of the payslip). They lower the taxable income of the CRA formulas "
+"(F2), not the Quebec one. When the order caps the payment at a percentage of"
+" the net salary, enter the amount that results from that cap."
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__amount_paid
 msgid "Amount Paid"
 msgstr ""
@@ -385,6 +395,11 @@ msgstr ""
 #. module: l10n_ca_payroll
 #: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_lump_ded
 msgid "Deduction From a Bonus or Lump-Sum Payment"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_fed_tax_ded
+msgid "Deduction Reducing the CRA Taxable Income"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -772,6 +787,11 @@ msgid ""
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.hr_contract_view_form
+msgid "Other Deductions Withheld"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_federal_other_credits
 msgid "Other Federal Tax Credits (Annual)"
 msgstr ""
@@ -1018,6 +1038,16 @@ msgid "Summary"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_support
+msgid "Support Payments"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_support_amount
+msgid "Support Payments per Pay"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__slip_ids
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
 msgid "T4 Slips"
@@ -1057,6 +1087,25 @@ msgstr ""
 #. module: l10n_ca_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_td1_federal_type__custom
 msgid "Total claim amount from the TD1"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_union
+msgid "Union Dues"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_union_dues_amount
+msgid "Union Dues per Pay"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_union_dues_amount
+msgid ""
+"Union dues withheld from each pay by salary rule CA_UNION, with the union "
+"dues input of the payslip. They lower the taxable income of the CRA formulas"
+" (U1), not the Quebec one, and are reported in box 44 of the T4 and box F of"
+" the RL-1."
 msgstr ""
 
 #. module: l10n_ca_payroll

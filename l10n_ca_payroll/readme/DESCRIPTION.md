@@ -26,13 +26,20 @@ Canadian federal payroll on top of the OCA payroll.
   Taxable Income* (`CA_TAX_DED`). They lower the annual taxable income
   (F of T4127), not the CPP and EI earnings; the RPP contributions are
   reported in box 20 of the T4.
+- Union dues and support payments under a legal document dated before
+  May 1, 1997, also an amount per pay on the contract plus a payslip
+  input, in category *Deduction Reducing the CRA Taxable Income*
+  (`CA_FED_TAX_DED`): they lower A (U1 and F2 of T4127) for the federal
+  and provincial tax of the CRA formulas, not the Quebec tax. Union dues
+  go in box 44 of the T4.
 - Every rate, ceiling, bracket table, credit amount and due date is a dated
   time parameter (`l10n_ca.federal.*`, `l10n_ca.cpp.*`, `l10n_ca.ei.*`,
   `l10n_ca.pd7a.*`, `l10n_ca.t4.*`) shipped for 2025 and 2026, and 2027
   where already published.
 - Contract fields: province of employment, pay periods per year, federal
   TD1 claim, additional tax, other federal credits, RPP and RRSP
-  contributions per pay, CPP/QPP and EI exemptions. The birth date of the
+  contributions, union dues and support payments per pay, CPP/QPP and EI
+  exemptions. The birth date of the
   employee applies the CPP age limits.
 - Provincial income tax is left to one module per province. Without one,
   the payslip shows a *NOT COMPUTED* line and a warning instead of a

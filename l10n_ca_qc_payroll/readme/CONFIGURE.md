@@ -39,7 +39,10 @@ RPP, RRSP, VRSP and PRPP contributions withheld per pay are entered on the
 contract or in the *RPP Contribution* and *RRSP Contribution* inputs of the
 payslip (Canadian federal payroll module): they lower both the federal and
 the Quebec taxable income, and the RPP ones are reported in box D of the
-RL-1. The other employee amounts that only TP-1015.F subtracts (FHSA, CIP
+RL-1. Union dues and support payments, entered the same way, lower only
+the federal tax: TP-1015.F does not subtract them, and the union dues go
+in box F of the RL-1. The other employee amounts that only TP-1015.F
+subtracts (FHSA, CIP
 deduction; variable F) go in salary rules of category *Deduction Reducing
 the Quebec Taxable Income*, with a sequence below 100.
 
@@ -358,6 +361,11 @@ with the basic personal amount as E. The federal tax is computed by
 
   The RPP contribution is the amount per pay of the contract, which also
   gives box D of the RL-1 (200). Test: `test_example_appendix_1`.
+- **Union dues**: 5,000 a month with union dues of 60. The Quebec tax
+  stays 470.57; the federal A = 12 x (5,000 - 60 - 47.08) = 58,714.99,
+  T3 = 5,154.59 and T1 = 0.835 x T3 = 4,304.08, so the federal tax is
+  358.67; box F of the RL-1 is 60. Test:
+  `test_union_dues_lower_the_federal_tax_only`.
 - **Deduction for Quebec only**: 5,000 a month with an FHSA contribution of
   100 in category *Deduction Reducing the Quebec Taxable Income*. The
   federal tax stays 368.94; I = 12 x (5,000 - 100 - 120.83 - 47.08) =

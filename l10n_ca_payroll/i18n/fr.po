@@ -64,6 +64,22 @@ msgid "Additional tax requested by the employee on the TD1 form."
 msgstr "Impôt supplémentaire demandé par l'employé sur le formulaire TD1."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_support_amount
+msgid ""
+"Alimony or maintenance payments withheld from each pay under a legal "
+"document dated before May 1, 1997 (salary rule CA_SUPPORT, with the support "
+"input of the payslip). They lower the taxable income of the CRA formulas "
+"(F2), not the Quebec one. When the order caps the payment at a percentage of"
+" the net salary, enter the amount that results from that cap."
+msgstr ""
+"Pension alimentaire retenue sur chaque paie en vertu d'un document juridique"
+" daté d'avant le 1er mai 1997 (règle salariale CA_SUPPORT, avec l'entrée de "
+"pension alimentaire du bulletin). Elle réduit le revenu imposable des "
+"formules de l'ARC (F2), pas celui du Québec. Quand l'ordonnance plafonne le "
+"paiement à un pourcentage du salaire net, saisissez le montant qui résulte "
+"de ce plafond."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__amount_paid
 msgid "Amount Paid"
 msgstr "Montant payé"
@@ -403,6 +419,11 @@ msgstr "Retenue"
 #: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_lump_ded
 msgid "Deduction From a Bonus or Lump-Sum Payment"
 msgstr "Retenue sur une prime ou un paiement forfaitaire"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_fed_tax_ded
+msgid "Deduction Reducing the CRA Taxable Income"
+msgstr "Retenue réduisant le revenu imposable des formules de l'ARC"
 
 #. module: l10n_ca_payroll
 #: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_tax_ded
@@ -829,6 +850,11 @@ msgstr ""
 "                type d'auteur de versement de la société, à partir des bulletins de paie terminés."
 
 #. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.hr_contract_view_form
+msgid "Other Deductions Withheld"
+msgstr "Autres retenues"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_federal_other_credits
 msgid "Other Federal Tax Credits (Annual)"
 msgstr "Autres crédits d'impôt fédéraux (annuels)"
@@ -1092,6 +1118,16 @@ msgid "Summary"
 msgstr "Sommaire"
 
 #. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_support
+msgid "Support Payments"
+msgstr "Pension alimentaire"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_support_amount
+msgid "Support Payments per Pay"
+msgstr "Pension alimentaire par paie"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__slip_ids
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
 msgid "T4 Slips"
@@ -1135,6 +1171,29 @@ msgstr "Total"
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_td1_federal_type__custom
 msgid "Total claim amount from the TD1"
 msgstr "Montant total de la demande du TD1"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_union
+msgid "Union Dues"
+msgstr "Cotisations syndicales"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_union_dues_amount
+msgid "Union Dues per Pay"
+msgstr "Cotisations syndicales par paie"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_union_dues_amount
+msgid ""
+"Union dues withheld from each pay by salary rule CA_UNION, with the union "
+"dues input of the payslip. They lower the taxable income of the CRA formulas"
+" (U1), not the Quebec one, and are reported in box 44 of the T4 and box F of"
+" the RL-1."
+msgstr ""
+"Cotisations syndicales retenues sur chaque paie par la règle salariale "
+"CA_UNION, avec l'entrée de cotisations syndicales du bulletin. Elles "
+"réduisent le revenu imposable des formules de l'ARC (U1), pas celui du "
+"Québec, et figurent à la case 44 du T4 et à la case F du RL-1."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__year

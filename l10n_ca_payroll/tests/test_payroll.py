@@ -447,6 +447,49 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         self.assertAlmostEqual(t4["box_14"], 5000.0)
         self.assertAlmostEqual(t4["box_20"], 300.0)
 
+    def test_union_dues_and_support_lower_the_taxable_income(self):
+        contract = self._contract(5000.0, l10n_ca_union_dues_amount=50.0)
+        slip = self.env["hr.payslip"].create(
+            {
+                "employee_id": contract.employee_id.id,
+                "contract_id": contract.id,
+                "struct_id": self.structure.id,
+                "company_id": self.company.id,
+                "date_from": "2026-03-01",
+                "date_to": "2026-03-31",
+                "input_line_ids": [
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Support Payments",
+                            "code": "CA_SUPPORT",
+                            "amount": 100.0,
+                            "contract_id": contract.id,
+                        },
+                    )
+                ],
+            }
+        )
+        slip.compute_sheet()
+        # As in test_monthly_ontario, with U1 = 50 and F2 = 100:
+        # A = 12 * (5,000 - 150 - 47.0840) = 57,634.99 -> R 0.14, K 0
+        # T3 = 0.14 * 57,634.99 - 2,303.28 - 528.47 - 210.14 = 5,027.01
+        #    -> per pay 418.92
+        self._assert_lines(
+            slip,
+            {
+                "CA_UNION": -50.0,
+                "CA_SUPPORT": -100.0,
+                "CA_CPP": -280.15,
+                "CA_FIT": -418.92,
+                "NET": 5000.0 - 150.0 - 280.15 - 81.50 - 418.92,
+            },
+        )
+        t4 = slip._l10n_ca_t4_values(2026)
+        self.assertAlmostEqual(t4["box_14"], 5000.0)
+        self.assertAlmostEqual(t4["box_44"], 50.0)
+
     def test_maximums_2027(self):
         # 2027: YMPE 76,700, YAMPE 87,400, rate 5.75%, EI MIE 70,800 at 1.64%.
         # Months 1-2: C = 0.0575 * (30,000 - 291.66) = 1,708.23, EI 492.00.

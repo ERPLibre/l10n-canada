@@ -267,10 +267,16 @@ class HrPayslip(models.Model):
         return applies, months
 
     def _l10n_ca_prepare_values(
-        self, contract, gross, nonperiodic=0.0, deductions=0.0, tax_deductions=0.0
+        self,
+        contract,
+        gross,
+        nonperiodic=0.0,
+        deductions=0.0,
+        tax_deductions=0.0,
+        federal_deductions=0.0,
     ):
         vals = super()._l10n_ca_prepare_values(
-            contract, gross, nonperiodic, deductions, tax_deductions
+            contract, gross, nonperiodic, deductions, tax_deductions, federal_deductions
         )
         vals["qc_tax_deductions"] = self.env.context.get(
             "l10n_ca_qc_tax_deductions", 0.0

@@ -60,6 +60,19 @@
             name="note"
         >Employee contributions to an RPP, an RRSP, a PRPP or a VRSP, or to a retirement compensation arrangement, withheld from the regular pay of the period (F of T4127 and of TP-1015.F). They lower the taxable income of the pay, not the pensionable or insurable earnings. Give the rules a sequence below 100.</field>
     </record>
+    <!-- U1 and F2 of T4127: the rules of this category lower A, the
+         taxable income of the CRA formulas, but not the Quebec taxable
+         income of TP-1015.F. They must run before the statutory rules
+         (sequence below 100). -->
+    <record id="categ_fed_tax_ded" model="hr.salary.rule.category">
+        <field name="name">Deduction Reducing the CRA Taxable Income</field>
+        <field name="code">CA_FED_TAX_DED</field>
+        <field name="parent_id" ref="categ_ded" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Union dues (U1 of T4127) and alimony or maintenance payments under a legal document dated before May 1, 1997 (F2), withheld from the regular pay of the period. They lower the annual taxable income A of the federal and provincial formulas of the CRA; TP-1015.F does not subtract them from the Quebec taxable income. Give the rules a sequence below 100.</field>
+    </record>
 
     <!-- Payee of the federal source deductions -->
     <record id="partner_receiver_general" model="res.partner">
@@ -157,6 +170,52 @@
         <field name="name">RRSP Contribution</field>
         <field name="code">CA_RRSP</field>
         <field name="input_id" ref="rule_rrsp" />
+    </record>
+    <record id="rule_union" model="hr.salary.rule">
+        <field name="name">Union Dues</field>
+        <field name="code">CA_UNION</field>
+        <field name="sequence">32</field>
+        <field name="category_id" ref="categ_fed_tax_ded" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = bool(contract.l10n_ca_union_dues_amount or (inputs.CA_UNION and inputs.CA_UNION.amount))</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = -(contract.l10n_ca_union_dues_amount + (inputs.CA_UNION.amount if inputs.CA_UNION else 0.0))</field>
+        <field
+            name="note"
+        >Union dues: the amount per pay of the contract plus the union dues input of the payslip. U1 of T4127; box 44 of the T4, box F of the RL-1.</field>
+    </record>
+    <record id="rule_input_union" model="hr.rule.input">
+        <field name="name">Union Dues</field>
+        <field name="code">CA_UNION</field>
+        <field name="input_id" ref="rule_union" />
+    </record>
+    <record id="rule_support" model="hr.salary.rule">
+        <field name="name">Support Payments</field>
+        <field name="code">CA_SUPPORT</field>
+        <field name="sequence">33</field>
+        <field name="category_id" ref="categ_fed_tax_ded" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = bool(contract.l10n_ca_support_amount or (inputs.CA_SUPPORT and inputs.CA_SUPPORT.amount))</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = -(contract.l10n_ca_support_amount + (inputs.CA_SUPPORT.amount if inputs.CA_SUPPORT else 0.0))</field>
+        <field
+            name="note"
+        >Alimony or maintenance payments under a legal document dated before May 1, 1997: the amount per pay of the contract plus the support input of the payslip. F2 of T4127.</field>
+    </record>
+    <record id="rule_input_support" model="hr.rule.input">
+        <field name="name">Support Payments</field>
+        <field name="code">CA_SUPPORT</field>
+        <field name="input_id" ref="rule_support" />
     </record>
     <record id="rule_gross" model="hr.salary.rule">
         <field name="name">Gross</field>
@@ -349,6 +408,8 @@ result_name = ca["line_names"]["CA_CPP2_ER"]</field>
                 ref('rule_bonus'),
                 ref('rule_rpp'),
                 ref('rule_rrsp'),
+                ref('rule_union'),
+                ref('rule_support'),
                 ref('rule_gross'),
                 ref('rule_pensionable'),
                 ref('rule_insurable'),

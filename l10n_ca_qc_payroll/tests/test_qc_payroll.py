@@ -322,6 +322,19 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
         self.assertAlmostEqual(rl1["box_a"], 4000.0)
         self.assertAlmostEqual(rl1["box_d"], 200.0)
 
+    def test_union_dues_lower_the_federal_tax_only(self):
+        contract = self._contract(5000.0, l10n_ca_union_dues_amount=60.0)
+        slip = self._slip(contract, "2026-03-01", "2026-03-31")
+        # Quebec tax as in test_monthly_5000: TP-1015.F has no union dues.
+        # Federal: A = 12 * (5,000 - 60 - 47.084) = 58,714.99 -> R 0.205
+        #   T3 = 0.205 * 58,714.99 - 3,804 - 2,303.28 - 564.57 - 210.14
+        #      = 5,154.59; T1 = 0.835 * T3 = 4,304.08 -> 358.67
+        self._assert_lines(
+            slip, {"CA_UNION": -60.0, "CA_FIT": -358.67, "CA_PIT": -470.57}
+        )
+        rl1 = slip._l10n_ca_qc_rl1_values(2026)
+        self.assertAlmostEqual(rl1["box_f"], 60.0)
+
     def test_quebec_only_deduction(self):
         """A rule of category CA_QC_TAXDED lowers the Quebec tax only."""
         rule = self.env["hr.salary.rule"].create(

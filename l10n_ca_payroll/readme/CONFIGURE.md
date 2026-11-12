@@ -7,13 +7,16 @@ Payroll > Configuration > Settings > Canadian Payroll:
 - click *Set Up Canadian Payroll*: the company gets the *Canada - Base*
   structure as default and, with the `ca_2023` chart, the salary rules get
   their accounts (salaries 512110, employer contributions 512121, wages
-  payable 221203, source deductions and RPP or RRSP contributions payable
-  221206). Accounts already set are kept; change them on each salary rule.
+  payable 221203, source deductions and the RPP, RRSP, union dues and
+  support payments withheld, 221206). Accounts already set are kept;
+  change them on each salary rule.
 
 On each contract, page *Canadian Payroll*: province of employment, pay
 periods per year (computed from the scheduled pay, "Bi-monthly" meaning
 twice a month), federal TD1 claim, additional tax, RPP and RRSP
-contributions withheld per pay, exemptions. The wage of
+contributions, union dues and support payments withheld per pay,
+exemptions. A support order that caps the payment at a percentage of the
+net salary needs the amount after that cap (T4127, F2). The wage of
 the contract is monthly; the basic salary of a pay is wage * 12 / pay
 periods. Set the birth date of the employee for the CPP age limits, and
 the identification number for the SIN printed on the T4.
@@ -313,6 +316,11 @@ these amounts (`tests/test_payroll.py`).
   T3 = 4,607.01, **federal tax 383.92** instead of 444.86. CPP, EI and
   box 14 keep the gross of 5,000; box 20 is 300.
   `test_rpp_and_rrsp_lower_the_taxable_income`
+- **Union dues and support payments (U1, F2)** — 5,000 a month in
+  Ontario, union dues of 50 on the contract and a support payment of 100
+  in the payslip input: A = 12 × (5,000 − 150 − 47.0840) = 57,634.99,
+  R = 14%; T3 = 5,027.01, **federal tax 418.92**; box 44 is 50.
+  `test_union_dues_and_support_lower_the_taxable_income`
 - **2027 maximums** — 30,000 a month in 2027: CPP 1,708.23 × 2, then
   792.54 (maximum **4,209.00**); CPP2 **428.00** in March; EI 492.00 × 2,
   then 177.12 (maximum **1,161.12**). `test_maximums_2027`

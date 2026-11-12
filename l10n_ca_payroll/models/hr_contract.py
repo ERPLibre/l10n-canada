@@ -86,6 +86,22 @@ class HrContract(models.Model):
         "payslip. It lowers the taxable income of the pay (F of the CRA and "
         "Revenu Quebec formulas).",
     )
+    l10n_ca_union_dues_amount = fields.Monetary(
+        string="Union Dues per Pay",
+        help="Union dues withheld from each pay by salary rule CA_UNION, with "
+        "the union dues input of the payslip. They lower the taxable income "
+        "of the CRA formulas (U1), not the Quebec one, and are reported in "
+        "box 44 of the T4 and box F of the RL-1.",
+    )
+    l10n_ca_support_amount = fields.Monetary(
+        string="Support Payments per Pay",
+        help="Alimony or maintenance payments withheld from each pay under a "
+        "legal document dated before May 1, 1997 (salary rule CA_SUPPORT, "
+        "with the support input of the payslip). They lower the taxable "
+        "income of the CRA formulas (F2), not the Quebec one. When the order "
+        "caps the payment at a percentage of the net salary, enter the "
+        "amount that results from that cap.",
+    )
     l10n_ca_t4_dental_code = fields.Selection(
         [
             ("1", "1 - Not eligible to any dental care coverage"),
