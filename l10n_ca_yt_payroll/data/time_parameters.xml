@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Yukon income tax, T4127 option 1 -->
+    <record id="param_yt_brackets" model="base.time.parameter">
+        <field name="name">Yukon income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.yt.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Yukon rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P - K4P). 2026: 6.4% up to 58,523, 9% up to 117,045, 10.9% up to 181,440, 12.8% up to 500,000 and 15% above. The constant KP is derived from the table and rounded to the dollar like the federal K: 0, 1,522, 3,745, 7,193, 18,193. The rate of the first bracket is the lowest Yukon rate of K1P, K2P and K4P (0.064). Yukon did not change on July 1, 2026. T4127 122nd edition (January 2026), table 8.1; 123rd edition (July 2026), table 8.1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+    </record>
+    <record id="param_yt_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_yt_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.064], [58523, 0.09], [117045, 0.109], [181440, 0.128], [500000, 0.15]]</field>
+    </record>
+    <record id="param_yt_bpa" model="base.time.parameter">
+        <field name="name">Yukon basic personal amount (maximum)</field>
+        <field name="code">l10n_ca.yt.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum Yukon basic personal amount BPAYT (16,452 for 2026), shown on the contract and checked for a version of the pay year. The payslip does not read it: BPAYT mirrors the federal BPAF, so TCP without a TD1YT is the federal basic personal amount of the net income NI = A + HD, computed from the federal parameters l10n_ca.federal.bpa_max, bpa_min, bpa_phaseout_start and bpa_phaseout_end (16,452 up to 181,440, 14,829 from 258,482, linear in between). K1P = lowest Yukon rate x TCP. T4127 122nd edition (January 2026), chapter 2, Yukon Basic Personal Amount (BPAYT) Formula, and table 8.2; TD1YT 2026 line 1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1yt.html</field>
+    </record>
+    <record id="param_yt_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_yt_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">16452</field>
+    </record>
+
+    <!-- Workers' Safety and Compensation Board (WSCB) -->
+    <record id="param_yt_wcb_max_insurable" model="base.time.parameter">
+        <field name="name">WSCB maximum annual earnings (Yukon)</field>
+        <field name="code">l10n_ca.yt.wcb.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum annual earnings per worker on which the employer pays assessment premiums: the assessable earnings of the pay are min(gross, maximum - assessable earnings of the year so far). Set every year by the Workers' Safety and Compensation Board under the Workers' Safety and Compensation Act (SY 2021, c. 8). 2026: 107,599; 2027: 111,580. Sources: https://www.wcb.yk.ca/web-0021/web-0022/web-0029/web-0030 ; https://www.wcb.yk.ca/web-0074/web-0077/wscb-announces-2027-industry-assessment-rates</field>
+    </record>
+    <record id="param_yt_wcb_max_insurable_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_yt_wcb_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">107599</field>
+    </record>
+    <record id="param_yt_wcb_max_insurable_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_yt_wcb_max_insurable" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">111580</field>
+    </record>
+</odoo>

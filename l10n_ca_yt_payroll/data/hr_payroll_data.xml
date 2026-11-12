@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Payee of the assessment premiums of the Yukon Workers' Safety and
+         Compensation Board (WSCB). The Yukon income tax is remitted to the
+         CRA with the federal deductions. -->
+    <record id="partner_wscb_yukon" model="res.partner">
+        <field name="name">Workers' Safety and Compensation Board (Yukon)</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_yt" />
+    </record>
+    <record id="register_wscb_yukon" model="hr.contribution.register">
+        <field name="name">WSCB (Yukon)</field>
+        <field name="partner_id" ref="partner_wscb_yukon" />
+        <field name="company_id" eval="False" />
+        <field name="note">Yukon workers' compensation assessment premiums.</field>
+    </record>
+
+    <!-- Every rule below applies only to an employment in Yukon. The
+         Yukon income tax is the line of the federal rule CA_PIT. -->
+    <record id="rule_yt_salary" model="hr.salary.rule">
+        <field name="name">Yukon Remuneration</field>
+        <field name="code">CA_YT_SAL</field>
+        <field name="sequence">114</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "YT"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["province_remuneration"]</field>
+        <field
+            name="note"
+        >Remuneration of the pay in Yukon: its year-to-date total gives the assessable earnings left after a credit note.</field>
+    </record>
+    <record id="rule_yt_wcb_insurable" model="hr.salary.rule">
+        <field name="name">WSCB Assessable Earnings</field>
+        <field name="code">CA_YT_WCB_IE</field>
+        <field name="sequence">115</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "YT"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["wcb_insurable"]</field>
+        <field
+            name="note"
+        >Assessable earnings of the pay up to the WSCB maximum annual earnings, less the assessable earnings of the year so far; 0 for a contract not covered.</field>
+    </record>
+    <record id="rule_yt_wcb" model="hr.salary.rule">
+        <field name="name">WSCB Assessment</field>
+        <field name="code">CA_YT_WCB</field>
+        <field name="sequence">380</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_wscb_yukon" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "YT" and l10n_ca.get(contract, categories.GROSS)["wcb"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["wcb"]
+result_name = ca["wcb_line_name"]</field>
+        <field
+            name="note"
+        >WSCB assessment premium at the rate per $100 of the rate group of the company (provincial payroll account), on the assessable earnings of the pay up to the maximum annual earnings.</field>
+    </record>
+</odoo>

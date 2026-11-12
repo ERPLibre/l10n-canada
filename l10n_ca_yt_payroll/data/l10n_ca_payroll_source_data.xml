@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the Yukon payroll.
+     l10n_ca_payroll/tools/sources_page.py writes
+     static/description/sources.html from this file: run it after a
+     change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_123" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Steps 4 to 6 (T4, K1P, K2P, K4P, T2); Yukon tables unchanged from the 122nd edition (January 2026), tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+        <field
+            name="summary"
+        >2026 Yukon brackets and constants KP and basic personal amount. The edition lists Yukon among the jurisdictions without change on July 1, 2026, and announces no Yukon change for January 1, 2027.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_122" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Chapter 2, Yukon Basic Personal Amount (BPAYT) Formula; step 5, Yukon (K4P); tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field
+            name="summary"
+        >Yukon rates 6.4%, 9%, 10.9%, 12.8% and 15% from 58,523, 117,045, 181,440 and 500,000; BPAYT = BPAF, 16,452 at most; K4P = the lesser of 0.064 x A* and 0.064 x CEA, CEA 1,501, A* the annual gross employment income; no Yukon labour-sponsored funds credit, surtax or reduction.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_td1yt_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">publication</field>
+        <field name="name">TD1YT 2026 Yukon Personal Tax Credits Return</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Line 1 (basic personal amount) and the total claim amount</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1yt.html</field>
+        <field
+            name="summary"
+        >Yukon basic personal amount of 16,452 for 2026, reduced above a net income of 181,440 like the federal amount, and the total claim amount TCP entered on the contract.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_finance_income_tax" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">page</field>
+        <field name="name">Yukon Income Tax</field>
+        <field name="publisher">Government of Yukon, Department of Finance</field>
+        <field name="url">https://yukon.ca/yukon-income-tax</field>
+        <field
+            name="summary"
+        >Rates and brackets of the Yukon personal income tax.</field>
+        <field name="state">to_verify</field>
+        <field
+            name="verification_note"
+        >The page refuses automated clients (HTTP 403). Confirm in a browser the 2026 rates and brackets (6.4%, 9%, 10.9%, 12.8%, 15%; 58,523, 117,045, 181,440, 500,000) against the T4127 figures.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_no_payroll_tax" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">page</field>
+        <field name="name">Taxation in the Yukon (archived)</field>
+        <field
+            name="publisher"
+        >Canada Business Network, content of the Yukon Department of Finance</field>
+        <field
+            name="url"
+        >https://bac-lac.wayback.archive-it.org/web/20131001225709/http://www.canadabusiness.ca/eng/program/2962</field>
+        <field
+            name="summary"
+        >Yukon levies no employer payroll tax ("no payroll tax"); no Yukon statute imposes one.</field>
+        <field name="state">to_verify</field>
+        <field
+            name="verification_note"
+        >Archived page; the current pages of yukon.ca refuse automated clients (HTTP 403). Confirm in a browser on yukon.ca that Yukon still levies no payroll tax.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wscb_maximum" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">page</field>
+        <field name="name">Maximum Annual Earnings</field>
+        <field
+            name="publisher"
+        >Workers' Safety and Compensation Board (Yukon)</field>
+        <field
+            name="url"
+        >https://www.wcb.yk.ca/web-0021/web-0022/web-0029/web-0030</field>
+        <field
+            name="summary"
+        >Maximum annual earnings per worker on which the employer pays assessment premiums: 104,975 in 2025, 107,599 in 2026, 111,580 in 2027. All earnings in Yukon are reported; none above the maximum is assessed.</field>
+        <field name="watch_key">wscb_maximum</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wscb_2027_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">page</field>
+        <field name="name">WSCB Announces 2027 Industry Assessment Rates</field>
+        <field
+            name="publisher"
+        >Workers' Safety and Compensation Board (Yukon)</field>
+        <field
+            name="url"
+        >https://www.wcb.yk.ca/web-0074/web-0077/wscb-announces-2027-industry-assessment-rates</field>
+        <field
+            name="summary"
+        >Maximum annual earnings of 111,580 for 2027; the 2027 rates decrease in every rate group, without reclassification.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wscb_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">page</field>
+        <field name="name">Rates and Classifications</field>
+        <field
+            name="publisher"
+        >Workers' Safety and Compensation Board (Yukon)</field>
+        <field name="url">https://www.wcb.yk.ca/web-0021/web-0022/web-0029</field>
+        <field
+            name="summary"
+        >Assessment rate per $100 of assessable payroll of each rate group, set every year by the Board of Directors: the rate of the provincial payroll account of the company.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wscb_policy_5_4" model="l10n_ca.payroll.source">
+        <field name="sequence">90</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >Policy 5.4 Reporting Payroll and Payment of Assessment Premiums</field>
+        <field
+            name="publisher"
+        >Workers' Safety and Compensation Board (Yukon)</field>
+        <field name="reference">In effect since July 1, 2022</field>
+        <field
+            name="url"
+        >https://www.wcb.yk.ca/policies/employer-assessments/5-4-reporting-payroll-and-payment-of-assessment-pr</field>
+        <field
+            name="summary"
+        >Premium = assessable payroll, capped per worker at the maximum annual earnings, x the rate per $100; minimum premium 150. Annual payroll report (actual payroll of the previous year, estimate of the current one) due by the last day of February; premiums due January 1 and payable within 30 days of the invoice; instalments on request above 500; monthly reporting and payment by the 15th of the following month under the actual payroll method.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wscb_coverage" model="l10n_ca.payroll.source">
+        <field name="sequence">100</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">page</field>
+        <field name="name">Optional Coverage; Directors Coverage</field>
+        <field
+            name="publisher"
+        >Workers' Safety and Compensation Board (Yukon)</field>
+        <field name="url">https://www.wcb.yk.ca/web-0021/web-0104/web-0026</field>
+        <field
+            name="summary"
+        >Proprietors, partners and the elected or appointed officials of a Yukon First Nation are not covered automatically and may buy optional coverage up to the maximum annual earnings. Directors of a corporation are workers unless deemed non-working directors on a yearly application (https://www.wcb.yk.ca/web-0021/web-0104/web-0025).</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wsca" model="l10n_ca.payroll.source">
+        <field name="sequence">110</field>
+        <field name="jurisdiction">yukon</field>
+        <field name="kind">statute</field>
+        <field
+            name="name"
+        >Workers' Safety and Compensation Act, SY 2021, c. 8</field>
+        <field name="publisher">Government of Yukon</field>
+        <field
+            name="reference"
+        >Section 77 (maximum annual earnings); sections 130 to 150 (assessments)</field>
+        <field
+            name="url"
+        >https://laws.yukon.ca/cms/images/LEGISLATION/PRINCIPAL/2021/2021-0008/2021-0008.pdf</field>
+        <field
+            name="summary"
+        >The Board sets the maximum annual earnings every year and assesses employers on their payroll.</field>
+        <field name="state">to_verify</field>
+        <field
+            name="verification_note"
+        >The statute site refuses automated clients (HTTP 403), as does CanLII. The section numbers come from WSCB Policy 5.4: confirm them in a browser.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>
