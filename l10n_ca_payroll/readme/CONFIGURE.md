@@ -300,12 +300,12 @@ Derived figures:
 The tests compute payslips in 2026 with the shipped parameters and assert
 these amounts (`tests/test_payroll.py`).
 
-- **Monthly pay of 5,000 in Ontario** — exemption 291.66;
+- **Monthly pay of 5,000 in New Brunswick** — exemption 291.66;
   C = 0.0595 × 4,708.34 = 280.15; C2 = 0; EI = 0.0163 × 5,000 = 81.50,
   employer 114.10; F5A = 47.08; A = 12 × (5,000 − 47.0840) = 59,434.99,
   R = 20.5%, K = 3,804; K1 = 2,303.28; K2 = 0.14 × (2,796.79 + 978)
   = 528.47; K4 = 210.14; T3 = 5,338.28; **federal tax 444.86**.
-  `test_monthly_ontario`
+  `test_monthly_new_brunswick`
 - **Bi-weekly pay** — monthly wage 5,200 → 2,400 per pay (P = 26);
   exemption 134.61; C = 134.79; EI = 39.12, employer 54.77;
   A = 61,811.00; K2 = 550.57; T3 = 5,803.26; **federal tax 223.20**.
@@ -338,14 +338,14 @@ these amounts (`tests/test_payroll.py`).
   `test_cpp_stops_at_70`
 - **CPP at 18** — 18th birthday in March: no CPP in March, 280.15 in
   April. `test_cpp_starts_after_18`
-- **RPP and RRSP contributions (F)** — 5,000 a month in Ontario, RPP of
+- **RPP and RRSP contributions (F)** — 5,000 a month in New Brunswick, RPP of
   300 on the contract and RRSP of 100 in the payslip input: F = 400,
   A = 12 × (5,000 − 400 − 47.0840) = 54,634.99, R = 14%, K = 0;
   T3 = 4,607.01, **federal tax 383.92** instead of 444.86. CPP, EI and
   box 14 keep the gross of 5,000; box 20 is 300.
   `test_rpp_and_rrsp_lower_the_taxable_income`
 - **Union dues and support payments (U1, F2)** — 5,000 a month in
-  Ontario, union dues of 50 on the contract and a support payment of 100
+  New Brunswick, union dues of 50 on the contract and a support payment of 100
   in the payslip input: A = 12 × (5,000 − 150 − 47.0840) = 57,634.99,
   R = 14%; T3 = 5,027.01, **federal tax 418.92**; box 44 is 50.
   `test_union_dues_and_support_lower_the_taxable_income`
@@ -368,11 +368,11 @@ these amounts (`tests/test_payroll.py`).
 - **QPIP credit through the K2 hook** — the same pay with a QPIP item of
   0.43% (maximum 442.90, table 8.8): K2 + 36.12, **federal tax 368.94**.
   `test_quebec_k2_extension_point`
-- **Transfer from CPP to QPP** — 40,000 a month, January in Ontario
+- **Transfer from CPP to QPP** — 40,000 a month, January in New Brunswick
   (CPP 2,362.65), then Quebec: the CPP withheld counts as 2,362.65 ×
   0.063 / 0.0595 = 2,501.63 against the QPP maximum 4,479.30; QPP
   1,977.67 in February, 0 in March with QPP2 216.00. With two months in
-  Ontario (CPP 4,230.45, CPP2 216.00), QPP is 0 and QPP2 200.00 in
+  New Brunswick (CPP 4,230.45, CPP2 216.00), QPP is 0 and QPP2 200.00 in
   April. Reproduces the transfer formula of TP-1015.F 2026 part 3.1.
   `test_transfer_from_cpp_to_qpp`
 - **Remittance periods of 2026** — quarterly: 4 periods, Q1 due

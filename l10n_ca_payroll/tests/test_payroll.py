@@ -43,7 +43,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         cls.company = cls.env.company
         cls.company.l10n_ca_payroll_setup()
         cls.structure = cls.company.payroll_structure_id
-        cls.ontario = cls.env.ref("base.state_ca_on")
+        cls.new_brunswick = cls.env.ref("base.state_ca_nb")
         cls.quebec = cls.env.ref("base.state_ca_qc")
         cls.journal = cls.company_data["default_journal_misc"]
 
@@ -70,7 +70,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
                 "date_start": "2026-01-01",
                 "struct_id": self.structure.id,
                 "schedule_pay": schedule,
-                "l10n_ca_province_id": (province or self.ontario).id,
+                "l10n_ca_province_id": (province or self.new_brunswick).id,
                 "journal_id": self.journal.id,
                 **vals,
             }
@@ -147,7 +147,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
     # Federal computation, outside Quebec
     # ------------------------------------------------------------------
 
-    def test_monthly_ontario(self):
+    def test_monthly_new_brunswick(self):
         contract = self._contract(5000.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # P = 12, I = 5,000. Exemption 3,500 / 12 = 291.66 (truncated).
@@ -178,14 +178,14 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
             },
         )
         self.assertEqual(slip.l10n_ca_pension_plan, "cpp")
-        self.assertEqual(slip.l10n_ca_province_id, self.ontario)
+        self.assertEqual(slip.l10n_ca_province_id, self.new_brunswick)
 
     def test_provincial_tax_warning(self):
         contract = self._contract(5000.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
         line = slip.line_ids.filtered(lambda line: line.code == "CA_PIT")
         self.assertIn("NOT COMPUTED", line.name)
-        self.assertIn(self.ontario.name, slip.l10n_ca_warning)
+        self.assertIn(self.new_brunswick.name, slip.l10n_ca_warning)
 
     def test_biweekly(self):
         contract = self._contract(5200.0, schedule="bi-weekly")
@@ -329,7 +329,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         summary.action_compute_slips()
         t4 = summary.slip_ids
         self.assertEqual(len(t4), 1)
-        self.assertEqual(t4.province_code, "ON")
+        self.assertEqual(t4.province_code, "NB")
         self.assertAlmostEqual(t4.box_14, 105000.0)
         self.assertAlmostEqual(t4.box_16, 4230.45)
         self.assertAlmostEqual(t4.box_16a, 416.0)
@@ -367,7 +367,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         self.assertIn("csv_file", action["url"])
         self.assertTrue(summary.csv_file)
         rows = summary._l10n_ca_t4_csv_rows()
-        self.assertEqual(rows[1][2], "ON")
+        self.assertEqual(rows[1][2], "NB")
         self.assertEqual(rows[1][3], "105000.00")
         self.assertEqual(t4.box_45, "1")
         self.assertEqual(rows[1][-3], "1")
@@ -429,7 +429,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
             }
         )
         slip.compute_sheet()
-        # As in test_monthly_ontario, with F = 300 + 100 = 400:
+        # As in test_monthly_new_brunswick, with F = 300 + 100 = 400:
         # A = 12 * (5,000 - 400 - 47.0840) = 54,634.99 -> R 0.14, K 0
         # T3 = 0.14 * 54,634.99 - 2,303.28 - 528.47 - 210.14 = 4,607.01
         #    -> per pay 383.92. CPP, EI and the T4 box 14 keep the gross.
@@ -474,7 +474,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
             }
         )
         slip.compute_sheet()
-        # As in test_monthly_ontario, with U1 = 50 and F2 = 100:
+        # As in test_monthly_new_brunswick, with U1 = 50 and F2 = 100:
         # A = 12 * (5,000 - 150 - 47.0840) = 57,634.99 -> R 0.14, K 0
         # T3 = 0.14 * 57,634.99 - 2,303.28 - 528.47 - 210.14 = 5,027.01
         #    -> per pay 418.92
@@ -709,7 +709,7 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         salary only.
         """
         self._qpp_parameters()
-        # January in Ontario: CPP = 0.0595 * (40,000 - 291.66) = 2,362.65.
+        # January in New Brunswick: CPP = 0.0595 * (40,000 - 291.66) = 2,362.65.
         # February in Quebec: R converted = 2,362.65 * 0.063 / 0.0595
         #   = 2,501.6294 -> 2,501.63; C = min(4,479.30 - 2,501.63 =
         #   1,977.67, 0.063 * 39,708.34 = 2,501.63) = 1,977.67; C2: S5 = 0,
@@ -717,28 +717,28 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         # March: C = 4,479.30 - 2,501.63 - 1,977.67 = 0; C2 = min(416,
         #   0.04 * (40,000 + 40,000 - 74,600) = 216) = 216.
         contract = self._contract(40000.0)
-        ontario = self._monthly_slips(contract, [1])
+        new_brunswick = self._monthly_slips(contract, [1])
         contract.l10n_ca_province_id = self.quebec
         quebec = self._monthly_slips(contract, [2, 3])
-        self.assertEqual(ontario[0].l10n_ca_pension_plan, "cpp")
-        self._assert_lines(ontario[0], {"CA_CPP": -2362.65, "CA_CPP2": 0.0})
+        self.assertEqual(new_brunswick[0].l10n_ca_pension_plan, "cpp")
+        self._assert_lines(new_brunswick[0], {"CA_CPP": -2362.65, "CA_CPP2": 0.0})
         self.assertEqual(quebec[0].l10n_ca_pension_plan, "qpp")
         self._assert_lines(
             quebec[0], {"CA_CPP": -1977.67, "CA_CPP2": 0.0, "CA_CPP_ER": 1977.67}
         )
         self._assert_lines(quebec[1], {"CA_CPP": 0.0, "CA_CPP2": -216.0})
 
-        # January-February in Ontario: CPP 2,362.65 + 1,867.80 = 4,230.45,
+        # January-February in New Brunswick: CPP 2,362.65 + 1,867.80 = 4,230.45,
         #   the maximum; CPP2 in February = 0.04 * (80,000 - 74,600) = 216.
         # March in Quebec: R converted = 4,230.45 * 0.063 / 0.0595
         #   = 4,479.30 -> C = 0; C2: 40,000 - 74,600 < 0 -> 0.
         # April: C2 = min(416 - [216 * 0.04 / 0.04 + 0] = 200, 216) = 200.
         # May: C2 = 416 - (216 + 200) = 0.
         contract = self._contract(40000.0)
-        ontario = self._monthly_slips(contract, [1, 2])
+        new_brunswick = self._monthly_slips(contract, [1, 2])
         contract.l10n_ca_province_id = self.quebec
         quebec = self._monthly_slips(contract, [3, 4, 5])
-        self._assert_lines(ontario[1], {"CA_CPP": -1867.80, "CA_CPP2": -216.0})
+        self._assert_lines(new_brunswick[1], {"CA_CPP": -1867.80, "CA_CPP2": -216.0})
         self.assertEqual(
             [-self._line(slip, "CA_CPP") for slip in quebec], [0.0, 0.0, 0.0]
         )
