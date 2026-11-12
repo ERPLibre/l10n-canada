@@ -30,3 +30,6 @@ class ResConfigSettings(models.TransientModel):
     l10n_ca_qc_cnt_exempt = fields.Boolean(
         related="company_id.l10n_ca_qc_cnt_exempt", readonly=False
     )
+    l10n_ca_qc_lump_sum_method = fields.Selection(
+        related="company_id.l10n_ca_qc_lump_sum_method", readonly=False
+    )

@@ -72,6 +72,12 @@
                         </div>
                     </setting>
                     <setting
+                        string="Lump-Sum Payments"
+                        help="Method of TP-1015.F section 2.1.2 for the Quebec tax on bonuses and retroactive pay"
+                    >
+                        <field name="l10n_ca_qc_lump_sum_method" />
+                    </setting>
+                    <setting
                         string="WSDRF"
                         help="Payroll of the company alone subject to the WSDRF contribution, compared with its threshold"
                         invisible="l10n_ca_qc_hsf_basis != 'estimate'"

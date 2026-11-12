@@ -1258,6 +1258,51 @@ msgid "Line 82"
 msgstr "Ligne 82"
 
 #. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid "Lump-Sum Payments"
+msgstr "Paiements forfaitaires"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__res_company__l10n_ca_qc_lump_sum_method__1
+msgid "Method 1: income of the year to date"
+msgstr "Méthode 1 : revenu de l'année à ce jour"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_qc_payroll.selection__res_company__l10n_ca_qc_lump_sum_method__2
+msgid "Method 2: annualized pay"
+msgstr "Méthode 2 : paie annualisée"
+
+#. module: l10n_ca_qc_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.res_config_settings_view_form
+msgid ""
+"Method of TP-1015.F section 2.1.2 for the Quebec tax on bonuses and "
+"retroactive pay"
+msgstr ""
+"Méthode de la section 2.1.2 du TP-1015.F pour l'impôt du Québec sur les "
+"primes et la rétroactivité"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_lump_sum_method
+#: model:ir.model.fields,help:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_lump_sum_method
+msgid ""
+"Method of TP-1015.F section 2.1.2 for the Quebec tax on bonuses, retroactive"
+" pay and similar lump-sum payments. Method 1 taxes the payment at the "
+"brackets of the income earned since January 1 plus the pays left in the "
+"year, and spreads a payment that crosses a bracket over both rates; method 2"
+" applies the rate of the bracket of the annualized pay to the whole payment."
+" Both withhold the flat rate when the annual salary and the lump sums total "
+"at most the basic personal amount."
+msgstr ""
+"Méthode de la section 2.1.2 du TP-1015.F pour l'impôt du Québec sur les "
+"primes, la rétroactivité et les paiements forfaitaires semblables. La "
+"méthode 1 impose le paiement aux tranches du revenu gagné depuis le 1er "
+"janvier plus les paies qui restent dans l'année, et répartit sur les deux "
+"taux un paiement qui chevauche une tranche ; la méthode 2 applique au "
+"paiement entier le taux de la tranche de la paie annualisée. Les deux "
+"retiennent le taux fixe quand le salaire annuel et les paiements "
+"forfaitaires totalisent au plus le montant personnel de base."
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__name
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_rl1_summary__name
 msgid "Name"
@@ -1564,6 +1609,12 @@ msgstr "TP-1015.3 du Québec"
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_claim_type
 msgid "Quebec TP-1015.3 Claim"
 msgstr "Demande TP-1015.3 du Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_lump_sum_method
+#: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_lump_sum_method
+msgid "Quebec Tax Method for Lump Sums"
+msgstr "Méthode de l'impôt du Québec sur les paiements forfaitaires"
 
 #. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_bpa

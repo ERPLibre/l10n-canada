@@ -425,6 +425,47 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
             },
         )
 
+    def test_lump_sum_method_1_spreads_brackets(self):
+        """TP-1015.F 2.1.2 method 1: a bonus that crosses a bracket."""
+        contract = self._contract(4500.0)
+        self._monthly_slips(contract, [1, 2])
+        # January and February: C = 0.063 * (4,500 - 291.66) = 265.13,
+        # CSA = 265.13 / 6.3 = 42.08, H = min(270, 1,450 / 12) = 120.83:
+        # G1 = 9,000, H1 = 241.66, CSA1 = 84.16, PR = 12 - 2 = 10.
+        # March with a bonus of 3,000: C = 0.063 * (7,500 - 291.66) =
+        # 454.13, CS = 72.084, CSA = 43.25, CSB = 28.83
+        # H2 = min(0.06 * (3,000 + 9,000 + 4,500), (1,450 - 241.66) / 10)
+        #    = 120.83
+        # I1 = 8,674.18 + 10 * (4,500 - 120.83 - 43.25) = 52,033.38
+        # Y1 = 0.14 * 52,033.38 - 0.14 * 18,952 = 4,631.39
+        # Y2 = 0.19 * 55,004.55 - 2,717 - 2,653.28 = 5,080.58
+        # A1 = 449.19; the regular pay keeps I = 52,031.04 -> 385.92.
+        # Method 2 taxes the whole bonus at 19%: 0.19 * 2,971.17 = 564.52.
+        self.company.l10n_ca_qc_lump_sum_method = "1"
+        slip = self._slip(contract, "2026-03-01", "2026-03-31", bonus=3000.0)
+        self._assert_lines(
+            slip, {"CA_CPP": -454.13, "CA_F5B": 28.83, "CA_PIT": -(385.92 + 449.19)}
+        )
+        self.company.l10n_ca_qc_lump_sum_method = "2"
+        slip.compute_sheet()
+        self._assert_lines(slip, {"CA_PIT": -(385.92 + 564.52)})
+
+    def test_lump_sum_method_1_year_to_date(self):
+        """G1, F1, H1 and CSA1 come from the done payslips of the year."""
+        contract = self._contract(4500.0, l10n_ca_rpp_amount=200.0)
+        self._slip(contract, "2026-01-01", "2026-01-31", done=True)
+        self._slip(contract, "2026-02-01", "2026-02-28", done=True, bonus=1000.0)
+        march = self._slip(contract, "2026-03-01", "2026-03-31")
+        # January: G 4,500, F 200, H 120.83, CSA 265.13 / 6.3 = 42.08.
+        # February: G 4,500, F 200, H 120.83; C = 0.063 * (5,500 - 291.66)
+        #   = 328.13, CSA = 328.13 / 6.3 * 4,500 / 5,500 = 42.61.
+        ytd = march._l10n_ca_qc_regular_ytd({"date": date(2026, 3, 31)})
+        self.assertEqual(ytd["paid"], 2)
+        self.assertAlmostEqual(ytd["salary"], 9000.0)
+        self.assertAlmostEqual(ytd["tax_deductions"], 400.0)
+        self.assertAlmostEqual(ytd["worker_deduction"], 241.66)
+        self.assertAlmostEqual(ytd["additional_qpp"], 84.69)
+
     def test_lump_sum_flat_rate(self):
         """Salary and lump sums of at most the basic personal amount: 7%."""
         contract = self._contract(1000.0)

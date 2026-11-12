@@ -15,7 +15,8 @@ employment in Quebec (province code QC):
 - ``_l10n_ca_federal_k2_items``: federal credit of the QPIP premium;
 - ``_l10n_ca_provincial_tax``: Quebec income tax for regular payments
   (TP-1015.F section 2.1.1) and for bonuses, retroactive payments and
-  other similar lump-sum payments (section 2.1.2, second method);
+  other similar lump-sum payments (section 2.1.2, the method of the
+  company);
 - ``_l10n_ca_t4_values``: T4 boxes 55 and 56.
 
 The amounts land in the ``vals`` dictionary of ``_l10n_ca_compute`` under
@@ -30,12 +31,20 @@ computed and passes it in the context key ``l10n_ca_qc_tax_deductions``.
 """
 
 import math
+from collections import defaultdict
 
 from odoo import _, fields, models
 from odoo.tools import float_round
 from odoo.tools.misc import formatLang
 
-from odoo.addons.l10n_ca_payroll.models.hr_payslip import L10nCaPayrollRuleHelper
+from odoo.addons.l10n_ca_payroll.models.hr_contract import SCHEDULE_PAY_PERIODS
+from odoo.addons.l10n_ca_payroll.models.hr_payslip import (
+    NONPERIODIC_CATEGORY,
+    L10nCaPayrollRuleHelper,
+)
+from odoo.addons.l10n_ca_payroll.models.hr_payslip import (
+    TAX_DEDUCTION_CATEGORY as FEDERAL_TAX_DEDUCTION_CATEGORY,
+)
 from odoo.addons.l10n_ca_time_parameter.tools import marginal_rate
 
 from ..tools import quebec_constant
@@ -62,6 +71,15 @@ def _round_min_cent(amount):
     if 0 < amount < 0.005:
         return 0.01
     return max(0.0, _round(amount))
+
+
+def _category_codes(category):
+    """Return the codes of ``category`` and of its parent categories."""
+    codes = set()
+    while category:
+        codes.add(category.code)
+        category = category.parent_id
+    return codes
 
 
 def _is_quebec(province):
@@ -417,12 +435,11 @@ class HrPayslip(models.Model):
         being the gross less the lump-sum payments B2 of the pay, F the
         rules of categories CA_TAX_DED and CA_QC_TAXDED of the period
         (``tax_deductions`` and ``qc_tax_deductions``), H = min(0.06 * G,
-        maximum / P) the
-        deduction for workers, on G before F, and CSA = CS * (S3 - B2) / S3
-        the share of G in CS, the first and second additional QPP
-        contributions of the period. J, J1 and K1 are spread over the pays
-        left when they apply from a date after the first pay of the year
-        (``_l10n_ca_qc_annualized``). Y = T * I - K - K1 - 0.14 * E - 0.15
+        maximum / P) the deduction for workers, on G before F, and
+        CSA = CS * (S3 - B2) / S3 the share of G in CS, the first and second
+        additional QPP contributions of the period. J, J1 and K1 are spread
+        over the pays left when they apply from a date after the first pay of
+        the year (``_l10n_ca_qc_annualized``). Y = T * I - K - K1 - 0.14 * E - 0.15
         * P * Q - 0.15 * P * Q1, Q and Q1 the labour-sponsored fund
         withholdings per pay; tax per period = Y / P + L. H and CSA are
         rounded to the cent and K truncated to the dollar, as in the
@@ -469,7 +486,6 @@ class HrPayslip(models.Model):
             - deductions
             - authorized_deductions,
         )
-        brackets = param("l10n_ca.qc.brackets", date)
         claim = contract._l10n_ca_qc_claim(date)
         labour_fund = (
             contract.l10n_ca_qc_ftq_withholding
@@ -482,14 +498,6 @@ class HrPayslip(models.Model):
                 * periods
                 * labour_fund
             )
-        annual_tax = max(
-            0.0,
-            marginal_rate(annual, brackets) * annual
-            - quebec_constant(annual, brackets)
-            - authorized_credits
-            - param("l10n_ca.qc.credit_rate", date) * claim
-            - labour_fund_credit,
-        )
         vals.update(
             {
                 "qc_tax_deduction_total": tax_deductions,
@@ -501,27 +509,48 @@ class HrPayslip(models.Model):
                 "qc_annual_income": annual,
                 "qc_claim": claim,
                 "qc_labour_fund_credit": labour_fund_credit,
-                "qc_annual_tax": annual_tax,
                 "qc_lump_sum_tax": 0.0,
             }
         )
+        annual_tax = self._l10n_ca_qc_annual_tax(vals, annual)
+        vals["qc_annual_tax"] = annual_tax
         tax = _round(annual_tax / periods) + _round(contract.l10n_ca_qc_additional_tax)
         if nonperiodic:
             tax += self._l10n_ca_qc_lump_sum_tax(vals)
         return tax
 
+    def _l10n_ca_qc_annual_tax(self, vals, income):
+        """Y = T * I - K - K1 - 0.14 * E - 0.15 * P * (Q + Q1), at least 0.
+
+        T and K are those of the bracket of ``income``, K truncated to the
+        dollar; K1, E and the labour-sponsored fund credit are the values of
+        the regular computation in ``vals``.
+        """
+        param = vals["company"]._l10n_ca_param
+        date = vals["date"]
+        brackets = param("l10n_ca.qc.brackets", date)
+        return max(
+            0.0,
+            marginal_rate(income, brackets) * income
+            - quebec_constant(income, brackets)
+            - vals["qc_authorized_credits"]
+            - param("l10n_ca.qc.credit_rate", date) * vals["qc_claim"]
+            - vals["qc_labour_fund_credit"],
+        )
+
     def _l10n_ca_qc_lump_sum_tax(self, vals):
         """Quebec tax on the lump-sum payments of the pay, TP-1015.F 2.1.2.
 
-        Second method: I = P * (G - F - H - CSA) + B1 + B2 - CSB1 - CSB - J
-        - J1 and A = T * (B2 - CSB), T being the rate of the bracket of I.
-        F is the same as for the regular payments, both categories. B2 is
-        the lump-sum payments of the pay less the deductions withheld from
-        them (category CA_LUMP_DED), CSB = CS * B2 / S3 (``f5b``), B1
+        B2 is the lump-sum payments of the pay less the deductions withheld
+        from them (category CA_LUMP_DED), CSB = CS * B2 / S3 (``f5b``), B1
         and CSB1 the year-to-date totals of rules CA_NPP and CA_F5B. When
-        the annual salary and the lump-sum payments of the year
-        total at most the basic personal amount, A is
-        ``l10n_ca.qc.lump_sum_flat_rate`` times B2.
+        the annual salary and the lump-sum payments of the year total at
+        most the basic personal amount, A is
+        ``l10n_ca.qc.lump_sum_flat_rate`` times B2. Otherwise the method of
+        the company applies: ``_l10n_ca_qc_lump_sum_method_1``, or the
+        second method, I = P * (G - F - H - CSA) + B1 + B2 - CSB1 - CSB - J
+        - J1 and A = T * (B2 - CSB), T being the rate of the bracket of I and
+        F the same as for the regular payments.
         """
         param = vals["company"]._l10n_ca_param
         date = vals["date"]
@@ -550,12 +579,145 @@ class HrPayslip(models.Model):
         )
         if periods * salary + previous + payment <= param("l10n_ca.qc.bpa", date):
             tax = param("l10n_ca.qc.lump_sum_flat_rate", date) * payment
+        elif vals["company"].l10n_ca_qc_lump_sum_method == "1":
+            income, tax = self._l10n_ca_qc_lump_sum_method_1(
+                vals, payment - csb, previous - csb_previous
+            )
         else:
             brackets = param("l10n_ca.qc.brackets", date)
             tax = marginal_rate(income, brackets) * max(0.0, payment - csb)
         tax = _round(tax)
         vals.update({"qc_lump_sum_income": income, "qc_lump_sum_tax": tax})
         return tax
+
+    def _l10n_ca_qc_lump_sum_method_1(self, vals, payment, previous):
+        """Return (I1 + B1 + B2 - CSB1 - CSB, A1) of TP-1015.F 2.1.2 method 1.
+
+        ``payment`` is B2 - CSB and ``previous`` B1 - CSB1.
+        I1 = (G1 - F1 - H1 - CSA1) + PR * (G - F - H2 - CSA) - J - J1, the
+        year-to-date amounts coming from ``_l10n_ca_qc_regular_ytd`` and PR
+        being the pays left in the year, this one included;
+        H2 = min(0.06 * (B1 + B2 + G1 + D), (maximum - H1) / PR), rounded
+        to the cent, D the regular salary of the pay. Y1 is the annual tax
+        (``_l10n_ca_qc_annual_tax``) of I1 + B1 - CSB1, Y2 the one of
+        I1 + B1 + B2 - CSB1 - CSB, and A1 = Y2 - Y1: a payment that crosses
+        a bracket is taxed at both rates.
+        """
+        param = vals["company"]._l10n_ca_param
+        date = vals["date"]
+        salary = vals["gross"] - vals["nonperiodic"]
+        ytd = self._l10n_ca_qc_regular_ytd(vals)
+        remaining = max(vals["periods"] - ytd["paid"], 1)
+        worker_deduction = 0.0
+        if salary > 0:
+            worker_deduction = _round(
+                max(
+                    0.0,
+                    min(
+                        param("l10n_ca.qc.worker_deduction_rate", date)
+                        * (
+                            vals["ytd"]["nonperiodic"]
+                            + vals["nonperiodic_net"]
+                            + ytd["salary"]
+                            + salary
+                        ),
+                        (
+                            param("l10n_ca.qc.worker_deduction_max", date)
+                            - ytd["worker_deduction"]
+                        )
+                        / remaining,
+                    ),
+                )
+            )
+        income = max(
+            0.0,
+            ytd["salary"]
+            - ytd["tax_deductions"]
+            - ytd["worker_deduction"]
+            - ytd["additional_qpp"]
+            + remaining
+            * (
+                salary
+                - vals["qc_tax_deduction_total"]
+                - worker_deduction
+                - vals["qc_additional_qpp"]
+            )
+            - vals["qc_deductions"]
+            - vals["qc_authorized_deductions"],
+        )
+        without = self._l10n_ca_qc_annual_tax(vals, income + previous)
+        with_payment = self._l10n_ca_qc_annual_tax(vals, income + previous + payment)
+        vals.update(
+            {
+                "qc_lump_sum_remaining_pays": remaining,
+                "qc_lump_sum_worker_deduction": worker_deduction,
+            }
+        )
+        return income + previous + payment, max(0.0, with_payment - without)
+
+    def _l10n_ca_qc_regular_ytd(self, vals):
+        """Return G1, F1, H1 and CSA1 of TP-1015.F 2.1.2 method 1.
+
+        Sums the done Quebec payslips of the employee paid this year before
+        this one (``_l10n_ca_qc_year_slips``), refunds negatively:
+        ``salary`` (G1) the gross less the rules of category CA_LUMP;
+        ``tax_deductions`` (F1) the rules of categories CA_TAX_DED and
+        CA_QC_TAXDED; ``worker_deduction`` (H1) the deduction for workers of
+        each pay recomputed from its G and its pay periods;
+        ``additional_qpp`` (CSA1) the share of G in the additional QPP
+        contributions of each QPP pay, CS * (PI - B) / PI rounded to the
+        cent. ``paid`` counts the payslips other than refunds.
+        """
+        result = {
+            "salary": 0.0,
+            "tax_deductions": 0.0,
+            "worker_deduction": 0.0,
+            "additional_qpp": 0.0,
+            "paid": 0,
+        }
+        slips = self._l10n_ca_qc_year_slips(vals["date"]).filtered(
+            lambda s: _is_quebec(s.l10n_ca_province_id)
+        )
+        for slip in slips:
+            sign = -1.0 if slip.credit_note else 1.0
+            if not slip.credit_note:
+                result["paid"] += 1
+            lump = deductions = 0.0
+            totals = defaultdict(float)
+            for line in slip.line_ids:
+                totals[line.code] += line.total
+                codes = _category_codes(line.category_id)
+                if NONPERIODIC_CATEGORY in codes:
+                    lump += line.total
+                if codes & {TAX_DEDUCTION_CATEGORY, FEDERAL_TAX_DEDUCTION_CATEGORY}:
+                    deductions -= line.total
+            salary = totals["GROSS"] - lump
+            pay_date = slip.l10n_ca_pay_date
+            periods = slip.contract_id.l10n_ca_pay_periods or SCHEDULE_PAY_PERIODS.get(
+                slip.contract_id.schedule_pay, 12
+            )
+            worker = self._l10n_ca_qc_worker_deduction(
+                {"company": slip.company_id, "date": pay_date, "periods": periods},
+                salary,
+            )
+            additional_qpp = 0.0
+            pensionable = totals["CA_PE"]
+            if slip.l10n_ca_pension_plan == "qpp" and pensionable > 0:
+                params = slip._l10n_ca_pension_params(slip.company_id, "qpp", pay_date)
+                contributions = (
+                    -totals["CA_CPP"]
+                    * (params["rate"] - params["base_rate"])
+                    / params["rate"]
+                    - totals["CA_CPP2"]
+                )
+                additional_qpp = _round(
+                    contributions * (pensionable - lump) / pensionable
+                )
+            result["salary"] += sign * salary
+            result["tax_deductions"] += sign * deductions
+            result["worker_deduction"] += sign * worker
+            result["additional_qpp"] += sign * additional_qpp
+        return result
 
     # ------------------------------------------------------------------
     # Year-end and remittances

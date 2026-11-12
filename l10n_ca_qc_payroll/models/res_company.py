@@ -69,6 +69,23 @@ class ResCompany(models.Model):
         "previous year. The RL-1 summary recomputes the rate from the "
         "actual total payroll.",
     )
+    l10n_ca_qc_lump_sum_method = fields.Selection(
+        [
+            ("1", "Method 1: income of the year to date"),
+            ("2", "Method 2: annualized pay"),
+        ],
+        string="Quebec Tax Method for Lump Sums",
+        default="2",
+        required=True,
+        help="Method of TP-1015.F section 2.1.2 for the Quebec tax on "
+        "bonuses, retroactive pay and similar lump-sum payments. Method 1 "
+        "taxes the payment at the brackets of the income earned since "
+        "January 1 plus the pays left in the year, and spreads a payment "
+        "that crosses a bracket over both rates; method 2 applies the rate "
+        "of the bracket of the annualized pay to the whole payment. Both "
+        "withhold the flat rate when the annual salary and the lump sums "
+        "total at most the basic personal amount.",
+    )
     l10n_ca_qc_total_payroll_estimate = fields.Monetary(
         string="Previous Year Total Payroll",
         help="Total payroll of the previous year, including the employers "

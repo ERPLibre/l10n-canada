@@ -13,7 +13,13 @@ Payroll > Configuration > Settings > Quebec Payroll:
 - enter the CNESST rate per $100 of the classification decision of the
   year (leave 0 without CNESST coverage);
 - check *Not Subject to the Labour Standards Contribution* only for the
-  exempt employers (federal jurisdiction, charities, etc.).
+  exempt employers (federal jurisdiction, charities, etc.);
+- choose the method of TP-1015.F section 2.1.2 for the Quebec tax on
+  bonuses and retroactive pay (*Lump-Sum Payments*): method 2, the
+  default, applies the rate of the annualized pay to the whole payment;
+  method 1, which Revenu Québec calls the more precise, works from the
+  income earned since January 1 and taxes a payment that crosses a bracket
+  at both rates.
 
 Installing the module adds the Quebec rules to the *Canada - Base*
 structure of every company and, with the `ca_2023` chart, proposes the
@@ -242,7 +248,7 @@ Derived figures:
 
 | Parameter | 2025 | 2026 | What the computation does with it | Source |
 |---|---|---|---|---|
-| `l10n_ca.qc.lump_sum_flat_rate` | 7% | 2025 version | Tax on a bonus, retroactive payment or similar lump sum when P x salary + the lump sums of the year (B1 + B2) total at most `l10n_ca.qc.bpa`. Otherwise the second method applies: A = T x (B2 - CSB), T being the bracket rate of I = P x (G - F - H - CSA) + B1 + B2 - CSB1 - CSB - J - J1. | TP-1015.F-V part 2.1.2, note and second method |
+| `l10n_ca.qc.lump_sum_flat_rate` | 7% | 2025 version | Tax on a bonus, retroactive payment or similar lump sum when P x salary + the lump sums of the year (B1 + B2) total at most `l10n_ca.qc.bpa`. Otherwise the method of the company applies. Method 2: A = T x (B2 - CSB), T being the bracket rate of I = P x (G - F - H - CSA) + B1 + B2 - CSB1 - CSB - J - J1. Method 1: A1 = Y2 - Y1, the annual tax of I1 + B1 + B2 - CSB1 - CSB less that of I1 + B1 - CSB1, with I1 = (G1 - F1 - H1 - CSA1) + PR x (G - F - H2 - CSA) - J - J1. | TP-1015.F-V part 2.1.2, note, methods 1 and 2 |
 
 Derived figures:
 
@@ -251,6 +257,12 @@ Derived figures:
   change of each edition.
 - CSB = CS x B2 / S3, the share of the additional QPP contributions on the
   lump sum, rounded to the cent. CSB1 is the year-to-date total of CSB.
+- Method 1 reads G1, F1, H1 and CSA1 from the done Quebec payslips of the
+  year: G1 the gross less the lump sums, F1 the deductions of both F
+  categories, H1 the deduction for workers of each pay recomputed from its
+  G, CSA1 the share of G in the additional QPP contributions of each pay.
+  PR is P less the payslips of the year already paid, at least 1, and
+  H2 = min(0.06 x (B1 + B2 + G1 + D), (maximum - H1) / PR).
 
 ### Employer contributions
 
@@ -371,6 +383,18 @@ with the basic personal amount as E. The federal tax is computed by
   - A = 0.14 x (5,000 - 47.57) = 693.34.
 
   Test: `test_lump_sum_flat_rate`.
+- **Method 1, a bonus across two brackets**: 4,500 a month, January and
+  February paid, then a bonus of 3,000 in March.
+  - G1 = 9,000, H1 = 241.66, CSA1 = 84.16, PR = 10; in March C = 454.13,
+    CSA = 43.25, CSB = 28.83 and H2 = 120.83.
+  - I1 = 8,674.18 + 10 x 4,335.92 = 52,033.38.
+  - Y1 = 0.14 x 52,033.38 - 2,653.28 = 4,631.39 and Y2 = 0.19 x
+    55,004.55 - 2,717 - 2,653.28 = 5,080.58, so A1 = 449.19.
+  - Method 2 taxes the whole payment at 19%: 0.19 x 2,971.17 = 564.52.
+
+  Tests: `test_lump_sum_method_1_spreads_brackets`,
+  `test_lump_sum_method_1_year_to_date` (with an RPP of 200 and a bonus
+  in February: G1 = 9,000, F1 = 400, H1 = 241.66, CSA1 = 42.08 + 42.61).
 - **Bonus in the RL-1 boxes**: 5,000 + a bonus of 1,000 gives C = 0.063 x
   (6,000 - 291.66) = 359.63 and QPIP 25.80. RL-1 boxes A, G and I are
   6,000. Test: `test_bonus_counts_in_rl1_box_a`.
