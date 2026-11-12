@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the Manitoba payroll.
+     l10n_ca_payroll/tools/sources_page.py writes
+     static/description/sources.html from this file: run it after a
+     change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_123" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">publication</field>
+        <field name="name">T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Steps 4 to 6 (T4, K1P, K2P, T2, LCP); Manitoba tables unchanged from the 122nd edition (January 2026), tables 8.1 and 8.2</field>
+        <field name="url">https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+        <field name="summary">2026 Manitoba brackets and constants KP, BPAMB and LCP. The edition lists Manitoba among the provinces without change on July 1, 2026, and announces no Manitoba change for January 1, 2027.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_122" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">publication</field>
+        <field name="name">T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Chapter 1 (Manitoba), chapter 2 (Manitoba Basic Personal Amount (BPAMB) Formula), step 5, Manitoba (LCP); tables 8.1 and 8.2</field>
+        <field name="url">https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field name="summary">Manitoba rates 10.8%, 12.75% and 17.4% from 47,000 and 100,000, not indexed from 2025; BPAMB of 15,780 up to a net income of 200,000, reduced linearly to 0 at 400,000; labour-sponsored funds credit LCP of 15% of the shares withheld, at most 1,800 a year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_td1mb_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">publication</field>
+        <field name="name">TD1MB 2026 Manitoba Personal Tax Credits Return</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Line 1 (basic personal amount) and the total claim amount</field>
+        <field name="url">https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1mb.html</field>
+        <field name="summary">Manitoba basic personal amount of 15,780 for 2026, reduced for a net income above 200,000 and 0 from 400,000, and the total claim amount TCP entered on the contract.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_finance_personal" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">page</field>
+        <field name="name">Manitoba Personal Income Taxes</field>
+        <field name="publisher">Manitoba Finance</field>
+        <field name="url">https://www.gov.mb.ca/finance/personal/ptaxes.html</field>
+        <field name="summary">Manitoba brackets 10.8% up to 47,000, 12.75% up to 100,000 and 17.4% above; indexation of the bracket thresholds paused from the 2025 tax year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_levy_page" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">page</field>
+        <field name="name">Health and Post Secondary Education Tax Levy</field>
+        <field name="publisher">Manitoba Finance</field>
+        <field name="url">https://www.gov.mb.ca/finance/taxation/taxes/payroll.html</field>
+        <field name="summary">Employers with a total yearly payroll of 2.5 million or less are exempt; between 2.5 and 5.0 million, 4.3% on the amount in excess of 2.5 million (notch provision); over 5.0 million, 2.15% of the total payroll. Associated groups share the exemption on their combined payroll; a part-year employer prorates the exemption and the notch.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_levy_bulletin" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">publication</field>
+        <field name="name">Information Bulletin HE 001, Information for Employers (revised January 2026)</field>
+        <field name="publisher">Manitoba Finance</field>
+        <field name="reference">Table of the recent exemption thresholds and notch ranges; monthly returns</field>
+        <field name="url">https://www.gov.mb.ca/finance/taxation/pubs/bulletins/001he.pdf</field>
+        <field name="summary">Exemption 2,250,000 and notch range up to 4,500,000 in 2025; 2,500,000 and up to 5,000,000 in 2026. Monthly return and payment by the 15th of the following month once the remuneration of the year exceeds the exemption; annual report by March 31 of the following year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_levy_budget_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">publication</field>
+        <field name="name">Information Bulletin 126, Taxation Changes - Budget 2026</field>
+        <field name="publisher">Manitoba Finance</field>
+        <field name="url">https://www.gov.mb.ca/finance/taxation/pubs/bulletins/2026budget.pdf</field>
+        <field name="summary">The tax measures of Budget 2026 include no change to the Health and Post Secondary Education Tax Levy: the 2026 amounts of the Act stand.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_levy_act" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">statute</field>
+        <field name="name">The Health and Post Secondary Education Tax Levy Act, C.C.S.M. c. H24</field>
+        <field name="publisher">Manitoba Laws</field>
+        <field name="reference">Sections 2(3) (associated corporations), 3(3.1.1) (rate), 3(3.12) (exemption), 3(3.14) (notch provision), 3(3.15) (part-year proration)</field>
+        <field name="url">https://web2.gov.mb.ca/laws/statutes/ccsm/h024.php?lang=en</field>
+        <field name="summary">Levy of 2.15% of the remuneration paid in each month; no levy for a total remuneration of the year of 2,500,000 or less; 4.3% of the excess over 2,500,000 for a total of more than 2,500,000 and not more than 5,000,000. Associated corporations compute as a single employer and share the exemption or notch reduction.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_fact_sheet" model="l10n_ca.payroll.source">
+        <field name="sequence">90</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">page</field>
+        <field name="name">Assessable Payroll Fact Sheet</field>
+        <field name="publisher">WCB Manitoba</field>
+        <field name="url">https://www.wcb.mb.ca/assessable-payroll-fact-sheet/</field>
+        <field name="summary">Maximum level of assessable earnings per worker: 167,050 in 2025, 171,500 in 2026. Earnings above the maximum bear no premium; directors, sole proprietors and partners are deducted from the assessable payroll unless they buy personal coverage.</field>
+        <field name="watch_key">wcb_mb_maximum</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_reporting" model="l10n_ca.payroll.source">
+        <field name="sequence">100</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">page</field>
+        <field name="name">Reporting Payroll</field>
+        <field name="publisher">WCB Manitoba</field>
+        <field name="url">https://www.wcb.mb.ca/employers/premiums-and-payroll/reporting-payroll/</field>
+        <field name="summary">Annual payroll report (actual payroll of the previous year and estimate of the current year) before the last day of February; maximum assessable earnings cap of 171,500 per worker for 2026.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_deadlines" model="l10n_ca.payroll.source">
+        <field name="sequence">110</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">page</field>
+        <field name="name">Premium Payment Deadlines</field>
+        <field name="publisher">WCB Manitoba</field>
+        <field name="url">https://www.wcb.mb.ca/employers/premiums-and-payroll/pay-your-premium/premium-payment-deadlines/</field>
+        <field name="summary">Premium paid in one payment (May) or in two, three, four or ten instalments from March to December depending on the annual premium.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_policy_35_05_10" model="l10n_ca.payroll.source">
+        <field name="sequence">120</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">publication</field>
+        <field name="name">Policy 35.05.10 Reporting and Verifying Payroll, administrative guidelines</field>
+        <field name="publisher">WCB Manitoba</field>
+        <field name="url">https://www.wcb.mb.ca/uploads/2025/07/0165.pdf</field>
+        <field name="summary">Assessment accounts are subject to a minimum charge of 100 per calendar year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workers_compensation_act" model="l10n_ca.payroll.source">
+        <field name="sequence">130</field>
+        <field name="jurisdiction">manitoba</field>
+        <field name="kind">statute</field>
+        <field name="name">The Workers Compensation Act, C.C.S.M. c. W200</field>
+        <field name="publisher">Manitoba Laws</field>
+        <field name="reference">Sections 44 and 46(2) (maximum annual earnings)</field>
+        <field name="url">https://web2.gov.mb.ca/laws/statutes/ccsm/w200.php?lang=en</field>
+        <field name="summary">Maximum annual earnings of 150,000 for 2022, indexed for each later year under section 44.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>

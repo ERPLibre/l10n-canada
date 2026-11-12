@@ -1,0 +1,299 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_mb_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-12 15:29+0000\n"
+"PO-Revision-Date: 2026-11-12 15:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_t4127_123
+msgid ""
+"2026 Manitoba brackets and constants KP, BPAMB and LCP. The edition lists "
+"Manitoba among the provinces without change on July 1, 2026, and announces "
+"no Manitoba change for January 1, 2027."
+msgstr ""
+"Tranches et constantes KP du Manitoba pour 2026, BPAMB et LCP. L'édition "
+"range le Manitoba parmi les provinces sans changement au 1er juillet 2026 et"
+" n'annonce aucun changement pour le Manitoba au 1er janvier 2027."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_wcb_reporting
+msgid ""
+"Annual payroll report (actual payroll of the previous year and estimate of "
+"the current year) before the last day of February; maximum assessable "
+"earnings cap of 171,500 per worker for 2026."
+msgstr ""
+"Déclaration annuelle de la masse salariale (masse salariale réelle de "
+"l'année précédente et estimation de l'année en cours) avant le dernier jour "
+"de février ; plafond des gains cotisables de 171 500 par travailleur pour "
+"2026."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_wcb_fact_sheet
+msgid "Assessable Payroll Fact Sheet"
+msgstr "Fiche d'information sur la masse salariale cotisable"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_wcb_policy_35_05_10
+msgid ""
+"Assessment accounts are subject to a minimum charge of 100 per calendar "
+"year."
+msgstr ""
+"Les comptes de cotisation sont assujettis à des frais minimaux de 100 par "
+"année civile."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_t4127_122
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_t4127_123
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_td1mb_2026
+msgid "Canada Revenue Agency"
+msgstr "Agence du revenu du Canada"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_levy_page
+msgid ""
+"Employers with a total yearly payroll of 2.5 million or less are exempt; "
+"between 2.5 and 5.0 million, 4.3% on the amount in excess of 2.5 million "
+"(notch provision); over 5.0 million, 2.15% of the total payroll. Associated "
+"groups share the exemption on their combined payroll; a part-year employer "
+"prorates the exemption and the notch."
+msgstr ""
+"Les employeurs dont la masse salariale annuelle totale est de 2,5 millions "
+"ou moins sont exonérés ; entre 2,5 et 5,0 millions, 4,3 % de l'excédent sur "
+"2,5 millions (disposition de rajustement) ; au-delà de 5,0 millions, 2,15 % "
+"de la masse salariale totale. Les groupes associés partagent l'exemption sur"
+" leur masse salariale combinée ; un employeur présent une partie de l'année "
+"calcule l'exemption et le rajustement au prorata."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_levy_bulletin
+msgid ""
+"Exemption 2,250,000 and notch range up to 4,500,000 in 2025; 2,500,000 and "
+"up to 5,000,000 in 2026. Monthly return and payment by the 15th of the "
+"following month once the remuneration of the year exceeds the exemption; "
+"annual report by March 31 of the following year."
+msgstr ""
+"Exemption de 2 250 000 et fourchette de rajustement jusqu'à 4 500 000 en "
+"2025 ; 2 500 000 et jusqu'à 5 000 000 en 2026. Déclaration et paiement "
+"mensuels au plus tard le 15 du mois suivant dès que la rémunération de "
+"l'année dépasse l'exemption ; rapport annuel au plus tard le 31 mars de "
+"l'année suivante."
+
+#. module: l10n_ca_mb_payroll
+#. odoo-python
+#: code:addons/l10n_ca_mb_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_mb_payroll.rule_mb_employer_tax
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_levy_page
+msgid "Health and Post Secondary Education Tax Levy"
+msgstr ""
+"Impôt destiné aux services de santé et à l'enseignement postsecondaire"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_levy_budget_2026
+msgid "Information Bulletin 126, Taxation Changes - Budget 2026"
+msgstr "Bulletin d'information 126, Modifications fiscales - Budget 2026"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_levy_bulletin
+msgid ""
+"Information Bulletin HE 001, Information for Employers (revised January "
+"2026)"
+msgstr ""
+"Bulletin d'information HE 001, Renseignements à l'intention des employeurs "
+"(révisé en janvier 2026)"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_levy_act
+msgid ""
+"Levy of 2.15% of the remuneration paid in each month; no levy for a total "
+"remuneration of the year of 2,500,000 or less; 4.3% of the excess over "
+"2,500,000 for a total of more than 2,500,000 and not more than 5,000,000. "
+"Associated corporations compute as a single employer and share the exemption"
+" or notch reduction."
+msgstr ""
+"Impôt de 2,15 % de la rémunération versée chaque mois ; aucun impôt pour une"
+" rémunération totale de l'année de 2 500 000 ou moins ; 4,3 % de l'excédent "
+"sur 2 500 000 pour un total supérieur à 2 500 000 mais d'au plus 5 000 000. "
+"Les corporations associées calculent comme un employeur unique et partagent "
+"l'exemption ou le rajustement."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_finance_personal
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_levy_budget_2026
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_levy_bulletin
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_levy_page
+msgid "Manitoba Finance"
+msgstr "Finances Manitoba"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_levy_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_workers_compensation_act
+msgid "Manitoba Laws"
+msgstr "Lois du Manitoba"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_finance_personal
+msgid "Manitoba Personal Income Taxes"
+msgstr "Impôt sur le revenu des particuliers du Manitoba"
+
+#. module: l10n_ca_mb_payroll
+#: model:hr.salary.rule,name:l10n_ca_mb_payroll.rule_mb_salary
+msgid "Manitoba Remuneration Subject to the Levy"
+msgstr "Rémunération au Manitoba assujettie à l'impôt"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_td1mb_2026
+msgid ""
+"Manitoba basic personal amount of 15,780 for 2026, reduced for a net income "
+"above 200,000 and 0 from 400,000, and the total claim amount TCP entered on "
+"the contract."
+msgstr ""
+"Montant personnel de base du Manitoba de 15 780 pour 2026, réduit pour un "
+"revenu net supérieur à 200 000 et nul à partir de 400 000, et le montant "
+"total de la demande TCP saisi au contrat."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_finance_personal
+msgid ""
+"Manitoba brackets 10.8% up to 47,000, 12.75% up to 100,000 and 17.4% above; "
+"indexation of the bracket thresholds paused from the 2025 tax year."
+msgstr ""
+"Tranches du Manitoba : 10,8 % jusqu'à 47 000, 12,75 % jusqu'à 100 000 et "
+"17,4 % au-delà ; indexation des seuils des tranches suspendue à partir de "
+"l'année d'imposition 2025."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_t4127_122
+msgid ""
+"Manitoba rates 10.8%, 12.75% and 17.4% from 47,000 and 100,000, not indexed "
+"from 2025; BPAMB of 15,780 up to a net income of 200,000, reduced linearly "
+"to 0 at 400,000; labour-sponsored funds credit LCP of 15% of the shares "
+"withheld, at most 1,800 a year."
+msgstr ""
+"Taux du Manitoba de 10,8 %, 12,75 % et 17,4 % à partir de 47 000 et 100 000,"
+" non indexés depuis 2025 ; BPAMB de 15 780 jusqu'à un revenu net de 200 000,"
+" réduit linéairement jusqu'à 0 à 400 000 ; crédit LCP pour fonds de "
+"travailleurs de 15 % des actions retenues, au plus 1 800 par année."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_workers_compensation_act
+msgid ""
+"Maximum annual earnings of 150,000 for 2022, indexed for each later year "
+"under section 44."
+msgstr ""
+"Gains annuels maximums de 150 000 pour 2022, indexés pour chaque année "
+"suivante en vertu de l'article 44."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_wcb_fact_sheet
+msgid ""
+"Maximum level of assessable earnings per worker: 167,050 in 2025, 171,500 in"
+" 2026. Earnings above the maximum bear no premium; directors, sole "
+"proprietors and partners are deducted from the assessable payroll unless "
+"they buy personal coverage."
+msgstr ""
+"Gains cotisables maximums par travailleur : 167 050 en 2025, 171 500 en "
+"2026. Les gains au-delà du maximum ne portent aucune prime ; les "
+"administrateurs, propriétaires uniques et associés sont retranchés de la "
+"masse salariale cotisable, sauf s'ils souscrivent une protection "
+"personnelle."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_wcb_policy_35_05_10
+msgid ""
+"Policy 35.05.10 Reporting and Verifying Payroll, administrative guidelines"
+msgstr ""
+"Politique 35.05.10 Déclaration et vérification de la masse salariale, lignes"
+" directrices administratives"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_wcb_deadlines
+msgid "Premium Payment Deadlines"
+msgstr "Échéances de paiement des primes"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_wcb_deadlines
+msgid ""
+"Premium paid in one payment (May) or in two, three, four or ten instalments "
+"from March to December depending on the annual premium."
+msgstr ""
+"Prime payée en un versement (mai) ou en deux, trois, quatre ou dix "
+"versements de mars à décembre selon la prime annuelle."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_wcb_reporting
+msgid "Reporting Payroll"
+msgstr "Déclaration de la masse salariale"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_t4127_122
+msgid "T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 122e édition (1er "
+"janvier 2026)"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_t4127_123
+msgid "T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 123e édition (1er "
+"juillet 2026)"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_td1mb_2026
+msgid "TD1MB 2026 Manitoba Personal Tax Credits Return"
+msgstr "TD1MB 2026 Déclaration des crédits d'impôt personnels du Manitoba"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_levy_act
+msgid "The Health and Post Secondary Education Tax Levy Act, C.C.S.M. c. H24"
+msgstr ""
+"Loi sur l'impôt destiné aux services de santé et à l'enseignement "
+"postsecondaire, C.P.L.M. c. H24"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_mb_payroll.source_workers_compensation_act
+msgid "The Workers Compensation Act, C.C.S.M. c. W200"
+msgstr "Loi sur les accidents du travail, C.P.L.M. c. W200"
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_mb_payroll.source_levy_budget_2026
+msgid ""
+"The tax measures of Budget 2026 include no change to the Health and Post "
+"Secondary Education Tax Levy: the 2026 amounts of the Act stand."
+msgstr ""
+"Les mesures fiscales du budget 2026 ne modifient pas l'impôt destiné aux "
+"services de santé et à l'enseignement postsecondaire : les montants de 2026 "
+"de la Loi demeurent."
+
+#. module: l10n_ca_mb_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_wcb_deadlines
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_wcb_fact_sheet
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_wcb_policy_35_05_10
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_mb_payroll.source_wcb_reporting
+msgid "WCB Manitoba"
+msgstr "Commission des accidents du travail du Manitoba"
+
+#. module: l10n_ca_mb_payroll
+#: model:hr.salary.rule,name:l10n_ca_mb_payroll.rule_mb_wcb_insurable
+msgid "WCB Manitoba Assessable Earnings"
+msgstr ""
+"Gains cotisables de la Commission des accidents du travail du Manitoba"
+
+#. module: l10n_ca_mb_payroll
+#. odoo-python
+#: code:addons/l10n_ca_mb_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_mb_payroll.rule_mb_wcb
+msgid "WCB Manitoba Premium"
+msgstr "Prime de la Commission des accidents du travail du Manitoba"

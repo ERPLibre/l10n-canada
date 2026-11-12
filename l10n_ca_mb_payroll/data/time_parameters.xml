@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Manitoba income tax, T4127 option 1 -->
+    <record id="param_mb_brackets" model="base.time.parameter">
+        <field name="name">Manitoba income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.mb.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Manitoba rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P): 10.8% up to 47,000, 12.75% from 47,000, 17.4% from 100,000. The constant KP is derived from the table and rounded to the dollar like the federal K: 2026 0, 917, 5,567. The rate of the first bracket is the lowest Manitoba rate of K1P and K2P (0.108). Manitoba does not index its bracket thresholds from 2025; Manitoba did not change on July 1, 2026. T4127 122nd edition (January 2026), chapter 1 (Manitoba) and table 8.1; 123rd edition (July 2026), table 8.1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.gov.mb.ca/finance/personal/ptaxes.html</field>
+    </record>
+    <record id="param_mb_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_mb_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[[0, 0.108], [47000, 0.1275], [100000, 0.174]]</field>
+    </record>
+    <record id="param_mb_bpa" model="base.time.parameter">
+        <field name="name">Manitoba basic personal amount (maximum)</field>
+        <field name="code">l10n_ca.mb.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum BPAMB, the Manitoba basic personal amount of an annual income NI up to l10n_ca.mb.bpa_phaseout_start; TCP of an employee who files no TD1MB, K1P = lowest Manitoba rate x TCP. Between the start and the end of the phase-out, BPAMB = maximum - (NI - start) x (maximum / (end - start)), rounded to the cent; 0 from the end. 15,780 for 2026: Manitoba does not index the basic personal amount from 2025. T4127 122nd edition (January 2026), chapter 1 (Manitoba), chapter 2 (BPAMB formula) and table 8.2; 123rd edition (July 2026), table 8.2; TD1MB 2026. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1mb.html</field>
+    </record>
+    <record id="param_mb_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_mb_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">15780</field>
+    </record>
+    <record id="param_mb_bpa_phaseout_start" model="base.time.parameter">
+        <field
+            name="name"
+        >Manitoba basic personal amount phase-out start</field>
+        <field name="code">l10n_ca.mb.bpa_phaseout_start</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Annual income NI (A of the pay) up to which BPAMB is the maximum l10n_ca.mb.bpa; above it, BPAMB decreases linearly down to 0 at l10n_ca.mb.bpa_phaseout_end. 200,000 for 2026. T4127 122nd edition (January 2026), chapter 2, Manitoba Basic Personal Amount (BPAMB) Formula. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record
+        id="param_mb_bpa_phaseout_start_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_mb_bpa_phaseout_start" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">200000</field>
+    </record>
+    <record id="param_mb_bpa_phaseout_end" model="base.time.parameter">
+        <field name="name">Manitoba basic personal amount phase-out end</field>
+        <field name="code">l10n_ca.mb.bpa_phaseout_end</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Annual income NI (A of the pay) from which BPAMB is 0. 400,000 for 2026. T4127 122nd edition (January 2026), chapter 2, Manitoba Basic Personal Amount (BPAMB) Formula. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record
+        id="param_mb_bpa_phaseout_end_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_mb_bpa_phaseout_end" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">400000</field>
+    </record>
+    <record id="param_mb_lcp_rate" model="base.time.parameter">
+        <field name="name">Manitoba labour-sponsored funds tax credit rate</field>
+        <field name="code">l10n_ca.mb.lcp_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >LCP = the lesser of the maximum and this rate x the shares of a prescribed labour-sponsored venture capital corporation withheld on the pay; T2 is lowered by P x LCP, at most the maximum for the year. 15% for 2026. T4127 122nd edition (January 2026), step 5, Manitoba, and table 8.2. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_mb_lcp_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_mb_lcp_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.15</field>
+    </record>
+    <record id="param_mb_lcp_max" model="base.time.parameter">
+        <field name="name">Manitoba labour-sponsored funds tax credit maximum</field>
+        <field name="code">l10n_ca.mb.lcp_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum LCP credit of a pay and of the whole year: 1,800 for 2026. T4127 122nd edition (January 2026), step 5, Manitoba, and table 8.2. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_mb_lcp_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_mb_lcp_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1800</field>
+    </record>
+
+    <!-- Health and Post Secondary Education Tax Levy -->
+    <record id="param_mb_levy_rates" model="base.time.parameter">
+        <field
+            name="name"
+        >Manitoba Health and Post Secondary Education Tax Levy rates</field>
+        <field name="code">l10n_ca.mb.employer_tax.rates</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Levy rate by annual total Manitoba remuneration R of the employer, as [[threshold, rate], ...]: the rate of the last threshold R exceeds applies to the remuneration above the exemption left. With l10n_ca.mb.employer_tax.exemption E = 2,500,000 and l10n_ca.mb.employer_tax.exemption_threshold 5,000,000, the payslips give the levy of the Act: 0 for R at most E; 4.3% of R - E (notch provision) for R from E to 5,000,000, R of exactly 5,000,000 included; 2.15% of the whole R above 5,000,000, the exemption then being lost. Both branches give 107,500 at 5,000,000. An associated group computes on its combined remuneration. The Act states these amounts without end date. The Health and Post Secondary Education Tax Levy Act, C.C.S.M. c. H24, s. 3(3.1.1), 3(3.12), 3(3.14) and 2(3); Bulletin HE 001 (revised January 2026). Sources: https://web2.gov.mb.ca/laws/statutes/ccsm/h024.php?lang=en ; https://www.gov.mb.ca/finance/taxation/taxes/payroll.html ; https://www.gov.mb.ca/finance/taxation/pubs/bulletins/001he.pdf</field>
+    </record>
+    <record id="param_mb_levy_rates_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_mb_levy_rates" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[[0, 0.043], [5000000, 0.0215]]</field>
+    </record>
+    <record id="param_mb_levy_exemption" model="base.time.parameter">
+        <field
+            name="name"
+        >Manitoba Health and Post Secondary Education Tax Levy exemption</field>
+        <field name="code">l10n_ca.mb.employer_tax.exemption</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Annual exemption E: no levy for an employer whose total Manitoba remuneration of the year is at most E; from E to l10n_ca.mb.employer_tax.exemption_threshold, the levy is 4.3% of the remuneration above E. An associated group (associated corporations, corporate partnerships) shares one exemption on its combined remuneration, each member taking its allocated share. Prorated by days for an employer without a permanent establishment in Manitoba for the whole year. 2,250,000 in 2025; 2,500,000 from 2026, without end date in the Act; Budget 2026 announced no change. Act C.C.S.M. c. H24, s. 3(3.12), 3(3.15) and 2(3); Bulletin HE 001 (revised January 2026), table of the recent exemption thresholds and notch ranges. Sources: https://web2.gov.mb.ca/laws/statutes/ccsm/h024.php?lang=en ; https://www.gov.mb.ca/finance/taxation/taxes/payroll.html ; https://www.gov.mb.ca/finance/taxation/pubs/bulletins/001he.pdf ; https://www.gov.mb.ca/finance/taxation/pubs/bulletins/2026budget.pdf</field>
+    </record>
+    <record
+        id="param_mb_levy_exemption_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_mb_levy_exemption" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">2500000</field>
+    </record>
+    <record id="param_mb_levy_exemption_threshold" model="base.time.parameter">
+        <field
+            name="name"
+        >Manitoba Health and Post Secondary Education Tax Levy notch upper threshold</field>
+        <field name="code">l10n_ca.mb.employer_tax.exemption_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Upper end of the notch range, twice the exemption: an employer, or an associated group, whose total Manitoba remuneration for the year exceeds this amount has no exemption and pays 2.15% of its whole remuneration. 4,500,000 in 2025; 5,000,000 from 2026, without end date in the Act. Act C.C.S.M. c. H24, s. 3(3.14); Bulletin HE 001 (revised January 2026). Sources: https://web2.gov.mb.ca/laws/statutes/ccsm/h024.php?lang=en ; https://www.gov.mb.ca/finance/taxation/taxes/payroll.html ; https://www.gov.mb.ca/finance/taxation/pubs/bulletins/001he.pdf</field>
+    </record>
+    <record
+        id="param_mb_levy_exemption_threshold_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_mb_levy_exemption_threshold" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">5000000</field>
+    </record>
+
+    <!-- WCB Manitoba -->
+    <record id="param_mb_wcb_max_insurable" model="base.time.parameter">
+        <field name="name">WCB Manitoba maximum assessable earnings</field>
+        <field name="code">l10n_ca.mb.wcb.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Yearly maximum assessable earnings per worker: the assessable earnings of the pay are min(gross, maximum - assessable earnings of the year so far). 167,050 in 2025; 171,500 in 2026; 2027 not published. Maximum annual earnings of The Workers Compensation Act, C.C.S.M. c. W200, s. 46(2) (150,000 for 2022, then indexed under s. 44). Sources: https://www.wcb.mb.ca/assessable-payroll-fact-sheet/ ; https://www.wcb.mb.ca/employers/premiums-and-payroll/reporting-payroll/ ; https://web2.gov.mb.ca/laws/statutes/ccsm/w200.php?lang=en</field>
+    </record>
+    <record id="param_mb_wcb_max_insurable_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_mb_wcb_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">171500</field>
+    </record>
+</odoo>
