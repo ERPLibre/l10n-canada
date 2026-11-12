@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="l10n_ca_payroll_source_view_list_watch" model="ir.ui.view">
+        <field name="name">l10n_ca.payroll.source.list.watch</field>
+        <field name="model">l10n_ca.payroll.source</field>
+        <field name="inherit_id" ref="l10n_ca_payroll_source_view_list" />
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+                <field
+                    name="watch_state"
+                    widget="badge"
+                    decoration-success="watch_state == 'ok'"
+                    decoration-info="watch_state == 'pending'"
+                    decoration-warning="watch_state in ('published', 'differs')"
+                    decoration-danger="watch_state in ('error', 'changed')"
+                    optional="show"
+                />
+                <field name="watch_date" optional="hide" />
+            </field>
+        </field>
+    </record>
+    <record id="l10n_ca_payroll_source_view_form_watch" model="ir.ui.view">
+        <field name="name">l10n_ca.payroll.source.form.watch</field>
+        <field name="model">l10n_ca.payroll.source</field>
+        <field name="inherit_id" ref="l10n_ca_payroll_source_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button
+                    name="action_l10n_ca_watch"
+                    type="object"
+                    string="Check Now"
+                    invisible="not watch_key"
+                    groups="payroll.group_payroll_manager"
+                />
+                <button
+                    name="action_l10n_ca_watch_acknowledge"
+                    type="object"
+                    string="Mark Next Year Reviewed"
+                    invisible="watch_state != 'published'"
+                    groups="payroll.group_payroll_manager"
+                />
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <group string="Publication watch" invisible="not watch_key">
+                    <group>
+                        <field name="watch_key" />
+                        <field name="watch_state" />
+                    </group>
+                    <group>
+                        <field name="watch_date" />
+                        <field name="watch_acknowledged_year" />
+                    </group>
+                    <field name="watch_message" nolabel="1" colspan="2" />
+                </group>
+            </xpath>
+            <xpath expr="//sheet" position="after">
+                <chatter />
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_ca_payroll_source_view_search_watch" model="ir.ui.view">
+        <field name="name">l10n_ca.payroll.source.search.watch</field>
+        <field name="model">l10n_ca.payroll.source</field>
+        <field name="inherit_id" ref="l10n_ca_payroll_source_view_search" />
+        <field name="arch" type="xml">
+            <filter name="to_verify" position="after">
+                <filter
+                    name="watch_attention"
+                    string="Publication to Review"
+                    domain="[('watch_state', 'in', ('published', 'differs', 'error', 'changed'))]"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>

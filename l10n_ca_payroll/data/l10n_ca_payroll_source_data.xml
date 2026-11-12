@@ -22,6 +22,7 @@
             name="summary"
         >Federal brackets and credits of 2026, CPP and EI figures of 2025 and 2026, the formulas of the federal tax, of the bonus tax and of the contributions, the bonus flat rates and the CPP age limits.</field>
         <field name="verified_date">2026-11-12</field>
+        <field name="watch_key">cra_t4127</field>
     </record>
     <record id="source_t4127_jan_2025" model="l10n_ca.payroll.source">
         <field name="sequence">20</field>
@@ -71,6 +72,7 @@
             name="summary"
         >YMPE, basic exemption and CPP rate of each year, including the 2027 YMPE (76,700) and rate (5.75%).</field>
         <field name="verified_date">2026-11-12</field>
+        <field name="watch_key">cra_cpp</field>
     </record>
     <record id="source_cra_cpp2_rates" model="l10n_ca.payroll.source">
         <field name="sequence">50</field>
@@ -88,6 +90,25 @@
             name="summary"
         >YAMPE and CPP2 rate of each year, including the 2027 YAMPE (87,400).</field>
         <field name="verified_date">2026-11-12</field>
+        <field name="watch_key">cra_cpp2</field>
+    </record>
+    <record id="source_cra_indexation" model="l10n_ca.payroll.source">
+        <field name="sequence">35</field>
+        <field name="jurisdiction">federal</field>
+        <field name="kind">page</field>
+        <field
+            name="name"
+        >Indexation adjustment for personal income tax and benefit amounts</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Tax bracket thresholds; non-refundable tax credits</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/adjustment-personal-income-tax-benefit-amounts.html</field>
+        <field
+            name="summary"
+        >Indexed federal amounts of each year: bracket thresholds, basic personal amounts, Canada employment amount. The CRA adds the next year in the fall.</field>
+        <field name="verified_date">2026-11-12</field>
+        <field name="watch_key">cra_indexation</field>
     </record>
     <record id="source_cra_ei_rates" model="l10n_ca.payroll.source">
         <field name="sequence">60</field>
@@ -103,6 +124,7 @@
             name="summary"
         >EI maximum insurable earnings and employee rates, outside Quebec and in Quebec.</field>
         <field name="verified_date">2026-11-12</field>
+        <field name="watch_key">cra_ei</field>
     </record>
     <record id="source_esdc_ei_2027" model="l10n_ca.payroll.source">
         <field name="sequence">70</field>

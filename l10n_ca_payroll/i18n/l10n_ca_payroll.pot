@@ -16,6 +16,59 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_source_watch.py:0
+msgid "%(code)s = %(value)s: matches."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_source_watch.py:0
+msgid "%(code)s: %(value)s published for %(year)s, no version yet."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_source_watch.py:0
+msgid ""
+"%(code)s: the page gives %(value)s, the %(year)s version holds %(stored)s."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_source_watch.py:0
+msgid "%(year)s: %(url)s did not answer (%(error)s)."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_source_watch.py:0
+msgid ""
+"%(year)s: %(url)s no longer has the expected content (%(error)s): the page "
+"moved or changed, check it and the watcher."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_source_watch.py:0
+msgid "%(year)s: not yet published."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_source_watch.py:0
+msgid ""
+"%(year)s: published at %(url)s; update the parameters it sets, then mark the"
+" year as reviewed."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_source_watch.py:0
+msgid "%(year)s: published, in force."
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_t4_dental_code__1
 msgid "1 - Not eligible to any dental care coverage"
 msgstr ""
@@ -59,6 +112,31 @@ msgid ""
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_f5b
 msgid "Additional CPP/QPP Contributions on Non-Periodic Payments"
 msgstr ""
@@ -92,6 +170,11 @@ msgstr ""
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_82
 msgid "Amounts paid on the remittances of the year."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_attachment_count
+msgid "Attachment Count"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -356,8 +439,23 @@ msgid "Canadian Payroll Warnings"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.actions.server,name:l10n_ca_payroll.ir_cron_l10n_ca_payroll_source_watch_ir_actions_server
+msgid "Canadian Payroll: Check the Official Sources"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.ui.menu,name:l10n_ca_payroll.menu_l10n_ca_payroll_time_parameter
 msgid "Canadian Time Parameters"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_form_watch
+msgid "Check Now"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_message
+msgid "Check Result"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -492,6 +590,11 @@ msgstr ""
 #: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_income_tax_act
 #: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_income_tax_regulations
 msgid "Department of Justice Canada"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__watch_state__differs
+msgid "Differs from the parameters"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -761,6 +864,21 @@ msgid ""
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_gross
 #: model:hr.salary.rule.category,name:l10n_ca_payroll.categ_gross
 msgid "Gross"
@@ -772,10 +890,35 @@ msgid "Gross Payroll"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__id
 msgid "ID"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__message_has_error
+msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -791,6 +934,23 @@ msgstr ""
 #. module: l10n_ca_payroll
 #: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_income_tax_regulations
 msgid "Income Tax Regulations, C.R.C., c. 945"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_cra_indexation
+msgid "Indexation adjustment for personal income tax and benefit amounts"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_cra_indexation
+msgid ""
+"Indexed federal amounts of each year: bracket thresholds, basic personal "
+"amounts, Canada employment amount. The CRA adds the next year in the fall."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_is_follower
+msgid "Is Follower"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -812,6 +972,11 @@ msgid "Kind"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_date
+msgid "Last Check"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__write_uid
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__write_uid
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__write_uid
@@ -823,6 +988,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__write_date
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__write_date
 msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_acknowledged_year
+msgid ""
+"Last year whose publication a person has reviewed. A watcher that only "
+"detects a publication, without reading figures, stays up to date for that "
+"year."
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -901,6 +1074,11 @@ msgid "Lines of the T4 Summary and its filing deadline."
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_form_watch
+msgid "Mark Next Year Reviewed"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_td1_federal_bpa
 msgid ""
 "Maximum federal basic personal amount in force today. The payslip reduces it"
@@ -915,12 +1093,27 @@ msgid ""
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_res_company__l10n_ca_ei_employer_multiplier
 #: model:ir.model.fields,help:l10n_ca_payroll.field_res_config_settings__l10n_ca_ei_employer_multiplier
 msgid ""
 "Multiplier of the employee EI premium assigned to the employer under the EI "
 "Premium Reduction Program. Leave 0 to use the legal multiplier of the time "
 "parameter l10n_ca.ei.employer_multiplier."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__my_activity_date_deadline
+msgid "My Activity Deadline"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -937,6 +1130,31 @@ msgstr ""
 #. module: l10n_ca_payroll
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_net
 msgid "Net Salary"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__watch_state__pending
+msgid "Next year not yet published"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -983,8 +1201,34 @@ msgid "Not Paid"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model,name:l10n_ca_payroll.model_l10n_ca_payroll_source
 msgid "Official Source of the Canadian Payroll"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_source_watch.py:0
+msgid "Official payroll source: %(state)s"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -1016,6 +1260,16 @@ msgstr ""
 msgid ""
 "P of the CRA payroll formulas. Computed from the scheduled pay; set 27 or 53"
 " for a year with an extra bi-weekly or weekly pay."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__watch_state__changed
+msgid "Page changed"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__watch_state__error
+msgid "Page unreachable"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -1129,6 +1383,21 @@ msgid "Publication"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_search_watch
+msgid "Publication to Review"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_form_watch
+msgid "Publication watch"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__watch_state__published
+msgid "Published, not in the parameters"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__publisher
 msgid "Publisher"
 msgstr ""
@@ -1196,6 +1465,13 @@ msgid ""
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_key
+msgid ""
+"Reader of the official page that tells when the figures of a new year are "
+"published."
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_res_company__l10n_ca_ei_employer_multiplier
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_res_config_settings__l10n_ca_ei_employer_multiplier
 msgid "Reduced EI Employer Multiplier"
@@ -1237,8 +1513,18 @@ msgid "Remitter Type"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.hr_contract_view_form
 msgid "Retirement Savings Withheld"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_acknowledged_year
+msgid "Reviewed Year"
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -1300,6 +1586,15 @@ msgstr ""
 #. module: l10n_ca_payroll
 #: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_cpp_2027_rate_cut
 msgid "Spring Economic Update 2026 Implementation Act, S.C. 2026, c. 22"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
 msgstr ""
 
 #. module: l10n_ca_payroll
@@ -1434,6 +1729,11 @@ msgid "Total claim amount from the TD1"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__url
 msgid "URL"
 msgstr ""
@@ -1463,6 +1763,11 @@ msgid ""
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__watch_state__ok
+msgid "Up to date"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__state
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_search
 msgid "Verification"
@@ -1484,8 +1789,28 @@ msgid "Verified Date"
 msgstr ""
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_state
+msgid "Watch State"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_key
+msgid "Watcher"
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__kind__page
 msgid "Web Page"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__website_message_ids
+msgid "Website communication history"
 msgstr ""
 
 #. module: l10n_ca_payroll

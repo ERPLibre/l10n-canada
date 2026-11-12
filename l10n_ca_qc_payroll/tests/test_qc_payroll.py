@@ -18,6 +18,8 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
+from freezegun import freeze_time
+
 from odoo.exceptions import UserError
 from odoo.tests import tagged
 
@@ -360,6 +362,44 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
             "static/description/sources.html is out of date: run "
             "l10n_ca_payroll/tools/sources_page.py",
         )
+
+    @freeze_time("2026-11-15")
+    def test_watchers_of_the_quebec_pages(self):
+        Source = type(self.env["l10n_ca.payroll.source"])
+        pages = {
+            "cnesst": "<table><caption>Maximum du salaire assurable par année de "
+            "tarification</caption><tr><th>Année</th></tr><tr><td>2027</td>"
+            "<td>106 000 $</td><td>2 032,99 $</td></tr><tr><td>2026</td>"
+            "<td>103 000 $</td><td>1 975,45 $</td></tr></table>",
+            "retraitequebec": "<table><caption>Contributions on employment earnings "
+            "between the basic exemption and the maximum pensionable earnings "
+            "2015- 2027</caption><tr><td>Year</td></tr><tr><td>2027</td>"
+            "<td>$3500</td><td>$76 700</td><td>6.3%</td></tr><tr><td>2026</td>"
+            "<td>$3500</td><td>$74 600</td><td>6.3%</td></tr></table><table>"
+            "<caption>Contributions on employment earnings between the basic "
+            "exemption and the additional maximum annual pensionable earnings "
+            "(YAMPE) 2024- 2027</caption><tr><td>2027</td><td>$76 700</td>"
+            "<td>$87 400</td><td>4%</td></tr><tr><td>2026</td><td>$74 600</td>"
+            "<td>$85 000</td><td>4%</td></tr></table>",
+        }
+
+        def fetch(self_, url, probe=False):
+            key = next(k for k in pages if k in url)
+            return 200, f"<html><body>{pages[key]}</body></html>".encode()
+
+        cnesst = self.env.ref("l10n_ca_qc_payroll.source_cnesst_max")
+        qpp = self.env.ref("l10n_ca_qc_payroll.source_retraite_quebec_contributions")
+        with patch.object(Source, "_l10n_ca_fetch", fetch):
+            (cnesst | qpp).action_l10n_ca_watch()
+        # CNESST: 103,000 for 2026 and 106,000 for 2027, both shipped.
+        self.assertEqual(cnesst.watch_state, "ok")
+        # QPP: 2026 matches; the 2027 figures of the page have no version.
+        self.assertEqual(qpp.watch_state, "published")
+        self.assertIn(
+            "l10n_ca.qpp.ympe: 76700.0 published for 2027, no version yet.",
+            qpp.watch_message,
+        )
+        self.assertIn("l10n_ca.qpp.rate = 0.063: matches.", qpp.watch_message)
 
     def test_quebec_only_deduction(self):
         """A rule of category CA_QC_TAXDED lowers the Quebec tax only."""

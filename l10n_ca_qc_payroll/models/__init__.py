@@ -5,3 +5,4 @@ from . import hr_payslip
 from . import l10n_ca_payroll_t4
 from . import l10n_ca_qc_remittance
 from . import l10n_ca_qc_rl1
+from . import l10n_ca_payroll_source

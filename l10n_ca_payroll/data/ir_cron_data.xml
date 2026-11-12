@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="ir_cron_l10n_ca_payroll_source_watch" model="ir.cron">
+        <field name="name">Canadian Payroll: Check the Official Sources</field>
+        <field name="model_id" ref="model_l10n_ca_payroll_source" />
+        <field name="state">code</field>
+        <field name="code">model._cron_l10n_ca_watch()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">weeks</field>
+        <field name="active" eval="True" />
+    </record>
+</odoo>

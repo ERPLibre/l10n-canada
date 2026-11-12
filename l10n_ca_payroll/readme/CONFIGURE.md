@@ -41,6 +41,22 @@ page `static/description/sources.html` shows the same records; regenerate it
 with `python3 l10n_ca_payroll/tools/sources_page.py <module>` after changing
 `data/l10n_ca_payroll_source_data.xml`, as a test checks it is up to date.
 
+A weekly scheduled action, *Canadian Payroll: Check the Official Sources*,
+reads the pages of the sources that have a watcher, for the current and
+the next year, and compares the figures found with the time parameters in
+force on January 1 of that year. It never writes a parameter. A source
+shows *Up to date*, *Next year not yet published*, *Published, not in the
+parameters* (enter the new version), *Differs from the parameters*, *Page
+unreachable* or *Page changed*: the page no longer has the table or the
+row the watcher reads, which usually means it moved or was redesigned, so
+check the page and the watcher. The last four states post the result on
+the source and give a payroll manager a to-do activity, once per finding.
+A watcher that only detects a publication (the January T4127, the PDF
+guides of Revenu Québec) stays at *Published* until a manager clicks *Mark
+Next Year Reviewed*. *Check Now* runs the check of one source. The federal
+watchers read the CRA tables of the CPP, CPP2 and EI, its indexation page
+and the list of T4127 editions.
+
 Every rate, ceiling, bracket table, credit amount and due date the module
 computes with is a dated time parameter (Payroll > Configuration > Canadian
 Time Parameters). A version applies from its date until the next version of

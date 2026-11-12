@@ -1023,6 +1023,12 @@ msgid "Gouvernement du Québec (Publications du Québec)"
 msgstr "Gouvernement du Québec (Publications du Québec)"
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_quebec_qpip_mie
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_quebec_qpip_rates
+msgid "Gouvernement du Québec (Québec.ca)"
+msgstr "Gouvernement du Québec (Québec.ca)"
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_l10n_ca_qc_payroll_remittance__gross_payroll
 msgid "Gross Payroll"
 msgstr "Masse salariale brute"
@@ -1163,6 +1169,15 @@ msgstr ""
 "Numéro d'identification du dossier de retenues à la source auprès de Revenu "
 "Québec (dix chiffres suivis de RS et de quatre chiffres), imprimé sur les "
 "relevés 1 et le sommaire des relevés 1."
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_finances_qc_parameters
+msgid ""
+"Indexation rate, brackets and basic personal amount of the Quebec tax; the "
+"edition of the next year comes with the fall update."
+msgstr ""
+"Taux d'indexation, tranches et montant personnel de base de l'impôt du "
+"Québec ; l'édition de l'année suivante paraît avec la mise à jour d'automne."
 
 #. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_deductions
@@ -1582,6 +1597,11 @@ msgid "Number of RL-1 slips"
 msgstr "Nombre de relevés 1"
 
 #. module: l10n_ca_qc_payroll
+#: model:ir.model,name:l10n_ca_qc_payroll.model_l10n_ca_payroll_source
+msgid "Official Source of the Canadian Payroll"
+msgstr "Source officielle de la paie canadienne"
+
+#. module: l10n_ca_qc_payroll
 #: model_terms:ir.actions.act_window,help:l10n_ca_qc_payroll.action_l10n_ca_qc_payroll_remittance
 msgid ""
 "Open the RL-1 summary of the year and click \"Compute\n"
@@ -1615,6 +1635,11 @@ msgstr "Payé du"
 #: code:addons/l10n_ca_qc_payroll/models/l10n_ca_qc_rl1.py:0
 msgid "Paid to"
 msgstr "Payé au"
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_finances_qc_parameters
+msgid "Paramètres du régime d'imposition des particuliers 2026"
+msgstr "Paramètres du régime d'imposition des particuliers 2026"
 
 #. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,help:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_authorized_date
@@ -1788,6 +1813,13 @@ msgid "QPIP Premiums"
 msgstr "Cotisations au RQAP"
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_quebec_qpip_rates
+msgid "QPIP employee and employer rates of the current and the previous year."
+msgstr ""
+"Taux de cotisation au RQAP de l'employé et de l'employeur de l'année "
+"courante et de l'année précédente."
+
+#. module: l10n_ca_qc_payroll
 #: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_rq_qpip_page
 msgid ""
 "QPIP maximum insurable earnings and employee and employer rates of each "
@@ -1800,6 +1832,13 @@ msgstr ""
 #: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_rq_qpip_page
 msgid "QPIP maximum insurable earnings and premium rate"
 msgstr "Maximum des revenus assurables et taux de cotisation au RQAP"
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_quebec_qpip_mie
+msgid "QPIP maximum insurable earnings of the current and the previous year."
+msgstr ""
+"Revenu maximal assurable du RQAP de l'année courante et de l'année "
+"précédente."
 
 #. module: l10n_ca_qc_payroll
 #. odoo-python
@@ -1818,6 +1857,15 @@ msgstr ""
 "Âges du RRQ, indexation du TP-1015.3, paiements périodiques au FSS, "
 "cotisation relative aux normes du travail, FDRCMO, fréquences et dates "
 "d'échéance des versements, paiements périodiques à la CNESST."
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_retraite_quebec_contributions
+msgid ""
+"QPP basic exemption, maximum and additional maximum pensionable earnings and"
+" contribution rates of each year."
+msgstr ""
+"Exemption générale, maximum des gains admissibles, maximum supplémentaire "
+"des gains admissibles et taux de cotisation au RRQ de chaque année."
 
 #. module: l10n_ca_qc_payroll
 #: model:l10n_ca.payroll.source,summary:l10n_ca_qc_payroll.source_qc_qpp_act
@@ -1840,6 +1888,11 @@ msgid ""
 msgstr ""
 "Maximum des gains admissibles du RRQ, maximum supplémentaire des gains "
 "admissibles, exemption et taux de chaque année."
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_retraite_quebec_contributions
+msgid "QPP pensionable earnings and contributions"
+msgstr "Revenus de travail admissibles et cotisations au RRQ"
 
 #. module: l10n_ca_qc_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_qc_payroll.l10n_ca_qc_rl1_summary_view_form
@@ -2096,6 +2149,11 @@ msgstr ""
 "l'année."
 
 #. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_qc_payroll.source_retraite_quebec_contributions
+msgid "Retraite Québec"
+msgstr "Retraite Québec"
+
+#. module: l10n_ca_qc_payroll
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_company__l10n_ca_qc_rq_account_number
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_res_config_settings__l10n_ca_qc_rq_account_number
 msgid "Revenu Quebec Identification Number"
@@ -2128,6 +2186,11 @@ msgstr "Dossier Revenu Québec"
 #: model:ir.actions.act_window,name:l10n_ca_qc_payroll.action_l10n_ca_qc_payroll_remittance
 msgid "Revenu Québec Remittances"
 msgstr "Versements à Revenu Québec"
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_quebec_qpip_mie
+msgid "Revenu maximal assurable du RQAP"
+msgstr "Revenu maximal assurable du RQAP"
 
 #. module: l10n_ca_qc_payroll
 #. odoo-python
@@ -2239,6 +2302,11 @@ msgstr "Année du TP-1015.3"
 #: model:ir.model.fields,field_description:l10n_ca_qc_payroll.field_hr_contract__l10n_ca_qc_authorized_date
 msgid "TP-1016 Authorization Effective Date"
 msgstr "Date d'effet de l'autorisation TP-1016"
+
+#. module: l10n_ca_qc_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_quebec_qpip_rates
+msgid "Taux de cotisation au RQAP"
+msgstr "Taux de cotisation au RQAP"
 
 #. module: l10n_ca_qc_payroll
 #: model:l10n_ca.payroll.source,name:l10n_ca_qc_payroll.source_qc_taxation_act

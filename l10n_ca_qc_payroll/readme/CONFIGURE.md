@@ -64,6 +64,13 @@ page `static/description/sources.html` shows the same records; regenerate it
 with `python3 l10n_ca_payroll/tools/sources_page.py <module>` after changing
 `data/l10n_ca_payroll_source_data.xml`, as a test checks it is up to date.
 
+The weekly check of the official sources (see the Canadian payroll module)
+also reads the QPP table of Retraite Québec, the QPIP rates and maximum of
+Québec.ca and the CNESST maximum, and detects the January editions of the
+TP-1015.F and TP-1015.G and the Finances Québec indexation document. The
+HTML pages of Revenu Québec refuse automatic clients, so its publications
+are watched as PDF documents, which answer once published.
+
 Every rate, ceiling, bracket table, credit amount and due date the Quebec
 computation uses is a dated time parameter (Payroll > Configuration >
 Canadian Time Parameters). A new year or a budget measure is a new version
