@@ -108,8 +108,10 @@ used to convert the CPP withheld before a transfer to Quebec.
   also announces a temporary 2026-2027 HSF exemption for some agriculture,
   forestry and fishing employers, which the module does not model.
 - CNESST, *Salaire maximum annuel assurable*:
+  <https://www.cnesst.gouv.qc.ca/fr/demarches-formulaires/employeurs/assurance-sante-securite-travail/tarification/annexes-tableaux/salaire-maximum-annuel-assurable>
+  and
   <https://www.cnesst.gouv.qc.ca/fr/organisation/documentation/formulaires-publications/salaire-maximum-annuel-assurable>.
-  It sets the maximum insurable earnings.
+  It sets the maximum insurable earnings by rating year: 106,000 for 2027.
   *Déductions de base 2026* of the Gouvernement du Québec is a secondary
   source for the same amount:
   <https://cdn-contenu.quebec.ca/cdn-contenu/gouvernement/travailler/Services_employes_Etat/Remuneration/Deductions_base_2026.pdf>.
@@ -255,7 +257,7 @@ Derived figures:
 | `l10n_ca.qc.cnt.max_remuneration` | 98,000 | 103,000 | Remuneration subject to the contribution, per employee and year (the QPIP maximum insurable earnings). It caps the RL-1 base `cnt_base`. | TP-1015.G-V chapter 7 |
 | `l10n_ca.qc.wsdrf.rate` | 1% | 1% | When the company's own payroll subject to the WSDRF exceeds the threshold, each pay accrues rate x gross. RLZ-1.S line 73 = line 71 x rate, and line 75 (the WSDRF contribution) = line 73 less the training expenditures used (line 74). | TP-1015.G-V chapter 8; RLZ-1.S.G lines 71 to 75 |
 | `l10n_ca.qc.wsdrf.payroll_threshold` | 2,000,000 | 2,000,000 | The participation applies only above this payroll, which is the previous-year estimate or, for a new employer, the year to date. | TP-1015.G-V chapter 8; RLZ-1.S.G line 71 |
-| `l10n_ca.qc.cnesst.max_insurable` | 98,000 | 103,000 | CNESST premium of the pay = company rate per $100 x min(gross, maximum - Quebec salary of the year) / 100. The rate per $100 is a company field set by the CNESST classification decision. | CNESST maximum insurable earnings page; TP-1015.G-V part 11.8 |
+| `l10n_ca.qc.cnesst.max_insurable` | 98,000 | 103,000; 106,000 from 2027 | CNESST premium of the pay = company rate per $100 x min(gross, maximum - Quebec salary of the year) / 100. The rate per $100 is a company field set by the CNESST classification decision. | CNESST maximum insurable earnings page; TP-1015.G-V part 11.8 |
 
 Derived figures:
 
@@ -448,8 +450,10 @@ with the basic personal amount as E. The federal tax is computed by
   - the QPP `ympe` and `yampe`;
   - the QPIP `mie`, with `l10n_ca.qc.cnt.max_remuneration` set to the same
     amount;
-  - `l10n_ca.qc.cnesst.max_insurable`, which the CNESST publishes for the
-    year.
+  - `l10n_ca.qc.cnesst.max_insurable`, which the CNESST publishes in the
+    fall for the next rating year (106,000 for 2027). The QPIP maximum and
+    the CNT maximum follow the same amount by law, but get their version
+    only once the QPIP and Revenu Québec publish it.
 - Changed only by a budget, a law or a regulation:
   - the QPP rates (`rate`, `base_rate`, `rate2`) and `basic_exemption`.
     The 2026 base rate is a one-year cut. Bulletin 2025-8 states that the

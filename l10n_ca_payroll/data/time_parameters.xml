@@ -210,7 +210,7 @@
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Year's maximum pensionable earnings of the CPP. Canada Pension Plan s. 18. The 2027 value is published by the CRA in the fall: add its version when known. Sources: T4127 table 8.3, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html</field>
+        <field name="description">Year's maximum pensionable earnings of the CPP. Canada Pension Plan s. 18. The CRA publishes the next year's value in the fall. Sources: T4127 table 8.3, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html</field>
     </record>
     <record id="param_cpp_ympe_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_cpp_ympe" />
@@ -221,6 +221,11 @@
         <field name="parameter_id" ref="param_cpp_ympe" />
         <field name="date_from">2026-01-01</field>
         <field name="value">74600</field>
+    </record>
+    <record id="param_cpp_ympe_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_ympe" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">76700</field>
     </record>
     <record id="param_cpp_yampe" model="base.time.parameter">
         <field name="name">CPP year's additional maximum pensionable earnings (YAMPE)</field>
@@ -239,6 +244,11 @@
         <field name="parameter_id" ref="param_cpp_yampe" />
         <field name="date_from">2026-01-01</field>
         <field name="value">85000</field>
+    </record>
+    <record id="param_cpp_yampe_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_cpp_yampe" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">87400</field>
     </record>
     <record id="param_cpp_basic_exemption" model="base.time.parameter">
         <field name="name">CPP basic exemption</field>

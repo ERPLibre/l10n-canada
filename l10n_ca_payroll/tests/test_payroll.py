@@ -402,6 +402,27 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         self.assertEqual(self._line(march, "CA_CPP"), 0.0)
         self.assertAlmostEqual(self._line(april, "CA_CPP"), -280.15)
 
+    def test_maximums_2027(self):
+        # 2027: YMPE 76,700, YAMPE 87,400, rate 5.75%, EI MIE 70,800 at 1.64%.
+        # Months 1-2: C = 0.0575 * (30,000 - 291.66) = 1,708.23, EI 492.00.
+        # Month 3: C = 4,209.00 - 2 * 1,708.23 = 792.54; EI = 1,161.12 - 984
+        #   = 177.12; C2 = min(428, (90,000 - 76,700) * 0.04) = 428.00.
+        contract = self._contract(30000.0)
+        slips = [
+            self._slip(contract, date(2027, month, 1), date(2027, month, 28), done=True)
+            for month in (1, 2, 3, 4)
+        ]
+        self.assertEqual(
+            [-self._line(s, "CA_CPP") for s in slips],
+            [1708.23, 1708.23, 792.54, 0.0],
+        )
+        self.assertEqual(
+            [-self._line(s, "CA_CPP2") for s in slips], [0.0, 0.0, 428.0, 0.0]
+        )
+        self.assertEqual(
+            [-self._line(s, "CA_EI") for s in slips], [492.0, 492.0, 177.12, 0.0]
+        )
+
     # ------------------------------------------------------------------
     # Bonuses and other non-periodic payments
     # ------------------------------------------------------------------

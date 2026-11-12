@@ -463,7 +463,7 @@
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Maximum annual insurable earnings per worker for the occupational health and safety premium; the employer rate per $100 is set by the CNESST classification decision and entered on the company. The premium is paid with the periodic Revenu Québec remittances (TP-1015.G-V section 11.8). Act respecting industrial accidents and occupational diseases, s. 66. Secondary sources for the amount. Sources: https://www.cnesst.gouv.qc.ca/fr/organisation/documentation/formulaires-publications/salaire-maximum-annuel-assurable ; https://cdn-contenu.quebec.ca/cdn-contenu/gouvernement/travailler/Services_employes_Etat/Remuneration/Deductions_base_2026.pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/A-3.001</field>
+        <field name="description">Maximum annual insurable earnings per worker for the occupational health and safety premium; the employer rate per $100 is set by the CNESST classification decision and entered on the company. The premium is paid with the periodic Revenu Québec remittances (TP-1015.G-V section 11.8). Act respecting industrial accidents and occupational diseases, s. 66. Secondary sources for the amount. Sources: https://www.cnesst.gouv.qc.ca/fr/demarches-formulaires/employeurs/assurance-sante-securite-travail/tarification/annexes-tableaux/salaire-maximum-annuel-assurable ; https://www.cnesst.gouv.qc.ca/fr/organisation/documentation/formulaires-publications/salaire-maximum-annuel-assurable ; https://cdn-contenu.quebec.ca/cdn-contenu/gouvernement/travailler/Services_employes_Etat/Remuneration/Deductions_base_2026.pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/A-3.001</field>
     </record>
     <record id="param_qc_cnesst_max_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_qc_cnesst_max" />
@@ -474,6 +474,11 @@
         <field name="parameter_id" ref="param_qc_cnesst_max" />
         <field name="date_from">2026-01-01</field>
         <field name="value">103000</field>
+    </record>
+    <record id="param_qc_cnesst_max_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_qc_cnesst_max" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">106000</field>
     </record>
     <record id="param_qc_rl1_due_month" model="base.time.parameter">
         <field name="name">RL-1 filing month</field>

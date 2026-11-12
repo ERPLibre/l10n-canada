@@ -20,8 +20,8 @@ the identification number for the SIN printed on the T4.
 The salary journal of the contract receives the payroll entries.
 
 Payroll > Configuration > Canadian Time Parameters: add a version when the
-CRA publishes new rates (the 2027 YMPE, YAMPE and federal brackets are
-published in the fall).
+CRA publishes new rates (the YMPE and YAMPE are published in the fall, the
+indexed federal brackets with the January edition of T4127).
 
 ## Parameters and their sources
 
@@ -52,7 +52,9 @@ its sources with their URLs.
   credit rate, basic personal amounts and Canada employment amount.
 - **CRA, CPP contribution rates, maximums and exemptions** —
   <https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html>.
-  YMPE, YAMPE, basic exemption, CPP and CPP2 rates.
+  YMPE, YAMPE, basic exemption, CPP and CPP2 rates; the 2027 rows (YMPE
+  76,700, YAMPE 87,400, rate 5.75%, maximum 4,209.00, maximum CPP2
+  428.00) set the 2027 versions of the YMPE and YAMPE.
 - **CRA, EI premium rates and maximums** —
   <https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/employment-insurance-ei/ei-premium-rates-maximums.html>.
   EI maximum insurable earnings and rates.
@@ -170,8 +172,8 @@ Derived figures:
 
 | Parameter | 2025 | 2026 | 2027 | What the computation does with it | Source |
 |---|---|---|---|---|---|
-| `l10n_ca.cpp.ympe` | 71,300 | 74,600 | — | Maximum C = (YMPE − exemption) × rate; CPP2 starts at W = max(PIYTD, YMPE × PM/12) | T4127 122nd ed. table 8.3 (2026), 8.24 (2025); CPP s. 18 |
-| `l10n_ca.cpp.yampe` | 81,200 | 85,000 | — | Maximum C2 = (YAMPE − YMPE) × rate2; cap of T4 box 26 | T4127 122nd ed. table 8.6 (2026), 8.27 (2025); CPP s. 18.1 |
+| `l10n_ca.cpp.ympe` | 71,300 | 74,600 | 76,700 | Maximum C = (YMPE − exemption) × rate; CPP2 starts at W = max(PIYTD, YMPE × PM/12) | T4127 122nd ed. table 8.3 (2026), 8.24 (2025); CRA CPP rates page (2027); CPP s. 18 |
+| `l10n_ca.cpp.yampe` | 81,200 | 85,000 | 87,400 | Maximum C2 = (YAMPE − YMPE) × rate2; cap of T4 box 26 | T4127 122nd ed. table 8.6 (2026), 8.27 (2025); CRA CPP2 rates page (2027); CPP s. 18.1 |
 | `l10n_ca.cpp.basic_exemption` | 3,500 | 3,500 | — | Exemption per pay 3,500 / P truncated to the cent in C = rate × (PI − 3,500 / P) | T4127 122nd ed. ch. 6, table 6.1, table 8.3; CPP s. 19-20 |
 | `l10n_ca.cpp.rate` | 0.0595 → 5.95% | 0.0595 → 5.95% | 0.0575 → 5.75% | Rate of C between the exemption and the YMPE; employer pays the same | T4127 122nd ed. table 8.3, 8.24; S.C. 2026, c. 22 (2027); CPP s. 8, Schedule 1 |
 | `l10n_ca.cpp.base_rate` | 0.0495 → 4.95% | 0.0495 → 4.95% | 0.0475 → 4.75% | Base share C × base / rate enters K2; the rest of C is the first additional contribution of F5 | T4127 122nd ed. table 8.4, 8.25; S.C. 2026, c. 22 (2027); CPP s. 8 |
@@ -197,10 +199,11 @@ Derived figures:
   (P = 12), 145.83 (24), 134.61 (26), 129.62 (27), 67.30 (52), 66.03 (53),
   875.00 (4), 1,750.00 (2), 3,500.00 (1). Matches T4127 122nd ed.
   table 6.1.
-- **2027.** No 2027 YMPE or YAMPE is shipped: until their version is
-  added, a 2027 pay uses 74,600 and 85,000 with the 2027 rates, i.e. a
-  maximum C of 71,100 × 0.0575 = 4,088.25 and a maximum base contribution
-  of 71,100 × 0.0475 = 3,377.25, which are not published figures.
+- **2027.** Maximum C = (76,700 − 3,500) × 5.75% = 73,200 × 0.0575 =
+  **4,209.00**; maximum base contribution 73,200 × 0.0475 = 3,477.00;
+  first additional contribution at the maximum 732.00; maximum C2 =
+  (87,400 − 76,700) × 4% = 10,700 × 0.04 = **428.00**. The two bold
+  figures are the 2027 rows of the CRA CPP and CPP2 pages.
 - **QPP.** An employment in Quebec reads the same keys under `l10n_ca.qpp.`;
   they come with the Quebec payroll module, and the payslip stops with an
   error when no QPP rate is in force.
@@ -286,7 +289,7 @@ these amounts (`tests/test_payroll.py`).
   (table 8.7); employer EI **1,572.30**. Federal tax 2,744.73 (months 1-4,
   A = 178,234.99, K = 10,241, K2 = 649.95), 2,746.92, 2,678.97, 2,782.97.
   T4 box 24 capped at **68,900**, box 26 at **85,000**; T4 due
-  2027-02-28. January remittance 5,081.83, due 2026-02-16 (February 15
+  2027-03-01 (February 28 is a Sunday). January remittance 5,081.83, due 2026-02-16 (February 15
   is a Sunday). `test_maximums_t4_and_remittances`
 - **Refund** — a refunded January payslip leaves February as a first pay:
   CPP 875.15, EI 244.50. `test_refund_reduces_year_to_date`
@@ -336,10 +339,10 @@ these amounts (`tests/test_payroll.py`).
   tables 8.1 to 8.7, and add a version dated January 1 to each parameter
   that changes. A mid-year change of rates comes with a July edition of
   T4127 and a version dated July 1, as for 2025.
-- The CRA announces the next year's YMPE, YAMPE and indexed federal
-  amounts before the January edition of T4127; for 2027, the EI Commission
-  confirmed the EI rate and maximum insurable earnings on September 14,
-  2026 (release above).
+- The CRA announces the next year's YMPE and YAMPE in the fall, and the
+  indexed federal amounts at the latest with the January edition of
+  T4127; for 2027, the EI Commission confirmed the EI rate and maximum
+  insurable earnings on September 14, 2026 (release above).
 - Change every year: the bracket thresholds, BPAF maximum and minimum,
   phase-out start and end (the 4th and 5th thresholds) and the CEA, all
   indexed (ITA s. 117.1); the YMPE and YAMPE; the EI maximum insurable
