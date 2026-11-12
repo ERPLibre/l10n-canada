@@ -1,0 +1,216 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_pe_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-12 15:23+0000\n"
+"PO-Revision-Date: 2026-11-12 15:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_wcb_coverage
+msgid "About WCB Insurance"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_wcb_rates_payments
+msgid ""
+"Assessment rates set each year by the Board per $100 of assessable payroll "
+"up to the maximum assessable earnings (MAE) of the year, 89,300 for 2026, by"
+" industry rate group and adjusted by experience rating; the employer learns "
+"its rate each January in the registration renewal package."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_t4127_122
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_t4127_123
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_td1pe_2026
+msgid "Canada Revenue Agency"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_wcb_coverage
+msgid ""
+"Coverage of the workers of most industries, with excluded occupations and "
+"industries that may buy optional coverage; proprietors and partners of non-"
+"incorporated businesses, independent operators and owners and directors of a"
+" corporation are covered only by voluntary personal coverage."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_wcb_employer_registration
+msgid "Employer Registration (online form)"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_income_tax_act
+msgid ""
+"For the 2026 and subsequent taxation years: 9.50% up to 33,928, 13.47% to "
+"65,820, 16.60% to 106,890, 17.62% to 142,520, 19.00% to 200,000 and 20.00% "
+"above 200,000; basic personal amount 15,000. The path of the consolidated "
+"PDF changes with each consolidation: check its \"Current to\" date."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_income_tax_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_workers_compensation_act
+msgid "Government of Prince Edward Island"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_wcb_deadlines
+msgid "Important Deadlines for Employers"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_income_tax_act
+msgid "Income Tax Act, RSPEI 1988, c. I-1"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_wcb_employer_guide
+msgid "Information for Employers (January 2026)"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_workers_compensation_act
+msgid ""
+"Maximum annual earnings since January 1, 2024: the Prince Edward Island "
+"average weekly earnings (industrial aggregate) at June 30 of the previous "
+"year x 52 x 1.5, rounded to the nearest 100; earnings above it are "
+"disregarded."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_wcb_employer_registration
+msgid ""
+"Maximum assessable earnings per worker on which the payroll is reported: "
+"82,900 in 2025, 89,300 in 2026."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_t4127_123
+msgid ""
+"New bracket of 20% above 200,000 for 2026 and subsequent years, withheld at "
+"the prorated rate of 21% (KP 10,464) from the first pay of July 2026; the "
+"Option 2 table gives the annual 20% (KP 8,464). Basic personal amount 15,000"
+" unchanged."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_finance_personal
+msgid "Prince Edward Island Department of Finance"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:hr.salary.rule,name:l10n_ca_pe_payroll.rule_pe_salary
+msgid "Prince Edward Island Remuneration"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_td1pe_2026
+msgid ""
+"Prince Edward Island basic personal amount of 15,000 for 2026 and the total "
+"claim amount TCP entered on the contract."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_t4127_122
+msgid ""
+"Prince Edward Island rates 9.5%, 13.47%, 16.6%, 17.62% and 19% from 33,928, "
+"65,820, 106,890 and 142,520, constants KP 1,347, 3,407, 4,497 and 6,464; the"
+" fifth threshold and its constant carry the note \"*Updated May 2026\". "
+"Basic personal amount 15,000 (14,650 in 2025), not indexed."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_finance_personal
+msgid "Provincial Personal Income Tax"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_wcb_rates_payments
+msgid "Rates and Payments"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_finance_personal
+msgid ""
+"Rates and brackets of the Prince Edward Island personal income tax. Prince "
+"Edward Island levies no employer payroll tax."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_wcb_deadlines
+msgid ""
+"Registration renewal by February 28, premiums by March 31, deferred payments"
+" by August 31 and payroll revisions by November 1."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_pe_payroll.source_wcb_employer_guide
+msgid ""
+"Registration with one or more workers; renewal by February 28 with the "
+"actual payroll of the previous year and the estimate of the current year; "
+"payment within 30 days of the statement, semi-annual for an estimate filed "
+"by February 28 and an assessment of 1,000 or more, or monthly (MAPO) on the "
+"actual payroll of the previous month; 1.5% a month on overdue balances."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_t4127_122
+msgid "T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_t4127_123
+msgid "T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_td1pe_2026
+msgid "TD1PE 2026 Prince Edward Island Personal Tax Credits Return"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_pe_payroll.source_finance_personal
+msgid ""
+"The page answers an automated client with a browser verification challenge "
+"instead of its content. Confirm in a browser the 2026 brackets (19% from "
+"142,520, 20% above 200,000) and that the Department lists no employer "
+"payroll or health tax."
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:hr.salary.rule,name:l10n_ca_pe_payroll.rule_pe_wcb_insurable
+msgid "WCB PEI Assessable Earnings"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#. odoo-python
+#: code:addons/l10n_ca_pe_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_pe_payroll.rule_pe_wcb
+msgid "WCB PEI Assessment"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_pe_payroll.source_workers_compensation_act
+msgid "Workers Compensation Act, RSPEI 1988, c. W-7.1"
+msgstr ""
+
+#. module: l10n_ca_pe_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_wcb_coverage
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_wcb_deadlines
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_wcb_employer_guide
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_wcb_employer_registration
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_pe_payroll.source_wcb_rates_payments
+msgid "Workers Compensation Board of Prince Edward Island"
+msgstr ""

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the Prince Edward Island payroll.
+     l10n_ca_payroll/tools/sources_page.py writes
+     static/description/sources.html from this file: run it after a
+     change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_123" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Changes effective July 1, 2026, Prince Edward Island; K1P of Prince Edward Island and its Option 2 table; tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+        <field
+            name="summary"
+        >New bracket of 20% above 200,000 for 2026 and subsequent years, withheld at the prorated rate of 21% (KP 10,464) from the first pay of July 2026; the Option 2 table gives the annual 20% (KP 8,464). Basic personal amount 15,000 unchanged.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_122" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Changes effective January 1, 2026, Prince Edward Island; tables 8.1 (revised May 2026) and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field
+            name="summary"
+        >Prince Edward Island rates 9.5%, 13.47%, 16.6%, 17.62% and 19% from 33,928, 65,820, 106,890 and 142,520, constants KP 1,347, 3,407, 4,497 and 6,464; the fifth threshold and its constant carry the note "*Updated May 2026". Basic personal amount 15,000 (14,650 in 2025), not indexed.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_td1pe_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >TD1PE 2026 Prince Edward Island Personal Tax Credits Return</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Line 1 (basic personal amount) and the total claim amount</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1pe.html</field>
+        <field
+            name="summary"
+        >Prince Edward Island basic personal amount of 15,000 for 2026 and the total claim amount TCP entered on the contract.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_income_tax_act" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">statute</field>
+        <field name="name">Income Tax Act, RSPEI 1988, c. I-1</field>
+        <field name="publisher">Government of Prince Edward Island</field>
+        <field
+            name="reference"
+        >Section 7 (rates, as amended by S.P.E.I. 2026, c. 12) and s. 9(1)(c) (basic personal amount); consolidation current to May 29, 2026</field>
+        <field
+            name="url"
+        >https://www.princeedwardisland.ca/sites/default/files/0432/I-01-Income%20Tax%20Act.pdf</field>
+        <field
+            name="summary"
+        >For the 2026 and subsequent taxation years: 9.50% up to 33,928, 13.47% to 65,820, 16.60% to 106,890, 17.62% to 142,520, 19.00% to 200,000 and 20.00% above 200,000; basic personal amount 15,000. The path of the consolidated PDF changes with each consolidation: check its "Current to" date.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_finance_personal" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">page</field>
+        <field name="name">Provincial Personal Income Tax</field>
+        <field
+            name="publisher"
+        >Prince Edward Island Department of Finance</field>
+        <field
+            name="url"
+        >https://www.princeedwardisland.ca/en/information/finance-and-affordability/provincial-personal-income-tax</field>
+        <field
+            name="summary"
+        >Rates and brackets of the Prince Edward Island personal income tax. Prince Edward Island levies no employer payroll tax.</field>
+        <field name="state">to_verify</field>
+        <field
+            name="verification_note"
+        >The page answers an automated client with a browser verification challenge instead of its content. Confirm in a browser the 2026 brackets (19% from 142,520, 20% above 200,000) and that the Department lists no employer payroll or health tax.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_rates_payments" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">page</field>
+        <field name="name">Rates and Payments</field>
+        <field
+            name="publisher"
+        >Workers Compensation Board of Prince Edward Island</field>
+        <field name="url">https://www.wcb.pe.ca/rates-and-payments</field>
+        <field
+            name="summary"
+        >Assessment rates set each year by the Board per $100 of assessable payroll up to the maximum assessable earnings (MAE) of the year, 89,300 for 2026, by industry rate group and adjusted by experience rating; the employer learns its rate each January in the registration renewal package.</field>
+        <field name="watch_key">wcb_pei_maximum</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_employer_registration" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">page</field>
+        <field name="name">Employer Registration (online form)</field>
+        <field
+            name="publisher"
+        >Workers Compensation Board of Prince Edward Island</field>
+        <field name="reference">Section (F) Operations</field>
+        <field
+            name="url"
+        >https://secure2.wcb.pe.ca/Employers/EmployerReg</field>
+        <field
+            name="summary"
+        >Maximum assessable earnings per worker on which the payroll is reported: 82,900 in 2025, 89,300 in 2026.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_coverage" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">page</field>
+        <field name="name">About WCB Insurance</field>
+        <field
+            name="publisher"
+        >Workers Compensation Board of Prince Edward Island</field>
+        <field name="url">https://www.wcb.pe.ca/about-wcb-insurance</field>
+        <field
+            name="summary"
+        >Coverage of the workers of most industries, with excluded occupations and industries that may buy optional coverage; proprietors and partners of non-incorporated businesses, independent operators and owners and directors of a corporation are covered only by voluntary personal coverage.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_employer_guide" model="l10n_ca.payroll.source">
+        <field name="sequence">90</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">publication</field>
+        <field name="name">Information for Employers (January 2026)</field>
+        <field
+            name="publisher"
+        >Workers Compensation Board of Prince Edward Island</field>
+        <field
+            name="url"
+        >https://www.wcb.pe.ca/sites/default/files/2026-09/guide_information-for-employers_jan2026_final.pdf</field>
+        <field
+            name="summary"
+        >Registration with one or more workers; renewal by February 28 with the actual payroll of the previous year and the estimate of the current year; payment within 30 days of the statement, semi-annual for an estimate filed by February 28 and an assessment of 1,000 or more, or monthly (MAPO) on the actual payroll of the previous month; 1.5% a month on overdue balances.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wcb_deadlines" model="l10n_ca.payroll.source">
+        <field name="sequence">100</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">page</field>
+        <field name="name">Important Deadlines for Employers</field>
+        <field
+            name="publisher"
+        >Workers Compensation Board of Prince Edward Island</field>
+        <field
+            name="url"
+        >https://www.wcb.pe.ca/important-deadlines-employers</field>
+        <field
+            name="summary"
+        >Registration renewal by February 28, premiums by March 31, deferred payments by August 31 and payroll revisions by November 1.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workers_compensation_act" model="l10n_ca.payroll.source">
+        <field name="sequence">110</field>
+        <field name="jurisdiction">prince_edward_island</field>
+        <field name="kind">statute</field>
+        <field
+            name="name"
+        >Workers Compensation Act, RSPEI 1988, c. W-7.1</field>
+        <field name="publisher">Government of Prince Edward Island</field>
+        <field
+            name="reference"
+        >Sections 46 and 47 (maximum annual earnings); consolidation current to May 29, 2026</field>
+        <field
+            name="url"
+        >https://www.princeedwardisland.ca/sites/default/files/legislation/w-07-1-workers_compensation_act.pdf</field>
+        <field
+            name="summary"
+        >Maximum annual earnings since January 1, 2024: the Prince Edward Island average weekly earnings (industrial aggregate) at June 30 of the previous year x 52 x 1.5, rounded to the nearest 100; earnings above it are disregarded.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>

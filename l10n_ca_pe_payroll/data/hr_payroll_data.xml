@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Payee of the WCB PEI assessments. The Prince Edward Island income
+         tax is remitted to the CRA with the federal deductions. -->
+    <record id="partner_wcb_pei" model="res.partner">
+        <field
+            name="name"
+        >Workers Compensation Board of Prince Edward Island</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_pe" />
+    </record>
+    <record id="register_wcb_pei" model="hr.contribution.register">
+        <field name="name">WCB PEI</field>
+        <field name="partner_id" ref="partner_wcb_pei" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Prince Edward Island workers' compensation assessments.</field>
+    </record>
+
+    <!-- Every rule below applies only to an employment in Prince Edward
+         Island. The Prince Edward Island income tax is the line of the
+         federal rule CA_PIT. -->
+    <record id="rule_pe_salary" model="hr.salary.rule">
+        <field name="name">Prince Edward Island Remuneration</field>
+        <field name="code">CA_PE_SAL</field>
+        <field name="sequence">114</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "PE"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["province_remuneration"]</field>
+        <field
+            name="note"
+        >Remuneration of the pay in Prince Edward Island: its year-to-date total gives the assessable earnings left after a credit note.</field>
+    </record>
+    <record id="rule_pe_wcb_insurable" model="hr.salary.rule">
+        <field name="name">WCB PEI Assessable Earnings</field>
+        <field name="code">CA_PE_WCB_IE</field>
+        <field name="sequence">115</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "PE"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["wcb_insurable"]</field>
+        <field
+            name="note"
+        >Assessable earnings of the pay up to the WCB PEI maximum assessable earnings of the year, less the assessable earnings of the year so far; 0 for a contract not covered.</field>
+    </record>
+    <record id="rule_pe_wcb" model="hr.salary.rule">
+        <field name="name">WCB PEI Assessment</field>
+        <field name="code">CA_PE_WCB</field>
+        <field name="sequence">380</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_wcb_pei" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "PE" and l10n_ca.get(contract, categories.GROSS)["wcb"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["wcb"]
+result_name = ca["wcb_line_name"]</field>
+        <field
+            name="note"
+        >WCB PEI assessment at the rate per $100 of the provincial payroll account of the company, on the assessable earnings of the pay up to the maximum assessable earnings of the year.</field>
+    </record>
+</odoo>

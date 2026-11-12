@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Prince Edward Island income tax, T4127 option 1 -->
+    <record id="param_pe_brackets" model="base.time.parameter">
+        <field
+            name="name"
+        >Prince Edward Island income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.pe.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Prince Edward Island rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P). The constant KP is derived from the table and rounded to the dollar like the federal K. The rate of the first bracket is the lowest Prince Edward Island rate of K1P and K2P (0.095). From January 1, 2026: 9.5%, 13.47% from 33,928, 16.6% from 65,820, 17.62% from 106,890 and 19% from 142,520; KP 0, 1,347, 3,407, 4,497, 6,464 (T4127 122nd edition, table 8.1, whose fifth threshold 142,520 and constant 6,464 carry the note "*Updated May 2026": the revised edition, T4127(E) Rev. 26 (26/05), gives the threshold of s. 7(e) of the Prince Edward Island Income Tax Act). From July 1, 2026: a sixth bracket of 21% from 200,000, KP 10,464 (T4127 123rd edition, table 8.1): the annual rate of 20% above 200,000 enacted for 2026 and subsequent years (Income Tax Act, s. 7(f), S.P.E.I. 2026, c. 12), prorated over the last six months because the pays of January to June withheld 19% on that income (2 x 20% - 19%). From January 1, 2027: the annual 20% from 200,000, KP 8,464, the rate the statute and the 123rd edition state for the years after 2026 (Option 2 table of the 123rd edition); Prince Edward Island does not index its brackets, any other change for 2027 comes with the January 2027 edition. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.princeedwardisland.ca/sites/default/files/0432/I-01-Income%20Tax%20Act.pdf ; https://www.princeedwardisland.ca/en/information/finance-and-affordability/provincial-personal-income-tax</field>
+    </record>
+    <record id="param_pe_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pe_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.095], [33928, 0.1347], [65820, 0.166], [106890, 0.1762], [142520, 0.19]]</field>
+    </record>
+    <record id="param_pe_brackets_20260701" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pe_brackets" />
+        <field name="date_from">2026-07-01</field>
+        <field
+            name="value"
+        >[[0, 0.095], [33928, 0.1347], [65820, 0.166], [106890, 0.1762], [142520, 0.19], [200000, 0.21]]</field>
+    </record>
+    <record id="param_pe_brackets_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pe_brackets" />
+        <field name="date_from">2027-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.095], [33928, 0.1347], [65820, 0.166], [106890, 0.1762], [142520, 0.19], [200000, 0.2]]</field>
+    </record>
+    <record id="param_pe_bpa" model="base.time.parameter">
+        <field name="name">Prince Edward Island basic personal amount</field>
+        <field name="code">l10n_ca.pe.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >TCP of an employee who files no TD1PE: K1P = lowest Prince Edward Island rate x TCP = 0.095 x 15,000 = 1,425. 2026: 15,000 (14,650 in 2025), unchanged on July 1, 2026; no indexing applies to Prince Edward Island and the amount is not income-tested. T4127 122nd edition (January 2026), Prince Edward Island changes and table 8.2; 123rd edition (July 2026), table 8.2 and K1P; TD1PE 2026 line 1; Income Tax Act, s. 9(1)(c). Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1pe.html ; https://www.princeedwardisland.ca/sites/default/files/0432/I-01-Income%20Tax%20Act.pdf</field>
+    </record>
+    <record id="param_pe_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pe_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">15000</field>
+    </record>
+
+    <!-- WCB PEI -->
+    <record id="param_pe_wcb_max_insurable" model="base.time.parameter">
+        <field name="name">WCB PEI maximum assessable earnings</field>
+        <field name="code">l10n_ca.pe.wcb.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum assessable earnings (MAE) per worker of the year: the assessable earnings of the pay are min(gross, maximum - assessable earnings of the year so far), and the assessment is the rate per $100 of the employer on them. Prince Edward Island average weekly earnings (industrial aggregate) at June 30 of the previous year x 52 x 1.5, rounded to the nearest 100; earnings above it are disregarded (Workers Compensation Act, ss. 46 and 47). 2026: 89,300 (82,900 in 2025). The 2027 amount is not published yet. Sources: https://www.wcb.pe.ca/rates-and-payments ; https://secure2.wcb.pe.ca/Employers/EmployerReg ; https://www.princeedwardisland.ca/sites/default/files/legislation/w-07-1-workers_compensation_act.pdf</field>
+    </record>
+    <record id="param_pe_wcb_max_insurable_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_pe_wcb_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">89300</field>
+    </record>
+</odoo>
