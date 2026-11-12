@@ -91,16 +91,25 @@ class HrContract(models.Model):
         help="Union dues withheld from each pay by salary rule CA_UNION, with "
         "the union dues input of the payslip. They lower the taxable income "
         "of the CRA formulas (U1), not the Quebec one, and are reported in "
-        "box 44 of the T4 and box F of the RL-1.",
+        "box 44 of the T4 and box F of the RL-1 unless the union issues its "
+        "own receipts.",
+    )
+    l10n_ca_union_issues_receipts = fields.Boolean(
+        string="Union Issues Receipts",
+        help="The union issues receipts for the dues: they still lower the "
+        "withholding, but box 44 of the T4 and box F of the RL-1 stay empty, "
+        "since the CRA and Revenu Quebec have the employer report the dues "
+        "only under an agreement that the union issues no receipts.",
     )
     l10n_ca_support_amount = fields.Monetary(
         string="Support Payments per Pay",
         help="Alimony or maintenance payments withheld from each pay under a "
-        "legal document dated before May 1, 1997 (salary rule CA_SUPPORT, "
-        "with the support input of the payslip). They lower the taxable "
-        "income of the CRA formulas (F2), not the Quebec one. When the order "
-        "caps the payment at a percentage of the net salary, enter the "
-        "amount that results from that cap.",
+        "legal document dated before May 1, 1997, as authorized by a CRA tax "
+        "services office (salary rule CA_SUPPORT, with the support input of "
+        "the payslip). They lower the taxable income of the CRA formulas "
+        "(F2), not the Quebec one. When the order caps the payment at a "
+        "percentage of the net salary, enter the amount that results from "
+        "that cap.",
     )
     l10n_ca_t4_dental_code = fields.Selection(
         [

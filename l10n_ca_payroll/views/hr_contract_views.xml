@@ -42,6 +42,7 @@
                             string="Other Deductions Withheld"
                         >
                             <field name="l10n_ca_union_dues_amount" />
+                            <field name="l10n_ca_union_issues_receipts" />
                             <field name="l10n_ca_support_amount" />
                         </group>
                     </group>

@@ -489,6 +489,12 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         t4 = slip._l10n_ca_t4_values(2026)
         self.assertAlmostEqual(t4["box_14"], 5000.0)
         self.assertAlmostEqual(t4["box_44"], 50.0)
+        # A union that issues its own receipts: box 44 stays empty, the
+        # withholding does not change.
+        contract.l10n_ca_union_issues_receipts = True
+        slip.compute_sheet()
+        self.assertAlmostEqual(self._line(slip, "CA_FIT"), -418.92)
+        self.assertAlmostEqual(slip._l10n_ca_t4_values(2026)["box_44"], 0.0)
 
     def test_maximums_2027(self):
         # 2027: YMPE 76,700, YAMPE 87,400, rate 5.75%, EI MIE 70,800 at 1.64%.

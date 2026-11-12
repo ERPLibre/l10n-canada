@@ -839,7 +839,8 @@ class HrPayslip(models.Model):
         """Return the T4 boxes of these payslips (one employee, province).
 
         Box 24 is capped at the maximum insurable earnings and box 26 at
-        the second earnings ceiling (YAMPE) of ``year``.
+        the second earnings ceiling (YAMPE) of ``year``. Box 44 leaves out
+        the union dues of contracts whose union issues its own receipts.
         """
         if not self:
             return {}
@@ -872,7 +873,7 @@ class HrPayslip(models.Model):
             "box_22": income_tax,
             "box_24": min(insurable, mie) if mie is not None else insurable,
             "box_26": min(pensionable, yampe) if yampe is not None else pensionable,
-            "box_44": -totals["CA_UNION"],
+            "box_44": -self._l10n_ca_reported_union_dues(),
             "box_45": contracts.sorted("date_start")[-1:].l10n_ca_t4_dental_code or "1",
             "cpp_exempt": not pensionable
             and any(contracts.mapped("l10n_ca_cpp_exempt")),
@@ -881,6 +882,15 @@ class HrPayslip(models.Model):
             "employer_cpp2": cpp_totals["CA_CPP2_ER"],
             "employer_ei": totals["CA_EI_ER"],
         }
+
+    def _l10n_ca_reported_union_dues(self):
+        """Return the union dues of these payslips that go on the slips.
+
+        Rule CA_UNION of the payslips whose contract does not have
+        ``l10n_ca_union_issues_receipts``, negative like the rule.
+        """
+        slips = self.filtered(lambda s: not s.contract_id.l10n_ca_union_issues_receipts)
+        return slips._l10n_ca_line_totals()["CA_UNION"]
 
     def _l10n_ca_remittance_values(self):
         """Return the amounts these payslips add to a CRA remittance (PD7A).

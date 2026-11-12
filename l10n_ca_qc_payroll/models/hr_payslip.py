@@ -792,7 +792,7 @@ class HrPayslip(models.Model):
             "box_c": -totals["CA_EI"],
             "box_d": -totals["CA_RPP"],
             "box_e": -totals["CA_PIT"],
-            "box_f": -totals["CA_UNION"],
+            "box_f": -self._l10n_ca_reported_union_dues(),
             "box_g": min(qpp_totals["CA_PE"], pension_cap),
             "box_h": -totals["CA_QPIP"],
             "box_i": min(salary, param("l10n_ca.qpip.mie", year_end)),

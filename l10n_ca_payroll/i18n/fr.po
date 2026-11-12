@@ -67,17 +67,19 @@ msgstr "Impôt supplémentaire demandé par l'employé sur le formulaire TD1."
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_support_amount
 msgid ""
 "Alimony or maintenance payments withheld from each pay under a legal "
-"document dated before May 1, 1997 (salary rule CA_SUPPORT, with the support "
-"input of the payslip). They lower the taxable income of the CRA formulas "
-"(F2), not the Quebec one. When the order caps the payment at a percentage of"
-" the net salary, enter the amount that results from that cap."
+"document dated before May 1, 1997, as authorized by a CRA tax services "
+"office (salary rule CA_SUPPORT, with the support input of the payslip). They"
+" lower the taxable income of the CRA formulas (F2), not the Quebec one. When"
+" the order caps the payment at a percentage of the net salary, enter the "
+"amount that results from that cap."
 msgstr ""
 "Pension alimentaire retenue sur chaque paie en vertu d'un document juridique"
-" daté d'avant le 1er mai 1997 (règle salariale CA_SUPPORT, avec l'entrée de "
-"pension alimentaire du bulletin). Elle réduit le revenu imposable des "
-"formules de l'ARC (F2), pas celui du Québec. Quand l'ordonnance plafonne le "
-"paiement à un pourcentage du salaire net, saisissez le montant qui résulte "
-"de ce plafond."
+" daté d'avant le 1er mai 1997, comme l'autorise un bureau des services "
+"fiscaux de l'ARC (règle salariale CA_SUPPORT, avec l'entrée de pension "
+"alimentaire du bulletin). Elle réduit le revenu imposable des formules de "
+"l'ARC (F2), pas celui du Québec. Quand l'ordonnance plafonne le paiement à "
+"un pourcentage du salaire net, saisissez le montant qui résulte de ce "
+"plafond."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__amount_paid
@@ -1162,6 +1164,20 @@ msgstr ""
 "                être exportés en fichiers CSV pour remplir les formulaires Web de l'ARC."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_union_issues_receipts
+msgid ""
+"The union issues receipts for the dues: they still lower the withholding, "
+"but box 44 of the T4 and box F of the RL-1 stay empty, since the CRA and "
+"Revenu Quebec have the employer report the dues only under an agreement that"
+" the union issues no receipts."
+msgstr ""
+"Le syndicat délivre des reçus pour les cotisations : elles réduisent "
+"toujours la retenue, mais la case 44 du T4 et la case F du RL-1 restent "
+"vides, car l'ARC et Revenu Québec ne font déclarer les cotisations par "
+"l'employeur que si une entente prévoit que le syndicat ne délivre pas de "
+"reçus."
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_list
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_slip_view_list
 msgid "Total"
@@ -1183,17 +1199,23 @@ msgid "Union Dues per Pay"
 msgstr "Cotisations syndicales par paie"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_union_issues_receipts
+msgid "Union Issues Receipts"
+msgstr "Le syndicat délivre des reçus"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_union_dues_amount
 msgid ""
 "Union dues withheld from each pay by salary rule CA_UNION, with the union "
 "dues input of the payslip. They lower the taxable income of the CRA formulas"
 " (U1), not the Quebec one, and are reported in box 44 of the T4 and box F of"
-" the RL-1."
+" the RL-1 unless the union issues its own receipts."
 msgstr ""
 "Cotisations syndicales retenues sur chaque paie par la règle salariale "
 "CA_UNION, avec l'entrée de cotisations syndicales du bulletin. Elles "
 "réduisent le revenu imposable des formules de l'ARC (U1), pas celui du "
-"Québec, et figurent à la case 44 du T4 et à la case F du RL-1."
+"Québec, et figurent à la case 44 du T4 et à la case F du RL-1, sauf si le "
+"syndicat délivre ses propres reçus."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__year

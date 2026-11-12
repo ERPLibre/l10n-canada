@@ -16,7 +16,11 @@ periods per year (computed from the scheduled pay, "Bi-monthly" meaning
 twice a month), federal TD1 claim, additional tax, RPP and RRSP
 contributions, union dues and support payments withheld per pay,
 exemptions. A support order that caps the payment at a percentage of the
-net salary needs the amount after that cap (T4127, F2). The wage of
+net salary needs the amount after that cap (T4127, F2), and F2 applies
+only to an order dated before May 1, 1997 that a CRA tax services office
+authorized. Check *Union Issues Receipts* when the union gives its own
+receipts: the dues still lower the withholding, but box 44 of the T4 (and
+box F of the RL-1) stays empty. The wage of
 the contract is monthly; the basic salary of a pay is wage * 12 / pay
 periods. Set the birth date of the employee for the CPP age limits, and
 the identification number for the SIN printed on the T4.
