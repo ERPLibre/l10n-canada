@@ -39,6 +39,18 @@ msgstr ""
 
 #. module: l10n_ca_payroll
 #. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip_province.py:0
+msgid "%(name)s (%(rate)s%%)"
+msgstr "%(name)s (%(rate)s %%)"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip_province.py:0
+msgid "%(province)s Employer Payroll Tax"
+msgstr "Taxe sur la masse salariale de l'employeur (%(province)s)"
+
+#. module: l10n_ca_payroll
+#. odoo-python
 #: code:addons/l10n_ca_payroll/models/l10n_ca_payroll_source_watch.py:0
 msgid "%(year)s: %(url)s did not answer (%(error)s)."
 msgstr "%(year)s : %(url)s n'a pas répondu (%(error)s)."
@@ -111,9 +123,23 @@ msgid "5 - Payee and dependent children"
 msgstr "5 - Bénéficiaire et ses enfants à charge"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.constraint,message:l10n_ca_payroll.constraint_l10n_ca_payroll_province_account_company_province_unique
+msgid "A company has one payroll account per province."
+msgstr "Une société a un seul compte de paie par province."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.constraint,message:l10n_ca_payroll.constraint_l10n_ca_payroll_t4_summary_company_year_unique
 msgid "A company has one year-end summary per year."
 msgstr "Une société a un seul sommaire de fin d'année par année."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_charity
+msgid ""
+"A registered charity keeps the exemption whatever its total remuneration in "
+"the province."
+msgstr ""
+"Un organisme de bienfaisance enregistré garde l'exemption, quelle que soit "
+"sa rémunération totale dans la province."
 
 #. module: l10n_ca_payroll
 #: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_fpfaa
@@ -121,6 +147,14 @@ msgid ""
 "Abatement of 16.5% of the basic federal tax for an employment in Quebec."
 msgstr ""
 "Abattement de 16,5 % de l'impôt fédéral de base pour un emploi au Québec."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_account_number
+msgid ""
+"Account number of the company for the employer payroll tax of the province."
+msgstr ""
+"Numéro de compte de la société pour la taxe sur la masse salariale de la "
+"province."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_needaction
@@ -148,6 +182,13 @@ msgid "Activity Type Icon"
 msgstr "Icône de type d'activité"
 
 #. module: l10n_ca_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_province_account
+msgid "Add the accounts of the company with the payroll bodies of a province"
+msgstr ""
+"Ajoutez les comptes de la société auprès des organismes de paie d'une "
+"province"
+
+#. module: l10n_ca_payroll
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_f5b
 msgid "Additional CPP/QPP Contributions on Non-Periodic Payments"
 msgstr ""
@@ -159,9 +200,28 @@ msgid "Additional Federal Tax per Pay"
 msgstr "Impôt fédéral supplémentaire par paie"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_additional_tax
+msgid "Additional Provincial Tax per Pay"
+msgstr "Impôt provincial additionnel par paie"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_additional_tax
+msgid ""
+"Additional provincial or territorial income tax the employee asks to have "
+"withheld on each pay."
+msgstr ""
+"Impôt provincial ou territorial additionnel que l'employé demande de retenir"
+" sur chaque paie."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_additional_federal_tax
 msgid "Additional tax requested by the employee on the TD1 form."
 msgstr "Impôt supplémentaire demandé par l'employé sur le formulaire TD1."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__alberta
+msgid "Alberta"
+msgstr "Alberta"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_support_amount
@@ -187,9 +247,52 @@ msgid "Amount Paid"
 msgstr "Montant payé"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_lsvcc_amount
+msgid ""
+"Amount withheld from each pay to buy approved shares of a labour-sponsored "
+"venture capital corporation (salary rule CA_LSVCC, with the input of the "
+"payslip). The provinces that grant a labour-sponsored funds tax credit lower"
+" the provincial tax by it (LCP of the T4127 formulas)."
+msgstr ""
+"Montant retenu sur chaque paie pour acheter des actions approuvées d'une "
+"société à capital de risque de travailleurs (règle salariale CA_LSVCC, avec "
+"l'entrée du bulletin). Les provinces qui accordent un crédit d'impôt pour "
+"fonds de travailleurs en réduisent l'impôt provincial (LCP des formules du "
+"T4127)."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__line_82
 msgid "Amounts paid on the remittances of the year."
 msgstr "Montants payés sur les versements de l'année."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_computed
+msgid ""
+"An installed module computes the income tax of the province of employment "
+"with the CRA formulas."
+msgstr ""
+"Un module installé calcule l'impôt de la province d'emploi selon les "
+"formules de l'ARC."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_basis
+msgid ""
+"Annual total remuneration in the province that selects the rate and, for an "
+"employer not associated, decides whether the exemption applies. The tax of "
+"the year is set on the actual remuneration by the annual return; a new "
+"employer or one whose payroll changes enters an estimate of the current "
+"year."
+msgstr ""
+"Rémunération totale annuelle dans la province qui détermine le taux et, pour"
+" un employeur non associé, si l'exemption s'applique. La taxe de l'année est"
+" fixée sur la rémunération réelle par la déclaration annuelle ; un nouvel "
+"employeur, ou celui dont la masse salariale change, saisit une estimation de"
+" l'année en cours."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_associated
+msgid "Associated Employer"
+msgstr "Employeur associé"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_attachment_count
@@ -217,9 +320,19 @@ msgid "Basic Salary"
 msgstr "Salaire de base"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_prov_td1_type__basic
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_td1_federal_type__basic
 msgid "Basic personal amount"
 msgstr "Montant personnel de base"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_bpa
+msgid ""
+"Basic personal amount of the province of employment in force today; for an "
+"income-tested amount, its maximum."
+msgstr ""
+"Montant personnel de base de la province d'emploi en vigueur aujourd'hui ; "
+"pour un montant qui dépend du revenu, son maximum."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_td1_federal_type
@@ -317,6 +430,11 @@ msgstr "Case 45 - Prestations dentaires offertes par l'employeur"
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_slip_view_form
 msgid "Boxes"
 msgstr "Cases"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__british_columbia
+msgid "British Columbia"
+msgstr "Colombie-Britannique"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_payslip__l10n_ca_pension_plan__cpp
@@ -439,6 +557,7 @@ msgstr "Régime de pensions du Canada, L.R.C. 1985, c. C-8"
 #: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_cra_cpp2_rates
 #: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_cra_cpp_rates
 #: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_cra_ei_rates
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_cra_indexation
 #: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_t4001
 #: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_t4127_jan_2025
 #: model:l10n_ca.payroll.source,publisher:l10n_ca_payroll.source_t4127_jan_2026
@@ -490,6 +609,7 @@ msgid "Check Result"
 msgstr "Résultat de la vérification"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__company_id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__company_id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__company_id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__company_id
@@ -533,14 +653,18 @@ msgid "Create the year-end summary of a calendar year."
 msgstr "Créez le sommaire de fin d'année d'une année civile."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__create_uid
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__create_uid
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__create_uid
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__create_uid
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__create_uid
 msgid "Created by"
 msgstr "Créé par"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__create_date
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__create_date
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__create_date
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__create_date
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__create_date
 msgid "Created on"
@@ -552,6 +676,7 @@ msgid "Csv Filename"
 msgstr "Nom du fichier CSV"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__currency_id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__currency_id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__currency_id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__currency_id
@@ -640,7 +765,9 @@ msgid "Differs from the parameters"
 msgstr "Diffère des paramètres"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__display_name
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__display_name
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__display_name
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__display_name
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__display_name
 msgid "Display Name"
@@ -737,6 +864,11 @@ msgstr ""
 "paie."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_eligible
+msgid "Eligible for the Exemption"
+msgstr "Admissible à l'exemption"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__employee_id
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_slip_view_form
 msgid "Employee"
@@ -811,9 +943,19 @@ msgid "Employer EI"
 msgstr "AE de l'employeur"
 
 #. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_province_account_view_form
+msgid "Employer Payroll Tax"
+msgstr "Taxe sur la masse salariale de l'employeur"
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_slip_view_form
 msgid "Employer Share"
 msgstr "Part de l'employeur"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_account_number
+msgid "Employer Tax Account Number"
+msgstr "Numéro de compte de la taxe de l'employeur"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_t4_dental_code
@@ -836,6 +978,21 @@ msgid "Employment and Social Development Canada"
 msgstr "Emploi et Développement social Canada"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_estimated_payroll
+msgid "Estimated Total Remuneration"
+msgstr "Rémunération totale estimée"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_province_account__employer_tax_basis__estimate
+msgid "Estimated total remuneration of the year"
+msgstr "Rémunération totale estimée de l'année"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_prov_td1_type__exempt
+msgid "Exempt (claim code E)"
+msgstr "Exempté (code de demande E)"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_cpp_exempt
 msgid "Exempt from CPP/QPP"
 msgstr "Exempté du RPC/RRQ"
@@ -844,6 +1001,11 @@ msgstr "Exempté du RPC/RRQ"
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_ei_exempt
 msgid "Exempt from EI"
 msgstr "Exempté de l'AE"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_allocated_exemption
+msgid "Exemption Allocated to the Company"
+msgstr "Exemption attribuée à la société"
 
 #. module: l10n_ca_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
@@ -949,6 +1111,15 @@ msgstr ""
 "reportée au lundi suivant quand elle tombe une fin de semaine."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__wcb_account_number
+msgid ""
+"Firm or account number of the company at the workers' compensation board of "
+"the province."
+msgstr ""
+"Numéro d'entreprise ou de compte de la société auprès de l'organisme "
+"d'indemnisation des accidents du travail de la province."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_follower_ids
 msgid "Followers"
 msgstr "Abonnés"
@@ -975,12 +1146,19 @@ msgid "Gross Payroll"
 msgstr "Rémunération brute"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__has_employer_tax
+msgid "Has Employer Tax"
+msgstr "A une taxe de l'employeur"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__has_message
 msgid "Has Message"
 msgstr "A un message"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__id
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__id
 msgid "ID"
@@ -1060,9 +1238,31 @@ msgstr ""
 " annuel."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_other_credits
+msgid ""
+"K3P of the T4127 formulas: other provincial or territorial non-refundable "
+"tax credits authorized by a tax services office, such as medical expenses or"
+" charitable donations, as an annual credit amount."
+msgstr ""
+"K3P des formules du T4127 : autres crédits d'impôt non remboursables "
+"provinciaux ou territoriaux autorisés par un bureau des services fiscaux, "
+"tels que les frais médicaux ou les dons de bienfaisance, en montant de "
+"crédit annuel."
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__kind
 msgid "Kind"
 msgstr "Type"
+
+#. module: l10n_ca_payroll
+#: model:hr.salary.rule,name:l10n_ca_payroll.rule_lsvcc
+msgid "Labour-Sponsored Fund Shares"
+msgstr "Actions d'un fonds de travailleurs"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_lsvcc_amount
+msgid "Labour-Sponsored Fund Shares per Pay"
+msgstr "Actions d'un fonds de travailleurs par paie"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__watch_date
@@ -1070,14 +1270,18 @@ msgid "Last Check"
 msgstr "Dernière vérification"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__write_uid
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__write_uid
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__write_uid
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__write_uid
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__write_uid
 msgid "Last Updated by"
 msgstr "Dernière mise à jour par"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__write_date
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__write_date
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__write_date
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__write_date
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__write_date
 msgid "Last Updated on"
@@ -1170,6 +1374,11 @@ msgid "Lines of the T4 Summary and its filing deadline."
 msgstr "Lignes du sommaire T4 et sa date limite de production."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__manitoba
+msgid "Manitoba"
+msgstr "Manitoba"
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_source_view_form_watch
 msgid "Mark Next Year Reviewed"
 msgstr "Marquer l'année suivante comme revue"
@@ -1223,6 +1432,7 @@ msgstr "Échéance de mon activité"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__name
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__name
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_summary__name
 msgid "Name"
 msgstr "Nom"
@@ -1236,6 +1446,16 @@ msgstr "Net"
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_net
 msgid "Net Salary"
 msgstr "Salaire net"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__new_brunswick
+msgid "New Brunswick"
+msgstr "Nouveau-Brunswick"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__newfoundland_labrador
+msgid "Newfoundland and Labrador"
+msgstr "Terre-Neuve-et-Labrador"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_calendar_event_id
@@ -1314,14 +1534,39 @@ msgid "No remittance yet."
 msgstr "Aucun versement pour l'instant."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_wcb_exempt
+msgid ""
+"No workers' compensation premium on this remuneration, e.g. a proprietor or "
+"an executive officer without optional coverage."
+msgstr ""
+"Aucune prime d'indemnisation des accidents du travail sur cette "
+"rémunération, par exemple un propriétaire ou un dirigeant sans protection "
+"facultative."
+
+#. module: l10n_ca_payroll
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_nonperiodic
 msgid "Non-Periodic Payments Less Their Deductions"
 msgstr "Paiements non périodiques moins leurs retenues"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__northwest_territories
+msgid "Northwest Territories"
+msgstr "Territoires du Nord-Ouest"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_wcb_exempt
+msgid "Not Covered by Workers' Compensation"
+msgstr "Non couvert par l'indemnisation des accidents du travail"
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_remittance_view_search
 msgid "Not Paid"
 msgstr "Non payé"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__nova_scotia
+msgid "Nova Scotia"
+msgstr "Nouvelle-Écosse"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__message_needaction_counter
@@ -1342,6 +1587,11 @@ msgstr "Nombre de messages nécessitant une action"
 #: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Nombre de messages avec des erreurs d'envoi"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__nunavut
+msgid "Nunavut"
+msgstr "Nunavut"
 
 #. module: l10n_ca_payroll
 #: model:ir.model,name:l10n_ca_payroll.model_l10n_ca_payroll_source
@@ -1380,6 +1630,11 @@ msgstr "Autres retenues"
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_federal_other_credits
 msgid "Other Federal Tax Credits (Annual)"
 msgstr "Autres crédits d'impôt fédéraux (annuels)"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_other_credits
+msgid "Other Provincial Tax Credits (Annual)"
+msgstr "Autres crédits d'impôt provinciaux (annuels)"
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_pay_periods
@@ -1465,6 +1720,33 @@ msgid "Period"
 msgstr "Période"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__wcb_rate
+msgid ""
+"Premium or assessment rate per $100 of insurable earnings of the annual "
+"notice of the board for the classification of the company. Leave 0 when the "
+"company has no account with the board: the payslip then computes no premium."
+msgstr ""
+"Taux de prime ou de cotisation par tranche de 100 $ de gains assurables de "
+"l'avis annuel de l'organisme pour la classification de la société. Laissez 0"
+" si la société n'a pas de compte auprès de l'organisme : le bulletin ne "
+"calcule alors aucune prime."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_previous_payroll
+msgid "Previous Year Total Remuneration"
+msgstr "Rémunération totale de l'année précédente"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__prince_edward_island
+msgid "Prince Edward Island"
+msgstr "Île-du-Prince-Édouard"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__province_id
+msgid "Province"
+msgstr "Province"
+
+#. module: l10n_ca_payroll
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_province_id
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_payslip__l10n_ca_province_id
 msgid "Province of Employment"
@@ -1486,6 +1768,11 @@ msgstr ""
 "d'AE."
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_bpa
+msgid "Provincial Basic Personal Amount"
+msgstr "Montant personnel de base provincial"
+
+#. module: l10n_ca_payroll
 #: model:hr.salary.rule,name:l10n_ca_payroll.rule_provincial_tax
 msgid "Provincial Income Tax"
 msgstr "Impôt provincial sur le revenu"
@@ -1495,6 +1782,37 @@ msgstr "Impôt provincial sur le revenu"
 #: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
 msgid "Provincial Income Tax (%(province)s)"
 msgstr "Impôt provincial sur le revenu (%(province)s)"
+
+#. module: l10n_ca_payroll
+#: model:ir.model,name:l10n_ca_payroll.model_l10n_ca_payroll_province_account
+msgid "Provincial Payroll Account"
+msgstr "Compte de paie provincial"
+
+#. module: l10n_ca_payroll
+#: model:ir.actions.act_window,name:l10n_ca_payroll.action_l10n_ca_payroll_province_account
+#: model:ir.ui.menu,name:l10n_ca_payroll.menu_l10n_ca_payroll_province_account
+msgid "Provincial Payroll Accounts"
+msgstr "Comptes de paie provinciaux"
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.hr_contract_view_form
+msgid "Provincial TD1"
+msgstr "TD1 provincial"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_td1_type
+msgid "Provincial TD1 Claim"
+msgstr "Demande du TD1 provincial"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_td1_amount
+msgid "Provincial TD1 Total Claim Amount"
+msgstr "Montant total de la demande du TD1 provincial"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_computed
+msgid "Provincial Tax Computed"
+msgstr "Impôt provincial calculé"
 
 #. module: l10n_ca_payroll
 #. odoo-python
@@ -1512,6 +1830,24 @@ msgstr ""
 "L'impôt provincial sur le revenu n'est pas calculé pour %(province)s : aucun"
 " calcul n'est installé pour cette province. Le bulletin de paie ne retient "
 "aucun impôt provincial."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_td1_type
+msgid ""
+"Provincial or territorial TD1 of the province of employment (TD1ON, TD1BC, "
+"...). Basic personal amount: the claim is the basic personal amount of the "
+"year, as when the employee files no provincial TD1. Total claim amount: the "
+"amount of the form, 0 for claim code 0. Exempt: the employee expects a total"
+" income below the claim; no provincial tax is withheld, except the amounts "
+"the province levies whatever the claim, such as the Ontario Health Premium."
+msgstr ""
+"TD1 provincial ou territorial de la province d'emploi (TD1ON, TD1BC, ...). "
+"Montant personnel de base : la demande est le montant personnel de base de "
+"l'année, comme lorsque l'employé ne remplit aucun TD1 provincial. Montant "
+"total de la demande : le montant du formulaire, 0 pour le code de demande 0."
+" Exempté : l'employé prévoit un revenu total inférieur à la demande ; aucun "
+"impôt provincial n'est retenu, sauf les montants que la province perçoit "
+"quelle que soit la demande, comme la contribution-santé de l'Ontario."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__kind__publication
@@ -1599,6 +1935,11 @@ msgid "RRSP Contribution per Pay"
 msgstr "Cotisation à un REER par paie"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_basis
+msgid "Rate Basis"
+msgstr "Base du taux"
+
+#. module: l10n_ca_payroll
 #: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_income_tax_act
 msgid ""
 "Rates, indexing and credits behind the federal tax; S.C. 2026, c. 2 sets the"
@@ -1636,6 +1977,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__reference
 msgid "Reference"
 msgstr "Référence"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_charity
+msgid "Registered Charity"
+msgstr "Organisme de bienfaisance enregistré"
 
 #. module: l10n_ca_payroll
 #: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_income_tax_regulations
@@ -1688,6 +2034,11 @@ msgid "Salary Structure and Accounts"
 msgstr "Structure salariale et comptes"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__saskatchewan
+msgid "Saskatchewan"
+msgstr "Saskatchewan"
+
+#. module: l10n_ca_payroll
 #: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_cra_cpp2_rates
 msgid "Second additional CPP contribution rates and maximums"
 msgstr "Taux et maximums des deuxièmes cotisations supplémentaires au RPC"
@@ -1720,6 +2071,19 @@ msgid ""
 msgstr ""
 "Indiquez la province d'emploi sur le contrat %(contract)s pour calculer les "
 "retenues canadiennes."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_allocated_exemption
+msgid ""
+"Share of the group exemption allocated to the company. The company takes the"
+" lesser of this amount and the exemption of the year. Enter 0 when the group"
+" allocates nothing to the company or when the total remuneration of the "
+"group exceeds the exemption threshold."
+msgstr ""
+"Part de l'exemption du groupe attribuée à la société. La société prend le "
+"moindre de ce montant et de l'exemption de l'année. Saisissez 0 si le groupe"
+" n'attribue rien à la société ou si la rémunération totale du groupe dépasse"
+" le seuil de l'exemption."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__sin
@@ -1764,6 +2128,7 @@ msgid "Statute or Regulation"
 msgstr "Loi ou règlement"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_source__summary
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_t4_slip__summary_id
 msgid "Summary"
 msgstr "Sommaire"
@@ -1785,6 +2150,7 @@ msgid "T4 Slips"
 msgstr "Feuillets T4"
 
 #. module: l10n_ca_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_payroll.source_t4_summary
 #: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_t4_summary_view_form
 msgid "T4 Summary"
 msgstr "Sommaire T4"
@@ -1828,6 +2194,17 @@ msgstr ""
 "janvier 2026)"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_prov_td1_amount
+msgid ""
+"TCP of the T4127 formulas: total of the provincial or territorial personal "
+"tax credit amounts of the TD1. Enter the amount of the form of the year of "
+"the pay: the payslip does not index it."
+msgstr ""
+"TCP des formules du T4127 : total des montants des crédits d'impôt "
+"personnels provinciaux ou territoriaux du TD1. Saisissez le montant du "
+"formulaire de l'année de la paie : le bulletin ne l'indexe pas."
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_t4_summary
 msgid ""
 "The T4 slips and the remittances are computed from the done\n"
@@ -1837,6 +2214,37 @@ msgstr ""
 "Les feuillets T4 et les versements sont calculés à partir des\n"
 "                bulletins de paie terminés dont la date de paie tombe dans l'année, et peuvent\n"
 "                être exportés en fichiers CSV pour remplir les formulaires Web de l'ARC."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_associated
+msgid ""
+"The company belongs to a group of associated employers that shares one "
+"exemption by an allocation agreement."
+msgstr ""
+"La société fait partie d'un groupe d'employeurs associés qui se partagent "
+"une seule exemption par une entente de répartition."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_eligible
+msgid ""
+"The employer deducts the exemption of the year from its total remuneration "
+"in the province. Public-sector employers and the other employers that the "
+"statute of the province excludes pay the tax on their whole remuneration."
+msgstr ""
+"L'employeur déduit l'exemption de l'année de sa rémunération totale dans la "
+"province. Les employeurs du secteur public et les autres employeurs exclus "
+"par la loi de la province paient la taxe sur toute leur rémunération."
+
+#. module: l10n_ca_payroll
+#: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_province_account
+msgid ""
+"The employer payroll tax of the province (rate basis, exemption) and the\n"
+"                rate of the workers' compensation board, used by the payslips of the\n"
+"                employees who work in that province."
+msgstr ""
+"La taxe sur la masse salariale de la province (base du taux, exemption) et le\n"
+"                taux de l'organisme d'indemnisation des accidents du travail, appliqués aux bulletins\n"
+"                des employés qui travaillent dans cette province."
 
 #. module: l10n_ca_payroll
 #. odoo-python
@@ -1856,6 +2264,28 @@ msgid ""
 msgstr ""
 "Les modules de paie énumèrent ici les publications, pages et\n"
 "                lois d'où proviennent leurs taux, plafonds et échéances."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__has_employer_tax
+msgid ""
+"The province levies a tax on the remuneration paid by the employer, computed"
+" by an installed module."
+msgstr ""
+"La province perçoit une taxe sur la rémunération versée par l'employeur, "
+"calculée par un module installé."
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip_province.py:0
+msgid ""
+"The total remuneration of %(company)s in %(province)s that sets the employer"
+" payroll tax is 0 (Payroll > Configuration > Provincial Payroll Accounts): "
+"this payslip uses the lowest rate and the exemption of a nil remuneration."
+msgstr ""
+"La rémunération totale de %(company)s en %(province)s qui détermine la taxe "
+"sur la masse salariale est 0 (Paie > Configuration > Comptes de paie "
+"provinciaux) : ce bulletin applique le taux le plus bas et l'exemption d'une"
+" rémunération nulle."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_hr_contract__l10n_ca_union_issues_receipts
@@ -1913,9 +2343,33 @@ msgid "Total"
 msgstr "Total"
 
 #. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_prov_td1_type__custom
 #: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__hr_contract__l10n_ca_td1_federal_type__custom
 msgid "Total claim amount from the TD1"
 msgstr "Montant total de la demande du TD1"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_province_account__employer_tax_basis__previous_year
+msgid "Total remuneration of the previous year"
+msgstr "Rémunération totale de l'année précédente"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_previous_payroll
+msgid ""
+"Total remuneration paid in the province by the company in the previous year,"
+" all accounts combined, before the exemption."
+msgstr ""
+"Rémunération totale versée dans la province par la société l'année "
+"précédente, tous comptes confondus, avant l'exemption."
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_province_account__employer_tax_estimated_payroll
+msgid ""
+"Total remuneration the company expects to pay in the province in the current"
+" year, all accounts combined, before the exemption."
+msgstr ""
+"Rémunération totale que la société prévoit de verser dans la province durant"
+" l'année en cours, tous comptes confondus, avant l'exemption."
 
 #. module: l10n_ca_payroll
 #: model:ir.model.fields,help:l10n_ca_payroll.field_l10n_ca_payroll_source__activity_exception_decoration
@@ -2018,6 +2472,27 @@ msgid "What the payroll takes from it"
 msgstr "Ce que la paie en tire"
 
 #. module: l10n_ca_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_payroll.l10n_ca_payroll_province_account_view_form
+msgid "Workers' Compensation"
+msgstr "Indemnisation des accidents du travail"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__wcb_account_number
+msgid "Workers' Compensation Account Number"
+msgstr "Numéro de compte d'indemnisation des accidents du travail"
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip_province.py:0
+msgid "Workers' Compensation Premium (%(province)s)"
+msgstr "Prime d'indemnisation des accidents du travail (%(province)s)"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_province_account__wcb_rate
+msgid "Workers' Compensation Rate per $100"
+msgstr "Taux d'indemnisation des accidents du travail par 100 $"
+
+#. module: l10n_ca_payroll
 #: model:l10n_ca.payroll.source,summary:l10n_ca_payroll.source_cra_cpp2_rates
 msgid "YAMPE and CPP2 rate of each year, including the 2027 YAMPE (87,400)."
 msgstr ""
@@ -2052,3 +2527,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_ca_payroll.field_l10n_ca_payroll_remittance__summary_id
 msgid "Year-End Summary"
 msgstr "Sommaire de fin d'année"
+
+#. module: l10n_ca_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_payroll.selection__l10n_ca_payroll_source__jurisdiction__yukon
+msgid "Yukon"
+msgstr "Yukon"

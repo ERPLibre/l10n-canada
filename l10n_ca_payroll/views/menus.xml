@@ -39,4 +39,12 @@
         groups="payroll.group_payroll_user"
         sequence="91"
     />
+    <menuitem
+        id="menu_l10n_ca_payroll_province_account"
+        name="Provincial Payroll Accounts"
+        parent="payroll.payroll_menu_configuration"
+        action="action_l10n_ca_payroll_province_account"
+        groups="payroll.group_payroll_user"
+        sequence="92"
+    />
 </odoo>

@@ -16,6 +16,10 @@
                             <field name="l10n_ca_cpp_exempt" />
                             <field name="l10n_ca_ei_exempt" />
                             <field name="l10n_ca_t4_dental_code" />
+                            <field
+                                name="l10n_ca_wcb_exempt"
+                                invisible="not l10n_ca_prov_computed"
+                            />
                         </group>
                         <group name="l10n_ca_td1_federal" string="Federal TD1">
                             <field name="l10n_ca_td1_federal_type" />
@@ -29,6 +33,25 @@
                             />
                             <field name="l10n_ca_additional_federal_tax" />
                             <field name="l10n_ca_federal_other_credits" />
+                        </group>
+                        <field name="l10n_ca_prov_computed" invisible="1" />
+                        <field name="l10n_ca_province_code" invisible="1" />
+                        <group
+                            name="l10n_ca_td1_provincial"
+                            string="Provincial TD1"
+                            invisible="not l10n_ca_prov_computed"
+                        >
+                            <field name="l10n_ca_prov_td1_type" />
+                            <field
+                                name="l10n_ca_prov_bpa"
+                                invisible="l10n_ca_prov_td1_type != 'basic'"
+                            />
+                            <field
+                                name="l10n_ca_prov_td1_amount"
+                                invisible="l10n_ca_prov_td1_type != 'custom'"
+                            />
+                            <field name="l10n_ca_prov_other_credits" />
+                            <field name="l10n_ca_prov_additional_tax" />
                         </group>
                         <group
                             name="l10n_ca_tax_deductions"
@@ -44,6 +67,7 @@
                             <field name="l10n_ca_union_dues_amount" />
                             <field name="l10n_ca_union_issues_receipts" />
                             <field name="l10n_ca_support_amount" />
+                            <field name="l10n_ca_lsvcc_amount" />
                         </group>
                     </group>
                 </page>

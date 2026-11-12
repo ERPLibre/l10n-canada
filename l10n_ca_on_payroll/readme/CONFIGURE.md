@@ -1,4 +1,5 @@
-Payroll > Configuration > Settings > Ontario Payroll:
+Payroll > Configuration > Provincial Payroll Accounts, a record for
+Ontario (the common model of `l10n_ca_payroll`):
 
 - *Employer Health Tax*: the EHT account number; whether the company is an
   eligible employer (public-sector employers, Crown bodies and the other
@@ -20,13 +21,15 @@ accounts of the employer contributions (expense 512121, payable 221206).
 The *Set Up Canadian Payroll* button does the same for a new company.
 
 On each contract whose province of employment is Ontario, page *Canadian
-Payroll*: the TD1ON claim (basic personal amount, total claim amount of
-line 10 of the form, or exempt for claim code E), the dependants under age
+Payroll*, group *Provincial TD1*: the TD1ON claim (basic personal amount,
+total claim amount of line 10 of the form, or exempt for claim code E),
+the dependants under age
 19 and the disabled dependants of the tax reduction (from a written or
 electronic request of the employee: the TD1ON 2026 no longer has that
 section), the other Ontario credits authorized by a tax services office,
-the additional Ontario tax per pay, and *Not Covered by the WSIB* for an
-executive officer outside construction without optional insurance. A
+the additional Ontario tax per pay, and *Not Covered by Workers'
+Compensation* for an executive officer outside construction without
+optional insurance. A
 non-resident whose federal claim is 0 has an Ontario claim of 0 as well
 (total claim amount 0): the module has no non-resident flag to set it. The
 federal fields of the same page apply as well: RPP, RRSP, union dues and
@@ -155,10 +158,10 @@ CPP rate for 2027 changes the K2P ratio through the federal parameters.
 
 | Parameter | 2025 | 2026 | 2027 | What the computation does with it | Source |
 |---|---|---|---|---|---|
-| `l10n_ca.on.eht.rates` | 0.98% up to 200,000; 1.101%, 1.223%, 1.344%, 1.465%, 1.586%, 1.708%, 1.829% by steps of 30,000 (the last 380,000 to 400,000); 1.95% above 400,000 | same | same | A single rate, the one of the annual total Ontario remuneration before the exemption, applied to the whole taxable remuneration. A remuneration equal to a threshold takes the lower rate. | EHT Act s. 2(2) and table |
-| `l10n_ca.on.eht.exemption` | 1,000,000 | 1,000,000 | 1,000,000 | Exemption of an eligible employer; an associated employer takes the lesser of its allocated share and this amount. Fixed by the Act for 2020 to 2028. | EHT Act s. 2.1(2), (4.0.1) to (4.0.4) |
-| `l10n_ca.on.eht.exemption_threshold` | 5,000,000 | same | same | Above it, an eligible employer that is neither associated nor a charity has no exemption. | EHT Act s. 2.1(5), (7), (9) |
-| `l10n_ca.on.eht.instalment_threshold` | 1,200,000 | same | same | Above it, monthly instalments (documentation only). | EHT Act s. 3 |
+| `l10n_ca.on.employer_tax.rates` | 0.98% up to 200,000; 1.101%, 1.223%, 1.344%, 1.465%, 1.586%, 1.708%, 1.829% by steps of 30,000 (the last 380,000 to 400,000); 1.95% above 400,000 | same | same | A single rate, the one of the annual total Ontario remuneration before the exemption, applied to the whole taxable remuneration. A remuneration equal to a threshold takes the lower rate. | EHT Act s. 2(2) and table |
+| `l10n_ca.on.employer_tax.exemption` | 1,000,000 | 1,000,000 | 1,000,000 | Exemption of an eligible employer; an associated employer takes the lesser of its allocated share and this amount. Fixed by the Act for 2020 to 2028. | EHT Act s. 2.1(2), (4.0.1) to (4.0.4) |
+| `l10n_ca.on.employer_tax.exemption_threshold` | 5,000,000 | same | same | Above it, an eligible employer that is neither associated nor a charity has no exemption. | EHT Act s. 2.1(5), (7), (9) |
+| `l10n_ca.on.employer_tax.instalment_threshold` | 1,200,000 | same | same | Above it, monthly instalments (documentation only). | EHT Act s. 3 |
 
 Accrual of each pay: EHT = rate x (max(0, R + G - E) - max(0, R - E)),
 where G is the gross of the pay, R the Ontario remuneration of the company
@@ -224,7 +227,7 @@ Instalments and return:
 
 | Parameter | 2025 | 2026 | 2027 | What the computation does with it | Source |
 |---|---|---|---|---|---|
-| `l10n_ca.on.wsib.max_insurable` | 117,000 | 121,700 | 126,700 | Insurable earnings of the pay IE = min(gross, maximum - IE of the year so far), at least 0; premium = rate per $100 x IE / 100. The IE of the year so far counts the payslips of the employee as R counts those of the company for the EHT, so two payslips of the employee in a batch share the maximum. A credit-note payslip reverses IE = min(G, IE so far - min(maximum, S - G)), at least 0, S being the Ontario remuneration of the employee so far. | WSIB premium rates pages; WSIA s. 54(1) and 88(3) |
+| `l10n_ca.on.wcb.max_insurable` | 117,000 | 121,700 | 126,700 | Insurable earnings of the pay IE = min(gross, maximum - IE of the year so far), at least 0; premium = rate per $100 x IE / 100. The IE of the year so far counts the payslips of the employee as R counts those of the company for the EHT, so two payslips of the employee in a batch share the maximum. A credit-note payslip reverses IE = min(G, IE so far - min(maximum, S - G)), at least 0, S being the Ontario remuneration of the employee so far. | WSIB premium rates pages; WSIA s. 54(1) and 88(3) |
 
 The rate per $100 is set for each employer by the annual rate notice of the
 WSIB (risk band of its class), so it is a field of the company and not a

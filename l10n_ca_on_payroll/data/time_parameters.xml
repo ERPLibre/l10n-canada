@@ -153,7 +153,7 @@
     <!-- Employer Health Tax -->
     <record id="param_on_eht_rates" model="base.time.parameter">
         <field name="name">Ontario Employer Health Tax rates</field>
-        <field name="code">l10n_ca.on.eht.rates</field>
+        <field name="code">l10n_ca.on.employer_tax.rates</field>
         <field name="type">json</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
@@ -170,13 +170,13 @@
     </record>
     <record id="param_on_eht_exemption" model="base.time.parameter">
         <field name="name">Ontario Employer Health Tax exemption</field>
-        <field name="code">l10n_ca.on.eht.exemption</field>
+        <field name="code">l10n_ca.on.employer_tax.exemption</field>
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
         <field
             name="description"
-        >Annual exemption deducted from the total Ontario remuneration of an eligible employer whose remuneration is at most l10n_ca.on.eht.exemption_threshold; prorated by the days of the year with a permanent establishment in Ontario. An associated group shares one exemption by agreement, each member taking the lesser of its allocated share and this amount. 1,000,000 for each year from 2020 to 2028; indexed every five years from 2029. Employer Health Tax Act, s. 2.1(2) and (4.0.1) to (4.0.4). Sources: https://www.ontario.ca/laws/statute/90e11 ; https://www.ontario.ca/document/employer-health-tax-eht ; https://budget.ontario.ca/2026/fallstatement/provisions.html</field>
+        >Annual exemption deducted from the total Ontario remuneration of an eligible employer whose remuneration is at most l10n_ca.on.employer_tax.exemption_threshold; prorated by the days of the year with a permanent establishment in Ontario. An associated group shares one exemption by agreement, each member taking the lesser of its allocated share and this amount. 1,000,000 for each year from 2020 to 2028; indexed every five years from 2029. Employer Health Tax Act, s. 2.1(2) and (4.0.1) to (4.0.4). Sources: https://www.ontario.ca/laws/statute/90e11 ; https://www.ontario.ca/document/employer-health-tax-eht ; https://budget.ontario.ca/2026/fallstatement/provisions.html</field>
     </record>
     <record id="param_on_eht_exemption_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_on_eht_exemption" />
@@ -195,7 +195,7 @@
     </record>
     <record id="param_on_eht_exemption_threshold" model="base.time.parameter">
         <field name="name">Ontario Employer Health Tax exemption threshold</field>
-        <field name="code">l10n_ca.on.eht.exemption_threshold</field>
+        <field name="code">l10n_ca.on.employer_tax.exemption_threshold</field>
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
@@ -213,7 +213,7 @@
     </record>
     <record id="param_on_eht_instalment_threshold" model="base.time.parameter">
         <field name="name">Ontario Employer Health Tax instalment threshold</field>
-        <field name="code">l10n_ca.on.eht.instalment_threshold</field>
+        <field name="code">l10n_ca.on.employer_tax.instalment_threshold</field>
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
@@ -233,7 +233,7 @@
     <!-- Workplace Safety and Insurance Board -->
     <record id="param_on_wsib_max_insurable" model="base.time.parameter">
         <field name="name">WSIB maximum insurable earnings</field>
-        <field name="code">l10n_ca.on.wsib.max_insurable</field>
+        <field name="code">l10n_ca.on.wcb.max_insurable</field>
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />

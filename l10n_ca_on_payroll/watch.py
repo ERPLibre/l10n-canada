@@ -29,7 +29,7 @@ def wsib_maximum(content, year):
         raise PageChanged("no maximum insurable earnings sentence")
     if int(match.group(1)) != year:
         return None
-    return {"l10n_ca.on.wsib.max_insurable": amount(match.group(2))}
+    return {"l10n_ca.on.wcb.max_insurable": amount(match.group(2))}
 
 
 def ontario_eht(content, year):
@@ -53,8 +53,8 @@ def ontario_eht(content, year):
     if not match:
         raise PageChanged("no EHT exemption sentence")
     return {
-        "l10n_ca.on.eht.rates": brackets,
-        "l10n_ca.on.eht.exemption": amount(match.group(1)) * 1_000_000,
+        "l10n_ca.on.employer_tax.rates": brackets,
+        "l10n_ca.on.employer_tax.exemption": amount(match.group(1)) * 1_000_000,
     }
 
 

@@ -17,7 +17,6 @@
         "data/hr_payroll_data.xml",
         "data/l10n_ca_payroll_source_data.xml",
         "views/hr_contract_views.xml",
-        "views/res_config_settings_views.xml",
     ],
     "post_init_hook": "post_init_hook",
     "installable": True,

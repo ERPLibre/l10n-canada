@@ -12,6 +12,7 @@ _CA_2023_RULE_ACCOUNTS = {
     "rule_rrsp": ("l10n_ca_221206", "l10n_ca_221203"),
     "rule_union": ("l10n_ca_221206", "l10n_ca_221203"),
     "rule_support": ("l10n_ca_221206", "l10n_ca_221203"),
+    "rule_lsvcc": ("l10n_ca_221206", "l10n_ca_221203"),
     "rule_cpp": ("l10n_ca_221206", "l10n_ca_221203"),
     "rule_cpp2": ("l10n_ca_221206", "l10n_ca_221203"),
     "rule_ei": ("l10n_ca_221206", "l10n_ca_221203"),
@@ -70,8 +71,19 @@ class ResCompany(models.Model):
         return structure.with_env(self.env)
 
     def l10n_ca_payroll_apply_default_accounts(self):
-        """Propose the ca_2023 accounts on the statutory salary rules.
+        """Propose the ca_2023 accounts on the statutory salary rules."""
+        return self._l10n_ca_payroll_apply_rule_accounts(
+            {
+                f"l10n_ca_payroll.{xmlid}": codes
+                for xmlid, codes in _CA_2023_RULE_ACCOUNTS.items()
+            }
+        )
 
+    def _l10n_ca_payroll_apply_rule_accounts(self, accounts):
+        """Propose ca_2023 accounts on salary rules.
+
+        ``accounts`` maps the full XML id of a rule to the XML ids (without
+        module) of its debit and credit accounts in the ca_2023 chart.
         Accounts are company-dependent on the rules: each company gets its
         own. A rule that already has an account for the company keeps it.
         Companies whose chart is not ca_2023 are left untouched.
@@ -79,10 +91,8 @@ class ResCompany(models.Model):
         Rule = self.env["hr.salary.rule"]
         for company in self.filtered(lambda c: c.chart_template == "ca_2023"):
             chart = self.env["account.chart.template"].with_company(company)
-            for rule_xmlid, codes in _CA_2023_RULE_ACCOUNTS.items():
-                rule = self.env.ref(
-                    f"l10n_ca_payroll.{rule_xmlid}", raise_if_not_found=False
-                )
+            for rule_xmlid, codes in accounts.items():
+                rule = self.env.ref(rule_xmlid, raise_if_not_found=False)
                 if not rule:
                     continue
                 rule = Rule.browse(rule.id).with_company(company)
@@ -95,6 +105,25 @@ class ResCompany(models.Model):
                         vals[field_name] = account.id
                 if vals:
                     rule.write(vals)
+        return True
+
+    def _l10n_ca_payroll_add_rules(self, rule_xmlids, accounts=None):
+        """Add salary rules to the "Canada - Base" structure of each company.
+
+        ``rule_xmlids`` are full XML ids; ``accounts`` is the mapping of
+        ``_l10n_ca_payroll_apply_rule_accounts``. A province module calls it
+        from ``l10n_ca_payroll_setup``; a second call adds nothing.
+        """
+        rules = self.env["hr.salary.rule"]
+        for xmlid in rule_xmlids:
+            rules |= self.env.ref(xmlid)
+        for company in self:
+            structure = company._l10n_ca_payroll_structure().sudo()
+            missing = rules - structure.rule_ids
+            if missing:
+                structure.write({"rule_ids": [(4, rule.id) for rule in missing]})
+        if accounts:
+            self._l10n_ca_payroll_apply_rule_accounts(accounts)
         return True
 
     def l10n_ca_payroll_setup(self):

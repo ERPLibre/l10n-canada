@@ -17,6 +17,7 @@ K2P = 0.0505 x (min(P x C x 0.0495 / 0.0595, 3,519.45) + min(P x EI,
 """
 
 from datetime import date
+from functools import partial
 from pathlib import Path
 from unittest.mock import patch
 
@@ -53,7 +54,13 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         cls.journal = cls.company_data["default_journal_misc"]
         # A rate basis under 200,000 gives the lowest EHT rate and the
         # exemption, without the warning of a basis left at 0.
-        cls.company.l10n_ca_on_eht_previous_payroll = 150000.0
+        cls.account = cls.env["l10n_ca.payroll.province.account"].create(
+            {
+                "company_id": cls.company.id,
+                "province_id": cls.ontario.id,
+                "employer_tax_previous_payroll": 150000.0,
+            }
+        )
 
     # ------------------------------------------------------------------
     # Helpers
@@ -340,13 +347,13 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         self._assert_lines(slip, {"CA_CPP": -875.15, "CA_PIT": -1680.06})
 
     def test_claim_exempt_health_premium_only(self):
-        contract = self._contract(3000.0, l10n_ca_on_td1_type="exempt")
+        contract = self._contract(3000.0, l10n_ca_prov_td1_type="exempt")
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # C = 0.0595 x (3,000 - 291.66) = 161.15
         # A = 12 x (3,000 - 161.15 / 5.95) = 35,674.99 > 20,000
         # T2 = V2 = min(300, 0.06 x 15,674.99) = 300 -> 25.00
         self._assert_lines(slip, {"CA_CPP": -161.15, "CA_PIT": -25.0})
-        contract = self._contract(1500.0, l10n_ca_on_td1_type="exempt")
+        contract = self._contract(1500.0, l10n_ca_prov_td1_type="exempt")
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # C = 71.90, A = 12 x (1,500 - 71.90 / 5.95) = 17,854.99 <= 20,000
         self._assert_lines(slip, {"CA_PIT": 0.0})
@@ -354,10 +361,10 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
     def test_claim_amount_credits_and_additional_tax(self):
         contract = self._contract(
             5000.0,
-            l10n_ca_on_td1_type="custom",
-            l10n_ca_on_td1_amount=0.0,
-            l10n_ca_on_other_credits=120.0,
-            l10n_ca_on_additional_tax=20.0,
+            l10n_ca_prov_td1_type="custom",
+            l10n_ca_prov_td1_amount=0.0,
+            l10n_ca_prov_other_credits=120.0,
+            l10n_ca_prov_additional_tax=20.0,
         )
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # As in test_monthly_5000 with K1P = 0 (claim code 0), K3P = 120:
@@ -528,31 +535,35 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
 
     def test_eht_rate_selection(self):
         day = date(2026, 6, 30)
-        rate = self.company._l10n_ca_on_eht_rate
+        rate = partial(
+            self.account._l10n_ca_employer_tax_rate, self.company, "l10n_ca.on"
+        )
         self.assertEqual(rate(0.0, day), 0.0098)
         self.assertEqual(rate(200000, day), 0.0098)
         self.assertEqual(rate(200000.01, day), 0.01101)
         self.assertEqual(rate(300000, day), 0.01465)
         self.assertEqual(rate(400000, day), 0.01829)
         self.assertEqual(rate(400000.01, day), 0.0195)
-        exemption = self.company._l10n_ca_on_eht_exemption
+        exemption = partial(
+            self.account._l10n_ca_employer_tax_exemption, self.company, "l10n_ca.on"
+        )
         self.assertEqual(exemption(5000000, day), 1000000)
         self.assertEqual(exemption(5000000.01, day), 0.0)
-        self.company.l10n_ca_on_eht_charity = True
+        self.account.employer_tax_charity = True
         self.assertEqual(exemption(9000000, day), 1000000)
-        self.company.l10n_ca_on_eht_associated = True
-        self.company.l10n_ca_on_eht_allocated_exemption = 1500000
+        self.account.employer_tax_associated = True
+        self.account.employer_tax_allocated_exemption = 1500000
         self.assertEqual(exemption(100000, day), 1000000)
-        self.company.l10n_ca_on_eht_eligible = False
+        self.account.employer_tax_eligible = False
         self.assertEqual(exemption(100000, day), 0.0)
 
     def test_eht_across_the_exemption(self):
-        self.company.write(
+        self.account.write(
             {
-                "l10n_ca_on_eht_associated": True,
-                "l10n_ca_on_eht_allocated_exemption": 12000.0,
-                "l10n_ca_on_eht_basis": "estimate",
-                "l10n_ca_on_eht_estimated_payroll": 300000.0,
+                "employer_tax_associated": True,
+                "employer_tax_allocated_exemption": 12000.0,
+                "employer_tax_basis": "estimate",
+                "employer_tax_estimated_payroll": 300000.0,
             }
         )
         contract = self._contract(5000.0)
@@ -581,12 +592,12 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
 
     def test_eht_batch_confirm_order(self):
         """Each pair of payslips of a batch shares the exemption once."""
-        self.company.write(
+        self.account.write(
             {
-                "l10n_ca_on_eht_associated": True,
-                "l10n_ca_on_eht_allocated_exemption": 5000.0,
-                "l10n_ca_on_eht_basis": "estimate",
-                "l10n_ca_on_eht_estimated_payroll": 300000.0,
+                "employer_tax_associated": True,
+                "employer_tax_allocated_exemption": 5000.0,
+                "employer_tax_basis": "estimate",
+                "employer_tax_estimated_payroll": 300000.0,
             }
         )
         run = self._march_batch()
@@ -607,12 +618,12 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
 
     def test_eht_batch_pay_date_order(self):
         """In a batch, a payslip paid earlier counts first, whatever its id."""
-        self.company.write(
+        self.account.write(
             {
-                "l10n_ca_on_eht_associated": True,
-                "l10n_ca_on_eht_allocated_exemption": 5000.0,
-                "l10n_ca_on_eht_basis": "estimate",
-                "l10n_ca_on_eht_estimated_payroll": 300000.0,
+                "employer_tax_associated": True,
+                "employer_tax_allocated_exemption": 5000.0,
+                "employer_tax_basis": "estimate",
+                "employer_tax_estimated_payroll": 300000.0,
             }
         )
         run = self._march_batch()
@@ -631,12 +642,12 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
 
     def test_eht_credit_note(self):
         """A credit-note payslip reverses the EHT of the pay it takes back."""
-        self.company.write(
+        self.account.write(
             {
-                "l10n_ca_on_eht_associated": True,
-                "l10n_ca_on_eht_allocated_exemption": 12000.0,
-                "l10n_ca_on_eht_basis": "estimate",
-                "l10n_ca_on_eht_estimated_payroll": 300000.0,
+                "employer_tax_associated": True,
+                "employer_tax_allocated_exemption": 12000.0,
+                "employer_tax_basis": "estimate",
+                "employer_tax_estimated_payroll": 300000.0,
             }
         )
         contract = self._contract(5000.0)
@@ -656,35 +667,33 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
 
     def test_eht_basis_not_entered(self):
         """A rate basis left at 0 is applied with a warning."""
-        self.company.l10n_ca_on_eht_previous_payroll = 0.0
+        self.account.employer_tax_previous_payroll = 0.0
         contract = self._contract(5000.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
-        self.assertIn(
-            f'The EHT rate basis of {self.company.name}, "Previous Year Total '
-            'Ontario Remuneration", is 0',
-            slip.l10n_ca_warning,
+        warning = (
+            f"The total remuneration of {self.company.name} in Ontario that sets "
+            "the employer payroll tax is 0"
         )
-        self.company.write(
+        self.assertIn(warning, slip.l10n_ca_warning)
+        self.account.write(
             {
-                "l10n_ca_on_eht_basis": "estimate",
-                "l10n_ca_on_eht_estimated_payroll": 0.0,
+                "employer_tax_basis": "estimate",
+                "employer_tax_estimated_payroll": 0.0,
             }
         )
         slip.compute_sheet()
-        self.assertIn(
-            '"Estimated Total Ontario Remuneration", is 0', slip.l10n_ca_warning
-        )
-        self.company.l10n_ca_on_eht_estimated_payroll = 300000.0
+        self.assertIn(warning, slip.l10n_ca_warning)
+        self.account.employer_tax_estimated_payroll = 300000.0
         slip.compute_sheet()
         self.assertFalse(slip.l10n_ca_warning)
 
     def test_eht_refund_and_negative_earnings(self):
-        self.company.write(
+        self.account.write(
             {
-                "l10n_ca_on_eht_associated": True,
-                "l10n_ca_on_eht_allocated_exemption": 12000.0,
-                "l10n_ca_on_eht_basis": "estimate",
-                "l10n_ca_on_eht_estimated_payroll": 300000.0,
+                "employer_tax_associated": True,
+                "employer_tax_allocated_exemption": 12000.0,
+                "employer_tax_basis": "estimate",
+                "employer_tax_estimated_payroll": 300000.0,
             }
         )
         contract = self._contract(5000.0)
@@ -697,11 +706,11 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         # -2,000 -> -29.30; -4,000 only reverses the 3,000 above the
         # exemption -> -43.95.
         vals = april._l10n_ca_compute(contract, -2000.0)
-        self.assertAlmostEqual(vals["on_salary"], -2000.0)
-        self.assertAlmostEqual(vals["on_eht"], -29.30)
+        self.assertAlmostEqual(vals["province_remuneration"], -2000.0)
+        self.assertAlmostEqual(vals["employer_tax"], -29.30)
         vals = april._l10n_ca_compute(contract, -4000.0)
-        self.assertAlmostEqual(vals["on_eht"], -43.95)
-        self.assertAlmostEqual(vals["on_wsib_insurable"], 0.0)
+        self.assertAlmostEqual(vals["employer_tax"], -43.95)
+        self.assertAlmostEqual(vals["wcb_insurable"], 0.0)
         # The refund of March counts negatively: R = 10,000 and April
         # bears max(0, 15,000 - 12,000) x 1.465% = 43.95.
         march.refund_sheet()
@@ -709,15 +718,15 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         self._assert_lines(april, {"CA_ON_EHT": 43.95})
 
     def test_eht_without_exemption(self):
-        self.company.l10n_ca_on_eht_previous_payroll = 6000000.0
+        self.account.employer_tax_previous_payroll = 6000000.0
         contract = self._contract(5000.0)
         slip = self._slip(contract, "2026-03-01", "2026-03-31")
         # 6,000,000 > 5,000,000: no exemption, rate 1.95% x 5,000 = 97.50
         self._assert_lines(slip, {"CA_ON_EHT": 97.50})
-        self.company.write(
+        self.account.write(
             {
-                "l10n_ca_on_eht_previous_payroll": 150000.0,
-                "l10n_ca_on_eht_eligible": False,
+                "employer_tax_previous_payroll": 150000.0,
+                "employer_tax_eligible": False,
             }
         )
         slip.compute_sheet()
@@ -729,7 +738,7 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
     # ------------------------------------------------------------------
 
     def test_wsib_up_to_the_maximum(self):
-        self.company.l10n_ca_on_wsib_rate = 1.30
+        self.account.wcb_rate = 1.30
         contract = self._contract(50000.0)
         slips = self._monthly_slips(contract, (1, 2, 3, 4))
         # 2026 maximum 121,700: 50,000, 50,000, then 121,700 - 100,000 =
@@ -742,14 +751,14 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
             [self._line(s, "CA_ON_WSIB") for s in slips],
             [650.0, 650.0, 282.10, 0.0],
         )
-        exempt = self._contract(5000.0, l10n_ca_on_wsib_exempt=True)
+        exempt = self._contract(5000.0, l10n_ca_wcb_exempt=True)
         slip = self._slip(exempt, "2026-03-01", "2026-03-31")
         self.assertNotIn("CA_ON_WSIB", slip.line_ids.mapped("code"))
         self._assert_lines(slip, {"CA_ON_WSIB_IE": 0.0})
 
     def test_wsib_batch_peers(self):
         """Two payslips of one employee in a batch share the maximum."""
-        self.company.l10n_ca_on_wsib_rate = 1.30
+        self.account.wcb_rate = 1.30
         contract = self._contract(50000.0)
         self._monthly_slips(contract, (1, 2))
         run = self._march_batch()
@@ -767,7 +776,7 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
 
     def test_wsib_credit_note(self):
         """A credit note reverses the insurable earnings the pay counted."""
-        self.company.l10n_ca_on_wsib_rate = 1.30
+        self.account.wcb_rate = 1.30
         contract = self._contract(50000.0)
         self._monthly_slips(contract, (1, 2, 3))
         refund = self._slip(
@@ -783,7 +792,7 @@ class TestOntarioPayroll(AccountTestInvoicingCommon):
         self._assert_lines(april, {"CA_ON_WSIB_IE": 21700.0})
 
     def test_wsib_2025_maximum(self):
-        self.company.l10n_ca_on_wsib_rate = 1.30
+        self.account.wcb_rate = 1.30
         contract = self._contract(100000.0, start="2025-01-01")
         january, february = self._monthly_slips(contract, (1, 2), year=2025)
         # 2025 maximum 117,000: 100,000 then 17,000 -> 1,300.00 and 221.00

@@ -20,7 +20,22 @@ from pathlib import Path
 
 SOURCE_FILE = "data/l10n_ca_payroll_source_data.xml"
 PAGE_FILE = "static/description/sources.html"
-JURISDICTIONS = (("federal", "Federal"), ("quebec", "Quebec"), ("ontario", "Ontario"))
+JURISDICTIONS = (
+    ("federal", "Federal"),
+    ("quebec", "Quebec"),
+    ("ontario", "Ontario"),
+    ("british_columbia", "British Columbia"),
+    ("alberta", "Alberta"),
+    ("saskatchewan", "Saskatchewan"),
+    ("manitoba", "Manitoba"),
+    ("new_brunswick", "New Brunswick"),
+    ("nova_scotia", "Nova Scotia"),
+    ("prince_edward_island", "Prince Edward Island"),
+    ("newfoundland_labrador", "Newfoundland and Labrador"),
+    ("yukon", "Yukon"),
+    ("northwest_territories", "Northwest Territories"),
+    ("nunavut", "Nunavut"),
+)
 STATES = {"verified": "Verified", "to_verify": "To verify"}
 PAYROLL_PREFIXES = (
     "l10n_ca.federal.",
@@ -32,6 +47,17 @@ PAYROLL_PREFIXES = (
     "l10n_ca.qpp.",
     "l10n_ca.qpip.",
     "l10n_ca.on.",
+    "l10n_ca.bc.",
+    "l10n_ca.ab.",
+    "l10n_ca.sk.",
+    "l10n_ca.mb.",
+    "l10n_ca.nb.",
+    "l10n_ca.ns.",
+    "l10n_ca.pe.",
+    "l10n_ca.nl.",
+    "l10n_ca.yt.",
+    "l10n_ca.nt.",
+    "l10n_ca.nu.",
 )
 
 

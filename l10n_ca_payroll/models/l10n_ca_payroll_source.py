@@ -3,7 +3,7 @@
 from odoo import api, fields, models
 from odoo.osv import expression
 
-from ..tools.sources_page import PAYROLL_PREFIXES
+from ..tools.sources_page import JURISDICTIONS, PAYROLL_PREFIXES
 
 
 class L10nCaPayrollSource(models.Model):
@@ -23,10 +23,7 @@ class L10nCaPayrollSource(models.Model):
     sequence = fields.Integer(default=10)
     name = fields.Char(required=True, translate=True)
     publisher = fields.Char(translate=True)
-    jurisdiction = fields.Selection(
-        [("federal", "Federal"), ("quebec", "Quebec"), ("ontario", "Ontario")],
-        required=True,
-    )
+    jurisdiction = fields.Selection(list(JURISDICTIONS), required=True)
     kind = fields.Selection(
         [
             ("publication", "Publication"),

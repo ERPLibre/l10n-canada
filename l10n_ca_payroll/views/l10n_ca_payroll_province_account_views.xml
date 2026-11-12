@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="l10n_ca_payroll_province_account_view_list" model="ir.ui.view">
+        <field name="name">l10n_ca.payroll.province.account.list</field>
+        <field name="model">l10n_ca.payroll.province.account</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="province_id" />
+                <field name="employer_tax_account_number" optional="show" />
+                <field name="wcb_account_number" optional="show" />
+                <field name="wcb_rate" />
+            </list>
+        </field>
+    </record>
+    <record id="l10n_ca_payroll_province_account_view_form" model="ir.ui.view">
+        <field name="name">l10n_ca.payroll.province.account.form</field>
+        <field name="model">l10n_ca.payroll.province.account</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                            <field name="currency_id" invisible="1" />
+                            <field name="province_id" />
+                        </group>
+                    </group>
+                    <group>
+                        <group
+                            name="employer_tax"
+                            string="Employer Payroll Tax"
+                            invisible="not has_employer_tax"
+                        >
+                            <field name="has_employer_tax" invisible="1" />
+                            <field name="employer_tax_account_number" />
+                            <field name="employer_tax_eligible" />
+                            <field name="employer_tax_charity" />
+                            <field name="employer_tax_associated" />
+                            <field
+                                name="employer_tax_allocated_exemption"
+                                invisible="not employer_tax_associated"
+                            />
+                            <field name="employer_tax_basis" />
+                            <field
+                                name="employer_tax_previous_payroll"
+                                invisible="employer_tax_basis != 'previous_year'"
+                            />
+                            <field
+                                name="employer_tax_estimated_payroll"
+                                invisible="employer_tax_basis != 'estimate'"
+                            />
+                        </group>
+                        <group name="wcb" string="Workers' Compensation">
+                            <field name="wcb_account_number" />
+                            <field name="wcb_rate" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_l10n_ca_payroll_province_account" model="ir.actions.act_window">
+        <field name="name">Provincial Payroll Accounts</field>
+        <field name="res_model">l10n_ca.payroll.province.account</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add the accounts of the company with the payroll bodies of a province
+            </p>
+            <p>
+                The employer payroll tax of the province (rate basis, exemption) and the
+                rate of the workers' compensation board, used by the payslips of the
+                employees who work in that province.
+            </p>
+        </field>
+    </record>
+</odoo>

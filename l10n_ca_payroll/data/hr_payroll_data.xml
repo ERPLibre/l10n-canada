@@ -217,6 +217,29 @@
         <field name="code">CA_SUPPORT</field>
         <field name="input_id" ref="rule_support" />
     </record>
+    <record id="rule_lsvcc" model="hr.salary.rule">
+        <field name="name">Labour-Sponsored Fund Shares</field>
+        <field name="code">CA_LSVCC</field>
+        <field name="sequence">34</field>
+        <field name="category_id" ref="categ_ded" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = bool(contract.l10n_ca_lsvcc_amount or (inputs.CA_LSVCC and inputs.CA_LSVCC.amount))</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = -(contract.l10n_ca_lsvcc_amount + (inputs.CA_LSVCC.amount if inputs.CA_LSVCC else 0.0))</field>
+        <field
+            name="note"
+        >Shares of a labour-sponsored venture capital corporation bought by payroll deduction: the amount per pay of the contract plus the input of the payslip. They do not lower the taxable income; the provinces that grant a labour-sponsored funds tax credit lower their tax by it (LCP of T4127).</field>
+    </record>
+    <record id="rule_input_lsvcc" model="hr.rule.input">
+        <field name="name">Labour-Sponsored Fund Shares</field>
+        <field name="code">CA_LSVCC</field>
+        <field name="input_id" ref="rule_lsvcc" />
+    </record>
     <record id="rule_gross" model="hr.salary.rule">
         <field name="name">Gross</field>
         <field name="code">GROSS</field>
@@ -410,6 +433,7 @@ result_name = ca["line_names"]["CA_CPP2_ER"]</field>
                 ref('rule_rrsp'),
                 ref('rule_union'),
                 ref('rule_support'),
+                ref('rule_lsvcc'),
                 ref('rule_gross'),
                 ref('rule_pensionable'),
                 ref('rule_insurable'),

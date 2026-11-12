@@ -8,30 +8,17 @@
         <field name="inherit_id" ref="l10n_ca_payroll.hr_contract_view_form" />
         <field name="arch" type="xml">
             <xpath
-                expr="//page[@name='l10n_ca_payroll']/group"
-                position="after"
+                expr="//group[@name='l10n_ca_td1_provincial']"
+                position="inside"
             >
-                <field name="l10n_ca_province_code" invisible="1" />
-                <group invisible="l10n_ca_province_code != 'ON'">
-                    <group name="l10n_ca_on_td1on" string="Ontario TD1ON">
-                        <field name="l10n_ca_on_td1_type" />
-                        <field
-                            name="l10n_ca_on_bpa"
-                            invisible="l10n_ca_on_td1_type != 'basic'"
-                        />
-                        <field
-                            name="l10n_ca_on_td1_amount"
-                            invisible="l10n_ca_on_td1_type != 'custom'"
-                        />
-                        <field name="l10n_ca_on_dependants_under_19" />
-                        <field name="l10n_ca_on_disabled_dependants" />
-                        <field name="l10n_ca_on_other_credits" />
-                        <field name="l10n_ca_on_additional_tax" />
-                    </group>
-                    <group name="l10n_ca_on_other" string="Ontario - Other">
-                        <field name="l10n_ca_on_wsib_exempt" />
-                    </group>
-                </group>
+                <field
+                    name="l10n_ca_on_dependants_under_19"
+                    invisible="l10n_ca_province_code != 'ON'"
+                />
+                <field
+                    name="l10n_ca_on_disabled_dependants"
+                    invisible="l10n_ca_province_code != 'ON'"
+                />
             </xpath>
         </field>
     </record>

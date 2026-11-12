@@ -31,6 +31,7 @@
         "views/res_config_settings_views.xml",
         "views/l10n_ca_payroll_source_views.xml",
         "views/l10n_ca_payroll_source_watch_views.xml",
+        "views/l10n_ca_payroll_province_account_views.xml",
         "views/menus.xml",
     ],
     "post_init_hook": "post_init_hook",

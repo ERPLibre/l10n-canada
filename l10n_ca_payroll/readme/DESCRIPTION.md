@@ -58,3 +58,21 @@ Extension points for a provincial module, on `hr.payslip`:
 `_l10n_ca_t4_values`, `_l10n_ca_remittance_values`. Employees working in
 Quebec contribute to the QPP, whose rates (`l10n_ca.qpp.*`) come with the
 Quebec payroll module.
+
+Common engine of the provinces whose income tax the CRA collects
+(`models/hr_payslip_province.py`): a province module registers its code
+and the prefix of its time parameters in `_l10n_ca_province_prefixes`,
+and the engine applies T4127 option 1, steps 4 to 6 (T4 = V x A - KP -
+K1P - K2P - K3P - K4P - K5P, T2 = T4 + V1 + V2 - S - P x LCP, (T1 + T2) /
+P rounded once), the provincial tax on bonuses, the employer payroll tax
+of the province (rate by total remuneration, exemption consumed by the
+first pays of the year) and the workers' compensation premium (rate per
+$100 up to the maximum insurable earnings). The factors only some
+provinces have are hooks: `_l10n_ca_prov_bpa`,
+`_l10n_ca_prov_extra_credits`, `_l10n_ca_prov_surtax`,
+`_l10n_ca_prov_premium`, `_l10n_ca_prov_reduction`. The contract holds
+the provincial TD1 (claim, other credits, additional tax), the
+labour-sponsored fund shares withheld (rule CA_LSVCC, credit LCP) and the
+workers' compensation exemption; Payroll > Configuration > Provincial
+Payroll Accounts holds, per company and province, the employer tax rate
+basis and exemption and the workers' compensation rate.

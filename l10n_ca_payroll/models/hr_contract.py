@@ -136,6 +136,69 @@ class HrContract(models.Model):
         help="No EI premium is deducted, e.g. an employee who controls "
         "more than 40% of the voting shares of the corporation.",
     )
+    l10n_ca_province_code = fields.Char(related="l10n_ca_province_id.code")
+    l10n_ca_prov_computed = fields.Boolean(
+        string="Provincial Tax Computed",
+        compute="_compute_l10n_ca_prov_computed",
+        help="An installed module computes the income tax of the province "
+        "of employment with the CRA formulas.",
+    )
+    l10n_ca_prov_td1_type = fields.Selection(
+        [
+            ("basic", "Basic personal amount"),
+            ("custom", "Total claim amount from the TD1"),
+            ("exempt", "Exempt (claim code E)"),
+        ],
+        string="Provincial TD1 Claim",
+        default="basic",
+        required=True,
+        help="Provincial or territorial TD1 of the province of employment "
+        "(TD1ON, TD1BC, ...). Basic personal amount: the claim is the "
+        "basic personal amount of the year, as when the employee files no "
+        "provincial TD1. Total claim amount: the amount of the form, 0 for "
+        "claim code 0. Exempt: the employee expects a total income below "
+        "the claim; no provincial tax is withheld, except the amounts the "
+        "province levies whatever the claim, such as the Ontario Health "
+        "Premium.",
+    )
+    l10n_ca_prov_td1_amount = fields.Monetary(
+        string="Provincial TD1 Total Claim Amount",
+        help="TCP of the T4127 formulas: total of the provincial or "
+        "territorial personal tax credit amounts of the TD1. Enter the "
+        "amount of the form of the year of the pay: the payslip does not "
+        "index it.",
+    )
+    l10n_ca_prov_bpa = fields.Monetary(
+        string="Provincial Basic Personal Amount",
+        compute="_compute_l10n_ca_prov_bpa",
+        help="Basic personal amount of the province of employment in force "
+        "today; for an income-tested amount, its maximum.",
+    )
+    l10n_ca_prov_other_credits = fields.Monetary(
+        string="Other Provincial Tax Credits (Annual)",
+        help="K3P of the T4127 formulas: other provincial or territorial "
+        "non-refundable tax credits authorized by a tax services office, "
+        "such as medical expenses or charitable donations, as an annual "
+        "credit amount.",
+    )
+    l10n_ca_prov_additional_tax = fields.Monetary(
+        string="Additional Provincial Tax per Pay",
+        help="Additional provincial or territorial income tax the employee "
+        "asks to have withheld on each pay.",
+    )
+    l10n_ca_lsvcc_amount = fields.Monetary(
+        string="Labour-Sponsored Fund Shares per Pay",
+        help="Amount withheld from each pay to buy approved shares of a "
+        "labour-sponsored venture capital corporation (salary rule "
+        "CA_LSVCC, with the input of the payslip). The provinces that grant "
+        "a labour-sponsored funds tax credit lower the provincial tax by "
+        "it (LCP of the T4127 formulas).",
+    )
+    l10n_ca_wcb_exempt = fields.Boolean(
+        string="Not Covered by Workers' Compensation",
+        help="No workers' compensation premium on this remuneration, e.g. "
+        "a proprietor or an executive officer without optional coverage.",
+    )
 
     @api.model
     def _default_l10n_ca_province(self):
@@ -155,6 +218,27 @@ class HrContract(models.Model):
             company = contract.company_id or self.env.company
             contract.l10n_ca_td1_federal_bpa = company._l10n_ca_param(
                 "l10n_ca.federal.bpa_max", today, default=0.0
+            )
+
+    @api.depends("l10n_ca_province_id")
+    def _compute_l10n_ca_prov_computed(self):
+        prefixes = self.env["hr.payslip"]._l10n_ca_province_prefixes()
+        for contract in self:
+            contract.l10n_ca_prov_computed = (
+                contract.l10n_ca_province_id.code in prefixes
+            )
+
+    @api.depends("l10n_ca_province_id")
+    def _compute_l10n_ca_prov_bpa(self):
+        today = fields.Date.context_today(self)
+        Payslip = self.env["hr.payslip"]
+        for contract in self:
+            prefix = Payslip._l10n_ca_province_prefix(contract.l10n_ca_province_id)
+            company = contract.company_id or self.env.company
+            contract.l10n_ca_prov_bpa = (
+                company._l10n_ca_param(f"{prefix}.bpa", today, default=0.0)
+                if prefix
+                else 0.0
             )
 
     def _l10n_ca_federal_claim(self, net_income, date):
