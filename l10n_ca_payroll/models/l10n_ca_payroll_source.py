@@ -3,7 +3,7 @@
 from odoo import api, fields, models
 from odoo.osv import expression
 
-from ..tools.sources_page import JURISDICTIONS, PAYROLL_PREFIXES
+from ..tools.sources_page import JURISDICTION_PREFIXES, JURISDICTIONS
 
 
 class L10nCaPayrollSource(models.Model):
@@ -12,7 +12,7 @@ class L10nCaPayrollSource(models.Model):
     The records are data of the payroll modules, one file per jurisdiction,
     from which ``tools/sources_page.py`` also writes the static page
     ``static/description/sources.html``. A source is linked to the payroll
-    time parameters (codes starting with ``PAYROLL_PREFIXES``) whose
+    time parameters of its jurisdiction (``JURISDICTION_PREFIXES``) whose
     description cites its URL.
     """
 
@@ -60,14 +60,17 @@ class L10nCaPayrollSource(models.Model):
     )
     parameter_count = fields.Integer(compute="_compute_parameter_ids")
 
-    @api.depends("url")
+    @api.depends("url", "jurisdiction")
     def _compute_parameter_ids(self):
         Parameter = self.env["base.time.parameter"]
         for source in self:
             parameters = Parameter.browse()
-            if source.url:
+            if source.url and source.jurisdiction:
                 prefixes = expression.OR(
-                    [[("code", "=like", f"{prefix}%")] for prefix in PAYROLL_PREFIXES]
+                    [
+                        [("code", "=like", f"{prefix}%")]
+                        for prefix in JURISDICTION_PREFIXES[source.jurisdiction]
+                    ]
                 )
                 parameters = Parameter.search(
                     expression.AND([[("description", "ilike", source.url)], prefixes]),
