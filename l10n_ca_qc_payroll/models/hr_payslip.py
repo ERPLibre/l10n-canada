@@ -492,6 +492,7 @@ class HrPayslip(models.Model):
         )
         vals.update(
             {
+                "qc_tax_deduction_total": tax_deductions,
                 "qc_worker_deduction": worker_deduction,
                 "qc_additional_qpp": additional_qpp,
                 "qc_deductions": deductions,
@@ -514,8 +515,9 @@ class HrPayslip(models.Model):
 
         Second method: I = P * (G - F - H - CSA) + B1 + B2 - CSB1 - CSB - J
         - J1 and A = T * (B2 - CSB), T being the rate of the bracket of I.
-        B2 is the lump-sum payments of the pay less the deductions withheld
-        from them (category CA_LUMP_DED), CSB = CS * B2 / S3 (``f5b``), B1
+        F is the same as for the regular payments, both categories. B2 is
+        the lump-sum payments of the pay less the deductions withheld from
+        them (category CA_LUMP_DED), CSB = CS * B2 / S3 (``f5b``), B1
         and CSB1 the year-to-date totals of rules CA_NPP and CA_F5B. When
         the annual salary and the lump-sum payments of the year
         total at most the basic personal amount, A is
@@ -535,7 +537,7 @@ class HrPayslip(models.Model):
             periods
             * (
                 salary
-                - vals.get("qc_tax_deductions", 0.0)
+                - vals["qc_tax_deduction_total"]
                 - vals["qc_worker_deduction"]
                 - vals["qc_additional_qpp"]
             )

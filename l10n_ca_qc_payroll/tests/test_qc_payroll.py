@@ -403,6 +403,28 @@ class TestQuebecPayroll(AccountTestInvoicingCommon):
             },
         )
 
+    def test_lump_sum_bracket_after_f(self):
+        """F of the contract lowers the income that sets the lump-sum rate."""
+        contract = self._contract(4600.0, l10n_ca_rpp_amount=500.0)
+        slip = self._slip(contract, "2026-03-01", "2026-03-31", bonus=1200.0)
+        # C = 0.063 * (5,800 - 291.66) = 347.03, CS = 347.03 / 6.3 = 55.084
+        # CSA = 55.084 * 4,600 / 5,800 = 43.69, CSB = 55.084 * 1,200 /
+        # 5,800 = 11.40; H = min(276, 1,450 / 12) = 120.83
+        # Regular pay: I = 12 * (4,600 - 500 - 120.83 - 43.69) = 47,225.76
+        #   Y = 0.14 * 47,225.76 - 0.14 * 18,952 = 3,958.33 -> 329.86
+        # Payment: I = 47,225.76 + 1,200 - 11.40 = 48,414.36 -> T = 14%
+        #   A = 0.14 * (1,200 - 11.40) = 166.40; without F, I would be
+        #   54,414.36, in the 19% bracket.
+        self._assert_lines(
+            slip,
+            {
+                "CA_RPP": -500.0,
+                "CA_CPP": -347.03,
+                "CA_F5B": 11.40,
+                "CA_PIT": -(329.86 + 166.40),
+            },
+        )
+
     def test_lump_sum_flat_rate(self):
         """Salary and lump sums of at most the basic personal amount: 7%."""
         contract = self._contract(1000.0)
