@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the Newfoundland and Labrador payroll.
+     l10n_ca_payroll/tools/sources_page.py writes
+     static/description/sources.html from this file: run it after a
+     change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_123" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">publication</field>
+        <field name="name">T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Changes effective July 1, 2026, Newfoundland and Labrador; step 4, K1P; table 8.2</field>
+        <field name="url">https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+        <field name="summary">Basic personal amount raised from 11,188 to 13,094 for 2026; since the pays of the first half used 11,188, a prorated 15,000 applies from the first pay of July. An employee who filed a TD1NL with the lower amount before July 1 needs no new form. Brackets and constants unchanged.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_122" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">publication</field>
+        <field name="name">T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Step 4 (T4, K1P, K2P); tables 8.1 and 8.2</field>
+        <field name="url">https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field name="summary">Newfoundland and Labrador rates 8.7%, 14.5%, 15.8%, 17.8%, 19.8%, 20.8%, 21.3% and 21.8% from 44,678, 89,354, 159,528, 223,340, 285,319, 570,638 and 1,141,275, constants KP; basic personal amount 11,188 (indexation 1.1%). No surtax, premium, reduction or labour-sponsored funds credit.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_td1nl_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">publication</field>
+        <field name="name">TD1NL 2026 Newfoundland and Labrador Personal Tax Credits Return</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field name="reference">Line 1 (basic personal amount) and the total claim amount</field>
+        <field name="url">https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1nl.html</field>
+        <field name="summary">Total claim amount TCP entered on the contract when the employee claims more than the basic personal amount.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_finance_personal" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">page</field>
+        <field name="name">Personal Income Tax</field>
+        <field name="publisher">Newfoundland and Labrador Department of Finance</field>
+        <field name="url">https://www.gov.nl.ca/fin/tax-programs-incentives/personal/personalincometax/</field>
+        <field name="summary">Rates and brackets of the provincial personal income tax and the non-refundable credits: basic personal amount 11,067 for 2025 and 13,094 for 2026.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_bill_16" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">statute</field>
+        <field name="name">Bill 16, An Act to Amend the Income Tax Act, 2000</field>
+        <field name="publisher">House of Assembly of Newfoundland and Labrador</field>
+        <field name="reference">Section 1 (basic personal amount) and section 5 (coming into force)</field>
+        <field name="url">https://assembly.nl.ca/HouseBusiness/Bills/ga51session1/bill2616.htm</field>
+        <field name="summary">Basic personal amount of 13,094 for 2026, considered in force from January 1, 2026, not indexed before 2027; 15,000 indexed by the consumer price index for 2027.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_hapset_page" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">page</field>
+        <field name="name">Health and Post-Secondary Education Tax (Payroll Tax)</field>
+        <field name="publisher">Newfoundland and Labrador Department of Finance</field>
+        <field name="url">https://www.gov.nl.ca/fin/tax-programs-incentives/business/education/</field>
+        <field name="summary">Tax of 2% payable by employers on the annual remuneration in the province above the exemption threshold, 2,000,000 for all employers since January 1, 2023. Associated employers and partners file an allocation agreement that shares the exemption.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_hapset_return" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">publication</field>
+        <field name="name">Health and Post-Secondary Education Tax Return Explanation</field>
+        <field name="publisher">Newfoundland and Labrador Department of Finance</field>
+        <field name="reference">Lines 1 to 4 of the monthly return</field>
+        <field name="url">https://www.gov.nl.ca/fin/files/tax-programs-incentives-business-taxefile-hapset-return-description.pdf</field>
+        <field name="summary">Remuneration: the amounts of employment income (Income Tax Act, s. 5(1), 6 and 7) of the employees who report for work in the province. The allocated deduction is reduced by the payroll of each period until it is exhausted; tax = 2% x (gross remuneration of the period - deduction left), at least 0. Return and payment within 20 days after the end of each month.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_revenue_administration_act" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">statute</field>
+        <field name="name">Revenue Administration Act, SNL 2009, c. R-15.01</field>
+        <field name="publisher">House of Assembly of Newfoundland and Labrador</field>
+        <field name="reference">Part IV, s. 73 (tax of 2%); s. 2(w) (exemption threshold), 2(jjj) (remuneration), 2(qqq) (taxable remuneration), 2.01 (association)</field>
+        <field name="url">https://www.assembly.nl.ca/Legislation/sr/statutes/r15-01.htm</field>
+        <field name="summary">Rate of 2% of the taxable remuneration; exemption of 2,000,000; a group of associated employers deducts the shares of its allocation agreement, and nothing without one.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_revenue_administration_regulations" model="l10n_ca.payroll.source">
+        <field name="sequence">90</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">statute</field>
+        <field name="name">Revenue Administration Regulations, NLR 73/11</field>
+        <field name="publisher">House of Assembly of Newfoundland and Labrador</field>
+        <field name="reference">Section 3(1) (monthly return), 22 (exclusions), 54 (association)</field>
+        <field name="url">https://www.assembly.nl.ca/Legislation/sr/Regulations/rc110073.htm</field>
+        <field name="summary">Monthly return and payment no later than 20 days after the end of the month; association fixed at the beginning of the calendar year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workplacenl_annual_assessment" model="l10n_ca.payroll.source">
+        <field name="sequence">100</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">page</field>
+        <field name="name">Annual Assessment</field>
+        <field name="publisher">WorkplaceNL</field>
+        <field name="reference">Table Maximum Assessable Earnings</field>
+        <field name="url">https://workplacenl.ca/employers/manage-my-account/annual-assessment/</field>
+        <field name="summary">Maximum assessable earnings per worker, adjusted each year by the consumer price index: 79,345 in 2025, 80,935 in 2026, 82,800 in 2027. Assessment = rate per $100 x assessable payroll; Employer Payroll Statement due February 28; excess earnings above the maximum deducted per worker; minimum annual assessment of 50.</field>
+        <field name="watch_key">workplacenl_maximum</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workplacenl_2027" model="l10n_ca.payroll.source">
+        <field name="sequence">110</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">page</field>
+        <field name="name">WorkplaceNL lowers average assessment rate for 2027</field>
+        <field name="publisher">WorkplaceNL</field>
+        <field name="url">https://workplacenl.ca/article/workplacenl-lowers-average-assessment-rate-for-2027/</field>
+        <field name="summary">Maximum compensable and assessable earnings of 82,800 from January 1, 2027 (80,935 in 2026); average assessment rate 1.66 per $100 in 2027.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workplacenl_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">120</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">page</field>
+        <field name="name">WorkplaceNL holds average assessment rate steady again for 2026</field>
+        <field name="publisher">WorkplaceNL</field>
+        <field name="url">https://workplacenl.ca/article/workplacenl-holds-average-assessment-rate-steady-again-for-2026/</field>
+        <field name="summary">Maximum compensable and assessable earnings of 80,935 for 2026 (79,345 in 2025); average assessment rate 1.73 per $100.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workplacenl_coverage" model="l10n_ca.payroll.source">
+        <field name="sequence">130</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">page</field>
+        <field name="name">Types of Coverage</field>
+        <field name="publisher">WorkplaceNL</field>
+        <field name="url">https://workplacenl.ca/employers/register-my-business/types-of-coverage/</field>
+        <field name="summary">Proprietors and partners of an unincorporated business are not covered automatically and may apply for Optional Personal Coverage; employers of persons at a private residence need not register.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_whsc_act" model="l10n_ca.payroll.source">
+        <field name="sequence">140</field>
+        <field name="jurisdiction">newfoundland_labrador</field>
+        <field name="kind">statute</field>
+        <field name="name">Workplace Health, Safety and Compensation Act, 2022, SNL 2022, c. W-11.1</field>
+        <field name="publisher">House of Assembly of Newfoundland and Labrador</field>
+        <field name="reference">Assessments</field>
+        <field name="url">https://assembly.nl.ca/Legislation/sr/statutes/w11-1.htm</field>
+        <field name="summary">Assessment of the employers on the earnings of their workers up to the maximum compensable and assessable earnings of the year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>

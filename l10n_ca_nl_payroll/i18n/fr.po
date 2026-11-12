@@ -1,0 +1,318 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_nl_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-12 15:35+0000\n"
+"PO-Revision-Date: 2026-11-12 15:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_workplacenl_annual_assessment
+msgid "Annual Assessment"
+msgstr "Cotisation annuelle (Annual Assessment)"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_whsc_act
+msgid ""
+"Assessment of the employers on the earnings of their workers up to the "
+"maximum compensable and assessable earnings of the year."
+msgstr ""
+"Cotisation des employeurs sur les gains de leurs travailleurs jusqu'au "
+"maximum des gains indemnisables et cotisables de l'année."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_bill_16
+msgid ""
+"Basic personal amount of 13,094 for 2026, considered in force from January "
+"1, 2026, not indexed before 2027; 15,000 indexed by the consumer price index"
+" for 2027."
+msgstr ""
+"Montant personnel de base de 13 094 pour 2026, réputé en vigueur depuis le "
+"1er janvier 2026, non indexé avant 2027 ; 15 000 indexé selon l'indice des "
+"prix à la consommation pour 2027."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_t4127_123
+msgid ""
+"Basic personal amount raised from 11,188 to 13,094 for 2026; since the pays "
+"of the first half used 11,188, a prorated 15,000 applies from the first pay "
+"of July. An employee who filed a TD1NL with the lower amount before July 1 "
+"needs no new form. Brackets and constants unchanged."
+msgstr ""
+"Montant personnel de base porté de 11 188 à 13 094 pour 2026 ; comme les "
+"paies du premier semestre ont utilisé 11 188, un montant calculé au prorata "
+"de 15 000 s'applique à compter de la première paie de juillet. Un employé "
+"qui a rempli un TD1NL avec le montant inférieur avant le 1er juillet n'a pas"
+" à en remplir un nouveau. Tranches et constantes inchangées."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_bill_16
+msgid "Bill 16, An Act to Amend the Income Tax Act, 2000"
+msgstr "Projet de loi 16, An Act to Amend the Income Tax Act, 2000"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_t4127_122
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_t4127_123
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_td1nl_2026
+msgid "Canada Revenue Agency"
+msgstr "Agence du revenu du Canada"
+
+#. module: l10n_ca_nl_payroll
+#. odoo-python
+#: code:addons/l10n_ca_nl_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_nl_payroll.rule_nl_employer_tax
+msgid "Health and Post-Secondary Education Tax"
+msgstr "Taxe sur la santé et l'éducation postsecondaire"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_hapset_page
+msgid "Health and Post-Secondary Education Tax (Payroll Tax)"
+msgstr ""
+"Taxe sur la santé et l'éducation postsecondaire (taxe sur la masse "
+"salariale)"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_hapset_return
+msgid "Health and Post-Secondary Education Tax Return Explanation"
+msgstr ""
+"Explication de la déclaration de la taxe sur la santé et l'éducation "
+"postsecondaire"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_bill_16
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_revenue_administration_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_revenue_administration_regulations
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_whsc_act
+msgid "House of Assembly of Newfoundland and Labrador"
+msgstr "Chambre d'assemblée de Terre-Neuve-et-Labrador"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_workplacenl_annual_assessment
+msgid ""
+"Maximum assessable earnings per worker, adjusted each year by the consumer "
+"price index: 79,345 in 2025, 80,935 in 2026, 82,800 in 2027. Assessment = "
+"rate per $100 x assessable payroll; Employer Payroll Statement due February "
+"28; excess earnings above the maximum deducted per worker; minimum annual "
+"assessment of 50."
+msgstr ""
+"Gains cotisables maximums par travailleur, rajustés chaque année selon "
+"l'indice des prix à la consommation : 79 345 en 2025, 80 935 en 2026, 82 800"
+" en 2027. Cotisation = taux par 100 $ x masse salariale cotisable ; état de "
+"la masse salariale de l'employeur dû le 28 février ; gains excédant le "
+"maximum déduits par travailleur ; cotisation annuelle minimale de 50."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_workplacenl_2026
+msgid ""
+"Maximum compensable and assessable earnings of 80,935 for 2026 (79,345 in "
+"2025); average assessment rate 1.73 per $100."
+msgstr ""
+"Gains indemnisables et cotisables maximums de 80 935 pour 2026 (79 345 en "
+"2025) ; taux de cotisation moyen de 1,73 par 100 $."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_workplacenl_2027
+msgid ""
+"Maximum compensable and assessable earnings of 82,800 from January 1, 2027 "
+"(80,935 in 2026); average assessment rate 1.66 per $100 in 2027."
+msgstr ""
+"Gains indemnisables et cotisables maximums de 82 800 à compter du 1er "
+"janvier 2027 (80 935 en 2026) ; taux de cotisation moyen de 1,66 par 100 $ "
+"en 2027."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_revenue_administration_regulations
+msgid ""
+"Monthly return and payment no later than 20 days after the end of the month;"
+" association fixed at the beginning of the calendar year."
+msgstr ""
+"Déclaration et paiement mensuels au plus tard 20 jours après la fin du mois "
+"; association établie au début de l'année civile."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_finance_personal
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_hapset_page
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_hapset_return
+msgid "Newfoundland and Labrador Department of Finance"
+msgstr "Ministère des Finances de Terre-Neuve-et-Labrador"
+
+#. module: l10n_ca_nl_payroll
+#: model:hr.salary.rule,name:l10n_ca_nl_payroll.rule_nl_salary
+msgid "Newfoundland and Labrador Remuneration"
+msgstr "Rémunération à Terre-Neuve-et-Labrador"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_t4127_122
+msgid ""
+"Newfoundland and Labrador rates 8.7%, 14.5%, 15.8%, 17.8%, 19.8%, 20.8%, "
+"21.3% and 21.8% from 44,678, 89,354, 159,528, 223,340, 285,319, 570,638 and "
+"1,141,275, constants KP; basic personal amount 11,188 (indexation 1.1%). No "
+"surtax, premium, reduction or labour-sponsored funds credit."
+msgstr ""
+"Taux de Terre-Neuve-et-Labrador de 8,7 %, 14,5 %, 15,8 %, 17,8 %, 19,8 %, "
+"20,8 %, 21,3 % et 21,8 % à partir de 44 678, 89 354, 159 528, 223 340, 285 "
+"319, 570 638 et 1 141 275, constantes KP ; montant personnel de base de 11 "
+"188 (indexation de 1,1 %). Ni surtaxe, ni prime, ni réduction, ni crédit "
+"pour fonds de travailleurs."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_finance_personal
+msgid "Personal Income Tax"
+msgstr "Impôt sur le revenu des particuliers"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_workplacenl_coverage
+msgid ""
+"Proprietors and partners of an unincorporated business are not covered "
+"automatically and may apply for Optional Personal Coverage; employers of "
+"persons at a private residence need not register."
+msgstr ""
+"Les propriétaires et les associés d'une entreprise non constituée en société"
+" ne sont pas protégés d'office et peuvent demander la protection personnelle"
+" facultative ; les employeurs de personnes travaillant dans une résidence "
+"privée n'ont pas à s'inscrire."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_revenue_administration_act
+msgid ""
+"Rate of 2% of the taxable remuneration; exemption of 2,000,000; a group of "
+"associated employers deducts the shares of its allocation agreement, and "
+"nothing without one."
+msgstr ""
+"Taux de 2 % de la rémunération imposable ; exemption de 2 000 000 ; un "
+"groupe d'employeurs associés déduit les parts de son entente de répartition,"
+" et rien sans entente."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_finance_personal
+msgid ""
+"Rates and brackets of the provincial personal income tax and the non-"
+"refundable credits: basic personal amount 11,067 for 2025 and 13,094 for "
+"2026."
+msgstr ""
+"Taux et tranches de l'impôt provincial sur le revenu des particuliers et "
+"crédits non remboursables : montant personnel de base de 11 067 pour 2025 et"
+" de 13 094 pour 2026."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_hapset_return
+msgid ""
+"Remuneration: the amounts of employment income (Income Tax Act, s. 5(1), 6 "
+"and 7) of the employees who report for work in the province. The allocated "
+"deduction is reduced by the payroll of each period until it is exhausted; "
+"tax = 2% x (gross remuneration of the period - deduction left), at least 0. "
+"Return and payment within 20 days after the end of each month."
+msgstr ""
+"Rémunération : les montants de revenu d'emploi (Loi de l'impôt sur le "
+"revenu, art. 5(1), 6 et 7) des employés qui se présentent au travail dans la"
+" province. La déduction répartie est réduite de la masse salariale de chaque"
+" période jusqu'à épuisement ; taxe = 2 % x (rémunération brute de la période"
+" - déduction restante), au moins 0. Déclaration et paiement dans les 20 "
+"jours suivant la fin de chaque mois."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_revenue_administration_act
+msgid "Revenue Administration Act, SNL 2009, c. R-15.01"
+msgstr "Revenue Administration Act, SNL 2009, ch. R-15.01"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_revenue_administration_regulations
+msgid "Revenue Administration Regulations, NLR 73/11"
+msgstr "Revenue Administration Regulations, NLR 73/11"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_t4127_122
+msgid "T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 122e édition (1er "
+"janvier 2026)"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_t4127_123
+msgid "T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 123e édition (1er "
+"juillet 2026)"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_td1nl_2026
+msgid "TD1NL 2026 Newfoundland and Labrador Personal Tax Credits Return"
+msgstr ""
+"TD1NL 2026 Déclaration des crédits d'impôt personnels de Terre-Neuve-et-"
+"Labrador"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_hapset_page
+msgid ""
+"Tax of 2% payable by employers on the annual remuneration in the province "
+"above the exemption threshold, 2,000,000 for all employers since January 1, "
+"2023. Associated employers and partners file an allocation agreement that "
+"shares the exemption."
+msgstr ""
+"Taxe de 2 % payable par les employeurs sur la rémunération annuelle versée "
+"dans la province au-delà du seuil d'exemption, 2 000 000 pour tous les "
+"employeurs depuis le 1er janvier 2023. Les employeurs associés et les "
+"associés d'une société de personnes produisent une entente de répartition de"
+" l'exemption."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_td1nl_2026
+msgid ""
+"Total claim amount TCP entered on the contract when the employee claims more"
+" than the basic personal amount."
+msgstr ""
+"Montant total de la demande TCP saisi au contrat lorsque l'employé demande "
+"plus que le montant personnel de base."
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_workplacenl_coverage
+msgid "Types of Coverage"
+msgstr "Types de protection (Types of Coverage)"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_whsc_act
+msgid ""
+"Workplace Health, Safety and Compensation Act, 2022, SNL 2022, c. W-11.1"
+msgstr ""
+"Workplace Health, Safety and Compensation Act, 2022, SNL 2022, ch. W-11.1"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_workplacenl_2026
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_workplacenl_2027
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_workplacenl_annual_assessment
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_workplacenl_coverage
+msgid "WorkplaceNL"
+msgstr "WorkplaceNL"
+
+#. module: l10n_ca_nl_payroll
+#: model:hr.salary.rule,name:l10n_ca_nl_payroll.rule_nl_wcb_insurable
+msgid "WorkplaceNL Assessable Earnings"
+msgstr "Gains cotisables de WorkplaceNL"
+
+#. module: l10n_ca_nl_payroll
+#. odoo-python
+#: code:addons/l10n_ca_nl_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_nl_payroll.rule_nl_wcb
+msgid "WorkplaceNL Assessment"
+msgstr "Cotisation de WorkplaceNL"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_workplacenl_2026
+msgid "WorkplaceNL holds average assessment rate steady again for 2026"
+msgstr ""
+"WorkplaceNL maintient de nouveau son taux de cotisation moyen pour 2026"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_workplacenl_2027
+msgid "WorkplaceNL lowers average assessment rate for 2027"
+msgstr "WorkplaceNL abaisse son taux de cotisation moyen pour 2027"

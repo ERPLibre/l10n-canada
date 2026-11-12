@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Newfoundland and Labrador income tax, T4127 option 1 -->
+    <record id="param_nl_brackets" model="base.time.parameter">
+        <field
+            name="name"
+        >Newfoundland and Labrador income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.nl.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Newfoundland and Labrador rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P): 8.7%, 14.5% from 44,678, 15.8% from 89,354, 17.8% from 159,528, 19.8% from 223,340, 20.8% from 285,319, 21.3% from 570,638 and 21.8% from 1,141,275. The constant KP is derived from the table and rounded to the dollar like the federal K: 0, 2,591, 3,753, 6,943, 11,410, 14,263, 17,117, 22,823. The rate of the first bracket is the lowest rate of K1P and K2P (0.087). The brackets did not change on July 1, 2026. T4127 122nd edition (January 2026), table 8.1; 123rd edition (July 2026), table 8.1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.gov.nl.ca/fin/tax-programs-incentives/personal/personalincometax/</field>
+    </record>
+    <record id="param_nl_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nl_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.087], [44678, 0.145], [89354, 0.158], [159528, 0.178], [223340, 0.198], [285319, 0.208], [570638, 0.213], [1141275, 0.218]]</field>
+    </record>
+    <record id="param_nl_bpa" model="base.time.parameter">
+        <field name="name">Newfoundland and Labrador basic personal amount</field>
+        <field name="code">l10n_ca.nl.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >TCP of an employee who files no TD1NL: K1P = 0.087 x TCP. 11,188 from January 1, 2026 (indexation rate 1.1%, T4127 122nd edition, table 8.2). The Income Tax Act, 2000 as amended by Bill 16 sets the 2026 amount at 13,094, in force from January 1, 2026; the pays of the first half of the year having used 11,188, the CRA applies a prorated 15,000 from the first pay of July (2 x 13,094 - 11,188), so the 2026 withholdings give an annual credit on 13,094 (T4127 123rd edition, July 2026, changes and table 8.2). For 2027 the statute sets 15,000 indexed by the consumer price index, not yet published. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1nl.html ; https://www.gov.nl.ca/fin/tax-programs-incentives/personal/personalincometax/ ; https://assembly.nl.ca/HouseBusiness/Bills/ga51session1/bill2616.htm</field>
+    </record>
+    <record id="param_nl_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nl_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">11188</field>
+    </record>
+    <record id="param_nl_bpa_20260701" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nl_bpa" />
+        <field name="date_from">2026-07-01</field>
+        <field name="value">15000</field>
+    </record>
+
+    <!-- Health and Post-Secondary Education Tax -->
+    <record id="param_nl_employer_tax_rates" model="base.time.parameter">
+        <field
+            name="name"
+        >Newfoundland and Labrador Health and Post-Secondary Education Tax rate</field>
+        <field name="code">l10n_ca.nl.employer_tax.rates</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Rate of the tax on the taxable remuneration paid to the employees who report for work in Newfoundland and Labrador, as [[threshold, rate], ...]: one rate of 2% whatever the total remuneration of the employer. Taxable remuneration = remuneration of the year above the exemption, consumed by the first pays of the year; tax of a pay = 2% x the part of its remuneration above the exemption left. Revenue Administration Act, SNL 2009, c. R-15.01, s. 73(1) and s. 2(qqq); in force without end date, no change announced for 2027. Sources: https://www.assembly.nl.ca/Legislation/sr/statutes/r15-01.htm ; https://www.gov.nl.ca/fin/tax-programs-incentives/business/education/ ; https://www.gov.nl.ca/fin/files/tax-programs-incentives-business-taxefile-hapset-return-description.pdf</field>
+    </record>
+    <record id="param_nl_employer_tax_rates_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nl_employer_tax_rates" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[[0, 0.02]]</field>
+    </record>
+    <record id="param_nl_employer_tax_exemption" model="base.time.parameter">
+        <field
+            name="name"
+        >Newfoundland and Labrador Health and Post-Secondary Education Tax exemption</field>
+        <field name="code">l10n_ca.nl.employer_tax.exemption</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Annual remuneration exempt from the tax, deducted by every employer whatever its total remuneration (the statute calls it the "exemption threshold"; there is no threshold above which it is lost, hence no parameter l10n_ca.nl.employer_tax.exemption_threshold). A group of associated employers shares it by an allocation agreement filed with the minister, each member taking its allocated share; a group without an agreement has no exemption. 2,000,000 since January 1, 2023; no change announced for 2027. Revenue Administration Act, SNL 2009, c. R-15.01, s. 2(w), 2(qqq) and 2.01; Revenue Administration Regulations, NLR 73/11, s. 54. Sources: https://www.assembly.nl.ca/Legislation/sr/statutes/r15-01.htm ; https://www.assembly.nl.ca/Legislation/sr/Regulations/rc110073.htm ; https://www.gov.nl.ca/fin/tax-programs-incentives/business/education/ ; https://www.gov.nl.ca/fin/files/tax-programs-incentives-business-taxefile-hapset-return-description.pdf</field>
+    </record>
+    <record
+        id="param_nl_employer_tax_exemption_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_nl_employer_tax_exemption" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">2000000</field>
+    </record>
+
+    <!-- WorkplaceNL -->
+    <record id="param_nl_wcb_max_insurable" model="base.time.parameter">
+        <field name="name">WorkplaceNL maximum assessable earnings</field>
+        <field name="code">l10n_ca.nl.wcb.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum compensable and assessable earnings (MCAE) per worker and calendar year: the assessable earnings of the pay are min(gross, maximum - assessable earnings of the year so far). Adjusted each year by the average consumer price index. 2026: 80,935; 2027: 82,800. Workplace Health, Safety and Compensation Act, 2022, SNL 2022, c. W-11.1. Sources: https://workplacenl.ca/employers/manage-my-account/annual-assessment/ ; https://workplacenl.ca/article/workplacenl-holds-average-assessment-rate-steady-again-for-2026/ ; https://workplacenl.ca/article/workplacenl-lowers-average-assessment-rate-for-2027/ ; https://assembly.nl.ca/Legislation/sr/statutes/w11-1.htm</field>
+    </record>
+    <record id="param_nl_wcb_max_insurable_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nl_wcb_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">80935</field>
+    </record>
+    <record id="param_nl_wcb_max_insurable_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nl_wcb_max_insurable" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">82800</field>
+    </record>
+</odoo>

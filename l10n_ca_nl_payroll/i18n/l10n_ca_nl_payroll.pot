@@ -1,0 +1,255 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_nl_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-12 15:35+0000\n"
+"PO-Revision-Date: 2026-11-12 15:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_workplacenl_annual_assessment
+msgid "Annual Assessment"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_whsc_act
+msgid ""
+"Assessment of the employers on the earnings of their workers up to the "
+"maximum compensable and assessable earnings of the year."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_bill_16
+msgid ""
+"Basic personal amount of 13,094 for 2026, considered in force from January "
+"1, 2026, not indexed before 2027; 15,000 indexed by the consumer price index"
+" for 2027."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_t4127_123
+msgid ""
+"Basic personal amount raised from 11,188 to 13,094 for 2026; since the pays "
+"of the first half used 11,188, a prorated 15,000 applies from the first pay "
+"of July. An employee who filed a TD1NL with the lower amount before July 1 "
+"needs no new form. Brackets and constants unchanged."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_bill_16
+msgid "Bill 16, An Act to Amend the Income Tax Act, 2000"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_t4127_122
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_t4127_123
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_td1nl_2026
+msgid "Canada Revenue Agency"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#. odoo-python
+#: code:addons/l10n_ca_nl_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_nl_payroll.rule_nl_employer_tax
+msgid "Health and Post-Secondary Education Tax"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_hapset_page
+msgid "Health and Post-Secondary Education Tax (Payroll Tax)"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_hapset_return
+msgid "Health and Post-Secondary Education Tax Return Explanation"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_bill_16
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_revenue_administration_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_revenue_administration_regulations
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_whsc_act
+msgid "House of Assembly of Newfoundland and Labrador"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_workplacenl_annual_assessment
+msgid ""
+"Maximum assessable earnings per worker, adjusted each year by the consumer "
+"price index: 79,345 in 2025, 80,935 in 2026, 82,800 in 2027. Assessment = "
+"rate per $100 x assessable payroll; Employer Payroll Statement due February "
+"28; excess earnings above the maximum deducted per worker; minimum annual "
+"assessment of 50."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_workplacenl_2026
+msgid ""
+"Maximum compensable and assessable earnings of 80,935 for 2026 (79,345 in "
+"2025); average assessment rate 1.73 per $100."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_workplacenl_2027
+msgid ""
+"Maximum compensable and assessable earnings of 82,800 from January 1, 2027 "
+"(80,935 in 2026); average assessment rate 1.66 per $100 in 2027."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_revenue_administration_regulations
+msgid ""
+"Monthly return and payment no later than 20 days after the end of the month;"
+" association fixed at the beginning of the calendar year."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_finance_personal
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_hapset_page
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_hapset_return
+msgid "Newfoundland and Labrador Department of Finance"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:hr.salary.rule,name:l10n_ca_nl_payroll.rule_nl_salary
+msgid "Newfoundland and Labrador Remuneration"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_t4127_122
+msgid ""
+"Newfoundland and Labrador rates 8.7%, 14.5%, 15.8%, 17.8%, 19.8%, 20.8%, "
+"21.3% and 21.8% from 44,678, 89,354, 159,528, 223,340, 285,319, 570,638 and "
+"1,141,275, constants KP; basic personal amount 11,188 (indexation 1.1%). No "
+"surtax, premium, reduction or labour-sponsored funds credit."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_finance_personal
+msgid "Personal Income Tax"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_workplacenl_coverage
+msgid ""
+"Proprietors and partners of an unincorporated business are not covered "
+"automatically and may apply for Optional Personal Coverage; employers of "
+"persons at a private residence need not register."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_revenue_administration_act
+msgid ""
+"Rate of 2% of the taxable remuneration; exemption of 2,000,000; a group of "
+"associated employers deducts the shares of its allocation agreement, and "
+"nothing without one."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_finance_personal
+msgid ""
+"Rates and brackets of the provincial personal income tax and the non-"
+"refundable credits: basic personal amount 11,067 for 2025 and 13,094 for "
+"2026."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_hapset_return
+msgid ""
+"Remuneration: the amounts of employment income (Income Tax Act, s. 5(1), 6 "
+"and 7) of the employees who report for work in the province. The allocated "
+"deduction is reduced by the payroll of each period until it is exhausted; "
+"tax = 2% x (gross remuneration of the period - deduction left), at least 0. "
+"Return and payment within 20 days after the end of each month."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_revenue_administration_act
+msgid "Revenue Administration Act, SNL 2009, c. R-15.01"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_revenue_administration_regulations
+msgid "Revenue Administration Regulations, NLR 73/11"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_t4127_122
+msgid "T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_t4127_123
+msgid "T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_td1nl_2026
+msgid "TD1NL 2026 Newfoundland and Labrador Personal Tax Credits Return"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_hapset_page
+msgid ""
+"Tax of 2% payable by employers on the annual remuneration in the province "
+"above the exemption threshold, 2,000,000 for all employers since January 1, "
+"2023. Associated employers and partners file an allocation agreement that "
+"shares the exemption."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nl_payroll.source_td1nl_2026
+msgid ""
+"Total claim amount TCP entered on the contract when the employee claims more"
+" than the basic personal amount."
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_workplacenl_coverage
+msgid "Types of Coverage"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_whsc_act
+msgid ""
+"Workplace Health, Safety and Compensation Act, 2022, SNL 2022, c. W-11.1"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_workplacenl_2026
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_workplacenl_2027
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_workplacenl_annual_assessment
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nl_payroll.source_workplacenl_coverage
+msgid "WorkplaceNL"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:hr.salary.rule,name:l10n_ca_nl_payroll.rule_nl_wcb_insurable
+msgid "WorkplaceNL Assessable Earnings"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#. odoo-python
+#: code:addons/l10n_ca_nl_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_nl_payroll.rule_nl_wcb
+msgid "WorkplaceNL Assessment"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_workplacenl_2026
+msgid "WorkplaceNL holds average assessment rate steady again for 2026"
+msgstr ""
+
+#. module: l10n_ca_nl_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nl_payroll.source_workplacenl_2027
+msgid "WorkplaceNL lowers average assessment rate for 2027"
+msgstr ""

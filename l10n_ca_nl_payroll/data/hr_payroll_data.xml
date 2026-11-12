@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Payees of the Newfoundland and Labrador employer contributions. The
+         provincial income tax is remitted to the CRA with the federal
+         deductions. -->
+    <record id="partner_nl_finance" model="res.partner">
+        <field name="name">Newfoundland and Labrador Department of Finance</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_nl" />
+    </record>
+    <record id="register_nl_finance" model="hr.contribution.register">
+        <field name="name">Newfoundland and Labrador Department of Finance</field>
+        <field name="partner_id" ref="partner_nl_finance" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Newfoundland and Labrador Health and Post-Secondary Education Tax.</field>
+    </record>
+    <record id="partner_workplacenl" model="res.partner">
+        <field name="name">WorkplaceNL</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_nl" />
+    </record>
+    <record id="register_workplacenl" model="hr.contribution.register">
+        <field name="name">WorkplaceNL</field>
+        <field name="partner_id" ref="partner_workplacenl" />
+        <field name="company_id" eval="False" />
+        <field
+            name="note"
+        >Newfoundland and Labrador workers' compensation assessments.</field>
+    </record>
+
+    <!-- Every rule below applies only to an employment in Newfoundland and
+         Labrador. The provincial income tax is the line of the federal
+         rule CA_PIT. -->
+    <record id="rule_nl_salary" model="hr.salary.rule">
+        <field name="name">Newfoundland and Labrador Remuneration</field>
+        <field name="code">CA_NL_SAL</field>
+        <field name="sequence">114</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NL"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["province_remuneration"]</field>
+        <field
+            name="note"
+        >Remuneration of the pay counted in the Newfoundland and Labrador remuneration of the company: its year-to-date total consumes the exemption of the Health and Post-Secondary Education Tax and gives the assessable earnings left after a credit note.</field>
+    </record>
+    <record id="rule_nl_wcb_insurable" model="hr.salary.rule">
+        <field name="name">WorkplaceNL Assessable Earnings</field>
+        <field name="code">CA_NL_WCB_IE</field>
+        <field name="sequence">115</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NL"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["wcb_insurable"]</field>
+        <field
+            name="note"
+        >Assessable earnings of the pay up to the WorkplaceNL maximum of the year, less the assessable earnings of the year so far; 0 for a contract not covered.</field>
+    </record>
+    <record id="rule_nl_employer_tax" model="hr.salary.rule">
+        <field name="name">Health and Post-Secondary Education Tax</field>
+        <field name="code">CA_NL_ER_TAX</field>
+        <field name="sequence">370</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_nl_finance" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NL" and l10n_ca.get(contract, categories.GROSS)["employer_tax"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["employer_tax"]
+result_name = ca["employer_tax_line_name"]</field>
+        <field
+            name="note"
+        >Accrual of the Health and Post-Secondary Education Tax: 2% of the remuneration of the pay above the exemption left in the year.</field>
+    </record>
+    <record id="rule_nl_wcb" model="hr.salary.rule">
+        <field name="name">WorkplaceNL Assessment</field>
+        <field name="code">CA_NL_WCB</field>
+        <field name="sequence">380</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_workplacenl" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NL" and l10n_ca.get(contract, categories.GROSS)["wcb"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["wcb"]
+result_name = ca["wcb_line_name"]</field>
+        <field
+            name="note"
+        >WorkplaceNL assessment at the rate per $100 of the provincial payroll account of the company, on the assessable earnings of the pay up to the maximum of the year.</field>
+    </record>
+</odoo>
