@@ -31,7 +31,7 @@
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Lowest federal rate applied to the personal credits (K1, K2, K4 of the payroll formulas). Income Tax Act s. 117(2) and 118. Sources: https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field name="description">Lowest federal rate applied to the personal credits (K1, K2, K4 of the payroll formulas). Income Tax Act s. 117(2) and 118. For 2025 the payroll formulas apply 15% to June 30 (T4127 120th edition) and 14% from July 1 (121st edition); the Act as amended by S.C. 2026, c. 2 sets 14.5% for the 2025 tax year, which the employee's return reconciles. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
     </record>
     <record id="param_federal_credit_rate_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_federal_credit_rate" />
@@ -274,7 +274,7 @@
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Employee CPP rate, base and first additional, between the basic exemption and the YMPE; the employer pays the same. Canada Pension Plan s. 8 and Schedule 1. 2027: base rate reduced from 4.95% to 4.75% (first additional rate unchanged at 1%) by the Spring Economic Update 2026 Implementation Act, S.C. 2026, c. 22 (Bill C-30, Royal Assent June 18, 2026), in force January 1, 2027. Sources: T4127 table 8.3, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html ; https://www.canada.ca/en/department-finance/news/2026/06/legislation-passes-to-implement-measures-from-the-spring-economic-update-2026.html ; https://www.parl.ca/legisinfo/en/bill/45-1/C-30</field>
+        <field name="description">Employee CPP rate, base and first additional, between the basic exemption and the YMPE; the employer pays the same. Canada Pension Plan s. 8 and Schedule 1. 2027: base rate reduced from 4.95% to 4.75% (first additional rate unchanged at 1%) by the Spring Economic Update 2026 Implementation Act, S.C. 2026, c. 22 (Bill C-30, Royal Assent June 18, 2026); the CRA applies 5.75% from January 1, 2027 (2027 row of its CPP rates page). Sources: T4127 table 8.3, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html ; https://www.canada.ca/en/department-finance/news/2026/06/legislation-passes-to-implement-measures-from-the-spring-economic-update-2026.html ; https://www.parl.ca/legisinfo/en/bill/45-1/C-30</field>
     </record>
     <record id="param_cpp_rate_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_cpp_rate" />
@@ -297,7 +297,7 @@
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Base part of the employee CPP rate, giving the federal credit (K2); the rest of the rate is the first additional contribution, deducted from income (F5). Canada Pension Plan s. 8. 2027: 4.75% per the Spring Economic Update 2026 Implementation Act, S.C. 2026, c. 22 (Bill C-30, enacted). Sources: T4127 table 8.4, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/department-finance/news/2026/06/legislation-passes-to-implement-measures-from-the-spring-economic-update-2026.html ; https://www.parl.ca/legisinfo/en/bill/45-1/C-30</field>
+        <field name="description">Base part of the employee CPP rate, giving the federal credit (K2); the rest of the rate is the first additional contribution, deducted from income (F5). Canada Pension Plan s. 8. 2027: 4.75% per the Spring Economic Update 2026 Implementation Act, S.C. 2026, c. 22 (Bill C-30), as T4127 123rd edition announces for January 1, 2027. Sources: T4127 table 8.4, https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/department-finance/news/2026/06/legislation-passes-to-implement-measures-from-the-spring-economic-update-2026.html ; https://www.parl.ca/legisinfo/en/bill/45-1/C-30</field>
     </record>
     <record id="param_cpp_base_rate_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_cpp_base_rate" />
@@ -498,7 +498,7 @@
         <field name="type">json</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Days ending the remittance periods of threshold 2 accelerated remitters; the last period ends with the month. Income Tax Regulations s. 108(1.11). Source: T4001, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html</field>
+        <field name="description">Days ending the remittance periods of threshold 2 accelerated remitters; the last period ends with the month. Income Tax Regulations s. 108(1.1)(b). Source: T4001, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html</field>
     </record>
     <record id="param_pd7a_accel2_period_end_days_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_pd7a_accel2_period_end_days" />
@@ -511,7 +511,7 @@
         <field name="type">integer</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Number of working days after the end of a period by which the deductions are due. Income Tax Regulations s. 108(1.11). Source: T4001, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html</field>
+        <field name="description">Number of working days after the end of a period by which the deductions are due. Income Tax Regulations s. 108(1.1)(b): the third day, not counting Saturdays and holidays. Source: T4001, https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4001/employers-guide-payroll-deductions-remittances.html</field>
     </record>
     <record id="param_pd7a_accel2_working_days_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_pd7a_accel2_working_days" />

@@ -122,10 +122,12 @@ used to convert the CPP withheld before a transfer to Quebec.
 - Laws (LégisQuébec):
   - Act respecting the Québec Pension Plan, s. 44.1, 50 and 63:
     <https://www.legisquebec.gouv.qc.ca/en/document/cs/R-9>
-  - Act respecting parental insurance, s. 78.1 (S.Q. 2025, c. 32):
+  - Act respecting parental insurance, s. 78.1 (enacted by S.Q. 2025,
+    c. 32), under which a government regulation sets the QPIP rates:
     <https://www.legisquebec.gouv.qc.ca/en/document/cs/A-29.011>
-  - Taxation Act, s. 358.0.1 (deduction for workers), 750 and 750.1
-    (brackets and their indexation), 752.0.0.1 (personal credits) and 1015
+  - Taxation Act, s. 358.0.3 (deduction for workers), 750 (brackets),
+    750.1 (credit rate), 750.2 and 750.3 (indexation of the thresholds and
+    their rounding), 752.0.0.1 (personal credits) and 1015
     (remittances): <https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3>
   - Act respecting the Régie de l'assurance maladie du Québec, s. 34 (HSF):
     <https://www.legisquebec.gouv.qc.ca/en/document/cs/R-5>
@@ -182,7 +184,7 @@ Derived figures:
 | Parameter | 2025 | 2026 | What the computation does with it | Source |
 |---|---|---|---|---|
 | `l10n_ca.qpip.mie` | 98,000 | 103,000 | Maximum insurable earnings: the employee maximum is MIE x rate and the employer maximum is MIE x employer rate. Caps RL-1 box I and T4 box 56. | TP-1015.F-V principal changes; parts 4.1 and 4.2 |
-| `l10n_ca.qpip.rate` | 0.494% | 0.430% | Ap = min(maximum - A6, rate x S4), withheld as 0.01 when above 0 but below 0.005. Ap also enters the federal K2Q credit. | TP-1015.F-V part 4.1; Act respecting parental insurance s. 78.1 |
+| `l10n_ca.qpip.rate` | 0.494% | 0.430% | Ap = min(maximum - A6, rate x S4), withheld as 0.01 when above 0 but below 0.005. Ap also enters the federal K2Q credit. | TP-1015.F-V part 4.1; regulation under Act respecting parental insurance s. 78.1 |
 | `l10n_ca.qpip.employer_rate` | 0.692% | 0.602% | Ap1 = min(maximum - A7, rate x S4), rounded half up to the cent. RLZ-1.S line 29 = box I x rate. | TP-1015.F-V part 4.2 |
 
 Derived figures:

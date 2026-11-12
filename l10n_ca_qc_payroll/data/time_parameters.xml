@@ -160,7 +160,7 @@
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Employee QPIP premium rate on eligible salary (TP-1015.F-V section 4.1). 2026: 13% cut decreed by s. 78.1 of the Act respecting parental insurance (S.Q. 2025, c. 32). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/calculating-source-deductions-and-contributions/qpip-premiums/maximum-insurable-earnings-and-premium-rate/ ; https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/FR/BULFR_2025-8.pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/A-29.011</field>
+        <field name="description">Employee QPIP premium rate on eligible salary (TP-1015.F-V section 4.1). 2026: 13% cut set by government regulation under s. 78.1 of the Act respecting parental insurance (section enacted by S.Q. 2025, c. 32). Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/calculating-source-deductions-and-contributions/qpip-premiums/maximum-insurable-earnings-and-premium-rate/ ; https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Bulletins/FR/BULFR_2025-8.pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/A-29.011</field>
     </record>
     <record id="param_qpip_rate_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_qpip_rate" />
@@ -196,7 +196,7 @@
         <field name="type">json</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Quebec income tax rates by annual taxable income I, as [[threshold, rate], ...] (TP-1015.F-V step 2, variable T). The constant K is derived from the table and truncated to the dollar, as in the published table (2026: 0, 2,717, 8,151, 10,465). Taxation Act, s. 750, indexed under s. 750.1. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+        <field name="description">Quebec income tax rates by annual taxable income I, as [[threshold, rate], ...] (TP-1015.F-V step 2, variable T). The constant K is derived from the table and truncated to the dollar, as in the published table (2026: 0, 2,717, 8,151, 10,465). Taxation Act, s. 750, thresholds indexed under s. 750.2 and rounded under s. 750.3. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
     </record>
     <record id="param_qc_brackets_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_qc_brackets" />
@@ -301,7 +301,7 @@
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Rate of the deduction for workers H = rate x D per pay period (TP-1015.F-V step 1). Taxation Act, s. 358.0.1. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+        <field name="description">Rate of the deduction for workers H = rate x D per pay period (TP-1015.F-V step 1). Taxation Act, s. 358.0.3. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
     </record>
     <record id="param_qc_worker_deduction_rate_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_qc_worker_deduction_rate" />
@@ -319,7 +319,7 @@
         <field name="type">float</field>
         <field name="company_id" eval="False" />
         <field name="country_id" ref="base.ca" />
-        <field name="description">Annual maximum of the deduction for workers; the maximum per pay period is this amount divided by P (TP-1015.F-V step 1). Taxation Act, s. 358.0.1. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
+        <field name="description">Annual maximum of the deduction for workers; the maximum per pay period is this amount divided by P (TP-1015.F-V step 1). Taxation Act, s. 358.0.3. Sources: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf ; https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2025-01).pdf ; https://www.legisquebec.gouv.qc.ca/en/document/cs/I-3</field>
     </record>
     <record id="param_qc_worker_deduction_max_20250101" model="base.time.parameter.version">
         <field name="parameter_id" ref="param_qc_worker_deduction_max" />

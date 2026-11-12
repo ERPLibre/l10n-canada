@@ -46,6 +46,13 @@ its sources with their URLs.
   chapter 8: tables 8.1 to 8.9 for 2026 and tables 8.22 to 8.28 for 2025.
   Sets the 2026 federal tax, CPP and EI figures, the 2025 CPP and EI
   figures, the bonus flat rates and the CPP age limits.
+- **CRA T4127, 120th edition, effective January 1, 2025** —
+  <https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html>.
+  Table 8.1 for 2025 with the lowest rate of 15% (constants 0, 3,156,
+  9,467, 14,803, 24,940) and the credit rate of 15% to June 30, 2025. For
+  the 2025 tax year, the Income Tax Act as amended by S.C. 2026, c. 2 sets
+  a single rate of 14.5%; the payroll withholds 15% then 14%, and the
+  return of the employee reconciles the difference.
 - **CRA T4127, 121st edition, effective July 1, 2025** (French) —
   <https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/retenues-paie/t4127-formules-calcul-retenues-paie-annees-precedentes/t4127-jul-121e-edition-vigueur-1er-juillet-2025/t4127-jul-formules-calcul-retenues-paie.html>.
   Tables 8.1 and 8.2 for 2025 with the lowest rate of 14% from July 1, 2025;
@@ -94,7 +101,7 @@ its sources with their URLs.
     premium), s. 69 (reduced rate of Quebec).
   - Income Tax Regulations, C.R.C., c. 945
     <https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/>:
-    s. 108(1), 108(1.1) and 108(1.11) (remittance due dates), s. 205(1)
+    s. 108(1) and 108(1.1)(a) and (b) (remittance due dates), s. 205(1)
     (T4 filing deadline).
 - **Revenu Québec TP-1015.F, 2026**, part 3.1: QPP of an employee
   transferred from a CPP establishment. No parameter of this module comes
@@ -105,7 +112,7 @@ its sources with their URLs.
 | Parameter | 2025 | 2026 | What the computation does with it | Source |
 |---|---|---|---|---|
 | `l10n_ca.federal.brackets` | Jan 1: 15% to 57,375; 20.5% to 114,750; 26% to 177,882; 29% to 253,414; 33% above. Jul 1: same thresholds, 14% for the first bracket | 14% to 58,523; 20.5% to 117,045; 26% to 181,440; 29% to 258,482; 33% above | R of step 2 is the rate of the bracket that contains A; K is derived from the table (see below). T3 = R × A − K − K1 − K2 − K3 − K4 | T4127 122nd ed. table 8.1 (2026); 121st ed. table 8.1 (July 2025); ITA s. 117(2), 117.1 |
-| `l10n_ca.federal.credit_rate` | 0.15 → 15% to June 30, 0.14 → 14% from July 1 | 0.14 → 14% | Multiplies the credits: K1 = rate × TC, K2 = rate × (CPP base + EI), K4 = rate × min(employment income, CEA) | T4127 122nd ed. ch. 4 step 2 (K1, K2, K4); 121st ed. ch. 4; ITA s. 117(2), 118 |
+| `l10n_ca.federal.credit_rate` | 0.15 → 15% to June 30, 0.14 → 14% from July 1 | 0.14 → 14% | Multiplies the credits: K1 = rate × TC, K2 = rate × (CPP base + EI), K4 = rate × min(employment income, CEA) | T4127 122nd ed. ch. 4 step 2 (K1, K2, K4); 120th ed. ch. 4 (15%); 121st ed. ch. 4 (14%); ITA s. 117(2), 118 |
 | `l10n_ca.federal.bpa_max` | 16,129 | 16,452 | BPAF when NI ≤ phase-out start; TC of a contract that claims the basic personal amount; shown on the contract | T4127 122nd ed. ch. 2 (BPAF formula), table 8.9; 121st ed. ch. 4 (K1 = 0.14 × 16,129); ITA s. 118(1)(c) |
 | `l10n_ca.federal.bpa_min` | 14,538 | 14,829 | BPAF when NI ≥ phase-out end | T4127 122nd ed. ch. 2 (BPAF formula); 121st ed. ch. 2 (claim codes); ITA s. 118(1)(c) |
 | `l10n_ca.federal.bpa_phaseout_start` | 177,882 | 181,440 | Start of the linear decrease of BPAF; NI = A + HD in T4127, and the module has no HD, so NI is the annual taxable income A | T4127 122nd ed. ch. 2 (BPAF formula), table 8.1 (4th threshold); 121st ed. table 8.1 |
@@ -129,8 +136,9 @@ Derived figures:
     Matches T4127 121st ed. table 8.1 (0, 3,729, 10,041, 15,377, 25,514).
   - 2025 to June 30 (15%): 0.055 × 57,375 = 3,155.625 → **3,156**;
     + 6,311.25 = 9,466.875 → **9,467**; + 5,336.46 = 14,803.335
-    → **14,803**; + 10,136.56 = 24,939.895 → **24,940**. The 2025 table 8.22
-    of the 122nd edition gives the constants of the 14.5% rate for the
+    → **14,803**; + 10,136.56 = 24,939.895 → **24,940**. Matches T4127
+    120th ed. table 8.1 (0, 3,156, 9,467, 14,803, 24,940). The 2025 table
+    8.22 of the 122nd edition gives the constants of the 14.5% rate for the
     whole year (3,443, 9,754, 15,090, 25,227), not these.
 - **Phase-out of BPAF.** BPAF = max − (NI − start) × (max − min) /
   (end − start), rounded to the cent. 2026: 1,623 / 77,042, as in the
@@ -239,8 +247,8 @@ Derived figures:
 | `l10n_ca.pd7a.accel1_split_day` | 15 | Threshold 1: the month splits after the 15th | T4001; ITR s. 108(1.1) |
 | `l10n_ca.pd7a.accel1_first_due_day` | 25 | Threshold 1: pays of the 1st to the 15th are due the 25th of the same month | T4001; ITR s. 108(1.1) |
 | `l10n_ca.pd7a.accel1_second_due_day` | 10 | Threshold 1: pays of the 16th to the end of the month are due the 10th of the next month | T4001; ITR s. 108(1.1) |
-| `l10n_ca.pd7a.accel2_period_end_days` | [7, 14, 21] | Threshold 2: periods 1-7, 8-14, 15-21 and 22 to the end of the month | T4001; ITR s. 108(1.11) |
-| `l10n_ca.pd7a.accel2_working_days` | 3 | Threshold 2: due 3 working days (Monday to Friday) after the end of the period | T4001; ITR s. 108(1.11) |
+| `l10n_ca.pd7a.accel2_period_end_days` | [7, 14, 21] | Threshold 2: periods 1-7, 8-14, 15-21 and 22 to the end of the month | T4001; ITR s. 108(1.1)(b) |
+| `l10n_ca.pd7a.accel2_working_days` | 3 | Threshold 2: due 3 working days (Monday to Friday) after the end of the period | T4001; ITR s. 108(1.1)(b) |
 | `l10n_ca.t4.due_month` | 2 | T4 slips and Summary due on the last day of February of the year after the slips | T4001 "Filing information returns"; ITR s. 205(1) |
 
 Derived figures:
