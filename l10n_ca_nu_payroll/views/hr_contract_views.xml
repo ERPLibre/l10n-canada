@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="hr_contract_view_form" model="ir.ui.view">
+        <field name="name">hr.contract.form.l10n_ca_nu_payroll</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="l10n_ca_payroll.hr_contract_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='l10n_ca_wcb_exempt']" position="after">
+                <field
+                    name="l10n_ca_nu_payroll_tax_exempt"
+                    invisible="l10n_ca_province_code != 'NU'"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

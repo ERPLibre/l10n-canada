@@ -1,0 +1,353 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_nu_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-12 15:31+0000\n"
+"PO-Revision-Date: 2026-11-12 15:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_t4127_123
+msgid ""
+"2026 Nunavut brackets and constants KP and basic personal amount. The "
+"edition lists Nunavut among the jurisdictions without change on July 1, "
+"2026."
+msgstr ""
+"Tranches et constantes KP du Nunavut pour 2026 et montant personnel de base."
+" L'édition range le Nunavut parmi les administrations sans changement au 1er"
+" juillet 2026."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_payroll_registration_form
+msgid ""
+"A withholding or pay-as-you-earn payroll tax of 2% of all gross remuneration"
+" paid to the employees who work more than half their time for an employer in"
+" Nunavut, collected by the employer from each employee. Registration within "
+"21 days after the first remuneration paid."
+msgstr ""
+"Un impôt sur le salaire retenu à la source de 2 % de toute la rémunération "
+"brute versée aux employés qui travaillent plus de la moitié de leur temps "
+"pour un employeur au Nunavut, perçu par l'employeur auprès de chaque "
+"employé. Inscription dans les 21 jours suivant la première rémunération "
+"versée."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_wscc_report_payroll
+msgid ""
+"Annual Payroll Report, the actual payroll of the previous year and an "
+"estimate of the current year, due February 28. Directors of a corporation, "
+"business owners and the self-employed are not covered automatically; "
+"Personal Optional Coverage from 37% of the YMIR up to the YMIR."
+msgstr ""
+"Déclaration annuelle de la masse salariale, la masse salariale réelle de "
+"l'année précédente et une estimation de l'année en cours, due le 28 février."
+" Les administrateurs d'une société, les propriétaires d'entreprise et les "
+"travailleurs autonomes ne sont pas couverts d'office ; protection "
+"personnelle facultative de 37 % de la rémunération assurable maximale de "
+"l'année jusqu'à la totalité de celle-ci."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_wscc_policy_02_01
+msgid ""
+"Assessment = (assessable payroll / 100) x the rate of the industry subclass,"
+" the payroll of each worker capped at the YMIR; minimum assessment of 200. "
+"Payment by March 31, or by instalments of March 31, May 31, July 31 and "
+"September 30 for an assessment of 1,000 or more."
+msgstr ""
+"Cotisation = (masse salariale cotisable / 100) x le taux de la sous-"
+"catégorie d'industrie, la rémunération de chaque travailleur étant plafonnée"
+" à la rémunération assurable maximale de l'année ; cotisation minimale de "
+"200. Paiement au plus tard le 31 mars, ou par versements les 31 mars, 31 "
+"mai, 31 juillet et 30 septembre pour une cotisation de 1 000 ou plus."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_t4127_122
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_t4127_123
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_td1nu_2026
+msgid "Canada Revenue Agency"
+msgstr "Agence du revenu du Canada"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_wscc_rates
+msgid "Employer Rates"
+msgstr "Taux de cotisation des employeurs"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_payroll_guide_2011
+msgid ""
+"Employers withhold 2% of the gross remuneration of each employee. Not "
+"subject: members of religious orders with a vow of poverty, and less than "
+"5,000 a year earned in Nunavut by an employee who normally works outside it;"
+" withhold once the 5,000 can reasonably be expected to be exceeded. "
+"Remittance by the 20th day of the month after the reporting period; annual "
+"return, even nil, by February 28."
+msgstr ""
+"Les employeurs retiennent 2 % de la rémunération brute de chaque employé. "
+"Non assujettis : les membres d'ordres religieux ayant fait vœu de pauvreté, "
+"et moins de 5 000 par année gagnés au Nunavut par un employé qui travaille "
+"normalement à l'extérieur ; retenir dès qu'on peut raisonnablement prévoir "
+"que les 5 000 seront dépassés. Versement au plus tard le 20e jour du mois "
+"suivant la période de déclaration ; déclaration annuelle, même nulle, au "
+"plus tard le 28 février."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_payroll_tax_act
+msgid ""
+"Every employee pays a tax of 2% of the remuneration paid in the year, which "
+"the employer withholds. An employee who normally works outside Nunavut owes "
+"the tax on the days worked in it, and none on a remuneration of 5,000 or "
+"less in the year from the employer (prescribed amount of the regulations). "
+"Named Payroll Tax Act, 1993 until 2024."
+msgstr ""
+"Chaque employé paie un impôt de 2 % de la rémunération versée dans l'année, "
+"que l'employeur retient. L'employé qui travaille normalement à l'extérieur "
+"du Nunavut doit l'impôt sur les jours travaillés au Nunavut, et aucun sur "
+"une rémunération de 5 000 ou moins dans l'année versée par l'employeur "
+"(montant prescrit du règlement). Intitulée Loi de 1993 de l'impôt sur le "
+"salaire jusqu'en 2024."
+
+#. module: l10n_ca_nu_payroll
+#: model:ir.model.fields,field_description:l10n_ca_nu_payroll.field_hr_contract__l10n_ca_nu_payroll_tax_exempt
+msgid "Exempt from the Nunavut Payroll Tax"
+msgstr "Exonéré de l'impôt sur le salaire du Nunavut"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_finance_payroll_tax
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_payroll_guide_2011
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_payroll_registration_form
+msgid "Government of Nunavut, Department of Finance"
+msgstr "Gouvernement du Nunavut, ministère des Finances"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_payroll_tax_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_workers_compensation_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_workers_compensation_regulations
+msgid "Government of Nunavut, Department of Justice"
+msgstr "Gouvernement du Nunavut, ministère de la Justice"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_payroll_guide_2011
+msgid "Guide to Payroll Tax Withholding and Reporting (December 2011)"
+msgstr ""
+"Guide de la retenue et de la déclaration de l'impôt sur le salaire (décembre"
+" 2011)"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_workers_compensation_regulations
+msgid ""
+"Maximum remuneration of a worker and of the assessable payroll of the "
+"employers in Nunavut."
+msgstr ""
+"Rémunération maximale d'un travailleur et de la masse salariale cotisable "
+"des employeurs au Nunavut."
+
+#. module: l10n_ca_nu_payroll
+#: model:ir.model.fields,help:l10n_ca_nu_payroll.field_hr_contract__l10n_ca_nu_payroll_tax_exempt
+msgid ""
+"No Nunavut payroll tax is withheld from the pays of this contract. For an "
+"employee whose remuneration is not subject: a member of a religious order "
+"with a vow of perpetual poverty (Income Tax Act, s. 110(2)), or an employee "
+"who normally works outside Nunavut and whose remuneration from the company "
+"in the year is not expected to exceed the prescribed amount of 5,000 "
+"(Payroll Tax Act, s. 3(2.2); Payroll Tax Regulations, s. 2)."
+msgstr ""
+"Aucun impôt sur le salaire du Nunavut n'est retenu sur les paies de ce "
+"contrat. Pour un employé dont la rémunération n'y est pas assujettie : un "
+"membre d'un ordre religieux ayant fait vœu de pauvreté perpétuelle (Loi de "
+"l'impôt sur le revenu, par. 110(2)), ou un employé qui travaille normalement"
+" à l'extérieur du Nunavut et dont la rémunération versée par la société dans"
+" l'année ne devrait pas dépasser le montant prescrit de 5 000 (Loi de "
+"l'impôt sur le salaire, par. 3(2.2) ; Règlement de l'impôt sur le salaire, "
+"art. 2)."
+
+#. module: l10n_ca_nu_payroll
+#: model:hr.salary.rule,name:l10n_ca_nu_payroll.rule_nu_payroll_tax
+msgid "Nunavut Payroll Tax"
+msgstr "Impôt sur le salaire du Nunavut"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_payroll_registration_form
+msgid "Nunavut Payroll Tax Application for Registration (February 2022)"
+msgstr ""
+"Demande d'inscription à l'impôt sur le salaire du Nunavut (février 2022)"
+
+#. module: l10n_ca_nu_payroll
+#: model:hr.salary.rule,name:l10n_ca_nu_payroll.rule_nu_salary
+msgid "Nunavut Remuneration"
+msgstr "Rémunération au Nunavut"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_td1nu_2026
+msgid ""
+"Nunavut basic personal amount of 19,659 for 2026 and the total claim amount "
+"TCP entered on the contract."
+msgstr ""
+"Montant personnel de base du Nunavut de 19 659 pour 2026 et le montant total"
+" de la demande TCP saisi au contrat."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_t4127_122
+msgid ""
+"Nunavut rates 4%, 7%, 9% and 11.5% from 55,801, 111,602 and 181,439 (KP "
+"1,674, 3,906 and 8,442); basic personal amount 19,659; no surtax, reduction "
+"or labour-sponsored funds credit."
+msgstr ""
+"Taux du Nunavut de 4 %, 7 %, 9 % et 11,5 % à partir de 55 801, 111 602 et "
+"181 439 (KP 1 674, 3 906 et 8 442) ; montant personnel de base de 19 659 ; "
+"ni surtaxe, ni réduction, ni crédit pour fonds de travailleurs."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_finance_payroll_tax
+msgid ""
+"Page of the Department of Finance on the Nunavut payroll tax: registration, "
+"reporting periods, remittance and annual return."
+msgstr ""
+"Page du ministère des Finances sur l'impôt sur le salaire du Nunavut : "
+"inscription, périodes de déclaration, versement et déclaration annuelle."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_payroll_tax_act
+msgid "Payroll Tax Act (Nunavut)"
+msgstr "Loi de l'impôt sur le salaire (Nunavut)"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_finance_payroll_tax
+msgid "Payroll Taxes"
+msgstr "Impôt sur le salaire"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_wscc_report_payroll
+msgid "Report Payroll"
+msgstr "Déclaration de la masse salariale"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_workers_compensation_act
+msgid ""
+"Statute of the workers' compensation of Nunavut, administered by the "
+"Workers' Safety and Compensation Commission."
+msgstr ""
+"Loi sur l'indemnisation des travailleurs du Nunavut, appliquée par la "
+"Commission de la sécurité au travail et de l'indemnisation des travailleurs."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_t4127_122
+msgid "T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 122e édition (1er "
+"janvier 2026)"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_t4127_123
+msgid "T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 123e édition (1er "
+"juillet 2026)"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_td1nu_2026
+msgid "TD1NU 2026 Nunavut Personal Tax Credits Return"
+msgstr "TD1NU 2026 Déclaration des crédits d'impôt personnels du Nunavut"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_nu_payroll.source_payroll_tax_act
+msgid ""
+"The site refuses automated readers (HTTP 403), and its consolidation does "
+"not include the amendments of 2020, 2023, 2024 and 2025. Confirm in a "
+"browser that s. 3(1) still sets 2% and that the regulations still prescribe "
+"5,000."
+msgstr ""
+"Le site refuse les lecteurs automatisés (HTTP 403), et sa codification "
+"n'intègre pas les modifications de 2020, 2023, 2024 et 2025. Confirmer dans "
+"un navigateur que le par. 3(1) fixe toujours 2 % et que le règlement "
+"prescrit toujours 5 000."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_nu_payroll.source_workers_compensation_regulations
+msgid ""
+"The site refuses automated readers (HTTP 403). Confirm in a browser that the"
+" regulations set 117,300 for 2026, the figure the WSCC publishes."
+msgstr ""
+"Le site refuse les lecteurs automatisés (HTTP 403). Confirmer dans un "
+"navigateur que le règlement fixe 117 300 pour 2026, le montant que publie la"
+" CSTIT."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_nu_payroll.source_finance_payroll_tax
+msgid ""
+"The site refuses automated readers (HTTP 403). Confirm in a browser the rate"
+" of 2%, the reporting period of a seasonal employer (the regulations say "
+"monthly during the season, the guides of 2010 and 2011 annual) and the due "
+"dates."
+msgstr ""
+"Le site refuse les lecteurs automatisés (HTTP 403). Confirmer dans un "
+"navigateur le taux de 2 %, la période de déclaration d'un employeur "
+"saisonnier (le règlement dit mensuelle pendant la saison, les guides de 2010"
+" et 2011 annuelle) et les échéances."
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_nu_payroll.source_workers_compensation_act
+msgid "The site refuses automated readers (HTTP 403). Read it in a browser."
+msgstr ""
+"Le site refuse les lecteurs automatisés (HTTP 403). La lire dans un "
+"navigateur."
+
+#. module: l10n_ca_nu_payroll
+#: model:hr.salary.rule,name:l10n_ca_nu_payroll.rule_nu_wcb_insurable
+msgid "WSCC Assessable Payroll (Nunavut)"
+msgstr "Masse salariale cotisable de la CSTIT (Nunavut)"
+
+#. module: l10n_ca_nu_payroll
+#. odoo-python
+#: code:addons/l10n_ca_nu_payroll/models/hr_payslip.py:0
+#: model:hr.salary.rule,name:l10n_ca_nu_payroll.rule_nu_wcb
+msgid "WSCC Assessment (Nunavut)"
+msgstr "Cotisation de la CSTIT (Nunavut)"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_wscc_policy_02_01
+msgid "WSCC Policy Manual, Policy 02.01 Employer Assessments"
+msgstr ""
+"Manuel des politiques de la CSTIT, politique 02.01 Cotisations des "
+"employeurs"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_workers_compensation_act
+msgid "Workers' Compensation Act, S.Nu. 2007, c. 15"
+msgstr "Loi sur l'indemnisation des travailleurs, L.Nun. 2007, ch. 15"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_nu_payroll.source_workers_compensation_regulations
+msgid "Workers' Compensation General Regulations (Nunavut)"
+msgstr "Règlement général sur l'indemnisation des travailleurs (Nunavut)"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_wscc_policy_02_01
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_wscc_rates
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_nu_payroll.source_wscc_report_payroll
+msgid "Workers' Safety and Compensation Commission"
+msgstr ""
+"Commission de la sécurité au travail et de l'indemnisation des travailleurs"
+
+#. module: l10n_ca_nu_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_nu_payroll.source_wscc_rates
+msgid ""
+"Year's Maximum Insurable Remuneration of Nunavut: 113,900 in 2025, 117,300 "
+"in 2026 (110,600 shared with the Northwest Territories in 2024). Average "
+"provisional assessment rate of 2.40 per $100 of assessable payroll in 2026; "
+"the rate of each industry subclass is on WSCC Connect."
+msgstr ""
+"Rémunération assurable maximale de l'année du Nunavut : 113 900 en 2025, 117"
+" 300 en 2026 (110 600, commune avec les Territoires du Nord-Ouest, en 2024)."
+" Taux de cotisation provisoire moyen de 2,40 par 100 $ de masse salariale "
+"cotisable en 2026 ; le taux de chaque sous-catégorie d'industrie est sur "
+"WSCC Connect."
