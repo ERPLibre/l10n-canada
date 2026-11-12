@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- New Brunswick income tax, T4127 option 1 -->
+    <record id="param_nb_brackets" model="base.time.parameter">
+        <field name="name">New Brunswick income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.nb.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >New Brunswick rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P). The constant KP is derived from the table and rounded to the dollar like the federal K: 2026 0, 2,407, 4,501, 11,286. The rate of the first bracket is the lowest New Brunswick rate of K1P and K2P (0.094). New Brunswick did not change on July 1, 2026. T4127 122nd edition (January 2026), table 8.1; 123rd edition (July 2026), table 8.1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+    </record>
+    <record id="param_nb_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nb_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.094], [52333, 0.14], [104666, 0.16], [193861, 0.195]]</field>
+    </record>
+    <record id="param_nb_bpa" model="base.time.parameter">
+        <field name="name">New Brunswick basic personal amount</field>
+        <field name="code">l10n_ca.nb.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >TCP of an employee who files no TD1NB: K1P = lowest New Brunswick rate x TCP. New Brunswick has no income-tested basic personal amount. Indexation rate 2.0% for 2026. T4127 122nd edition (January 2026), table 8.2; TD1NB 2026 line 1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1nb.html</field>
+    </record>
+    <record id="param_nb_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nb_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">13664</field>
+    </record>
+    <record id="param_nb_lcp_rate" model="base.time.parameter">
+        <field name="name">New Brunswick labour-sponsored funds tax credit rate</field>
+        <field name="code">l10n_ca.nb.lcp_rate</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >LCP = the lesser of the maximum and this rate x the shares of a labour-sponsored venture capital corporation withheld on the pay; T2 is lowered by P x LCP, at most the maximum for the year. T4127 122nd edition (January 2026), step 5, New Brunswick, and table 8.2. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_nb_lcp_rate_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nb_lcp_rate" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">0.2</field>
+    </record>
+    <record id="param_nb_lcp_max" model="base.time.parameter">
+        <field name="name">New Brunswick labour-sponsored funds tax credit maximum</field>
+        <field name="code">l10n_ca.nb.lcp_max</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Maximum LCP credit of a pay and of the whole year. T4127 122nd edition (January 2026), step 5, New Brunswick, and table 8.2. Source: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+    </record>
+    <record id="param_nb_lcp_max_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nb_lcp_max" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">2000</field>
+    </record>
+
+    <!-- WorkSafeNB -->
+    <record id="param_nb_wcb_max_insurable" model="base.time.parameter">
+        <field name="name">WorkSafeNB maximum assessable earnings</field>
+        <field name="code">l10n_ca.nb.wcb.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Yearly maximum assessable earnings per worker: the assessable earnings of the pay are min(gross, maximum - assessable earnings of the year so far). New Brunswick industrial aggregate earnings x 1.6, rounded to the nearest 100 (Workers' Compensation Act, s. 38.1). 2026: 85,800 (policy 37-110); 2027: 88,200 (table of the maximum assessable earnings). Sources: https://www.worksafenb.ca/employers/insurance/maximum-assessable-earnings/ ; https://www.worksafenb.ca/policy-and-legal/policy/view-our-policies/new-brunswick-industrial-aggregate-earnings</field>
+    </record>
+    <record id="param_nb_wcb_max_insurable_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nb_wcb_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">85800</field>
+    </record>
+    <record id="param_nb_wcb_max_insurable_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_nb_wcb_max_insurable" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">88200</field>
+    </record>
+</odoo>

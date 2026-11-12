@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Payee of the WorkSafeNB assessments. The New Brunswick income tax
+         is remitted to the CRA with the federal deductions. -->
+    <record id="partner_worksafenb" model="res.partner">
+        <field name="name">WorkSafeNB</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_nb" />
+    </record>
+    <record id="register_worksafenb" model="hr.contribution.register">
+        <field name="name">WorkSafeNB</field>
+        <field name="partner_id" ref="partner_worksafenb" />
+        <field name="company_id" eval="False" />
+        <field name="note">New Brunswick workers' compensation assessments.</field>
+    </record>
+
+    <!-- Every rule below applies only to an employment in New Brunswick.
+         The New Brunswick income tax is the line of the federal rule
+         CA_PIT. -->
+    <record id="rule_nb_salary" model="hr.salary.rule">
+        <field name="name">New Brunswick Remuneration</field>
+        <field name="code">CA_NB_SAL</field>
+        <field name="sequence">114</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NB"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["province_remuneration"]</field>
+        <field
+            name="note"
+        >Remuneration of the pay in New Brunswick: its year-to-date total gives the assessable earnings left after a credit note.</field>
+    </record>
+    <record id="rule_nb_wcb_insurable" model="hr.salary.rule">
+        <field name="name">WorkSafeNB Assessable Earnings</field>
+        <field name="code">CA_NB_WCB_IE</field>
+        <field name="sequence">115</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NB"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["wcb_insurable"]</field>
+        <field
+            name="note"
+        >Assessable earnings of the pay up to the WorkSafeNB yearly maximum, less the assessable earnings of the year so far; 0 for a contract not covered.</field>
+    </record>
+    <record id="rule_nb_wcb" model="hr.salary.rule">
+        <field name="name">WorkSafeNB Assessment</field>
+        <field name="code">CA_NB_WCB</field>
+        <field name="sequence">380</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_worksafenb" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "NB" and l10n_ca.get(contract, categories.GROSS)["wcb"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["wcb"]
+result_name = ca["wcb_line_name"]</field>
+        <field
+            name="note"
+        >WorkSafeNB assessment at the rate per $100 of the provincial payroll account of the company, on the assessable earnings of the pay up to the yearly maximum.</field>
+    </record>
+</odoo>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the New Brunswick payroll.
+     l10n_ca_payroll/tools/sources_page.py writes
+     static/description/sources.html from this file: run it after a
+     change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_123" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">new_brunswick</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Steps 4 to 6 (T4, K1P, K2P, T2, LCP); New Brunswick tables unchanged from the 122nd edition (January 2026), tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+        <field
+            name="summary"
+        >2026 New Brunswick brackets and constants KP and basic personal amount. The edition lists New Brunswick among the provinces without change on July 1, 2026.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_122" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">new_brunswick</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 122nd Edition (January 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Step 5, New Brunswick (LCP); tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html</field>
+        <field
+            name="summary"
+        >New Brunswick rates 9.4%, 14%, 16% and 19.5% from 52,333, 104,666 and 193,861; basic personal amount 13,664; labour-sponsored funds credit LCP of 20% of the shares withheld, at most 2,000 a year.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_td1nb_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">new_brunswick</field>
+        <field name="kind">publication</field>
+        <field name="name">TD1NB 2026 New Brunswick Personal Tax Credits Return</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Line 1 (basic personal amount) and the total claim amount</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1nb.html</field>
+        <field
+            name="summary"
+        >New Brunswick basic personal amount of 13,664 for 2026 and the total claim amount TCP entered on the contract.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_finance_personal" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">new_brunswick</field>
+        <field name="kind">page</field>
+        <field name="name">Personal Income Tax</field>
+        <field
+            name="publisher"
+        >New Brunswick Department of Finance and Treasury Board</field>
+        <field
+            name="url"
+        >https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/personal.html</field>
+        <field
+            name="summary"
+        >Rates and brackets of the New Brunswick personal income tax. New Brunswick levies no employer payroll tax: the list of the taxes administered by the Department has none.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_worksafenb_maximum" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">new_brunswick</field>
+        <field name="kind">publication</field>
+        <field name="name">Maximum Assessable Earnings</field>
+        <field name="publisher">WorkSafeNB</field>
+        <field name="reference">Table of the yearly maximums (PDF)</field>
+        <field
+            name="url"
+        >https://www.worksafenb.ca/employers/insurance/maximum-assessable-earnings/</field>
+        <field
+            name="summary"
+        >Maximum assessable earnings per worker: 84,200 in 2025, 85,800 in 2026, 88,200 in 2027.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_worksafenb_policy_37_110" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">new_brunswick</field>
+        <field name="kind">page</field>
+        <field
+            name="name"
+        >Policy 37-110 New Brunswick Industrial Aggregate Earnings</field>
+        <field name="publisher">WorkSafeNB</field>
+        <field
+            name="url"
+        >https://www.worksafenb.ca/policy-and-legal/policy/view-our-policies/new-brunswick-industrial-aggregate-earnings</field>
+        <field
+            name="summary"
+        >Maximum assessable earnings of the year in force (85,800 for 2026): the industrial aggregate earnings times 1.6, rounded to the nearest 100. The policy is updated near January 1.</field>
+        <field name="watch_key">worksafenb_maximum</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_worksafenb_coverage" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">new_brunswick</field>
+        <field name="kind">page</field>
+        <field name="name">Accounts and Coverage; Pay Your Assessment Premium</field>
+        <field name="publisher">WorkSafeNB</field>
+        <field
+            name="url"
+        >https://www.worksafenb.ca/employers/insurance/accounts-and-coverage/</field>
+        <field
+            name="summary"
+        >Coverage mandatory with 3 or more workers (25 in fishing); proprietors, partners and non-salaried officers covered only by optional personal coverage; minimum assessment 150. Premium = rate per $100 of the assessment notice x assessable earnings. Annual Form 100 due February 28, paid within 30 days of the notice or in two halves (the second by August 31), or monthly by the 15th of the following month.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_workers_compensation_act" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">new_brunswick</field>
+        <field name="kind">statute</field>
+        <field name="name">Workers' Compensation Act, RSNB 1973, c. W-13</field>
+        <field name="publisher">Government of New Brunswick</field>
+        <field name="reference">Section 38.1 (maximum annual earnings)</field>
+        <field name="url">https://laws.gnb.ca/en/document/cs/W-13</field>
+        <field
+            name="summary"
+        >Maximum annual earnings: the New Brunswick industrial aggregate earnings times 1.6 since July 1, 2024, rounded to the nearest 100.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>
