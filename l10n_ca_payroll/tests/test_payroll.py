@@ -550,6 +550,8 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         self.assertEqual(
             [-self._line(s, "CA_EI") for s in slips], [492.0, 492.0, 177.12, 0.0]
         )
+        # The 2027 federal brackets are not published: the payslip says so.
+        self.assertIn("l10n_ca.federal.bpa_max", slips[0].l10n_ca_warning)
 
     # ------------------------------------------------------------------
     # Bonuses and other non-periodic payments
@@ -699,6 +701,55 @@ class TestCanadianPayroll(AccountTestInvoicingCommon):
         # K2 += 0.14 * 12 * 21.50 = 36.12 -> T3 = 5,302.20,
         # T1 = 4,427.33 -> 368.94
         self._assert_lines(slip, {"CA_FIT": -368.94})
+
+    def test_transfer_from_qpp_to_cpp(self):
+        """QPP withheld before a transfer out of Quebec counts against the CPP.
+
+        T4127 chapter 6: C = min(4,230.45 * PM/12 - [DQ * (0.0595 / 0.0630)
+        + D], 0.0595 * [PI - 3,500 / P]); K2R raises the maximum of the base
+        CPP credit by DQ * (0.0530 - 0.0495) / 0.0630.
+        """
+        self._qpp_parameters()
+        # January-June in Quebec: QPP = 0.063 * (10,000 - 291.66) = 611.63,
+        #   DQ = 6 * 611.63 = 3,669.78, i.e. 3,669.78 * 0.0595 / 0.063
+        #   = 3,465.90 of CPP.
+        # July in New Brunswick: C = min(4,230.45 - 3,465.90 = 764.55,
+        #   0.0595 * 9,708.34 = 577.65) = 577.65.
+        # August: C = 764.55 - 577.65 = 186.90. September: 0.
+        contract = self._contract(10000.0, province=self.quebec)
+        quebec = self._monthly_slips(contract, range(1, 7))
+        self.assertEqual({s.l10n_ca_pension_plan for s in quebec}, {"qpp"})
+        self.assertEqual(self._line(quebec[0], "CA_CPP"), -611.63)
+        contract.l10n_ca_province_id = self.new_brunswick
+        slips = self._monthly_slips(contract, [7, 8, 9])
+        self.assertEqual(
+            [-self._line(s, "CA_CPP") for s in slips], [577.65, 186.90, 0.0]
+        )
+        # K2R: maximum of the base credit 3,519.45 + 3,669.78 * 0.0035 / 0.063
+        #   = 3,519.45 + 203.88 = 3,723.33.
+        vals = slips[2]._l10n_ca_compute(contract, 10000.0)
+        items = slips[2]._l10n_ca_federal_k2_items(vals)
+        self.assertAlmostEqual(items["pension"]["maximum"], 3723.33, places=2)
+        self.assertTrue(items["pension"]["reached"])
+
+    def test_bonus_without_regular_pay(self):
+        """T4127 bonus method: if I = 0, use the most recent I."""
+        contract = self._contract(5000.0)
+        self._monthly_slips(contract, [1, 2, 3])
+        contract.wage = 0.0
+        slip = self._slip(contract, "2026-04-01", "2026-04-30", bonus=10000.0)
+        # March: I = 5,000, F5A = 280.15 * 0.01 / 0.0595 = 47.084, so A
+        #   without the bonus = 12 * 4,952.916 = 59,434.99.
+        # April: C = 0.0595 * (10,000 - 291.66) = 577.65, F5B = 577.65 *
+        #   0.01 / 0.0595 = 97.08; A with = 59,434.99 + 9,902.92 = 69,337.91,
+        #   both in the 20.5% bracket. K2 with the bonus = 0.14 * (577.65 *
+        #   0.0495 / 0.0595 + 163.00) = 90.10, without = 0.
+        # TB = 0.205 * 9,902.92 - 90.10 = 1,940.00.
+        self._assert_lines(slip, {"GROSS": 10000.0, "CA_FIT": -1940.0})
+        self.assertNotIn("No regular pay", slip.l10n_ca_warning or "")
+        alone = self._contract(0.0)
+        first = self._slip(alone, "2026-04-01", "2026-04-30", bonus=10000.0)
+        self.assertIn("No regular pay", first.l10n_ca_warning)
 
     def test_transfer_from_cpp_to_qpp(self):
         """CPP withheld before a transfer to Quebec counts against the QPP.

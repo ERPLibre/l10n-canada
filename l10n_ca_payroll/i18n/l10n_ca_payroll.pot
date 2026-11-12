@@ -1186,6 +1186,14 @@ msgid ""
 msgstr ""
 
 #. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid ""
+"No regular pay of the employee before this payslip: its non-periodic "
+"payments are taxed as the only income of the year."
+msgstr ""
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_remittance
 msgid "No remittance yet."
 msgstr ""
@@ -1666,6 +1674,14 @@ msgid ""
 "The T4 slips and the remittances are computed from the done\n"
 "                payslips whose pay date falls in the year, and can be\n"
 "                exported as CSV files to fill in the CRA web forms."
+msgstr ""
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid ""
+"The indexed amounts of %(year)s are not entered (time parameter %(code)s): "
+"this payslip uses those of %(version)s."
 msgstr ""
 
 #. module: l10n_ca_payroll

@@ -464,6 +464,7 @@ class HrPayslip(models.Model):
         nonperiodic = vals["nonperiodic"]
         salary = vals["gross"] - nonperiodic
         param = company._l10n_ca_param
+        self._l10n_ca_check_indexation(vals, "l10n_ca.qc.bpa")
         worker_deduction = self._l10n_ca_qc_worker_deduction(vals, salary)
         additional_qpp = 0.0
         if vals["plan"] == "qpp":

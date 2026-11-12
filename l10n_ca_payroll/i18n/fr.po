@@ -1299,6 +1299,16 @@ msgstr ""
 " de cotiser."
 
 #. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid ""
+"No regular pay of the employee before this payslip: its non-periodic "
+"payments are taxed as the only income of the year."
+msgstr ""
+"Aucune paie régulière de l'employé avant ce bulletin : ses paiements non "
+"périodiques sont imposés comme le seul revenu de l'année."
+
+#. module: l10n_ca_payroll
 #: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_remittance
 msgid "No remittance yet."
 msgstr "Aucun versement pour l'instant."
@@ -1822,6 +1832,16 @@ msgstr ""
 "Les feuillets T4 et les versements sont calculés à partir des\n"
 "                bulletins de paie terminés dont la date de paie tombe dans l'année, et peuvent\n"
 "                être exportés en fichiers CSV pour remplir les formulaires Web de l'ARC."
+
+#. module: l10n_ca_payroll
+#. odoo-python
+#: code:addons/l10n_ca_payroll/models/hr_payslip.py:0
+msgid ""
+"The indexed amounts of %(year)s are not entered (time parameter %(code)s): "
+"this payslip uses those of %(version)s."
+msgstr ""
+"Les montants indexés de %(year)s ne sont pas saisis (paramètre temporel "
+"%(code)s) : ce bulletin utilise ceux de %(version)s."
 
 #. module: l10n_ca_payroll
 #: model_terms:ir.actions.act_window,help:l10n_ca_payroll.action_l10n_ca_payroll_source

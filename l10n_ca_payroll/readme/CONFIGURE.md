@@ -349,6 +349,20 @@ these amounts (`tests/test_payroll.py`).
   in the payslip input: A = 12 × (5,000 − 150 − 47.0840) = 57,634.99,
   R = 14%; T3 = 5,027.01, **federal tax 418.92**; box 44 is 50.
   `test_union_dues_and_support_lower_the_taxable_income`
+- **Transfer from QPP to CPP** — 10,000 a month, January to June in
+  Quebec (QPP 611.63 a month, DQ = 3,669.78), then New Brunswick: DQ counts
+  as 3,669.78 × 0.0595 / 0.063 = 3,465.90 of CPP, so C = 577.65 in July,
+  186.90 in August, then 0; K2R raises the maximum of the base credit to
+  3,519.45 + 3,669.78 × 0.0035 / 0.063 = 3,723.33.
+  `test_transfer_from_qpp_to_cpp`
+- **Bonus without regular pay** — after three pays of 5,000, a pay of a
+  bonus of 10,000 alone takes I of the most recent regular pay (T4127): A
+  goes from 59,434.99 to 69,337.91, K2 adds 90.10, **TB = 1,940.00**. With
+  no regular pay before it, the payslip warns that the bonus is taxed as the
+  only income of the year. `test_bonus_without_regular_pay`
+- A pay of a year whose indexed amounts are not entered (no version of
+  `l10n_ca.federal.bpa_max` dated in that year) is computed with the last
+  ones and the payslip warns about it.
 - **2027 maximums** — 30,000 a month in 2027: CPP 1,708.23 × 2, then
   792.54 (maximum **4,209.00**); CPP2 **428.00** in March; EI 492.00 × 2,
   then 177.12 (maximum **1,161.12**). `test_maximums_2027`

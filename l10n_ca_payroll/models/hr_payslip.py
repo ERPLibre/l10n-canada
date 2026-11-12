@@ -241,20 +241,23 @@ class HrPayslip(models.Model):
         counts, "reached": whether the annual maximum is reached in this
         pay or a previous one, "maximum": annual maximum of the credited
         amount}. ``_l10n_ca_federal_k2`` turns them into the credit: the
-        base part of the CPP/QPP contribution and the EI premium here.
+        base part of the CPP/QPP contribution and the EI premium here. The
+        contributions withheld under the plan the employee was transferred
+        from count toward the maximum (``_l10n_ca_pension_transfer_ytd``).
         """
         params = vals["pension_params"]
         months = vals["pension_months"]
+        transfer = vals.get("pension_transfer") or {}
         max_base = _round(
             (params["ympe"] - params["basic_exemption"]) * params["base_rate"]
         )
         max_pension = vals["pension_max"] * months / 12
+        withheld = vals["cpp"] + vals["ytd"]["cpp"] + transfer.get("cpp", 0.0)
         return {
             "pension": {
                 "period": vals["cpp"] * params["base_rate"] / params["rate"],
-                "reached": bool(max_pension)
-                and vals["cpp"] + vals["ytd"]["cpp"] >= max_pension - 0.005,
-                "maximum": max_base * months / 12,
+                "reached": bool(max_pension) and withheld >= max_pension - 0.005,
+                "maximum": max_base * months / 12 + transfer.get("base_credit", 0.0),
             },
             "ei": {
                 "period": vals["ei"],
@@ -579,19 +582,45 @@ class HrPayslip(models.Model):
         contribution, R2 * (QPP rate2 / CPP rate2) for the second
         additional one (TP-1015.F), rounded to the cent like the amounts
         withheld, so that the maximum less these amounts leaves no residue
-        below the cent once reached. ``params`` are the pension parameters
-        of the current plan. Returns {"cpp": ..., "cpp2": ...}, zero for a
-        CPP payslip and for an employee without CPP payslips this year.
+        below the cent once reached. The other way, an employee transferred
+        from a QPP establishment has the QPP withheld (DQ, D2Q) count against
+        the CPP maximums as DQ * (CPP rate / QPP rate), not rounded, and
+        D2Q * (CPP rate2 / QPP rate2) (T4127, chapter 6); the base share of
+        the QPP withheld then replaces its CPP equivalent in the maximum of
+        the K2 credit: ``base_credit`` = DQ * (QPP base rate - CPP base
+        rate) / QPP rate, added to that maximum (K2R and K2RP of T4127).
+        ``params`` are the pension parameters of the current plan. Returns
+        {"cpp": ..., "cpp2": ..., "base_credit": ...}, zero without payslips
+        of the other plan this year.
         """
-        transfer = {"cpp": 0.0, "cpp2": 0.0}
-        if vals["plan"] != "qpp":
+        transfer = {"cpp": 0.0, "cpp2": 0.0, "base_credit": 0.0}
+        other_plan = "cpp" if vals["plan"] == "qpp" else "qpp"
+        company = vals["company"]
+        if (
+            company._l10n_ca_param(
+                f"l10n_ca.{other_plan}.rate", vals["date"], default=None
+            )
+            is None
+        ):
             return transfer
-        other = self._l10n_ca_ytd(vals["date"], "cpp")
+        other = self._l10n_ca_ytd(vals["date"], other_plan)
         if not (other["cpp"] or other["cpp2"]):
             return transfer
-        cpp_params = self._l10n_ca_pension_params(vals["company"], "cpp", vals["date"])
-        transfer["cpp"] = _round(other["cpp"] * params["rate"] / cpp_params["rate"])
-        transfer["cpp2"] = _round(other["cpp2"] * params["rate2"] / cpp_params["rate2"])
+        other_params = self._l10n_ca_pension_params(company, other_plan, vals["date"])
+        cpp = other["cpp"] * params["rate"] / other_params["rate"]
+        cpp2 = other["cpp2"] * params["rate2"] / other_params["rate2"]
+        if vals["plan"] == "qpp":
+            transfer.update({"cpp": _round(cpp), "cpp2": _round(cpp2)})
+        else:
+            transfer.update(
+                {
+                    "cpp": cpp,
+                    "cpp2": cpp2,
+                    "base_credit": other["cpp"]
+                    * (other_params["base_rate"] - params["base_rate"])
+                    / other_params["rate"],
+                }
+            )
         return transfer
 
     def _l10n_ca_compute_ei(self, vals):
@@ -715,6 +744,7 @@ class HrPayslip(models.Model):
         if nonperiodic:
             regular = self._l10n_ca_regular_values(vals, regular_gross)
         additional = _round(contract.l10n_ca_additional_federal_tax)
+        self._l10n_ca_check_indexation(vals, "l10n_ca.federal.bpa_max")
         annual = periods * (
             regular_gross - self._l10n_ca_regular_deductions(vals) - f5a
         )
@@ -748,6 +778,27 @@ class HrPayslip(models.Model):
         )
         return vals
 
+    def _l10n_ca_check_indexation(self, vals, code):
+        """Warn when the indexed parameter ``code`` predates the pay year.
+
+        The amounts indexed every year (brackets, basic personal amount)
+        have a version dated January 1 once published; a pay of a year
+        without that version is computed with the amounts of an earlier
+        year, which the payslip states instead of withholding silently.
+        """
+        version = vals["company"]._l10n_ca_param_version(code, vals["date"])
+        if version and version.date_from.year < vals["date"].year:
+            message = _(
+                "The indexed amounts of %(year)s are not entered (time parameter "
+                "%(code)s): this payslip uses those of %(version)s."
+            ) % {
+                "year": vals["date"].year,
+                "code": code,
+                "version": version.date_from.year,
+            }
+            if message not in vals["warnings"]:
+                vals["warnings"].append(message)
+
     def _l10n_ca_regular_deductions(self, vals):
         """Return F + F2 + U1, the deductions of the pay that lower A."""
         return vals["tax_deductions"] + vals["federal_deductions"]
@@ -763,16 +814,30 @@ class HrPayslip(models.Model):
         the payment once (``_l10n_ca_federal_k2``). When A with the
         payment is at most ``l10n_ca.federal.bonus_flat_threshold``, TB is
         the flat rate of the payment less F3, a rate of its own in Quebec.
+        A pay without regular remuneration takes I, F, F2, U1 and F5A of the
+        most recent one (``_l10n_ca_recent_regular_pay``), as T4127 asks.
+        ``federal_bonus_base`` keeps P * (I - F - F2 - F5A - U1) for the
+        provincial bonus tax.
         """
         company = vals["company"]
         date = vals["date"]
         periods = vals["periods"]
         param = company._l10n_ca_param
         regular_gross = regular["gross"]
-        base = max(
-            0.0,
-            periods * (regular_gross - self._l10n_ca_regular_deductions(vals) - f5a),
-        )
+        net = regular_gross - self._l10n_ca_regular_deductions(vals) - f5a
+        if regular_gross <= 0:
+            recent = self._l10n_ca_recent_regular_pay(vals)
+            if recent:
+                regular_gross, net = recent
+            else:
+                vals["warnings"].append(
+                    _(
+                        "No regular pay of the employee before this payslip: its "
+                        "non-periodic payments are taxed as the only income of "
+                        "the year."
+                    )
+                )
+        base = max(0.0, periods * net)
         payment = max(0.0, vals["nonperiodic_net"] - vals["f5b"])
         previous = max(0.0, vals["ytd"]["nonperiodic"] - vals["ytd"]["f5b"])
         with_payment = base + payment + previous
@@ -801,11 +866,67 @@ class HrPayslip(models.Model):
             bonus_tax = max(0.0, tax_with - tax_without)
         vals.update(
             {
+                "federal_bonus_base": base,
                 "federal_bonus_income": with_payment,
                 "federal_bonus_tax": _round(bonus_tax),
             }
         )
         return vals
+
+    def _l10n_ca_recent_regular_pay(self, vals):
+        """Return (I, I - F - F2 - U1 - F5A) of the most recent regular pay.
+
+        Reads the latest done payslip of the employee, other than a refund,
+        paid before this one with a gross above its non-periodic payments
+        (category CA_LUMP): its I, its deductions of categories CA_TAX_DED
+        and CA_FED_TAX_DED, and its F5A recomputed from its CPP/QPP lines
+        with the pension parameters of its plan and date. None without such
+        a payslip.
+        """
+        slips = self.search(
+            [
+                ("employee_id", "=", self.employee_id.id),
+                ("company_id", "=", self.company_id.id),
+                ("state", "=", "done"),
+                ("credit_note", "=", False),
+                ("l10n_ca_pay_date", "<=", vals["date"]),
+                ("id", "!=", self.id),
+            ],
+            order="l10n_ca_pay_date desc, id desc",
+            limit=12,
+        )
+        for slip in slips:
+            totals = defaultdict(float)
+            lump = deductions = 0.0
+            for line in slip.line_ids:
+                totals[line.code] += line.total
+                codes = set()
+                category = line.category_id
+                while category:
+                    codes.add(category.code)
+                    category = category.parent_id
+                if NONPERIODIC_CATEGORY in codes:
+                    lump += line.total
+                if codes & {TAX_DEDUCTION_CATEGORY, FEDERAL_DEDUCTION_CATEGORY}:
+                    deductions -= line.total
+            income = totals["GROSS"] - lump
+            if income <= 0:
+                continue
+            f5a = 0.0
+            pensionable = totals["CA_PE"]
+            if pensionable > 0 and slip.l10n_ca_pension_plan:
+                params = slip._l10n_ca_pension_params(
+                    slip.company_id, slip.l10n_ca_pension_plan, slip.l10n_ca_pay_date
+                )
+                f5 = (
+                    -totals["CA_CPP"]
+                    * (params["rate"] - params["base_rate"])
+                    / params["rate"]
+                    - totals["CA_CPP2"]
+                )
+                f5a = f5 * (pensionable - lump) / pensionable
+            return income, income - deductions - f5a
+        return None
 
     def _l10n_ca_compute_provincial_tax(self, vals):
         province = vals["province"]
