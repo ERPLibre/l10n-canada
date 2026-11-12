@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Payees of the Ontario employer contributions. The Ontario income
+         tax is remitted to the CRA with the federal deductions. -->
+    <record id="partner_ontario_finance" model="res.partner">
+        <field name="name">Ontario Ministry of Finance</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_on" />
+    </record>
+    <record id="register_ontario_finance" model="hr.contribution.register">
+        <field name="name">Ontario Ministry of Finance</field>
+        <field name="partner_id" ref="partner_ontario_finance" />
+        <field name="company_id" eval="False" />
+        <field name="note">Ontario Employer Health Tax.</field>
+    </record>
+    <record id="partner_wsib" model="res.partner">
+        <field name="name">Workplace Safety and Insurance Board</field>
+        <field name="is_company" eval="True" />
+        <field name="country_id" ref="base.ca" />
+        <field name="state_id" ref="base.state_ca_on" />
+    </record>
+    <record id="register_wsib" model="hr.contribution.register">
+        <field name="name">Workplace Safety and Insurance Board</field>
+        <field name="partner_id" ref="partner_wsib" />
+        <field name="company_id" eval="False" />
+        <field name="note">Ontario workplace safety and insurance premiums.</field>
+    </record>
+
+    <!-- Every rule below applies only to an employment in Ontario. The
+         Ontario income tax is the line of the federal rule CA_PIT. -->
+    <record id="rule_on_salary" model="hr.salary.rule">
+        <field name="name">Ontario Remuneration Subject to the EHT</field>
+        <field name="code">CA_ON_SAL</field>
+        <field name="sequence">114</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "ON"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["on_salary"]</field>
+        <field
+            name="note"
+        >Remuneration of the pay counted in the total Ontario remuneration of the company: its year-to-date total consumes the EHT exemption.</field>
+    </record>
+    <record id="rule_on_wsib_insurable" model="hr.salary.rule">
+        <field name="name">WSIB Insurable Earnings</field>
+        <field name="code">CA_ON_WSIB_IE</field>
+        <field name="sequence">115</field>
+        <field name="appears_on_payslip" eval="False" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "ON"</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["on_wsib_insurable"]</field>
+        <field
+            name="note"
+        >Insurable earnings of the pay up to the WSIB annual maximum, less the insurable earnings of the year so far; 0 for a contract not covered by the WSIB.</field>
+    </record>
+    <record id="rule_on_eht" model="hr.salary.rule">
+        <field name="name">Ontario Employer Health Tax</field>
+        <field name="code">CA_ON_EHT</field>
+        <field name="sequence">370</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_ontario_finance" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "ON" and l10n_ca.get(contract, categories.GROSS)["on_eht"] != 0</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">ca = l10n_ca.get(contract, categories.GROSS)
+result = ca["on_eht"]
+result_name = ca["on_eht_line_name"]</field>
+        <field
+            name="note"
+        >Accrual of the Employer Health Tax: the rate of the annual total Ontario remuneration of the company applied to the remuneration of the pay above the exemption left in the year.</field>
+    </record>
+    <record id="rule_on_wsib" model="hr.salary.rule">
+        <field name="name">WSIB Premium</field>
+        <field name="code">CA_ON_WSIB</field>
+        <field name="sequence">380</field>
+        <field name="category_id" ref="l10n_ca_payroll.categ_comp" />
+        <field name="register_id" ref="register_wsib" />
+        <field name="company_id" eval="False" />
+        <field name="condition_select">python</field>
+        <field
+            name="condition_python"
+        >result = contract.l10n_ca_province_id.code == "ON" and bool(contract.company_id.l10n_ca_on_wsib_rate) and not contract.l10n_ca_on_wsib_exempt</field>
+        <field name="amount_select">code</field>
+        <field
+            name="amount_python_compute"
+        >result = l10n_ca.get(contract, categories.GROSS)["on_wsib"]</field>
+        <field
+            name="note"
+        >Workplace safety and insurance premium at the WSIB rate per $100 of the company, on the insurable earnings of the pay up to the annual maximum.</field>
+    </record>
+</odoo>

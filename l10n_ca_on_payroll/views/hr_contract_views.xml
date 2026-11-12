@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="hr_contract_view_form" model="ir.ui.view">
+        <field name="name">hr.contract.form.l10n_ca_on_payroll</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="l10n_ca_payroll.hr_contract_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page[@name='l10n_ca_payroll']/group"
+                position="after"
+            >
+                <field name="l10n_ca_province_code" invisible="1" />
+                <group invisible="l10n_ca_province_code != 'ON'">
+                    <group name="l10n_ca_on_td1on" string="Ontario TD1ON">
+                        <field name="l10n_ca_on_td1_type" />
+                        <field
+                            name="l10n_ca_on_bpa"
+                            invisible="l10n_ca_on_td1_type != 'basic'"
+                        />
+                        <field
+                            name="l10n_ca_on_td1_amount"
+                            invisible="l10n_ca_on_td1_type != 'custom'"
+                        />
+                        <field name="l10n_ca_on_dependants_under_19" />
+                        <field name="l10n_ca_on_disabled_dependants" />
+                        <field name="l10n_ca_on_other_credits" />
+                        <field name="l10n_ca_on_additional_tax" />
+                    </group>
+                    <group name="l10n_ca_on_other" string="Ontario - Other">
+                        <field name="l10n_ca_on_wsib_exempt" />
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

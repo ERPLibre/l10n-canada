@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.l10n_ca_on_payroll</field>
+        <field name="model">res.config.settings</field>
+        <field
+            name="inherit_id"
+            ref="l10n_ca_payroll.res_config_settings_view_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='l10n_ca_payroll']" position="after">
+                <block title="Ontario Payroll" name="l10n_ca_on_payroll">
+                    <setting
+                        string="Employer Health Tax"
+                        help="Exemption and annual total Ontario remuneration that sets the EHT rate"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label
+                                    for="l10n_ca_on_eht_account_number"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_on_eht_account_number" />
+                            </div>
+                            <div class="row mt8">
+                                <label
+                                    for="l10n_ca_on_eht_eligible"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_on_eht_eligible" />
+                            </div>
+                            <div
+                                class="row mt8"
+                                invisible="not l10n_ca_on_eht_eligible"
+                            >
+                                <label
+                                    for="l10n_ca_on_eht_charity"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_on_eht_charity" />
+                            </div>
+                            <div
+                                class="row mt8"
+                                invisible="not l10n_ca_on_eht_eligible"
+                            >
+                                <label
+                                    for="l10n_ca_on_eht_associated"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_on_eht_associated" />
+                            </div>
+                            <div
+                                class="row mt8"
+                                invisible="not l10n_ca_on_eht_eligible or not l10n_ca_on_eht_associated"
+                            >
+                                <label
+                                    for="l10n_ca_on_eht_allocated_exemption"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_on_eht_allocated_exemption" />
+                            </div>
+                            <div class="row mt8">
+                                <label
+                                    for="l10n_ca_on_eht_basis"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_on_eht_basis" />
+                            </div>
+                            <div
+                                class="row mt8"
+                                invisible="l10n_ca_on_eht_basis != 'previous_year'"
+                            >
+                                <label
+                                    for="l10n_ca_on_eht_previous_payroll"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_on_eht_previous_payroll" />
+                            </div>
+                            <div
+                                class="row mt8"
+                                invisible="l10n_ca_on_eht_basis != 'estimate'"
+                            >
+                                <label
+                                    for="l10n_ca_on_eht_estimated_payroll"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_on_eht_estimated_payroll" />
+                            </div>
+                        </div>
+                    </setting>
+                    <setting
+                        string="WSIB"
+                        help="Account number and premium rate per $100 of insurable earnings from the rate notice of the year"
+                    >
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label
+                                    for="l10n_ca_on_wsib_account_number"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_on_wsib_account_number" />
+                            </div>
+                            <div class="row mt8">
+                                <label
+                                    for="l10n_ca_on_wsib_rate"
+                                    class="col-lg-5 o_light_label"
+                                />
+                                <field name="l10n_ca_on_wsib_rate" />
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

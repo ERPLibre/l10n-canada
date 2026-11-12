@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+     Official sources of the Ontario payroll. l10n_ca_payroll/tools/sources_page.py
+     writes static/description/sources.html from this file: run it after a
+     change. -->
+<odoo noupdate="0">
+    <record id="source_t4127_123" model="l10n_ca.payroll.source">
+        <field name="sequence">10</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Steps 4 and 5 (T4, K1P, K2P, T2), Ontario section (V1, V2, S), bonus formulas (TB); Ontario tables unchanged from the 122nd edition (January 2026), tables 8.1 and 8.2</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html</field>
+        <field
+            name="summary"
+        >2026 Ontario brackets and constants KP, basic personal amount, surtax thresholds, tax reduction amounts, Ontario Health Premium schedule, and the formulas of the Ontario tax for the regular pay and for bonuses. The edition lists Ontario among the provinces without change on July 1, 2026.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_t4127_121" model="l10n_ca.payroll.source">
+        <field name="sequence">20</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">publication</field>
+        <field
+            name="name"
+        >T4127 Payroll Deductions Formulas, 121st Edition (July 1, 2025)</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Ontario values of 2025, unchanged from the 120th edition (January 2025); tables 8.22 and 8.23 of the 122nd edition repeat them</field>
+        <field
+            name="url"
+        >https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jul-121st-edition-effective-july-1-2025/t4127-jul-payroll-deductions-formulas.html</field>
+        <field
+            name="summary"
+        >The same Ontario figures for 2025: brackets 52,886 and 105,775, basic personal amount 12,747, surtax thresholds 5,710 and 7,307, tax reduction 294 and 544 per dependant. The edition lists Ontario among the provinces without change on July 1, 2025.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_td1on_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">30</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">publication</field>
+        <field name="name">TD1ON 2026 Ontario Personal Tax Credits Return</field>
+        <field name="publisher">Canada Revenue Agency</field>
+        <field
+            name="reference"
+        >Line 1 (basic personal amount) and line 10 (total claim)</field>
+        <field
+            name="url"
+        >https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1on/td1on-26e.pdf</field>
+        <field
+            name="summary"
+        >Ontario basic personal amount of 12,989 for 2026 and the total claim amount TCP. The form no longer has a section for the dependants of the tax reduction: Y comes from a written or electronic request of the employee.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_ontario_fall_statement_2026" model="l10n_ca.payroll.source">
+        <field name="sequence">40</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">page</field>
+        <field
+            name="name"
+        >2026 Ontario Economic Outlook and Fiscal Review, Tax Provisions</field>
+        <field name="publisher">Government of Ontario</field>
+        <field name="reference">Ontario tax reduction; Employer Health Tax</field>
+        <field
+            name="url"
+        >https://budget.ontario.ca/2026/fallstatement/provisions.html</field>
+        <field
+            name="summary"
+        >Confirms the 2026 tax reduction (basic amount 300, 554 per dependent child aged 18 or under) and the 1 million EHT exemption of private-sector employers.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_eht_act" model="l10n_ca.payroll.source">
+        <field name="sequence">50</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">statute</field>
+        <field name="name">Employer Health Tax Act, R.S.O. 1990, c. E.11</field>
+        <field name="publisher">Government of Ontario (e-Laws)</field>
+        <field
+            name="reference"
+        >S. 1(1) (remuneration, total Ontario remuneration), 2(2) and table (rates), 2.1 (exemption, threshold, associated employers, charities), 3 (instalments), 5 (annual return)</field>
+        <field name="url">https://www.ontario.ca/laws/statute/90e11</field>
+        <field
+            name="summary"
+        >EHT rates from 0.98% to 1.95% chosen by the total Ontario remuneration, exemption of 1,000,000 for 2020 to 2028, exemption threshold of 5,000,000, monthly instalments above 1,200,000 and annual return due March 15.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_eht_guide" model="l10n_ca.payroll.source">
+        <field name="sequence">60</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">page</field>
+        <field name="name">Employer Health Tax (EHT)</field>
+        <field name="publisher">Ontario Ministry of Finance</field>
+        <field
+            name="reference"
+        >Rate basis, exemption, instalments, annual return; subpages associated employers, remuneration and filing how-tos</field>
+        <field
+            name="url"
+        >https://www.ontario.ca/document/employer-health-tax-eht</field>
+        <field
+            name="summary"
+        >The rate is based on the Ontario payroll before the exemption, all accounts combined; instalments are due on the 15th of the month after the payroll once the cumulative payroll exceeds 1.2 million; the return and balance are due on or before March 15.</field>
+        <field name="verified_date">2026-11-12</field>
+        <field name="watch_key">ontario_eht</field>
+    </record>
+    <record id="source_wsib_2025_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">70</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">page</field>
+        <field name="name">WSIB 2025 Premium Rates</field>
+        <field name="publisher">Workplace Safety and Insurance Board</field>
+        <field name="url">https://www.wsib.ca/en/2025premiumrates</field>
+        <field
+            name="summary"
+        >Maximum insurable earnings of 117,000 for 2025; average premium rate of 1.25 per $100.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wsib_2026_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">80</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">page</field>
+        <field name="name">WSIB 2026 Premium Rates</field>
+        <field name="publisher">Workplace Safety and Insurance Board</field>
+        <field name="url">https://www.wsib.ca/en/2026premiumrates</field>
+        <field
+            name="summary"
+        >Maximum insurable earnings of 121,700 for 2026; average premium rate of 1.23 per $100; new businesses get the rate of their class.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wsib_2027_rates" model="l10n_ca.payroll.source">
+        <field name="sequence">90</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">page</field>
+        <field name="name">WSIB 2027 Premium Rates</field>
+        <field name="publisher">Workplace Safety and Insurance Board</field>
+        <field name="url">https://www.wsib.ca/en/2027premiumrates</field>
+        <field
+            name="summary"
+        >Maximum insurable earnings of 126,700 for 2027; average premium rate of 1.18 per $100.</field>
+        <field name="verified_date">2026-11-12</field>
+        <field name="watch_key">wsib_rates</field>
+    </record>
+    <record id="source_wsib_calculate" model="l10n_ca.payroll.source">
+        <field name="sequence">100</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">page</field>
+        <field name="name">How to Calculate Your Premium and Insurable Earnings</field>
+        <field name="publisher">Workplace Safety and Insurance Board</field>
+        <field
+            name="url"
+        >https://www.wsib.ca/en/businesses/premiums-and-payment/how-calculate-your-premium-and-insurable-earnings</field>
+        <field
+            name="summary"
+        >Premium = gross insurable earnings x premium rate / 100; earnings above the annual maximum of a worker are not reported.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wsib_frequency" model="l10n_ca.payroll.source">
+        <field name="sequence">110</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">page</field>
+        <field name="name">Policy in Practice: Premium Reporting Frequency</field>
+        <field name="publisher">Workplace Safety and Insurance Board</field>
+        <field
+            name="url"
+        >https://www.wsib.ca/en/policy-practice-premium-frequency</field>
+        <field
+            name="summary"
+        >Reporting frequency from the estimated annual insurable earnings: monthly from 1,000,000, quarterly from 20,000 to 999,999.99, annual below 20,000 (by the end of April); annual reconciliation of the monthly reporters by March 31.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wsib_report_pay" model="l10n_ca.payroll.source">
+        <field name="sequence">120</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">page</field>
+        <field name="name">How to Report and Pay Your Premiums</field>
+        <field name="publisher">Workplace Safety and Insurance Board</field>
+        <field
+            name="url"
+        >https://www.wsib.ca/en/businesses/premiums-and-payment/how-report-and-pay-your-premiums</field>
+        <field
+            name="summary"
+        >Due dates of the monthly and quarterly reports and payments.</field>
+        <field name="state">to_verify</field>
+        <field
+            name="verification_note"
+        >Quarterly due dates: April 30, July 31, October 31 and January 31 (months confirmed, days to confirm against this page). Monthly: end of the following month, to confirm against this page.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+    <record id="source_wsia" model="l10n_ca.payroll.source">
+        <field name="sequence">130</field>
+        <field name="jurisdiction">ontario</field>
+        <field name="kind">statute</field>
+        <field
+            name="name"
+        >Workplace Safety and Insurance Act, 1997, S.O. 1997, c. 16, Sched. A</field>
+        <field name="publisher">Government of Ontario (e-Laws)</field>
+        <field
+            name="reference"
+        >S. 11(2) and 12 (executive officers, optional insurance), 54(1) (maximum), 87 and 88 (rate notice, premiums)</field>
+        <field name="url">https://www.ontario.ca/laws/statute/97w16</field>
+        <field
+            name="summary"
+        >Maximum insurable earnings of 175% of the average industrial wage, premiums only up to that maximum, employer rate and payment schedule set by the annual notice of the WSIB.</field>
+        <field name="verified_date">2026-11-12</field>
+    </record>
+</odoo>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 TechnoLibre
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Ontario income tax, T4127 option 1 -->
+    <record id="param_on_brackets" model="base.time.parameter">
+        <field name="name">Ontario income tax brackets (source deductions)</field>
+        <field name="code">l10n_ca.on.brackets</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Ontario rates V by annual taxable income A, as [[threshold, rate], ...] (T4127 option 1, step 4, T4 = V x A - KP - K1P - K2P - K3P). The constant KP is derived from the table and rounded to the dollar like the federal K: 2026 0, 2,210, 4,376, 5,876, 8,076; 2025 0, 2,168, 4,294, 5,794, 7,994. The rate of the first bracket is the lowest Ontario rate of K1P and K2P (0.0505). The first two thresholds are indexed; 150,000 and 220,000 are not. Ontario did not change on July 1, 2025 nor on July 1, 2026. T4127 122nd edition (January 2026), table 8.1 (2026) and table 8.22 (2025); 120th edition (January 2025), table 8.1 (2025). Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jul-121st-edition-effective-july-1-2025/t4127-jul-payroll-deductions-formulas.html</field>
+    </record>
+    <record id="param_on_brackets_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_on_brackets" />
+        <field name="date_from">2025-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.0505], [52886, 0.0915], [105775, 0.1116], [150000, 0.1216], [220000, 0.1316]]</field>
+    </record>
+    <record id="param_on_brackets_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_on_brackets" />
+        <field name="date_from">2026-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.0505], [53891, 0.0915], [107785, 0.1116], [150000, 0.1216], [220000, 0.1316]]</field>
+    </record>
+    <record id="param_on_bpa" model="base.time.parameter">
+        <field name="name">Ontario basic personal amount</field>
+        <field name="code">l10n_ca.on.bpa</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >TCP of an employee who files no TD1ON: K1P = lowest Ontario rate x TCP. Ontario has no income-tested basic personal amount. Indexation rate 2.8% for 2025 and 1.9% for 2026. T4127 122nd edition (January 2026), table 8.2 (2026) and table 8.23 (2025); 120th edition (January 2025), table 8.2 (2025); TD1ON 2026 line 1. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jul-121st-edition-effective-july-1-2025/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1on/td1on-26e.pdf</field>
+    </record>
+    <record id="param_on_bpa_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_on_bpa" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">12747</field>
+    </record>
+    <record id="param_on_bpa_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_on_bpa" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">12989</field>
+    </record>
+    <record id="param_on_surtax" model="base.time.parameter">
+        <field name="name">Ontario surtax</field>
+        <field name="code">l10n_ca.on.surtax</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Surtax V1 on the basic Ontario tax T4, as [[threshold, rate], ...]: V1 is the sum of rate x (T4 - threshold) over the thresholds T4 exceeds (2026: 0.20 x (T4 - 5,818) + 0.36 x (T4 - 7,446)). T4127 122nd edition (January 2026), Ontario section of step 5 and table 8.2 (2026), table 8.23 (2025); 120th edition (January 2025), Ontario section of step 5 and table 8.2 (2025). Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jul-121st-edition-effective-july-1-2025/t4127-jul-payroll-deductions-formulas.html</field>
+    </record>
+    <record id="param_on_surtax_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_on_surtax" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">[[5710, 0.20], [7307, 0.36]]</field>
+    </record>
+    <record id="param_on_surtax_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_on_surtax" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">[[5818, 0.20], [7446, 0.36]]</field>
+    </record>
+    <record id="param_on_tax_reduction_basic" model="base.time.parameter">
+        <field name="name">Ontario tax reduction - basic amount</field>
+        <field name="code">l10n_ca.on.tax_reduction_basic</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Basic amount S2 of the Ontario tax reduction: S = min(T4 + V1, 2 x (S2 + Y) - (T4 + V1)), at least 0. S never reduces the Ontario Health Premium V2. T4127 122nd edition (January 2026), Ontario section of step 5 and table 8.2 (2026), table 8.23 (2025); 120th edition (January 2025), Ontario section of step 5 and table 8.2 (2025); the Ontario 2026 Fall Statement confirms 300. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jul-121st-edition-effective-july-1-2025/t4127-jul-payroll-deductions-formulas.html ; https://budget.ontario.ca/2026/fallstatement/provisions.html</field>
+    </record>
+    <record
+        id="param_on_tax_reduction_basic_20250101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_tax_reduction_basic" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">294</field>
+    </record>
+    <record
+        id="param_on_tax_reduction_basic_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_tax_reduction_basic" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">300</field>
+    </record>
+    <record id="param_on_tax_reduction_dependant" model="base.time.parameter">
+        <field name="name">Ontario tax reduction - amount per dependant</field>
+        <field name="code">l10n_ca.on.tax_reduction_dependant</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Amount per dependant of factor Y of the Ontario tax reduction: Y = amount x (dependants under age 19 + disabled dependants), from the TD1ON or a written or electronic request of the employee. T4127 122nd edition (January 2026), Ontario section of step 5 (2026: 554), 120th edition (2025: 544); the Ontario 2026 Fall Statement confirms 554. The CRA tables T4032-ON of January 2026 print 575, which neither T4127 nor Ontario support. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jul-121st-edition-effective-july-1-2025/t4127-jul-payroll-deductions-formulas.html ; https://budget.ontario.ca/2026/fallstatement/provisions.html</field>
+    </record>
+    <record
+        id="param_on_tax_reduction_dependant_20250101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_tax_reduction_dependant" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">544</field>
+    </record>
+    <record
+        id="param_on_tax_reduction_dependant_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_tax_reduction_dependant" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">554</field>
+    </record>
+    <record id="param_on_health_premium" model="base.time.parameter">
+        <field name="name">Ontario Health Premium schedule</field>
+        <field name="code">l10n_ca.on.health_premium</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Ontario Health Premium V2 on the annual taxable income A, as [[threshold, rate, base, maximum], ...]: for the last row whose threshold A exceeds, V2 = min(maximum, base + rate x (A - threshold)); V2 = 0 up to 20,000. The OHP is part of the income tax withheld, is not reduced by the tax reduction S and is still withheld from an employee exempt from tax (claim code E) whose A exceeds 20,000. The schedule is not indexed. T4127 122nd edition (January 2026) and 120th edition (January 2025), Ontario section of step 5. Sources: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html ; https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jul-121st-edition-effective-july-1-2025/t4127-jul-payroll-deductions-formulas.html</field>
+    </record>
+    <record
+        id="param_on_health_premium_20250101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_health_premium" />
+        <field name="date_from">2025-01-01</field>
+        <field
+            name="value"
+        >[[20000, 0.06, 0, 300], [36000, 0.06, 300, 450], [48000, 0.25, 450, 600], [72000, 0.25, 600, 750], [200000, 0.25, 750, 900]]</field>
+    </record>
+    <record
+        id="param_on_health_premium_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_health_premium" />
+        <field name="date_from">2026-01-01</field>
+        <field
+            name="value"
+        >[[20000, 0.06, 0, 300], [36000, 0.06, 300, 450], [48000, 0.25, 450, 600], [72000, 0.25, 600, 750], [200000, 0.25, 750, 900]]</field>
+    </record>
+
+    <!-- Employer Health Tax -->
+    <record id="param_on_eht_rates" model="base.time.parameter">
+        <field name="name">Ontario Employer Health Tax rates</field>
+        <field name="code">l10n_ca.on.eht.rates</field>
+        <field name="type">json</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >EHT rate by total Ontario remuneration of the employer for the year, before the exemption, as [[threshold, rate], ...]: the rate of the last threshold the remuneration exceeds applies to the whole taxable remuneration (it is not a progressive table). A remuneration of exactly 200,000 takes 0.98% and one of exactly 400,000 takes 1.829%. A group of accounts of one employer uses its combined remuneration. Employer Health Tax Act, R.S.O. 1990, c. E.11, s. 2(2) and its table; in force without end date. Sources: https://www.ontario.ca/laws/statute/90e11 ; https://www.ontario.ca/document/employer-health-tax-eht</field>
+    </record>
+    <record id="param_on_eht_rates_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_on_eht_rates" />
+        <field name="date_from">2025-01-01</field>
+        <field
+            name="value"
+        >[[0, 0.0098], [200000, 0.01101], [230000, 0.01223], [260000, 0.01344], [290000, 0.01465], [320000, 0.01586], [350000, 0.01708], [380000, 0.01829], [400000, 0.0195]]</field>
+    </record>
+    <record id="param_on_eht_exemption" model="base.time.parameter">
+        <field name="name">Ontario Employer Health Tax exemption</field>
+        <field name="code">l10n_ca.on.eht.exemption</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Annual exemption deducted from the total Ontario remuneration of an eligible employer whose remuneration is at most l10n_ca.on.eht.exemption_threshold; prorated by the days of the year with a permanent establishment in Ontario. An associated group shares one exemption by agreement, each member taking the lesser of its allocated share and this amount. 1,000,000 for each year from 2020 to 2028; indexed every five years from 2029. Employer Health Tax Act, s. 2.1(2) and (4.0.1) to (4.0.4). Sources: https://www.ontario.ca/laws/statute/90e11 ; https://www.ontario.ca/document/employer-health-tax-eht ; https://budget.ontario.ca/2026/fallstatement/provisions.html</field>
+    </record>
+    <record id="param_on_eht_exemption_20250101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_on_eht_exemption" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1000000</field>
+    </record>
+    <record id="param_on_eht_exemption_20260101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_on_eht_exemption" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">1000000</field>
+    </record>
+    <record id="param_on_eht_exemption_20270101" model="base.time.parameter.version">
+        <field name="parameter_id" ref="param_on_eht_exemption" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">1000000</field>
+    </record>
+    <record id="param_on_eht_exemption_threshold" model="base.time.parameter">
+        <field name="name">Ontario Employer Health Tax exemption threshold</field>
+        <field name="code">l10n_ca.on.eht.exemption_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >An eligible employer, or an associated group, whose total Ontario remuneration for the year exceeds this amount has no exemption; prorated by days like the exemption. A registered charity keeps its exemption whatever its remuneration. Employer Health Tax Act, s. 2.1(5), (7) and (9). Sources: https://www.ontario.ca/laws/statute/90e11</field>
+    </record>
+    <record
+        id="param_on_eht_exemption_threshold_20250101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_eht_exemption_threshold" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">5000000</field>
+    </record>
+    <record id="param_on_eht_instalment_threshold" model="base.time.parameter">
+        <field name="name">Ontario Employer Health Tax instalment threshold</field>
+        <field name="code">l10n_ca.on.eht.instalment_threshold</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >An employer whose total Ontario remuneration for the year exceeds this amount pays monthly instalments, due on the 15th of the following month; below it, the tax of the year is paid with the annual return due on March 15 of the following year. Employer Health Tax Act, s. 3(1) para. 2, s. 3(2)(a.1) and s. 5(1). Sources: https://www.ontario.ca/laws/statute/90e11 ; https://www.ontario.ca/document/employer-health-tax-eht</field>
+    </record>
+    <record
+        id="param_on_eht_instalment_threshold_20250101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_eht_instalment_threshold" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">1200000</field>
+    </record>
+
+    <!-- Workplace Safety and Insurance Board -->
+    <record id="param_on_wsib_max_insurable" model="base.time.parameter">
+        <field name="name">WSIB maximum insurable earnings</field>
+        <field name="code">l10n_ca.on.wsib.max_insurable</field>
+        <field name="type">float</field>
+        <field name="company_id" eval="False" />
+        <field name="country_id" ref="base.ca" />
+        <field
+            name="description"
+        >Annual ceiling of the insurable earnings of a worker on which the employer pays the WSIB premium: premium = rate per $100 x min(insurable earnings of the pay, maximum - insurable earnings of the year so far) / 100. 175% of the average industrial wage for Ontario, published each year by the WSIB. Workplace Safety and Insurance Act, 1997, s. 54(1) and 88(3). Sources: https://www.wsib.ca/en/2025premiumrates ; https://www.wsib.ca/en/2026premiumrates ; https://www.wsib.ca/en/2027premiumrates ; https://www.wsib.ca/en/businesses/premiums-and-payment/how-calculate-your-premium-and-insurable-earnings ; https://www.ontario.ca/laws/statute/97w16</field>
+    </record>
+    <record
+        id="param_on_wsib_max_insurable_20250101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_wsib_max_insurable" />
+        <field name="date_from">2025-01-01</field>
+        <field name="value">117000</field>
+    </record>
+    <record
+        id="param_on_wsib_max_insurable_20260101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_wsib_max_insurable" />
+        <field name="date_from">2026-01-01</field>
+        <field name="value">121700</field>
+    </record>
+    <record
+        id="param_on_wsib_max_insurable_20270101"
+        model="base.time.parameter.version"
+    >
+        <field name="parameter_id" ref="param_on_wsib_max_insurable" />
+        <field name="date_from">2027-01-01</field>
+        <field name="value">126700</field>
+    </record>
+</odoo>

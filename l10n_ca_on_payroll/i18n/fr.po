@@ -1,0 +1,701 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ca_on_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-12 08:00+0000\n"
+"PO-Revision-Date: 2026-11-12 08:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_ontario_fall_statement_2026
+msgid "2026 Ontario Economic Outlook and Fiscal Review, Tax Provisions"
+msgstr ""
+"Perspectives économiques et revue financière de l'Ontario 2026, mesures "
+"fiscales"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_t4127_123
+msgid ""
+"2026 Ontario brackets and constants KP, basic personal amount, surtax "
+"thresholds, tax reduction amounts, Ontario Health Premium schedule, and the "
+"formulas of the Ontario tax for the regular pay and for bonuses. The edition"
+" lists Ontario among the provinces without change on July 1, 2026."
+msgstr ""
+"Tranches et constantes KP de l'Ontario de 2026, montant personnel de base, "
+"seuils de la surtaxe, montants de la réduction d'impôt, barème de la "
+"contribution-santé de l'Ontario, et formules de l'impôt de l'Ontario pour la"
+" paie régulière et pour les primes. L'édition range l'Ontario parmi les "
+"provinces sans changement au 1er juillet 2026."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_charity
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_charity
+msgid ""
+"A registered charity keeps its EHT exemption whatever its total Ontario "
+"remuneration."
+msgstr ""
+"Un organisme de bienfaisance enregistré garde son exonération de l'ISE "
+"quelle que soit sa rémunération totale en Ontario."
+
+#. module: l10n_ca_on_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_on_payroll.res_config_settings_view_form
+msgid ""
+"Account number and premium rate per $100 of insurable earnings from the rate"
+" notice of the year"
+msgstr ""
+"Numéro de compte et taux de prime par tranche de 100 $ de gains assurables "
+"de l'avis de taux de l'année"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_additional_tax
+msgid "Additional Ontario Tax per Pay"
+msgstr "Impôt de l'Ontario additionnel par paie"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_additional_tax
+msgid ""
+"Additional Ontario income tax the employee asks to have withheld on each "
+"pay."
+msgstr ""
+"Impôt sur le revenu de l'Ontario additionnel que l'employé demande de "
+"retenir sur chaque paie."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_basis
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_basis
+msgid ""
+"Annual total Ontario remuneration that selects the EHT rate and, for an "
+"employer not associated, decides whether the exemption applies. The tax of "
+"the year is set on the actual remuneration by the annual return; a new "
+"employer or one whose payroll changes enters an estimate of the current "
+"year."
+msgstr ""
+"Rémunération totale annuelle en Ontario qui choisit le taux de l'ISE et, "
+"pour un employeur non associé, détermine si l'exonération s'applique. "
+"L'impôt de l'année est établi sur la rémunération réelle par la déclaration "
+"annuelle; un nouvel employeur, ou celui dont la masse salariale change, "
+"saisit une estimation de l'année en cours."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_associated
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_associated
+msgid "Associated Employer (EHT)"
+msgstr "Employeur associé (ISE)"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_on_payroll.selection__hr_contract__l10n_ca_on_td1_type__basic
+msgid "Basic personal amount"
+msgstr "Montant personnel de base"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_td1_type
+msgid ""
+"Basic personal amount: the claim is the Ontario basic personal amount of the"
+" year, as when the employee files no TD1ON. Total claim amount: the amount "
+"of line 10 of the TD1ON, 0 for claim code 0. Exempt: the employee expects a "
+"total income below the claim; no Ontario tax is withheld except the Ontario "
+"Health Premium on an annual income above 20,000. A non-resident whose "
+"federal claim is 0 has an Ontario claim of 0 as well: choose the total claim"
+" amount and leave it at 0."
+msgstr ""
+"Montant personnel de base : la demande est le montant personnel de base de "
+"l'Ontario de l'année, comme lorsque l'employé ne remplit pas de TD1ON. "
+"Montant total de la demande : le montant de la ligne 10 du TD1ON, 0 pour le "
+"code de demande 0. Exempté : l'employé prévoit un revenu total inférieur à "
+"sa demande; aucun impôt de l'Ontario n'est retenu, sauf la contribution-"
+"santé de l'Ontario sur un revenu annuel de plus de 20 000. Un non-résident "
+"dont la demande fédérale est de 0 a aussi une demande de l'Ontario de 0 : "
+"choisir le montant total de la demande et le laisser à 0."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_t4127_121
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_t4127_123
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_td1on_2026
+msgid "Canada Revenue Agency"
+msgstr "Agence du revenu du Canada"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_ontario_fall_statement_2026
+msgid ""
+"Confirms the 2026 tax reduction (basic amount 300, 554 per dependent child "
+"aged 18 or under) and the 1 million EHT exemption of private-sector "
+"employers."
+msgstr ""
+"Confirme la réduction d'impôt de 2026 (montant de base de 300, 554 par "
+"enfant à charge de 18 ans ou moins) et l'exonération de l'ISE de 1 million "
+"des employeurs du secteur privé."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_dependants_under_19
+msgid "Dependants Under Age 19"
+msgstr "Personnes à charge de moins de 19 ans"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_disabled_dependants
+msgid "Disabled Dependants"
+msgstr "Personnes à charge ayant une déficience"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_wsib_report_pay
+msgid "Due dates of the monthly and quarterly reports and payments."
+msgstr ""
+"Dates d'échéance des déclarations et des paiements mensuels et trimestriels."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_account_number
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_account_number
+msgid "EHT Account Number"
+msgstr "Numéro de compte de l'ISE"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_allocated_exemption
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_allocated_exemption
+msgid "EHT Exemption Allocated to the Company"
+msgstr "Exonération de l'ISE attribuée à la société"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_basis
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_basis
+msgid "EHT Rate Basis"
+msgstr "Base du taux de l'ISE"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_eht_act
+msgid ""
+"EHT rates from 0.98% to 1.95% chosen by the total Ontario remuneration, "
+"exemption of 1,000,000 for 2020 to 2028, exemption threshold of 5,000,000, "
+"monthly instalments above 1,200,000 and annual return due March 15."
+msgstr ""
+"Taux de l'ISE de 0,98 % à 1,95 % choisis selon la rémunération totale en "
+"Ontario, exonération de 1 000 000 de 2020 à 2028, seuil d'exonération de 5 "
+"000 000, acomptes mensuels au-delà de 1 200 000 et déclaration annuelle due "
+"le 15 mars."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_eligible
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_eligible
+msgid "Eligible Employer (EHT Exemption)"
+msgstr "Employeur admissible (exonération de l'ISE)"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_eligible
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_eligible
+msgid ""
+"Eligible employers deduct the EHT exemption from their total Ontario "
+"remuneration. Public-sector employers, federal and other provincial Crown "
+"bodies and the other persons excluded by the Employer Health Tax Act are not"
+" eligible: they pay the tax on their whole Ontario remuneration."
+msgstr ""
+"Les employeurs admissibles déduisent l'exonération de l'ISE de leur "
+"rémunération totale en Ontario. Les employeurs du secteur public, les "
+"organismes de la Couronne fédérale et des autres provinces et les autres "
+"personnes exclues par la Loi sur l'impôt-santé des employeurs ne sont pas "
+"admissibles : ils paient l'impôt sur toute leur rémunération en Ontario."
+
+#. module: l10n_ca_on_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_on_payroll.res_config_settings_view_form
+msgid "Employer Health Tax"
+msgstr "Impôt-santé des employeurs"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_eht_guide
+msgid "Employer Health Tax (EHT)"
+msgstr "Impôt-santé des employeurs (ISE)"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_eht_act
+msgid "Employer Health Tax Act, R.S.O. 1990, c. E.11"
+msgstr "Loi sur l'impôt-santé des employeurs, L.R.O. 1990, chap. E.11"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_account_number
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_account_number
+msgid ""
+"Employer Health Tax account number given by the Ontario Ministry of Finance."
+msgstr ""
+"Numéro de compte de l'impôt-santé des employeurs attribué par le ministère "
+"des Finances de l'Ontario."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_estimated_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_estimated_payroll
+msgid "Estimated Total Ontario Remuneration"
+msgstr "Rémunération totale en Ontario estimée"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_on_payroll.selection__res_company__l10n_ca_on_eht_basis__estimate
+msgid "Estimated total Ontario remuneration of the year"
+msgstr "Rémunération totale en Ontario estimée de l'année"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_on_payroll.selection__hr_contract__l10n_ca_on_td1_type__exempt
+msgid "Exempt (claim code E)"
+msgstr "Exempté (code de demande E)"
+
+#. module: l10n_ca_on_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_on_payroll.res_config_settings_view_form
+msgid "Exemption and annual total Ontario remuneration that sets the EHT rate"
+msgstr ""
+"Exonération et rémunération totale annuelle en Ontario qui fixe le taux de "
+"l'ISE"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_company__l10n_ca_on_wsib_account_number
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_wsib_account_number
+msgid "Firm or account number of the company at the WSIB."
+msgstr "Numéro d'entreprise ou de compte de la société à la CSPAAT."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_ontario_fall_statement_2026
+msgid "Government of Ontario"
+msgstr "Gouvernement de l'Ontario"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_eht_act
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_wsia
+msgid "Government of Ontario (e-Laws)"
+msgstr "Gouvernement de l'Ontario (Lois-en-ligne)"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_wsib_calculate
+msgid "How to Calculate Your Premium and Insurable Earnings"
+msgstr "Comment calculer votre prime et vos gains assurables"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_wsib_report_pay
+msgid "How to Report and Pay Your Premiums"
+msgstr "Comment déclarer et payer vos primes"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_other_credits
+msgid ""
+"K3P of the T4127 formulas: other Ontario non-refundable tax credits "
+"authorized by a tax services office, such as medical expenses or charitable "
+"donations, as an annual credit amount."
+msgstr ""
+"K3P des formules T4127 : autres crédits d'impôt non remboursables de "
+"l'Ontario autorisés par un bureau des services fiscaux, comme les frais "
+"médicaux ou les dons de bienfaisance, en montant annuel de crédit."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_wsib_2025_rates
+msgid ""
+"Maximum insurable earnings of 117,000 for 2025; average premium rate of 1.25"
+" per $100."
+msgstr ""
+"Gains assurables maximaux de 117 000 pour 2025; taux de prime moyen de 1,25 "
+"par tranche de 100 $."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_wsib_2026_rates
+msgid ""
+"Maximum insurable earnings of 121,700 for 2026; average premium rate of 1.23"
+" per $100; new businesses get the rate of their class."
+msgstr ""
+"Gains assurables maximaux de 121 700 pour 2026; taux de prime moyen de 1,23 "
+"par tranche de 100 $; les nouvelles entreprises reçoivent le taux de leur "
+"catégorie."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_wsib_2027_rates
+msgid ""
+"Maximum insurable earnings of 126,700 for 2027; average premium rate of 1.18"
+" per $100."
+msgstr ""
+"Gains assurables maximaux de 126 700 pour 2027; taux de prime moyen de 1,18 "
+"par tranche de 100 $."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_wsia
+msgid ""
+"Maximum insurable earnings of 175% of the average industrial wage, premiums "
+"only up to that maximum, employer rate and payment schedule set by the "
+"annual notice of the WSIB."
+msgstr ""
+"Gains assurables maximaux de 175 % du salaire moyen dans l'industrie, primes"
+" seulement jusqu'à ce maximum, taux et calendrier de paiement de l'employeur"
+" fixés par l'avis annuel de la CSPAAT."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_wsib_exempt
+msgid ""
+"No WSIB premium on this remuneration, e.g. an executive officer of a "
+"corporation outside construction without optional insurance."
+msgstr ""
+"Aucune prime de la CSPAAT sur cette rémunération, p. ex. un cadre dirigeant "
+"d'une société hors de la construction sans assurance facultative."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_wsib_exempt
+msgid "Not Covered by the WSIB"
+msgstr "Non couvert par la CSPAAT"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_dependants_under_19
+msgid ""
+"Number of dependants under age 19 the employee declared on the TD1ON or in a"
+" written or electronic request. Each one adds the amount per dependant to "
+"factor Y of the Ontario tax reduction."
+msgstr ""
+"Nombre de personnes à charge de moins de 19 ans que l'employé a déclarées "
+"sur le TD1ON ou dans une demande écrite ou électronique. Chacune ajoute le "
+"montant par personne à charge au facteur Y de la réduction d'impôt de "
+"l'Ontario."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_disabled_dependants
+msgid ""
+"Number of disabled dependants the employee declared on the TD1ON or in a "
+"written or electronic request. Each one adds the amount per dependant to "
+"factor Y of the Ontario tax reduction."
+msgstr ""
+"Nombre de personnes à charge ayant une déficience que l'employé a déclarées "
+"sur le TD1ON ou dans une demande écrite ou électronique. Chacune ajoute le "
+"montant par personne à charge au facteur Y de la réduction d'impôt de "
+"l'Ontario."
+
+#. module: l10n_ca_on_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_on_payroll.hr_contract_view_form
+msgid "Ontario - Other"
+msgstr "Ontario - Autres"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_bpa
+msgid "Ontario Basic Personal Amount"
+msgstr "Montant personnel de base de l'Ontario"
+
+#. module: l10n_ca_on_payroll
+#: model:hr.salary.rule,name:l10n_ca_on_payroll.rule_on_eht
+msgid "Ontario Employer Health Tax"
+msgstr "Impôt-santé des employeurs de l'Ontario"
+
+#. module: l10n_ca_on_payroll
+#. odoo-python
+#: code:addons/l10n_ca_on_payroll/models/hr_payslip.py:0
+#, python-format
+msgid "Ontario Employer Health Tax (%(rate)s%%)"
+msgstr "Impôt-santé des employeurs de l'Ontario (%(rate)s %%)"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_eht_guide
+msgid "Ontario Ministry of Finance"
+msgstr "Ministère des Finances de l'Ontario"
+
+#. module: l10n_ca_on_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_on_payroll.res_config_settings_view_form
+msgid "Ontario Payroll"
+msgstr "Paie de l'Ontario"
+
+#. module: l10n_ca_on_payroll
+#: model:hr.salary.rule,name:l10n_ca_on_payroll.rule_on_salary
+msgid "Ontario Remuneration Subject to the EHT"
+msgstr "Rémunération en Ontario assujettie à l'ISE"
+
+#. module: l10n_ca_on_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_on_payroll.hr_contract_view_form
+msgid "Ontario TD1ON"
+msgstr "TD1ON de l'Ontario"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_td1_type
+msgid "Ontario TD1ON Claim"
+msgstr "Demande TD1ON de l'Ontario"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_bpa
+msgid "Ontario basic personal amount in force today."
+msgstr "Montant personnel de base de l'Ontario en vigueur aujourd'hui."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_td1on_2026
+msgid ""
+"Ontario basic personal amount of 12,989 for 2026 and the total claim amount "
+"TCP. The form no longer has a section for the dependants of the tax "
+"reduction: Y comes from a written or electronic request of the employee."
+msgstr ""
+"Montant personnel de base de l'Ontario de 12 989 pour 2026 et montant total "
+"de la demande TCP. Le formulaire n'a plus de section pour les personnes à "
+"charge de la réduction d'impôt : Y vient d'une demande écrite ou "
+"électronique de l'employé."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_other_credits
+msgid "Other Ontario Tax Credits (Annual)"
+msgstr "Autres crédits d'impôt de l'Ontario (annuels)"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_wsib_frequency
+msgid "Policy in Practice: Premium Reporting Frequency"
+msgstr "Politique en pratique : fréquence de déclaration des primes"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_wsib_calculate
+msgid ""
+"Premium = gross insurable earnings x premium rate / 100; earnings above the "
+"annual maximum of a worker are not reported."
+msgstr ""
+"Prime = gains assurables bruts x taux de prime / 100; les gains au-delà du "
+"maximum annuel d'un travailleur ne sont pas déclarés."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_company__l10n_ca_on_wsib_rate
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_wsib_rate
+msgid ""
+"Premium rate per $100 of insurable earnings of the annual rate notice of the"
+" WSIB for the classification of the company. Leave 0 when the company has no"
+" WSIB account (Schedule 2 employers pay the cost of their claims instead)."
+msgstr ""
+"Taux de prime par tranche de 100 $ de gains assurables de l'avis de taux "
+"annuel de la CSPAAT pour la classification de la société. Laisser 0 lorsque "
+"la société n'a pas de compte à la CSPAAT (les employeurs de l'annexe 2 "
+"paient plutôt le coût de leurs demandes de prestations)."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_previous_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_previous_payroll
+msgid "Previous Year Total Ontario Remuneration"
+msgstr "Rémunération totale en Ontario de l'année précédente"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_charity
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_charity
+msgid "Registered Charity (EHT)"
+msgstr "Organisme de bienfaisance enregistré (ISE)"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_wsib_frequency
+msgid ""
+"Reporting frequency from the estimated annual insurable earnings: monthly "
+"from 1,000,000, quarterly from 20,000 to 999,999.99, annual below 20,000 (by"
+" the end of April); annual reconciliation of the monthly reporters by March "
+"31."
+msgstr ""
+"Fréquence de déclaration selon les gains assurables annuels estimés : "
+"mensuelle à partir de 1 000 000, trimestrielle de 20 000 à 999 999,99, "
+"annuelle sous 20 000 (avant la fin d'avril); rapprochement annuel des "
+"déclarants mensuels au plus tard le 31 mars."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_allocated_exemption
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_allocated_exemption
+msgid ""
+"Share of the group exemption allocated to the company by the agreement of "
+"the associated employers. The company takes the lesser of this amount and "
+"the exemption of the year. Enter 0 when the group allocates nothing to the "
+"company or when the total Ontario remuneration of the group exceeds the "
+"exemption threshold."
+msgstr ""
+"Part de l'exonération du groupe attribuée à la société par la convention des"
+" employeurs associés. La société prend le moindre de ce montant et de "
+"l'exonération de l'année. Saisir 0 lorsque le groupe n'attribue rien à la "
+"société ou lorsque la rémunération totale en Ontario du groupe dépasse le "
+"seuil d'exonération."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_hr_contract__l10n_ca_province_code
+msgid "State Code"
+msgstr "Code de la province"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_t4127_121
+msgid "T4127 Payroll Deductions Formulas, 121st Edition (July 1, 2025)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 121e édition (1er "
+"juillet 2025)"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_t4127_123
+msgid "T4127 Payroll Deductions Formulas, 123rd Edition (July 1, 2026)"
+msgstr ""
+"T4127 Formules pour le calcul des retenues sur la paie, 123e édition (1er "
+"juillet 2026)"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_td1_amount
+msgid ""
+"TCP of the T4127 formulas: total of the Ontario personal tax credit amounts "
+"of the TD1ON. Enter the amount of the form of the year of the pay: the "
+"payslip does not index it."
+msgstr ""
+"TCP des formules T4127 : total des montants de crédits d'impôt personnels de"
+" l'Ontario du TD1ON. Saisir le montant du formulaire de l'année de la paie :"
+" le bulletin de paie ne l'indexe pas."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_td1on_2026
+msgid "TD1ON 2026 Ontario Personal Tax Credits Return"
+msgstr "TD1ON 2026 Déclaration des crédits d'impôt personnels de l'Ontario"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_hr_contract__l10n_ca_on_td1_amount
+msgid "TD1ON Total Claim Amount"
+msgstr "Montant total de la demande TD1ON"
+
+#. module: l10n_ca_on_payroll
+#. odoo-python
+#: code:addons/l10n_ca_on_payroll/models/hr_payslip.py:0
+#, python-format
+msgid ""
+"The EHT rate basis of %(company)s, \"%(field)s\", is 0 in the Ontario payroll "
+"settings: the Employer Health Tax of this payslip uses the lowest rate and "
+"the exemption of a nil remuneration."
+msgstr ""
+"La base du taux de l'ISE de %(company)s, « %(field)s », vaut 0 dans les "
+"paramètres de paie de l'Ontario : l'impôt-santé des employeurs de ce "
+"bulletin applique le taux le plus bas et l'exonération d'une rémunération "
+"nulle."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_associated
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_associated
+msgid ""
+"The company belongs to a group of associated employers that shares one EHT "
+"exemption by an allocation agreement delivered by March 15 of the following "
+"year."
+msgstr ""
+"La société fait partie d'un groupe d'employeurs associés qui se partagent "
+"une seule exonération de l'ISE par une convention de répartition remise au "
+"plus tard le 15 mars de l'année suivante."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_eht_guide
+msgid ""
+"The rate is based on the Ontario payroll before the exemption, all accounts "
+"combined; instalments are due on the 15th of the month after the payroll "
+"once the cumulative payroll exceeds 1.2 million; the return and balance are "
+"due on or before March 15."
+msgstr ""
+"Le taux repose sur la masse salariale en Ontario avant l'exonération, tous "
+"les comptes réunis; les acomptes sont dus le 15 du mois suivant la paie dès "
+"que la masse salariale cumulée dépasse 1,2 million; la déclaration et le "
+"solde sont dus au plus tard le 15 mars."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,summary:l10n_ca_on_payroll.source_t4127_121
+msgid ""
+"The same Ontario figures for 2025: brackets 52,886 and 105,775, basic "
+"personal amount 12,747, surtax thresholds 5,710 and 7,307, tax reduction 294"
+" and 544 per dependant. The edition lists Ontario among the provinces "
+"without change on July 1, 2025."
+msgstr ""
+"Les mêmes données de l'Ontario pour 2025 : tranches de 52 886 et 105 775, "
+"montant personnel de base de 12 747, seuils de la surtaxe de 5 710 et 7 307,"
+" réduction d'impôt de 294 et 544 par personne à charge. L'édition range "
+"l'Ontario parmi les provinces sans changement au 1er juillet 2025."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_hr_contract__l10n_ca_province_code
+msgid "The state code."
+msgstr "Le code de la province."
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,verification_note:l10n_ca_on_payroll.source_wsib_report_pay
+msgid ""
+"Quarterly due dates: April 30, July 31, October 31 and January 31 (months "
+"confirmed, days to confirm against this page). Monthly: end of the following"
+" month, to confirm against this page."
+msgstr ""
+"Dates d'échéance trimestrielles : 30 avril, 31 juillet, 31 octobre et 31 "
+"janvier (mois confirmés, jours à confirmer sur cette page). Mensuel : fin du"
+" mois suivant, à confirmer sur cette page."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_on_payroll.selection__res_company__l10n_ca_on_eht_basis__previous_year
+msgid "Total Ontario remuneration of the previous year"
+msgstr "Rémunération totale en Ontario de l'année précédente"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_previous_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_previous_payroll
+msgid ""
+"Total Ontario remuneration paid by the company in the previous year, all "
+"accounts combined, before the exemption."
+msgstr ""
+"Rémunération totale en Ontario versée par la société l'année précédente, "
+"tous les comptes réunis, avant l'exonération."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_company__l10n_ca_on_eht_estimated_payroll
+#: model:ir.model.fields,help:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_eht_estimated_payroll
+msgid ""
+"Total Ontario remuneration the company expects to pay in the current year, "
+"all accounts combined, before the exemption."
+msgstr ""
+"Rémunération totale en Ontario que la société prévoit verser dans l'année en"
+" cours, tous les comptes réunis, avant l'exonération."
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields.selection,name:l10n_ca_on_payroll.selection__hr_contract__l10n_ca_on_td1_type__custom
+msgid "Total claim amount from the TD1ON"
+msgstr "Montant total de la demande du TD1ON"
+
+#. module: l10n_ca_on_payroll
+#: model_terms:ir.ui.view,arch_db:l10n_ca_on_payroll.res_config_settings_view_form
+msgid "WSIB"
+msgstr "CSPAAT"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_wsib_2025_rates
+msgid "WSIB 2025 Premium Rates"
+msgstr "Taux de prime 2025 de la CSPAAT"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_wsib_2026_rates
+msgid "WSIB 2026 Premium Rates"
+msgstr "Taux de prime 2026 de la CSPAAT"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_wsib_2027_rates
+msgid "WSIB 2027 Premium Rates"
+msgstr "Taux de prime 2027 de la CSPAAT"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_company__l10n_ca_on_wsib_account_number
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_wsib_account_number
+msgid "WSIB Account Number"
+msgstr "Numéro de compte à la CSPAAT"
+
+#. module: l10n_ca_on_payroll
+#: model:hr.salary.rule,name:l10n_ca_on_payroll.rule_on_wsib_insurable
+msgid "WSIB Insurable Earnings"
+msgstr "Gains assurables CSPAAT"
+
+#. module: l10n_ca_on_payroll
+#: model:hr.salary.rule,name:l10n_ca_on_payroll.rule_on_wsib
+msgid "WSIB Premium"
+msgstr "Prime CSPAAT"
+
+#. module: l10n_ca_on_payroll
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_company__l10n_ca_on_wsib_rate
+#: model:ir.model.fields,field_description:l10n_ca_on_payroll.field_res_config_settings__l10n_ca_on_wsib_rate
+msgid "WSIB Premium Rate per $100"
+msgstr "Taux de prime CSPAAT par tranche de 100 $"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,name:l10n_ca_on_payroll.source_wsia
+msgid "Workplace Safety and Insurance Act, 1997, S.O. 1997, c. 16, Sched. A"
+msgstr ""
+"Loi de 1997 sur la sécurité professionnelle et l'assurance contre les "
+"accidents du travail, L.O. 1997, chap. 16, annexe A"
+
+#. module: l10n_ca_on_payroll
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_wsib_2025_rates
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_wsib_2026_rates
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_wsib_2027_rates
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_wsib_calculate
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_wsib_frequency
+#: model:l10n_ca.payroll.source,publisher:l10n_ca_on_payroll.source_wsib_report_pay
+msgid "Workplace Safety and Insurance Board"
+msgstr ""
+"Commission de la sécurité professionnelle et de l'assurance contre les "
+"accidents du travail"
